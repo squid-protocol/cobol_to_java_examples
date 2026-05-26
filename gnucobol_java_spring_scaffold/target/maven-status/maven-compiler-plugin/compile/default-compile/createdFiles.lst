@@ -1,0 +1,12 @@
+com/gitgalaxy/modernized/service/Cbl_oc_dumpService.class
+com/gitgalaxy/modernized/service/NumericDumpService.class
+com/gitgalaxy/modernized/GnucobolApplication.class
+com/gitgalaxy/modernized/entity/GS18.class
+com/gitgalaxy/modernized/entity/Valuelen.class
+com/gitgalaxy/modernized/util/EbcdicDecoderUtil.class
+com/gitgalaxy/modernized/service/TutorialService.class
+com/gitgalaxy/modernized/entity/ExRecord.class
+com/gitgalaxy/modernized/entity/NumericDisplay.class
+com/gitgalaxy/modernized/service/MoveService.class
+com/gitgalaxy/modernized/controller/Cbl_oc_dumpController.class
+com/gitgalaxy/modernized/service/NumericDisplayService.class
