@@ -41,7 +41,7 @@ _Resolution:_ Add the missing copybook / %INCLUDE member or record to the reposi
 
 **`Source/ECS001.cbl`**
 
-- [ ] **WL-0001** `src/main/java/com/gitgalaxy/modernized/controller/Ecs001Controller.java:11` (`Ecs001Controller#link`): no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA
+- [ ] **WL-0001** `src/main/java/com/gitgalaxy/modernized/controller/Ecs001Controller.java:18` (`Ecs001Controller#link`): no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA
 
 <a id="queue-name"></a>
 ## Data-driven queue names (fact-gap)
@@ -50,17 +50,17 @@ _Resolution:_ Resolve the name (the MOVEs into the operand, or the installation'
 
 **`Source/ZECS000.cbl`**
 
-- [ ] **WL-0002** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:116` (`Zecs000Service#writeqTdL780`): @tdq@ is an installation symbol: set the real queue name
+- [ ] **WL-0002** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:123` (`Zecs000Service#writeqTdL780`): @tdq@ is an installation symbol: set the real queue name
   - fact: `Source/ZECS000.cbl:780`, CICS resources (open (5 public / 0 private estates))
 
 **`Source/ZECS001.cbl`**
 
-- [ ] **WL-0003** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:125` (`Zecs001Service#writeqTdL2137`): @tdq@ is an installation symbol: set the real queue name
+- [ ] **WL-0003** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:132` (`Zecs001Service#writeqTdL2137`): @tdq@ is an installation symbol: set the real queue name
   - fact: `Source/ZECS001.cbl:2137`, CICS resources (open (5 public / 0 private estates))
 
 **`Source/ZECSPLT.cbl`**
 
-- [ ] **WL-0004** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:42` (`ZecspltService#writeqTdL135`): @tdq@ is an installation symbol: set the real queue name
+- [ ] **WL-0004** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:49` (`ZecspltService#writeqTdL135`): @tdq@ is an installation symbol: set the real queue name
   - fact: `Source/ZECSPLT.cbl:135`, CICS resources (open (5 public / 0 private estates))
 
 <a id="unchecked-resp"></a>
@@ -70,81 +70,81 @@ _Resolution:_ Decide what a failed call does: the COBOL ignores it, so the Java 
 
 **`Source/ECS001.cbl`**
 
-- [ ] **WL-0005** `src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java:16` (`Ecs001Service`): the RESP of WEB at line 243 (paragraph A4000-EXECUTE-SERVICE) is never tested
+- [ ] **WL-0005** `src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java:23` (`Ecs001Service`): the RESP of WEB at line 243 (paragraph A4000-EXECUTE-SERVICE) is never tested
   - fact: `Source/ECS001.cbl:243`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0006** `src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java:17` (`Ecs001Service`): the RESP of SEND at line 411 (paragraph Z1000-EXIT-PROGRAM) is never tested
+- [ ] **WL-0006** `src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java:24` (`Ecs001Service`): the RESP of SEND at line 411 (paragraph Z1000-EXIT-PROGRAM) is never tested
   - fact: `Source/ECS001.cbl:411`, units of work and handlers (field-tested (6 public / 0 private estates))
 
 **`Source/ZECS000.cbl`**
 
-- [ ] **WL-0007** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:28` (`Zecs000Service`): the RESP of RETRIEVE at line 257 (paragraph 1000-RETRIEVE) is never tested
+- [ ] **WL-0007** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:35` (`Zecs000Service`): the RESP of RETRIEVE at line 257 (paragraph 1000-RETRIEVE) is never tested
   - fact: `Source/ZECS000.cbl:257`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0008** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:29` (`Zecs000Service`): the RESP of ASKTIME at line 269 (paragraph 1000-RETRIEVE) is never tested
+- [ ] **WL-0008** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:36` (`Zecs000Service`): the RESP of ASKTIME at line 269 (paragraph 1000-RETRIEVE) is never tested
   - fact: `Source/ZECS000.cbl:269`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0009** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:30` (`Zecs000Service`): the RESP of FORMATTIME at line 333 (paragraph 1300-WRITE) is never tested
+- [ ] **WL-0009** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:37` (`Zecs000Service`): the RESP of FORMATTIME at line 333 (paragraph 1300-WRITE) is never tested
   - fact: `Source/ZECS000.cbl:333`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0010** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:31` (`Zecs000Service`): the RESP of FORMATTIME at line 368 (paragraph 1400-UPDATE) is never tested
+- [ ] **WL-0010** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:38` (`Zecs000Service`): the RESP of FORMATTIME at line 368 (paragraph 1400-UPDATE) is never tested
   - fact: `Source/ZECS000.cbl:368`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0011** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:32` (`Zecs000Service`): the RESP of REWRITE at line 389 (paragraph 1400-UPDATE) is never tested
+- [ ] **WL-0011** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:39` (`Zecs000Service`): the RESP of REWRITE at line 389 (paragraph 1400-UPDATE) is never tested
   - fact: `Source/ZECS000.cbl:389`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0012** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:33` (`Zecs000Service`): the RESP of REWRITE at line 498 (paragraph 3110-REWRITE) is never tested
+- [ ] **WL-0012** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:40` (`Zecs000Service`): the RESP of REWRITE at line 498 (paragraph 3110-REWRITE) is never tested
   - fact: `Source/ZECS000.cbl:498`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0013** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:34` (`Zecs000Service`): the RESP of SYNCPOINT at line 504 (paragraph 3110-REWRITE) is never tested
+- [ ] **WL-0013** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:41` (`Zecs000Service`): the RESP of SYNCPOINT at line 504 (paragraph 3110-REWRITE) is never tested
   - fact: `Source/ZECS000.cbl:504`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0014** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:35` (`Zecs000Service`): the RESP of DELETE at line 525 (paragraph 3200-DELETE) is never tested
+- [ ] **WL-0014** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:42` (`Zecs000Service`): the RESP of DELETE at line 525 (paragraph 3200-DELETE) is never tested
   - fact: `Source/ZECS000.cbl:525`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0015** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:36` (`Zecs000Service`): the RESP of DELETE at line 546 (paragraph 3210-DELETE) is never tested
+- [ ] **WL-0015** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:43` (`Zecs000Service`): the RESP of DELETE at line 546 (paragraph 3210-DELETE) is never tested
   - fact: `Source/ZECS000.cbl:546`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0016** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:37` (`Zecs000Service`): the RESP of SYNCPOINT at line 560 (paragraph 3220-SYNCPOINT) is never tested
+- [ ] **WL-0016** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:44` (`Zecs000Service`): the RESP of SYNCPOINT at line 560 (paragraph 3220-SYNCPOINT) is never tested
   - fact: `Source/ZECS000.cbl:560`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0017** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:38` (`Zecs000Service`): the RESP of DELAY at line 563 (paragraph 3220-SYNCPOINT) is never tested
+- [ ] **WL-0017** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:45` (`Zecs000Service`): the RESP of DELAY at line 563 (paragraph 3220-SYNCPOINT) is never tested
   - fact: `Source/ZECS000.cbl:563`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0018** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:39` (`Zecs000Service`): the RESP of WEB at line 625 (paragraph 7100-WEB-OPEN) is never tested
+- [ ] **WL-0018** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:46` (`Zecs000Service`): the RESP of WEB at line 625 (paragraph 7100-WEB-OPEN) is never tested
   - fact: `Source/ZECS000.cbl:625`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0019** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:40` (`Zecs000Service`): the RESP of INQUIRE at line 651 (paragraph 7200-WEB-CONVERSE) is never tested
+- [ ] **WL-0019** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:47` (`Zecs000Service`): the RESP of INQUIRE at line 651 (paragraph 7200-WEB-CONVERSE) is never tested
   - fact: `Source/ZECS000.cbl:651`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0020** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:41` (`Zecs000Service`): the RESP of WEB at line 672 (paragraph 7200-WEB-CONVERSE) is never tested
+- [ ] **WL-0020** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:48` (`Zecs000Service`): the RESP of WEB at line 672 (paragraph 7200-WEB-CONVERSE) is never tested
   - fact: `Source/ZECS000.cbl:672`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0021** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:42` (`Zecs000Service`): the RESP of WEB at line 696 (paragraph 7300-WEB-CLOSE) is never tested
+- [ ] **WL-0021** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:49` (`Zecs000Service`): the RESP of WEB at line 696 (paragraph 7300-WEB-CLOSE) is never tested
   - fact: `Source/ZECS000.cbl:696`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0022** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:43` (`Zecs000Service`): the RESP of START at line 713 (paragraph 8000-RESTART) is never tested
+- [ ] **WL-0022** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:50` (`Zecs000Service`): the RESP of START at line 713 (paragraph 8000-RESTART) is never tested
   - fact: `Source/ZECS000.cbl:713`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0023** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:44` (`Zecs000Service`): the RESP of START at line 732 (paragraph 8100-RESTART) is never tested
+- [ ] **WL-0023** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:51` (`Zecs000Service`): the RESP of START at line 732 (paragraph 8100-RESTART) is never tested
   - fact: `Source/ZECS000.cbl:732`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0024** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:45` (`Zecs000Service`): the RESP of FORMATTIME at line 771 (paragraph 9900-WRITE-CSSL) is never tested
+- [ ] **WL-0024** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:52` (`Zecs000Service`): the RESP of FORMATTIME at line 771 (paragraph 9900-WRITE-CSSL) is never tested
   - fact: `Source/ZECS000.cbl:771`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0025** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:46` (`Zecs000Service`): the RESP of WRITEQ at line 780 (paragraph 9900-WRITE-CSSL) is never tested
+- [ ] **WL-0025** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:53` (`Zecs000Service`): the RESP of WRITEQ at line 780 (paragraph 9900-WRITE-CSSL) is never tested
   - fact: `Source/ZECS000.cbl:780`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0026** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:47` (`Zecs000Service`): the RESP of ASKTIME at line 793 (paragraph 9950-ABS) is never tested
+- [ ] **WL-0026** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:54` (`Zecs000Service`): the RESP of ASKTIME at line 793 (paragraph 9950-ABS) is never tested
   - fact: `Source/ZECS000.cbl:793`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0027** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:48` (`Zecs000Service`): the RESP of DOCUMENT at line 810 (paragraph 9999-GET-URL) is never tested
+- [ ] **WL-0027** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:55` (`Zecs000Service`): the RESP of DOCUMENT at line 810 (paragraph 9999-GET-URL) is never tested
   - fact: `Source/ZECS000.cbl:810`, units of work and handlers (field-tested (6 public / 0 private estates))
 - [ ] **WL-0028** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java` (`Zecs000Service`): the RESP of WEB at line 827 (paragraph 9999-GET-URL) is never tested
   - fact: `Source/ZECS000.cbl:827`, units of work and handlers (field-tested (6 public / 0 private estates))
 
 **`Source/ZECS001.cbl`**
 
-- [ ] **WL-0029** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:35` (`Zecs001Service`): the RESP of WEB at line 467 (paragraph 1000-ACCESS-PARMS) is never tested
+- [ ] **WL-0029** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:42` (`Zecs001Service`): the RESP of WEB at line 467 (paragraph 1000-ACCESS-PARMS) is never tested
   - fact: `Source/ZECS001.cbl:467`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0030** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:36` (`Zecs001Service`): the RESP of WEB at line 530 (paragraph 1000-ACCESS-PARMS) is never tested
+- [ ] **WL-0030** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:43` (`Zecs001Service`): the RESP of WEB at line 530 (paragraph 1000-ACCESS-PARMS) is never tested
   - fact: `Source/ZECS001.cbl:530`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0031** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:37` (`Zecs001Service`): the RESP of DOCUMENT at line 652 (paragraph 1210-ZCXXSD) is never tested
+- [ ] **WL-0031** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:44` (`Zecs001Service`): the RESP of DOCUMENT at line 652 (paragraph 1210-ZCXXSD) is never tested
   - fact: `Source/ZECS001.cbl:652`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0032** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:38` (`Zecs001Service`): the RESP of INQUIRE at line 731 (paragraph 1312-CHECK-ETTL) is never tested
+- [ ] **WL-0032** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:45` (`Zecs001Service`): the RESP of INQUIRE at line 731 (paragraph 1312-CHECK-ETTL) is never tested
   - fact: `Source/ZECS001.cbl:731`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0033** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:39` (`Zecs001Service`): the RESP of XCTL at line 753 (paragraph 1320-CLEAR) is never tested
+- [ ] **WL-0033** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:46` (`Zecs001Service`): the RESP of XCTL at line 753 (paragraph 1320-CLEAR) is never tested
   - fact: `Source/ZECS001.cbl:753`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0034** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:40` (`Zecs001Service`): the RESP of LINK at line 795 (paragraph 1500-AUTHENTICATE) is never tested
+- [ ] **WL-0034** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:47` (`Zecs001Service`): the RESP of LINK at line 795 (paragraph 1500-AUTHENTICATE) is never tested
   - fact: `Source/ZECS001.cbl:795`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0035** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:41` (`Zecs001Service`): the RESP of READ at line 1011 (paragraph 3300-READ-FILE) is never tested
+- [ ] **WL-0035** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:48` (`Zecs001Service`): the RESP of READ at line 1011 (paragraph 3300-READ-FILE) is never tested
   - fact: `Source/ZECS001.cbl:1011`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0036** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:42` (`Zecs001Service`): the RESP of REWRITE at line 1023 (paragraph 3300-READ-FILE) is never tested
+- [ ] **WL-0036** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:49` (`Zecs001Service`): the RESP of REWRITE at line 1023 (paragraph 3300-READ-FILE) is never tested
   - fact: `Source/ZECS001.cbl:1023`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0037** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:43` (`Zecs001Service`): the RESP of GETMAIN at line 1104 (paragraph 3400-STAGE) is never tested
+- [ ] **WL-0037** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:50` (`Zecs001Service`): the RESP of GETMAIN at line 1104 (paragraph 3400-STAGE) is never tested
   - fact: `Source/ZECS001.cbl:1104`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0038** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:44` (`Zecs001Service`): the RESP of FREEMAIN at line 1180 (paragraph 3510-FREEMAIN) is never tested
+- [ ] **WL-0038** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:51` (`Zecs001Service`): the RESP of FREEMAIN at line 1180 (paragraph 3510-FREEMAIN) is never tested
   - fact: `Source/ZECS001.cbl:1180`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0039** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:45` (`Zecs001Service`): the RESP of WEB at line 1214 (paragraph 3600-SEND-RESPONSE) is never tested
+- [ ] **WL-0039** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:52` (`Zecs001Service`): the RESP of WEB at line 1214 (paragraph 3600-SEND-RESPONSE) is never tested
   - fact: `Source/ZECS001.cbl:1214`, units of work and handlers (field-tested (6 public / 0 private estates))
 - [ ] **WL-0040** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java` (`Zecs001Service`): the RESP of ASKTIME at line 1730 (paragraph 5600-CHECK-TTL) is never tested
   - fact: `Source/ZECS001.cbl:1730`, units of work and handlers (field-tested (6 public / 0 private estates))
@@ -199,34 +199,34 @@ _Resolution:_ Decide what a failed call does: the COBOL ignores it, so the Java 
 
 **`Source/ZECS003.cbl`**
 
-- [ ] **WL-0065** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:16` (`Zecs003Service`): the RESP of ASKTIME at line 196 (paragraph 1000-INITIALIZE) is never tested
+- [ ] **WL-0065** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:23` (`Zecs003Service`): the RESP of ASKTIME at line 196 (paragraph 1000-INITIALIZE) is never tested
   - fact: `Source/ZECS003.cbl:196`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0066** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:17` (`Zecs003Service`): the RESP of DELETE at line 272 (paragraph 3100-DELETE) is never tested
+- [ ] **WL-0066** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:24` (`Zecs003Service`): the RESP of DELETE at line 272 (paragraph 3100-DELETE) is never tested
   - fact: `Source/ZECS003.cbl:272`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0067** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:18` (`Zecs003Service`): the RESP of DELETE at line 279 (paragraph 3100-DELETE) is never tested
+- [ ] **WL-0067** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:25` (`Zecs003Service`): the RESP of DELETE at line 279 (paragraph 3100-DELETE) is never tested
   - fact: `Source/ZECS003.cbl:279`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0068** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:19` (`Zecs003Service`): the RESP of WEB at line 355 (paragraph 7100-WEB-OPEN) is never tested
+- [ ] **WL-0068** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:26` (`Zecs003Service`): the RESP of WEB at line 355 (paragraph 7100-WEB-OPEN) is never tested
   - fact: `Source/ZECS003.cbl:355`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0069** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:20` (`Zecs003Service`): the RESP of INQUIRE at line 378 (paragraph 7200-WEB-CONVERSE) is never tested
+- [ ] **WL-0069** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:27` (`Zecs003Service`): the RESP of INQUIRE at line 378 (paragraph 7200-WEB-CONVERSE) is never tested
   - fact: `Source/ZECS003.cbl:378`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0070** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:21` (`Zecs003Service`): the RESP of WEB at line 400 (paragraph 7200-WEB-CONVERSE) is never tested
+- [ ] **WL-0070** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:28` (`Zecs003Service`): the RESP of WEB at line 400 (paragraph 7200-WEB-CONVERSE) is never tested
   - fact: `Source/ZECS003.cbl:400`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0071** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:22` (`Zecs003Service`): the RESP of WEB at line 426 (paragraph 7300-WEB-CLOSE) is never tested
+- [ ] **WL-0071** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:29` (`Zecs003Service`): the RESP of WEB at line 426 (paragraph 7300-WEB-CLOSE) is never tested
   - fact: `Source/ZECS003.cbl:426`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0072** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:23` (`Zecs003Service`): the RESP of WEB at line 440 (paragraph 8000-SEND-RESPONSE) is never tested
+- [ ] **WL-0072** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:30` (`Zecs003Service`): the RESP of WEB at line 440 (paragraph 8000-SEND-RESPONSE) is never tested
   - fact: `Source/ZECS003.cbl:440`, units of work and handlers (field-tested (6 public / 0 private estates))
 
 **`Source/ZECSPLT.cbl`**
 
-- [ ] **WL-0073** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:14` (`ZecspltService`): the RESP of INQUIRE at line 77 (paragraph 1000-INQUIRE-START) is never tested
+- [ ] **WL-0073** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:21` (`ZecspltService`): the RESP of INQUIRE at line 77 (paragraph 1000-INQUIRE-START) is never tested
   - fact: `Source/ZECSPLT.cbl:77`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0074** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:15` (`ZecspltService`): the RESP of START at line 126 (paragraph 2200-START) is never tested
+- [ ] **WL-0074** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:22` (`ZecspltService`): the RESP of START at line 126 (paragraph 2200-START) is never tested
   - fact: `Source/ZECSPLT.cbl:126`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0075** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:16` (`ZecspltService`): the RESP of WRITEQ at line 135 (paragraph 2200-START) is never tested
+- [ ] **WL-0075** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:23` (`ZecspltService`): the RESP of WRITEQ at line 135 (paragraph 2200-START) is never tested
   - fact: `Source/ZECSPLT.cbl:135`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0076** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:17` (`ZecspltService`): the RESP of WRITE at line 141 (paragraph 2200-START) is never tested
+- [ ] **WL-0076** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:24` (`ZecspltService`): the RESP of WRITE at line 141 (paragraph 2200-START) is never tested
   - fact: `Source/ZECSPLT.cbl:141`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0077** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:18` (`ZecspltService`): the RESP of INQUIRE at line 153 (paragraph 3000-INQUIRE-END) is never tested
+- [ ] **WL-0077** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:25` (`ZecspltService`): the RESP of INQUIRE at line 153 (paragraph 3000-INQUIRE-END) is never tested
   - fact: `Source/ZECSPLT.cbl:153`, units of work and handlers (field-tested (6 public / 0 private estates))
 
 <a id="transaction-split"></a>
@@ -236,12 +236,12 @@ _Resolution:_ End the transaction at the SYNCPOINT the comment cites: a nested R
 
 **`Source/ZECS000.cbl`**
 
-- [ ] **WL-0078** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:92`: split the transaction here
-- [ ] **WL-0079** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:102`: split the transaction here
+- [ ] **WL-0078** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:99`: split the transaction here
+- [ ] **WL-0079** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:109`: split the transaction here
 
 **`Source/ZECS001.cbl`**
 
-- [ ] **WL-0080** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:112`: split the transaction here
+- [ ] **WL-0080** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:119`: split the transaction here
 
 <a id="interface-call"></a>
 ## Calls to other services (port)
@@ -250,7 +250,7 @@ _Resolution:_ Wire the called service (or a mock) in place of the placeholder.
 
 **`Source/ZECS001.cbl`**
 
-- [ ] **WL-0081** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:59`: Implement or mock interface call to: ZuidstckService
+- [ ] **WL-0081** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:66`: Implement or mock interface call to: ZuidstckService
 
 <a id="business-logic"></a>
 ## Business logic to port (port)
@@ -259,29 +259,29 @@ _Resolution:_ Port the cited paragraphs; the skeleton names the COBOL lines and 
 
 **`Source/ECS001.cbl`**
 
-- [ ] **WL-0082** `src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java:28`: Implement extracted business rules here
-- [ ] **WL-0083** `src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java:31`: implement from the program's business rules
+- [ ] **WL-0082** `src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java:35`: Implement extracted business rules here
+- [ ] **WL-0083** `src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java:38`: implement from the program's business rules
 
 **`Source/ZECS000.cbl`**
 
-- [ ] **WL-0084** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:63`: Implement extracted business rules here
-- [ ] **WL-0085** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:66`: implement from the program's business rules
-- [ ] **WL-0086** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:111`: port paragraph 9100-ABEND's logic
+- [ ] **WL-0084** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:70`: Implement extracted business rules here
+- [ ] **WL-0085** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:73`: implement from the program's business rules
+- [ ] **WL-0086** `src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java:118`: port paragraph 9100-ABEND's logic
 
 **`Source/ZECS001.cbl`**
 
-- [ ] **WL-0087** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:63`: Implement extracted business rules here
-- [ ] **WL-0088** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:66`: implement from the program's business rules
+- [ ] **WL-0087** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:70`: Implement extracted business rules here
+- [ ] **WL-0088** `src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java:73`: implement from the program's business rules
 
 **`Source/ZECS003.cbl`**
 
-- [ ] **WL-0089** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:34`: Implement extracted business rules here
-- [ ] **WL-0090** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:37`: implement from the program's business rules
+- [ ] **WL-0089** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:41`: Implement extracted business rules here
+- [ ] **WL-0090** `src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java:44`: implement from the program's business rules
 
 **`Source/ZECSPLT.cbl`**
 
-- [ ] **WL-0091** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:31`: Implement extracted business rules here
-- [ ] **WL-0092** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:34`: implement from the program's business rules
+- [ ] **WL-0091** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:38`: Implement extracted business rules here
+- [ ] **WL-0092** `src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java:41`: implement from the program's business rules
 
 <a id="configuration"></a>
 ## Target configuration (review)

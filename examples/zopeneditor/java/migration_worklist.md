@@ -44,11 +44,11 @@ _Resolution:_ Add the missing copybook / %INCLUDE member or record to the reposi
 
 **`COBOL/SAM2.cbl`**
 
-- [ ] **WL-0001** `src/main/java/com/gitgalaxy/modernized/service/CobolSam2Service.java:21`: CUST-REC was not found in the DATA DIVISION; carried as text
+- [ ] **WL-0001** `src/main/java/com/gitgalaxy/modernized/service/CobolSam2Service.java:28`: CUST-REC was not found in the DATA DIVISION; carried as text
 
 **`multiroot/sam/SAM2.cbl`**
 
-- [ ] **WL-0002** `src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam2Service.java:22`: CUST-REC was not found in the DATA DIVISION; carried as text
+- [ ] **WL-0002** `src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam2Service.java:29`: CUST-REC was not found in the DATA DIVISION; carried as text
 
 <a id="batch-utility"></a>
 ## Utility job steps to port (port)
@@ -82,15 +82,15 @@ _Resolution:_ Wire the called service (or a mock) in place of the placeholder.
 
 **`COBOL/SAM1.cbl`**
 
-- [ ] **WL-0010** `src/main/java/com/gitgalaxy/modernized/service/CobolSam1Service.java:21`: Implement or mock interface call to: Sam2Service
+- [ ] **WL-0010** `src/main/java/com/gitgalaxy/modernized/service/CobolSam1Service.java:28`: Implement or mock interface call to: Sam2Service
 
 **`COBOL/SAM1LIB.cbl`**
 
-- [ ] **WL-0011** `src/main/java/com/gitgalaxy/modernized/service/Sam1libService.java:19`: Implement or mock interface call to: Sam2Service
+- [ ] **WL-0011** `src/main/java/com/gitgalaxy/modernized/service/Sam1libService.java:26`: Implement or mock interface call to: Sam2Service
 
 **`multiroot/sam/SAM1.cbl`**
 
-- [ ] **WL-0012** `src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam1Service.java:20`: Implement or mock interface call to: Sam2Service
+- [ ] **WL-0012** `src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam1Service.java:27`: Implement or mock interface call to: Sam2Service
 
 <a id="business-logic"></a>
 ## Business logic to port (port)
@@ -99,41 +99,41 @@ _Resolution:_ Port the cited paragraphs; the skeleton names the COBOL lines and 
 
 **`COBOL/SAM1.cbl`**
 
-- [ ] **WL-0013** `src/main/java/com/gitgalaxy/modernized/service/CobolSam1Service.java:25`: Implement extracted business rules here
-- [ ] **WL-0014** `src/main/java/com/gitgalaxy/modernized/service/CobolSam1Service.java:47` (`CobolSam1Service#runBatch`): port the PROCEDURE DIVISION main line; return its RETURN-CODE
+- [ ] **WL-0013** `src/main/java/com/gitgalaxy/modernized/service/CobolSam1Service.java:32`: Implement extracted business rules here
+- [ ] **WL-0014** `src/main/java/com/gitgalaxy/modernized/service/CobolSam1Service.java:54` (`CobolSam1Service#runBatch`): port the PROCEDURE DIVISION main line; return its RETURN-CODE
   - fact: `JCL/RUN.jcl:147`, JCL job flow (open (5 public / 0 private estates))
 
 **`COBOL/SAM1LIB.cbl`**
 
-- [ ] **WL-0015** `src/main/java/com/gitgalaxy/modernized/service/Sam1libService.java:23`: Implement extracted business rules here
+- [ ] **WL-0015** `src/main/java/com/gitgalaxy/modernized/service/Sam1libService.java:30`: Implement extracted business rules here
 
 **`COBOL/SAM2.cbl`**
 
-- [ ] **WL-0016** `src/main/java/com/gitgalaxy/modernized/service/CobolSam2Service.java:17`: Implement extracted business rules here
-- [ ] **WL-0017** `src/main/java/com/gitgalaxy/modernized/service/CobolSam2Service.java:20`: implement from the program's business rules
+- [ ] **WL-0016** `src/main/java/com/gitgalaxy/modernized/service/CobolSam2Service.java:24`: Implement extracted business rules here
+- [ ] **WL-0017** `src/main/java/com/gitgalaxy/modernized/service/CobolSam2Service.java:27`: implement from the program's business rules
 
 **`PLI/MACSAMP.pli`**
 
-- [ ] **WL-0018** `src/main/java/com/gitgalaxy/modernized/service/MacsampService.java:16`: Implement extracted business rules here
+- [ ] **WL-0018** `src/main/java/com/gitgalaxy/modernized/service/MacsampService.java:23`: Implement extracted business rules here
 
 **`PLI/PSAM1.pli`**
 
-- [ ] **WL-0019** `src/main/java/com/gitgalaxy/modernized/service/Psam1Service.java:18`: Implement extracted business rules here
-- [ ] **WL-0020** `src/main/java/com/gitgalaxy/modernized/service/Psam1Service.java:24` (`Psam1Service#runBatch`): port the PROCEDURE DIVISION main line; return its RETURN-CODE
+- [ ] **WL-0019** `src/main/java/com/gitgalaxy/modernized/service/Psam1Service.java:25`: Implement extracted business rules here
+- [ ] **WL-0020** `src/main/java/com/gitgalaxy/modernized/service/Psam1Service.java:31` (`Psam1Service#runBatch`): port the PROCEDURE DIVISION main line; return its RETURN-CODE
   - fact: `JCL/RUNPSAM1.jcl:74`, JCL job flow (open (5 public / 0 private estates))
 
 **`PLI/PSAM1LIB.pli`**
 
-- [ ] **WL-0021** `src/main/java/com/gitgalaxy/modernized/service/Psam1libService.java:16`: Implement extracted business rules here
+- [ ] **WL-0021** `src/main/java/com/gitgalaxy/modernized/service/Psam1libService.java:23`: Implement extracted business rules here
 
 **`multiroot/sam/SAM1.cbl`**
 
-- [ ] **WL-0022** `src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam1Service.java:24`: Implement extracted business rules here
+- [ ] **WL-0022** `src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam1Service.java:31`: Implement extracted business rules here
 
 **`multiroot/sam/SAM2.cbl`**
 
-- [ ] **WL-0023** `src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam2Service.java:18`: Implement extracted business rules here
-- [ ] **WL-0024** `src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam2Service.java:21`: implement from the program's business rules
+- [ ] **WL-0023** `src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam2Service.java:25`: Implement extracted business rules here
+- [ ] **WL-0024** `src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam2Service.java:28`: implement from the program's business rules
 
 <a id="configuration"></a>
 ## Target configuration (review)

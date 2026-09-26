@@ -12,7 +12,7 @@
         "main"
       ],
       "program": null,
-      "sha256": "232d73ad171f1b18e2b74b07992dddd18360690bf2bb8ad2bf4de0a2be1c1e32"
+      "sha256": "6df76e13df4fd5a052b689578a0faee83949b2be2c25a2231f59a5b75b01519b"
     },
     "src/main/java/com/gitgalaxy/modernized/batch/BankdataJobConfig.java": {
       "calls": [
@@ -29,7 +29,7 @@
         "bankdataJob"
       ],
       "program": null,
-      "sha256": "95259e7638995250f1b30ca48fc5f0a1d2b5db997403951e590383041193cacd"
+      "sha256": "a5f692fddce8e3de028adebf951bab8752cf330fd044acd72e6203d69f25d2a3"
     },
     "src/main/java/com/gitgalaxy/modernized/batch/BatchJobController.java": {
       "calls": [],
@@ -50,7 +50,7 @@
         "run"
       ],
       "program": null,
-      "sha256": "0dfdb925df44ab01c4020d1423ff3ad19f82ec13898f1a410d503479ea863810"
+      "sha256": "aa932ef6d49554956ba5e6f2cbf6bc07eb6655531ca162e4952b169d17652606"
     },
     "src/main/java/com/gitgalaxy/modernized/batch/DatasetResolver.java": {
       "calls": [],
@@ -68,7 +68,7 @@
         "path"
       ],
       "program": null,
-      "sha256": "572dc0b0d274f70db63efa612fd96de2418aa1a76b24845b70723bb210372743"
+      "sha256": "6cd3cfad5cba96f010c0f2ef02397b9ef0cfac75eac0130fb2e1f33f00da7148"
     },
     "src/main/java/com/gitgalaxy/modernized/batch/Dd.java": {
       "calls": [],
@@ -86,7 +86,7 @@
       "kind": "other",
       "methods": [],
       "program": null,
-      "sha256": "0598b0da953619c07dd56b14027d8f44501eb6977335f5671d67826d17b5252e"
+      "sha256": "44f532a73924a2775945bfcacd34de7c397369cfcb7a5ae30c4f6be20c397a15"
     },
     "src/main/java/com/gitgalaxy/modernized/batch/JclConditions.java": {
       "calls": [],
@@ -105,7 +105,7 @@
         "tokens"
       ],
       "program": null,
-      "sha256": "50bb700f44c841649ed105a48dc008db26927aab6e52677b7f4674a6b791aafe"
+      "sha256": "4543527453b24e039d8f42fba32efc24bf257b7c2790e1dc1c5d97c9a242c6b4"
     },
     "src/main/java/com/gitgalaxy/modernized/batch/JclJobLauncher.java": {
       "calls": [],
@@ -124,7 +124,7 @@
         "names"
       ],
       "program": null,
-      "sha256": "a5e9e6a5191d9a237d526b5a3dcb7012bd99668b1707182622078b78cd563436"
+      "sha256": "74cca35963a6dffcc754b7b1d84dbb21a7fafe8fea2b6f29e7cf931d477a0c4f"
     },
     "src/main/java/com/gitgalaxy/modernized/batch/JclSteps.java": {
       "calls": [],
@@ -146,7 +146,7 @@
         "utility"
       ],
       "program": null,
-      "sha256": "e6a15fc85c5dd31c9fe7728c881d7ed0e41dbc7e585bc5f3e7a76a46252de782"
+      "sha256": "db100ed726c3149df236a33e32d6279dffa9d0bc494626dcf0d769af0c1b37da"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/AbndprocController.java": {
       "calls": [
@@ -166,7 +166,7 @@
         "link"
       ],
       "program": "src/base/cobol_src/ABNDPROC.cbl",
-      "sha256": "2bbf100c5bfa00e2805e4f26aed2d0d019e336228405b3fbef47f48f88e6eae3"
+      "sha256": "eb5c5f5630fcd02d469e5216bb607072220ee001b412f3bbc48acd328253a292"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/BankdataController.java": {
       "calls": [
@@ -186,7 +186,7 @@
         "executeBankdataBatch"
       ],
       "program": "src/base/cobol_src/BANKDATA.cbl",
-      "sha256": "fa91c657e79c63adf1aad3d02427834b3c37f30bba83e8b0541c656b0e6a65a8"
+      "sha256": "3a73239353396721280782640033f812ff545da4aa02c2377670286027dd5c2a"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Bnk1cacController.java": {
       "calls": [
@@ -206,7 +206,7 @@
         "transactionOCAC"
       ],
       "program": "src/base/cobol_src/BNK1CAC.cbl",
-      "sha256": "cadbc3d01bdd02d4e858b7baf755b35865a57b93a9fd2ef33954c15b7daa0a0e"
+      "sha256": "1f1e949e81fc0c59494fba3af432ae4d34db4833e0006177a5a5005a3953d638"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Bnk1ccaController.java": {
       "calls": [
@@ -226,7 +226,7 @@
         "transactionOCCA"
       ],
       "program": "src/base/cobol_src/BNK1CCA.cbl",
-      "sha256": "4433aa9eccc7dae13f1d8ffa7e61ef1bb619deb65d1cacaecfbc562eade3503f"
+      "sha256": "ca3c6ef30e060c038b2ab2af28c5068fdcb0a78dd2aede324542942f60add385"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Bnk1ccsController.java": {
       "calls": [
@@ -246,7 +246,7 @@
         "transactionOCCS"
       ],
       "program": "src/base/cobol_src/BNK1CCS.cbl",
-      "sha256": "ab59dab43973610d67ca7feba6d04c979fb31f94ca4b2ab00e8cd1c5202efa04"
+      "sha256": "4cd9d666804f909e704e61613377d8b31f3db928da0593fbe313f62b8953d14b"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Bnk1craController.java": {
       "calls": [
@@ -266,7 +266,7 @@
         "transactionOCRA"
       ],
       "program": "src/base/cobol_src/BNK1CRA.cbl",
-      "sha256": "069673bbc5112f6cc602f6761985adcaa39f3653988a7c4a93b3e62f24c748e3"
+      "sha256": "90e35d9a08c611e3159b1917c35593f6e0ee5b9615ff0481fa734c3270c6e16a"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Bnk1dacController.java": {
       "calls": [
@@ -286,7 +286,7 @@
         "transactionODAC"
       ],
       "program": "src/base/cobol_src/BNK1DAC.cbl",
-      "sha256": "ef15040d7f9a1ed7a05874ae805729286242cd30bcc12a92bd177e4198409788"
+      "sha256": "5bd283b7f57ae5d33582a904e83a1c6807da83237c7898cda9e9a0c0bd25a6d5"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Bnk1dcsController.java": {
       "calls": [
@@ -306,7 +306,7 @@
         "transactionODCS"
       ],
       "program": "src/base/cobol_src/BNK1DCS.cbl",
-      "sha256": "80a1f78e032390ab551c28ebf1df9bc5e20396f263ca044939a4f6dada1266b9"
+      "sha256": "8113bc47905172210663a43ab2b913a81597a7fef77540826298c3f4b808db51"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Bnk1tfnController.java": {
       "calls": [
@@ -326,7 +326,7 @@
         "transactionOTFN"
       ],
       "program": "src/base/cobol_src/BNK1TFN.cbl",
-      "sha256": "d92f2a2376fb979b733d7cbc278bc088d2ceac2c714d749b8e1692995962d22a"
+      "sha256": "487e7f420d9068f43ebc585409a1119f38305a807146b8c4c9635c000bc46b5c"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Bnk1uacController.java": {
       "calls": [
@@ -346,7 +346,7 @@
         "transactionOUAC"
       ],
       "program": "src/base/cobol_src/BNK1UAC.cbl",
-      "sha256": "2b8ea76cfa9fa5e9a895289509334eea4310eab3f53f7a19de4bce3dfdb40587"
+      "sha256": "b738fef28ee18e46e4f18ee4323407d04596a048e5bdefc67195fd5ede462dc4"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/BnkmenuController.java": {
       "calls": [
@@ -366,7 +366,7 @@
         "transactionOMEN"
       ],
       "program": "src/base/cobol_src/BNKMENU.cbl",
-      "sha256": "c65540d63f75ee9a28ae11ee81efb4b30e848665f61074274e55e4eaa29798f6"
+      "sha256": "ce54585fba4874315db4c63d59a7c3a7b3c2450397312d5aea928385209ccbf9"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Crdtagy1Controller.java": {
       "calls": [
@@ -386,7 +386,7 @@
         "transactionOCR1"
       ],
       "program": "src/base/cobol_src/CRDTAGY1.cbl",
-      "sha256": "4059353f252f60249cdf716db1e2f4f5e06fa9bad62fe7092b7a9b91708ea768"
+      "sha256": "a84dc5afa9b2e8a46efeef71d251b931df4049641d16861a40015b033f8b9e39"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Crdtagy2Controller.java": {
       "calls": [
@@ -406,7 +406,7 @@
         "transactionOCR2"
       ],
       "program": "src/base/cobol_src/CRDTAGY2.cbl",
-      "sha256": "959baed59477e4afc33ca0c649ae72f7b9ce5f1ccd3a59e03b4735da39de5c3c"
+      "sha256": "8465faa7bae8c203358e4e3fb2fa8ca1712e0d7c6df9188e8f987a823b367d18"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Crdtagy3Controller.java": {
       "calls": [
@@ -426,7 +426,7 @@
         "transactionOCR3"
       ],
       "program": "src/base/cobol_src/CRDTAGY3.cbl",
-      "sha256": "d8474dd2d9e47404f94bdef166992f4be569cd7769f0225ccad9ba5c12d1f809"
+      "sha256": "0a9e0eafb5b14014884876b931df2491557f83eced9062dcc4f53048ebce4a7d"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Crdtagy4Controller.java": {
       "calls": [
@@ -446,7 +446,7 @@
         "transactionOCR4"
       ],
       "program": "src/base/cobol_src/CRDTAGY4.cbl",
-      "sha256": "e3520279e3e78db29df4ae56567e3c9cf90a8a7d8d7350852e9dc5e653527420"
+      "sha256": "07977c2aa8ad05d068b05285b06ea1923417c0272de767dbc00555232d1f95a9"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Crdtagy5Controller.java": {
       "calls": [
@@ -466,7 +466,7 @@
         "transactionOCR5"
       ],
       "program": "src/base/cobol_src/CRDTAGY5.cbl",
-      "sha256": "d537b446b82ddce2849c60e8cb7e6bf0a70ec7fa4d817c0b3d07e865250083f3"
+      "sha256": "5cdbbf9cda6c704b6ac7f37df2ba3cce8c582ade85d28da382b04046a8cedaaf"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/CreaccController.java": {
       "calls": [
@@ -486,7 +486,7 @@
         "link"
       ],
       "program": "src/base/cobol_src/CREACC.cbl",
-      "sha256": "06bf9cf252bf606c8770f79bca13e4280a5b865d54279f4cce71301ab64d0bdb"
+      "sha256": "7f133db670e42ea4db1047c3216f54a6660a5bb1f26f4b0502d834a29bd11926"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/CrecustController.java": {
       "calls": [
@@ -506,7 +506,7 @@
         "link"
       ],
       "program": "src/base/cobol_src/CRECUST.cbl",
-      "sha256": "c2e76f661871fd8525f4e5166dd08ee23cc6cfd24588671401874e63c73b6f86"
+      "sha256": "d405d66f66964019ea7595d8003b974f1802d8137d4229a240b2ef3f998872da"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/CustctrlController.java": {
       "calls": [
@@ -526,7 +526,7 @@
         "link"
       ],
       "program": "src/base/cobol_src/CUSTCTRL.cbl",
-      "sha256": "f173458288939ebb1876ff6a97bdaa38f6643acb6c53a3d682644a4ccfe5745f"
+      "sha256": "65fd0f4d5f9ece99051c4f4522a95dae4c7051247665f7982d4c7fce6867eacf"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/DbcrfunController.java": {
       "calls": [
@@ -546,7 +546,7 @@
         "link"
       ],
       "program": "src/base/cobol_src/DBCRFUN.cbl",
-      "sha256": "9c05dec2afadbd1bfa403d0c1ab58db8ce9ed71eccbfe7831fe40f875153c7ff"
+      "sha256": "5255ccd1b69c91995f108c0eb309de616545f43d87d525e10d0b772a4ea63f60"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/DelaccController.java": {
       "calls": [
@@ -566,7 +566,7 @@
         "link"
       ],
       "program": "src/base/cobol_src/DELACC.cbl",
-      "sha256": "2089e8613d6313c24492afc235b4c250bfff5382942b2855ff7842331a9a952c"
+      "sha256": "689851723aecccb86df7dcab09d9045ed0800b184c506dc6785bf52d1343a174"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/DelcusController.java": {
       "calls": [
@@ -586,7 +586,7 @@
         "link"
       ],
       "program": "src/base/cobol_src/DELCUS.cbl",
-      "sha256": "4b190e3cfbfead8f0736c808a0953a1ed870f8f507e44f0245fac9de6acfc032"
+      "sha256": "ad21831b3c7f8df69c730050d3c5c3cd559a982184215e3e2b4a1201eb6bac9f"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/GetcompyController.java": {
       "calls": [
@@ -606,7 +606,7 @@
         "link"
       ],
       "program": "src/base/cobol_src/GETCOMPY.cbl",
-      "sha256": "87538c9f17ab618f68f1edfda59e33ca9baedf8738608fc3c657b4bdaf9eccb6"
+      "sha256": "0ddeaf4c8f8ee37abbe66c302d13fc7ef5df7786591cff8b42c60f2e6271e2d3"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/GetscodeController.java": {
       "calls": [
@@ -626,7 +626,7 @@
         "link"
       ],
       "program": "src/base/cobol_src/GETSCODE.cbl",
-      "sha256": "726db1fa0df1b245d9311dfb5f0d863eeff0b530124e8ca27a674cec34db7a84"
+      "sha256": "6e8d992f58601eecd0037e5abca9ebf42e386f54b34c6809ce34813b8a632718"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/InqaccController.java": {
       "calls": [
@@ -646,7 +646,7 @@
         "link"
       ],
       "program": "src/base/cobol_src/INQACC.cbl",
-      "sha256": "6afbc5878c2b64a09aa065fdcdb726f72e6b27a874829c9204f9f5e32d6c7407"
+      "sha256": "58e924225b6eaa6fba051425ece6ab76a1d5a71c1889b166b77caf6d7f128658"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/InqacccuController.java": {
       "calls": [
@@ -666,7 +666,7 @@
         "link"
       ],
       "program": "src/base/cobol_src/INQACCCU.cbl",
-      "sha256": "40fb5d850c21cfd91cd18680e58bbda1f9927d601a2f9879244e759450d5fb00"
+      "sha256": "89e3568eb05dea0ffc57cb47eb9f24b35c63e77fb9e9fde59cb58b996ff99e87"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/InqcustController.java": {
       "calls": [
@@ -686,7 +686,7 @@
         "link"
       ],
       "program": "src/base/cobol_src/INQCUST.cbl",
-      "sha256": "c784b15e8a49a9a0ad08c9b55cdf6884918d6b24c0b2fe3a69d96d31b75c91c8"
+      "sha256": "c9e889fa28905b12df170ddd78854473397a10900f36801a7ac42f90354df89c"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/UpdaccController.java": {
       "calls": [
@@ -706,7 +706,7 @@
         "link"
       ],
       "program": "src/base/cobol_src/UPDACC.cbl",
-      "sha256": "47af7dabef7ab6fd9f99fafa67fe866666060f4b0f86b7d922bc385bf9c5c528"
+      "sha256": "3a79c40cf357be9570b8f4d71e09a4ea874cf5da8affb794474691e855e7d9d7"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/UpdcustController.java": {
       "calls": [
@@ -726,7 +726,7 @@
         "link"
       ],
       "program": "src/base/cobol_src/UPDCUST.cbl",
-      "sha256": "e10f6604a2aa6ffa3d8044d012f73b487a8cc71e8b753bfb9ada314a09dbc8fd"
+      "sha256": "95146f75f0fa87dd33b9298f926f20c87042c0709240de628a1bdec761d3fdda"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/XfrfunController.java": {
       "calls": [
@@ -746,7 +746,7 @@
         "link"
       ],
       "program": "src/base/cobol_src/XFRFUN.cbl",
-      "sha256": "04ba78bfc3801c799a27f33ec2e518f88ee20a9b507dd041e5dd762048555618"
+      "sha256": "ed5a228a710c5afbd28420279c10704d8cefff42e5574151c57377a622b50a6d"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/AbndprocDfhcommareaDto.java": {
       "calls": [],
@@ -766,7 +766,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "934d12575e111722724199f76e34a95778c297588175e7b28e3d0a0e63bd8809"
+      "sha256": "99fc4bdc20e2ce524c768d1e4b079862da62756cc5baae4144232f31b2f4fcd5"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/AcctctrlDfhcommareaDto.java": {
       "calls": [],
@@ -792,7 +792,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "4398cb4a559d6030b9ccebc6a9b8978f72f645befdba918a387339873c8a6708"
+      "sha256": "95ff691705d60eacc767e146d80d8adb46a4951402aba0816927d2e22a729152"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Bnk1cacDfhcommareaDto.java": {
       "calls": [],
@@ -851,7 +851,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "0c68dfae1500e5dd908b38a4099c2f02aa7b9ca63f0d07344c378098e5a39820"
+      "sha256": "e7508d2893da78d6bfbbc9666b75434799d7b1723f37bb0e8bc535791229ba04"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Bnk1ccaDfhcommareaDto.java": {
       "calls": [],
@@ -892,7 +892,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "9a841cd5b4b404bcd8b4f4e80a935312af996c2c58b4e5c5aa90be6a2570d3a3"
+      "sha256": "3c033187ccd73e9e0304a397f61e65ede0618e285f6a15645c574d7bfc592d28"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Bnk1ccsDfhcommareaDto.java": {
       "calls": [],
@@ -943,7 +943,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "930e4358ac7bf052bc8eebc1adad0bd5f6c63f891c1f6207dbfc5d1e5b2844ee"
+      "sha256": "15767f83b8b00d585065267ac124b5a435c29949fd0c3ccca42f644b8db1a632"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Bnk1craDfhcommareaDto.java": {
       "calls": [],
@@ -1002,7 +1002,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "d30e45453673e0b4ee582aace6d77b57d6b160e14320f8a451129a54b228875e"
+      "sha256": "a1853c7f0240b29dd62e512e80f76a2789f851b8e302afc04b3a291382714dc2"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Bnk1dacDfhcommareaDto.java": {
       "calls": [],
@@ -1070,7 +1070,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "00e5d86abd1333d0b8979f95d5e718c70e8f5a16576ce69f750ff399a7186f4a"
+      "sha256": "20c0310eec7589acd22c1907f1dbbd6f4fce232bfbdca5d231e4908e2eb0f9a8"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Bnk1dcsDfhcommareaDto.java": {
       "calls": [],
@@ -1147,7 +1147,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "41cb62c84602ea9d15d916a3e1d01ac9a5088a338c436150bb3a466d097dcdb1"
+      "sha256": "75054ddc96130ab420e54bec5cc8b10456f756f797ad6c221ec10266dc2aa9a8"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Bnk1tfnDfhcommareaDto.java": {
       "calls": [],
@@ -1202,7 +1202,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "9e8c2ea594d91a223f8073b8bd93f1741abade8bad50d4cb040ebe971d38af61"
+      "sha256": "a5bd3f4b20e913c2db093d157b4dc187cf213d590f15b7c1ba9f1cc71c3e923f"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Bnk1uacDfhcommareaDto.java": {
       "calls": [],
@@ -1279,7 +1279,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "22a79f61943fe8ad66e069f784fb0da0b1cb1c754a288e4a6f6ee424e763d591"
+      "sha256": "fb24aaec276235f6dc60f757f15eb4d95ed5e40a3b420173ddff8b7e9ce1362c"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/CreaccDfhcommareaDto.java": {
       "calls": [],
@@ -1371,7 +1371,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "0578aae874ca6c4520395e3b4c3de971cc7b555b672690395f89d16f37fdc209"
+      "sha256": "2d797816af2bfabd0091172a7528c495d0cf61f7726db92ef908ef94d961689c"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/CrecustDfhcommareaDto.java": {
       "calls": [],
@@ -1479,7 +1479,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "02b1483cb59d576f5ca16c63800ad0e6234f8114b1d2983905831619d43c0b41"
+      "sha256": "5e4a1d6125ac014bac7897a587a344a012ee55695491e59f66788e1134efe116"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/CustctrlDfhcommareaDto.java": {
       "calls": [],
@@ -1505,7 +1505,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "b95ded8a51107800d3b1a49999dbf21057ce970dafcdace59d5bfb18f84e005e"
+      "sha256": "10fd1c10b39bbcb685fe74a193c0dcad7746e811ec627be4d7b49f4088875193"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/DbcrfunDfhcommareaDto.java": {
       "calls": [],
@@ -1559,7 +1559,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "ec34930adfa1eacc9cf21b04349d955a952009794d31b1748bf86239bd441d01"
+      "sha256": "6bf63f14062fb6cd66cbeb3c889b795749de8baa4e7aaedfb112f1807804391d"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/DelcusDfhcommareaDto.java": {
       "calls": [],
@@ -1613,7 +1613,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "fe1aa8ad38ca39afd35ebc96cd92764a0834be08e624d4be233c6524e8ec544e"
+      "sha256": "0bd10a3bef356d6498f8c45f9a48b617d318df79637e41f032a7ac9dd3a4a924"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/InqacccuDfhcommareaDto.java": {
       "calls": [],
@@ -1657,7 +1657,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "4d01d6ccb495f434d00000739be42bae1cb840032e7cfa6d22b9fe94bf269e93"
+      "sha256": "4b29ecb282c80d1f153fda8ebbf71a3f9396d3baf9d2fdab76624e484c3af8dc"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/InqcustDfhcommareaDto.java": {
       "calls": [],
@@ -1700,7 +1700,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "42e1747fd3a5f4f3d33703b6cba2c587c121cec45b68e3712c7f06b2f03e8a21"
+      "sha256": "79be367d8213602f338d7de607845b00a394b85ba079db7834d0d1ab68385f04"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/UpdaccDfhcommareaDto.java": {
       "calls": [],
@@ -1737,7 +1737,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "a1531ed2b88fc0f3d30db5bc047972721f29fe98ce8cc0223d0b1a51a5e38a12"
+      "sha256": "3de64b46e2ced1b8a43b46dd4f027d808c8172fd48c0601e08ae2ec3a8541a0a"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/UpdcustDfhcommareaDto.java": {
       "calls": [],
@@ -1766,7 +1766,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "cdc1c807a2e72becea067cc67dc5823c0d4415f32069f2f2b912aae4916c8501"
+      "sha256": "c9d007013a0703ff6837d39f755e32531d6b5e508da0be912695fb57a9b78be4"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/XfrfunDfhcommareaDto.java": {
       "calls": [],
@@ -1821,7 +1821,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "e31c236f28946b920454034208ca1307c0a2f8f7de56731479dd4659d43395d5"
+      "sha256": "7e68d8a3d71b618e47c1d46cff50e5d9957a5b166b83c0026e859239b87b6067"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1cacSubpgmParms.java": {
       "calls": [],
@@ -1848,7 +1848,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "74d2099165c4c5d9654b27c5e2b85faa1a942fcd3874aa56cf2d3c9047b14e27"
+      "sha256": "954bf1e2829fc8d2f9d5334a5bd3afd0d9e0539c94a962cb742713972c34230b"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1cacWsCommArea.java": {
       "calls": [],
@@ -1865,7 +1865,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "ff79c7ffbd4974089f0919d1cf8491cf686bdea82198aa7a54cb26402d42f77d"
+      "sha256": "faed3a72d6ee923249ace396e69582fc5975dfcf9f7f618d4932891ef211b35a"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1ccaInqacccuCommarea.java": {
       "calls": [],
@@ -1896,7 +1896,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "d6f86f3b2f94994503e06a031227959db62c5ff181d04206f79d3a5457804f70"
+      "sha256": "854c273fa96683c5af0d7d94d62229b139727f21a37cd0df136a656faf908e5c"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1ccaWsCommArea.java": {
       "calls": [],
@@ -1915,7 +1915,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "2f1f21e0541ce32762f7f7fb73275152b8cb51f9d579775a7ad08480b1faca8b"
+      "sha256": "7766a734a76a0af3bca6ce38c23abdc77bc9284739a8ba7716059ae1194ec6f1"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1ccsSubpgmParms.java": {
       "calls": [],
@@ -1938,7 +1938,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "b1219c8e1f518eee7e2f8f0a9b72dca38557085d12ba5996b85dcde21ebb34f4"
+      "sha256": "d489f3b97a21126636fb21cae491a6ccd06b0a9c4517d2f99b79e425ce5a0948"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1ccsWsCommArea.java": {
       "calls": [],
@@ -1953,7 +1953,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "52ecc731a5ffbe1c1a5bfa5191e3e4a2da98d872dce6bb27ba77d099e176a8ed"
+      "sha256": "dcaa11bddab292a7d5e344f3d3aed4d9a527539a3f54d88e45a977af70841646"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1craSubpgmParms.java": {
       "calls": [],
@@ -1978,7 +1978,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "b91cf0f5dcc78721948ded9010824535f725bad65d3090ce3504e1c967680d09"
+      "sha256": "9e8376fb0f92dd9a380569dca1a8dc556528e794ac60dc94ae2e3d78bad456d8"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1craWsCommArea.java": {
       "calls": [],
@@ -1994,7 +1994,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "0456e0d445d04aedcba53cf45ccf6c8e23ca2fe3a4b5f7948586d4bca122c0b4"
+      "sha256": "7c0509a89bf3f4803d3161042f09fa6e408faf9a1e0cc56828b81ffe18d22ec0"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacParmsSubpgm.java": {
       "calls": [],
@@ -2027,7 +2027,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "b446d10a8e495f67eb01199b8f538f50918cfd3d918197bbef137878ecf8ea66"
+      "sha256": "0809b985cca920cf2aaf2bc1f2691b587102a4adb8f2e697d7a95672c0ab360c"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java": {
       "calls": [],
@@ -2056,7 +2056,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "31a7e4c92cc0c943c4e1a882f6d28540d81c4bce37f7f7436e7e84fbaa07a1ad"
+      "sha256": "8527bf1f953f87cbd6344934d68443e7eea4d609a1ec80eea02d6f9c1d4733b3"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dcsDelcusCommarea.java": {
       "calls": [],
@@ -2079,7 +2079,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "3cc5cfb8682030beb9345bc568a7b3e8f0f511004ffeeecea086dcf5c98c96e6"
+      "sha256": "16ec1a604465de88444fa42c03f5dac288c0e41306fe222e23ebf3e6e2ac31db"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dcsInqcustCommarea.java": {
       "calls": [],
@@ -2107,7 +2107,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "e0116af7f87a4cbff53e7cdd98b75ae480c03135b06b1bf0b330de7affdcd8d1"
+      "sha256": "efca11dccbd065ca21c8e8d14c42feebc8fa573336619f6a75abec8f3bd59696"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dcsUpdcustCommarea.java": {
       "calls": [],
@@ -2130,7 +2130,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "e585b2ae677a2d8631363e09e8d4fac2a02269a88d3e6dab1955212ea7b4c1d5"
+      "sha256": "3fededcfa789ed7cb0e9fbf7f6c2499b1c8dc64f6bff8c6f9ff220a19c98db56"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dcsWsCommArea.java": {
       "calls": [],
@@ -2155,7 +2155,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "7665500ad0d61136821fc6bb7954858c21536660667ac5061219f48b41e3a986"
+      "sha256": "2668bf9809af8df0f29248e1a0d3f0ee937087ee0bd64e7342926b7d5d7ad155"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1tfnSubpgmParms.java": {
       "calls": [],
@@ -2179,7 +2179,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "2caa7ee941196fca71a9927e24f4ef251a10ab30e57a7cf2eb5467268babfa24"
+      "sha256": "f089d5f111f6d0f8b8abd59db3a70909f8b146bd8624f4fba5a2d6db6151ae7c"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1tfnWsCommarea.java": {
       "calls": [],
@@ -2195,7 +2195,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "2262d0d493837b5a430c88e7f0ed43aee61a7b680943be0e4c10f17a59d79f12"
+      "sha256": "38e96e9512a1c6d7d5e0183c9431fb6298aef1bb4d42be7ff77dd5bf7ed12612"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1uacDfhcommarea.java": {
       "calls": [],
@@ -2222,7 +2222,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "e85f2585195a568ad27d82b91fc27b0d90c575575a73b5bf0c5ff06b26d2f8f8"
+      "sha256": "8ffe9393e6eb2512e14c2ed43a5f4f3d17c4ea5196b9dbf20b0941bb0e103b0b"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/BnkmenuAbndinfoRec.java": {
       "calls": [],
@@ -2247,7 +2247,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "608fd8c8635bdbd5bf3e55ff22835e140c709310a51ba559e6260050c28cce7a"
+      "sha256": "d083128206811ed15dcf6e52e4fb3d97947e7c8b5e1b591fdc045e6cabbafdf5"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/BnkmenuCommunicationArea.java": {
       "calls": [],
@@ -2261,7 +2261,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "bd77e4930d4a94d48ddea2ae3d1d04be7a8d12b709ae9c7dd39a02df9113458d"
+      "sha256": "03e277cddb9686d0d5d7f39b22ff4185cf998f6f60e4bab91c7d88c85dd2c895"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy1ChannelIn.java": {
       "calls": [],
@@ -2275,7 +2275,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "be281fabba511696c456fd81164b2ee890bf457468e7971254aff7bdd474d74a"
+      "sha256": "44b8b4617e6a85779250cf5086255b7b3ec7e10ca946fb65ce213d80c16f8070"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy1ChannelOut.java": {
       "calls": [],
@@ -2289,7 +2289,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "56e7686c282b26e723b95e487d624617f9bf7faee1079e3c2e2fc9fbca571577"
+      "sha256": "f7febb5aca43f65abadac997ddf5ce699fc27a3ff2817ced48c7f89d449754f1"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy1WsContIn.java": {
       "calls": [],
@@ -2312,7 +2312,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "2e7913222197a41c0760fda67b75ef588303890d4505b81cb48b83bcf62be0c3"
+      "sha256": "a29a3ffc0aed1f6198e0a695f958e469632b5bc1fa258a9ce8367a43bc9089fc"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy2ChannelIn.java": {
       "calls": [],
@@ -2326,7 +2326,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "be6ff3619c477ab7ef153fae757466694e14481842aeb7e18ec943ce08b8ca1d"
+      "sha256": "c9226f5a0efd65c33496986922b4d7809ef7f9a35e62ba1edc7965cda4a2531a"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy2ChannelOut.java": {
       "calls": [],
@@ -2340,7 +2340,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "455961f4f2d6e2b5b881f2bd24d3a37ce0923862e0b289f91e4dea700d69c529"
+      "sha256": "47734453e45634128e67fba7d86e5f30121af468bd88023ec016c4b71551bb81"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy2WsContIn.java": {
       "calls": [],
@@ -2363,7 +2363,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "32f8a2aa6ebc9a671790f739c93ba95e677d28ab795a17dc51b6b3f44b45c76c"
+      "sha256": "76e28aefa08faa6eeb3be14efaad36cf8c08092d0879b633723ebe3add3fa811"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy3ChannelIn.java": {
       "calls": [],
@@ -2377,7 +2377,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "d992eadb0a73d1803ca922ca3a56524750a7c164611afaf5f3da18dd4f6f9b4a"
+      "sha256": "a430aad1843c106261554e1e9447ffc72678ac6a0e4d4d632bd0cf5245ff3b43"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy3ChannelOut.java": {
       "calls": [],
@@ -2391,7 +2391,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "f60b09ba8bcbbc6b5c7d95d15e9b2f012fa268dde17cc690c48037e6aedd5c26"
+      "sha256": "79bc921fdd9e83347a26bf2fcd8f987ebb2ed33d68cfef304e7dc29eb738d93f"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy3WsContIn.java": {
       "calls": [],
@@ -2414,7 +2414,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "630d3ee7a4468a02cfa873c2bb109d9d799e803e1ac3f7efaf2ae77543b8eb3d"
+      "sha256": "a9f16b686d9c82ed60414cf8ad2e0b011c03f0771d9905e0d1eef9adaa3127bd"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy4ChannelIn.java": {
       "calls": [],
@@ -2428,7 +2428,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "4c24eb3570e9b8d34d46cca5f445c7a1b034905e07e0955c9571232171612f85"
+      "sha256": "e315f692140bc069d706b22e83f7c8f52dedc522c59ce0a2454d1b5110f8aaed"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy4ChannelOut.java": {
       "calls": [],
@@ -2442,7 +2442,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "75600445f2ac4db8623efe61ef3f1bde7ae437f77cb3f6c88b5514c4d455571f"
+      "sha256": "d5443d54734d8ed804be3b56f0bf6c4289f5d2449c36c6aa7cecb5662935aec4"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy4WsContIn.java": {
       "calls": [],
@@ -2465,7 +2465,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "3fb8b882df87804e6bc89a622d06205217aced9a55b6e17ed88069f8347bdb80"
+      "sha256": "7284a60c2d198776c5dde4aade9ccdb37d5d36173751e0460c21302a93092d3a"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy5ChannelIn.java": {
       "calls": [],
@@ -2479,7 +2479,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "8304cf50c7c826fd98944d4ec75748dbfcaaafe8fa5d9776dfce5b75e86d21bd"
+      "sha256": "c1cb82779f859a0b838dece8cd23f116f104ea71b720f321e0aa1303b02cfbd4"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy5ChannelOut.java": {
       "calls": [],
@@ -2493,7 +2493,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "61983d99c5be5cab537bbad0fbe798901513fd8b1a3cad2ad391639afaae9e0b"
+      "sha256": "7f8b0e04b870adaca5a098590b9e3662ef5419f6679c20185f46030602439a19"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy5WsContIn.java": {
       "calls": [],
@@ -2516,7 +2516,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "64fa88d95a9dc0061a4f74d2a649012197d7d55b8dd5c2284dcd95c056f75281"
+      "sha256": "bf182946ee8f8bc93e9d24c253544d14f27d51046cc299fc16da2ce5f1f09373"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/CustctrlDfhcommarea.java": {
       "calls": [],
@@ -2536,7 +2536,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "ac8d9c1c3cf47d109ae30a897a8afcfe26c228c25f4a207c114e6b4507683845"
+      "sha256": "80617f1a6dedc49a6260b6311760c41feced6a8b3e6815a64b578c324997b2d5"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/GetcompyDfhcommarea.java": {
       "calls": [],
@@ -2550,7 +2550,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "d2e20315a8a8764ddf807aa9ab464ec552ea1de905361d96e09939ed8c8ec7cb"
+      "sha256": "d7ec33f08d7808e97030f18713779987972e6e451456155350dbea744ef8fecc"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/GetscodeDfhcommarea.java": {
       "calls": [],
@@ -2564,7 +2564,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "d60294f0688b30697194b0ccb398d940d7067d13f01db47ab5e987c4302c5f15"
+      "sha256": "a86c72dcbae22abbebf80898102e73c6edd5d9516c3c02c9b0401684db7da8f5"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/InqaccCommarea.java": {
       "calls": [],
@@ -2591,7 +2591,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "19e8a282162acb88a9090e0bc2c31db8983ca965b7def936c3b2ef0bd1706576"
+      "sha256": "1deea0b587e949da9f9ddf6ef066cb0e5db9187d968f39b35d3c17fe334d4cf2"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/UpdaccDfhcommarea.java": {
       "calls": [],
@@ -2617,7 +2617,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "134fd39992c682e2118331f4d45626e50171bee070ba818fdc8de33062d728cf"
+      "sha256": "aa0aa968e23a83b40808969afaaa341d66687583eadb6c5a65898bbfbc024805"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/db2/AccountRow.java": {
       "calls": [],
@@ -2642,7 +2642,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "2a9f91c3e63dd11d88f3383b35b52f02a45cf9fe1c1ffe8550775dd0c4562320"
+      "sha256": "bfc004c1d734a13b95ae9a5847741e154b0f2ae42d87bff07d50151ad2bff4a6"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/db2/ControlRow.java": {
       "calls": [],
@@ -2658,7 +2658,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "c5bd5b405645b0e219ceae19f5ccfe375a09dc1a46d6d6f7ceedabc2a0b4a3d7"
+      "sha256": "56b59b114ad1ef7c4cdd7a889127a3bb74ef3ddee2b0697d7cbcc50c21f9dddf"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/db2/ProctranRow.java": {
       "calls": [],
@@ -2680,7 +2680,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "c999d2bf613dac3fbdbee1552f0a1f90cff4ae9c1a98298a982a8c64047673e0"
+      "sha256": "fd0685a43a174f52c1193ffa9ca85904f21bd80a66ebf088b98d6458d29ff6fc"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1accScreen.java": {
       "calls": [],
@@ -2704,7 +2704,7 @@
         "screenValues"
       ],
       "program": null,
-      "sha256": "7bc2645d62bb9c604fdc5cb1eaa712bde6411368f5cc250e4ad332d5bcba73d7"
+      "sha256": "c531c3149c542c42096b13a203ae139e58adfe8067bca5d83a129e29c141c21f"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1caScreen.java": {
       "calls": [],
@@ -2743,7 +2743,7 @@
         "screenValues"
       ],
       "program": null,
-      "sha256": "1835051f96e91270614195dde78d37f0c7bbecd2ed2e41f3511e6bfdadaea861"
+      "sha256": "a2059ee43aa089c71d77ff00400d33f2ce909638a32d8d0f310883e4c93c0418"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1ccScreen.java": {
       "calls": [],
@@ -2781,7 +2781,7 @@
         "screenValues"
       ],
       "program": null,
-      "sha256": "89f17ac0dfebf0458cd8cf5dad30cf44902fd0827471a6dd692750dd9992db6e"
+      "sha256": "8a46e2d22aaac65099a4bc6f9b3a5693178d0e546d784ca0219a7bf5d9c560c1"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1cdScreen.java": {
       "calls": [],
@@ -2809,7 +2809,7 @@
         "screenValues"
       ],
       "program": null,
-      "sha256": "0055aa9d39d0f0ec1aa0128349cacbd8fe153e8ba0c76f68b73a3fdb5a31a686"
+      "sha256": "6797aad4cf4a7755fd9033ef011953f874b40c56f9d84efa18f0e9869fe32bb4"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1daScreen.java": {
       "calls": [],
@@ -2849,7 +2849,7 @@
         "screenValues"
       ],
       "program": null,
-      "sha256": "c076f5b4e00ac75c4eda7791230cb86e02036086344d66d11ba59a204c6236fa"
+      "sha256": "802a9e7e4fd2045215d86664982bcaf5d106cf8df2e74b6e730c1f826ef2cb48"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1dcScreen.java": {
       "calls": [],
@@ -2885,7 +2885,7 @@
         "screenValues"
       ],
       "program": null,
-      "sha256": "ad9b0edf39f89cbc4e2129e33493d934f2b6a06870b1e7a2c1bde9b4ab15acde"
+      "sha256": "7ee20c67b34982145e7b56f39d52a7d904b916d220f5f6611d74cb61b6f0be49"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1meScreen.java": {
       "calls": [],
@@ -2908,7 +2908,7 @@
         "screenValues"
       ],
       "program": null,
-      "sha256": "5eb0f0211fccb0663c4f641c4c742303ebe5beab36d77e330d52673d2eb88664"
+      "sha256": "38407986874c4c8fc4156dbfcc112dd777d615ed01e4213f2b4d2cd04f0406ad"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1tfScreen.java": {
       "calls": [],
@@ -2941,7 +2941,7 @@
         "screenValues"
       ],
       "program": null,
-      "sha256": "4ba303eb9abc08414aecee21b957d0955b141e6a138f595df5fa5fee785546db"
+      "sha256": "8e3212a196f46b6e6c0965ef3327a544f391880643fd8623f5d4cca2794826f6"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1uaScreen.java": {
       "calls": [],
@@ -2981,7 +2981,7 @@
         "screenValues"
       ],
       "program": null,
-      "sha256": "806be33ce0cbdfb1458421637aa99e7619d241a32a586036c4cf00e46ca60ef7"
+      "sha256": "85dcd1cc3f8e914a90344afefb726718a63413bf2cbd2f4e8872bddb9f6738cc"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/ScreenCell.java": {
       "calls": [],
@@ -3002,7 +3002,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "04a2e6192b02a3fd8219b52d5cccf7cb03a7ee0056872969d8b39a821b8a73f6"
+      "sha256": "1a7554bc7a1ac57d7115edede007a2540dec6554a61410b4a5e28f3365e4549a"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/ScreenField.java": {
       "calls": [],
@@ -3027,7 +3027,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "23c7370baae676f8f22e77259ed81fafa106c5085e3b87877836baf811f8f4e9"
+      "sha256": "3c647e657fd01122680524012aa816c5f9079b2e0e14fa4543b7cfd6144e52e0"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/ScreenModel.java": {
       "calls": [],
@@ -3041,7 +3041,7 @@
         "screenCells"
       ],
       "program": null,
-      "sha256": "81cb3f51bb2a92224071d99bee4e5797eff5725fa06591744003b3c10df116bf"
+      "sha256": "dba6fca83fedcf63c4762b7bdd899ed5545fea636f4c0ad333b9820d6223e4d5"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/BankdataParmBuffer.java": {
       "calls": [],
@@ -3162,7 +3162,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "837dab4f769d3a23b3f2260253ffd4800f8ecb775a1f412a34ed151f4c6aa4fd"
+      "sha256": "c5c46d89392adfb5618902ffaa1ab02920765cdb96e2b6516caa156b2c56a6b5"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/BnkmenuAbndinfoRec.java": {
       "calls": [],
@@ -3191,7 +3191,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "afdc236e2366608991c93440934c8ae9e0dc07bf8678024fa022f3561c3de1c4"
+      "sha256": "3c8fe850612961ab92b1c0691bbdca49026496e84670d66755e65fc3b1cdde22"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/Crdtagy1AbndinfoRec.java": {
       "calls": [],
@@ -3226,7 +3226,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "da26fee2c3831efda269f4c523961c7c079abb3e5f6952eb4a73b3c3827b4c1f"
+      "sha256": "443a355022912a0bc9d0f76e13ebc722f4a07f73372f8357f93a67b5bc664215"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/Crdtagy2AbndinfoRec.java": {
       "calls": [],
@@ -3261,7 +3261,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "ae8b03dc4405eb043d0032abb14f518afe0ba506df72f2601815a9f8480190ea"
+      "sha256": "9cf2d9ef36401dbec6da017f38fecfa0907a22f977c7fb6270b416b61f765add"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/Crdtagy3AbndinfoRec.java": {
       "calls": [],
@@ -3296,7 +3296,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "819d64ded0a9b2ed83be663c911645488067b36f09ee634fadeef9999c99c0b6"
+      "sha256": "bb883e0ca4f6e28e37e5dcb543589082faaed48945c01349e62a6627978c948d"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/Crdtagy4AbndinfoRec.java": {
       "calls": [],
@@ -3331,7 +3331,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "0b6e87cdb2a581ecf74cb44c394f76b987c5b6749689b6be0daeb813708d6ea2"
+      "sha256": "917d31df9f1c45f036540143a364eba7640ba0c04eb5778c7486ad074816eb6f"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/Crdtagy5AbndinfoRec.java": {
       "calls": [],
@@ -3366,7 +3366,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "23ad485e9ff1704c94a0432dca70339a596fcc3f45b08c932b7a9d51c10aa8c4"
+      "sha256": "341991b7c978d2e9fd08aadf85669e42fd40375206360f4001802ce715854c35"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/DelaccAbndinfoRec.java": {
       "calls": [],
@@ -3417,7 +3417,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "3bb7545a66b71d95ab4e9fb6c5f136e12dfba6b89dd902de7800b5f4272a6493"
+      "sha256": "3761a6a748ad4c99bb3954cab6362d4181e4ba68df3060029ca54ebb4e814b3c"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/InqaccAbndinfoRec.java": {
       "calls": [],
@@ -3467,7 +3467,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "416fb17122e304a8169d180560bee3aa9fe06536b1583929f006b34013054e88"
+      "sha256": "bfa63ff1efd6f68427b70caa0b8ff359401151e32001e6eca05af2181786f0a8"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/vsam/CobolRecords.java": {
       "calls": [],
@@ -3493,7 +3493,7 @@
         "zoned"
       ],
       "program": null,
-      "sha256": "dfafaeac54f1249c5795b7bc98432ed7189535b4e2a19d8e0a1db0d11f04c5f7"
+      "sha256": "c17fecbda436dc40d85c1621789b46ae0feaa28023ff85a5bfb46990b895811c"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/vsam/OutputData.java": {
       "calls": [],
@@ -3516,7 +3516,7 @@
         "toRecord"
       ],
       "program": null,
-      "sha256": "a7404d5b547006713faa46dd045dce35bcf16c6a0d04352bd2f42121ada96d4e"
+      "sha256": "a4812a208c96ae9c991e458b21635d1cbace2f20cabd5bc87df5070e1a2d20c1"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/vsam/OutputDataKey.java": {
       "calls": [],
@@ -3531,7 +3531,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "6548926ca9465dabda7ba58da9581840b8fa44264dc535a8e15f715285798a8b"
+      "sha256": "fb0fd617cc7a59d07e139349fd4e127dcb9c2d19e1b0ee8b54bac66f0cfcee24"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/vsam/WsAbndArea.java": {
       "calls": [],
@@ -3558,7 +3558,7 @@
         "toRecord"
       ],
       "program": null,
-      "sha256": "b92b2e52b100330c66b5acc5e1d268c8dcf735ec2f412f076991595179ec23b5"
+      "sha256": "180524987f2fdc886d98c10bef155148fef86a8d12be57eecba5491982a287ef"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/vsam/WsAbndAreaKey.java": {
       "calls": [],
@@ -3573,7 +3573,7 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "a5ed92a1efdb41160e724e3abcbd2cf293162baa981f58845c05cc8512aaec52"
+      "sha256": "31d8382abfe95af9eeae4e7e0a4c0a5d53b9cf935dfcc17fc54584dc882514f6"
     },
     "src/main/java/com/gitgalaxy/modernized/exception/CicsAbendException.java": {
       "calls": [],
@@ -3594,7 +3594,7 @@
         "getSite"
       ],
       "program": null,
-      "sha256": "bd4d9f4050d64b86aad83a5fe6d711ef8e57d50282cfabb892c72b17e21a8f47"
+      "sha256": "7a4b43c853981a4a14f34e31430f86f8ae559fa94826baebb78ccad3aada5ab5"
     },
     "src/main/java/com/gitgalaxy/modernized/exception/CicsConditionException.java": {
       "calls": [],
@@ -3615,7 +3615,7 @@
         "getSite"
       ],
       "program": null,
-      "sha256": "8764429fc958fc0c0338a31ee02f64734f264e4d776c1bfbabb24791c10329e3"
+      "sha256": "4681ba93a21c503978ec2fa20d11e478940bea1b3f2c14ce370b1bbadef2b079"
     },
     "src/main/java/com/gitgalaxy/modernized/exception/UnitOfWorkRollbackException.java": {
       "calls": [],
@@ -3634,7 +3634,7 @@
         "getSite"
       ],
       "program": null,
-      "sha256": "b2c9d66ef03fb26d4f4d6701a08c460a02fdaec16cce83d45f474dc5eaa8583e"
+      "sha256": "6627df9c7f31a53445901ed03f40f50663d1ae5e8d1c871ea5b5b5d35c92ed86"
     },
     "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java": {
       "calls": [],
@@ -3667,7 +3667,7 @@
         "updateL992Xfrfun"
       ],
       "program": null,
-      "sha256": "9278c795b7bf0bd4c90feda9527082e517f737bb63911a8f8848e3ddf4cfaca3"
+      "sha256": "f092a0cef10107e4ea36b1044e5ecb593e5f66145deab7cd3d4d4fbcc2c95320"
     },
     "src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java": {
       "calls": [],
@@ -3691,7 +3691,7 @@
         "updateL694Creacc"
       ],
       "program": null,
-      "sha256": "4d9854030fc910c5781e33f47375ec80d9477b56f750a54cee685cdbc3350eb0"
+      "sha256": "07f98fbf3457d17111e10663b9cecb580af546e028269a842e5acb50f7946768"
     },
     "src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java": {
       "calls": [],
@@ -3713,7 +3713,7 @@
         "insertL969Creacc"
       ],
       "program": null,
-      "sha256": "23058a29a2954054ed00f814814c30c72c04771cceacc6dacd28e3d682f3265e"
+      "sha256": "8ff0c3cd3e7a08581b4d6d1265777291207835a567b3b7d790b56e4861c04da1"
     },
     "src/main/java/com/gitgalaxy/modernized/repository/vsam/OutputDataRepository.java": {
       "calls": [
@@ -3727,7 +3727,7 @@
       "kind": "repository",
       "methods": [],
       "program": null,
-      "sha256": "d124a6dff024ac3f1aff36224dbcd227b219ec9e51bce6f5e7d764dd2875f520"
+      "sha256": "bac46e52a78991d8300678006697751942a0b2078f8318248749a190c2366cd8"
     },
     "src/main/java/com/gitgalaxy/modernized/repository/vsam/WsAbndAreaRepository.java": {
       "calls": [
@@ -3741,7 +3741,7 @@
       "kind": "repository",
       "methods": [],
       "program": null,
-      "sha256": "cd91f8c6e33e4f429b28c2e995e798bb93cd180972896ba17b0c2efd8419c834"
+      "sha256": "d22bb18a7b3c017248b7fa7048aeeadd07ad2063096c0b3ae09a87d4ae87c025"
     },
     "src/main/java/com/gitgalaxy/modernized/service/AbndprocService.java": {
       "calls": [
@@ -3761,7 +3761,7 @@
         "writeAbndfile"
       ],
       "program": "src/base/cobol_src/ABNDPROC.cbl",
-      "sha256": "08f657507dbd655e4df25a7b1519f831b152186bc53a4e2dd322d96baf01d383"
+      "sha256": "3d2142ba90b5820814e403014eaaf66cd2785db69fdb8bac9a39526e2439ad53"
     },
     "src/main/java/com/gitgalaxy/modernized/service/AcctctrlService.java": {
       "calls": [
@@ -3779,7 +3779,7 @@
         "executeAcctctrl"
       ],
       "program": "src/base/cobol_src/ACCTCTRL.cbl",
-      "sha256": "9ac40890029ce5f8032f3de7add2fab0ba8e56498a44dba98d75d8488b618000"
+      "sha256": "d65f0334d51acd48a17537f4fdf231926ebf84f85ca88d1c0704d25ad11587ae"
     },
     "src/main/java/com/gitgalaxy/modernized/service/BankdataService.java": {
       "calls": [
@@ -3803,7 +3803,7 @@
         "runBatch"
       ],
       "program": "src/base/cobol_src/BANKDATA.cbl",
-      "sha256": "59ce9439726bbb21ce0b943ddd742f687066cdee9a287b3886d5d52a2520f15d"
+      "sha256": "e37a1c41e90faf0014f209798c0f9215dc20c1bd92e22e57a2e98a73e3276108"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Bnk1cacService.java": {
       "calls": [
@@ -3835,7 +3835,7 @@
         "submitBnk1ca"
       ],
       "program": "src/base/cobol_src/BNK1CAC.cbl",
-      "sha256": "2fb3292eb43ad3ee68f101aa264725f2be764b891d4ee1ce07d73c5253fcbfc1"
+      "sha256": "a7c5c71cebae51bc2889b89eba1b60ae055bb91cf13d4de56d4820d0d13b30af"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java": {
       "calls": [
@@ -3867,7 +3867,7 @@
         "submitBnk1acc"
       ],
       "program": "src/base/cobol_src/BNK1CCA.cbl",
-      "sha256": "1c43727454c3cfe70e4b9f2b0e280d0630ccb17c1edd5803992f73d49132f0f1"
+      "sha256": "804d5f9b2ebeea19a07893ebfb9837635ebf058a90c1a58eedd12b9c01404acc"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java": {
       "calls": [
@@ -3905,7 +3905,7 @@
         "submitBnk1cc"
       ],
       "program": "src/base/cobol_src/BNK1CCS.cbl",
-      "sha256": "252730c5dea94af1f9bfeff9306bc9c1e2c3f062e8d04acc53ce3c6de3548e71"
+      "sha256": "162719671037eaf3357b3aef99a3780aad57e358b43c4028ab298989fbd516bc"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java": {
       "calls": [
@@ -3937,7 +3937,7 @@
         "submitBnk1cd"
       ],
       "program": "src/base/cobol_src/BNK1CRA.cbl",
-      "sha256": "5395b6a669f1b88b0dbd435bf864cf4c5672a4f657f9374db36604614f6ad4c0"
+      "sha256": "a1b25dc81e0121392589c17f126ad4bab0e441e794eac8e450661687b6f152c3"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java": {
       "calls": [
@@ -3972,7 +3972,7 @@
         "submitBnk1da"
       ],
       "program": "src/base/cobol_src/BNK1DAC.cbl",
-      "sha256": "449471398edef81b1c3f31bb65e09b6cafe19f7b166ca33542c6123c3c4baad7"
+      "sha256": "0b2d024249c0d79b159e6913620b3e18aee4d6c2a03f8ebe95fb12c2048772ce"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java": {
       "calls": [
@@ -4017,7 +4017,7 @@
         "submitBnk1dc"
       ],
       "program": "src/base/cobol_src/BNK1DCS.cbl",
-      "sha256": "8e57f75384f2954f116611bb9bd26000ffe865c22287f35881a541724317cb98"
+      "sha256": "6a5843f4a1eb6ec264e67f50c856e1dd5b6562e17fe8ce3a976bbe889c7f3d2c"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java": {
       "calls": [
@@ -4049,7 +4049,7 @@
         "submitBnk1tf"
       ],
       "program": "src/base/cobol_src/BNK1TFN.cbl",
-      "sha256": "748b8eda1e33e625d538c83bfdf997a583345673e1d2469c5d35904932bb93c9"
+      "sha256": "f073f0323f962b2d2a557b984eb28c899346acd7cd02555936daaf5dca3be7ce"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java": {
       "calls": [
@@ -4085,7 +4085,7 @@
         "submitBnk1ua"
       ],
       "program": "src/base/cobol_src/BNK1UAC.cbl",
-      "sha256": "98844c43f19f38956fde6fb60679a5a8777ed22800cf0d72e621db03b176ac79"
+      "sha256": "2e1ca18ef25bca7d0dceed58c30976254136ffefede605d76619172d751db7cf"
     },
     "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java": {
       "calls": [
@@ -4121,7 +4121,7 @@
         "submitBnk1me"
       ],
       "program": "src/base/cobol_src/BNKMENU.cbl",
-      "sha256": "e5c12b73661dd28140304e0d65edb471dcc45cec5faa2ea3a1b27fd4526fc808"
+      "sha256": "38207ba71a06be0a07b423bc23d15039237e6f0ce37202c799eb5f5010ef7523"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java": {
       "calls": [
@@ -4142,7 +4142,7 @@
         "handleTransaction"
       ],
       "program": "src/base/cobol_src/CRDTAGY1.cbl",
-      "sha256": "d1e2e4f1572eebcd7a36ac56e0995a6f80fd4c9ff51d2091a1875874c0f8b663"
+      "sha256": "ef4b077385164c3ce3156aafe12128cd02984c861de2b6931d18a048c8f5022e"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java": {
       "calls": [
@@ -4163,7 +4163,7 @@
         "handleTransaction"
       ],
       "program": "src/base/cobol_src/CRDTAGY2.cbl",
-      "sha256": "e790e39d754395c5f4b04892a3b9c8dd8c1fde4eb6d90c84de426ffda4650173"
+      "sha256": "9c199dadb74c0b41007e96360911e124ebc45d80724ffe660b32cf69c85f358b"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java": {
       "calls": [
@@ -4184,7 +4184,7 @@
         "handleTransaction"
       ],
       "program": "src/base/cobol_src/CRDTAGY3.cbl",
-      "sha256": "267c32bda24b3d7978f73c161a9241c63ab8bc840a9fd49fb7da329de2eb2eaa"
+      "sha256": "fd15ff0e276ce77171dccc6de316210f50c54113e17102f326f36ff7eb4d2927"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java": {
       "calls": [
@@ -4205,7 +4205,7 @@
         "handleTransaction"
       ],
       "program": "src/base/cobol_src/CRDTAGY4.cbl",
-      "sha256": "ba92d7406df3157b499a8537c575dd4b96dbb494a2649edf80ed4817b48561d4"
+      "sha256": "7734733130b527794326d9cf891e1b25dc8aa4213e3a03cbc011996de8fdea40"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java": {
       "calls": [
@@ -4226,7 +4226,7 @@
         "handleTransaction"
       ],
       "program": "src/base/cobol_src/CRDTAGY5.cbl",
-      "sha256": "31d2b689ad820c56eda0cf521a7b4a873ba2caff7e75fbbb0f1190673a0288a3"
+      "sha256": "67258840571b4e1d73760bdd63162ecb6083be050f0e75991b3ffe6322888870"
     },
     "src/main/java/com/gitgalaxy/modernized/service/CreaccService.java": {
       "calls": [
@@ -4267,7 +4267,7 @@
         "linkInqcust"
       ],
       "program": "src/base/cobol_src/CREACC.cbl",
-      "sha256": "dd8902334dce0a3deec551a370204cea985217da54fce8b26a25f7dc61b6758a"
+      "sha256": "2f74998bd34fc0b7f6dff4ee298543c49ffecfa9d8df629c5a33d7c6508323b8"
     },
     "src/main/java/com/gitgalaxy/modernized/service/CrecustService.java": {
       "calls": [
@@ -4295,7 +4295,7 @@
         "writeCustomer"
       ],
       "program": "src/base/cobol_src/CRECUST.cbl",
-      "sha256": "1378b0d4f31e6f513a77a6d3936fbad1438da383df1024eaf9da01966a2aab2f"
+      "sha256": "1e8dff07afa89fe181d0084f25cd029727000936f5cbca9a783dd9f558a04cd9"
     },
     "src/main/java/com/gitgalaxy/modernized/service/CustctrlService.java": {
       "calls": [
@@ -4315,7 +4315,7 @@
         "readCustomer"
       ],
       "program": "src/base/cobol_src/CUSTCTRL.cbl",
-      "sha256": "be302b486764db2b735a1d0b346f70f1a02617f14a07c0901803d314a03d11b1"
+      "sha256": "134013fdcf3f64faa596cc08a493e16b6a453f98c006617365f4ad013dcd8552"
     },
     "src/main/java/com/gitgalaxy/modernized/service/DbcrfunService.java": {
       "calls": [
@@ -4346,7 +4346,7 @@
         "rollbackL750"
       ],
       "program": "src/base/cobol_src/DBCRFUN.cbl",
-      "sha256": "09a1e8072b051d3aa822ac84ad96146ce5369bfe883a24bbeaa86321d95be179"
+      "sha256": "571309f557884c81cbdd53209cd4f5871736cd7eb5069f34d409bec4a4f97de2"
     },
     "src/main/java/com/gitgalaxy/modernized/service/DelaccService.java": {
       "calls": [
@@ -4372,7 +4372,7 @@
         "handleLink"
       ],
       "program": "src/base/cobol_src/DELACC.cbl",
-      "sha256": "0d5f4a9d986e3d21a71e7901c4591363491500d6458d8bb0d43ac9346aaa6206"
+      "sha256": "748be588b2e3096779fc4724684fa7c6f9009b5d07a081218984a595472abcc2"
     },
     "src/main/java/com/gitgalaxy/modernized/service/DelcusService.java": {
       "calls": [
@@ -4412,7 +4412,7 @@
         "readCustomer"
       ],
       "program": "src/base/cobol_src/DELCUS.cbl",
-      "sha256": "388d314cb09985fa85eb42299db05942189286e3b9abbcd57f24aa801b975b3f"
+      "sha256": "2dac943adc728da408c0d52604edd660cc7cb953913f7b24bae8bb1a340bab58"
     },
     "src/main/java/com/gitgalaxy/modernized/service/GetcompyService.java": {
       "calls": [],
@@ -4427,7 +4427,7 @@
         "handleLink"
       ],
       "program": "src/base/cobol_src/GETCOMPY.cbl",
-      "sha256": "9fe0847b0aa1328eb789b3dfd84df69f29a44f029d0dae561c268f8a92cc7add"
+      "sha256": "4d04249c3bc424c377a12e18a53fc5ae9bb330c794ac47cf2cf73015961c88a3"
     },
     "src/main/java/com/gitgalaxy/modernized/service/GetscodeService.java": {
       "calls": [],
@@ -4442,7 +4442,7 @@
         "handleLink"
       ],
       "program": "src/base/cobol_src/GETSCODE.cbl",
-      "sha256": "d752c47a676cdd0beb868f1d61d35d4b946fde9ee9a23345dcbd1295e49e61cf"
+      "sha256": "8d4d8daa92e803f5d31d9c317a49c7a84afc830eb55e58beeced55b5fe1ffe91"
     },
     "src/main/java/com/gitgalaxy/modernized/service/InqaccService.java": {
       "calls": [
@@ -4477,7 +4477,7 @@
         "rollbackL682"
       ],
       "program": "src/base/cobol_src/INQACC.cbl",
-      "sha256": "5e6253c17be5a9ef8dc1af135ad6552b3352fa049a05454198cb4ebe6bab2551"
+      "sha256": "c715f1850f1f913860514489667b95a5f4310882ce2b0339a7ea1ef876c22b91"
     },
     "src/main/java/com/gitgalaxy/modernized/service/InqacccuService.java": {
       "calls": [
@@ -4515,7 +4515,7 @@
         "rollbackL738"
       ],
       "program": "src/base/cobol_src/INQACCCU.cbl",
-      "sha256": "1800abd10dbbfdaea62326b8e7eeda2dfb1c4950c8977319be023dfb99b686d3"
+      "sha256": "68311c4d1c3d23e2a70636aff98a80c44d39b402f555a6c4e669adc17a4b98ea"
     },
     "src/main/java/com/gitgalaxy/modernized/service/InqcustService.java": {
       "calls": [
@@ -4544,7 +4544,7 @@
         "rollbackL472"
       ],
       "program": "src/base/cobol_src/INQCUST.cbl",
-      "sha256": "fc88c6c1a3651cf65c1d3e99eedf51fc8b375575c672168cc48f96887e97d9bb"
+      "sha256": "49494be212957b7fb897fc0c80a858d944bc61c3841299d68ac7a9ee3c2ffb5e"
     },
     "src/main/java/com/gitgalaxy/modernized/service/UpdaccService.java": {
       "calls": [
@@ -4563,7 +4563,7 @@
         "handleLink"
       ],
       "program": "src/base/cobol_src/UPDACC.cbl",
-      "sha256": "d747e026c035e30a58282d38b934b611ee48b79fc20c92cdeb66c31f256cfd8e"
+      "sha256": "9ea076da0c9b3c231ab25402ead9dd008fd5d22adc1951374b254e557fe19974"
     },
     "src/main/java/com/gitgalaxy/modernized/service/UpdcustService.java": {
       "calls": [
@@ -4584,7 +4584,7 @@
         "rewriteCustomer"
       ],
       "program": "src/base/cobol_src/UPDCUST.cbl",
-      "sha256": "368b4f3dcd6237afd0fdf19d7b804af4a273e244d8161abd6e37e692bec50643"
+      "sha256": "778595b8e18928fd63160e275422c4449cb16c2b00e351648312664c5a945043"
     },
     "src/main/java/com/gitgalaxy/modernized/service/XfrfunService.java": {
       "calls": [
@@ -4647,7 +4647,7 @@
         "rollbackL826"
       ],
       "program": "src/base/cobol_src/XFRFUN.cbl",
-      "sha256": "dca9b3e3cfa829f5fa628f4de399a64786d17ed6869249b9d28c8487bf3ad67f"
+      "sha256": "f7ce260a4d12253bf3a7d3ed5feff6f1723ce18bad20e35f397cfe4f26d4d6a4"
     },
     "src/main/java/com/gitgalaxy/modernized/util/EbcdicDecoderUtil.java": {
       "calls": [],
@@ -4662,7 +4662,7 @@
         "unpackComp3"
       ],
       "program": null,
-      "sha256": "520091ea864d66d59f2b02c5b62d725e0f2f137d01e4f41ff14ba92a06ccc2e2"
+      "sha256": "f9bf62f55bcca4c66115180c88d95b12a1b1f998daae76d21b558f30c1447c81"
     },
     "src/main/java/com/gitgalaxy/modernized/web/CicsExceptionAdvice.java": {
       "calls": [],
@@ -4678,7 +4678,7 @@
         "handleRollback"
       ],
       "program": null,
-      "sha256": "bcc8815d5c94dd1d2ffa7ec634dfb62aeec3752365517ec7ab07f2038a00aa50"
+      "sha256": "04f56d60cc4077d1db88e11c4c7702544bcab34b2f8ad55a754acf6331207ce6"
     }
   },
   "generated_from": {

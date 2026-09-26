@@ -2,8 +2,11 @@
 
 - **Source:** [https://github.com/cicsdev/cics-genapp](https://github.com/cicsdev/cics-genapp) at commit `f6f3f4b2580d31b7d8dcc31ce3e3676f4cceaaaa` (IBM CICS GenApp: the general insurance application (CICS, DB2, VSAM)).
 - **Source licence:** EPL-2.0. This directory is derived from that source (its names, literals and
-  source references carry over), so the source's licence terms apply to it.
-- **Generator:** [GitGalaxy](https://github.com/squid-protocol/gitgalaxy) at commit [`d3d39e033cf7`](https://github.com/squid-protocol/gitgalaxy/commit/d3d39e033cf7c8b27f977808d96fd00204fa9b5e).
+  source references carry over), so the source's licence terms apply to it. The source's own licence and
+  notice files are copied here unchanged (LICENSE), and every
+  generated Java file opens with a notice naming the source, its commit and licence, and that it was
+  modified in generation.
+- **Generator:** [GitGalaxy](https://github.com/squid-protocol/gitgalaxy) at commit [`695773d5a7a2`](https://github.com/squid-protocol/gitgalaxy/commit/695773d5a7a2d06311b764e89d713620083044a2).
 - **Commands** (from a GitGalaxy checkout at that commit, the corpus at that ref):
 
   ```

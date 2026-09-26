@@ -72,7 +72,7 @@
     },
     "java": {
       "files": 164,
-      "total_loc": 11802,
+      "total_loc": 12950,
       "coding_loc": 6965,
       "functions": 474,
       "avg_complexity": 2.58,
@@ -84,7 +84,7 @@
       "risk_safety_score": 22.0,
       "risk_verification": 10.9,
       "risk_documentation": 14.2,
-      "risk_api_exposure": 14.8,
+      "risk_api_exposure": 14.7,
       "risk_state_flux": 10.9,
       "languages": {
         "java": 164,
@@ -96,6 +96,10 @@
       }
     }
   },
+  "legal": [
+    "LICENSE",
+    "NOTICES"
+  ],
   "java_files": 167,
   "services": 31,
   "controllers": 30,

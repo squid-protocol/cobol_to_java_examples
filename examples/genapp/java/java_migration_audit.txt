@@ -5,7 +5,7 @@
   • Source Staging Environment : cics-genapp_gitgalaxy_clean_TIMESTAMP
   • Target Artifact            : cics-genapp
   • Target Package             : com.gitgalaxy.modernized
-  • Corporate Header Applied   : No
+  • Corporate Header Applied   : Yes
   • Target Config              : default.json
   • Java / Spring Boot / Build : 17 / 3.2.4 / maven
   • Data Classes / DTO Style   : lombok / class

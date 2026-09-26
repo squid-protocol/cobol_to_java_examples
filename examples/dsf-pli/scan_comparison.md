@@ -5,7 +5,7 @@ Both trees scanned by the same GitGalaxy engine. Source side: the program code (
 | metric | source | generated Java |
 |---|---|---|
 | Source files | 1480 | 997 |
-| Total lines | 583406 | 49898 |
+| Total lines | 583406 | 56877 |
 | Code lines | 495533 | 25994 |
 | Functions (paragraphs / methods) | 4428 | 3364 |
 | Mean function complexity | 14.97 | 0.49 |
@@ -17,7 +17,7 @@ Both trees scanned by the same GitGalaxy engine. Source side: the program code (
 | Safety exposure | 80.6 | 1.8 |
 | Verification exposure | 34.6 | 3.4 |
 | Documentation exposure | 99.9 | 16.4 |
-| API-exposure | 12.8 | 21.7 |
+| API-exposure | 12.8 | 21.5 |
 | State-flux exposure | 88.5 | 0.4 |
 
 Source estate by language: pli 1473, cobol 7, markdown 2, plaintext 1.

@@ -2,8 +2,11 @@
 
 - **Source:** [https://github.com/cicsdev/cics-banking-sample-application-cbsa](https://github.com/cicsdev/cics-banking-sample-application-cbsa) at commit `417334533178ab6e753cc64b0e0e5cf0b4952704` (IBM CICS Bank Sample Application: CICS / DB2 online banking and its DB2 install JCL).
 - **Source licence:** EPL-2.0. This directory is derived from that source (its names, literals and
-  source references carry over), so the source's licence terms apply to it.
-- **Generator:** [GitGalaxy](https://github.com/squid-protocol/gitgalaxy) at commit [`d3d39e033cf7`](https://github.com/squid-protocol/gitgalaxy/commit/d3d39e033cf7c8b27f977808d96fd00204fa9b5e).
+  source references carry over), so the source's licence terms apply to it. The source's own licence and
+  notice files are copied here unchanged (LICENSE, NOTICES), and every
+  generated Java file opens with a notice naming the source, its commit and licence, and that it was
+  modified in generation.
+- **Generator:** [GitGalaxy](https://github.com/squid-protocol/gitgalaxy) at commit [`695773d5a7a2`](https://github.com/squid-protocol/gitgalaxy/commit/695773d5a7a2d06311b764e89d713620083044a2).
 - **Commands** (from a GitGalaxy checkout at that commit, the corpus at that ref):
 
   ```
