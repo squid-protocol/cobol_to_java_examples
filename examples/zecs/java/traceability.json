@@ -1,0 +1,1790 @@
+{
+  "artifacts": [
+    {
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Ecs001Controller.java",
+      "kind": "controller-endpoint",
+      "symbol": "Ecs001Controller#link",
+      "todos": [
+        "TODO: no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA."
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "Source/CSDZC##.rdo:55"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Zecs000Controller.java",
+      "kind": "controller-endpoint",
+      "symbol": "Zecs000Controller#transactionZXx40IDx40",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "Source/CSDZC##.rdo:31"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Zecs001Controller.java",
+      "kind": "controller-endpoint",
+      "symbol": "Zecs001Controller#transactionZCx40IDx40",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "Source/CSDZC##.rdo:39"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Zecs001Controller.java",
+      "kind": "controller-endpoint",
+      "symbol": "Zecs001Controller#transactionZDx40IDx40",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "Source/CSDZC##.rdo:47"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Zecs001Controller.java",
+      "kind": "controller-endpoint",
+      "symbol": "Zecs001Controller#transactionZRx40IDx40",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "Source/ZECS001.cbl:753"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Zecs003Controller.java",
+      "kind": "controller-endpoint",
+      "symbol": "Zecs003Controller#link",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "Source/CSDZECS.rdo:34"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/ZecspltController.java",
+      "kind": "controller-endpoint",
+      "symbol": "ZecspltController#transactionZPLT",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "The DFHCOMMAREA Zecs000 declares in its LINKAGE SECTION."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs000Dfhcommarea.java",
+      "kind": "commarea-dto",
+      "symbol": "Zecs000Dfhcommarea",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "DFHCOMMAREA @0+1",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "Source/ZECS000.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs000Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Zecs000Dfhcommarea#dfhcommarea",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "The DFHCOMMAREA Zecs001 declares in its LINKAGE SECTION."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs001Dfhcommarea.java",
+      "kind": "commarea-dto",
+      "symbol": "Zecs001Dfhcommarea",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "DFHCOMMAREA @0+1",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "Source/ZECS001.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs001Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Zecs001Dfhcommarea#dfhcommarea",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "The COMMAREA Zecs003 receives, as passed by XCTL at Source/ZECS001.cbl:753."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs001Zecs003CommArea.java",
+      "kind": "commarea-dto",
+      "symbol": "Zecs001Zecs003CommArea",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "CA-TYPE @0+3",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "Source/ZECS001.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs001Zecs003CommArea.java",
+      "kind": "dto-field",
+      "symbol": "Zecs001Zecs003CommArea#caType",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "CA-URI-FIELD-01 @3+10",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "Source/ZECS001.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs001Zecs003CommArea.java",
+      "kind": "dto-field",
+      "symbol": "Zecs001Zecs003CommArea#caUriField01",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "The DFHCOMMAREA Zecsplt declares in its LINKAGE SECTION."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/ZecspltDfhcommarea.java",
+      "kind": "commarea-dto",
+      "symbol": "ZecspltDfhcommarea",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "DFHCOMMAREA @0+1",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "Source/ZECSPLT.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/ZecspltDfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "ZecspltDfhcommarea#dfhcommarea",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": ""
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/ZxRecord.java",
+      "kind": "vsam-entity",
+      "symbol": "ZxRecord",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": ""
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/ZxRecordRepository.java",
+      "kind": "vsam-repository",
+      "symbol": "ZxRecordRepository",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "cics_resources",
+          "source": "Source/ECS001.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java",
+      "kind": "transactional",
+      "symbol": "Ecs001Service",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ECS001.cbl:243"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Ecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 243 (paragraph A4000-EXECUTE-SERVICE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ECS001.cbl:411"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Ecs001Service",
+      "todos": [
+        "TODO: the RESP of SEND at line 411 (paragraph Z1000-EXIT-PROGRAM) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "Source/ZECS000.cbl"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "cics_resources",
+          "source": "Source/ZECS000.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "transactional",
+      "symbol": "Zecs000Service",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:257"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of RETRIEVE at line 257 (paragraph 1000-RETRIEVE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:269"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of ASKTIME at line 269 (paragraph 1000-RETRIEVE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:333"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of FORMATTIME at line 333 (paragraph 1300-WRITE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:368"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of FORMATTIME at line 368 (paragraph 1400-UPDATE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:389"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of REWRITE at line 389 (paragraph 1400-UPDATE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:498"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of REWRITE at line 498 (paragraph 3110-REWRITE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:504"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of SYNCPOINT at line 504 (paragraph 3110-REWRITE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:525"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of DELETE at line 525 (paragraph 3200-DELETE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:546"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of DELETE at line 546 (paragraph 3210-DELETE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:560"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of SYNCPOINT at line 560 (paragraph 3220-SYNCPOINT) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:563"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of DELAY at line 563 (paragraph 3220-SYNCPOINT) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:625"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 625 (paragraph 7100-WEB-OPEN) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:651"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of INQUIRE at line 651 (paragraph 7200-WEB-CONVERSE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:672"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 672 (paragraph 7200-WEB-CONVERSE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:696"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 696 (paragraph 7300-WEB-CLOSE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:713"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of START at line 713 (paragraph 8000-RESTART) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:732"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of START at line 732 (paragraph 8100-RESTART) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:771"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of FORMATTIME at line 771 (paragraph 9900-WRITE-CSSL) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:780"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of WRITEQ at line 780 (paragraph 9900-WRITE-CSSL) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:793"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of ASKTIME at line 793 (paragraph 9950-ABS) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:810"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of DOCUMENT at line 810 (paragraph 9999-GET-URL) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS000.cbl:827"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs000Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 827 (paragraph 9999-GET-URL) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "units_of_work",
+          "source": "Source/ZECS000.cbl:504"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "commit",
+      "symbol": "Zecs000Service#commitPointL504",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "units_of_work",
+          "source": "Source/ZECS000.cbl:560"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "commit",
+      "symbol": "Zecs000Service#commitPointL560",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "uow_handlers",
+          "source": "Source/ZECS000.cbl:252"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "abend-handler",
+      "symbol": "Zecs000Service#onAbendL252",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:289"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:346"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:389"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs000Service#readZcexpire",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:289"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:346"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:389"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs000Service#rewriteZcexpire",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:289"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:346"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:389"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs000Service#writeZcexpire",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "WRITEQ TD @tdq@",
+          "ledger_field": "CICS resources",
+          "section": "cics_resources",
+          "source": "Source/ZECS000.cbl:780"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "queue-op",
+      "symbol": "Zecs000Service#writeqTdL780",
+      "todos": [
+        "TODO: @tdq@ is an installation symbol: set the real queue name"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "Source/ZECS001.cbl"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "cics_resources",
+          "source": "Source/ZECS001.cbl"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "Source/ZECS001.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "transactional",
+      "symbol": "Zecs001Service",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:467"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 467 (paragraph 1000-ACCESS-PARMS) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:530"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 530 (paragraph 1000-ACCESS-PARMS) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:652"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of DOCUMENT at line 652 (paragraph 1210-ZCXXSD) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:731"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of INQUIRE at line 731 (paragraph 1312-CHECK-ETTL) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:753"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of XCTL at line 753 (paragraph 1320-CLEAR) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:795"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of LINK at line 795 (paragraph 1500-AUTHENTICATE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1011"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of READ at line 1011 (paragraph 3300-READ-FILE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1023"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of REWRITE at line 1023 (paragraph 3300-READ-FILE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1104"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of GETMAIN at line 1104 (paragraph 3400-STAGE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1180"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of FREEMAIN at line 1180 (paragraph 3510-FREEMAIN) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1214"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 1214 (paragraph 3600-SEND-RESPONSE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1225"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 1225 (paragraph 3600-SEND-RESPONSE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1246"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of GET at line 1246 (paragraph 4000-GET-COUNTER) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1444"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of SYNCPOINT at line 1444 (paragraph 4300-SEND-RESPONSE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1572"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of DELETE at line 1572 (paragraph 4700-DELETE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1614"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of DELETE at line 1614 (paragraph 5100-DELETE-KEY) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1631"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of DELETE at line 1631 (paragraph 5200-DELETE-FILE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1659"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 1659 (paragraph 5300-SEND-RESPONSE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1730"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of ASKTIME at line 1730 (paragraph 5600-CHECK-TTL) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1759"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 1759 (paragraph 5700-SEND-ABS) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1830"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 1830 (paragraph 8100-WEB-OPEN) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1861"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 1861 (paragraph 8200-WEB-CONVERSE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1882"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 1882 (paragraph 8200-WEB-CONVERSE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1903"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 1903 (paragraph 8200-WEB-CONVERSE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1927"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 1927 (paragraph 8300-WEB-CLOSE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:1951"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 1951 (paragraph 9001-ACAO) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:2017"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 2017 (paragraph 9400-STATUS-400) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:2040"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 2040 (paragraph 9500-STATUS-409) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:2062"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 2062 (paragraph 9600-AUTH-ERROR) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:2081"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of DOCUMENT at line 2081 (paragraph 9700-STATUS-204) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:2087"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 2087 (paragraph 9700-STATUS-204) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:2108"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 2108 (paragraph 9800-STATUS-507) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:2128"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of FORMATTIME at line 2128 (paragraph 9900-WRITE-CSSL) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:2137"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of WRITEQ at line 2137 (paragraph 9900-WRITE-CSSL) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:2150"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of ASKTIME at line 2150 (paragraph 9950-ABS) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS001.cbl:2160"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs001Service",
+      "todos": [
+        "TODO: the RESP of SYNCPOINT at line 2160 (paragraph 9999-ROLLBACK) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "units_of_work",
+          "source": "Source/ZECS001.cbl:1444"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "commit",
+      "symbol": "Zecs001Service#commitPointL1444",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "dynamic call targets",
+          "section": "dynamic_call_targets",
+          "source": "Source/ZECS001.cbl:795"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "dispatch",
+      "symbol": "Zecs001Service#dispatchZecs002L795",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "dynamic call targets",
+          "section": "dynamic_call_targets",
+          "source": "Source/ZECS001.cbl:753"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "dispatch",
+      "symbol": "Zecs001Service#dispatchZecs003L753",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "dynamic call targets",
+          "section": "dynamic_call_targets",
+          "source": "Source/ZECS001.cbl:1244"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "dispatch",
+      "symbol": "Zecs001Service#dispatchZuidstckL1244",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "units_of_work",
+          "source": "Source/ZECS001.cbl:2160"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "rollback",
+      "symbol": "Zecs001Service#rollbackL2160",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "WRITEQ TD @tdq@",
+          "ledger_field": "CICS resources",
+          "section": "cics_resources",
+          "source": "Source/ZECS001.cbl:2137"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "queue-op",
+      "symbol": "Zecs001Service#writeqTdL2137",
+      "todos": [
+        "TODO: @tdq@ is an installation symbol: set the real queue name"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "cics_resources",
+          "source": "Source/ZECS003.cbl"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "Source/ZECS003.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
+      "kind": "transactional",
+      "symbol": "Zecs003Service",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS003.cbl:196"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs003Service",
+      "todos": [
+        "TODO: the RESP of ASKTIME at line 196 (paragraph 1000-INITIALIZE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS003.cbl:272"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs003Service",
+      "todos": [
+        "TODO: the RESP of DELETE at line 272 (paragraph 3100-DELETE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS003.cbl:279"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs003Service",
+      "todos": [
+        "TODO: the RESP of DELETE at line 279 (paragraph 3100-DELETE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS003.cbl:355"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs003Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 355 (paragraph 7100-WEB-OPEN) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS003.cbl:378"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs003Service",
+      "todos": [
+        "TODO: the RESP of INQUIRE at line 378 (paragraph 7200-WEB-CONVERSE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS003.cbl:400"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs003Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 400 (paragraph 7200-WEB-CONVERSE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS003.cbl:426"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs003Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 426 (paragraph 7300-WEB-CLOSE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECS003.cbl:440"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
+      "kind": "unchecked-response",
+      "symbol": "Zecs003Service",
+      "todos": [
+        "TODO: the RESP of WEB at line 440 (paragraph 8000-SEND-RESPONSE) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "Source/ZECSPLT.cbl"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "cics_resources",
+          "source": "Source/ZECSPLT.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java",
+      "kind": "transactional",
+      "symbol": "ZecspltService",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECSPLT.cbl:77"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java",
+      "kind": "unchecked-response",
+      "symbol": "ZecspltService",
+      "todos": [
+        "TODO: the RESP of INQUIRE at line 77 (paragraph 1000-INQUIRE-START) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECSPLT.cbl:126"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java",
+      "kind": "unchecked-response",
+      "symbol": "ZecspltService",
+      "todos": [
+        "TODO: the RESP of START at line 126 (paragraph 2200-START) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECSPLT.cbl:135"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java",
+      "kind": "unchecked-response",
+      "symbol": "ZecspltService",
+      "todos": [
+        "TODO: the RESP of WRITEQ at line 135 (paragraph 2200-START) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECSPLT.cbl:141"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java",
+      "kind": "unchecked-response",
+      "symbol": "ZecspltService",
+      "todos": [
+        "TODO: the RESP of WRITE at line 141 (paragraph 2200-START) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "Source/ZECSPLT.cbl:153"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java",
+      "kind": "unchecked-response",
+      "symbol": "ZecspltService",
+      "todos": [
+        "TODO: the RESP of INQUIRE at line 153 (paragraph 3000-INQUIRE-END) is never tested"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "WRITEQ TD @tdq@",
+          "ledger_field": "CICS resources",
+          "section": "cics_resources",
+          "source": "Source/ZECSPLT.cbl:135"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java",
+      "kind": "queue-op",
+      "symbol": "ZecspltService#writeqTdL135",
+      "todos": [
+        "TODO: @tdq@ is an installation symbol: set the real queue name"
+      ]
+    }
+  ],
+  "generated_from": {
+    "clean_room": "zecs_gitgalaxy_clean_TIMESTAMP",
+    "skeleton_version": 1
+  },
+  "summary": {
+    "artifacts": 110,
+    "by_kind": {
+      "abend-handler": 1,
+      "commarea-dto": 4,
+      "commit": 3,
+      "controller-endpoint": 7,
+      "dispatch": 3,
+      "dto-field": 5,
+      "queue-op": 3,
+      "rollback": 1,
+      "service-file-op": 3,
+      "transactional": 5,
+      "unchecked-response": 73,
+      "vsam-entity": 1,
+      "vsam-repository": 1
+    },
+    "facts": 120,
+    "todos": 77
+  },
+  "version": 1
+}

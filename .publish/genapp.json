@@ -1,0 +1,109 @@
+{
+  "slug": "genapp",
+  "corpus": {
+    "name": "cics-genapp",
+    "url": "https://github.com/cicsdev/cics-genapp",
+    "branch": "main",
+    "ref": "f6f3f4b2580d31b7d8dcc31ce3e3676f4cceaaaa",
+    "license": "EPL-2.0",
+    "languages": [
+      "cobol",
+      "jcl",
+      "bms",
+      "hlasm",
+      "rexx"
+    ],
+    "answer_key": "tests/cobol_mainframe/answer_key/cics-genapp.json",
+    "notes": "IBM's CICS general insurance application (SupportPac CB12): a multi-region CICS estate -- CSD decks route business programs to AOR1 and data programs to DOR1 (DPL, #3494), web-service JCL (#3496), DB2 + VSAM data access.",
+    "excerpt": {
+      "why": "A multi-region CICS slice: LGTESTP1 (the 3270 motor-policy menu on SSMAP, which LINKs the business program LGIPOL01), LGIPOL01 (LINKs the data program), LGIPDB01 (DB2 policy inquiry with EXEC SQL INCLUDEs), their COMMAREA / policy copybooks, SSMAP.bms (whose symbolic map is not shipped, #3490), and cdef122.jcl: the DFHCSDUP deck that makes LGIPOL01 remote on AOR1 and LGIPDB01 remote on DOR1 (#3494).",
+      "files": [
+        "base/cntl/cdef122.jcl",
+        "base/src/lgcmarea.cpy",
+        "base/src/lgipdb01.cbl",
+        "base/src/lgipol01.cbl",
+        "base/src/lgpolicy.cpy",
+        "base/src/lgtestp1.cbl",
+        "base/src/ssmap.bms"
+      ]
+    }
+  },
+  "what": "IBM CICS GenApp: the general insurance application (CICS, DB2, VSAM)",
+  "metrics": {
+    "source": {
+      "files": 46,
+      "total_loc": 9657,
+      "coding_loc": 6967,
+      "functions": 157,
+      "avg_complexity": 2.24,
+      "max_complexity": 16,
+      "avg_function_loc": 36.9,
+      "functions_complexity_over_10": 7,
+      "risk_cognitive_load": 58.7,
+      "risk_tech_debt": 23.8,
+      "risk_safety_score": 62.1,
+      "risk_verification": 5.5,
+      "risk_documentation": 33.7,
+      "risk_api_exposure": 1.5,
+      "risk_state_flux": 69.6,
+      "languages": {
+        "cobol": 44,
+        "plaintext": 41,
+        "jcl": 29,
+        "markdown": 13,
+        "rexx": 2,
+        "shell": 1,
+        "bms": 1
+      }
+    },
+    "java": {
+      "files": 151,
+      "total_loc": 9342,
+      "coding_loc": 4828,
+      "functions": 418,
+      "avg_complexity": 1.08,
+      "max_complexity": 24,
+      "avg_function_loc": 4.4,
+      "functions_complexity_over_10": 5,
+      "risk_cognitive_load": 3.3,
+      "risk_tech_debt": 38.8,
+      "risk_safety_score": 15.9,
+      "risk_verification": 4.4,
+      "risk_documentation": 11.5,
+      "risk_api_exposure": 17.1,
+      "risk_state_flux": 8.5,
+      "languages": {
+        "java": 151,
+        "yaml": 1,
+        "xml": 1,
+        "plaintext": 1,
+        "markdown": 1,
+        "json": 1
+      }
+    }
+  },
+  "legal": [
+    "LICENSE"
+  ],
+  "java_files": 153,
+  "services": 31,
+  "controllers": 31,
+  "entities": 9,
+  "dtos": 61,
+  "batch_jobs": {
+    "utility": 8,
+    "build": 21
+  },
+  "worklist": {
+    "commarea-mismatch": 70,
+    "record-variant": 2,
+    "missing-layout": 5,
+    "queue-name": 9,
+    "unchecked-resp": 150,
+    "db2-positioned": 1,
+    "db2-dialect": 33,
+    "business-logic": 91,
+    "configuration": 1
+  },
+  "traced_artifacts": 685
+}

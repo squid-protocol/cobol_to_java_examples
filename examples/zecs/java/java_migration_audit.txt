@@ -1,0 +1,65 @@
+==========================================================
+ GITGALAXY JAVA SPRING BOOT MIGRATION AUDIT
+==========================================================
+
+  • Source Staging Environment : zecs_gitgalaxy_clean_TIMESTAMP
+  • Target Artifact            : zecs
+  • Target Package             : com.gitgalaxy.modernized
+  • Corporate Header Applied   : Yes
+  • Target Config              : default.json
+  • Java / Spring Boot / Build : 17 / 3.2.4 / maven
+  • Data Classes / DTO Style   : lombok / class
+  • Database                   : postgresql
+
+[1] GENERATED CLOUD SCAFFOLDING
+----------------------------------------------------------
+  • Build & Config Files Scaffolded : 4
+  • JPA Entities Generated          : 5
+  • Transient DTOs Generated        : 5
+  • REST Controllers Generated      : 5
+  • AI Agent Tickets Generated      : 0
+
+[2] VERIFIED SKELETON (engine facts, 06_skeleton)
+----------------------------------------------------------
+  • Programs with a skeleton : 5
+  • Fact channel (ledger field)       facts  programs  field testing (public / private estates)
+    CALL USING                            6         5  open (5 / 0)
+    CICS resources                       66         5  open (5 / 0)
+    CICS task control                     6         2  open (5 / 0)
+    call targets                          7         3  open (6 / 0)
+    data moves                          377         5  field-tested (6 / 0)
+    dynamic call targets                  3         1  open (5 / 0)
+    entry transactions                    8         4  open (4 / 0)
+    record fields                       381         5  field-tested (6 / 0)
+    units                               216         5  open (6 / 0)
+    units of work and handlers          194         5  field-tested (6 / 0)
+  'open' = verified on the keyed reference corpora, still being field-tested on fresh estates.
+  • CICS programs (#3615)    : 5 -- 4 with a COMMAREA DTO, 5 transaction endpoints, 4 COMMAREA / channel DTOs
+  • Service calls (#3616)    : 0 LINK, 0 XCTL, 0 CALL, 3 data-driven dispatch, 0 remote; 0 remote-region clients
+  • VSAM stores (#3617)      : 1 entities + repositories (1 keyed by one field); 2 not generated
+      - @ECS_HLQ@.ZC@ID@FILE.@ENVIRONMENT@: no program in the repository touches it
+      - @ECS_HLQ@.ZC@ID@KEY.@ENVIRONMENT@: no program in the repository touches it
+  • DB2 tables (#3618)       : 0 repositories (0 with DECLAREd row classes), 0 statements as written; 0 positioned (TODO)
+  • Messaging (#3620)        : 0 TS / 3 TD / 0 MQ sites; TD routes: 1 symbol; 0 MQ-triggered programs; adapter: in-memory
+  • Batch jobs (#3622)       : 10 JCL jobs -- 0 application (generated: 0 steps, 0 utility steps to port), 3 runner, 0 utility, 7 build (resources/batch/jcl-jobs.json)
+  • Units of work (#3621)   : 5 @Transactional services, 3 commit points, 1 rollback points, 0 abends, 1 handlers; 73 unchecked responses
+  • Traceability (#3650)    : 110 artifacts, 120 facts, 77 TODOs -> traceability.json
+
+[3] MIGRATION WORKLIST (migration_worklist.md / .json)
+----------------------------------------------------------
+  • Open items : 93 across 5 program sources
+  • By nature  : conflict 0, fact-gap 4, review 74, port 15
+    Unresolved layouts                             1  (fact-gap)
+    Data-driven queue names                        3  (fact-gap)
+    CICS responses the COBOL never tests          73  (review)
+    Unit-of-work boundaries to split               3  (port)
+    Calls to other services                        1  (port)
+    Business logic to port                        11  (port)
+    Target configuration                           1  (review)
+
+[4] AI AGENT GUARDRAIL
+----------------------------------------------------------
+  • Baseline : 33 files, 33 classes, 0 SQL tables -> guardrail_baseline.json
+  • Not run  : after agent edits, python -m gitgalaxy.tools.cobol_to_java.cobol_to_java_guardrail <this project>
+
+==========================================================

@@ -1,0 +1,559 @@
+{
+  "artifacts": [
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "JOB ZDEPSM1",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUNPSAM1.jcl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/Zdepsm1JobConfig.java",
+      "kind": "batch-job",
+      "symbol": "Zdepsm1JobConfig",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "CMPPSAM1 EXEC IBMZPLI",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUNPSAM1.jcl:46"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/Zdepsm1JobConfig.java",
+      "kind": "batch-step",
+      "symbol": "Zdepsm1JobConfig#CMPPSAM1",
+      "todos": [
+        "TODO: CMPPSAM1 runs the utility IBMZPLI (its control statements are in SYSIN) -- a utility step to port"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "CMPPSAM2 EXEC IBMZPLI",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUNPSAM1.jcl:35"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/Zdepsm1JobConfig.java",
+      "kind": "batch-step",
+      "symbol": "Zdepsm1JobConfig#CMPPSAM2",
+      "todos": [
+        "TODO: CMPPSAM2 runs the utility IBMZPLI (its control statements are in SYSIN) -- a utility step to port"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "DELETE EXEC IEFBR14",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUNPSAM1.jcl:25"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/Zdepsm1JobConfig.java",
+      "kind": "batch-step",
+      "symbol": "Zdepsm1JobConfig#DELETE",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "LNKPSAM1 EXEC IEWL",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUNPSAM1.jcl:59"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/Zdepsm1JobConfig.java",
+      "kind": "batch-step",
+      "symbol": "Zdepsm1JobConfig#LNKPSAM1",
+      "todos": [
+        "TODO: LNKPSAM1 runs the utility IEWL (its control statements are in SYSIN) -- a utility step to port"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "RUNPSAM1 EXEC PSAM1",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUNPSAM1.jcl:74"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/Zdepsm1JobConfig.java",
+      "kind": "batch-step",
+      "symbol": "Zdepsm1JobConfig#RUNPSAM1",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "JOB ZDERUN",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUN.jcl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/ZderunJobConfig.java",
+      "kind": "batch-job",
+      "symbol": "ZderunJobConfig",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "CMPLSAM1 EXEC IGYCRCTL",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUN.jcl:72"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/ZderunJobConfig.java",
+      "kind": "batch-step",
+      "symbol": "ZderunJobConfig#CMPLSAM1",
+      "todos": [
+        "TODO: CMPLSAM1 runs the utility IGYCRCTL (its control statements are in SYSIN) -- a utility step to port"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "CMPLSAM2 EXEC IGYCRCTL",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUN.jcl:42"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/ZderunJobConfig.java",
+      "kind": "batch-step",
+      "symbol": "ZderunJobConfig#CMPLSAM2",
+      "todos": [
+        "TODO: CMPLSAM2 runs the utility IGYCRCTL (its control statements are in SYSIN) -- a utility step to port"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "DELETE EXEC IEFBR14",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUN.jcl:135"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/ZderunJobConfig.java",
+      "kind": "batch-step",
+      "symbol": "ZderunJobConfig#DELETE",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "LINKSAM1 EXEC IEWL",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUN.jcl:120"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/ZderunJobConfig.java",
+      "kind": "batch-step",
+      "symbol": "ZderunJobConfig#LINKSAM1",
+      "todos": [
+        "TODO: LINKSAM1 runs the utility IEWL (its control statements are in SYSIN) -- a utility step to port"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "LINKSAM2 EXEC IEWL",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUN.jcl:103"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/ZderunJobConfig.java",
+      "kind": "batch-step",
+      "symbol": "ZderunJobConfig#LINKSAM2",
+      "todos": [
+        "TODO: LINKSAM2 runs the utility IEWL (its control statements are in SYSIN) -- a utility step to port"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "SAM1 EXEC SAM1",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUN.jcl:147"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/ZderunJobConfig.java",
+      "kind": "batch-step",
+      "symbol": "ZderunJobConfig#SAM1",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "USING parameter 5 of MultirootSamSam2."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Sam2Parms.java",
+      "kind": "commarea-dto",
+      "symbol": "Sam2Parms",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "CRUNCH-AVG @17+16",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/copybooks/trans/SAM2PAR5.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Sam2Parms.java",
+      "kind": "dto-field",
+      "symbol": "Sam2Parms#crunchAvg",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "CRUNCH-TOTAL @0+16",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/copybooks/trans/SAM2PARM.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Sam2Parms.java",
+      "kind": "dto-field",
+      "symbol": "Sam2Parms#crunchTotal",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "USING parameter 2 of CobolSam2."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/TransactionRecord.java",
+      "kind": "commarea-dto",
+      "symbol": "TransactionRecord",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "TRAN-ACTION @21+8",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COPYBOOK/TRANREC.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/TransactionRecord.java",
+      "kind": "dto-field",
+      "symbol": "TransactionRecord#tranAction",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "TRAN-CODE @0+6",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COPYBOOK/TRANREC.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/TransactionRecord.java",
+      "kind": "dto-field",
+      "symbol": "TransactionRecord#tranCode",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "TRAN-FIELD-NAME @30+10",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COPYBOOK/TRANREC.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/TransactionRecord.java",
+      "kind": "dto-field",
+      "symbol": "TransactionRecord#tranFieldName",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "TRAN-FIELD-SS @41+2",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COPYBOOK/TRANREC.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/TransactionRecord.java",
+      "kind": "dto-field",
+      "symbol": "TransactionRecord#tranFieldSs",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "TRAN-KEY @7+6",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COPYBOOK/TRANREC.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/TransactionRecord.java",
+      "kind": "dto-field",
+      "symbol": "TransactionRecord#tranKey",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "TRAN-UPDATE-DATA @44+36",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COPYBOOK/TRANREC.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/TransactionRecord.java",
+      "kind": "dto-field",
+      "symbol": "TransactionRecord#tranUpdateData",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "USING parameter 2 of MultirootSamSam2."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/TransactionRecord2.java",
+      "kind": "commarea-dto",
+      "symbol": "TransactionRecord2",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "TRAN-ACTION @21+8",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/copybooks/trans/TRANREC.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/TransactionRecord2.java",
+      "kind": "dto-field",
+      "symbol": "TransactionRecord2#tranAction",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "TRAN-CODE @0+6",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/copybooks/trans/TRANREC.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/TransactionRecord2.java",
+      "kind": "dto-field",
+      "symbol": "TransactionRecord2#tranCode",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "TRAN-FIELD-NAME @30+10",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/copybooks/trans/TRANREC.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/TransactionRecord2.java",
+      "kind": "dto-field",
+      "symbol": "TransactionRecord2#tranFieldName",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "TRAN-FIELD-SS @41+2",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/copybooks/trans/TRANREC.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/TransactionRecord2.java",
+      "kind": "dto-field",
+      "symbol": "TransactionRecord2#tranFieldSs",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "TRAN-KEY @7+6",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/copybooks/trans/TRANREC.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/TransactionRecord2.java",
+      "kind": "dto-field",
+      "symbol": "TransactionRecord2#tranKey",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "item": "TRAN-UPDATE-DATA @44+36",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/copybooks/trans/TRANREC.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/TransactionRecord2.java",
+      "kind": "dto-field",
+      "symbol": "TransactionRecord2#tranUpdateData",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "dynamic call targets",
+          "section": "dynamic_call_targets",
+          "source": "COBOL/SAM1.cbl:304"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CobolSam1Service.java",
+      "kind": "dispatch",
+      "symbol": "CobolSam1Service#dispatchSam2L304",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "ZDERUN SAM1",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUN.jcl:147"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CobolSam1Service.java",
+      "kind": "batch-entry",
+      "symbol": "CobolSam1Service#runBatch",
+      "todos": [
+        "TODO: port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "dynamic call targets",
+          "section": "dynamic_call_targets",
+          "source": "multiroot/sam/SAM1.cbl:338"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam1Service.java",
+      "kind": "dispatch",
+      "symbol": "MultirootSamSam1Service#dispatchSam2L338",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "ZDEPSM1 RUNPSAM1",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUNPSAM1.jcl:74"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Psam1Service.java",
+      "kind": "batch-entry",
+      "symbol": "Psam1Service#runBatch",
+      "todos": [
+        "TODO: port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "dynamic call targets",
+          "section": "dynamic_call_targets",
+          "source": "COBOL/SAM1LIB.cbl:287"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Sam1libService.java",
+      "kind": "dispatch",
+      "symbol": "Sam1libService#dispatchSam2L287",
+      "todos": []
+    }
+  ],
+  "generated_from": {
+    "clean_room": "zopeneditor-sample_gitgalaxy_clean_TIMESTAMP",
+    "skeleton_version": 1
+  },
+  "summary": {
+    "artifacts": 35,
+    "by_kind": {
+      "batch-entry": 2,
+      "batch-job": 2,
+      "batch-step": 11,
+      "commarea-dto": 3,
+      "dispatch": 3,
+      "dto-field": 14
+    },
+    "facts": 35,
+    "todos": 9
+  },
+  "version": 1
+}

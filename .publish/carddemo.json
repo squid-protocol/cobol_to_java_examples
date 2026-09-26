@@ -1,0 +1,127 @@
+{
+  "slug": "carddemo",
+  "corpus": {
+    "name": "aws-mainframe-modernization-carddemo",
+    "url": "https://github.com/aws-samples/aws-mainframe-modernization-carddemo",
+    "branch": "main",
+    "ref": "59cc6c2fd7ebd7ef7925cad552a01a4b8b6e4d5e",
+    "license": "Apache-2.0",
+    "languages": [
+      "cobol",
+      "bms",
+      "jcl"
+    ],
+    "answer_key": "tests/cobol_mainframe/answer_key/aws-mainframe-modernization-carddemo.json",
+    "notes": "The real BMS corpus #3122 asked for: 21 .bms maps, each with its generated symbolic-map copybook (app/bms <-> app/cpy-bms), plus CICS/batch COBOL and JCL.",
+    "excerpt": {
+      "why": "CBACT01C (batch SELECT/OPEN lineage, with READACCT.jcl) and COCRDLIC (CICS, two dynamic CALLs, a BMS symbolic-map copybook), with their copybooks. Plus COCRDLI.bms (#3347), the map that symbolic-map copybook is generated from, so the differential checks one against the other. Plus two CSD decks (#3356): CARDDEMO.CSD (the FILE -> DSNAME definitions READACCT.jcl's dataset joins to, an extrapartition TDQUEUE, LIBRARY) and CRDDEMOD.csd (DB2TRAN -> DB2ENTRY -> PLAN). Plus CORPT00C (#3352/#3353): SEND/RECEIVE MAP bound to CORPT00.bms, and an EXEC CICS WRITEQ TD QUEUE('JOBS') (the internal-reader queue), with its map and copybooks.",
+      "files": [
+        "app/app-transaction-type-db2/csd/CRDDEMOD.csd",
+        "app/bms/COCRDLI.bms",
+        "app/bms/CORPT00.bms",
+        "app/cbl/CBACT01C.cbl",
+        "app/cbl/COCRDLIC.cbl",
+        "app/cbl/CORPT00C.cbl",
+        "app/cpy-bms/COCRDLI.CPY",
+        "app/cpy-bms/CORPT00.CPY",
+        "app/cpy/COCOM01Y.cpy",
+        "app/cpy/CODATECN.cpy",
+        "app/cpy/COTTL01Y.cpy",
+        "app/cpy/CSDAT01Y.cpy",
+        "app/cpy/CSMSG01Y.cpy",
+        "app/cpy/CSUSR01Y.cpy",
+        "app/cpy/CVACT01Y.cpy",
+        "app/cpy/CVACT02Y.cpy",
+        "app/cpy/CVCRD01Y.cpy",
+        "app/cpy/CVTRA05Y.cpy",
+        "app/csd/CARDDEMO.CSD",
+        "app/jcl/READACCT.jcl"
+      ]
+    }
+  },
+  "what": "AWS CardDemo: CICS online (BMS screens, COMMAREA), VSAM, DB2, IMS, MQ and a JCL batch cycle",
+  "metrics": {
+    "source": {
+      "files": 109,
+      "total_loc": 41126,
+      "coding_loc": 33310,
+      "functions": 891,
+      "avg_complexity": 3.2,
+      "max_complexity": 97,
+      "avg_function_loc": 23.9,
+      "functions_complexity_over_10": 63,
+      "risk_cognitive_load": 28.8,
+      "risk_tech_debt": 4.5,
+      "risk_safety_score": 40.3,
+      "risk_verification": 24.4,
+      "risk_documentation": 42.2,
+      "risk_api_exposure": 1.7,
+      "risk_state_flux": 42.4,
+      "languages": {
+        "cobol": 109,
+        "jcl": 62,
+        "bms": 21,
+        "hlasm": 12,
+        "plaintext": 11,
+        "shell": 9,
+        "markdown": 6,
+        "db2_sql": 6,
+        "csd": 4
+      }
+    },
+    "java": {
+      "files": 224,
+      "total_loc": 19191,
+      "coding_loc": 11093,
+      "functions": 579,
+      "avg_complexity": 1.08,
+      "max_complexity": 27,
+      "avg_function_loc": 6.9,
+      "functions_complexity_over_10": 14,
+      "risk_cognitive_load": 5.3,
+      "risk_tech_debt": 31.6,
+      "risk_safety_score": 27.1,
+      "risk_verification": 6.2,
+      "risk_documentation": 19.1,
+      "risk_api_exposure": 15.4,
+      "risk_state_flux": 17.4,
+      "languages": {
+        "java": 224,
+        "yaml": 1,
+        "xml": 1,
+        "plaintext": 1,
+        "markdown": 1,
+        "json": 1
+      }
+    }
+  },
+  "legal": [
+    "LICENSE",
+    "NOTICE"
+  ],
+  "java_files": 237,
+  "services": 44,
+  "controllers": 40,
+  "entities": 36,
+  "dtos": 72,
+  "batch_jobs": {
+    "application": 16,
+    "utility": 27,
+    "build": 11,
+    "runner": 1
+  },
+  "worklist": {
+    "commarea-mismatch": 20,
+    "record-variant": 11,
+    "missing-layout": 3,
+    "vsam-key": 2,
+    "batch-utility": 6,
+    "unchecked-resp": 40,
+    "db2-dialect": 14,
+    "transaction-split": 14,
+    "interface-call": 1,
+    "business-logic": 165,
+    "configuration": 1
+  },
+  "traced_artifacts": 1312
+}

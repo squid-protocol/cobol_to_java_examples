@@ -1,0 +1,950 @@
+{
+  "files": {
+    "src/main/java/com/gitgalaxy/modernized/ZecsApplication.java": {
+      "calls": [],
+      "classes": [
+        "ZecsApplication"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [
+        "main"
+      ],
+      "program": null,
+      "sha256": "9c89b1e0690d8cc368637f50cbd300ff3c0cf11fa8127009ab996c4535656e48"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Ecs001Controller.java": {
+      "calls": [
+        "Ecs001Service"
+      ],
+      "classes": [
+        "Ecs001Controller"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "ecs001Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "Source/ECS001.cbl",
+      "sha256": "e79cc285bdc4147fb5a6ab86a2cf5505057de8f0aa2473249e6f151601c3bebf"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Zecs000Controller.java": {
+      "calls": [
+        "Zecs000Service"
+      ],
+      "classes": [
+        "Zecs000Controller"
+      ],
+      "endpoints": [
+        "transactionZXx40IDx40"
+      ],
+      "fields": [
+        "zecs000Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionZXx40IDx40"
+      ],
+      "program": "Source/ZECS000.cbl",
+      "sha256": "91a37508e0dcfd2e5169be46f0bb3550b78d1c5d83f32ba32a40d112b03579a5"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Zecs001Controller.java": {
+      "calls": [
+        "Zecs001Service"
+      ],
+      "classes": [
+        "Zecs001Controller"
+      ],
+      "endpoints": [
+        "transactionZCx40IDx40",
+        "transactionZDx40IDx40",
+        "transactionZRx40IDx40"
+      ],
+      "fields": [
+        "zecs001Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionZCx40IDx40",
+        "transactionZDx40IDx40",
+        "transactionZRx40IDx40"
+      ],
+      "program": "Source/ZECS001.cbl",
+      "sha256": "75094b2746f7176114a0c2c93a0b6b05106d64baeec76b189a480fa75b758f64"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Zecs003Controller.java": {
+      "calls": [
+        "Zecs003Service"
+      ],
+      "classes": [
+        "Zecs003Controller"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "zecs003Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "Source/ZECS003.cbl",
+      "sha256": "6f7fe5563d6e9106fb1f43427e103fbdaee439bd0654dba412c45404f1d90aaa"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/ZecspltController.java": {
+      "calls": [
+        "ZecspltService"
+      ],
+      "classes": [
+        "ZecspltController"
+      ],
+      "endpoints": [
+        "transactionZPLT"
+      ],
+      "fields": [
+        "zecspltService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionZPLT"
+      ],
+      "program": "Source/ZECSPLT.cbl",
+      "sha256": "47ae0aa017e7fc9fd334340414e1b86c27c485538a30c9ba890706365c39de05"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Zecs003DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Zecs003DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "activeActive",
+        "activeSingle",
+        "activeStandby",
+        "adr",
+        "caType",
+        "caUriField01",
+        "clearAll",
+        "converseLength",
+        "converseResponse",
+        "crlf",
+        "currentAbs",
+        "dcLength",
+        "dcToken",
+        "dcTranid",
+        "dcType",
+        "deleteLength",
+        "dot",
+        "eof",
+        "fiveTwelve",
+        "httpOk",
+        "httpStatus200",
+        "numberOfNulls",
+        "numberOfSpaces",
+        "one",
+        "replicate",
+        "resources",
+        "sdr",
+        "sendAction",
+        "sessionToken",
+        "seven",
+        "slash",
+        "ten",
+        "textPlain",
+        "theOtherDc",
+        "theOtherDcLength",
+        "twelve",
+        "two",
+        "uriMap",
+        "uriPath",
+        "urlHostName",
+        "urlHostNameLength",
+        "urlPort",
+        "urlScheme",
+        "urlSchemeName",
+        "webMethod",
+        "webPath",
+        "webPathLength",
+        "webStatusAbstime",
+        "webStatusCode",
+        "webStatusLength",
+        "zfLength",
+        "zfTranid",
+        "zkTranid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "2a00fc20670911362df570271f9c44544117c82d67c3b3580326bbd70388e325"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs000Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Zecs000Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dfhcommarea"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "8b1a4602efa91adb0aa8e2fb250beaa33479938b27c131be2ca2d14841655ee9"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs001Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Zecs001Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dfhcommarea"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "d9758184346e71c06996ecd9791b296670397fa30631f58e5411c7d6dacd6f8d"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs001Zecs003CommArea.java": {
+      "calls": [],
+      "classes": [
+        "Zecs001Zecs003CommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caType",
+        "caUriField01"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "0309c2833e1140454952364c71eadfa1c93a536abe4810d2ca65e025667c1d17"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/ZecspltDfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "ZecspltDfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dfhcommarea"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "90a1e854094191ffb82a1e7e2bfcac6436a0803a8cc61a0eedd61b2706975d5c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/Ecs001CicsMsg2.java": {
+      "calls": [],
+      "classes": [
+        "Ecs001CicsMsg2"
+      ],
+      "endpoints": [],
+      "fields": [
+        "bodyData",
+        "bodyDataLen",
+        "cicsMsgCode",
+        "cicsMsgHttp",
+        "cicsMsgResp",
+        "cicsMsgResp2",
+        "cicsMsgStatus",
+        "cicsMsgText",
+        "ecsData",
+        "ecsDataLen",
+        "ecsKey",
+        "ecsKeyLen",
+        "httpStatusCode",
+        "httpStatusLen",
+        "httpStatusText",
+        "i",
+        "inputParm1",
+        "inputParm2",
+        "mediaType",
+        "methodCdva",
+        "pathName",
+        "pathNameLen",
+        "sessionToken",
+        "sysId",
+        "termDataLen",
+        "termLines",
+        "urimapName"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "eae275000caf105f72191de9e2ef93bf418e8afb44ec4d960209d722f6154eac"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/Zecs000DcControl.java": {
+      "calls": [],
+      "classes": [
+        "Zecs000DcControl"
+      ],
+      "endpoints": [],
+      "fields": [
+        "activeActive",
+        "activeSingle",
+        "activeStandby",
+        "applid",
+        "converseLength",
+        "converseResponse",
+        "cssl",
+        "currentAbs",
+        "dcLength",
+        "dcToken",
+        "dcTranid",
+        "dcType",
+        "deleteCount",
+        "deplicate",
+        "eof",
+        "fifteen",
+        "fiveHundred",
+        "fiveTwelve",
+        "forty",
+        "httpStatus201",
+        "numberOfNulls",
+        "numberOfSpaces",
+        "one",
+        "recordCount",
+        "relativeTime",
+        "resetCount",
+        "resources",
+        "sessionToken",
+        "slash",
+        "sysId",
+        "tdDate",
+        "tdLength",
+        "tdTime",
+        "tdTranid",
+        "ten",
+        "theOtherDc",
+        "theOtherDcLength",
+        "ttlMilliseconds",
+        "ttlSeconds",
+        "ttlTime",
+        "twelve",
+        "two",
+        "uriMap",
+        "uriPath",
+        "urlHostName",
+        "urlHostNameLength",
+        "urlPort",
+        "urlScheme",
+        "urlSchemeName",
+        "webMethod",
+        "webPath",
+        "webPathLength",
+        "webStatusAbstime",
+        "webStatusCode",
+        "webStatusLength",
+        "zcEnqTranid",
+        "zcKey",
+        "zcLength",
+        "zcTranid",
+        "zfLength",
+        "zfTranid",
+        "zkTranid",
+        "zxAbstime",
+        "zxApplid",
+        "zxDate",
+        "zxFct",
+        "zxInterval",
+        "zxKey",
+        "zxLength",
+        "zxResp",
+        "zxTaskid",
+        "zxTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "3bf65d2a3fc7035d49a88b7cfdd5d841af1d58ec2efb017e9b2da1e144ada8cd"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/Zecs001DeleteRecord.java": {
+      "calls": [],
+      "classes": [
+        "Zecs001DeleteRecord"
+      ],
+      "endpoints": [],
+      "fields": [
+        "activeActive",
+        "activeSingle",
+        "activeStandby",
+        "applicationXml",
+        "authenticate",
+        "binaryZeroes",
+        "caEncode",
+        "caReturnCode",
+        "caType",
+        "caUriField01",
+        "caUserid",
+        "cacheAddressX",
+        "cacheLength",
+        "cacheMessage",
+        "clearText",
+        "clientConvert",
+        "converseLength",
+        "converseResponse",
+        "crlf",
+        "cssl",
+        "currentAbs",
+        "dcLength",
+        "dcToken",
+        "dcTranid",
+        "dcType",
+        "deleteKey",
+        "deleteSegment",
+        "deleteSuffix",
+        "deleteZeroes",
+        "deplicate",
+        "duplicatePost",
+        "ettlResp",
+        "ettlStatus",
+        "ettlTranid",
+        "fcRead",
+        "fcRewrite",
+        "fcWrite",
+        "feDs",
+        "feFn",
+        "feNospace",
+        "feParagraph",
+        "feRcode",
+        "feResp",
+        "feResp2",
+        "five",
+        "fiveMinutes",
+        "getmainLength",
+        "headerAcaoLength",
+        "http201Length",
+        "http201Text",
+        "http204Length",
+        "http204Text",
+        "http400Length",
+        "http400Text",
+        "http409Length",
+        "http409Text",
+        "http507Length",
+        "http507Text",
+        "httpAbstime",
+        "httpAbstimeLength",
+        "httpFileError",
+        "httpFileLength",
+        "httpHeader",
+        "httpHeaderValue",
+        "httpKeyError",
+        "httpKeyLength",
+        "httpNameLength",
+        "httpNotFound",
+        "httpNotFoundLength",
+        "httpOk",
+        "httpStatus200",
+        "httpStatus201",
+        "httpStatus204",
+        "httpStatus400",
+        "httpStatus401",
+        "httpStatus409",
+        "httpStatus507",
+        "httpValueLength",
+        "internalKey",
+        "keDs",
+        "keFn",
+        "keNospace",
+        "keParagraph",
+        "keResp",
+        "keResp2",
+        "lastAccessTime",
+        "lastUpdateTime",
+        "latTranid",
+        "maxSegmentCount",
+        "maximumLength",
+        "ncTranid",
+        "noSpaceMessage",
+        "one",
+        "processComplete",
+        "queryText",
+        "readResp",
+        "receiveLength",
+        "relativeTime",
+        "replicate",
+        "resources",
+        "saveAddressX",
+        "sdAccess",
+        "sdComma",
+        "sdCrlf",
+        "sdDelete",
+        "sdIndex",
+        "sdLength",
+        "sdResp",
+        "sdSelect",
+        "sdToken",
+        "sdTranid",
+        "sdUpdate",
+        "sdUserId",
+        "segmentCount",
+        "segmentRemainder",
+        "sendAction",
+        "sessionToken",
+        "seven",
+        "sevenDays",
+        "six",
+        "slash",
+        "slashCounter",
+        "sysId",
+        "tdDate",
+        "tdLength",
+        "tdMessage",
+        "tdTime",
+        "tdTranid",
+        "ten",
+        "textAnything",
+        "textPlain",
+        "theOtherDc",
+        "theOtherDcLength",
+        "theTod",
+        "thirty",
+        "thirtyMinutes",
+        "thirtyTwoKb",
+        "ttlMilliseconds",
+        "ttlSeconds",
+        "ttlTime",
+        "ttlType",
+        "twelve",
+        "twentyFourHours",
+        "two",
+        "twoFiftyFive",
+        "unsegmentedLength",
+        "uriField00",
+        "uriField01",
+        "uriField02",
+        "uriField03",
+        "uriField04",
+        "uriKey",
+        "uriPathLength",
+        "uriPathPointer",
+        "urlHostName",
+        "urlHostNameLength",
+        "urlPort",
+        "urlScheme",
+        "urlSchemeName",
+        "userAccess",
+        "userid",
+        "valueAcao",
+        "valueAcaoLength",
+        "webHost",
+        "webHostLength",
+        "webHttpDelete",
+        "webHttpGet",
+        "webHttpPost",
+        "webHttpPut",
+        "webHttpmethod",
+        "webHttpmethodLength",
+        "webHttpversion",
+        "webHttpversionLength",
+        "webMediaType",
+        "webMethod",
+        "webPath",
+        "webPathLength",
+        "webPort",
+        "webPortNumber",
+        "webQuerystring",
+        "webQuerystringLength",
+        "webRequesttype",
+        "webResp",
+        "webResp2",
+        "webScheme",
+        "webStatusCode",
+        "webStatusLength",
+        "webStatusText",
+        "webresp",
+        "writeResp",
+        "zecs002",
+        "zecs003",
+        "zecsIncrement",
+        "zecsNcHw",
+        "zecsValue",
+        "zfLength",
+        "zfSuccessful",
+        "zfTranid",
+        "zkLength",
+        "zkTranid",
+        "zuidstck"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "75732b8131247f8b8bd6c9c418d16c48494c5e82c6281cb3ed468adbe341a493"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/ZecspltTdRecord.java": {
+      "calls": [],
+      "classes": [
+        "ZecspltTdRecord"
+      ],
+      "endpoints": [],
+      "fields": [
+        "cssl",
+        "eof",
+        "sysId",
+        "tdLength",
+        "tdPath",
+        "tdSuffix",
+        "tdTran",
+        "uriPath",
+        "uriPrefix",
+        "uriSuffix",
+        "uriTran",
+        "zc",
+        "zxSuffix"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "dd3af6938bd60b6557ba1304af083bc7b6a836056d00b1652844475324b42ec6"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/vsam/CobolRecords.java": {
+      "calls": [],
+      "classes": [
+        "CobolRecords"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "data",
+      "methods": [
+        "CobolRecords",
+        "binary",
+        "blank",
+        "decimal",
+        "packed",
+        "putBinary",
+        "putPacked",
+        "putText",
+        "putZoned",
+        "text",
+        "toInteger",
+        "toLong",
+        "zoned"
+      ],
+      "program": null,
+      "sha256": "9145f2feb9336014b787ef93caa9301dabd2be898289803bfcc194f7238c09cd"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/vsam/ZxRecord.java": {
+      "calls": [],
+      "classes": [
+        "ZxRecord"
+      ],
+      "endpoints": [],
+      "fields": [
+        "zxAbstime",
+        "zxApplid",
+        "zxDate",
+        "zxInterval",
+        "zxKey",
+        "zxRestart",
+        "zxTaskid",
+        "zxTime"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromRecord",
+        "toRecord"
+      ],
+      "program": null,
+      "sha256": "0c50559ba17309d759fbe7eaa46d11e9a39702cdb913c6a2f21fc218385a534a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/exception/CicsAbendException.java": {
+      "calls": [],
+      "classes": [
+        "CicsAbendException"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abcode",
+        "program",
+        "site"
+      ],
+      "kind": "other",
+      "methods": [
+        "CicsAbendException",
+        "getAbcode",
+        "getProgram",
+        "getSite"
+      ],
+      "program": null,
+      "sha256": "04cfb2136b2bd75841f02167ab3bb6e57b6dade7a1c145c46dacbbc2fc079e54"
+    },
+    "src/main/java/com/gitgalaxy/modernized/exception/CicsConditionException.java": {
+      "calls": [],
+      "classes": [
+        "CicsConditionException"
+      ],
+      "endpoints": [],
+      "fields": [
+        "condition",
+        "program",
+        "site"
+      ],
+      "kind": "other",
+      "methods": [
+        "CicsConditionException",
+        "getCondition",
+        "getProgram",
+        "getSite"
+      ],
+      "program": null,
+      "sha256": "6d777fba5feb60bcbae91c7c93362d18a57f08a272dac7c1e197f2958fab01a8"
+    },
+    "src/main/java/com/gitgalaxy/modernized/exception/UnitOfWorkRollbackException.java": {
+      "calls": [],
+      "classes": [
+        "UnitOfWorkRollbackException"
+      ],
+      "endpoints": [],
+      "fields": [
+        "program",
+        "site"
+      ],
+      "kind": "other",
+      "methods": [
+        "UnitOfWorkRollbackException",
+        "getProgram",
+        "getSite"
+      ],
+      "program": null,
+      "sha256": "c79bb7a47160df65d527308f4a9f9f97c4c89b811e09a8838e94abfb7c2d17ec"
+    },
+    "src/main/java/com/gitgalaxy/modernized/messaging/InMemoryMessageQueue.java": {
+      "calls": [],
+      "classes": [
+        "InMemoryMessageQueue"
+      ],
+      "endpoints": [],
+      "fields": [
+        "queues"
+      ],
+      "kind": "other",
+      "methods": [
+        "purge",
+        "receive",
+        "send"
+      ],
+      "program": null,
+      "sha256": "d9b303a065277ff174e46e7b0cb84e7690acd41320225d4c903f6608fe3f5756"
+    },
+    "src/main/java/com/gitgalaxy/modernized/messaging/MessageQueue.java": {
+      "calls": [],
+      "classes": [
+        "MessageQueue"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [],
+      "program": null,
+      "sha256": "4144c540399a2e1b651f1e210fe5f64de7bb0bcbd5c51c7ed9d144d45ab23674"
+    },
+    "src/main/java/com/gitgalaxy/modernized/messaging/RoutingTransientData.java": {
+      "calls": [],
+      "classes": [
+        "RoutingTransientData"
+      ],
+      "endpoints": [],
+      "fields": [
+        "directory",
+        "messages"
+      ],
+      "kind": "other",
+      "methods": [
+        "RoutingTransientData",
+        "append",
+        "delete",
+        "read",
+        "write"
+      ],
+      "program": null,
+      "sha256": "f439d50170603b18a9805b9ca04125be4fee98f67a9c1341378830bbcaa99a26"
+    },
+    "src/main/java/com/gitgalaxy/modernized/messaging/TransientData.java": {
+      "calls": [],
+      "classes": [
+        "TransientData"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [],
+      "program": null,
+      "sha256": "1a99097902b327e48aa395d25b04e98ad8c3618fc129a4359190ee0f5593c511"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/vsam/ZxRecordRepository.java": {
+      "calls": [
+        "JpaRepository"
+      ],
+      "classes": [
+        "ZxRecordRepository"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "repository",
+      "methods": [],
+      "program": null,
+      "sha256": "256f2183768f75f0ce73581705f50220682fa6623c31f22de8f9e0158f651b36"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java": {
+      "calls": [],
+      "classes": [
+        "Ecs001Service"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "service",
+      "methods": [
+        "executeEcs001",
+        "handleLink"
+      ],
+      "program": "Source/ECS001.cbl",
+      "sha256": "974dbda6e50c2a0dba349916eedbe1e2b86830d76e340ab55dcd525fc222beb8"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java": {
+      "calls": [
+        "ZxRecordRepository"
+      ],
+      "classes": [
+        "Zecs000Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "transientData",
+        "zxRecordRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "commitPointL504",
+        "commitPointL560",
+        "executeZecs000",
+        "handleTransaction",
+        "onAbendL252",
+        "readZcexpire",
+        "rewriteZcexpire",
+        "writeZcexpire",
+        "writeqTdL780"
+      ],
+      "program": "Source/ZECS000.cbl",
+      "sha256": "2a5d89e287166241e520984913aced7f296cadab1b869dc540d7aea0ffc5e3b2"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java": {
+      "calls": [
+        "Zecs003Service",
+        "ZuidstckService"
+      ],
+      "classes": [
+        "Zecs001Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "transientData",
+        "zecs003Service"
+      ],
+      "kind": "service",
+      "methods": [
+        "commitPointL1444",
+        "dispatchZecs002L795",
+        "dispatchZecs003L753",
+        "dispatchZuidstckL1244",
+        "executeZecs001",
+        "handleTransaction",
+        "rollbackL2160",
+        "writeqTdL2137"
+      ],
+      "program": "Source/ZECS001.cbl",
+      "sha256": "a68ffa617d496c5971dfecfe77104fc9b57feb0a278228055908fab7cebfdd6a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java": {
+      "calls": [],
+      "classes": [
+        "Zecs003Service"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "service",
+      "methods": [
+        "executeZecs003",
+        "handleLink"
+      ],
+      "program": "Source/ZECS003.cbl",
+      "sha256": "e784d3a92a04e82c641a93d3fbfec7d57579fddfbf2dea7c6eeeac5c03a000b4"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java": {
+      "calls": [],
+      "classes": [
+        "ZecspltService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "transientData"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeZecsplt",
+        "handleTransaction",
+        "writeqTdL135"
+      ],
+      "program": "Source/ZECSPLT.cbl",
+      "sha256": "ce6301abb411d74c75a475694ff11a06c7b546c25782351027811eb6a7358edd"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/ZuidstckService.java": {
+      "calls": [],
+      "classes": [
+        "ZuidstckService"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "service",
+      "methods": [
+        "executeDummyCall"
+      ],
+      "program": null,
+      "sha256": "2770942ab50df35c9f5ce2ea9505ebc250e1f5f6c3ce2fc523e08bdc19305a64"
+    },
+    "src/main/java/com/gitgalaxy/modernized/util/EbcdicDecoderUtil.java": {
+      "calls": [],
+      "classes": [
+        "EbcdicDecoderUtil"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [
+        "decodeEbcdicString",
+        "unpackComp3"
+      ],
+      "program": null,
+      "sha256": "b9eec9cca94bad8ff48c831a76e2461da0cf580555d4c1225a1bc15e7992b035"
+    },
+    "src/main/java/com/gitgalaxy/modernized/web/CicsExceptionAdvice.java": {
+      "calls": [],
+      "classes": [
+        "CicsExceptionAdvice"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [
+        "handleAbend",
+        "handleCondition",
+        "handleRollback"
+      ],
+      "program": null,
+      "sha256": "36fe12fad4330e405ae044009742a529dd303e166214868f79a79cb02f51de6b"
+    }
+  },
+  "generated_from": {
+    "clean_room": "zecs_gitgalaxy_clean_TIMESTAMP"
+  },
+  "tables": [],
+  "version": 1
+}

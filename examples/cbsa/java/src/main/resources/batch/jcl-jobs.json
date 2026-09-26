@@ -1,0 +1,1810 @@
+[
+  {
+    "job": "ASMNCOPT",
+    "file": "etc/install/base/buildjcl/ASMNCOPT.jcl",
+    "kind": "build",
+    "reason": "builds / installs (ASMA90, IEWL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "ASM",
+        "program": "ASMA90"
+      },
+      {
+        "step": "LKED",
+        "program": "IEWL"
+      }
+    ]
+  },
+  {
+    "job": "COMPALL",
+    "file": "etc/install/base/buildjcl/COMPALL.jcl",
+    "kind": "build",
+    "reason": "tooling (&ASMBLR, IEBGENER, IEWL, IGYCRCTL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "ABNDPROC.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "ABNDPROC.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "ABNDPROC.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BANKDATA.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "BANKDATA.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BANKDATA.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1MAI.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1MAI.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1MAI.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1MAI.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNKMENU.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "BNKMENU.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNKMENU.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "CRDTAGY1.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "CRDTAGY1.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "CRDTAGY1.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "CRDTAGY2.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "CRDTAGY2.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "CRDTAGY2.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "CRDTAGY3.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "CRDTAGY3.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "CRDTAGY3.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "CRDTAGY4.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "CRDTAGY4.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "CRDTAGY4.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "CRDTAGY5.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "CRDTAGY5.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "CRDTAGY5.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "CREACC.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "CREACC.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "CREACC.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "CRECUST.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "CRECUST.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "CRECUST.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "DBCRFUN.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "DBCRFUN.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "DBCRFUN.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "DELACC.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "DELACC.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "DELACC.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "DELCUS.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "DELCUS.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "DELCUS.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "GETCOMPY.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "GETCOMPY.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "GETCOMPY.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "GETSCODE.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "GETSCODE.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "GETSCODE.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "INQACC.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "INQACC.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "INQACC.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "INQACCCU.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "INQACCCU.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "INQACCCU.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "INQCUST.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "INQCUST.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "INQCUST.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "UPDACC.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "UPDACC.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "UPDACC.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "UPDCUST.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "UPDCUST.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "UPDCUST.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "XFRFUN.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "XFRFUN.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "XFRFUN.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1ACC.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1ACC.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1ACC.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1ACC.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1CAM.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1CAM.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1CAM.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1CAM.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1CAC.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "BNK1CAC.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1CAC.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1CCA.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "BNK1CCA.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1CCA.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1CCM.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1CCM.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1CCM.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1CCM.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1CCS.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "BNK1CCS.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1CCS.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1CDM.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1CDM.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1CDM.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1CDM.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1CRA.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "BNK1CRA.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1CRA.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1DAM.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1DAM.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1DAM.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1DAM.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1DAC.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "BNK1DAC.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1DAC.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1DCM.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1DCM.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1DCM.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1DCM.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1DCS.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "BNK1DCS.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1DCS.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1TFM.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1TFM.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1TFM.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1TFM.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1TFN.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "BNK1TFN.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1TFN.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1UAM.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1UAM.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1UAM.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1UAM.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1UAC.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "BNK1UAC.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1UAC.LKED",
+        "program": "IEWL"
+      }
+    ]
+  },
+  {
+    "job": "PLOP1",
+    "file": "etc/install/base/buildjcl/PLOP1.jcl",
+    "kind": "build",
+    "reason": "tooling (IEBGENER, IEWL, IGYCRCTL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      }
+    ]
+  },
+  {
+    "job": "TEST",
+    "file": "etc/install/base/buildjcl/TEST.jcl",
+    "kind": "build",
+    "reason": "tooling (&ASMBLR, IEBGENER, IEWL, IGYCRCTL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1ACC.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1ACC.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1ACC.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1ACC.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1CCM.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1CCM.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1CCM.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1CCM.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1CCM.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1CCM.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1CCM.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1CCM.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1CCM.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1CCM.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1CCM.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1CCM.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1CCM.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1CCM.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1CCM.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1CCM.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1CCM.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1CCM.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1CCM.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1CCM.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1MAI.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1MAI.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1MAI.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1MAI.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1MAI.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1MAI.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1MAI.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1MAI.ASMDSECT",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "None.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "None.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "None.LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1MAI.COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BNK1MAI.ASMMAP",
+        "program": "&ASMBLR"
+      },
+      {
+        "step": "BNK1MAI.LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "BNK1MAI.ASMDSECT",
+        "program": "&ASMBLR"
+      }
+    ]
+  },
+  {
+    "job": "TMP",
+    "file": "etc/install/base/buildjcl/TMP.jcl",
+    "kind": "build",
+    "reason": "tooling (IEBGENER, IEWL, IGYCRCTL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LKED",
+        "program": "IEWL"
+      }
+    ]
+  },
+  {
+    "job": "BTCHSQL",
+    "file": "etc/install/base/db2jcl/BTCHSQL.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "CREDB00",
+    "file": "etc/install/base/db2jcl/CREDB00.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "CREI101",
+    "file": "etc/install/base/db2jcl/CREI101.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "CREI201",
+    "file": "etc/install/base/db2jcl/CREI201.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "CREI301",
+    "file": "etc/install/base/db2jcl/CREI301.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "CRESG01",
+    "file": "etc/install/base/db2jcl/CRESG01.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "CRESG02",
+    "file": "etc/install/base/db2jcl/CRESG02.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "CRESG03",
+    "file": "etc/install/base/db2jcl/CRESG03.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "CRETB01",
+    "file": "etc/install/base/db2jcl/CRETB01.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "CRETB02",
+    "file": "etc/install/base/db2jcl/CRETB02.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "CRETB03",
+    "file": "etc/install/base/db2jcl/CRETB03.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "CRETS01",
+    "file": "etc/install/base/db2jcl/CRETS01.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "CRETS02",
+    "file": "etc/install/base/db2jcl/CRETS02.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "CRETS03",
+    "file": "etc/install/base/db2jcl/CRETS03.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "DB2BIND",
+    "file": "etc/install/base/db2jcl/DB2BIND.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2, IKJEFT01 (TSO commands))",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "BIND",
+        "program": "IKJEFT01"
+      },
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "DROPDB2",
+    "file": "etc/install/base/db2jcl/DROPDB2.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "DRPDB00",
+    "file": "etc/install/base/db2jcl/DRPDB00.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "DRPI101",
+    "file": "etc/install/base/db2jcl/DRPI101.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "DRPI201",
+    "file": "etc/install/base/db2jcl/DRPI201.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "DRPI301",
+    "file": "etc/install/base/db2jcl/DRPI301.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "DRPSG01",
+    "file": "etc/install/base/db2jcl/DRPSG01.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "DRPSG02",
+    "file": "etc/install/base/db2jcl/DRPSG02.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "DRPSG03",
+    "file": "etc/install/base/db2jcl/DRPSG03.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "DRPTB01",
+    "file": "etc/install/base/db2jcl/DRPTB01.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "DRPTB02",
+    "file": "etc/install/base/db2jcl/DRPTB02.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "DRPTB03",
+    "file": "etc/install/base/db2jcl/DRPTB03.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "DRPTS01",
+    "file": "etc/install/base/db2jcl/DRPTS01.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "DRPTS02",
+    "file": "etc/install/base/db2jcl/DRPTS02.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "DRPTS03",
+    "file": "etc/install/base/db2jcl/DRPTS03.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "INSTDB2",
+    "file": "etc/install/base/db2jcl/INSTDB2.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP2)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GRANT",
+        "program": "DSNTEP2"
+      }
+    ]
+  },
+  {
+    "job": "BANKDATA",
+    "file": "etc/install/base/installjcl/BANKDATA.jcl",
+    "kind": "application",
+    "reason": "runs BANKDATA",
+    "generated": "BankdataJobConfig",
+    "spring_job": "BANKDATA",
+    "steps": [
+      {
+        "step": "BANKDAT0",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "BANKDAT1",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "BANKDAT5",
+        "program": "BANKDATA"
+      }
+    ]
+  },
+  {
+    "job": "CRELIBS",
+    "file": "etc/install/base/installjcl/CRELIBS.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IEFBR14)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "IEFBR14",
+        "program": "IEFBR14"
+      }
+    ]
+  },
+  {
+    "job": "HBANKCSD",
+    "file": "etc/install/base/installjcl/HBANKCSD.jcl",
+    "kind": "build",
+    "reason": "builds / installs (DFHCSDUP)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "DFHCSDUP",
+        "program": "DFHCSDUP"
+      }
+    ]
+  },
+  {
+    "job": "RACF001",
+    "file": "etc/install/base/installjcl/RACF001.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IKJEFT01 (TSO commands))",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "TSO",
+        "program": "IKJEFT01"
+      }
+    ]
+  },
+  {
+    "job": "REPLCICS",
+    "file": "etc/install/base/installjcl/REPLCICS.jcl",
+    "kind": "build",
+    "reason": "builds / installs (IEBCOPY)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "JOBSTEP",
+        "program": "IEBCOPY"
+      }
+    ]
+  },
+  {
+    "job": "REPLSIP",
+    "file": "etc/install/base/installjcl/REPLSIP.jcl",
+    "kind": "build",
+    "reason": "builds / installs (IEBCOPY)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "JOBSTEP",
+        "program": "IEBCOPY"
+      }
+    ]
+  },
+  {
+    "job": "RESTCICS",
+    "file": "etc/install/base/installjcl/RESTCICS.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IKJEFT01 (TSO commands))",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP0001",
+        "program": "IKJEFT01"
+      }
+    ]
+  },
+  {
+    "job": "RESTZOSC",
+    "file": "etc/install/base/installjcl/RESTZOSC.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IKJEFT01 (TSO commands))",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP0001",
+        "program": "IKJEFT01"
+      }
+    ]
+  },
+  {
+    "job": "SHUTCICS",
+    "file": "etc/install/base/installjcl/SHUTCICS.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IKJEFT01 (TSO commands))",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP0001",
+        "program": "IKJEFT01"
+      }
+    ]
+  },
+  {
+    "job": "SHUTZOSC",
+    "file": "etc/install/base/installjcl/SHUTZOSC.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IKJEFT01 (TSO commands))",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP0001",
+        "program": "IKJEFT01"
+      }
+    ]
+  },
+  {
+    "job": "ZOSCSEC",
+    "file": "etc/install/base/installjcl/ZOSCSEC.jcl",
+    "kind": "build",
+    "reason": "builds / installs (BPXBATCH)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "BPXIT",
+        "program": "BPXBATCH"
+      }
+    ]
+  }
+]

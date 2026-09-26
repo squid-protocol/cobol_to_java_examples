@@ -1,0 +1,381 @@
+[
+  {
+    "job": "ASMZECS",
+    "file": "JCL/ASMZECS.jcl",
+    "kind": "build",
+    "reason": "tooling (no program)",
+    "generated": null,
+    "spring_job": null,
+    "steps": []
+  },
+  {
+    "job": "CONFIG",
+    "file": "JCL/CONFIG.jcl",
+    "kind": "runner",
+    "reason": "runs IKJEFT1B (the REXX / CLIST exec REXXREPL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP01",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP02",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP03",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP04",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP05",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP06",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP07",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP08",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP09",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP10",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP11",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP12",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP13",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP14",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP15",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP16",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP17",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP18",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP19",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP20",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP21",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP22",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP23",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP24",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP25",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP26",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP27",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP28",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP29",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP30",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP31",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP32",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP33",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP34",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP35",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP36",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP37",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP38",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP39",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP40",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP41",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP42",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP43",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP44",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP45",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP46",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP47",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP48",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP49",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "STEP50",
+        "program": "IEBGENER"
+      }
+    ]
+  },
+  {
+    "job": "CSDZECS",
+    "file": "JCL/CSDZECS.jcl",
+    "kind": "build",
+    "reason": "builds / installs (DFHCSDUP)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "ZECSGRP",
+        "program": "DFHCSDUP"
+      }
+    ]
+  },
+  {
+    "job": "CSDZECSN",
+    "file": "JCL/CSDZECSN.jcl",
+    "kind": "build",
+    "reason": "builds / installs (DFHCSDUP)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP01",
+        "program": "DFHCSDUP"
+      }
+    ]
+  },
+  {
+    "job": "CSDZECSR",
+    "file": "JCL/CSDZECSR.jcl",
+    "kind": "build",
+    "reason": "builds / installs (DFHCSDUP)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP01",
+        "program": "DFHCSDUP"
+      }
+    ]
+  },
+  {
+    "job": "CSDZECSS",
+    "file": "JCL/CSDZECSS.jcl",
+    "kind": "build",
+    "reason": "builds / installs (DFHCSDUP)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP01",
+        "program": "DFHCSDUP"
+      }
+    ]
+  },
+  {
+    "job": "DEFEXPR",
+    "file": "JCL/DEFEXPR.jcl",
+    "kind": "runner",
+    "reason": "runs IKJEFT1B (the REXX / CLIST exec REXXREPL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CONFIG",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "CUSTOMIZ",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "DEFINE",
+        "program": "DFHCSDUP"
+      },
+      {
+        "step": "ECSFILEC",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "ECSFILED",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "DEFZC##",
+    "file": "JCL/DEFZC##.jcl",
+    "kind": "runner",
+    "reason": "runs IKJEFT1B (the REXX / CLIST exec REXXREPL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CONFIG",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "CUSTOMIZ",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "DEFINE",
+        "program": "DFHCSDUP"
+      },
+      {
+        "step": "ECSFILEC",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "ECSFILED",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "ECSKEYC",
+        "program": "IKJEFT1B"
+      },
+      {
+        "step": "ECSKEYD",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "ZC##DC",
+    "file": "JCL/ZC##DC.jcl",
+    "kind": "build",
+    "reason": "tooling (DFHCSDUP, IEBGENER)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CREATE",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "DEFDOCT",
+        "program": "DFHCSDUP"
+      }
+    ]
+  },
+  {
+    "job": "ZC##SD",
+    "file": "JCL/ZC##SD.jcl",
+    "kind": "build",
+    "reason": "tooling (DFHCSDUP, IEBGENER)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CREATE",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "DEFDOCT",
+        "program": "DFHCSDUP"
+      }
+    ]
+  }
+]

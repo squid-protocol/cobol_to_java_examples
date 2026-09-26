@@ -1,0 +1,5235 @@
+{
+  "categories": {
+    "batch-utility": {
+      "nature": "port",
+      "resolution": "Replace the utility with its Spring Batch equivalent (SORT -> a sorting step, IDCAMS REPRO -> a copy, a TSO / IMS runner -> the program's runBatch), reading its control statements in SYSIN.",
+      "title": "Utility job steps to port"
+    },
+    "business-logic": {
+      "nature": "port",
+      "resolution": "Port the cited paragraphs; the skeleton names the COBOL lines and the facts they touch.",
+      "title": "Business logic to port"
+    },
+    "commarea-mismatch": {
+      "nature": "conflict",
+      "resolution": "For each caller, confirm which layout the callee reads (the COBOL MOVEs into DFHCOMMAREA say); map that caller's record onto the DTO, or give the callee one DTO per entry.",
+      "title": "COMMAREA layout mismatches"
+    },
+    "configuration": {
+      "nature": "review",
+      "resolution": "Point the datasource at the target database; the password comes from SPRING_DATASOURCE_PASSWORD at run time, never from a file.",
+      "title": "Target configuration"
+    },
+    "db2-dialect": {
+      "nature": "review",
+      "resolution": "Run each statement on the target database; DB2-only syntax (FETCH FIRST, WITH UR, special registers) needs its equivalent.",
+      "title": "DB2 SQL on another database"
+    },
+    "interface-call": {
+      "nature": "port",
+      "resolution": "Wire the called service (or a mock) in place of the placeholder.",
+      "title": "Calls to other services"
+    },
+    "missing-layout": {
+      "nature": "fact-gap",
+      "resolution": "Add the missing copybook / %INCLUDE member or record to the repository and re-run; the DTO then gets its real fields.",
+      "title": "Unresolved layouts"
+    },
+    "record-variant": {
+      "nature": "conflict",
+      "resolution": "Map the program's record onto the entity's fields (or split the entity); the two layouts' sizes are in the TODO.",
+      "title": "Programs reading another record layout"
+    },
+    "transaction-split": {
+      "nature": "port",
+      "resolution": "End the transaction at the SYNCPOINT the comment cites: a nested REQUIRES_NEW call, or two service methods.",
+      "title": "Unit-of-work boundaries to split"
+    },
+    "unchecked-resp": {
+      "nature": "review",
+      "resolution": "Decide what a failed call does: the COBOL ignores it, so the Java throws; catch it where the old behaviour (carry on) is really wanted.",
+      "title": "CICS responses the COBOL never tests"
+    },
+    "vsam-key": {
+      "nature": "fact-gap",
+      "resolution": "Name the key: split the record so the key is one field, or keep the String vsamKey in step with the record; for a browse, add a range query over the key.",
+      "title": "Keys that are not one field"
+    }
+  },
+  "generated_from": {
+    "clean_room": "aws-mainframe-modernization-carddemo_gitgalaxy_clean_TIMESTAMP"
+  },
+  "items": [
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:322"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:674"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl:367"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:156"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:184"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/app-authorization-ims-db2-mq/csd/CRDDEMO2.csd:18"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/app-authorization-ims-db2-mq/csd/CRDDEMO2.csd:49"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Copaus0cController.java",
+      "id": "WL-0001",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+      "symbols": [
+        "Copaus0cController#link",
+        "Copaus0cController#transactionCPVS"
+      ],
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:254"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COADM01C.cbl:145"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/app-transaction-type-db2/csd/CRDDEMOD.csd:11"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/app-transaction-type-db2/csd/CRDDEMOD.csd:25"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/CotrtlicController.java",
+      "id": "WL-0002",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [
+        "CotrtlicController#link",
+        "CotrtlicController#transactionCTLI"
+      ],
+      "text": "callers also pass WS-COMMAREA (app/app-transaction-type-db2/cbl/COTRTLIC.cbl, 2000 bytes) at app/app-transaction-type-db2/cbl/COTRTLIC.cbl:910"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:620"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:648"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COADM01C.cbl:145"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/app-transaction-type-db2/csd/CRDDEMOD.csd:18"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/app-transaction-type-db2/csd/CRDDEMOD.csd:35"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/CotrtupcController.java",
+      "id": "WL-0003",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [
+        "CotrtupcController#link",
+        "CotrtupcController#transactionCTTU"
+      ],
+      "text": "callers also pass WS-COMMAREA (app/app-transaction-type-db2/cbl/COTRTUPC.cbl, 2000 bytes) at app/app-transaction-type-db2/cbl/COTRTUPC.cbl:567"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:620"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:648"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COADM01C.cbl:145"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/app-transaction-type-db2/csd/CRDDEMOD.csd:18"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/app-transaction-type-db2/csd/CRDDEMOD.csd:35"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/CotrtupcController.java",
+      "id": "WL-0004",
+      "line": 21,
+      "nature": "conflict",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [
+        "CotrtupcController#link",
+        "CotrtupcController#transactionCTTU"
+      ],
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/app-transaction-type-db2/cbl/COTRTLIC.cbl:648"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:156"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:184"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:306"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/CoactupcController.java",
+      "id": "WL-0005",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/COACTUPC.cbl",
+      "symbols": [
+        "CoactupcController#link",
+        "CoactupcController#transactionCAUP"
+      ],
+      "text": "callers also pass WS-COMMAREA (app/cbl/COACTUPC.cbl, 2000 bytes) at app/cbl/COACTUPC.cbl:1015"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:156"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:184"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:181"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:317"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/CoactvwcController.java",
+      "id": "WL-0006",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/COACTVWC.cbl",
+      "symbols": [
+        "CoactvwcController#link",
+        "CoactvwcController#transactionCAVW"
+      ],
+      "text": "callers also pass WS-COMMAREA (app/cbl/COACTVWC.cbl, 2000 bytes) at app/cbl/COACTVWC.cbl:402"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:620"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl:457"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COSGN00C.cbl:231"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR00C.cbl:196"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR00C.cbl:206"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR00C.cbl:514"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR01C.cbl:175"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR02C.cbl:258"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR03C.cbl:205"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:327"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Coadm01cController.java",
+      "id": "WL-0007",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/COADM01C.cbl",
+      "symbols": [
+        "Coadm01cController#link",
+        "Coadm01cController#transactionCA00"
+      ],
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COADM01C.cbl:111, app/cbl/COADM01C.cbl:280, app/cbl/COSGN00C.cbl:231"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:156"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:184"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:337"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Cobil00cController.java",
+      "id": "WL-0008",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/COBIL00C.cbl",
+      "symbols": [
+        "Cobil00cController#link",
+        "Cobil00cController#transactionCB00"
+      ],
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 218 bytes) at app/cbl/COBIL00C.cbl:146"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COCRDLIC.cbl:538"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COCRDLIC.cbl:566"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:156"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:184"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:203"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:357"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/CocrdlicController.java",
+      "id": "WL-0009",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/COCRDLIC.cbl",
+      "symbols": [
+        "CocrdlicController#link",
+        "CocrdlicController#transactionCC00",
+        "CocrdlicController#transactionCCLI"
+      ],
+      "text": "callers also pass WS-COMMAREA (app/cbl/COCRDLIC.cbl, 2000 bytes) at app/cbl/COCRDLIC.cbl:615"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COCRDLIC.cbl:538"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COCRDLIC.cbl:566"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:156"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:184"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:219"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:347"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/CocrdslcController.java",
+      "id": "WL-0010",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/COCRDSLC.cbl",
+      "symbols": [
+        "CocrdslcController#link",
+        "CocrdslcController#transactionCCDL"
+      ],
+      "text": "callers also pass WS-COMMAREA (app/cbl/COCRDSLC.cbl, 2000 bytes) at app/cbl/COCRDSLC.cbl:402"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COCRDLIC.cbl:538"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COCRDLIC.cbl:566"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:156"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:184"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:367"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/CocrdupcController.java",
+      "id": "WL-0011",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/COCRDUPC.cbl",
+      "symbols": [
+        "CocrdupcController#link",
+        "CocrdupcController#transactionCCUP"
+      ],
+      "text": "callers also pass WS-COMMAREA (app/cbl/COCRDUPC.cbl, 2000 bytes) at app/cbl/COCRDUPC.cbl:554"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:322"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:674"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COACTUPC.cbl:956"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COACTVWC.cbl:349"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COBIL00C.cbl:281"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COCRDLIC.cbl:402"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COCRDSLC.cbl:331"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COCRDUPC.cbl:473"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/CORPT00C.cbl:548"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COSGN00C.cbl:236"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COTRN00C.cbl:192"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COTRN00C.cbl:518"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COTRN01C.cbl:205"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COTRN02C.cbl:508"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:399"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Comen01cController.java",
+      "id": "WL-0012",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/COMEN01C.cbl",
+      "symbols": [
+        "Comen01cController#link",
+        "Comen01cController#transactionCM00"
+      ],
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COCRDLIC.cbl:402, app/cbl/COMEN01C.cbl:107, app/cbl/COSGN00C.cbl:236"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:156"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:184"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:409"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Corpt00cController.java",
+      "id": "WL-0013",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/CORPT00C.cbl",
+      "symbols": [
+        "Corpt00cController#link",
+        "Corpt00cController#transactionCR00"
+      ],
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/CORPT00C.cbl:199, app/cbl/CORPT00C.cbl:587"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:156"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:184"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COTRN01C.cbl:205"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:419"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Cotrn00cController.java",
+      "id": "WL-0014",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/COTRN00C.cbl",
+      "symbols": [
+        "Cotrn00cController#link",
+        "Cotrn00cController#transactionCT00"
+      ],
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 218 bytes) at app/cbl/COTRN00C.cbl:138"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:156"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:184"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COTRN00C.cbl:192"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COTRN00C.cbl:518"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:429"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Cotrn01cController.java",
+      "id": "WL-0015",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/COTRN01C.cbl",
+      "symbols": [
+        "Cotrn01cController#link",
+        "Cotrn01cController#transactionCT01"
+      ],
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 218 bytes) at app/cbl/COTRN01C.cbl:136"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:156"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:184"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:439"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Cotrn02cController.java",
+      "id": "WL-0016",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/COTRN02C.cbl",
+      "symbols": [
+        "Cotrn02cController#link",
+        "Cotrn02cController#transactionCT02"
+      ],
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COTRN02C.cbl:156, app/cbl/COTRN02C.cbl:530"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COADM01C.cbl:145"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:449"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Cousr00cController.java",
+      "id": "WL-0017",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/COUSR00C.cbl",
+      "symbols": [
+        "Cousr00cController#link",
+        "Cousr00cController#transactionCU00"
+      ],
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 194 bytes) at app/cbl/COUSR00C.cbl:141"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COADM01C.cbl:145"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:459"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Cousr01cController.java",
+      "id": "WL-0018",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/COUSR01C.cbl",
+      "symbols": [
+        "Cousr01cController#link",
+        "Cousr01cController#transactionCU01"
+      ],
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COUSR01C.cbl:107"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COADM01C.cbl:145"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR00C.cbl:196"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR00C.cbl:206"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR00C.cbl:514"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:469"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Cousr02cController.java",
+      "id": "WL-0019",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/COUSR02C.cbl",
+      "symbols": [
+        "Cousr02cController#link",
+        "Cousr02cController#transactionCU02"
+      ],
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COUSR02C.cbl:135"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COADM01C.cbl:145"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR00C.cbl:196"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR00C.cbl:206"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR00C.cbl:514"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:479"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Cousr03cController.java",
+      "id": "WL-0020",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/cbl/COUSR03C.cbl",
+      "symbols": [
+        "Cousr03cController#link",
+        "Cousr03cController#transactionCU03"
+      ],
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COUSR03C.cbl:134"
+    },
+    {
+      "category": "record-variant",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/cbl/CBACT01C.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact01cService.java",
+      "id": "WL-0021",
+      "line": 35,
+      "nature": "conflict",
+      "program": "app/cbl/CBACT01C.cbl",
+      "symbols": [
+        "Cbact01cService#readAllAcctfileFile"
+      ],
+      "text": "this program uses FD-ACCTFILE-REC (300 bytes); the entity follows ACCOUNT-RECORD (300 bytes) -- map one onto the other"
+    },
+    {
+      "category": "record-variant",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/cbl/CBACT02C.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact02cService.java",
+      "id": "WL-0022",
+      "line": 35,
+      "nature": "conflict",
+      "program": "app/cbl/CBACT02C.cbl",
+      "symbols": [
+        "Cbact02cService#readAllCardfileFile"
+      ],
+      "text": "this program uses FD-CARDFILE-REC (150 bytes); the entity follows CARD-RECORD (150 bytes) -- map one onto the other"
+    },
+    {
+      "category": "record-variant",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/cbl/CBACT03C.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact03cService.java",
+      "id": "WL-0023",
+      "line": 35,
+      "nature": "conflict",
+      "program": "app/cbl/CBACT03C.cbl",
+      "symbols": [
+        "Cbact03cService#readAllXreffileFile"
+      ],
+      "text": "this program uses FD-XREFFILE-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other"
+    },
+    {
+      "category": "record-variant",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/cbl/CBACT04C.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact04cService.java",
+      "id": "WL-0024",
+      "line": 46,
+      "nature": "conflict",
+      "program": "app/cbl/CBACT04C.cbl",
+      "symbols": [
+        "Cbact04cService#readAccountFile",
+        "Cbact04cService#rewriteAccountFile"
+      ],
+      "text": "this program uses FD-ACCTFILE-REC (300 bytes); the entity follows ACCOUNT-RECORD (300 bytes) -- map one onto the other"
+    },
+    {
+      "category": "record-variant",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/cbl/CBACT04C.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact04cService.java",
+      "id": "WL-0025",
+      "line": 56,
+      "nature": "conflict",
+      "program": "app/cbl/CBACT04C.cbl",
+      "symbols": [
+        "Cbact04cService#readXrefFile"
+      ],
+      "text": "this program uses FD-XREFFILE-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other"
+    },
+    {
+      "category": "record-variant",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/cbl/CBCUS01C.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbcus01cService.java",
+      "id": "WL-0026",
+      "line": 35,
+      "nature": "conflict",
+      "program": "app/cbl/CBCUS01C.cbl",
+      "symbols": [
+        "Cbcus01cService#readAllCustfileFile"
+      ],
+      "text": "this program uses FD-CUSTFILE-REC (500 bytes); the entity follows CUSTOMER-RECORD (500 bytes) -- map one onto the other"
+    },
+    {
+      "category": "record-variant",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/cbl/CBEXPORT.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CbexportService.java",
+      "id": "WL-0027",
+      "line": 70,
+      "nature": "conflict",
+      "program": "app/cbl/CBEXPORT.cbl",
+      "symbols": [
+        "CbexportService#writeExportOutput"
+      ],
+      "text": "this program uses EXPORT-OUTPUT-RECORD (500 bytes); the entity follows EXPORT-INPUT-RECORD (500 bytes) -- map one onto the other"
+    },
+    {
+      "category": "record-variant",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/cbl/CBTRN02C.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn02cService.java",
+      "id": "WL-0028",
+      "line": 45,
+      "nature": "conflict",
+      "program": "app/cbl/CBTRN02C.cbl",
+      "symbols": [
+        "Cbtrn02cService#readAccountFile",
+        "Cbtrn02cService#rewriteAccountFile"
+      ],
+      "text": "this program uses FD-ACCTFILE-REC (300 bytes); the entity follows ACCOUNT-RECORD (300 bytes) -- map one onto the other"
+    },
+    {
+      "category": "record-variant",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/cbl/CBTRN02C.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn02cService.java",
+      "id": "WL-0029",
+      "line": 55,
+      "nature": "conflict",
+      "program": "app/cbl/CBTRN02C.cbl",
+      "symbols": [
+        "Cbtrn02cService#readXrefFile"
+      ],
+      "text": "this program uses FD-XREFFILE-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other"
+    },
+    {
+      "category": "record-variant",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/cbl/CBTRN02C.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn02cService.java",
+      "id": "WL-0030",
+      "line": 70,
+      "nature": "conflict",
+      "program": "app/cbl/CBTRN02C.cbl",
+      "symbols": [
+        "Cbtrn02cService#writeTransactFile"
+      ],
+      "text": "this program uses FD-TRANFILE-REC (350 bytes); the entity follows TRAN-RECORD (350 bytes) -- map one onto the other"
+    },
+    {
+      "category": "record-variant",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/cbl/CBTRN03C.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn03cService.java",
+      "id": "WL-0031",
+      "line": 42,
+      "nature": "conflict",
+      "program": "app/cbl/CBTRN03C.cbl",
+      "symbols": [
+        "Cbtrn03cService#readXrefFile"
+      ],
+      "text": "this program uses FD-CARDXREF-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other"
+    },
+    {
+      "category": "missing-layout",
+      "facts": [
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/app-vsam-mq/csd/CRDDEMOM.csd:1"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/app-vsam-mq/csd/CRDDEMOM.csd:17"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Coacct01Controller.java",
+      "id": "WL-0032",
+      "line": 18,
+      "nature": "fact-gap",
+      "program": "app/app-vsam-mq/cbl/COACCT01.cbl",
+      "symbols": [
+        "Coacct01Controller#transactionCDRA"
+      ],
+      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA"
+    },
+    {
+      "category": "missing-layout",
+      "facts": [
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/app-vsam-mq/csd/CRDDEMOM.csd:9"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/app-vsam-mq/csd/CRDDEMOM.csd:27"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Codate01Controller.java",
+      "id": "WL-0033",
+      "line": 18,
+      "nature": "fact-gap",
+      "program": "app/app-vsam-mq/cbl/CODATE01.cbl",
+      "symbols": [
+        "Codate01Controller#transactionCDRD"
+      ],
+      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA"
+    },
+    {
+      "category": "missing-layout",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:322"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:674"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COADM01C.cbl:168"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COBIL00C.cbl:281"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COMEN01C.cbl:201"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/CORPT00C.cbl:548"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COTRN00C.cbl:192"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COTRN00C.cbl:518"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COTRN01C.cbl:205"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COTRN02C.cbl:508"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR00C.cbl:196"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR00C.cbl:206"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR00C.cbl:514"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR01C.cbl:175"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR02C.cbl:258"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COUSR03C.cbl:205"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:249"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/csd/CARDDEMO.CSD:378"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/jcl/CBADMCDJ.jcl:98"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Cosgn00cController.java",
+      "id": "WL-0034",
+      "line": 18,
+      "nature": "fact-gap",
+      "program": "app/cbl/COSGN00C.cbl",
+      "symbols": [
+        "Cosgn00cController#link",
+        "Cosgn00cController#transactionCC00"
+      ],
+      "text": "no COMMAREA layout: DFHCOMMAREA is variable-length or of unknown width, and no resolved LINK / XCTL / RETURN TRANSID passes this program a record"
+    },
+    {
+      "category": "vsam-key",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/jcl/CBEXPORT.jcl:30"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/ExportInputRecord.java",
+      "id": "WL-0035",
+      "line": 19,
+      "nature": "fact-gap",
+      "program": "app/jcl/CBEXPORT.jcl",
+      "symbols": [
+        "ExportInputRecord"
+      ],
+      "text": "the key (offset 28, 4 bytes, from IDCAMS KEYS) is not one field of EXPORT-INPUT-RECORD: carried as the String vsamKey -- keep it in step with the record"
+    },
+    {
+      "category": "vsam-key",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/ExportInputRecord.java",
+      "id": "WL-0036",
+      "line": 28,
+      "nature": "fact-gap",
+      "program": "app/jcl/CBEXPORT.jcl",
+      "symbols": [],
+      "text": "the key (offset 28, 4 bytes, from IDCAMS KEYS) is not one field of EXPORT-INPUT-RECORD: carried as the String vsamKey -- keep it in step with the record"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "STEP01 EXEC IDCAMS",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/CBEXPORT.jcl:24"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/CbexportJobConfig.java",
+      "id": "WL-0037",
+      "line": null,
+      "nature": "port",
+      "program": "app/jcl/CBEXPORT.jcl",
+      "symbols": [
+        "CbexportJobConfig#STEP01"
+      ],
+      "text": "STEP01 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "DELDEF01 EXEC IDCAMS",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/CREASTMT.JCL:22"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/CreastmtJobConfig.java",
+      "id": "WL-0038",
+      "line": null,
+      "nature": "port",
+      "program": "app/jcl/CREASTMT.JCL",
+      "symbols": [
+        "CreastmtJobConfig#DELDEF01"
+      ],
+      "text": "DELDEF01 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "STEP010 EXEC SORT",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/CREASTMT.JCL:44"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/CreastmtJobConfig.java",
+      "id": "WL-0039",
+      "line": null,
+      "nature": "port",
+      "program": "app/jcl/CREASTMT.JCL",
+      "symbols": [
+        "CreastmtJobConfig#STEP010"
+      ],
+      "text": "STEP010 runs the utility SORT (its control statements are in SYSIN) -- a utility step to port"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "STEP020 EXEC IDCAMS",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/CREASTMT.JCL:56"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/CreastmtJobConfig.java",
+      "id": "WL-0040",
+      "line": null,
+      "nature": "port",
+      "program": "app/jcl/CREASTMT.JCL",
+      "symbols": [
+        "CreastmtJobConfig#STEP020"
+      ],
+      "text": "STEP020 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "STEP05R EXEC SORT",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/TRANREPT.jcl:37"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/TranreptJobConfig.java",
+      "id": "WL-0041",
+      "line": null,
+      "nature": "port",
+      "program": "app/jcl/TRANREPT.jcl",
+      "symbols": [
+        "TranreptJobConfig#STEP05R"
+      ],
+      "text": "STEP05R runs the utility SORT (its control statements are in SYSIN) -- a utility step to port"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "STEP05R.PRC001 EXEC IDCAMS",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/TRANREPT.jcl:23"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/TranreptJobConfig.java",
+      "id": "WL-0042",
+      "line": null,
+      "nature": "port",
+      "program": "app/jcl/TRANREPT.jcl",
+      "symbols": [
+        "TranreptJobConfig#STEP05R.PRC001"
+      ],
+      "text": "STEP05R.PRC001 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl:857"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaua0cService.java",
+      "id": "WL-0043",
+      "line": 34,
+      "nature": "review",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+      "symbols": [
+        "Copaua0cService"
+      ],
+      "text": "the RESP of ASKTIME at line 857 (paragraph 8500-INSERT-AUTH) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl:986"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaua0cService.java",
+      "id": "WL-0044",
+      "line": 35,
+      "nature": "review",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+      "symbols": [
+        "Copaua0cService"
+      ],
+      "text": "the RESP of ASKTIME at line 986 (paragraph 9500-LOG-ERROR) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl:1001"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaua0cService.java",
+      "id": "WL-0045",
+      "line": 36,
+      "nature": "review",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+      "symbols": [
+        "Copaua0cService"
+      ],
+      "text": "the RESP of WRITEQ at line 1001 (paragraph 9500-LOG-ERROR) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:715"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus0cService.java",
+      "id": "WL-0046",
+      "line": 35,
+      "nature": "review",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+      "symbols": [
+        "Copaus0cService"
+      ],
+      "text": "the RESP of RECEIVE at line 715 (paragraph RECEIVE-PAULST-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl:400"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus1cService.java",
+      "id": "WL-0047",
+      "line": 26,
+      "nature": "review",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+      "symbols": [
+        "Copaus1cService"
+      ],
+      "text": "the RESP of RECEIVE at line 400 (paragraph RECEIVE-AUTHVIEW-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl:91"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus2cService.java",
+      "id": "WL-0048",
+      "line": 20,
+      "nature": "review",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+      "symbols": [
+        "Copaus2cService"
+      ],
+      "text": "the RESP of ASKTIME at line 91 (paragraph MAIN-PARA) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl:95"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus2cService.java",
+      "id": "WL-0049",
+      "line": 21,
+      "nature": "review",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+      "symbols": [
+        "Copaus2cService"
+      ],
+      "text": "the RESP of FORMATTIME at line 95 (paragraph MAIN-PARA) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:931"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
+      "id": "WL-0050",
+      "line": 25,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [
+        "CotrtlicService"
+      ],
+      "text": "the RESP of RECEIVE at line 931 (paragraph 1100-RECEIVE-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:1588"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
+      "id": "WL-0051",
+      "line": 26,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [
+        "CotrtlicService"
+      ],
+      "text": "the RESP of SEND at line 1588 (paragraph 2600-SEND-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl:642"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0052",
+      "line": 25,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [
+        "CotrtupcService"
+      ],
+      "text": "the RESP of RECEIVE at line 642 (paragraph 1100-RECEIVE-MAP) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl:1433"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0053",
+      "line": 26,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [
+        "CotrtupcService"
+      ],
+      "text": "the RESP of SEND at line 1433 (paragraph 3400-SEND-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl:1684"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0054",
+      "line": 27,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [
+        "CotrtupcService"
+      ],
+      "text": "the RESP of SEND at line 1684 (paragraph ABEND-ROUTINE) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COACTUPC.cbl:1040"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
+      "id": "WL-0055",
+      "line": 40,
+      "nature": "review",
+      "program": "app/cbl/COACTUPC.cbl",
+      "symbols": [
+        "CoactupcService"
+      ],
+      "text": "the RESP of RECEIVE at line 1040 (paragraph 1100-RECEIVE-MAP) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COACTUPC.cbl:3594"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
+      "id": "WL-0056",
+      "line": 41,
+      "nature": "review",
+      "program": "app/cbl/COACTUPC.cbl",
+      "symbols": [
+        "CoactupcService"
+      ],
+      "text": "the RESP of SEND at line 3594 (paragraph 3400-SEND-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COACTUPC.cbl:4211"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
+      "id": "WL-0057",
+      "line": 42,
+      "nature": "review",
+      "program": "app/cbl/COACTUPC.cbl",
+      "symbols": [
+        "CoactupcService"
+      ],
+      "text": "the RESP of SEND at line 4211 (paragraph ABEND-ROUTINE) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COACTVWC.cbl:583"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
+      "id": "WL-0058",
+      "line": 36,
+      "nature": "review",
+      "program": "app/cbl/COACTVWC.cbl",
+      "symbols": [
+        "CoactvwcService"
+      ],
+      "text": "the RESP of SEND at line 583 (paragraph 1400-SEND-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COACTVWC.cbl:611"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
+      "id": "WL-0059",
+      "line": 37,
+      "nature": "review",
+      "program": "app/cbl/COACTVWC.cbl",
+      "symbols": [
+        "CoactvwcService"
+      ],
+      "text": "the RESP of RECEIVE at line 611 (paragraph 2100-RECEIVE-MAP) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COACTVWC.cbl:924"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
+      "id": "WL-0060",
+      "line": 38,
+      "nature": "review",
+      "program": "app/cbl/COACTVWC.cbl",
+      "symbols": [
+        "CoactvwcService"
+      ],
+      "text": "the RESP of SEND at line 924 (paragraph ABEND-ROUTINE) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COADM01C.cbl:194"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coadm01cService.java",
+      "id": "WL-0061",
+      "line": 26,
+      "nature": "review",
+      "program": "app/cbl/COADM01C.cbl",
+      "symbols": [
+        "Coadm01cService"
+      ],
+      "text": "the RESP of RECEIVE at line 194 (paragraph RECEIVE-MENU-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COBIL00C.cbl:308"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cobil00cService.java",
+      "id": "WL-0062",
+      "line": 38,
+      "nature": "review",
+      "program": "app/cbl/COBIL00C.cbl",
+      "symbols": [
+        "Cobil00cService"
+      ],
+      "text": "the RESP of RECEIVE at line 308 (paragraph RECEIVE-BILLPAY-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COCRDLIC.cbl:939"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
+      "id": "WL-0063",
+      "line": 34,
+      "nature": "review",
+      "program": "app/cbl/COCRDLIC.cbl",
+      "symbols": [
+        "CocrdlicService"
+      ],
+      "text": "the RESP of SEND at line 939 (paragraph 1500-SEND-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COCRDLIC.cbl:963"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
+      "id": "WL-0064",
+      "line": 35,
+      "nature": "review",
+      "program": "app/cbl/COCRDLIC.cbl",
+      "symbols": [
+        "CocrdlicService"
+      ],
+      "text": "the RESP of RECEIVE at line 963 (paragraph 2100-RECEIVE-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COCRDLIC.cbl:1129"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
+      "id": "WL-0065",
+      "line": 36,
+      "nature": "review",
+      "program": "app/cbl/COCRDLIC.cbl",
+      "symbols": [
+        "CocrdlicService"
+      ],
+      "text": "the RESP of STARTBR at line 1129 (paragraph 9000-READ-FORWARD) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COCRDLIC.cbl:1273"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
+      "id": "WL-0066",
+      "line": 37,
+      "nature": "review",
+      "program": "app/cbl/COCRDLIC.cbl",
+      "symbols": [
+        "CocrdlicService"
+      ],
+      "text": "the RESP of STARTBR at line 1273 (paragraph 9100-READ-BACKWARDS) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COCRDSLC.cbl:569"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
+      "id": "WL-0067",
+      "line": 31,
+      "nature": "review",
+      "program": "app/cbl/COCRDSLC.cbl",
+      "symbols": [
+        "CocrdslcService"
+      ],
+      "text": "the RESP of SEND at line 569 (paragraph 1400-SEND-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COCRDSLC.cbl:597"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
+      "id": "WL-0068",
+      "line": 32,
+      "nature": "review",
+      "program": "app/cbl/COCRDSLC.cbl",
+      "symbols": [
+        "CocrdslcService"
+      ],
+      "text": "the RESP of RECEIVE at line 597 (paragraph 2100-RECEIVE-MAP) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COCRDSLC.cbl:865"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
+      "id": "WL-0069",
+      "line": 33,
+      "nature": "review",
+      "program": "app/cbl/COCRDSLC.cbl",
+      "symbols": [
+        "CocrdslcService"
+      ],
+      "text": "the RESP of SEND at line 865 (paragraph ABEND-ROUTINE) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COCRDUPC.cbl:579"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
+      "id": "WL-0070",
+      "line": 32,
+      "nature": "review",
+      "program": "app/cbl/COCRDUPC.cbl",
+      "symbols": [
+        "CocrdupcService"
+      ],
+      "text": "the RESP of RECEIVE at line 579 (paragraph 1100-RECEIVE-MAP) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COCRDUPC.cbl:1329"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
+      "id": "WL-0071",
+      "line": 33,
+      "nature": "review",
+      "program": "app/cbl/COCRDUPC.cbl",
+      "symbols": [
+        "CocrdupcService"
+      ],
+      "text": "the RESP of SEND at line 1329 (paragraph 3400-SEND-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COCRDUPC.cbl:1539"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
+      "id": "WL-0072",
+      "line": 34,
+      "nature": "review",
+      "program": "app/cbl/COCRDUPC.cbl",
+      "symbols": [
+        "CocrdupcService"
+      ],
+      "text": "the RESP of SEND at line 1539 (paragraph ABEND-ROUTINE) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COMEN01C.cbl:227"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Comen01cService.java",
+      "id": "WL-0073",
+      "line": 31,
+      "nature": "review",
+      "program": "app/cbl/COMEN01C.cbl",
+      "symbols": [
+        "Comen01cService"
+      ],
+      "text": "the RESP of RECEIVE at line 227 (paragraph RECEIVE-MENU-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/CORPT00C.cbl:598"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
+      "id": "WL-0074",
+      "line": 24,
+      "nature": "review",
+      "program": "app/cbl/CORPT00C.cbl",
+      "symbols": [
+        "Corpt00cService"
+      ],
+      "text": "the RESP of RECEIVE at line 598 (paragraph RECEIVE-TRNRPT-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COSGN00C.cbl:110"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cosgn00cService.java",
+      "id": "WL-0075",
+      "line": 28,
+      "nature": "review",
+      "program": "app/cbl/COSGN00C.cbl",
+      "symbols": [
+        "Cosgn00cService"
+      ],
+      "text": "the RESP of RECEIVE at line 110 (paragraph PROCESS-ENTER-KEY) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COTRN00C.cbl:556"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn00cService.java",
+      "id": "WL-0076",
+      "line": 32,
+      "nature": "review",
+      "program": "app/cbl/COTRN00C.cbl",
+      "symbols": [
+        "Cotrn00cService"
+      ],
+      "text": "the RESP of RECEIVE at line 556 (paragraph RECEIVE-TRNLST-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COTRN01C.cbl:232"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn01cService.java",
+      "id": "WL-0077",
+      "line": 30,
+      "nature": "review",
+      "program": "app/cbl/COTRN01C.cbl",
+      "symbols": [
+        "Cotrn01cService"
+      ],
+      "text": "the RESP of RECEIVE at line 232 (paragraph RECEIVE-TRNVIEW-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COTRN02C.cbl:541"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn02cService.java",
+      "id": "WL-0078",
+      "line": 34,
+      "nature": "review",
+      "program": "app/cbl/COTRN02C.cbl",
+      "symbols": [
+        "Cotrn02cService"
+      ],
+      "text": "the RESP of RECEIVE at line 541 (paragraph RECEIVE-TRNADD-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COUSR00C.cbl:551"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr00cService.java",
+      "id": "WL-0079",
+      "line": 31,
+      "nature": "review",
+      "program": "app/cbl/COUSR00C.cbl",
+      "symbols": [
+        "Cousr00cService"
+      ],
+      "text": "the RESP of RECEIVE at line 551 (paragraph RECEIVE-USRLST-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COUSR01C.cbl:203"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr01cService.java",
+      "id": "WL-0080",
+      "line": 28,
+      "nature": "review",
+      "program": "app/cbl/COUSR01C.cbl",
+      "symbols": [
+        "Cousr01cService"
+      ],
+      "text": "the RESP of RECEIVE at line 203 (paragraph RECEIVE-USRADD-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COUSR02C.cbl:285"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr02cService.java",
+      "id": "WL-0081",
+      "line": 29,
+      "nature": "review",
+      "program": "app/cbl/COUSR02C.cbl",
+      "symbols": [
+        "Cousr02cService"
+      ],
+      "text": "the RESP of RECEIVE at line 285 (paragraph RECEIVE-USRUPD-SCREEN) is never tested"
+    },
+    {
+      "category": "unchecked-resp",
+      "facts": [
+        {
+          "field_testing": "field-tested (6 public / 0 private estates)",
+          "ledger_field": "units of work and handlers",
+          "section": "unchecked_responses",
+          "source": "app/cbl/COUSR03C.cbl:232"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr03cService.java",
+      "id": "WL-0082",
+      "line": 29,
+      "nature": "review",
+      "program": "app/cbl/COUSR03C.cbl",
+      "symbols": [
+        "Cousr03cService"
+      ],
+      "text": "the RESP of RECEIVE at line 232 (paragraph RECEIVE-USRDEL-SCREEN) is never tested"
+    },
+    {
+      "category": "db2-dialect",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl:141",
+          "verb": "INSERT"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AuthfrdsRepository.java",
+      "id": "WL-0083",
+      "line": null,
+      "nature": "review",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+      "symbols": [
+        "AuthfrdsRepository#insertL141Copaus2c"
+      ],
+      "text": "DB2 SQL on postgresql -- review the statement"
+    },
+    {
+      "category": "db2-dialect",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl:222",
+          "verb": "UPDATE"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AuthfrdsRepository.java",
+      "id": "WL-0084",
+      "line": null,
+      "nature": "review",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+      "symbols": [
+        "AuthfrdsRepository#updateL222Copaus2c"
+      ],
+      "text": "DB2 SQL on postgresql -- review the statement"
+    },
+    {
+      "category": "db2-dialect",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl:201",
+          "verb": "DELETE"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+      "id": "WL-0085",
+      "line": null,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+      "symbols": [
+        "TransactionTypeRepository#deleteL201Cobtupdt"
+      ],
+      "text": "DB2 SQL on postgresql -- review the statement"
+    },
+    {
+      "category": "db2-dialect",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl:137",
+          "verb": "INSERT"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+      "id": "WL-0086",
+      "line": null,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+      "symbols": [
+        "TransactionTypeRepository#insertL137Cobtupdt"
+      ],
+      "text": "DB2 SQL on postgresql -- review the statement"
+    },
+    {
+      "category": "db2-dialect",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl:171",
+          "verb": "UPDATE"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+      "id": "WL-0087",
+      "line": null,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+      "symbols": [
+        "TransactionTypeRepository#updateL171Cobtupdt"
+      ],
+      "text": "DB2 SQL on postgresql -- review the statement"
+    },
+    {
+      "category": "db2-dialect",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:354",
+          "verb": "DECLARE CURSOR"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+      "id": "WL-0088",
+      "line": null,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [
+        "TransactionTypeRepository#cursorCTrTypeBackwardL354Cotrtlic"
+      ],
+      "text": "DB2 SQL on postgresql -- review the statement"
+    },
+    {
+      "category": "db2-dialect",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:338",
+          "verb": "DECLARE CURSOR"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+      "id": "WL-0089",
+      "line": null,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [
+        "TransactionTypeRepository#cursorCTrTypeForwardL338Cotrtlic"
+      ],
+      "text": "DB2 SQL on postgresql -- review the statement"
+    },
+    {
+      "category": "db2-dialect",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:1900",
+          "verb": "DELETE"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+      "id": "WL-0090",
+      "line": null,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [
+        "TransactionTypeRepository#deleteL1900Cotrtlic"
+      ],
+      "text": "DB2 SQL on postgresql -- review the statement"
+    },
+    {
+      "category": "db2-dialect",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:1803",
+          "verb": "SELECT"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+      "id": "WL-0091",
+      "line": null,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [
+        "TransactionTypeRepository#selectL1803Cotrtlic"
+      ],
+      "text": "DB2 SQL on postgresql -- review the statement"
+    },
+    {
+      "category": "db2-dialect",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:1846",
+          "verb": "UPDATE"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+      "id": "WL-0092",
+      "line": null,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [
+        "TransactionTypeRepository#updateL1846Cotrtlic"
+      ],
+      "text": "DB2 SQL on postgresql -- review the statement"
+    },
+    {
+      "category": "db2-dialect",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl:1627",
+          "verb": "DELETE"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+      "id": "WL-0093",
+      "line": null,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [
+        "TransactionTypeRepository#deleteL1627Cotrtupc"
+      ],
+      "text": "DB2 SQL on postgresql -- review the statement"
+    },
+    {
+      "category": "db2-dialect",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl:1597",
+          "verb": "INSERT"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+      "id": "WL-0094",
+      "line": null,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [
+        "TransactionTypeRepository#insertL1597Cotrtupc"
+      ],
+      "text": "DB2 SQL on postgresql -- review the statement"
+    },
+    {
+      "category": "db2-dialect",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl:1475",
+          "verb": "SELECT"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+      "id": "WL-0095",
+      "line": null,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [
+        "TransactionTypeRepository#selectL1475Cotrtupc"
+      ],
+      "text": "DB2 SQL on postgresql -- review the statement"
+    },
+    {
+      "category": "db2-dialect",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl:1544",
+          "verb": "UPDATE"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+      "id": "WL-0096",
+      "line": null,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [
+        "TransactionTypeRepository#updateL1544Cotrtupc"
+      ],
+      "text": "DB2 SQL on postgresql -- review the statement"
+    },
+    {
+      "category": "transaction-split",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaua0cService.java",
+      "id": "WL-0097",
+      "line": 84,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+      "symbols": [],
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus0cService.java",
+      "id": "WL-0098",
+      "line": 127,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+      "symbols": [],
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus1cService.java",
+      "id": "WL-0099",
+      "line": 85,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+      "symbols": [],
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
+      "id": "WL-0100",
+      "line": 100,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [],
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
+      "id": "WL-0101",
+      "line": 110,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [],
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
+      "id": "WL-0102",
+      "line": 120,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [],
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0103",
+      "line": 76,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [],
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0104",
+      "line": 86,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [],
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0105",
+      "line": 96,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [],
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0106",
+      "line": 106,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [],
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
+      "id": "WL-0107",
+      "line": 59,
+      "nature": "port",
+      "program": "app/app-vsam-mq/cbl/COACCT01.cbl",
+      "symbols": [],
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Codate01Service.java",
+      "id": "WL-0108",
+      "line": 48,
+      "nature": "port",
+      "program": "app/app-vsam-mq/cbl/CODATE01.cbl",
+      "symbols": [],
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
+      "id": "WL-0109",
+      "line": 116,
+      "nature": "port",
+      "program": "app/cbl/COACTUPC.cbl",
+      "symbols": [],
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
+      "id": "WL-0110",
+      "line": 92,
+      "nature": "port",
+      "program": "app/cbl/COCRDUPC.cbl",
+      "symbols": [],
+      "text": "split the transaction here"
+    },
+    {
+      "category": "interface-call",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
+      "id": "WL-0111",
+      "line": 99,
+      "nature": "port",
+      "program": "app/cbl/CORPT00C.cbl",
+      "symbols": [],
+      "text": "this program submits job TRNRPT00 through the internal reader, which runs PROC TRANREPT (app/proc/TRANREPT.prc): no generated job matches -- launch its steps"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbpaup0cService.java",
+      "id": "WL-0112",
+      "line": 25,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "CBPAUP0J STEP01",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/app-authorization-ims-db2-mq/jcl/CBPAUP0J.jcl:24"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbpaup0cService.java",
+      "id": "WL-0113",
+      "line": 31,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+      "symbols": [
+        "Cbpaup0cService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaua0cService.java",
+      "id": "WL-0114",
+      "line": 53,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaua0cService.java",
+      "id": "WL-0115",
+      "line": 56,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (1 public / 0 private estates)",
+          "ledger_field": "MQ calls",
+          "section": "mq_calls",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl:400"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaua0cService.java",
+      "id": "WL-0116",
+      "line": 103,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+      "symbols": [
+        "Copaua0cService#handleMqMessage"
+      ],
+      "text": "port the logic that handles the MQ request"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus0cService.java",
+      "id": "WL-0117",
+      "line": 54,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus0cService.java",
+      "id": "WL-0118",
+      "line": 57,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus0cService.java",
+      "id": "WL-0119",
+      "line": 63,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:695"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:703"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus0cService.java",
+      "id": "WL-0120",
+      "line": 131,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+      "symbols": [
+        "Copaus0cService#renderCopau0a"
+      ],
+      "text": "port the logic that fills COPAU0AO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:715"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus0cService.java",
+      "id": "WL-0121",
+      "line": 139,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+      "symbols": [
+        "Copaus0cService#submitCopau0a"
+      ],
+      "text": "port the logic that reads COPAU0AI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus1cService.java",
+      "id": "WL-0122",
+      "line": 41,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus1cService.java",
+      "id": "WL-0123",
+      "line": 44,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus1cService.java",
+      "id": "WL-0124",
+      "line": 50,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl:381"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl:389"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus1cService.java",
+      "id": "WL-0125",
+      "line": 97,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+      "symbols": [
+        "Copaus1cService#renderCopau1a"
+      ],
+      "text": "port the logic that fills COPAU1AO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl:400"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus1cService.java",
+      "id": "WL-0126",
+      "line": 105,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+      "symbols": [
+        "Copaus1cService#submitCopau1a"
+      ],
+      "text": "port the logic that reads COPAU1AI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus2cService.java",
+      "id": "WL-0127",
+      "line": 34,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus2cService.java",
+      "id": "WL-0128",
+      "line": 37,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus2cService.java",
+      "id": "WL-0129",
+      "line": 43,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/DbunldgsService.java",
+      "id": "WL-0130",
+      "line": 25,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "UNLDGSAM STEP01",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/app-authorization-ims-db2-mq/jcl/UNLDGSAM.JCL:26"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/DbunldgsService.java",
+      "id": "WL-0131",
+      "line": 31,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+      "symbols": [
+        "DbunldgsService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/PaudblodService.java",
+      "id": "WL-0132",
+      "line": 25,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "LOADPADB STEP01",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/app-authorization-ims-db2-mq/jcl/LOADPADB.JCL:26"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/PaudblodService.java",
+      "id": "WL-0133",
+      "line": 33,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+      "symbols": [
+        "PaudblodService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/PaudbunlService.java",
+      "id": "WL-0134",
+      "line": 25,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "UNLDPADB STEP01",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/app-authorization-ims-db2-mq/jcl/UNLDPADB.JCL:38"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/PaudbunlService.java",
+      "id": "WL-0135",
+      "line": 33,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+      "symbols": [
+        "PaudbunlService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CobtupdtService.java",
+      "id": "WL-0136",
+      "line": 28,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "MNTTRDB2 STEP1",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/app-transaction-type-db2/jcl/MNTTRDB2.jcl:21"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CobtupdtService.java",
+      "id": "WL-0137",
+      "line": 35,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+      "symbols": [
+        "CobtupdtService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
+      "id": "WL-0138",
+      "line": 42,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
+      "id": "WL-0139",
+      "line": 45,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
+      "id": "WL-0140",
+      "line": 51,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:1588"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
+      "id": "WL-0141",
+      "line": 124,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [
+        "CotrtlicService#renderCtrtlia"
+      ],
+      "text": "port the logic that fills CTRTLIAO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:931"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
+      "id": "WL-0142",
+      "line": 132,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [
+        "CotrtlicService#submitCtrtlia"
+      ],
+      "text": "port the logic that reads CTRTLIAI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0143",
+      "line": 42,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0144",
+      "line": 45,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0145",
+      "line": 51,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0146",
+      "line": 115,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [],
+      "text": "port paragraph ABEND-ROUTINE's logic"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0147",
+      "line": 124,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [],
+      "text": "port paragraph None's logic"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl:1433"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0148",
+      "line": 137,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [
+        "CotrtupcService#renderCtrtupa"
+      ],
+      "text": "port the logic that fills CTRTUPAO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl:642"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0149",
+      "line": 145,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [
+        "CotrtupcService#submitCtrtupa"
+      ],
+      "text": "port the logic that reads CTRTUPAI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
+      "id": "WL-0150",
+      "line": 39,
+      "nature": "port",
+      "program": "app/app-vsam-mq/cbl/COACCT01.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
+      "id": "WL-0151",
+      "line": 42,
+      "nature": "port",
+      "program": "app/app-vsam-mq/cbl/COACCT01.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (1 public / 0 private estates)",
+          "ledger_field": "MQ calls",
+          "section": "mq_calls",
+          "source": "app/app-vsam-mq/cbl/COACCT01.cbl:352"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
+      "id": "WL-0152",
+      "line": 77,
+      "nature": "port",
+      "program": "app/app-vsam-mq/cbl/COACCT01.cbl",
+      "symbols": [
+        "Coacct01Service#handleMqMessage"
+      ],
+      "text": "port the logic that handles the MQ request"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Codate01Service.java",
+      "id": "WL-0153",
+      "line": 33,
+      "nature": "port",
+      "program": "app/app-vsam-mq/cbl/CODATE01.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Codate01Service.java",
+      "id": "WL-0154",
+      "line": 36,
+      "nature": "port",
+      "program": "app/app-vsam-mq/cbl/CODATE01.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (1 public / 0 private estates)",
+          "ledger_field": "MQ calls",
+          "section": "mq_calls",
+          "source": "app/app-vsam-mq/cbl/CODATE01.cbl:301"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Codate01Service.java",
+      "id": "WL-0155",
+      "line": 66,
+      "nature": "port",
+      "program": "app/app-vsam-mq/cbl/CODATE01.cbl",
+      "symbols": [
+        "Codate01Service#handleMqMessage"
+      ],
+      "text": "port the logic that handles the MQ request"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact01cService.java",
+      "id": "WL-0156",
+      "line": 31,
+      "nature": "port",
+      "program": "app/cbl/CBACT01C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "READACCT STEP05",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/READACCT.jcl:32"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact01cService.java",
+      "id": "WL-0157",
+      "line": 47,
+      "nature": "port",
+      "program": "app/cbl/CBACT01C.cbl",
+      "symbols": [
+        "Cbact01cService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact02cService.java",
+      "id": "WL-0158",
+      "line": 31,
+      "nature": "port",
+      "program": "app/cbl/CBACT02C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "READCARD STEP05",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/READCARD.jcl:22"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact02cService.java",
+      "id": "WL-0159",
+      "line": 44,
+      "nature": "port",
+      "program": "app/cbl/CBACT02C.cbl",
+      "symbols": [
+        "Cbact02cService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact03cService.java",
+      "id": "WL-0160",
+      "line": 31,
+      "nature": "port",
+      "program": "app/cbl/CBACT03C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "READXREF STEP05",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/READXREF.jcl:22"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact03cService.java",
+      "id": "WL-0161",
+      "line": 44,
+      "nature": "port",
+      "program": "app/cbl/CBACT03C.cbl",
+      "symbols": [
+        "Cbact03cService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact04cService.java",
+      "id": "WL-0162",
+      "line": 42,
+      "nature": "port",
+      "program": "app/cbl/CBACT04C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "INTCALC STEP15",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/INTCALC.jcl:22"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact04cService.java",
+      "id": "WL-0163",
+      "line": 79,
+      "nature": "port",
+      "program": "app/cbl/CBACT04C.cbl",
+      "symbols": [
+        "Cbact04cService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbcus01cService.java",
+      "id": "WL-0164",
+      "line": 31,
+      "nature": "port",
+      "program": "app/cbl/CBCUS01C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "READCUST STEP05",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/READCUST.jcl:21"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbcus01cService.java",
+      "id": "WL-0165",
+      "line": 44,
+      "nature": "port",
+      "program": "app/cbl/CBCUS01C.cbl",
+      "symbols": [
+        "Cbcus01cService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CbexportService.java",
+      "id": "WL-0166",
+      "line": 46,
+      "nature": "port",
+      "program": "app/cbl/CBEXPORT.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "CBEXPORT STEP02",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/CBEXPORT.jcl:43"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CbexportService.java",
+      "id": "WL-0167",
+      "line": 89,
+      "nature": "port",
+      "program": "app/cbl/CBEXPORT.cbl",
+      "symbols": [
+        "CbexportService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CbimportService.java",
+      "id": "WL-0168",
+      "line": 31,
+      "nature": "port",
+      "program": "app/cbl/CBIMPORT.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "CBIMPORT STEP01",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/CBIMPORT.jcl:22"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CbimportService.java",
+      "id": "WL-0169",
+      "line": 49,
+      "nature": "port",
+      "program": "app/cbl/CBIMPORT.cbl",
+      "symbols": [
+        "CbimportService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbstm03aService.java",
+      "id": "WL-0170",
+      "line": 29,
+      "nature": "port",
+      "program": "app/cbl/CBSTM03A.CBL",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "CREASTMT STEP040",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/CREASTMT.JCL:79"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbstm03aService.java",
+      "id": "WL-0171",
+      "line": 43,
+      "nature": "port",
+      "program": "app/cbl/CBSTM03A.CBL",
+      "symbols": [
+        "Cbstm03aService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbstm03bService.java",
+      "id": "WL-0172",
+      "line": 24,
+      "nature": "port",
+      "program": "app/cbl/CBSTM03B.CBL",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbstm03bService.java",
+      "id": "WL-0173",
+      "line": 27,
+      "nature": "port",
+      "program": "app/cbl/CBSTM03B.CBL",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn01cService.java",
+      "id": "WL-0174",
+      "line": 23,
+      "nature": "port",
+      "program": "app/cbl/CBTRN01C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn02cService.java",
+      "id": "WL-0175",
+      "line": 41,
+      "nature": "port",
+      "program": "app/cbl/CBTRN02C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "POSTTRAN STEP15",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/POSTTRAN.jcl:23"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn02cService.java",
+      "id": "WL-0176",
+      "line": 84,
+      "nature": "port",
+      "program": "app/cbl/CBTRN02C.cbl",
+      "symbols": [
+        "Cbtrn02cService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn03cService.java",
+      "id": "WL-0177",
+      "line": 38,
+      "nature": "port",
+      "program": "app/cbl/CBTRN03C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "TRANREPT STEP10R",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/TRANREPT.jcl:59"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn03cService.java",
+      "id": "WL-0178",
+      "line": 66,
+      "nature": "port",
+      "program": "app/cbl/CBTRN03C.cbl",
+      "symbols": [
+        "Cbtrn03cService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
+      "id": "WL-0179",
+      "line": 59,
+      "nature": "port",
+      "program": "app/cbl/COACTUPC.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
+      "id": "WL-0180",
+      "line": 62,
+      "nature": "port",
+      "program": "app/cbl/COACTUPC.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
+      "id": "WL-0181",
+      "line": 68,
+      "nature": "port",
+      "program": "app/cbl/COACTUPC.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
+      "id": "WL-0182",
+      "line": 133,
+      "nature": "port",
+      "program": "app/cbl/COACTUPC.cbl",
+      "symbols": [],
+      "text": "port paragraph ABEND-ROUTINE's logic"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
+      "id": "WL-0183",
+      "line": 142,
+      "nature": "port",
+      "program": "app/cbl/COACTUPC.cbl",
+      "symbols": [],
+      "text": "port paragraph None's logic"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COACTUPC.cbl:3594"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
+      "id": "WL-0184",
+      "line": 155,
+      "nature": "port",
+      "program": "app/cbl/COACTUPC.cbl",
+      "symbols": [
+        "CoactupcService#renderCactupa"
+      ],
+      "text": "port the logic that fills CACTUPAO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COACTUPC.cbl:1040"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
+      "id": "WL-0185",
+      "line": 163,
+      "nature": "port",
+      "program": "app/cbl/COACTUPC.cbl",
+      "symbols": [
+        "CoactupcService#submitCactupa"
+      ],
+      "text": "port the logic that reads CACTUPAI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
+      "id": "WL-0186",
+      "line": 55,
+      "nature": "port",
+      "program": "app/cbl/COACTVWC.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
+      "id": "WL-0187",
+      "line": 58,
+      "nature": "port",
+      "program": "app/cbl/COACTVWC.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
+      "id": "WL-0188",
+      "line": 64,
+      "nature": "port",
+      "program": "app/cbl/COACTVWC.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
+      "id": "WL-0189",
+      "line": 103,
+      "nature": "port",
+      "program": "app/cbl/COACTVWC.cbl",
+      "symbols": [],
+      "text": "port paragraph ABEND-ROUTINE's logic"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
+      "id": "WL-0190",
+      "line": 112,
+      "nature": "port",
+      "program": "app/cbl/COACTVWC.cbl",
+      "symbols": [],
+      "text": "port paragraph None's logic"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COACTVWC.cbl:583"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
+      "id": "WL-0191",
+      "line": 125,
+      "nature": "port",
+      "program": "app/cbl/COACTVWC.cbl",
+      "symbols": [
+        "CoactvwcService#renderCactvwa"
+      ],
+      "text": "port the logic that fills CACTVWAO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COACTVWC.cbl:611"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
+      "id": "WL-0192",
+      "line": 133,
+      "nature": "port",
+      "program": "app/cbl/COACTVWC.cbl",
+      "symbols": [
+        "CoactvwcService#submitCactvwa"
+      ],
+      "text": "port the logic that reads CACTVWAI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coadm01cService.java",
+      "id": "WL-0193",
+      "line": 46,
+      "nature": "port",
+      "program": "app/cbl/COADM01C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coadm01cService.java",
+      "id": "WL-0194",
+      "line": 49,
+      "nature": "port",
+      "program": "app/cbl/COADM01C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coadm01cService.java",
+      "id": "WL-0195",
+      "line": 55,
+      "nature": "port",
+      "program": "app/cbl/COADM01C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coadm01cService.java",
+      "id": "WL-0196",
+      "line": 100,
+      "nature": "port",
+      "program": "app/cbl/COADM01C.cbl",
+      "symbols": [],
+      "text": "port paragraph PGMIDERR-ERR-PARA's logic"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COADM01C.cbl:182"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coadm01cService.java",
+      "id": "WL-0197",
+      "line": 104,
+      "nature": "port",
+      "program": "app/cbl/COADM01C.cbl",
+      "symbols": [
+        "Coadm01cService#renderCoadm1a"
+      ],
+      "text": "port the logic that fills COADM1AO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COADM01C.cbl:194"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coadm01cService.java",
+      "id": "WL-0198",
+      "line": 112,
+      "nature": "port",
+      "program": "app/cbl/COADM01C.cbl",
+      "symbols": [
+        "Coadm01cService#submitCoadm1a"
+      ],
+      "text": "port the logic that reads COADM1AI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cobil00cService.java",
+      "id": "WL-0199",
+      "line": 56,
+      "nature": "port",
+      "program": "app/cbl/COBIL00C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cobil00cService.java",
+      "id": "WL-0200",
+      "line": 59,
+      "nature": "port",
+      "program": "app/cbl/COBIL00C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cobil00cService.java",
+      "id": "WL-0201",
+      "line": 65,
+      "nature": "port",
+      "program": "app/cbl/COBIL00C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COBIL00C.cbl:295"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cobil00cService.java",
+      "id": "WL-0202",
+      "line": 114,
+      "nature": "port",
+      "program": "app/cbl/COBIL00C.cbl",
+      "symbols": [
+        "Cobil00cService#renderCobil0a"
+      ],
+      "text": "port the logic that fills COBIL0AO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COBIL00C.cbl:308"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cobil00cService.java",
+      "id": "WL-0203",
+      "line": 122,
+      "nature": "port",
+      "program": "app/cbl/COBIL00C.cbl",
+      "symbols": [
+        "Cobil00cService#submitCobil0a"
+      ],
+      "text": "port the logic that reads COBIL0AI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CobswaitService.java",
+      "id": "WL-0204",
+      "line": 25,
+      "nature": "port",
+      "program": "app/cbl/COBSWAIT.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "WAITSTEP WAIT",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/jcl/WAITSTEP.jcl:22"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CobswaitService.java",
+      "id": "WL-0205",
+      "line": 31,
+      "nature": "port",
+      "program": "app/cbl/COBSWAIT.cbl",
+      "symbols": [
+        "CobswaitService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
+      "id": "WL-0206",
+      "line": 54,
+      "nature": "port",
+      "program": "app/cbl/COCRDLIC.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
+      "id": "WL-0207",
+      "line": 57,
+      "nature": "port",
+      "program": "app/cbl/COCRDLIC.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
+      "id": "WL-0208",
+      "line": 63,
+      "nature": "port",
+      "program": "app/cbl/COCRDLIC.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COCRDLIC.cbl:939"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
+      "id": "WL-0209",
+      "line": 120,
+      "nature": "port",
+      "program": "app/cbl/COCRDLIC.cbl",
+      "symbols": [
+        "CocrdlicService#renderCcrdlia"
+      ],
+      "text": "port the logic that fills CCRDLIAO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COCRDLIC.cbl:963"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
+      "id": "WL-0210",
+      "line": 128,
+      "nature": "port",
+      "program": "app/cbl/COCRDLIC.cbl",
+      "symbols": [
+        "CocrdlicService#submitCcrdlia"
+      ],
+      "text": "port the logic that reads CCRDLIAI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
+      "id": "WL-0211",
+      "line": 48,
+      "nature": "port",
+      "program": "app/cbl/COCRDSLC.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
+      "id": "WL-0212",
+      "line": 51,
+      "nature": "port",
+      "program": "app/cbl/COCRDSLC.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
+      "id": "WL-0213",
+      "line": 57,
+      "nature": "port",
+      "program": "app/cbl/COCRDSLC.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
+      "id": "WL-0214",
+      "line": 91,
+      "nature": "port",
+      "program": "app/cbl/COCRDSLC.cbl",
+      "symbols": [],
+      "text": "port paragraph ABEND-ROUTINE's logic"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
+      "id": "WL-0215",
+      "line": 100,
+      "nature": "port",
+      "program": "app/cbl/COCRDSLC.cbl",
+      "symbols": [],
+      "text": "port paragraph None's logic"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COCRDSLC.cbl:569"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
+      "id": "WL-0216",
+      "line": 113,
+      "nature": "port",
+      "program": "app/cbl/COCRDSLC.cbl",
+      "symbols": [
+        "CocrdslcService#renderCcrdsla"
+      ],
+      "text": "port the logic that fills CCRDSLAO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COCRDSLC.cbl:597"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
+      "id": "WL-0217",
+      "line": 121,
+      "nature": "port",
+      "program": "app/cbl/COCRDSLC.cbl",
+      "symbols": [
+        "CocrdslcService#submitCcrdsla"
+      ],
+      "text": "port the logic that reads CCRDSLAI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
+      "id": "WL-0218",
+      "line": 49,
+      "nature": "port",
+      "program": "app/cbl/COCRDUPC.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
+      "id": "WL-0219",
+      "line": 52,
+      "nature": "port",
+      "program": "app/cbl/COCRDUPC.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
+      "id": "WL-0220",
+      "line": 58,
+      "nature": "port",
+      "program": "app/cbl/COCRDUPC.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
+      "id": "WL-0221",
+      "line": 101,
+      "nature": "port",
+      "program": "app/cbl/COCRDUPC.cbl",
+      "symbols": [],
+      "text": "port paragraph ABEND-ROUTINE's logic"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
+      "id": "WL-0222",
+      "line": 110,
+      "nature": "port",
+      "program": "app/cbl/COCRDUPC.cbl",
+      "symbols": [],
+      "text": "port paragraph None's logic"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COCRDUPC.cbl:1329"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
+      "id": "WL-0223",
+      "line": 123,
+      "nature": "port",
+      "program": "app/cbl/COCRDUPC.cbl",
+      "symbols": [
+        "CocrdupcService#renderCcrdupa"
+      ],
+      "text": "port the logic that fills CCRDUPAO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COCRDUPC.cbl:579"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
+      "id": "WL-0224",
+      "line": 131,
+      "nature": "port",
+      "program": "app/cbl/COCRDUPC.cbl",
+      "symbols": [
+        "CocrdupcService#submitCcrdupa"
+      ],
+      "text": "port the logic that reads CCRDUPAI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Comen01cService.java",
+      "id": "WL-0225",
+      "line": 56,
+      "nature": "port",
+      "program": "app/cbl/COMEN01C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Comen01cService.java",
+      "id": "WL-0226",
+      "line": 59,
+      "nature": "port",
+      "program": "app/cbl/COMEN01C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Comen01cService.java",
+      "id": "WL-0227",
+      "line": 65,
+      "nature": "port",
+      "program": "app/cbl/COMEN01C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COMEN01C.cbl:215"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Comen01cService.java",
+      "id": "WL-0228",
+      "line": 146,
+      "nature": "port",
+      "program": "app/cbl/COMEN01C.cbl",
+      "symbols": [
+        "Comen01cService#renderComen1a"
+      ],
+      "text": "port the logic that fills COMEN1AO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COMEN01C.cbl:227"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Comen01cService.java",
+      "id": "WL-0229",
+      "line": 154,
+      "nature": "port",
+      "program": "app/cbl/COMEN01C.cbl",
+      "symbols": [
+        "Comen01cService#submitComen1a"
+      ],
+      "text": "port the logic that reads COMEN1AI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
+      "id": "WL-0230",
+      "line": 41,
+      "nature": "port",
+      "program": "app/cbl/CORPT00C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
+      "id": "WL-0231",
+      "line": 44,
+      "nature": "port",
+      "program": "app/cbl/CORPT00C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
+      "id": "WL-0232",
+      "line": 50,
+      "nature": "port",
+      "program": "app/cbl/CORPT00C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/CORPT00C.cbl:563"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/CORPT00C.cbl:571"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
+      "id": "WL-0233",
+      "line": 77,
+      "nature": "port",
+      "program": "app/cbl/CORPT00C.cbl",
+      "symbols": [
+        "Corpt00cService#renderCorpt0a"
+      ],
+      "text": "port the logic that fills CORPT0AO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/CORPT00C.cbl:598"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
+      "id": "WL-0234",
+      "line": 85,
+      "nature": "port",
+      "program": "app/cbl/CORPT00C.cbl",
+      "symbols": [
+        "Corpt00cService#submitCorpt0a"
+      ],
+      "text": "port the logic that reads CORPT0AI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cosgn00cService.java",
+      "id": "WL-0235",
+      "line": 44,
+      "nature": "port",
+      "program": "app/cbl/COSGN00C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cosgn00cService.java",
+      "id": "WL-0236",
+      "line": 47,
+      "nature": "port",
+      "program": "app/cbl/COSGN00C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cosgn00cService.java",
+      "id": "WL-0237",
+      "line": 52,
+      "nature": "port",
+      "program": "app/cbl/COSGN00C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COSGN00C.cbl:151"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cosgn00cService.java",
+      "id": "WL-0238",
+      "line": 75,
+      "nature": "port",
+      "program": "app/cbl/COSGN00C.cbl",
+      "symbols": [
+        "Cosgn00cService#renderCosgn0a"
+      ],
+      "text": "port the logic that fills COSGN0AO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COSGN00C.cbl:110"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cosgn00cService.java",
+      "id": "WL-0239",
+      "line": 83,
+      "nature": "port",
+      "program": "app/cbl/COSGN00C.cbl",
+      "symbols": [
+        "Cosgn00cService#submitCosgn0a"
+      ],
+      "text": "port the logic that reads COSGN0AI (the default) after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn00cService.java",
+      "id": "WL-0240",
+      "line": 49,
+      "nature": "port",
+      "program": "app/cbl/COTRN00C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn00cService.java",
+      "id": "WL-0241",
+      "line": 52,
+      "nature": "port",
+      "program": "app/cbl/COTRN00C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn00cService.java",
+      "id": "WL-0242",
+      "line": 58,
+      "nature": "port",
+      "program": "app/cbl/COTRN00C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COTRN00C.cbl:534"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COTRN00C.cbl:542"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn00cService.java",
+      "id": "WL-0243",
+      "line": 106,
+      "nature": "port",
+      "program": "app/cbl/COTRN00C.cbl",
+      "symbols": [
+        "Cotrn00cService#renderCotrn0a"
+      ],
+      "text": "port the logic that fills COTRN0AO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COTRN00C.cbl:556"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn00cService.java",
+      "id": "WL-0244",
+      "line": 114,
+      "nature": "port",
+      "program": "app/cbl/COTRN00C.cbl",
+      "symbols": [
+        "Cotrn00cService#submitCotrn0a"
+      ],
+      "text": "port the logic that reads COTRN0AI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn01cService.java",
+      "id": "WL-0245",
+      "line": 47,
+      "nature": "port",
+      "program": "app/cbl/COTRN01C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn01cService.java",
+      "id": "WL-0246",
+      "line": 50,
+      "nature": "port",
+      "program": "app/cbl/COTRN01C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn01cService.java",
+      "id": "WL-0247",
+      "line": 56,
+      "nature": "port",
+      "program": "app/cbl/COTRN01C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COTRN01C.cbl:219"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn01cService.java",
+      "id": "WL-0248",
+      "line": 85,
+      "nature": "port",
+      "program": "app/cbl/COTRN01C.cbl",
+      "symbols": [
+        "Cotrn01cService#renderCotrn1a"
+      ],
+      "text": "port the logic that fills COTRN1AO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COTRN01C.cbl:232"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn01cService.java",
+      "id": "WL-0249",
+      "line": 93,
+      "nature": "port",
+      "program": "app/cbl/COTRN01C.cbl",
+      "symbols": [
+        "Cotrn01cService#submitCotrn1a"
+      ],
+      "text": "port the logic that reads COTRN1AI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn02cService.java",
+      "id": "WL-0250",
+      "line": 52,
+      "nature": "port",
+      "program": "app/cbl/COTRN02C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn02cService.java",
+      "id": "WL-0251",
+      "line": 55,
+      "nature": "port",
+      "program": "app/cbl/COTRN02C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn02cService.java",
+      "id": "WL-0252",
+      "line": 61,
+      "nature": "port",
+      "program": "app/cbl/COTRN02C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COTRN02C.cbl:522"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn02cService.java",
+      "id": "WL-0253",
+      "line": 112,
+      "nature": "port",
+      "program": "app/cbl/COTRN02C.cbl",
+      "symbols": [
+        "Cotrn02cService#renderCotrn2a"
+      ],
+      "text": "port the logic that fills COTRN2AO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COTRN02C.cbl:541"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn02cService.java",
+      "id": "WL-0254",
+      "line": 120,
+      "nature": "port",
+      "program": "app/cbl/COTRN02C.cbl",
+      "symbols": [
+        "Cotrn02cService#submitCotrn2a"
+      ],
+      "text": "port the logic that reads COTRN2AI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr00cService.java",
+      "id": "WL-0255",
+      "line": 49,
+      "nature": "port",
+      "program": "app/cbl/COUSR00C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr00cService.java",
+      "id": "WL-0256",
+      "line": 52,
+      "nature": "port",
+      "program": "app/cbl/COUSR00C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr00cService.java",
+      "id": "WL-0257",
+      "line": 58,
+      "nature": "port",
+      "program": "app/cbl/COUSR00C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COUSR00C.cbl:529"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COUSR00C.cbl:537"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr00cService.java",
+      "id": "WL-0258",
+      "line": 128,
+      "nature": "port",
+      "program": "app/cbl/COUSR00C.cbl",
+      "symbols": [
+        "Cousr00cService#renderCousr0a"
+      ],
+      "text": "port the logic that fills COUSR0AO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COUSR00C.cbl:551"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr00cService.java",
+      "id": "WL-0259",
+      "line": 136,
+      "nature": "port",
+      "program": "app/cbl/COUSR00C.cbl",
+      "symbols": [
+        "Cousr00cService#submitCousr0a"
+      ],
+      "text": "port the logic that reads COUSR0AI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr01cService.java",
+      "id": "WL-0260",
+      "line": 44,
+      "nature": "port",
+      "program": "app/cbl/COUSR01C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr01cService.java",
+      "id": "WL-0261",
+      "line": 47,
+      "nature": "port",
+      "program": "app/cbl/COUSR01C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr01cService.java",
+      "id": "WL-0262",
+      "line": 53,
+      "nature": "port",
+      "program": "app/cbl/COUSR01C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COUSR01C.cbl:190"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr01cService.java",
+      "id": "WL-0263",
+      "line": 79,
+      "nature": "port",
+      "program": "app/cbl/COUSR01C.cbl",
+      "symbols": [
+        "Cousr01cService#renderCousr1a"
+      ],
+      "text": "port the logic that fills COUSR1AO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COUSR01C.cbl:203"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr01cService.java",
+      "id": "WL-0264",
+      "line": 87,
+      "nature": "port",
+      "program": "app/cbl/COUSR01C.cbl",
+      "symbols": [
+        "Cousr01cService#submitCousr1a"
+      ],
+      "text": "port the logic that reads COUSR1AI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr02cService.java",
+      "id": "WL-0265",
+      "line": 45,
+      "nature": "port",
+      "program": "app/cbl/COUSR02C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr02cService.java",
+      "id": "WL-0266",
+      "line": 48,
+      "nature": "port",
+      "program": "app/cbl/COUSR02C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr02cService.java",
+      "id": "WL-0267",
+      "line": 54,
+      "nature": "port",
+      "program": "app/cbl/COUSR02C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COUSR02C.cbl:272"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr02cService.java",
+      "id": "WL-0268",
+      "line": 85,
+      "nature": "port",
+      "program": "app/cbl/COUSR02C.cbl",
+      "symbols": [
+        "Cousr02cService#renderCousr2a"
+      ],
+      "text": "port the logic that fills COUSR2AO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COUSR02C.cbl:285"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr02cService.java",
+      "id": "WL-0269",
+      "line": 93,
+      "nature": "port",
+      "program": "app/cbl/COUSR02C.cbl",
+      "symbols": [
+        "Cousr02cService#submitCousr2a"
+      ],
+      "text": "port the logic that reads COUSR2AI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr03cService.java",
+      "id": "WL-0270",
+      "line": 45,
+      "nature": "port",
+      "program": "app/cbl/COUSR03C.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr03cService.java",
+      "id": "WL-0271",
+      "line": 48,
+      "nature": "port",
+      "program": "app/cbl/COUSR03C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr03cService.java",
+      "id": "WL-0272",
+      "line": 54,
+      "nature": "port",
+      "program": "app/cbl/COUSR03C.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COUSR03C.cbl:219"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr03cService.java",
+      "id": "WL-0273",
+      "line": 85,
+      "nature": "port",
+      "program": "app/cbl/COUSR03C.cbl",
+      "symbols": [
+        "Cousr03cService#renderCousr3a"
+      ],
+      "text": "port the logic that fills COUSR3AO before the SEND"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "BMS screen fields",
+          "section": "screen_bindings",
+          "source": "app/cbl/COUSR03C.cbl:232"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr03cService.java",
+      "id": "WL-0274",
+      "line": 93,
+      "nature": "port",
+      "program": "app/cbl/COUSR03C.cbl",
+      "symbols": [
+        "Cousr03cService#submitCousr3a"
+      ],
+      "text": "port the logic that reads COUSR3AI after the RECEIVE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CsutldtcService.java",
+      "id": "WL-0275",
+      "line": 23,
+      "nature": "port",
+      "program": "app/cbl/CSUTLDTC.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CsutldtcService.java",
+      "id": "WL-0276",
+      "line": 26,
+      "nature": "port",
+      "program": "app/cbl/CSUTLDTC.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "configuration",
+      "facts": [],
+      "file": "src/main/resources/application.yml",
+      "id": "WL-0277",
+      "line": 9,
+      "nature": "review",
+      "program": "(project configuration)",
+      "symbols": [],
+      "text": "Update these credentials for your target environment"
+    }
+  ],
+  "summary": {
+    "by_category": {
+      "batch-utility": 6,
+      "business-logic": 165,
+      "commarea-mismatch": 20,
+      "configuration": 1,
+      "db2-dialect": 14,
+      "interface-call": 1,
+      "missing-layout": 3,
+      "record-variant": 11,
+      "transaction-split": 14,
+      "unchecked-resp": 40,
+      "vsam-key": 2
+    },
+    "by_nature": {
+      "conflict": 31,
+      "fact-gap": 5,
+      "port": 186,
+      "review": 55
+    },
+    "items": 277,
+    "programs": 47
+  },
+  "version": 1
+}

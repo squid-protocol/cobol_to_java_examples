@@ -1,0 +1,3803 @@
+{
+  "files": {
+    "src/main/java/com/gitgalaxy/modernized/CicsGenappApplication.java": {
+      "calls": [],
+      "classes": [
+        "CicsGenappApplication"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [
+        "main"
+      ],
+      "program": null,
+      "sha256": "1f4efede91c3a5954fcfc1129398fa653ad3ce748901d1f6df173a6e74c39cec"
+    },
+    "src/main/java/com/gitgalaxy/modernized/client/Aor1RemoteClient.java": {
+      "calls": [],
+      "classes": [
+        "Aor1RemoteClient"
+      ],
+      "endpoints": [],
+      "fields": [
+        "baseUrl",
+        "rest"
+      ],
+      "kind": "client",
+      "methods": [
+        "Aor1RemoteClient",
+        "linkLgacus01",
+        "linkLgapol01",
+        "linkLgdpol01",
+        "linkLgicus01",
+        "linkLgipol01",
+        "linkLgucus01",
+        "linkLgupol01"
+      ],
+      "program": null,
+      "sha256": "c08136644b245cff000ca534d47782606181d23cbdd987e73bb6482719ab775f"
+    },
+    "src/main/java/com/gitgalaxy/modernized/client/Dor1RemoteClient.java": {
+      "calls": [],
+      "classes": [
+        "Dor1RemoteClient"
+      ],
+      "endpoints": [],
+      "fields": [
+        "baseUrl",
+        "rest"
+      ],
+      "kind": "client",
+      "methods": [
+        "Dor1RemoteClient",
+        "linkLgacdb01",
+        "linkLgacdb02",
+        "linkLgacvs01",
+        "linkLgapdb01",
+        "linkLgapvs01",
+        "linkLgdpdb01",
+        "linkLgdpvs01",
+        "linkLgicdb01",
+        "linkLgipdb01",
+        "linkLgucdb01",
+        "linkLgucvs01",
+        "linkLgupdb01",
+        "linkLgupvs01"
+      ],
+      "program": null,
+      "sha256": "b5d43dade090d586474a7a94be08b376f3bd81ce36f8ba440f753fb928757b00"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgacdb01Controller.java": {
+      "calls": [
+        "Lgacdb01Service"
+      ],
+      "classes": [
+        "Lgacdb01Controller"
+      ],
+      "endpoints": [
+        "link",
+        "transactionDSCA"
+      ],
+      "fields": [
+        "lgacdb01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link",
+        "transactionDSCA"
+      ],
+      "program": "base/src/lgacdb01.cbl",
+      "sha256": "74abc5d7b4ce53ef35efedf4426f5df7f8bfa166577a581d523467ca40f368dd"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgacdb02Controller.java": {
+      "calls": [
+        "Lgacdb02Service"
+      ],
+      "classes": [
+        "Lgacdb02Controller"
+      ],
+      "endpoints": [
+        "link",
+        "transactionDSCA"
+      ],
+      "fields": [
+        "lgacdb02Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link",
+        "transactionDSCA"
+      ],
+      "program": "base/src/lgacdb02.cbl",
+      "sha256": "23fa7897c603fe31c201e86a12872b17d5d6039076ca49e2427cf54eccb4aa01"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgacus01Controller.java": {
+      "calls": [
+        "Lgacus01Service"
+      ],
+      "classes": [
+        "Lgacus01Controller"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "lgacus01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "base/src/lgacus01.cbl",
+      "sha256": "0242ed13b385fafc630d161ce5b0c7697201ec1112117accd31b026785e58913"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgacvs01Controller.java": {
+      "calls": [
+        "Lgacvs01Service"
+      ],
+      "classes": [
+        "Lgacvs01Controller"
+      ],
+      "endpoints": [
+        "link",
+        "transactionVSCA"
+      ],
+      "fields": [
+        "lgacvs01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link",
+        "transactionVSCA"
+      ],
+      "program": "base/src/lgacvs01.cbl",
+      "sha256": "54f873ec38d8cfae5f8affe616abef9e23739e4d83b8029c82e9eaa3658114b1"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgapdb01Controller.java": {
+      "calls": [
+        "Lgapdb01Service"
+      ],
+      "classes": [
+        "Lgapdb01Controller"
+      ],
+      "endpoints": [
+        "link",
+        "transactionDSPA"
+      ],
+      "fields": [
+        "lgapdb01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link",
+        "transactionDSPA"
+      ],
+      "program": "base/src/lgapdb01.cbl",
+      "sha256": "c3ebe9255db91b7104145d3bf331061fe39e6c0eb812aacd7d4ba03deeaaa76a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgapol01Controller.java": {
+      "calls": [
+        "Lgapol01Service"
+      ],
+      "classes": [
+        "Lgapol01Controller"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "lgapol01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "base/src/lgapol01.cbl",
+      "sha256": "e12242ddd6f9f55bb7549cbe4ff1d77af9a26264873761daf2860714199e1640"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgapvs01Controller.java": {
+      "calls": [
+        "Lgapvs01Service"
+      ],
+      "classes": [
+        "Lgapvs01Controller"
+      ],
+      "endpoints": [
+        "link",
+        "transactionVSPA"
+      ],
+      "fields": [
+        "lgapvs01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link",
+        "transactionVSPA"
+      ],
+      "program": "base/src/lgapvs01.cbl",
+      "sha256": "d84759212ff323730e020f9251a7f0313d0d6254f42002312a4b93ef5fbeee97"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgastat1Controller.java": {
+      "calls": [
+        "Lgastat1Service"
+      ],
+      "classes": [
+        "Lgastat1Controller"
+      ],
+      "endpoints": [
+        "channel",
+        "transactionLGST"
+      ],
+      "fields": [
+        "lgastat1Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "channel",
+        "transactionLGST"
+      ],
+      "program": "base/src/lgastat1.cbl",
+      "sha256": "5216d5febebd474884fc5409320c23d0f878fce54fb50c638e036d11c9b3c59a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgdpdb01Controller.java": {
+      "calls": [
+        "Lgdpdb01Service"
+      ],
+      "classes": [
+        "Lgdpdb01Controller"
+      ],
+      "endpoints": [
+        "link",
+        "transactionDSPD"
+      ],
+      "fields": [
+        "lgdpdb01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link",
+        "transactionDSPD"
+      ],
+      "program": "base/src/lgdpdb01.cbl",
+      "sha256": "43577d83891f4679b3971abf2add29fe0b1297b4285bdb5324008f4cf4539157"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgdpol01Controller.java": {
+      "calls": [
+        "Lgdpol01Service"
+      ],
+      "classes": [
+        "Lgdpol01Controller"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "lgdpol01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "base/src/lgdpol01.cbl",
+      "sha256": "4eaa508c43db81bbb21b52d7645f88e78acefedee43e32dca90d884fefab9cf5"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgdpvs01Controller.java": {
+      "calls": [
+        "Lgdpvs01Service"
+      ],
+      "classes": [
+        "Lgdpvs01Controller"
+      ],
+      "endpoints": [
+        "link",
+        "transactionVSPD"
+      ],
+      "fields": [
+        "lgdpvs01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link",
+        "transactionVSPD"
+      ],
+      "program": "base/src/lgdpvs01.cbl",
+      "sha256": "50d9ddb6099df0c5b217047150de57f0542937893d939e1e27f38fec73e2cdc9"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgicdb01Controller.java": {
+      "calls": [
+        "Lgicdb01Service"
+      ],
+      "classes": [
+        "Lgicdb01Controller"
+      ],
+      "endpoints": [
+        "link",
+        "transactionDSCI"
+      ],
+      "fields": [
+        "lgicdb01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link",
+        "transactionDSCI"
+      ],
+      "program": "base/src/lgicdb01.cbl",
+      "sha256": "18015cee9bd1b4f1eedc6ae708a464cff983a45712fff046c2c1f9895a61deeb"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgicus01Controller.java": {
+      "calls": [
+        "Lgicus01Service"
+      ],
+      "classes": [
+        "Lgicus01Controller"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "lgicus01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "base/src/lgicus01.cbl",
+      "sha256": "15da4405b2a87d8ad9e80bd116044e0a3296c2c9e672ceef4e9324115480a12e"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgicvs01Controller.java": {
+      "calls": [
+        "Lgicvs01Service"
+      ],
+      "classes": [
+        "Lgicvs01Controller"
+      ],
+      "endpoints": [
+        "transactionLGCF",
+        "transactionVSCI"
+      ],
+      "fields": [
+        "lgicvs01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionLGCF",
+        "transactionVSCI"
+      ],
+      "program": "base/src/lgicvs01.cbl",
+      "sha256": "b132d823f771a43d6fa52f97e39633f9cecc367331582314466101da6ed3c5b9"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgipdb01Controller.java": {
+      "calls": [
+        "Lgipdb01Service"
+      ],
+      "classes": [
+        "Lgipdb01Controller"
+      ],
+      "endpoints": [
+        "link",
+        "transactionDSPI"
+      ],
+      "fields": [
+        "lgipdb01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link",
+        "transactionDSPI"
+      ],
+      "program": "base/src/lgipdb01.cbl",
+      "sha256": "91acc055334997bb827716ee31e61c308a51c55be1b7435d52729607d756b43f"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgipol01Controller.java": {
+      "calls": [
+        "Lgipol01Service"
+      ],
+      "classes": [
+        "Lgipol01Controller"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "lgipol01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "base/src/lgipol01.cbl",
+      "sha256": "4d24e4a5672047098b26939287742cb435b7414b94410dbb05fbc09efd76301e"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgipvs01Controller.java": {
+      "calls": [
+        "Lgipvs01Service"
+      ],
+      "classes": [
+        "Lgipvs01Controller"
+      ],
+      "endpoints": [
+        "transactionLGPF",
+        "transactionVSPI"
+      ],
+      "fields": [
+        "lgipvs01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionLGPF",
+        "transactionVSPI"
+      ],
+      "program": "base/src/lgipvs01.cbl",
+      "sha256": "429169b208bb471c75c520fb8e8aecd0ed9339e8e01da5a77b108fed480d8b40"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/LgsetupController.java": {
+      "calls": [
+        "LgsetupService"
+      ],
+      "classes": [
+        "LgsetupController"
+      ],
+      "endpoints": [
+        "transactionLGSE"
+      ],
+      "fields": [
+        "lgsetupService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionLGSE"
+      ],
+      "program": "base/src/lgsetup.cbl",
+      "sha256": "d4137dc0c0b7948d015d8dc8e76e2fd0c4ac1d7557c3cd45868aac7c68a9d05d"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/LgstsqController.java": {
+      "calls": [
+        "LgstsqService"
+      ],
+      "classes": [
+        "LgstsqController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "lgstsqService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "base/src/lgstsq.cbl",
+      "sha256": "efd825dfc3684c9a32b1bb55eb8af24579eb93267b9d737f5e4b219b6d0db15c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgtestc1Controller.java": {
+      "calls": [
+        "Lgtestc1Service"
+      ],
+      "classes": [
+        "Lgtestc1Controller"
+      ],
+      "endpoints": [
+        "transactionSSC1"
+      ],
+      "fields": [
+        "lgtestc1Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionSSC1"
+      ],
+      "program": "base/src/lgtestc1.cbl",
+      "sha256": "cf28badae9d7902331e24c6dcca390c27012239ea9dc7fd69950c67a017144f6"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgtestp1Controller.java": {
+      "calls": [
+        "Lgtestp1Service"
+      ],
+      "classes": [
+        "Lgtestp1Controller"
+      ],
+      "endpoints": [
+        "transactionSSP1"
+      ],
+      "fields": [
+        "lgtestp1Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionSSP1"
+      ],
+      "program": "base/src/lgtestp1.cbl",
+      "sha256": "4f04a03900408610d13993f9635cacb16f3b0a20ec989ba008fa5f3db8c6481d"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgtestp2Controller.java": {
+      "calls": [
+        "Lgtestp2Service"
+      ],
+      "classes": [
+        "Lgtestp2Controller"
+      ],
+      "endpoints": [
+        "transactionSSP2"
+      ],
+      "fields": [
+        "lgtestp2Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionSSP2"
+      ],
+      "program": "base/src/lgtestp2.cbl",
+      "sha256": "3e96c7c03c7838d9fefecbc07f53c65a34f66c69c3e60fe3ed409ee2b586ca8a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgtestp3Controller.java": {
+      "calls": [
+        "Lgtestp3Service"
+      ],
+      "classes": [
+        "Lgtestp3Controller"
+      ],
+      "endpoints": [
+        "transactionSSP3"
+      ],
+      "fields": [
+        "lgtestp3Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionSSP3"
+      ],
+      "program": "base/src/lgtestp3.cbl",
+      "sha256": "3a849cb8e3bd4302c0d90ad21ff52ee671045e6eb41c0cec2cc65353c03e996a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgtestp4Controller.java": {
+      "calls": [
+        "Lgtestp4Service"
+      ],
+      "classes": [
+        "Lgtestp4Controller"
+      ],
+      "endpoints": [
+        "transactionSSP4"
+      ],
+      "fields": [
+        "lgtestp4Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionSSP4"
+      ],
+      "program": "base/src/lgtestp4.cbl",
+      "sha256": "cbc19f9aa5c37dba4496e56085d364ab9e03697d51b494b404cbdeb89268f499"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgucdb01Controller.java": {
+      "calls": [
+        "Lgucdb01Service"
+      ],
+      "classes": [
+        "Lgucdb01Controller"
+      ],
+      "endpoints": [
+        "link",
+        "transactionDSCI"
+      ],
+      "fields": [
+        "lgucdb01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link",
+        "transactionDSCI"
+      ],
+      "program": "base/src/lgucdb01.cbl",
+      "sha256": "1b490c50f584be0ae226df99d215b30de3c4833ca00a9e23914ed0c900c276f3"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgucus01Controller.java": {
+      "calls": [
+        "Lgucus01Service"
+      ],
+      "classes": [
+        "Lgucus01Controller"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "lgucus01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "base/src/lgucus01.cbl",
+      "sha256": "b69491e15273d8edc6dac283f34ea5e6a591fab16c2234af5400e55eb405d11b"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgucvs01Controller.java": {
+      "calls": [
+        "Lgucvs01Service"
+      ],
+      "classes": [
+        "Lgucvs01Controller"
+      ],
+      "endpoints": [
+        "link",
+        "transactionVSC1"
+      ],
+      "fields": [
+        "lgucvs01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link",
+        "transactionVSC1"
+      ],
+      "program": "base/src/lgucvs01.cbl",
+      "sha256": "d543504d9fbca1d30a3110c6f097f5e7d9cc6de5e573073e6a917b527bc30024"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgupdb01Controller.java": {
+      "calls": [
+        "Lgupdb01Service"
+      ],
+      "classes": [
+        "Lgupdb01Controller"
+      ],
+      "endpoints": [
+        "link",
+        "transactionDSPI"
+      ],
+      "fields": [
+        "lgupdb01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link",
+        "transactionDSPI"
+      ],
+      "program": "base/src/lgupdb01.cbl",
+      "sha256": "875486d350a611167877e4f05185c89499d34a77f06211e82291ce4e1d7b792a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgupol01Controller.java": {
+      "calls": [
+        "Lgupol01Service"
+      ],
+      "classes": [
+        "Lgupol01Controller"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "lgupol01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "base/src/lgupol01.cbl",
+      "sha256": "bc5954f7c3c3c726a38f1c413ffff714d5c25160bb9f7c5a48b80895b6f3ae47"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgupvs01Controller.java": {
+      "calls": [
+        "Lgupvs01Service"
+      ],
+      "classes": [
+        "Lgupvs01Controller"
+      ],
+      "endpoints": [
+        "link",
+        "transactionVSP1"
+      ],
+      "fields": [
+        "lgupvs01Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link",
+        "transactionVSP1"
+      ],
+      "program": "base/src/lgupvs01.cbl",
+      "sha256": "59e526f59e428065c5d4c277e96d36ce736db78e1bf8a17080b7204b4748f409"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Lgwebst5Controller.java": {
+      "calls": [
+        "Lgwebst5Service"
+      ],
+      "classes": [
+        "Lgwebst5Controller"
+      ],
+      "endpoints": [
+        "transactionSSST"
+      ],
+      "fields": [
+        "lgwebst5Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionSSST"
+      ],
+      "program": "base/src/lgwebst5.cbl",
+      "sha256": "9e4e8f533844140dc098787c3b201ba23f0eccef274bddea2396854f7c015389"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgacdb01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgacdb01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "d2CustomerNum",
+        "d2CustsecrCount",
+        "d2CustsecrPass",
+        "d2CustsecrState",
+        "d2RequestId",
+        "db2CustomernumInt",
+        "emCusnum",
+        "emDate",
+        "emSqlrc",
+        "emSqlreq",
+        "emTime",
+        "genacount",
+        "genapool",
+        "lastcustnum",
+        "lgacNcs",
+        "lgacdb02",
+        "lgacvs01",
+        "wsAbstime",
+        "wsCaHeaderLen",
+        "wsCalen",
+        "wsDate",
+        "wsRequiredCaLen",
+        "wsResp",
+        "wsTasknum",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "89e39b67179f4cabd5f9f5a0b7985358957acd699a9c3e21e6c3feb632f7e77f"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgacdb02DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgacdb02DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "d2CustomerNum",
+        "d2CustsecrCount",
+        "d2CustsecrPass",
+        "d2CustsecrState",
+        "d2RequestId",
+        "d2ReturnCode",
+        "db2CustomercntInt",
+        "db2CustomernumInt",
+        "emCusnum",
+        "emDate",
+        "emSqlrc",
+        "emSqlreq",
+        "emTime",
+        "wsAbstime",
+        "wsCalen",
+        "wsDate",
+        "wsTasknum",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "0fae50fc2793dc704d746c63ad9d4e7f6c23fd73fbe9671e750f7ad6c0775bcc"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgacus01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgacus01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "emDate",
+        "emTime",
+        "emVariable",
+        "lgacdb01",
+        "wsAbstime",
+        "wsCaHeaderLen",
+        "wsCalen",
+        "wsDate",
+        "wsRequiredCaLen",
+        "wsTasknum",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "c80739adc9422c0d236ee5f02dd44b2d75fdd1edf638b47399042d966d6043ce"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgacvs01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgacvs01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "customerRecordSize",
+        "emCusnum",
+        "emDate",
+        "emResp2Rc",
+        "emResprc",
+        "emTime",
+        "wsAbstime",
+        "wsCommareaLen",
+        "wsDate",
+        "wsResp",
+        "wsResp2",
+        "wsTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "ac14f11ff9468a1e5b2db487dbaf0495b39501cf58d561674ce37efcb973285a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgapdb01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgapdb01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "absTime",
+        "caData",
+        "date1",
+        "db2BCrimeperilInt",
+        "db2BCrimepremiumInt",
+        "db2BFireperilInt",
+        "db2BFirepremiumInt",
+        "db2BFloodperilInt",
+        "db2BFloodpremiumInt",
+        "db2BStatusInt",
+        "db2BWeatherperilInt",
+        "db2BWeatherpremiumInt",
+        "db2BrokeridInt",
+        "db2CPolicynumInt",
+        "db2CustomernumInt",
+        "db2ESumassuredInt",
+        "db2ETermSint",
+        "db2HBedroomsSint",
+        "db2HValueInt",
+        "db2MAccidentsInt",
+        "db2MCcSint",
+        "db2MPremiumInt",
+        "db2MValueInt",
+        "db2PaymentInt",
+        "db2PolicynumInt",
+        "emCusnum",
+        "emDate",
+        "emPolnum",
+        "emSqlrc",
+        "emSqlreq",
+        "emTime",
+        "lgapvs01",
+        "time1",
+        "wsCaHeaderLen",
+        "wsCalen",
+        "wsRequiredCaLen",
+        "wsTasknum",
+        "wsTermid",
+        "wsTransid",
+        "wsVaryChar",
+        "wsVaryLen"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "249ca1884cd631fdc7272763b59fdd8ab543ba94e3b7b829138c31959f6e31f2"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgapol01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgapol01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "absTime",
+        "caData",
+        "date1",
+        "emDate",
+        "emTime",
+        "emVariable",
+        "lgapdb01",
+        "time1",
+        "wsCaHeaderLen",
+        "wsCalen",
+        "wsRequiredCaLen",
+        "wsTasknum",
+        "wsTermid",
+        "wsTransid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "41681b33d11a636c284040d1bf6c3c94a924e32a7c46ec77bd3a6589377cc327"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgapvs01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgapvs01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "emCusnum",
+        "emDate",
+        "emPolnum",
+        "emResp2Rc",
+        "emResprc",
+        "emTime",
+        "wfBCustomer",
+        "wfBPostcode",
+        "wfBStatus",
+        "wfCustomerNum",
+        "wfEEquities",
+        "wfEFundName",
+        "wfELifeAssured",
+        "wfEManagedFund",
+        "wfEWithProfits",
+        "wfHBedrooms",
+        "wfHHouseName",
+        "wfHPostcode",
+        "wfHPropertyType",
+        "wfHValue",
+        "wfMMake",
+        "wfMModel",
+        "wfMRegnumber",
+        "wfMValue",
+        "wfPolicyData",
+        "wfPolicyNum",
+        "wfRequestId",
+        "wsAbstime",
+        "wsCommareaLen",
+        "wsDate",
+        "wsResp",
+        "wsResp2",
+        "wsTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "5963d0ebc841e388c487f0764e070f1347b5592256804f1ee08a196ba28f7047"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgastat1DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgastat1DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "genacounter",
+        "genapool",
+        "genatype",
+        "trancount",
+        "wsAbstime",
+        "wsAreaD",
+        "wsAreaT",
+        "wsCalen",
+        "wsChanname1",
+        "wsChanname2",
+        "wsDataRc",
+        "wsDataReq",
+        "wsDate",
+        "wsQname",
+        "wsResp",
+        "wsTasknum",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "10ca94329a4c7634719429bc612122eb51400ba8a2c2d3c3e4b198227bb2df27"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgdpdb01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgdpdb01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "db2CustomernumInt",
+        "db2PolicynumInt",
+        "emCusnum",
+        "emDate",
+        "emPolnum",
+        "emSqlrc",
+        "emSqlreq",
+        "emTime",
+        "lgdpvs01",
+        "wsAbstime",
+        "wsCaHeaderLen",
+        "wsCalen",
+        "wsDate",
+        "wsTasknum",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "47b23a40f7b4866adf6161c4ad81ec754dc03660ed0e237b1752ee176e1fbdef"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgdpol01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgdpol01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "emDate",
+        "emTime",
+        "emVariable",
+        "lgdpdb01",
+        "wsAbstime",
+        "wsCaHeaderLen",
+        "wsCalen",
+        "wsDate",
+        "wsTasknum",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "29fba803f4afdd5bde678c6c11160e14dedead1daa5d2242e5a34e2f424ac69e"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgdpvs01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgdpvs01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "emCusnum",
+        "emDate",
+        "emPolnum",
+        "emResp2Rc",
+        "emResprc",
+        "emTime",
+        "wfCustomerNum",
+        "wfPolicyNum",
+        "wfRequestId",
+        "wsAbstime",
+        "wsCommareaLen",
+        "wsDate",
+        "wsResp",
+        "wsResp2",
+        "wsTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "73b3ccb58e0a1ec1f1c644dda2863ab9cb4a7c6d6085f015ee18f256adee4cfc"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgicdb01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgicdb01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "db2CustomernumberInt",
+        "emCusnum",
+        "emDate",
+        "emSqlrc",
+        "emSqlreq",
+        "emTime",
+        "wsAbstime",
+        "wsCaHeadertrailerLen",
+        "wsCalen",
+        "wsDate",
+        "wsRequiredCaLen",
+        "wsTasknum",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "e6e78640dde722eeef4a8908d696329cbfa67c1e463770fcad4b5023f9d2d040"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgicus01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgicus01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "emDate",
+        "emTime",
+        "emVariable",
+        "lgicdb01",
+        "wsAbstime",
+        "wsCaHeadertrailerLen",
+        "wsCalen",
+        "wsDate",
+        "wsRequiredCaLen",
+        "wsTasknum",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "fa92b3bbde77e35643d723fe310c5f4b3b9b3f87a2d67fa03db12577d6b149ce"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgicvs01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgicvs01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "commaDataH",
+        "commaDataHigh",
+        "f10",
+        "f82",
+        "readCustHigh",
+        "readCustLow",
+        "readMsgMsg",
+        "stsqName",
+        "writeMsgE",
+        "writeMsgH",
+        "writeMsgHigh",
+        "writeMsgL",
+        "writeMsgLow",
+        "wsCommarea",
+        "wsCustHigh",
+        "wsCustLow",
+        "wsFlag",
+        "wsFlagTsqe",
+        "wsFlagTsqh",
+        "wsFlagTsql",
+        "wsInvokeprog",
+        "wsRandomNumber",
+        "wsRecvData",
+        "wsRecvLen",
+        "wsResp",
+        "wsStartcode",
+        "wsSysid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "aa48e5192b7ad723f84a296d9e6875fd2e84c979a3b65e151923cb80acf39254"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgipdb01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgipdb01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "absTime",
+        "caData",
+        "date1",
+        "db2BCrimeperilInt",
+        "db2BCrimepremiumInt",
+        "db2BFireperilInt",
+        "db2BFirepremiumInt",
+        "db2BFloodperilInt",
+        "db2BFloodpremiumInt",
+        "db2BStatusInt",
+        "db2BWeatherperilInt",
+        "db2BWeatherpremiumInt",
+        "db2BrokeridInt",
+        "db2CustomernumInt",
+        "db2EPaddingLen",
+        "db2ESumassuredInt",
+        "db2ETermSint",
+        "db2HBedroomsSint",
+        "db2HValueInt",
+        "db2MAccidentsInt",
+        "db2MCcSint",
+        "db2MPremiumInt",
+        "db2MValueInt",
+        "db2PaymentInt",
+        "db2PolicynumInt",
+        "emCusnum",
+        "emDate",
+        "emPolnum",
+        "emSqlrc",
+        "emSqlreq",
+        "emTime",
+        "endPolicyPos",
+        "icomRecord",
+        "icomRecordCount",
+        "indBrokerid",
+        "indBrokersref",
+        "indEPaddingdata",
+        "indEPaddingdatal",
+        "indPayment",
+        "minusOne",
+        "time1",
+        "wsCaHeadertrailerLen",
+        "wsCalen",
+        "wsRequestId",
+        "wsRequiredCaLen",
+        "wsTasknum",
+        "wsTermid",
+        "wsTransid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "43604a96ee6351a31539a17dfb276cd77f2ccae4060b8f406662b885b024b03f"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgipol01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgipol01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "absTime",
+        "caData",
+        "date1",
+        "emDate",
+        "emTime",
+        "emVariable",
+        "lgipdb01",
+        "time1",
+        "wsCalen",
+        "wsTasknum",
+        "wsTermid",
+        "wsTransid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "95cc094080aad928f08635e3cf52f21ae0fdaf90cb7f7f22671988b143ffa604"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgipvs01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgipvs01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caPolicyType",
+        "commaDataKey",
+        "commaDataText",
+        "f11",
+        "f64",
+        "partKeyNum",
+        "partKeyType",
+        "writeMsgCustnum",
+        "writeMsgPolnum",
+        "writeMsgText",
+        "wsCommarea",
+        "wsFlag",
+        "wsInvokeprog",
+        "wsRecvData",
+        "wsRecvLen",
+        "wsResp",
+        "wsStartcode",
+        "wsSysid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "9bb3bf7dbcc5f79a76b0b520c46c23c7a59f2aeef97ad41c505138f78b1ade92"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/LgsetupDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "LgsetupDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "f10",
+        "frstcustnum",
+        "genacnt100",
+        "genacnt199",
+        "genacnt200",
+        "genacnt299",
+        "genacnt300",
+        "genacnt399",
+        "genacnt400",
+        "genacnt499",
+        "genacnt500",
+        "genacnt599",
+        "genacnt600",
+        "genacnt699",
+        "genacnt700",
+        "genacnt799",
+        "genacnt800",
+        "genacnt899",
+        "genacnt900",
+        "genacnt999",
+        "genacnta00",
+        "genacnta99",
+        "genacntb00",
+        "genacntb99",
+        "genacntc00",
+        "genacntc99",
+        "genacntd00",
+        "genacntd99",
+        "genacnte00",
+        "genacnte99",
+        "genacntf00",
+        "genacntf99",
+        "genacntg00",
+        "genacntg99",
+        "genacnth00",
+        "genacnth99",
+        "genacnti00",
+        "genacnti99",
+        "genacount",
+        "genapool",
+        "lastcustnum",
+        "stsqErrs",
+        "stsqName",
+        "stsqStat",
+        "stsqStrt",
+        "writeMsgE",
+        "writeMsgH",
+        "writeMsgHigh",
+        "writeMsgL",
+        "writeMsgLow",
+        "wsRecvData",
+        "wsRecvLen",
+        "wsResp"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "8e343141de29be70d6ba0be71e055299d8df0834b9110efb4e3d70f8a8005996"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/LgstsqDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "LgstsqDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "commaData",
+        "fillerX",
+        "stdqName",
+        "stsqExt",
+        "stsqName",
+        "tempo",
+        "writeMsgMsg",
+        "writeMsgRest",
+        "writeMsgSysid",
+        "wsFlag",
+        "wsInvokeprog",
+        "wsRecvData",
+        "wsRecvLen",
+        "wsResp"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "f3c6e8ddf613d4e0429e19f741a00c2199cbab4bf719544a8f045b0e58053ff7"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgucdb01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgucdb01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "db2CustomernumInt",
+        "emCusnum",
+        "emDate",
+        "emSqlrc",
+        "emSqlreq",
+        "emTime",
+        "lgucvs01",
+        "wsAbstime",
+        "wsCalen",
+        "wsDate",
+        "wsRetry",
+        "wsTasknum",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "9deb4c52fa1c6d0d1ac078e9ba2ea10255c6ee4ca62d23eb5bbd399a9c5c7e90"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgucus01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgucus01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "emDate",
+        "emTime",
+        "emVariable",
+        "lgucdb01",
+        "wsAbstime",
+        "wsCalen",
+        "wsDate",
+        "wsTasknum",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "4ca71810d3b20677e5286d7a193aa73d3284e3252407f3ab5da45f924e2881c7"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgucvs01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgucvs01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "customerRecordSize",
+        "emCusnum",
+        "emDate",
+        "emResp2Rc",
+        "emResprc",
+        "emTime",
+        "wsAbstime",
+        "wsCommareaLen",
+        "wsCustomerArea",
+        "wsDate",
+        "wsResp",
+        "wsResp2",
+        "wsTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "a6ec402b620409841358aacf3d21c102d6cf11592ca3f4efaea233de3d778bb0"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgupdb01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgupdb01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "db2BrokeridInt",
+        "db2CustomernumInt",
+        "db2ESumassuredInt",
+        "db2ETermSint",
+        "db2HBedroomsSint",
+        "db2HValueInt",
+        "db2MAccidentsInt",
+        "db2MCcSint",
+        "db2MPremiumInt",
+        "db2MValueInt",
+        "db2PaymentInt",
+        "db2PolicynumInt",
+        "emCusnum",
+        "emDate",
+        "emPolnum",
+        "emSqlrc",
+        "emSqlreq",
+        "emTime",
+        "indBrokerid",
+        "indBrokersref",
+        "indPayment",
+        "lgupvs01",
+        "wsAbstime",
+        "wsCalen",
+        "wsDate",
+        "wsRetry",
+        "wsTasknum",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "2942fd6c71a3cc35ccc6067892f155702557ab6b7cfdd384c7b9b3a713a5d17c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgupol01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgupol01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "emDate",
+        "emTime",
+        "emVariable",
+        "lgupdb01",
+        "wsAbstime",
+        "wsCaHeaderLen",
+        "wsCalen",
+        "wsDate",
+        "wsFullEndowLen",
+        "wsFullHouseLen",
+        "wsFullMotorLen",
+        "wsRequiredCaLen",
+        "wsTasknum",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "ae8442ffd0c47df59a4ed19a304bb962ed9d003aef1c8072f16842e0b6bd6250"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgupvs01DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgupvs01DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData",
+        "emCusnum",
+        "emDate",
+        "emPolnum",
+        "emResp2Rc",
+        "emResprc",
+        "emTime",
+        "wfBCustomer",
+        "wfBPostcode",
+        "wfBStatus",
+        "wfCustomerNum",
+        "wfEEquities",
+        "wfEFundName",
+        "wfELifeAssured",
+        "wfEManagedFund",
+        "wfEWithProfits",
+        "wfHBedrooms",
+        "wfHHouseName",
+        "wfHPostcode",
+        "wfHPropertyType",
+        "wfHValue",
+        "wfMMake",
+        "wfMModel",
+        "wfMRegnumber",
+        "wfMValue",
+        "wfPolicyData",
+        "wfPolicyNum",
+        "wfRequestId",
+        "wsAbstime",
+        "wsCommareaLen",
+        "wsCommareaLenf",
+        "wsDate",
+        "wsFilein",
+        "wsResp",
+        "wsResp2",
+        "wsTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "71ccd5595b13a3b38c6f3ff78df2f6b503ea0cee861ce4984be0b21a1925ef93"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Lgwebst5DfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Lgwebst5DfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "countadd",
+        "countdel",
+        "counterrors",
+        "countinq",
+        "countsuccess",
+        "countupd",
+        "countval",
+        "drateval",
+        "genacnt100",
+        "genacnt100V",
+        "genacnt199",
+        "genacnt199V",
+        "genacnt200",
+        "genacnt200V",
+        "genacnt299",
+        "genacnt299V",
+        "genacnt300",
+        "genacnt300V",
+        "genacnt399",
+        "genacnt399V",
+        "genacnt400",
+        "genacnt400V",
+        "genacnt499",
+        "genacnt499V",
+        "genacnt500",
+        "genacnt500V",
+        "genacnt599",
+        "genacnt599V",
+        "genacnt600",
+        "genacnt600V",
+        "genacnt699",
+        "genacnt699V",
+        "genacnt700",
+        "genacnt700V",
+        "genacnt799",
+        "genacnt799V",
+        "genacnt800",
+        "genacnt800V",
+        "genacnt899",
+        "genacnt899V",
+        "genacnt900",
+        "genacnt900V",
+        "genacnt999",
+        "genacnt999V",
+        "genacnta00",
+        "genacnta00V",
+        "genacnta99",
+        "genacnta99V",
+        "genacntb00",
+        "genacntb00V",
+        "genacntb99",
+        "genacntb99V",
+        "genacntc00",
+        "genacntc00V",
+        "genacntc99",
+        "genacntc99V",
+        "genacntd00",
+        "genacntd00V",
+        "genacntd99",
+        "genacntd99V",
+        "genacnte00",
+        "genacnte00V",
+        "genacnte99",
+        "genacnte99V",
+        "genacntf00",
+        "genacntf00V",
+        "genacntf99",
+        "genacntf99V",
+        "genacntg00",
+        "genacntg00V",
+        "genacntg99",
+        "genacntg99V",
+        "genacnth00",
+        "genacnth00V",
+        "genacnth99",
+        "genacnth99V",
+        "genacnti99",
+        "genacnti99V",
+        "genacount",
+        "genacountV",
+        "genaerrorsV",
+        "genapool",
+        "genasuccesV",
+        "hhval",
+        "icountval",
+        "mmval",
+        "ncountval",
+        "nrateval",
+        "ocountval",
+        "orateval",
+        "s1",
+        "s10",
+        "s11",
+        "s12",
+        "s13",
+        "s14",
+        "s15",
+        "s16",
+        "s17",
+        "s18",
+        "s19",
+        "s20",
+        "s21",
+        "s22",
+        "s23",
+        "s24",
+        "s25",
+        "s26",
+        "s27",
+        "s28",
+        "s29",
+        "s3",
+        "s30",
+        "s31",
+        "s32",
+        "s33",
+        "s34",
+        "s35",
+        "s36",
+        "s37",
+        "s38",
+        "s39",
+        "s4",
+        "s5",
+        "s6",
+        "s7",
+        "s8",
+        "s9",
+        "ssval",
+        "tsqpre",
+        "wsAbstime",
+        "wsApplid",
+        "wsCalen",
+        "wsDate",
+        "wsHh",
+        "wsMm",
+        "wsNewv",
+        "wsOldvhh",
+        "wsOldvmm",
+        "wsOldvss",
+        "wsResp",
+        "wsSs",
+        "wsTasknum",
+        "wsTermid",
+        "wsTime",
+        "wsTransid",
+        "wsTsqdata",
+        "wsTsqname"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "74183c8a1452bef5da1ae2858c8bf2c2a56e11a36a7473602143b982b6698b9c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01CaErrorMsg.java": {
+      "calls": [],
+      "classes": [
+        "Lgacdb01CaErrorMsg"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "3eea4ffe0d65ae1731cdcb61ba05faed99e23b3e8cb17ba30079ab33dbde23a0"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Cdb2area.java": {
+      "calls": [],
+      "classes": [
+        "Lgacdb01Cdb2area"
+      ],
+      "endpoints": [],
+      "fields": [
+        "d2CustomerNum",
+        "d2CustsecrCount",
+        "d2CustsecrData",
+        "d2CustsecrPass",
+        "d2CustsecrState",
+        "d2RequestId",
+        "d2ReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "bb630c6cfb03be30f85fa1fd56693d780d02cd2a95b773a2290fe76ffedee668"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacus01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgacus01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "7f6f8c09c5ced1ed23de946586ea2c7ea919b427a1cba5c52e6b512cba45cd12"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacvs01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgacvs01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "ced7415c3faed73929293e691172fc82d56dc76968db24cfd0de8a2116667a4d"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgapol01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgapol01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "ea0a8e3ff2d728bccce8e59c0410856623bf30b65d7f628609fd96521751b93e"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgapvs01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgapvs01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "3e1601f2431d01b8ca401bbdc2ec3dba70514346e2bc0271d22921bc7f90b075"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgastat1ChannelIn.java": {
+      "calls": [],
+      "classes": [
+        "Lgastat1ChannelIn"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dfhepData00001",
+        "dfhepData00002"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "288e6375a5cca97559ce432919f6f25e0c2244b113239d9835d3084d0943c139"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgastat1Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgastat1Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "fecc3f5c6098d7526b7629c28d69f195c440a25e536e0eff8d6f31f8c72bf47a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgastat1WsDataRc.java": {
+      "calls": [],
+      "classes": [
+        "Lgastat1WsDataRc"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wsDataRc"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "2adfeea936760a86868a9de8fafa9fd65da7bf8b2b1c419b24cd9974ce77db17"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgastat1WsDataReq.java": {
+      "calls": [],
+      "classes": [
+        "Lgastat1WsDataReq"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wsDataReq"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "b533b05af9e6052d69f451a17d146ebe7c2dcee66ab7f173f02468a8d98c4dac"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgdpol01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgdpol01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "b9e323492dd7839b01dfdb232947cc634a0b048cc36b5a5919d0970b955fff9a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgdpvs01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgdpvs01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "97d5332bf5f8f3463847202ae9f98fd6f8c27e3df2f402d05b1607ca819d3927"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgicus01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgicus01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "b30de488b9727adc3028f3925c40efe7e6bca068d4d60e907864340c949d5d07"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgicvs01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgicvs01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "commaDataH",
+        "commaDataHigh"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "71496c63eb2da0655e501905cad7e8bdde6ad0b17299bda26429c3994417c134"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgipol01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgipol01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "9f9f4253d3b88205806ee1c75efce6593b6044b23512291118a1b60a7fef0f2e"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgipvs01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgipvs01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "commaDataKey",
+        "commaDataText"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "ce1176aafab96e66fee1aee54d22f54fc13686b8e039f5c16ee7de4ed65e09c1"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/LgsetupDfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "LgsetupDfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "commaDataH",
+        "commaDataHigh"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "c9483cc9bda29ac11b6a606ccf6007ac247f59153b58163aa418768ee915843a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgtestc1CommArea.java": {
+      "calls": [],
+      "classes": [
+        "Lgtestc1CommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "81dfc308ec2fbdd01fe59d8c89c47e105559487f5190ba34a26ddd6fc4f2cee4"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgtestp1CommArea.java": {
+      "calls": [],
+      "classes": [
+        "Lgtestp1CommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "5103551f0a5e82237e65fcb7eab5d678f6847c969366688d89a2e7addebb80b4"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgtestp2CommArea.java": {
+      "calls": [],
+      "classes": [
+        "Lgtestp2CommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "6c2a461c4dd3631ca0449576e0d6241417c583062a069fa08cc73d60b7289651"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgtestp3CommArea.java": {
+      "calls": [],
+      "classes": [
+        "Lgtestp3CommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "be0fafeee23179a7ab27b02223b3954af62f24b04eafc5b144e7eb81ed7385e0"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgtestp4CommArea.java": {
+      "calls": [],
+      "classes": [
+        "Lgtestp4CommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "3224ba1385648c7efc91a194dc76c3ffa5e5ce171057924b136951e167391346"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgucus01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgucus01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "143b25e99cd5214d676c9cb9dd7bb7ae38e38cd3245989cc023e581f9df2c6fb"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgucvs01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgucvs01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "08d5d775170090b5e936f8d13adb6174d3891e8c54c15934152046dcf92fa5b9"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgupol01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgupol01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "2a0e1b3e43a7e683f735b6e7d6115776c7c017b4eb7e972dbb5cd90efeac294c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgupvs01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgupvs01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "0d78dce58881ba670facfc69a62bfda02d56ff7fc674c23015a844a12cb66938"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgwebst5Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgwebst5Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "commaDataH",
+        "commaDataHigh"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "54cefd2db99182b90456775f1246dcc85fba4173015a5d0085980cc91dd8a8b2"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/ScreenCell.java": {
+      "calls": [],
+      "classes": [
+        "ScreenCell"
+      ],
+      "endpoints": [],
+      "fields": [
+        "column",
+        "css",
+        "cursor",
+        "input",
+        "key",
+        "length",
+        "line",
+        "text"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "cc52815f5afec0d00d2e282a2c23eaaa091f9fcd3a03b25e35a667d131d32039"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/ScreenField.java": {
+      "calls": [],
+      "classes": [
+        "ScreenField"
+      ],
+      "endpoints": [],
+      "fields": [
+        "bright",
+        "color",
+        "column",
+        "cursor",
+        "dark",
+        "initial",
+        "input",
+        "length",
+        "line",
+        "name",
+        "numeric",
+        "occurs"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "35924b5ea45c4896c9ac24136d515692d5fb7540894d5cf49ddabfbd9bf9eede"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/ScreenModel.java": {
+      "calls": [],
+      "classes": [
+        "ScreenModel"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "data",
+      "methods": [
+        "screenCells"
+      ],
+      "program": null,
+      "sha256": "ecdcbf6f402177329cb2f77fc7ad19edaac738c09c36f5bbac20c3284c8b9d98"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/Ssmapc1Screen.java": {
+      "calls": [],
+      "classes": [
+        "Ssmapc1Screen"
+      ],
+      "endpoints": [],
+      "fields": [
+        "ent1cno",
+        "ent1dob",
+        "ent1fna",
+        "ent1hmo",
+        "ent1hnm",
+        "ent1hno",
+        "ent1hp1",
+        "ent1hp2",
+        "ent1hpc",
+        "ent1lna",
+        "ent1opt",
+        "errfld"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromValues",
+        "mapName",
+        "mapsetName",
+        "screenLayout",
+        "screenValues"
+      ],
+      "program": null,
+      "sha256": "b92397af8f78803819bf71306cd85b6f0cbcd633690b9230d9492791b92d7ceb"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/Ssmapp1Screen.java": {
+      "calls": [],
+      "classes": [
+        "Ssmapp1Screen"
+      ],
+      "endpoints": [],
+      "fields": [
+        "enp1acc",
+        "enp1cc",
+        "enp1cmk",
+        "enp1cmo",
+        "enp1cno",
+        "enp1col",
+        "enp1eda",
+        "enp1ida",
+        "enp1man",
+        "enp1opt",
+        "enp1pno",
+        "enp1pre",
+        "enp1reg",
+        "enp1val",
+        "erp1fld"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromValues",
+        "mapName",
+        "mapsetName",
+        "screenLayout",
+        "screenValues"
+      ],
+      "program": null,
+      "sha256": "e60fa47d7eda60e1a1c9eaf8a3d004c6deb9a93bdede2c3ef18a92c4978811d5"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/Ssmapp2Screen.java": {
+      "calls": [],
+      "classes": [
+        "Ssmapp2Screen"
+      ],
+      "endpoints": [],
+      "fields": [
+        "enp2cno",
+        "enp2eda",
+        "enp2equ",
+        "enp2fnm",
+        "enp2ida",
+        "enp2lif",
+        "enp2man",
+        "enp2opt",
+        "enp2pno",
+        "enp2sum",
+        "enp2ter",
+        "enp2wpr",
+        "erp2fld"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromValues",
+        "mapName",
+        "mapsetName",
+        "screenLayout",
+        "screenValues"
+      ],
+      "program": null,
+      "sha256": "a527564c4c88b1653037eabfee3d3bf837ca8fa9d5ea6e1f78e2bce1a7f7bfa0"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/Ssmapp3Screen.java": {
+      "calls": [],
+      "classes": [
+        "Ssmapp3Screen"
+      ],
+      "endpoints": [],
+      "fields": [
+        "enp3bed",
+        "enp3cno",
+        "enp3eda",
+        "enp3hnm",
+        "enp3hno",
+        "enp3hpc",
+        "enp3ida",
+        "enp3opt",
+        "enp3pno",
+        "enp3typ",
+        "enp3val",
+        "erp3fld"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromValues",
+        "mapName",
+        "mapsetName",
+        "screenLayout",
+        "screenValues"
+      ],
+      "program": null,
+      "sha256": "9083e45bea5a1a82b8aa2ed3f4dd5431eb6facf2524c3a0847d116f934116c5e"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/Ssmapp4Screen.java": {
+      "calls": [],
+      "classes": [
+        "Ssmapp4Screen"
+      ],
+      "endpoints": [],
+      "fields": [
+        "enp4add",
+        "enp4cno",
+        "enp4cpe",
+        "enp4cpr",
+        "enp4cus",
+        "enp4eda",
+        "enp4fpe",
+        "enp4fpr",
+        "enp4hpc",
+        "enp4ida",
+        "enp4lat",
+        "enp4lon",
+        "enp4opt",
+        "enp4pno",
+        "enp4pty",
+        "enp4rej",
+        "enp4sta",
+        "enp4wpe",
+        "enp4wpr",
+        "enp4xpe",
+        "enp4xpr",
+        "erp4fld"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromValues",
+        "mapName",
+        "mapsetName",
+        "screenLayout",
+        "screenValues"
+      ],
+      "program": null,
+      "sha256": "aeb793ccedfa1845bad83b9974ae60c195ee804e5ada254526d48103f67b7973"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/Lgtestc1CommArea.java": {
+      "calls": [],
+      "classes": [
+        "Lgtestc1CommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "f24",
+        "msgend",
+        "readMsgMsg",
+        "stsqName",
+        "sysId",
+        "writeMsgE",
+        "writeMsgH",
+        "writeMsgHigh",
+        "writeMsgL",
+        "writeMsgLow",
+        "wsFlagTsqh",
+        "wsItemCount",
+        "wsResp"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "ee9ba7b4d7f03a8e520a7a6883d7152dc6444765ac44b16ef3f263936a664276"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/Lgtestp1CommArea.java": {
+      "calls": [],
+      "classes": [
+        "Lgtestp1CommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "msgend",
+        "sysId"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "8406432f5c3e60e0a6af5065b9f765cf14e57a893ad779083f42a5b7552ee767"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/Lgtestp2CommArea.java": {
+      "calls": [],
+      "classes": [
+        "Lgtestp2CommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "msgend",
+        "sysId"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "c127b55fdad83f7bc72e785691c03d0568498e26ba5f9e7e0b341a7394ad2dbd"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/Lgtestp3CommArea.java": {
+      "calls": [],
+      "classes": [
+        "Lgtestp3CommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "msgend",
+        "sysId"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "2c2cf90c7c4af489cbc5f1d592f4fac42f31f346496ee41af31267ddc28ef793"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/Lgtestp4CommArea.java": {
+      "calls": [],
+      "classes": [
+        "Lgtestp4CommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "msgend",
+        "sysId"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "1effac95e446bc0456350fc8f87613416b481506ac62a6eb33f4885e123ed696"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/vsam/CaCustomerNum.java": {
+      "calls": [],
+      "classes": [
+        "CaCustomerNum"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromRecord",
+        "toRecord"
+      ],
+      "program": null,
+      "sha256": "eaec14833133c31c991dbf22d1dba4c910a1aebf3ebdf8c527dd1dc30ca5389e"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/vsam/CobolRecords.java": {
+      "calls": [],
+      "classes": [
+        "CobolRecords"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "data",
+      "methods": [
+        "CobolRecords",
+        "binary",
+        "blank",
+        "decimal",
+        "packed",
+        "putBinary",
+        "putPacked",
+        "putText",
+        "putZoned",
+        "text",
+        "toInteger",
+        "toLong",
+        "zoned"
+      ],
+      "program": null,
+      "sha256": "37857cebd409c1c2c7e5cbbe1745f5f093a6efbfc38d068a0b541b55ce5712e9"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/vsam/WfPolicyInfo.java": {
+      "calls": [],
+      "classes": [
+        "WfPolicyInfo"
+      ],
+      "endpoints": [],
+      "fields": [
+        "id",
+        "wfPolicyData"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromRecord",
+        "toRecord"
+      ],
+      "program": null,
+      "sha256": "cd9b636a4fb13f1166b1e6e1c7b922c7b0074ac097b4a8d371576432401117c5"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/vsam/WfPolicyInfoKey.java": {
+      "calls": [],
+      "classes": [
+        "WfPolicyInfoKey"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wfCustomerNum",
+        "wfPolicyNum",
+        "wfRequestId"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "44967b43b447a6cb9682d2d091dd631688fd0644c681805cdfb20d1cb8981122"
+    },
+    "src/main/java/com/gitgalaxy/modernized/exception/CicsAbendException.java": {
+      "calls": [],
+      "classes": [
+        "CicsAbendException"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abcode",
+        "program",
+        "site"
+      ],
+      "kind": "other",
+      "methods": [
+        "CicsAbendException",
+        "getAbcode",
+        "getProgram",
+        "getSite"
+      ],
+      "program": null,
+      "sha256": "126f9662ac70b228a95d0f90ebc998f8d08db25cb482f89a941f956b3cdeb9f1"
+    },
+    "src/main/java/com/gitgalaxy/modernized/exception/CicsConditionException.java": {
+      "calls": [],
+      "classes": [
+        "CicsConditionException"
+      ],
+      "endpoints": [],
+      "fields": [
+        "condition",
+        "program",
+        "site"
+      ],
+      "kind": "other",
+      "methods": [
+        "CicsConditionException",
+        "getCondition",
+        "getProgram",
+        "getSite"
+      ],
+      "program": null,
+      "sha256": "dec8e70398538814aba34064363078caa32efd4b0a189ede8be477b1879c1707"
+    },
+    "src/main/java/com/gitgalaxy/modernized/exception/UnitOfWorkRollbackException.java": {
+      "calls": [],
+      "classes": [
+        "UnitOfWorkRollbackException"
+      ],
+      "endpoints": [],
+      "fields": [
+        "program",
+        "site"
+      ],
+      "kind": "other",
+      "methods": [
+        "UnitOfWorkRollbackException",
+        "getProgram",
+        "getSite"
+      ],
+      "program": null,
+      "sha256": "90ab6569dee4e720b2300136a7a86395a93b3080e250a99284e273ab92ae852b"
+    },
+    "src/main/java/com/gitgalaxy/modernized/messaging/InMemoryTempStorage.java": {
+      "calls": [],
+      "classes": [
+        "InMemoryTempStorage"
+      ],
+      "endpoints": [],
+      "fields": [
+        "cursors",
+        "queues"
+      ],
+      "kind": "other",
+      "methods": [
+        "delete",
+        "numItems",
+        "readItem",
+        "readNext",
+        "rewriteItem",
+        "writeItem"
+      ],
+      "program": null,
+      "sha256": "4d00c18efecd0c4bf0d90df1dc8c1bf6d89f2aa7ac58040a049eda8955c52bb7"
+    },
+    "src/main/java/com/gitgalaxy/modernized/messaging/RoutingTransientData.java": {
+      "calls": [],
+      "classes": [
+        "RoutingTransientData"
+      ],
+      "endpoints": [],
+      "fields": [
+        "directory"
+      ],
+      "kind": "other",
+      "methods": [
+        "RoutingTransientData",
+        "append",
+        "delete",
+        "read",
+        "write"
+      ],
+      "program": null,
+      "sha256": "2dee3ca9f4918fec43d0461c2327d2bc6e4fe4d10c4b7a67102514f1cdbc3ea5"
+    },
+    "src/main/java/com/gitgalaxy/modernized/messaging/TempStorage.java": {
+      "calls": [],
+      "classes": [
+        "TempStorage"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [],
+      "program": null,
+      "sha256": "fc53b02ca88d3fed19e554f6902fdc4406ee6e319a60544c1c17880072d4333a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/messaging/TransientData.java": {
+      "calls": [],
+      "classes": [
+        "TransientData"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [],
+      "program": null,
+      "sha256": "256273c1ba4e35d31c943dfb492a3f776e9078ef4a42e7d6dac93801d71a278f"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/db2/CommercialRepository.java": {
+      "calls": [],
+      "classes": [
+        "CommercialRepository"
+      ],
+      "endpoints": [],
+      "fields": [
+        "jdbc"
+      ],
+      "kind": "repository",
+      "methods": [
+        "CommercialRepository",
+        "cursorCustCursorL89Lgipdb01",
+        "cursorZipCursorL120Lgipdb01",
+        "insertL499Lgapdb01",
+        "selectL631Lgipdb01",
+        "selectL734Lgipdb01"
+      ],
+      "program": null,
+      "sha256": "d8eee06bf9ec33bf080d2799db6f6adfa9018a13e7a1f25c80122b2947f90a1d"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/db2/CustomerRepository.java": {
+      "calls": [],
+      "classes": [
+        "CustomerRepository"
+      ],
+      "endpoints": [],
+      "fields": [
+        "jdbc"
+      ],
+      "kind": "repository",
+      "methods": [
+        "CustomerRepository",
+        "insertL222Lgacdb01",
+        "insertL251Lgacdb01",
+        "selectL169Lgicdb01",
+        "updateL155Lgucdb01"
+      ],
+      "program": null,
+      "sha256": "f569c57fc8f4483f1406b4ba48b459238d6bbfbc723fa8c946f3325377b4f1e2"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/db2/CustomerSecureRepository.java": {
+      "calls": [],
+      "classes": [
+        "CustomerSecureRepository"
+      ],
+      "endpoints": [],
+      "fields": [
+        "jdbc"
+      ],
+      "kind": "repository",
+      "methods": [
+        "CustomerSecureRepository",
+        "insertL166Lgacdb02"
+      ],
+      "program": null,
+      "sha256": "5e2318e77209fadcd249354432d0bdb42c11e441bb526a4696257a545e983ac2"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/db2/EndowmentRepository.java": {
+      "calls": [],
+      "classes": [
+        "EndowmentRepository"
+      ],
+      "endpoints": [],
+      "fields": [
+        "jdbc"
+      ],
+      "kind": "repository",
+      "methods": [
+        "EndowmentRepository",
+        "insertL346Lgapdb01",
+        "insertL368Lgapdb01",
+        "selectL330Lgipdb01",
+        "updateL394Lgupdb01"
+      ],
+      "program": null,
+      "sha256": "e02d020771e6503163b9f2d75c5a0816d0a2434398fdf9ea6793b8c29218d346"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/db2/HouseRepository.java": {
+      "calls": [],
+      "classes": [
+        "HouseRepository"
+      ],
+      "endpoints": [],
+      "fields": [
+        "jdbc"
+      ],
+      "kind": "repository",
+      "methods": [
+        "HouseRepository",
+        "insertL409Lgapdb01",
+        "selectL444Lgipdb01",
+        "updateL431Lgupdb01"
+      ],
+      "program": null,
+      "sha256": "d4b3bb3cc041a5e690d600561b7817b19110cebb76d27f451e01a1623d03c864"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/db2/MotorRepository.java": {
+      "calls": [],
+      "classes": [
+        "MotorRepository"
+      ],
+      "endpoints": [],
+      "fields": [
+        "jdbc"
+      ],
+      "kind": "repository",
+      "methods": [
+        "MotorRepository",
+        "insertL449Lgapdb01",
+        "selectL532Lgipdb01",
+        "updateL469Lgupdb01"
+      ],
+      "program": null,
+      "sha256": "079befc6e0828e3a946f893182804de78d01dce6f67c06c8c0b27614a0cc7baa"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/db2/PolicyRepository.java": {
+      "calls": [],
+      "classes": [
+        "PolicyRepository"
+      ],
+      "endpoints": [],
+      "fields": [
+        "jdbc"
+      ],
+      "kind": "repository",
+      "methods": [
+        "PolicyRepository",
+        "cursorCustCursorL89Lgipdb01",
+        "cursorPolicyCursorL128Lgupdb01",
+        "cursorZipCursorL120Lgipdb01",
+        "deleteL189Lgdpdb01",
+        "insertL268Lgapdb01",
+        "selectL316Lgapdb01",
+        "selectL329Lgupdb01",
+        "selectL330Lgipdb01",
+        "selectL444Lgipdb01",
+        "selectL532Lgipdb01",
+        "selectL631Lgipdb01",
+        "selectL734Lgipdb01",
+        "updateL318Lgupdb01"
+      ],
+      "program": null,
+      "sha256": "fe3da1bf5bae94d6ae39ecc7f3c9675bede9237e1025cd9aed314df48d8241c0"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/vsam/CaCustomerNumRepository.java": {
+      "calls": [
+        "JpaRepository"
+      ],
+      "classes": [
+        "CaCustomerNumRepository"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "repository",
+      "methods": [],
+      "program": null,
+      "sha256": "a98d73c72982204ea1c0dc759c4b4b75eb2086d6eb9136b5c0915ec9e214f637"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/vsam/WfPolicyInfoRepository.java": {
+      "calls": [
+        "JpaRepository"
+      ],
+      "classes": [
+        "WfPolicyInfoRepository"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "repository",
+      "methods": [],
+      "program": null,
+      "sha256": "b1bc1a9d8e1aa7cd06f9f065c565eb3d604aa3cf71328a9c43bccbf2ace797e7"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgacdb01Service.java": {
+      "calls": [
+        "CustomerRepository",
+        "Dor1RemoteClient",
+        "Lgacdb02Service",
+        "Lgacvs01Service",
+        "LgstsqService"
+      ],
+      "classes": [
+        "Lgacdb01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "customerRepository",
+        "dor1RemoteClient",
+        "lgacdb02Service",
+        "lgacvs01Service",
+        "lgstsqService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgcaL152",
+        "dispatchLgacdb02L186",
+        "dispatchLgacvs01L174",
+        "executeLgacdb01",
+        "handleLink",
+        "handleTransaction",
+        "linkLgstsq",
+        "remoteLgacdb02L186",
+        "remoteLgacvs01L174"
+      ],
+      "program": "base/src/lgacdb01.cbl",
+      "sha256": "a3c86bd9d49b3eb6de60bc3c383b55439fc2881c6f3e39e281770ee5bbdbfd2c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgacdb02Service.java": {
+      "calls": [
+        "CustomerSecureRepository",
+        "LgstsqService"
+      ],
+      "classes": [
+        "Lgacdb02Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "customerSecureRepository",
+        "lgstsqService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgcaL134",
+        "executeLgacdb02",
+        "handleLink",
+        "handleTransaction",
+        "linkLgstsq"
+      ],
+      "program": "base/src/lgacdb02.cbl",
+      "sha256": "6a4755c5dbdcb0cfffef0e3d3945296265a48374661f7a25b34453190a4f5166"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgacus01Service.java": {
+      "calls": [
+        "Dor1RemoteClient",
+        "Lgacdb01Service",
+        "LgstsqService"
+      ],
+      "classes": [
+        "Lgacus01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dor1RemoteClient",
+        "lgacdb01Service",
+        "lgstsqService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgcaL98",
+        "dispatchLgacdb01L134",
+        "executeLgacus01",
+        "handleLink",
+        "linkLgstsq",
+        "remoteLgacdb01L134"
+      ],
+      "program": "base/src/lgacus01.cbl",
+      "sha256": "549e314c0c3a1363771b74089546b9cda528cbd26e9f0bf4a0d06dbc528432a3"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgacvs01Service.java": {
+      "calls": [
+        "CaCustomerNumRepository",
+        "LgstsqService"
+      ],
+      "classes": [
+        "Lgacvs01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNumRepository",
+        "lgstsqService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgv0L79",
+        "executeLgacvs01",
+        "handleLink",
+        "handleTransaction",
+        "linkLgstsq",
+        "writeKsdscust"
+      ],
+      "program": "base/src/lgacvs01.cbl",
+      "sha256": "2aac497a68882d7943ec06ffc9afaeb045b972a81ac8f9a6aa6c46a9d13b1e56"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgapdb01Service.java": {
+      "calls": [
+        "CommercialRepository",
+        "Dor1RemoteClient",
+        "EndowmentRepository",
+        "HouseRepository",
+        "Lgapvs01Service",
+        "LgstsqService",
+        "MotorRepository",
+        "PolicyRepository"
+      ],
+      "classes": [
+        "Lgapdb01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "commercialRepository",
+        "dor1RemoteClient",
+        "endowmentRepository",
+        "houseRepository",
+        "lgapvs01Service",
+        "lgstsqService",
+        "motorRepository",
+        "policyRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgcaL168",
+        "abendLgsqL393",
+        "abendLgsqL431",
+        "abendLgsqL477",
+        "abendLgsqL551",
+        "dispatchLgapvs01L243",
+        "executeLgapdb01",
+        "handleLink",
+        "handleTransaction",
+        "linkLgstsq",
+        "remoteLgapvs01L243"
+      ],
+      "program": "base/src/lgapdb01.cbl",
+      "sha256": "308c557601cce06d9544a73d6add66b21dcfd6ccd21286a01bbe378b3b4474fa"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgapol01Service.java": {
+      "calls": [
+        "Dor1RemoteClient",
+        "Lgapdb01Service",
+        "LgstsqService"
+      ],
+      "classes": [
+        "Lgapol01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dor1RemoteClient",
+        "lgapdb01Service",
+        "lgstsqService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgcaL101",
+        "dispatchLgapdb01L121",
+        "executeLgapol01",
+        "handleLink",
+        "linkLgstsq",
+        "remoteLgapdb01L121"
+      ],
+      "program": "base/src/lgapol01.cbl",
+      "sha256": "21a43e17ca5ba3806491c73f72ce2d42918d6ad1719e60ddef9437594da1c076"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgapvs01Service.java": {
+      "calls": [
+        "LgstsqService",
+        "WfPolicyInfoRepository"
+      ],
+      "classes": [
+        "Lgapvs01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "lgstsqService",
+        "wfPolicyInfoRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeLgapvs01",
+        "handleLink",
+        "handleTransaction",
+        "linkLgstsq",
+        "writeKsdspoly"
+      ],
+      "program": "base/src/lgapvs01.cbl",
+      "sha256": "ed098d8cbbe888d4b0f996e6e6503b2f448cfff5712f1f500a1505101426ba80"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgastat1Service.java": {
+      "calls": [],
+      "classes": [
+        "Lgastat1Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "tempStorage"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeLgastat1",
+        "handleChannel",
+        "handleTransaction",
+        "readqTsGenastrtL101",
+        "writeqTsGenastrtL115"
+      ],
+      "program": "base/src/lgastat1.cbl",
+      "sha256": "194c202995b8ef0e83dbcf09c0d0e2115c01a49016035dd4931063f21bc5593d"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgdpdb01Service.java": {
+      "calls": [
+        "Dor1RemoteClient",
+        "Lgdpvs01Service",
+        "LgstsqService",
+        "PolicyRepository"
+      ],
+      "classes": [
+        "Lgdpdb01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dor1RemoteClient",
+        "lgdpvs01Service",
+        "lgstsqService",
+        "policyRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgcaL134",
+        "dispatchLgdpvs01L168",
+        "executeLgdpdb01",
+        "handleLink",
+        "handleTransaction",
+        "linkLgstsq",
+        "remoteLgdpvs01L168"
+      ],
+      "program": "base/src/lgdpdb01.cbl",
+      "sha256": "112f9dfa933128de48585ebeb9b07578385537113c21b0a02cca2a1440ba48bb"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgdpol01Service.java": {
+      "calls": [
+        "Dor1RemoteClient",
+        "Lgdpdb01Service",
+        "LgstsqService"
+      ],
+      "classes": [
+        "Lgdpol01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dor1RemoteClient",
+        "lgdpdb01Service",
+        "lgstsqService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgcaL98",
+        "dispatchLgdpdb01L141",
+        "executeLgdpol01",
+        "handleLink",
+        "linkLgstsq",
+        "remoteLgdpdb01L141"
+      ],
+      "program": "base/src/lgdpol01.cbl",
+      "sha256": "1c9aabf67856c1d72433bee303780f5505de08f08b19ecad1da8457f6e6ffccc"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgdpvs01Service.java": {
+      "calls": [
+        "LgstsqService",
+        "WfPolicyInfoRepository"
+      ],
+      "classes": [
+        "Lgdpvs01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "lgstsqService",
+        "wfPolicyInfoRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "deleteKsdspoly",
+        "executeLgdpvs01",
+        "handleLink",
+        "handleTransaction",
+        "linkLgstsq"
+      ],
+      "program": "base/src/lgdpvs01.cbl",
+      "sha256": "b65f09c7fedf7a78ac36d378b1eefb20833aa2509c5d4b3988ff05e6ebd4d235"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgicdb01Service.java": {
+      "calls": [
+        "CustomerRepository",
+        "LgstsqService"
+      ],
+      "classes": [
+        "Lgicdb01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "customerRepository",
+        "lgstsqService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgcaL122",
+        "executeLgicdb01",
+        "handleLink",
+        "handleTransaction",
+        "linkLgstsq"
+      ],
+      "program": "base/src/lgicdb01.cbl",
+      "sha256": "b8c526301705be78190aef31af24601dcf2ad532c1f8f680d9e1a2be1f1b52c7"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgicus01Service.java": {
+      "calls": [
+        "Dor1RemoteClient",
+        "Lgicdb01Service",
+        "LgstsqService"
+      ],
+      "classes": [
+        "Lgicus01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dor1RemoteClient",
+        "lgicdb01Service",
+        "lgstsqService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgcaL90",
+        "dispatchLgicdb01L122",
+        "executeLgicus01",
+        "handleLink",
+        "linkLgstsq",
+        "remoteLgicdb01L122"
+      ],
+      "program": "base/src/lgicus01.cbl",
+      "sha256": "f695399a43d70da44b856924d0493cbb7cdce73997f6aa647b47ccf61c403df1"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgicvs01Service.java": {
+      "calls": [
+        "CaCustomerNumRepository"
+      ],
+      "classes": [
+        "Lgicvs01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNumRepository",
+        "tempStorage"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeLgicvs01",
+        "handleTransaction",
+        "readKsdscust",
+        "readqTsGenacntlL132",
+        "readqTsGenacntlL140",
+        "writeqTsGenacntlL163",
+        "writeqTsGenacntlL172",
+        "writeqTsGenacntlL181"
+      ],
+      "program": "base/src/lgicvs01.cbl",
+      "sha256": "9e1f6816ce7d03e4e2caee479585be18229ac88d35b74101757060f7d64990c8"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgipdb01Service.java": {
+      "calls": [
+        "CommercialRepository",
+        "EndowmentRepository",
+        "HouseRepository",
+        "LgstsqService",
+        "MotorRepository",
+        "PolicyRepository"
+      ],
+      "classes": [
+        "Lgipdb01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "commercialRepository",
+        "endowmentRepository",
+        "houseRepository",
+        "lgstsqService",
+        "motorRepository",
+        "policyRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgcaL254",
+        "executeLgipdb01",
+        "handleLink",
+        "handleTransaction",
+        "linkLgstsq"
+      ],
+      "program": "base/src/lgipdb01.cbl",
+      "sha256": "fe36b04f875972c6db17e6b56f6a51cfe1e3ad0b896c29cc8aed89806128bbee"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgipol01Service.java": {
+      "calls": [
+        "Dor1RemoteClient",
+        "Lgipdb01Service",
+        "LgstsqService"
+      ],
+      "classes": [
+        "Lgipol01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dor1RemoteClient",
+        "lgipdb01Service",
+        "lgstsqService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgcaL82",
+        "dispatchLgipdb01L91",
+        "executeLgipol01",
+        "handleLink",
+        "linkLgstsq",
+        "remoteLgipdb01L91"
+      ],
+      "program": "base/src/lgipol01.cbl",
+      "sha256": "51d22b3e06f5f81a6f9f489e2b54584c8efa9960de16f26be6e82d2898a8d86c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgipvs01Service.java": {
+      "calls": [
+        "WfPolicyInfoRepository"
+      ],
+      "classes": [
+        "Lgipvs01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wfPolicyInfoRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeLgipvs01",
+        "handleTransaction",
+        "readKsdspoly"
+      ],
+      "program": "base/src/lgipvs01.cbl",
+      "sha256": "343f34e6b07a6cf7ef2b8b83ff59bfa2eddefe4312c55e529b1509567540c587"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/LgsetupService.java": {
+      "calls": [],
+      "classes": [
+        "LgsetupService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "tempStorage"
+      ],
+      "kind": "service",
+      "methods": [
+        "deleteqTsGenacntlL150",
+        "deleteqTsGenaerrsL138",
+        "deleteqTsGenastatL146",
+        "deleteqTsGenastrtL142",
+        "executeLgsetup",
+        "handleTransaction",
+        "writeqTsGenacntlL157",
+        "writeqTsGenacntlL164",
+        "writeqTsGenacntlL171"
+      ],
+      "program": "base/src/lgsetup.cbl",
+      "sha256": "096e7ba9d4d100fc03b91d21d7728a207d04b71f7f7ca907e73a28d4a719bf3a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/LgstsqService.java": {
+      "calls": [],
+      "classes": [
+        "LgstsqService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "tempStorage",
+        "transientData"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeLgstsq",
+        "handleLink",
+        "writeqTdCsmtL94",
+        "writeqTsGenaerrsL105"
+      ],
+      "program": "base/src/lgstsq.cbl",
+      "sha256": "019b4354076985eb7d2c938c0ab5ffe628e16f628628119c852ea926178e757b"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgtestc1Service.java": {
+      "calls": [
+        "Aor1RemoteClient"
+      ],
+      "classes": [
+        "Lgtestc1Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "aor1RemoteClient",
+        "tempStorage"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeLgtestc1",
+        "handleTransaction",
+        "onConditionMapfailL75",
+        "readqTsGenacntlL290",
+        "readqTsGenacntlL297",
+        "remoteLgacus01L128",
+        "remoteLgicus01L151",
+        "remoteLgicus01L89",
+        "remoteLgucus01L190",
+        "renderSsmapc1",
+        "rollbackL133",
+        "submitSsmapc1",
+        "writeqTsGenacntlL307",
+        "writeqTsGenacntlL321",
+        "writeqTsGenacntlL329",
+        "writeqTsGenacntlL335"
+      ],
+      "program": "base/src/lgtestc1.cbl",
+      "sha256": "ab478872ff96af5cfab5b1f9eb303345a3239674d5e9f79efd90c63fb8f9f9a3"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgtestp1Service.java": {
+      "calls": [
+        "Aor1RemoteClient"
+      ],
+      "classes": [
+        "Lgtestp1Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "aor1RemoteClient"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeLgtestp1",
+        "handleTransaction",
+        "onConditionMapfailL57",
+        "remoteLgapol01L115",
+        "remoteLgdpol01L139",
+        "remoteLgipol01L173",
+        "remoteLgipol01L72",
+        "remoteLgupol01L216",
+        "renderSsmapp1",
+        "rollbackL120",
+        "rollbackL144",
+        "submitSsmapp1"
+      ],
+      "program": "base/src/lgtestp1.cbl",
+      "sha256": "85d99410859e0541423b1729dd1c8346e90026020b34d5afc5a51eaba5f77d59"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgtestp2Service.java": {
+      "calls": [
+        "Aor1RemoteClient"
+      ],
+      "classes": [
+        "Lgtestp2Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "aor1RemoteClient"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeLgtestp2",
+        "handleTransaction",
+        "onConditionMapfailL52",
+        "remoteLgapol01L105",
+        "remoteLgdpol01L129",
+        "remoteLgipol01L159",
+        "remoteLgipol01L67",
+        "remoteLgupol01L198",
+        "renderSsmapp2",
+        "rollbackL110",
+        "rollbackL134",
+        "submitSsmapp2"
+      ],
+      "program": "base/src/lgtestp2.cbl",
+      "sha256": "f6d5bda9ae0c03212918b597678beb5b73e64432336651684e83eaa016632d23"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgtestp3Service.java": {
+      "calls": [
+        "Aor1RemoteClient"
+      ],
+      "classes": [
+        "Lgtestp3Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "aor1RemoteClient"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeLgtestp3",
+        "handleTransaction",
+        "onConditionMapfailL55",
+        "remoteLgapol01L106",
+        "remoteLgdpol01L129",
+        "remoteLgipol01L159",
+        "remoteLgipol01L70",
+        "remoteLgupol01L196",
+        "renderSsmapp3",
+        "rollbackL111",
+        "rollbackL134",
+        "submitSsmapp3"
+      ],
+      "program": "base/src/lgtestp3.cbl",
+      "sha256": "a88e4deac245e01fca57960839d563ba20d7442237c0037d1edfd9de489c871b"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgtestp4Service.java": {
+      "calls": [
+        "Aor1RemoteClient"
+      ],
+      "classes": [
+        "Lgtestp4Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "aor1RemoteClient"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeLgtestp4",
+        "handleTransaction",
+        "onConditionMapfailL62",
+        "remoteLgapol01L178",
+        "remoteLgdpol01L201",
+        "remoteLgipol01L122",
+        "renderSsmapp4",
+        "rollbackL183",
+        "rollbackL206",
+        "submitSsmapp4"
+      ],
+      "program": "base/src/lgtestp4.cbl",
+      "sha256": "d717343120a32a71bfa6b1d7f0303e4707c360a262829b72ae487dafe7f10b15"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgucdb01Service.java": {
+      "calls": [
+        "CustomerRepository",
+        "Dor1RemoteClient",
+        "LgstsqService",
+        "Lgucvs01Service"
+      ],
+      "classes": [
+        "Lgucdb01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "customerRepository",
+        "dor1RemoteClient",
+        "lgstsqService",
+        "lgucvs01Service"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgcaL120",
+        "dispatchLgucvs01L136",
+        "executeLgucdb01",
+        "handleLink",
+        "handleTransaction",
+        "linkLgstsq",
+        "remoteLgucvs01L136"
+      ],
+      "program": "base/src/lgucdb01.cbl",
+      "sha256": "3fe758f89958d2f8588d956f2116724d334dcc44f1b7c5fe7b4f6029f19f00d1"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgucus01Service.java": {
+      "calls": [
+        "Dor1RemoteClient",
+        "LgstsqService",
+        "Lgucdb01Service"
+      ],
+      "classes": [
+        "Lgucus01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dor1RemoteClient",
+        "lgstsqService",
+        "lgucdb01Service"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgcaL102",
+        "dispatchLgucdb01L128",
+        "executeLgucus01",
+        "handleLink",
+        "linkLgstsq",
+        "remoteLgucdb01L128"
+      ],
+      "program": "base/src/lgucus01.cbl",
+      "sha256": "d85d162507716a157166e9a8de18cda4d37528c792870281f01748a47bab6979"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgucvs01Service.java": {
+      "calls": [
+        "CaCustomerNumRepository",
+        "LgstsqService"
+      ],
+      "classes": [
+        "Lgucvs01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNumRepository",
+        "lgstsqService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgv1L81",
+        "abendLgv2L94",
+        "executeLgucvs01",
+        "handleLink",
+        "handleTransaction",
+        "linkLgstsq",
+        "readKsdscust",
+        "rewriteKsdscust"
+      ],
+      "program": "base/src/lgucvs01.cbl",
+      "sha256": "fbed1c7d4009237208dbd2358f4c891928d0520e30bb7651a0c91008a73487bc"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgupdb01Service.java": {
+      "calls": [
+        "Dor1RemoteClient",
+        "EndowmentRepository",
+        "HouseRepository",
+        "LgstsqService",
+        "Lgupvs01Service",
+        "MotorRepository",
+        "PolicyRepository"
+      ],
+      "classes": [
+        "Lgupdb01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dor1RemoteClient",
+        "endowmentRepository",
+        "houseRepository",
+        "lgstsqService",
+        "lgupvs01Service",
+        "motorRepository",
+        "policyRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgcaL186",
+        "dispatchLgupvs01L209",
+        "executeLgupdb01",
+        "handleLink",
+        "handleTransaction",
+        "linkLgstsq",
+        "remoteLgupvs01L209",
+        "rollbackL338"
+      ],
+      "program": "base/src/lgupdb01.cbl",
+      "sha256": "3212dbf6728e8c37869142733fde188f08d1b2bc53778a4ec632b1f5aebf2342"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgupol01Service.java": {
+      "calls": [
+        "Dor1RemoteClient",
+        "LgstsqService",
+        "Lgupdb01Service"
+      ],
+      "classes": [
+        "Lgupol01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dor1RemoteClient",
+        "lgstsqService",
+        "lgupdb01Service"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgcaL102",
+        "dispatchLgupdb01L157",
+        "executeLgupol01",
+        "handleLink",
+        "linkLgstsq",
+        "remoteLgupdb01L157"
+      ],
+      "program": "base/src/lgupol01.cbl",
+      "sha256": "9c36fc8a55d27516e06d6d8c9ad785635a2e1ace1a0e46de613b334118c32332"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgupvs01Service.java": {
+      "calls": [
+        "LgstsqService",
+        "WfPolicyInfoRepository"
+      ],
+      "classes": [
+        "Lgupvs01Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "lgstsqService",
+        "wfPolicyInfoRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendLgv3L151",
+        "abendLgv4L164",
+        "executeLgupvs01",
+        "handleLink",
+        "handleTransaction",
+        "linkLgstsq",
+        "readKsdspoly",
+        "rewriteKsdspoly"
+      ],
+      "program": "base/src/lgupvs01.cbl",
+      "sha256": "9ebaeb8c763c45a0be7bef04f60280715c2bc8133c0b169dd3afb51e2f58b7e9"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Lgwebst5Service.java": {
+      "calls": [],
+      "classes": [
+        "Lgwebst5Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "tempStorage"
+      ],
+      "kind": "service",
+      "methods": [
+        "deleteqTsL729",
+        "deleteqTsL778",
+        "executeLgwebst5",
+        "handleTransaction",
+        "readqTsL720",
+        "readqTsL771",
+        "writeqTsL734",
+        "writeqTsL756",
+        "writeqTsL783",
+        "writeqTsL789",
+        "writeqTsL796"
+      ],
+      "program": "base/src/lgwebst5.cbl",
+      "sha256": "f099b3c6e5cb0ba788ed746122180b8186d8740e982a4fe63dc4f995804debf0"
+    },
+    "src/main/java/com/gitgalaxy/modernized/util/EbcdicDecoderUtil.java": {
+      "calls": [],
+      "classes": [
+        "EbcdicDecoderUtil"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [
+        "decodeEbcdicString",
+        "unpackComp3"
+      ],
+      "program": null,
+      "sha256": "18027ddebe319eb8dd6e01e42316b3bafe96797395f5517d2efd01d04028d59b"
+    },
+    "src/main/java/com/gitgalaxy/modernized/web/CicsExceptionAdvice.java": {
+      "calls": [],
+      "classes": [
+        "CicsExceptionAdvice"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [
+        "handleAbend",
+        "handleCondition",
+        "handleRollback"
+      ],
+      "program": null,
+      "sha256": "8c71f7d3fe8926f82b3cf81613c091a965de1bfe1312d173e15995b1538c223c"
+    }
+  },
+  "generated_from": {
+    "clean_room": "cics-genapp_gitgalaxy_clean_TIMESTAMP"
+  },
+  "tables": [
+    "COMMERCIAL",
+    "CUSTOMER",
+    "CUSTOMER_SECURE",
+    "ENDOWMENT",
+    "HOUSE",
+    "MOTOR",
+    "OF",
+    "POLICY"
+  ],
+  "version": 1
+}

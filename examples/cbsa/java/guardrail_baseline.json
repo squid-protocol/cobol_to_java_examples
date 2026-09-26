@@ -1,0 +1,4693 @@
+{
+  "files": {
+    "src/main/java/com/gitgalaxy/modernized/CicsBankingSampleApplicationCbsaApplication.java": {
+      "calls": [],
+      "classes": [
+        "CicsBankingSampleApplicationCbsaApplication"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [
+        "main"
+      ],
+      "program": null,
+      "sha256": "6df76e13df4fd5a052b689578a0faee83949b2be2c25a2231f59a5b75b01519b"
+    },
+    "src/main/java/com/gitgalaxy/modernized/batch/BankdataJobConfig.java": {
+      "calls": [
+        "BankdataService",
+        "JobRepository"
+      ],
+      "classes": [
+        "BankdataJobConfig"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [
+        "bankdataJob"
+      ],
+      "program": null,
+      "sha256": "a5f692fddce8e3de028adebf951bab8752cf330fd044acd72e6203d69f25d2a3"
+    },
+    "src/main/java/com/gitgalaxy/modernized/batch/BatchJobController.java": {
+      "calls": [],
+      "classes": [
+        "BatchJobController"
+      ],
+      "endpoints": [
+        "jobs",
+        "run"
+      ],
+      "fields": [
+        "launcher"
+      ],
+      "kind": "other",
+      "methods": [
+        "BatchJobController",
+        "jobs",
+        "run"
+      ],
+      "program": null,
+      "sha256": "aa932ef6d49554956ba5e6f2cbf6bc07eb6655531ca162e4952b169d17652606"
+    },
+    "src/main/java/com/gitgalaxy/modernized/batch/DatasetResolver.java": {
+      "calls": [],
+      "classes": [
+        "DatasetResolver"
+      ],
+      "endpoints": [],
+      "fields": [
+        "root"
+      ],
+      "kind": "other",
+      "methods": [
+        "DatasetResolver",
+        "latest",
+        "path"
+      ],
+      "program": null,
+      "sha256": "6cd3cfad5cba96f010c0f2ef02397b9ef0cfac75eac0130fb2e1f33f00da7148"
+    },
+    "src/main/java/com/gitgalaxy/modernized/batch/Dd.java": {
+      "calls": [],
+      "classes": [
+        "Dd"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dsn",
+        "generation",
+        "name",
+        "normalEnd",
+        "status"
+      ],
+      "kind": "other",
+      "methods": [],
+      "program": null,
+      "sha256": "44f532a73924a2775945bfcacd34de7c397369cfcb7a5ae30c4f6be20c397a15"
+    },
+    "src/main/java/com/gitgalaxy/modernized/batch/JclConditions.java": {
+      "calls": [],
+      "classes": [
+        "JclConditions",
+        "Parser"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [
+        "JclConditions",
+        "bypass",
+        "compare",
+        "holds",
+        "tokens"
+      ],
+      "program": null,
+      "sha256": "4543527453b24e039d8f42fba32efc24bf257b7c2790e1dc1c5d97c9a242c6b4"
+    },
+    "src/main/java/com/gitgalaxy/modernized/batch/JclJobLauncher.java": {
+      "calls": [],
+      "classes": [
+        "JclJobLauncher"
+      ],
+      "endpoints": [],
+      "fields": [
+        "jobs",
+        "launcher"
+      ],
+      "kind": "other",
+      "methods": [
+        "JclJobLauncher",
+        "launch",
+        "names"
+      ],
+      "program": null,
+      "sha256": "74cca35963a6dffcc754b7b1d84dbb21a7fafe8fea2b6f29e7cf931d477a0c4f"
+    },
+    "src/main/java/com/gitgalaxy/modernized/batch/JclSteps.java": {
+      "calls": [],
+      "classes": [
+        "JclSteps"
+      ],
+      "endpoints": [],
+      "fields": [
+        "datasets",
+        "skipUnimplemented"
+      ],
+      "kind": "other",
+      "methods": [
+        "JclSteps",
+        "copy",
+        "guarded",
+        "iefbr14",
+        "program",
+        "utility"
+      ],
+      "program": null,
+      "sha256": "db100ed726c3149df236a33e32d6279dffa9d0bc494626dcf0d769af0c1b37da"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/AbndprocController.java": {
+      "calls": [
+        "AbndprocService"
+      ],
+      "classes": [
+        "AbndprocController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "abndprocService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "src/base/cobol_src/ABNDPROC.cbl",
+      "sha256": "eb5c5f5630fcd02d469e5216bb607072220ee001b412f3bbc48acd328253a292"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/BankdataController.java": {
+      "calls": [
+        "BankdataService"
+      ],
+      "classes": [
+        "BankdataController"
+      ],
+      "endpoints": [
+        "executeBankdataBatch"
+      ],
+      "fields": [
+        "bankdataService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "executeBankdataBatch"
+      ],
+      "program": "src/base/cobol_src/BANKDATA.cbl",
+      "sha256": "3a73239353396721280782640033f812ff545da4aa02c2377670286027dd5c2a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Bnk1cacController.java": {
+      "calls": [
+        "Bnk1cacService"
+      ],
+      "classes": [
+        "Bnk1cacController"
+      ],
+      "endpoints": [
+        "transactionOCAC"
+      ],
+      "fields": [
+        "bnk1cacService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionOCAC"
+      ],
+      "program": "src/base/cobol_src/BNK1CAC.cbl",
+      "sha256": "1f1e949e81fc0c59494fba3af432ae4d34db4833e0006177a5a5005a3953d638"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Bnk1ccaController.java": {
+      "calls": [
+        "Bnk1ccaService"
+      ],
+      "classes": [
+        "Bnk1ccaController"
+      ],
+      "endpoints": [
+        "transactionOCCA"
+      ],
+      "fields": [
+        "bnk1ccaService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionOCCA"
+      ],
+      "program": "src/base/cobol_src/BNK1CCA.cbl",
+      "sha256": "ca3c6ef30e060c038b2ab2af28c5068fdcb0a78dd2aede324542942f60add385"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Bnk1ccsController.java": {
+      "calls": [
+        "Bnk1ccsService"
+      ],
+      "classes": [
+        "Bnk1ccsController"
+      ],
+      "endpoints": [
+        "transactionOCCS"
+      ],
+      "fields": [
+        "bnk1ccsService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionOCCS"
+      ],
+      "program": "src/base/cobol_src/BNK1CCS.cbl",
+      "sha256": "4cd9d666804f909e704e61613377d8b31f3db928da0593fbe313f62b8953d14b"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Bnk1craController.java": {
+      "calls": [
+        "Bnk1craService"
+      ],
+      "classes": [
+        "Bnk1craController"
+      ],
+      "endpoints": [
+        "transactionOCRA"
+      ],
+      "fields": [
+        "bnk1craService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionOCRA"
+      ],
+      "program": "src/base/cobol_src/BNK1CRA.cbl",
+      "sha256": "90e35d9a08c611e3159b1917c35593f6e0ee5b9615ff0481fa734c3270c6e16a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Bnk1dacController.java": {
+      "calls": [
+        "Bnk1dacService"
+      ],
+      "classes": [
+        "Bnk1dacController"
+      ],
+      "endpoints": [
+        "transactionODAC"
+      ],
+      "fields": [
+        "bnk1dacService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionODAC"
+      ],
+      "program": "src/base/cobol_src/BNK1DAC.cbl",
+      "sha256": "5bd283b7f57ae5d33582a904e83a1c6807da83237c7898cda9e9a0c0bd25a6d5"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Bnk1dcsController.java": {
+      "calls": [
+        "Bnk1dcsService"
+      ],
+      "classes": [
+        "Bnk1dcsController"
+      ],
+      "endpoints": [
+        "transactionODCS"
+      ],
+      "fields": [
+        "bnk1dcsService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionODCS"
+      ],
+      "program": "src/base/cobol_src/BNK1DCS.cbl",
+      "sha256": "8113bc47905172210663a43ab2b913a81597a7fef77540826298c3f4b808db51"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Bnk1tfnController.java": {
+      "calls": [
+        "Bnk1tfnService"
+      ],
+      "classes": [
+        "Bnk1tfnController"
+      ],
+      "endpoints": [
+        "transactionOTFN"
+      ],
+      "fields": [
+        "bnk1tfnService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionOTFN"
+      ],
+      "program": "src/base/cobol_src/BNK1TFN.cbl",
+      "sha256": "487e7f420d9068f43ebc585409a1119f38305a807146b8c4c9635c000bc46b5c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Bnk1uacController.java": {
+      "calls": [
+        "Bnk1uacService"
+      ],
+      "classes": [
+        "Bnk1uacController"
+      ],
+      "endpoints": [
+        "transactionOUAC"
+      ],
+      "fields": [
+        "bnk1uacService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionOUAC"
+      ],
+      "program": "src/base/cobol_src/BNK1UAC.cbl",
+      "sha256": "b738fef28ee18e46e4f18ee4323407d04596a048e5bdefc67195fd5ede462dc4"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/BnkmenuController.java": {
+      "calls": [
+        "BnkmenuService"
+      ],
+      "classes": [
+        "BnkmenuController"
+      ],
+      "endpoints": [
+        "transactionOMEN"
+      ],
+      "fields": [
+        "bnkmenuService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionOMEN"
+      ],
+      "program": "src/base/cobol_src/BNKMENU.cbl",
+      "sha256": "ce54585fba4874315db4c63d59a7c3a7b3c2450397312d5aea928385209ccbf9"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Crdtagy1Controller.java": {
+      "calls": [
+        "Crdtagy1Service"
+      ],
+      "classes": [
+        "Crdtagy1Controller"
+      ],
+      "endpoints": [
+        "transactionOCR1"
+      ],
+      "fields": [
+        "crdtagy1Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionOCR1"
+      ],
+      "program": "src/base/cobol_src/CRDTAGY1.cbl",
+      "sha256": "a84dc5afa9b2e8a46efeef71d251b931df4049641d16861a40015b033f8b9e39"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Crdtagy2Controller.java": {
+      "calls": [
+        "Crdtagy2Service"
+      ],
+      "classes": [
+        "Crdtagy2Controller"
+      ],
+      "endpoints": [
+        "transactionOCR2"
+      ],
+      "fields": [
+        "crdtagy2Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionOCR2"
+      ],
+      "program": "src/base/cobol_src/CRDTAGY2.cbl",
+      "sha256": "8465faa7bae8c203358e4e3fb2fa8ca1712e0d7c6df9188e8f987a823b367d18"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Crdtagy3Controller.java": {
+      "calls": [
+        "Crdtagy3Service"
+      ],
+      "classes": [
+        "Crdtagy3Controller"
+      ],
+      "endpoints": [
+        "transactionOCR3"
+      ],
+      "fields": [
+        "crdtagy3Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionOCR3"
+      ],
+      "program": "src/base/cobol_src/CRDTAGY3.cbl",
+      "sha256": "0a9e0eafb5b14014884876b931df2491557f83eced9062dcc4f53048ebce4a7d"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Crdtagy4Controller.java": {
+      "calls": [
+        "Crdtagy4Service"
+      ],
+      "classes": [
+        "Crdtagy4Controller"
+      ],
+      "endpoints": [
+        "transactionOCR4"
+      ],
+      "fields": [
+        "crdtagy4Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionOCR4"
+      ],
+      "program": "src/base/cobol_src/CRDTAGY4.cbl",
+      "sha256": "07977c2aa8ad05d068b05285b06ea1923417c0272de767dbc00555232d1f95a9"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/Crdtagy5Controller.java": {
+      "calls": [
+        "Crdtagy5Service"
+      ],
+      "classes": [
+        "Crdtagy5Controller"
+      ],
+      "endpoints": [
+        "transactionOCR5"
+      ],
+      "fields": [
+        "crdtagy5Service"
+      ],
+      "kind": "controller",
+      "methods": [
+        "transactionOCR5"
+      ],
+      "program": "src/base/cobol_src/CRDTAGY5.cbl",
+      "sha256": "5cdbbf9cda6c704b6ac7f37df2ba3cce8c582ade85d28da382b04046a8cedaaf"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/CreaccController.java": {
+      "calls": [
+        "CreaccService"
+      ],
+      "classes": [
+        "CreaccController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "creaccService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "src/base/cobol_src/CREACC.cbl",
+      "sha256": "7f133db670e42ea4db1047c3216f54a6660a5bb1f26f4b0502d834a29bd11926"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/CrecustController.java": {
+      "calls": [
+        "CrecustService"
+      ],
+      "classes": [
+        "CrecustController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "crecustService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "src/base/cobol_src/CRECUST.cbl",
+      "sha256": "d405d66f66964019ea7595d8003b974f1802d8137d4229a240b2ef3f998872da"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/CustctrlController.java": {
+      "calls": [
+        "CustctrlService"
+      ],
+      "classes": [
+        "CustctrlController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "custctrlService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "src/base/cobol_src/CUSTCTRL.cbl",
+      "sha256": "65fd0f4d5f9ece99051c4f4522a95dae4c7051247665f7982d4c7fce6867eacf"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/DbcrfunController.java": {
+      "calls": [
+        "DbcrfunService"
+      ],
+      "classes": [
+        "DbcrfunController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "dbcrfunService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "src/base/cobol_src/DBCRFUN.cbl",
+      "sha256": "5255ccd1b69c91995f108c0eb309de616545f43d87d525e10d0b772a4ea63f60"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/DelaccController.java": {
+      "calls": [
+        "DelaccService"
+      ],
+      "classes": [
+        "DelaccController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "delaccService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "src/base/cobol_src/DELACC.cbl",
+      "sha256": "689851723aecccb86df7dcab09d9045ed0800b184c506dc6785bf52d1343a174"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/DelcusController.java": {
+      "calls": [
+        "DelcusService"
+      ],
+      "classes": [
+        "DelcusController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "delcusService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "src/base/cobol_src/DELCUS.cbl",
+      "sha256": "ad21831b3c7f8df69c730050d3c5c3cd559a982184215e3e2b4a1201eb6bac9f"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/GetcompyController.java": {
+      "calls": [
+        "GetcompyService"
+      ],
+      "classes": [
+        "GetcompyController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "getcompyService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "src/base/cobol_src/GETCOMPY.cbl",
+      "sha256": "0ddeaf4c8f8ee37abbe66c302d13fc7ef5df7786591cff8b42c60f2e6271e2d3"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/GetscodeController.java": {
+      "calls": [
+        "GetscodeService"
+      ],
+      "classes": [
+        "GetscodeController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "getscodeService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "src/base/cobol_src/GETSCODE.cbl",
+      "sha256": "6e8d992f58601eecd0037e5abca9ebf42e386f54b34c6809ce34813b8a632718"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/InqaccController.java": {
+      "calls": [
+        "InqaccService"
+      ],
+      "classes": [
+        "InqaccController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "inqaccService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "src/base/cobol_src/INQACC.cbl",
+      "sha256": "58e924225b6eaa6fba051425ece6ab76a1d5a71c1889b166b77caf6d7f128658"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/InqacccuController.java": {
+      "calls": [
+        "InqacccuService"
+      ],
+      "classes": [
+        "InqacccuController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "inqacccuService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "src/base/cobol_src/INQACCCU.cbl",
+      "sha256": "89e3568eb05dea0ffc57cb47eb9f24b35c63e77fb9e9fde59cb58b996ff99e87"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/InqcustController.java": {
+      "calls": [
+        "InqcustService"
+      ],
+      "classes": [
+        "InqcustController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "inqcustService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "src/base/cobol_src/INQCUST.cbl",
+      "sha256": "c9e889fa28905b12df170ddd78854473397a10900f36801a7ac42f90354df89c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/UpdaccController.java": {
+      "calls": [
+        "UpdaccService"
+      ],
+      "classes": [
+        "UpdaccController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "updaccService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "src/base/cobol_src/UPDACC.cbl",
+      "sha256": "3a79c40cf357be9570b8f4d71e09a4ea874cf5da8affb794474691e855e7d9d7"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/UpdcustController.java": {
+      "calls": [
+        "UpdcustService"
+      ],
+      "classes": [
+        "UpdcustController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "updcustService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "src/base/cobol_src/UPDCUST.cbl",
+      "sha256": "95146f75f0fa87dd33b9298f926f20c87042c0709240de628a1bdec761d3fdda"
+    },
+    "src/main/java/com/gitgalaxy/modernized/controller/XfrfunController.java": {
+      "calls": [
+        "XfrfunService"
+      ],
+      "classes": [
+        "XfrfunController"
+      ],
+      "endpoints": [
+        "link"
+      ],
+      "fields": [
+        "xfrfunService"
+      ],
+      "kind": "controller",
+      "methods": [
+        "link"
+      ],
+      "program": "src/base/cobol_src/XFRFUN.cbl",
+      "sha256": "ed5a228a710c5afbd28420279c10704d8cefff42e5574151c57377a622b50a6d"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/AbndprocDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "AbndprocDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "commTasknoKey",
+        "commUtimeKey",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCustomerRangeBottom",
+        "wsCustomerRangeMiddle",
+        "wsCustomerRangeTop"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "99fc4bdc20e2ce524c768d1e4b079862da62756cc5baae4144232f31b2f4fcd5"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/AcctctrlDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "AcctctrlDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "hvAccountSortcode",
+        "hvNumberOfAccounts",
+        "requiredSortCode",
+        "sqlcodeDisplay",
+        "wsAccountRangeBottom",
+        "wsAccountRangeMiddle",
+        "wsAccountRangeTop",
+        "wsOrigDate",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "95ff691705d60eacc767e146d80d8adb46a4951402aba0816927d2e22a729152"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Bnk1cacDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1cacDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "actualBalanceDisplay",
+        "availableBalanceDisplay",
+        "commAcctype",
+        "commCustno",
+        "commIntrt",
+        "commOverdr",
+        "endOfSessionMessage",
+        "intrtPic9",
+        "nstNum",
+        "nstmtddNum",
+        "nstmtmmiNum",
+        "nstmtyyiNum",
+        "subpgmAccType",
+        "subpgmActBal",
+        "subpgmAvailBal",
+        "subpgmCustno",
+        "subpgmEyecatcher",
+        "subpgmFailCode",
+        "subpgmIntRt",
+        "subpgmLastStmtDt",
+        "subpgmNextStmtDt",
+        "subpgmNumber",
+        "subpgmOpened",
+        "subpgmOverdrLim",
+        "subpgmSortcode",
+        "subpgmSuccess",
+        "validDataSw",
+        "wsAbendPgm",
+        "wsCicsFailMsg",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCicsResp2Disp",
+        "wsCicsRespDisp",
+        "wsCommAcctype",
+        "wsCommCustno",
+        "wsCommIntrt",
+        "wsCommOverdr",
+        "wsNumCountPoint",
+        "wsNumCountTotal",
+        "wsOrigDate",
+        "wsReverse",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "e7508d2893da78d6bfbbc9666b75434799d7b1723f37bb0e8bc535791229ba04"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Bnk1ccaDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1ccaDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "accnoChar",
+        "commScode",
+        "endOfSessionMessage",
+        "inqacccuProgram",
+        "numberOfAccountsDisplay",
+        "scodeChar",
+        "validDataSw",
+        "wsAbendPgm",
+        "wsActBal9",
+        "wsActBalSign",
+        "wsActBalXPnce",
+        "wsActBalXPnd",
+        "wsAvailBal9",
+        "wsAvailBalSign",
+        "wsAvailBalXPnce",
+        "wsAvailBalXPnd",
+        "wsCicsFailMsg",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCicsResp2Disp",
+        "wsCicsRespDisp",
+        "wsIndex",
+        "wsOrigDate",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "3c033187ccd73e9e0304a397f61e65ede0618e285f6a15645c574d7bfc592d28"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Bnk1ccsDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1ccsDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dobddiChar",
+        "dobddiNum",
+        "dobmmiChar",
+        "dobmmiNum",
+        "dobyyiNum",
+        "endOfSessionMessage",
+        "storedUctrans",
+        "subpgmAddress",
+        "subpgmBirthDay",
+        "subpgmBirthMonth",
+        "subpgmBirthYear",
+        "subpgmCreditScore",
+        "subpgmCsReviewDate",
+        "subpgmEyecatcher",
+        "subpgmFailCode",
+        "subpgmName",
+        "subpgmNumber",
+        "subpgmSortcode",
+        "subpgmSuccess",
+        "validDataSw",
+        "wsAbcode",
+        "wsAbendPgm",
+        "wsAddrSplit1",
+        "wsAddrSplit2",
+        "wsAddrSplit3",
+        "wsCicsFailMsg",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCicsResp2Disp",
+        "wsCicsRespDisp",
+        "wsCommTerm",
+        "wsOrigDate",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime",
+        "wsUctrans"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "15767f83b8b00d585065267ac124b5a435c29949fd0c3ccca42f644b8db1a632"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Bnk1craDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1craDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "actualBalanceDisplay",
+        "availableBalanceDisplay",
+        "commAccno",
+        "commAmt",
+        "commSign",
+        "endOfSessionMessage",
+        "subpgmAccno",
+        "subpgmActBal",
+        "subpgmAmt",
+        "subpgmApplid",
+        "subpgmAvBal",
+        "subpgmFacilityName",
+        "subpgmFaciltype",
+        "subpgmFailCode",
+        "subpgmNetwrkId",
+        "subpgmSortc",
+        "subpgmSuccess",
+        "subpgmUserid",
+        "validDataSw",
+        "wsAbendPgm",
+        "wsAmountUnstr",
+        "wsAmountUnstrL",
+        "wsAmountUnstrReverse",
+        "wsCicsFailMsg",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCicsResp2Disp",
+        "wsCicsRespDisp",
+        "wsCommAccno",
+        "wsCommAmt",
+        "wsCommSign",
+        "wsConvertDec",
+        "wsConvertPic11St",
+        "wsConvertPic12Nd",
+        "wsConvertPic1Point",
+        "wsConvertPoint",
+        "wsConvertRemain",
+        "wsNumCountPoint",
+        "wsNumCountSpace",
+        "wsNumCountTotal",
+        "wsOrigDate",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "a1853c7f0240b29dd62e512e80f76a2789f851b8e302afc04b3a291382714dc2"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Bnk1dacDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1dacDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "actualBalanceDisplay",
+        "availableBalanceDisplay",
+        "commAccType",
+        "commAccno",
+        "commActualBal",
+        "commAvailBal",
+        "commCustno",
+        "commEye",
+        "commIntRate",
+        "commLastStDd",
+        "commLastStMm",
+        "commLastStYy",
+        "commLastStmtDt",
+        "commNextStDd",
+        "commNextStMm",
+        "commNextStYy",
+        "commNextStmtDt",
+        "commOpened",
+        "commOpenedSplitDd",
+        "commOpenedSplitMm",
+        "commOpenedSplitYy",
+        "commOverdraft",
+        "commScode",
+        "commSuccess",
+        "endOfSessionMessage",
+        "parmsSubpgmAccno",
+        "parmsSubpgmDelFailCd",
+        "parmsSubpgmDelSuccess",
+        "parmsSubpgmScode",
+        "validDataSw",
+        "wsAbendPgm",
+        "wsCicsFailMsg",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCicsResp2Disp",
+        "wsCicsRespDisp",
+        "wsCommAccType",
+        "wsCommAccno",
+        "wsCommActualBal",
+        "wsCommAvailBal",
+        "wsCommCustno",
+        "wsCommEye",
+        "wsCommIntRate",
+        "wsCommLastStmtDt",
+        "wsCommNextStmtDt",
+        "wsCommOpened",
+        "wsCommOverdraft",
+        "wsCommScode",
+        "wsCommSuccess",
+        "wsOrigDate",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "20c0310eec7589acd22c1907f1dbbd6f4fce232bfbdca5d231e4908e2eb0f9a8"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Bnk1dcsDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1dcsDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "commAddr",
+        "commAddrSplit1",
+        "commAddrSplit2",
+        "commAddrSplit3",
+        "commAddrUpd1",
+        "commAddrUpd2",
+        "commAddrUpd3",
+        "commCreditScore",
+        "commCsReview9Dd",
+        "commCsReview9Mm",
+        "commCsReview9Yyyy",
+        "commCsReviewDate",
+        "commCsReviewxDd",
+        "commCsReviewxMm",
+        "commCsReviewxYyyy",
+        "commCustno",
+        "commDelFailCd",
+        "commDelSuccess",
+        "commDob",
+        "commDob9Dd",
+        "commDob9Mm",
+        "commDob9Yyyy",
+        "commDobSplitDd",
+        "commDobSplitMm",
+        "commDobSplitYyyy",
+        "commDobxDd",
+        "commDobxMm",
+        "commDobxYyyy",
+        "commEye",
+        "commName",
+        "commScode",
+        "commTerm",
+        "commUpd",
+        "creditScore9",
+        "creditScoreX",
+        "endOfSessionMessage",
+        "storedUctrans",
+        "validDataSw",
+        "wsAbendPgm",
+        "wsCicsFailMsg",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCicsResp2Disp",
+        "wsCicsRespDisp",
+        "wsCommAddr",
+        "wsCommCreditScore",
+        "wsCommCsReviewDate",
+        "wsCommCustno",
+        "wsCommDob",
+        "wsCommEye",
+        "wsCommName",
+        "wsCommScode",
+        "wsCommTerm",
+        "wsCommUpdate",
+        "wsOrigDate",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsTitleValid",
+        "wsUTime",
+        "wsUctrans",
+        "wsUnstrTitle",
+        "wsValidateName"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "75054ddc96130ab420e54bec5cc8b10456f756f797ad6c221ec10266dc2aa9a8"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Bnk1tfnDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1tfnDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "endOfSessionMessage",
+        "fromActualBalanceDisplay",
+        "fromAvailableBalanceDisplay",
+        "subpgmAmt",
+        "subpgmFaccno",
+        "subpgmFactbal",
+        "subpgmFailCode",
+        "subpgmFavbal",
+        "subpgmFscode",
+        "subpgmSuccess",
+        "subpgmTaccno",
+        "subpgmTactbal",
+        "subpgmTavbal",
+        "subpgmTscode",
+        "toActualBalanceDisplay",
+        "toAvailableBalanceDisplay",
+        "validDataSw",
+        "wsAbendPgm",
+        "wsAmountUnstr",
+        "wsAmountUnstrL",
+        "wsAmountUnstrReverse",
+        "wsCicsFailMsg",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCicsResp2Disp",
+        "wsCicsRespDisp",
+        "wsConvertDec",
+        "wsConvertPic11St",
+        "wsConvertPic12Nd",
+        "wsConvertPic1Point",
+        "wsConvertPoint",
+        "wsConvertRemain",
+        "wsNumCountMinus",
+        "wsNumCountPoint",
+        "wsNumCountSpace",
+        "wsNumCountTotal",
+        "wsOrigDate",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "a5bd3f4b20e913c2db093d157b4dc187cf213d590f15b7c1ba9f1cc71c3e923f"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/Bnk1uacDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1uacDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "actualBalanceDisplay",
+        "availableBalanceDisplay",
+        "commAccType",
+        "commAccno",
+        "commActualBal",
+        "commAvailBal",
+        "commCustno",
+        "commEye",
+        "commIntRate",
+        "commLastStmtDt",
+        "commNextStmtDt",
+        "commOpened",
+        "commOverdraft",
+        "commScode",
+        "commSuccess",
+        "endOfSessionMessage",
+        "intRt9",
+        "intrtPic9",
+        "validDataSw",
+        "wsAbendPgm",
+        "wsCicsFailMsg",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCicsResp2Disp",
+        "wsCicsRespDisp",
+        "wsCommAccType",
+        "wsCommAccno",
+        "wsCommActualBal",
+        "wsCommAvBalUnsign",
+        "wsCommAvailBal",
+        "wsCommCustno",
+        "wsCommEye",
+        "wsCommIntRate",
+        "wsCommLastStmtDt",
+        "wsCommNextStmtDt",
+        "wsCommOpened",
+        "wsCommOverdraft",
+        "wsCommScode",
+        "wsConvertDec",
+        "wsConvertPicx",
+        "wsConvertPoint",
+        "wsConvertRemain",
+        "wsConvertSign",
+        "wsConvertedVal1",
+        "wsConvertedVal2",
+        "wsConvertedVal3",
+        "wsConvertedVal4",
+        "wsDateSplitDd",
+        "wsDateSplitMm",
+        "wsDateSplitYy",
+        "wsLstmtddi",
+        "wsLstmtmmi",
+        "wsLstmtyyi",
+        "wsNstmtddi",
+        "wsNstmtmmi",
+        "wsNstmtyyi",
+        "wsNumCountPoint",
+        "wsNumCountTotal",
+        "wsOrigDate",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "fb24aaec276235f6dc60f757f15eb4d95ed5e40a3b420173ddff8b7e9ce1362c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/CreaccDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "CreaccDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "dontCare",
+        "hvAccountAccNo",
+        "hvAccountAccType",
+        "hvAccountActualBal",
+        "hvAccountAvailBal",
+        "hvAccountCustNo",
+        "hvAccountEyecatcher",
+        "hvAccountIntRate",
+        "hvAccountLastStmt",
+        "hvAccountLastStmtDay",
+        "hvAccountLastStmtDelim1",
+        "hvAccountLastStmtDelim2",
+        "hvAccountLastStmtMonth",
+        "hvAccountLastStmtYear",
+        "hvAccountNextStmt",
+        "hvAccountNextStmtDay",
+        "hvAccountNextStmtDelim1",
+        "hvAccountNextStmtDelim2",
+        "hvAccountNextStmtMonth",
+        "hvAccountNextStmtYear",
+        "hvAccountOpened",
+        "hvAccountOpenedDay",
+        "hvAccountOpenedDelim1",
+        "hvAccountOpenedDelim2",
+        "hvAccountOpenedMonth",
+        "hvAccountOpenedYear",
+        "hvAccountOverdraftLim",
+        "hvAccountSortcode",
+        "hvControlName",
+        "hvControlValueNum",
+        "hvControlValueStr",
+        "hvProctranAccNumber",
+        "hvProctranAmount",
+        "hvProctranDate",
+        "hvProctranDesc",
+        "hvProctranEyecatcher",
+        "hvProctranRef",
+        "hvProctranSortCode",
+        "hvProctranTime",
+        "hvProctranType",
+        "leapYear",
+        "ncsAccNoActName",
+        "ncsAccNoDisp",
+        "ncsAccNoFill",
+        "ncsAccNoInc",
+        "ncsAccNoTestSort",
+        "ncsAccNoValue",
+        "requiredAcctNumber3",
+        "requiredSortCode",
+        "requiredSortCode2",
+        "sqlcodeDisplay",
+        "storedAccno",
+        "storedAcctype",
+        "storedCustno",
+        "storedLstStmt",
+        "storedNxtStmt",
+        "storedSortcode",
+        "wsAbendPgm",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsEibtaskn12",
+        "wsFut9",
+        "wsFutXDd",
+        "wsFutXMm",
+        "wsFutXYy",
+        "wsFutureDate",
+        "wsInteger",
+        "wsOrigDate",
+        "wsOrigDateDd",
+        "wsOrigDateMm",
+        "wsOrigDateYyyy",
+        "wsStdt9Num",
+        "wsStdt9Numeric",
+        "wsStdtX",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "2d797816af2bfabd0091172a7528c495d0cf61f7726db92ef908ef94d961689c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/CrecustDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "CrecustDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caseSevCtl",
+        "causeCode",
+        "ceedaysDay",
+        "ceedaysMonth",
+        "ceedaysYear",
+        "classCode",
+        "facilityId",
+        "hvProctranAccNumber",
+        "hvProctranAmount",
+        "hvProctranDate",
+        "hvProctranDesc",
+        "hvProctranEyecatcher",
+        "hvProctranRef",
+        "hvProctranSortCode",
+        "hvProctranTime",
+        "hvProctranType",
+        "msgNo",
+        "ncsCustNoActName",
+        "ncsCustNoFill",
+        "ncsCustNoInc",
+        "ncsCustNoTestSort",
+        "ncsCustNoValue",
+        "ncsUpdated",
+        "requiredCustNumber2",
+        "requiredSortCode",
+        "severity",
+        "sqlcodeDisplay",
+        "storedCustno",
+        "storedDob",
+        "storedName",
+        "storedSortcode",
+        "sysiderrRetry",
+        "vstringChar",
+        "wsAbendPgm",
+        "wsActualCsScr",
+        "wsAnyChildFetchAbcode",
+        "wsAnyChildFetchChan",
+        "wsAnyChildFetchTkn",
+        "wsAnyChildTkn",
+        "wsCcCnt",
+        "wsChannelName",
+        "wsChildChan",
+        "wsChildContainerLen",
+        "wsChildDataBirthDay",
+        "wsChildDataBirthMonth",
+        "wsChildDataBirthYear",
+        "wsChildDataCreditScore",
+        "wsChildDataNumber",
+        "wsChildDataSortcode",
+        "wsChildFetchCompst",
+        "wsChildIssuedCnt",
+        "wsChildTkn",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCicstsLevelNumMm",
+        "wsCicstsLevelNumRr",
+        "wsCicstsLevelNumVv",
+        "wsContainerName",
+        "wsCreditCheckError",
+        "wsCurrentDate9",
+        "wsCurrentDd",
+        "wsCurrentHours",
+        "wsCurrentMilli",
+        "wsCurrentMins",
+        "wsCurrentMm",
+        "wsCurrentSecs",
+        "wsCurrentYyyy",
+        "wsCustRecLen",
+        "wsCustomerAge",
+        "wsDateOfBirthError",
+        "wsDateOfBirthLillian",
+        "wsEibtaskn12",
+        "wsFinishedFetching",
+        "wsNewReviewDateInt",
+        "wsNewReviewYyyymmdd",
+        "wsOrigDate",
+        "wsOrigDateDd",
+        "wsOrigDateMm",
+        "wsOrigDateYyyy",
+        "wsPutContLen",
+        "wsPutContName",
+        "wsReceiveChildChan",
+        "wsRetrievedCnt",
+        "wsReviewDateAdd",
+        "wsRunTransid",
+        "wsSeed",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsTodayGYear",
+        "wsTodayInt",
+        "wsTodayLillian",
+        "wsTotalCsScr",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "5e4a1d6125ac014bac7897a587a344a012ee55695491e59f66788e1134efe116"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/CustctrlDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "CustctrlDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "requiredSortCode",
+        "sysiderrRetry",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCustomerRangeBottom",
+        "wsCustomerRangeMiddle",
+        "wsCustomerRangeTop",
+        "wsOrigDate",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "10fd1c10b39bbcb685fe74a193c0dcad7746e811ec627be4d7b49f4088875193"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/DbcrfunDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "DbcrfunDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "desiredAccNo",
+        "desiredSortCode",
+        "hvAccountAccNo",
+        "hvAccountAccType",
+        "hvAccountActualBal",
+        "hvAccountAvailBal",
+        "hvAccountCustNo",
+        "hvAccountEyecatcher",
+        "hvAccountIntRate",
+        "hvAccountLastStmt",
+        "hvAccountNextStmt",
+        "hvAccountOpened",
+        "hvAccountOverdraftLim",
+        "hvAccountSortcode",
+        "hvProctranAccNumber",
+        "hvProctranAmount",
+        "hvProctranDate",
+        "hvProctranDesc",
+        "hvProctranEyecatcher",
+        "hvProctranRef",
+        "hvProctranSortCode",
+        "hvProctranTime",
+        "hvProctranType",
+        "myAbendCode",
+        "sqlcodeDisplay",
+        "stormDrainCondition",
+        "wsAbendPgm",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCustomerRangeBottom",
+        "wsCustomerRangeMiddle",
+        "wsCustomerRangeTop",
+        "wsDifference",
+        "wsEibtaskn12",
+        "wsOrigDate",
+        "wsStormDrain",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "6bf63f14062fb6cd66cbeb3c889b795749de8baa4e7aaedfb112f1807804391d"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/DelcusDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "DelcusDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "delaccCommAccno",
+        "delaccCommApplid",
+        "desiredKeyCustomer",
+        "desiredKeySortcode",
+        "hvProctranAccNumber",
+        "hvProctranAmount",
+        "hvProctranDate",
+        "hvProctranDesc",
+        "hvProctranEyecatcher",
+        "hvProctranRef",
+        "hvProctranSortCode",
+        "hvProctranTime",
+        "hvProctranType",
+        "inqcustProgram",
+        "remixScodeChar",
+        "requiredSortCode",
+        "returnedNumber",
+        "returnedSortCode",
+        "sqlcodeDisplay",
+        "sysiderrRetry",
+        "wsAbendPgm",
+        "wsApplid",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsEibtaskn12",
+        "wsIndex",
+        "wsOrigDate",
+        "wsStoredcAddress",
+        "wsStoredcCreditScore",
+        "wsStoredcCsReviewDate",
+        "wsStoredcDateOfBirth",
+        "wsStoredcEyecatcher",
+        "wsStoredcName",
+        "wsStoredcNumber",
+        "wsStoredcSortcode",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsToken",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "0bd10a3bef356d6498f8c45f9a48b617d318df79637e41f032a7ac9dd3a4a924"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/InqacccuDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "InqacccuDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "db2DateRefDay",
+        "db2DateRefMnth",
+        "db2DateRefYr",
+        "hvAccountAccNo",
+        "hvAccountAccType",
+        "hvAccountActualBal",
+        "hvAccountAvailBal",
+        "hvAccountCustNo",
+        "hvAccountEyecatcher",
+        "hvAccountIntRate",
+        "hvAccountLastStmt",
+        "hvAccountNextStmt",
+        "hvAccountOpened",
+        "hvAccountOverdraftLim",
+        "hvAccountSortcode",
+        "myAbendCode",
+        "requiredSortCode",
+        "returnedNumber",
+        "returnedSortCode",
+        "sqlcodeDisplay",
+        "stormDrainCondition",
+        "wsAbendPgm",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsOrigDate",
+        "wsStormDrain",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "4b29ecb282c80d1f153fda8ebbf71a3f9396d3baf9d2fdab76624e484c3af8dc"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/InqcustDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "InqcustDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "exitDb2Read",
+        "exitVsamRead",
+        "inqcustRetry",
+        "myAbendCode",
+        "ncsCustNoActName",
+        "ncsCustNoFill",
+        "ncsCustNoTestSort",
+        "ncsCustNoValue",
+        "randomCustomer",
+        "remix2CreditScrNum",
+        "remixScodeNum",
+        "requiredCustNumber",
+        "requiredCustNumber2",
+        "requiredSortCode",
+        "sysiderrRetry",
+        "wsAbendPgm",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCustomerRangeBottom",
+        "wsCustomerRangeMiddle",
+        "wsCustomerRangeTop",
+        "wsDRetried",
+        "wsOrigDate",
+        "wsStormDrain",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime",
+        "wsVRetried"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "79be367d8213602f338d7de607845b00a394b85ba079db7834d0d1ab68385f04"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/UpdaccDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "UpdaccDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "db2DateRefDay",
+        "db2DateRefMnth",
+        "db2DateRefYr",
+        "desiredAccNo",
+        "desiredSortCode",
+        "hvAccountAccNo",
+        "hvAccountAccType",
+        "hvAccountActualBal",
+        "hvAccountAvailBal",
+        "hvAccountCustNo",
+        "hvAccountEyecatcher",
+        "hvAccountIntRate",
+        "hvAccountLastStmt",
+        "hvAccountNextStmt",
+        "hvAccountOpened",
+        "hvAccountOverdraftLim",
+        "hvAccountSortcode",
+        "sqlcodeDisplay",
+        "wsOrigDate",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "3de64b46e2ced1b8a43b46dd4f027d808c8172fd48c0601e08ae2ec3a8541a0a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/UpdcustDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "UpdcustDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "desiredCustno",
+        "desiredSortCode",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCustRecLen",
+        "wsCustomerRangeBottom",
+        "wsCustomerRangeMiddle",
+        "wsCustomerRangeTop",
+        "wsOrigDate",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsTitleValid",
+        "wsUTime",
+        "wsUnstrTitle"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "c9d007013a0703ff6837d39f755e32531d6b5e508da0be912695fb57a9b78be4"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/XfrfunDfhcommareaDto.java": {
+      "calls": [],
+      "classes": [
+        "XfrfunDfhcommareaDto"
+      ],
+      "endpoints": [],
+      "fields": [
+        "db2DeadlockRetry",
+        "desiredAccNo",
+        "desiredSortCode",
+        "hvAccountAccNo",
+        "hvAccountAccType",
+        "hvAccountActualBal",
+        "hvAccountAvailBal",
+        "hvAccountCustNo",
+        "hvAccountEyecatcher",
+        "hvAccountIntRate",
+        "hvAccountLastStmt",
+        "hvAccountNextStmt",
+        "hvAccountOpened",
+        "hvAccountOverdraftLim",
+        "hvAccountSortcode",
+        "hvProctranAccNumber",
+        "hvProctranAmount",
+        "hvProctranDate",
+        "hvProctranDesc",
+        "hvProctranEyecatcher",
+        "hvProctranRef",
+        "hvProctranSortCode",
+        "hvProctranTime",
+        "hvProctranType",
+        "myAbendCode",
+        "sqlcodeDisplay",
+        "stormDrainCondition",
+        "wsAbendPgm",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCustomerRangeBottom",
+        "wsCustomerRangeMiddle",
+        "wsCustomerRangeTop",
+        "wsEibtaskn12",
+        "wsOrigDate",
+        "wsSqlcodeDisp",
+        "wsStormDrain",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "7e68d8a3d71b618e47c1d46cff50e5d9957a5b166b83c0026e859239b87b6067"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1cacSubpgmParms.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1cacSubpgmParms"
+      ],
+      "endpoints": [],
+      "fields": [
+        "subpgmAccType",
+        "subpgmActBal",
+        "subpgmAvailBal",
+        "subpgmCustno",
+        "subpgmEyecatcher",
+        "subpgmFailCode",
+        "subpgmIntRt",
+        "subpgmLastStmtDt",
+        "subpgmNextStmtDt",
+        "subpgmNumber",
+        "subpgmOpened",
+        "subpgmOverdrLim",
+        "subpgmSortcode",
+        "subpgmSuccess"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "954bf1e2829fc8d2f9d5334a5bd3afd0d9e0539c94a962cb742713972c34230b"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1cacWsCommArea.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1cacWsCommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wsCommAcctype",
+        "wsCommCustno",
+        "wsCommIntrt",
+        "wsCommOverdr"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "faed3a72d6ee923249ace396e69582fc5975dfcf9f7f618d4932891ef211b35a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1ccaInqacccuCommarea.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1ccaInqacccuCommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "commAccType",
+        "commAccno",
+        "commActualBal",
+        "commAvailBal",
+        "commCustno",
+        "commEye",
+        "commFailCode",
+        "commIntRate",
+        "commLastStmtDt",
+        "commNextStmtDt",
+        "commOpened",
+        "commOverdraft",
+        "commPcbPointer",
+        "commScode",
+        "commSuccess",
+        "customerFound",
+        "customerNumber",
+        "numberOfAccounts"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "854c273fa96683c5af0d7d94d62229b139727f21a37cd0df136a656faf908e5c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1ccaWsCommArea.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1ccaWsCommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wsCommAddr",
+        "wsCommCustno",
+        "wsCommDob",
+        "wsCommEye",
+        "wsCommName",
+        "wsCommScode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "7766a734a76a0af3bca6ce38c23abdc77bc9284739a8ba7716059ae1194ec6f1"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1ccsSubpgmParms.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1ccsSubpgmParms"
+      ],
+      "endpoints": [],
+      "fields": [
+        "subpgmAddress",
+        "subpgmCreditScore",
+        "subpgmCsReviewDate",
+        "subpgmDateOfBirth",
+        "subpgmEyecatcher",
+        "subpgmFailCode",
+        "subpgmName",
+        "subpgmNumber",
+        "subpgmSortcode",
+        "subpgmSuccess"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "d489f3b97a21126636fb21cae491a6ccd06b0a9c4517d2f99b79e425ce5a0948"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1ccsWsCommArea.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1ccsWsCommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wsCommData",
+        "wsCommTerm"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "dcaa11bddab292a7d5e344f3d3aed4d9a527539a3f54d88e45a977af70841646"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1craSubpgmParms.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1craSubpgmParms"
+      ],
+      "endpoints": [],
+      "fields": [
+        "subpgmAccno",
+        "subpgmActBal",
+        "subpgmAmt",
+        "subpgmApplid",
+        "subpgmAvBal",
+        "subpgmFacilityName",
+        "subpgmFaciltype",
+        "subpgmFailCode",
+        "subpgmNetwrkId",
+        "subpgmSortc",
+        "subpgmSuccess",
+        "subpgmUserid"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "9e8376fb0f92dd9a380569dca1a8dc556528e794ac60dc94ae2e3d78bad456d8"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1craWsCommArea.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1craWsCommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wsCommAccno",
+        "wsCommAmt",
+        "wsCommSign"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "7c0509a89bf3f4803d3161042f09fa6e408faf9a1e0cc56828b81ffe18d22ec0"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacParmsSubpgm.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1dacParmsSubpgm"
+      ],
+      "endpoints": [],
+      "fields": [
+        "parmsSubpgmAccType",
+        "parmsSubpgmAccno",
+        "parmsSubpgmActualBal",
+        "parmsSubpgmAvailBal",
+        "parmsSubpgmCustno",
+        "parmsSubpgmDelApplid",
+        "parmsSubpgmDelFailCd",
+        "parmsSubpgmDelPcb1",
+        "parmsSubpgmDelPcb2",
+        "parmsSubpgmDelPcb3",
+        "parmsSubpgmDelSuccess",
+        "parmsSubpgmEye",
+        "parmsSubpgmFailCd",
+        "parmsSubpgmIntRate",
+        "parmsSubpgmLastStmtDt",
+        "parmsSubpgmNextStmtDt",
+        "parmsSubpgmOpened",
+        "parmsSubpgmOverdraft",
+        "parmsSubpgmScode",
+        "parmsSubpgmSuccess"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "0809b985cca920cf2aaf2bc1f2691b587102a4adb8f2e697d7a95672c0ab360c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1dacWsCommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wsCommAccType",
+        "wsCommAccno",
+        "wsCommActualBal",
+        "wsCommAvailBal",
+        "wsCommCustno",
+        "wsCommDelFailCd",
+        "wsCommDelSuccess",
+        "wsCommEye",
+        "wsCommFailCd",
+        "wsCommIntRate",
+        "wsCommLastStmtDt",
+        "wsCommNextStmtDt",
+        "wsCommOpened",
+        "wsCommOverdraft",
+        "wsCommScode",
+        "wsCommSuccess"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "8527bf1f953f87cbd6344934d68443e7eea4d609a1ec80eea02d6f9c1d4733b3"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dcsDelcusCommarea.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1dcsDelcusCommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "commAddr",
+        "commCreditScore",
+        "commCsReviewDate",
+        "commCustno",
+        "commDelFailCd",
+        "commDelSuccess",
+        "commDob",
+        "commEye",
+        "commName",
+        "commScode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "16ec1a604465de88444fa42c03f5dac288c0e41306fe222e23ebf3e6e2ac31db"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dcsInqcustCommarea.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1dcsInqcustCommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "inqcustAddr",
+        "inqcustCreditScore",
+        "inqcustCsReviewDd",
+        "inqcustCsReviewMm",
+        "inqcustCsReviewYyyy",
+        "inqcustCustno",
+        "inqcustDobDd",
+        "inqcustDobMm",
+        "inqcustDobYyyy",
+        "inqcustEye",
+        "inqcustInqFailCd",
+        "inqcustInqSuccess",
+        "inqcustName",
+        "inqcustPcbPointer",
+        "inqcustScode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "efca11dccbd065ca21c8e8d14c42feebc8fa573336619f6a75abec8f3bd59696"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dcsUpdcustCommarea.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1dcsUpdcustCommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "commAddr",
+        "commCreditScore",
+        "commCsReviewDate",
+        "commCustno",
+        "commDob",
+        "commEye",
+        "commName",
+        "commScode",
+        "commUpdFailCd",
+        "commUpdSuccess"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "3fededcfa789ed7cb0e9fbf7f6c2499b1c8dc64f6bff8c6f9ff220a19c98db56"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dcsWsCommArea.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1dcsWsCommArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wsCommAddr",
+        "wsCommCreditScore",
+        "wsCommCsReviewDate",
+        "wsCommCustno",
+        "wsCommDelFailCd",
+        "wsCommDelSuccess",
+        "wsCommDob",
+        "wsCommEye",
+        "wsCommName",
+        "wsCommScode",
+        "wsCommTerm",
+        "wsCommUpdate"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "2668bf9809af8df0f29248e1a0d3f0ee937087ee0bd64e7342926b7d5d7ad155"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1tfnSubpgmParms.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1tfnSubpgmParms"
+      ],
+      "endpoints": [],
+      "fields": [
+        "subpgmAmt",
+        "subpgmFaccno",
+        "subpgmFactbal",
+        "subpgmFailCode",
+        "subpgmFavbal",
+        "subpgmFscode",
+        "subpgmSuccess",
+        "subpgmTaccno",
+        "subpgmTactbal",
+        "subpgmTavbal",
+        "subpgmTscode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "f089d5f111f6d0f8b8abd59db3a70909f8b146bd8624f4fba5a2d6db6151ae7c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1tfnWsCommarea.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1tfnWsCommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wsCommareaAmt",
+        "wsCommareaFaccno",
+        "wsCommareaTaccno"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "38e96e9512a1c6d7d5e0183c9431fb6298aef1bb4d42be7ff77dd5bf7ed12612"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1uacDfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1uacDfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "commAccType",
+        "commAccno",
+        "commActualBal",
+        "commAvailBal",
+        "commCustno",
+        "commEye",
+        "commIntRate",
+        "commLastStmtDt",
+        "commNextStmtDt",
+        "commOpened",
+        "commOverdraft",
+        "commPcb1Pointer",
+        "commScode",
+        "commSuccess"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "8ffe9393e6eb2512e14c2ed43a5f4f3d17c4ea5196b9dbf20b0941bb0e103b0b"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/BnkmenuAbndinfoRec.java": {
+      "calls": [],
+      "classes": [
+        "BnkmenuAbndinfoRec"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndApplid",
+        "abndCode",
+        "abndDate",
+        "abndFreeform",
+        "abndProgram",
+        "abndResp2Code",
+        "abndRespcode",
+        "abndSqlcode",
+        "abndTasknoKey",
+        "abndTime",
+        "abndTranid",
+        "abndUtimeKey"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "d083128206811ed15dcf6e52e4fb3d97947e7c8b5e1b591fdc045e6cabbafdf5"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/BnkmenuCommunicationArea.java": {
+      "calls": [],
+      "classes": [
+        "BnkmenuCommunicationArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "communicationArea"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "03e277cddb9686d0d5d7f39b22ff4185cf998f6f60e4bab91c7d88c85dd2c895"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy1ChannelIn.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy1ChannelIn"
+      ],
+      "endpoints": [],
+      "fields": [
+        "cipa"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "44b8b4617e6a85779250cf5086255b7b3ec7e10ca946fb65ce213d80c16f8070"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy1ChannelOut.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy1ChannelOut"
+      ],
+      "endpoints": [],
+      "fields": [
+        "cipa"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "f7febb5aca43f65abadac997ddf5ce699fc27a3ff2817ced48c7f89d449754f1"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy1WsContIn.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy1WsContIn"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wsContInAddress",
+        "wsContInCreditScore",
+        "wsContInCsReviewDate",
+        "wsContInDateOfBirth",
+        "wsContInEyecatcher",
+        "wsContInFailCode",
+        "wsContInName",
+        "wsContInNumber",
+        "wsContInSortcode",
+        "wsContInSuccess"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "a29a3ffc0aed1f6198e0a695f958e469632b5bc1fa258a9ce8367a43bc9089fc"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy2ChannelIn.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy2ChannelIn"
+      ],
+      "endpoints": [],
+      "fields": [
+        "cipb"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "c9226f5a0efd65c33496986922b4d7809ef7f9a35e62ba1edc7965cda4a2531a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy2ChannelOut.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy2ChannelOut"
+      ],
+      "endpoints": [],
+      "fields": [
+        "cipb"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "47734453e45634128e67fba7d86e5f30121af468bd88023ec016c4b71551bb81"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy2WsContIn.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy2WsContIn"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wsContInAddress",
+        "wsContInCreditScore",
+        "wsContInCsReviewDate",
+        "wsContInDateOfBirth",
+        "wsContInEyecatcher",
+        "wsContInFailCode",
+        "wsContInName",
+        "wsContInNumber",
+        "wsContInSortcode",
+        "wsContInSuccess"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "76e28aefa08faa6eeb3be14efaad36cf8c08092d0879b633723ebe3add3fa811"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy3ChannelIn.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy3ChannelIn"
+      ],
+      "endpoints": [],
+      "fields": [
+        "cipc"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "a430aad1843c106261554e1e9447ffc72678ac6a0e4d4d632bd0cf5245ff3b43"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy3ChannelOut.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy3ChannelOut"
+      ],
+      "endpoints": [],
+      "fields": [
+        "cipc"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "79bc921fdd9e83347a26bf2fcd8f987ebb2ed33d68cfef304e7dc29eb738d93f"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy3WsContIn.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy3WsContIn"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wsContInAddress",
+        "wsContInCreditScore",
+        "wsContInCsReviewDate",
+        "wsContInDateOfBirth",
+        "wsContInEyecatcher",
+        "wsContInFailCode",
+        "wsContInName",
+        "wsContInNumber",
+        "wsContInSortcode",
+        "wsContInSuccess"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "a9f16b686d9c82ed60414cf8ad2e0b011c03f0771d9905e0d1eef9adaa3127bd"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy4ChannelIn.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy4ChannelIn"
+      ],
+      "endpoints": [],
+      "fields": [
+        "cipd"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "e315f692140bc069d706b22e83f7c8f52dedc522c59ce0a2454d1b5110f8aaed"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy4ChannelOut.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy4ChannelOut"
+      ],
+      "endpoints": [],
+      "fields": [
+        "cipd"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "d5443d54734d8ed804be3b56f0bf6c4289f5d2449c36c6aa7cecb5662935aec4"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy4WsContIn.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy4WsContIn"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wsContInAddress",
+        "wsContInCreditScore",
+        "wsContInCsReviewDate",
+        "wsContInDateOfBirth",
+        "wsContInEyecatcher",
+        "wsContInFailCode",
+        "wsContInName",
+        "wsContInNumber",
+        "wsContInSortcode",
+        "wsContInSuccess"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "7284a60c2d198776c5dde4aade9ccdb37d5d36173751e0460c21302a93092d3a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy5ChannelIn.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy5ChannelIn"
+      ],
+      "endpoints": [],
+      "fields": [
+        "cipe"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "c1cb82779f859a0b838dece8cd23f116f104ea71b720f321e0aa1303b02cfbd4"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy5ChannelOut.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy5ChannelOut"
+      ],
+      "endpoints": [],
+      "fields": [
+        "cipe"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "7f8b0e04b870adaca5a098590b9e3662ef5419f6679c20185f46030602439a19"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Crdtagy5WsContIn.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy5WsContIn"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wsContInAddress",
+        "wsContInCreditScore",
+        "wsContInCsReviewDate",
+        "wsContInDateOfBirth",
+        "wsContInEyecatcher",
+        "wsContInFailCode",
+        "wsContInName",
+        "wsContInNumber",
+        "wsContInSortcode",
+        "wsContInSuccess"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "bf182946ee8f8bc93e9d24c253544d14f27d51046cc299fc16da2ce5f1f09373"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/CustctrlDfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "CustctrlDfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "customerControlEyecatcher",
+        "customerControlFailCode",
+        "customerControlNumber",
+        "customerControlSortcode",
+        "customerControlSuccessFlag",
+        "lastCustomerNumber",
+        "numberOfCustomers"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "80617f1a6dedc49a6260b6311760c41feced6a8b3e6815a64b578c324997b2d5"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/GetcompyDfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "GetcompyDfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "companyName"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "d7ec33f08d7808e97030f18713779987972e6e451456155350dbea744ef8fecc"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/GetscodeDfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "GetscodeDfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "sortcode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "a86c72dcbae22abbebf80898102e73c6edd5d9516c3c02c9b0401684db7da8f5"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/InqaccCommarea.java": {
+      "calls": [],
+      "classes": [
+        "InqaccCommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "inqaccAccType",
+        "inqaccAccno",
+        "inqaccActualBal",
+        "inqaccAvailBal",
+        "inqaccCustno",
+        "inqaccEye",
+        "inqaccIntRate",
+        "inqaccLastStmtDt",
+        "inqaccNextStmtDt",
+        "inqaccOpened",
+        "inqaccOverdraft",
+        "inqaccPcb1Pointer",
+        "inqaccScode",
+        "inqaccSuccess"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "1deea0b587e949da9f9ddf6ef066cb0e5db9187d968f39b35d3c17fe334d4cf2"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/UpdaccDfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "UpdaccDfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "commAccType",
+        "commAccno",
+        "commActualBal",
+        "commAvailBal",
+        "commCustno",
+        "commEye",
+        "commIntRate",
+        "commLastStmtDt",
+        "commNextStmtDt",
+        "commOpened",
+        "commOverdraft",
+        "commScode",
+        "commSuccess"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "aa0aa968e23a83b40808969afaaa341d66687583eadb6c5a65898bbfbc024805"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/db2/AccountRow.java": {
+      "calls": [],
+      "classes": [
+        "AccountRow"
+      ],
+      "endpoints": [],
+      "fields": [
+        "accountActualBalance",
+        "accountAvailableBalance",
+        "accountCustomerNumber",
+        "accountEyecatcher",
+        "accountInterestRate",
+        "accountLastStatement",
+        "accountNextStatement",
+        "accountNumber",
+        "accountOpened",
+        "accountOverdraftLimit",
+        "accountSortcode",
+        "accountType"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "bfc004c1d734a13b95ae9a5847741e154b0f2ae42d87bff07d50151ad2bff4a6"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/db2/ControlRow.java": {
+      "calls": [],
+      "classes": [
+        "ControlRow"
+      ],
+      "endpoints": [],
+      "fields": [
+        "controlName",
+        "controlValueNum",
+        "controlValueStr"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "56b59b114ad1ef7c4cdd7a889127a3bb74ef3ddee2b0697d7cbcc50c21f9dddf"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/db2/ProctranRow.java": {
+      "calls": [],
+      "classes": [
+        "ProctranRow"
+      ],
+      "endpoints": [],
+      "fields": [
+        "proctranAmount",
+        "proctranDate",
+        "proctranDesc",
+        "proctranEyecatcher",
+        "proctranNumber",
+        "proctranRef",
+        "proctranSortcode",
+        "proctranTime",
+        "proctranType"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "fd0685a43a174f52c1193ffa9ca85904f21bd80a66ebf088b98d6458d29ff6fc"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1accScreen.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1accScreen"
+      ],
+      "endpoints": [],
+      "fields": [
+        "account",
+        "company",
+        "custno",
+        "dummy",
+        "message"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromValues",
+        "mapName",
+        "mapsetName",
+        "screenLayout",
+        "screenValues"
+      ],
+      "program": null,
+      "sha256": "c531c3149c542c42096b13a203ae139e58adfe8067bca5d83a129e29c141c21f"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1caScreen.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1caScreen"
+      ],
+      "endpoints": [],
+      "fields": [
+        "accno",
+        "acctyp",
+        "actbal",
+        "avail",
+        "company",
+        "custno",
+        "dummy",
+        "intrt",
+        "lstmdd",
+        "lstmmm",
+        "lstmyy",
+        "message",
+        "nstmtdd",
+        "nstmtmm",
+        "nstmtyy",
+        "opendd",
+        "openmm",
+        "openyy",
+        "overdr",
+        "srtcd"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromValues",
+        "mapName",
+        "mapsetName",
+        "screenLayout",
+        "screenValues"
+      ],
+      "program": null,
+      "sha256": "a2059ee43aa089c71d77ff00400d33f2ce909638a32d8d0f310883e4c93c0418"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1ccScreen.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1ccScreen"
+      ],
+      "endpoints": [],
+      "fields": [
+        "christn",
+        "company",
+        "credsc",
+        "custad1",
+        "custad2",
+        "custad3",
+        "custins",
+        "custno2",
+        "custsn",
+        "custtit",
+        "dobdd",
+        "dobmm",
+        "dobyy",
+        "dummy",
+        "message",
+        "scrdtdd",
+        "scrdtmm",
+        "scrdtyy",
+        "sortc"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromValues",
+        "mapName",
+        "mapsetName",
+        "screenLayout",
+        "screenValues"
+      ],
+      "program": null,
+      "sha256": "8a46e2d22aaac65099a4bc6f9b3a5693178d0e546d784ca0219a7bf5d9c560c1"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1cdScreen.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1cdScreen"
+      ],
+      "endpoints": [],
+      "fields": [
+        "accno",
+        "actbal",
+        "amt",
+        "avbal",
+        "company",
+        "dummy",
+        "message",
+        "sign",
+        "sortc"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromValues",
+        "mapName",
+        "mapsetName",
+        "screenLayout",
+        "screenValues"
+      ],
+      "program": null,
+      "sha256": "6797aad4cf4a7755fd9033ef011953f874b40c56f9d84efa18f0e9869fe32bb4"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1daScreen.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1daScreen"
+      ],
+      "endpoints": [],
+      "fields": [
+        "accno",
+        "accno2",
+        "actbal",
+        "actype",
+        "avbal",
+        "company",
+        "custno",
+        "dummy",
+        "intrt",
+        "lstmtdd",
+        "lstmtmm",
+        "lstmtyy",
+        "message",
+        "nstmtdd",
+        "nstmtmm",
+        "nstmtyy",
+        "opendd",
+        "openmm",
+        "openyy",
+        "overdr",
+        "sortc"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromValues",
+        "mapName",
+        "mapsetName",
+        "screenLayout",
+        "screenValues"
+      ],
+      "program": null,
+      "sha256": "802a9e7e4fd2045215d86664982bcaf5d106cf8df2e74b6e730c1f826ef2cb48"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1dcScreen.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1dcScreen"
+      ],
+      "endpoints": [],
+      "fields": [
+        "company",
+        "credsc",
+        "custad1",
+        "custad2",
+        "custad3",
+        "custnam",
+        "custno",
+        "custno2",
+        "dobdd",
+        "dobmm",
+        "dobyy",
+        "dummy",
+        "message",
+        "scrdtdd",
+        "scrdtmm",
+        "scrdtyy",
+        "sortc"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromValues",
+        "mapName",
+        "mapsetName",
+        "screenLayout",
+        "screenValues"
+      ],
+      "program": null,
+      "sha256": "7ee20c67b34982145e7b56f39d52a7d904b916d220f5f6611d74cb61b6f0be49"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1meScreen.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1meScreen"
+      ],
+      "endpoints": [],
+      "fields": [
+        "action",
+        "company",
+        "dummy",
+        "message"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromValues",
+        "mapName",
+        "mapsetName",
+        "screenLayout",
+        "screenValues"
+      ],
+      "program": null,
+      "sha256": "38407986874c4c8fc4156dbfcc112dd777d615ed01e4213f2b4d2cd04f0406ad"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1tfScreen.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1tfScreen"
+      ],
+      "endpoints": [],
+      "fields": [
+        "amt",
+        "company",
+        "dummy",
+        "faccno",
+        "faccno2",
+        "factbal",
+        "favbal",
+        "fsortc",
+        "message",
+        "taccno",
+        "taccno2",
+        "tactbal",
+        "tavbal",
+        "tsortc"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromValues",
+        "mapName",
+        "mapsetName",
+        "screenLayout",
+        "screenValues"
+      ],
+      "program": null,
+      "sha256": "8e3212a196f46b6e6c0965ef3327a544f391880643fd8623f5d4cca2794826f6"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1uaScreen.java": {
+      "calls": [],
+      "classes": [
+        "Bnk1uaScreen"
+      ],
+      "endpoints": [],
+      "fields": [
+        "accno",
+        "accno2",
+        "actbal",
+        "actype",
+        "avbal",
+        "company",
+        "custno",
+        "dummy",
+        "intrt",
+        "lstmtdd",
+        "lstmtmm",
+        "lstmtyy",
+        "message",
+        "nstmtdd",
+        "nstmtmm",
+        "nstmtyy",
+        "opendd",
+        "openmm",
+        "openyy",
+        "overdr",
+        "sortc"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromValues",
+        "mapName",
+        "mapsetName",
+        "screenLayout",
+        "screenValues"
+      ],
+      "program": null,
+      "sha256": "85dcd1cc3f8e914a90344afefb726718a63413bf2cbd2f4e8872bddb9f6738cc"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/ScreenCell.java": {
+      "calls": [],
+      "classes": [
+        "ScreenCell"
+      ],
+      "endpoints": [],
+      "fields": [
+        "column",
+        "css",
+        "cursor",
+        "input",
+        "key",
+        "length",
+        "line",
+        "text"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "1a7554bc7a1ac57d7115edede007a2540dec6554a61410b4a5e28f3365e4549a"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/ScreenField.java": {
+      "calls": [],
+      "classes": [
+        "ScreenField"
+      ],
+      "endpoints": [],
+      "fields": [
+        "bright",
+        "color",
+        "column",
+        "cursor",
+        "dark",
+        "initial",
+        "input",
+        "length",
+        "line",
+        "name",
+        "numeric",
+        "occurs"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "3c647e657fd01122680524012aa816c5f9079b2e0e14fa4543b7cfd6144e52e0"
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/screen/ScreenModel.java": {
+      "calls": [],
+      "classes": [
+        "ScreenModel"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "data",
+      "methods": [
+        "screenCells"
+      ],
+      "program": null,
+      "sha256": "dba6fca83fedcf63c4762b7bdd899ed5545fea636f4c0ad333b9820d6223e4d5"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/BankdataParmBuffer.java": {
+      "calls": [],
+      "classes": [
+        "BankdataParmBuffer"
+      ],
+      "endpoints": [],
+      "fields": [
+        "accountIntRatesCount",
+        "accountOverdraftCount",
+        "accountTypesCount",
+        "accountTypesPtr",
+        "commitCount",
+        "datmConv",
+        "datmFormat",
+        "datmLength",
+        "dispReasonCode",
+        "dispSign",
+        "dispSqlcd",
+        "endKey",
+        "fc",
+        "forename",
+        "forenamesCnt",
+        "forenamesPtr",
+        "gmtLilian",
+        "houseNumber",
+        "hvAccountActualBalance",
+        "hvAccountAvailableBalance",
+        "hvAccountCustNo",
+        "hvAccountEyecatcher",
+        "hvAccountInterestRate",
+        "hvAccountLastStmtDate",
+        "hvAccountLastStmtDay",
+        "hvAccountLastStmtDelim1",
+        "hvAccountLastStmtDelim2",
+        "hvAccountLastStmtMonth",
+        "hvAccountLastStmtYear",
+        "hvAccountNextStmtDate",
+        "hvAccountNextStmtDay",
+        "hvAccountNextStmtDelim1",
+        "hvAccountNextStmtDelim2",
+        "hvAccountNextStmtMonth",
+        "hvAccountNextStmtYear",
+        "hvAccountNumber",
+        "hvAccountOpened",
+        "hvAccountOpenedDay",
+        "hvAccountOpenedDelim1",
+        "hvAccountOpenedDelim2",
+        "hvAccountOpenedMonth",
+        "hvAccountOpenedYear",
+        "hvAccountOverdraftLimit",
+        "hvAccountSortCode",
+        "hvAccountType",
+        "hvControlName",
+        "hvControlValueNum",
+        "hvControlValueStr",
+        "initialCharacter",
+        "initialsCnt",
+        "initialsPtr",
+        "nextKey",
+        "noOfAccounts",
+        "openedDateAttempts",
+        "openedDateValid",
+        "parm",
+        "parmLength",
+        "periodNextF",
+        "randomSeed",
+        "randomSeedNumeric",
+        "rdate",
+        "sqlcodeDisplay",
+        "startKey",
+        "stepKey",
+        "streetNameRCnt",
+        "streetNameRPtr",
+        "streetNameRoad",
+        "streetNameTCnt",
+        "streetNameTPtr",
+        "streetNameTree",
+        "surname",
+        "surnamesCnt",
+        "surnamesPtr",
+        "sysId",
+        "timestampFunction",
+        "titleNumber",
+        "titleWord",
+        "town",
+        "townCount",
+        "townPtr",
+        "wsAccountIntRate",
+        "wsAccountNumber",
+        "wsAccountOpenedDay",
+        "wsAccountOpenedMonth",
+        "wsAccountOpenedYear",
+        "wsAccountOverdraftLim",
+        "wsAccountType",
+        "wsCnt",
+        "wsCurrentDate9",
+        "wsCurrentDd",
+        "wsCurrentHours",
+        "wsCurrentMilli",
+        "wsCurrentMins",
+        "wsCurrentMm",
+        "wsCurrentSecs",
+        "wsCurrentYyyy",
+        "wsDayOfWeekVal",
+        "wsDayToday",
+        "wsDt",
+        "wsDtRem",
+        "wsNewReviewDateInt",
+        "wsNewReviewYyyymmdd",
+        "wsOverdraftConversion",
+        "wsReviewDateAdd",
+        "wsSqlcodeDisplay",
+        "wsTodayInt",
+        "wsWeekday",
+        "wsWeekdays"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "c5c46d89392adfb5618902ffaa1ab02920765cdb96e2b6516caa156b2c56a6b5"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/BnkmenuAbndinfoRec.java": {
+      "calls": [],
+      "classes": [
+        "BnkmenuAbndinfoRec"
+      ],
+      "endpoints": [],
+      "fields": [
+        "communicationArea",
+        "endOfSessionMessage",
+        "sysId",
+        "validDataSw",
+        "wsAbendPgm",
+        "wsCicsFailMsg",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsCicsResp2Disp",
+        "wsCicsRespDisp",
+        "wsOrigDate",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "3c8fe850612961ab92b1c0691bbdca49026496e84670d66755e65fc3b1cdde22"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/Crdtagy1AbndinfoRec.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy1AbndinfoRec"
+      ],
+      "endpoints": [],
+      "fields": [
+        "sysId",
+        "wsAbendPgm",
+        "wsChannelName",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsContInBirthDay",
+        "wsContInBirthMonth",
+        "wsContInBirthYear",
+        "wsContInCreditScore",
+        "wsContInNumber",
+        "wsContInSortcode",
+        "wsContainerLen",
+        "wsContainerName",
+        "wsDelayAmt",
+        "wsNewCredscore",
+        "wsOrigDate",
+        "wsSeed",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "443a355022912a0bc9d0f76e13ebc722f4a07f73372f8357f93a67b5bc664215"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/Crdtagy2AbndinfoRec.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy2AbndinfoRec"
+      ],
+      "endpoints": [],
+      "fields": [
+        "sysId",
+        "wsAbendPgm",
+        "wsChannelName",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsContInBirthDay",
+        "wsContInBirthMonth",
+        "wsContInBirthYear",
+        "wsContInCreditScore",
+        "wsContInNumber",
+        "wsContInSortcode",
+        "wsContainerLen",
+        "wsContainerName",
+        "wsDelayAmt",
+        "wsNewCredscore",
+        "wsOrigDate",
+        "wsSeed",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "9cf2d9ef36401dbec6da017f38fecfa0907a22f977c7fb6270b416b61f765add"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/Crdtagy3AbndinfoRec.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy3AbndinfoRec"
+      ],
+      "endpoints": [],
+      "fields": [
+        "sysId",
+        "wsAbendPgm",
+        "wsChannelName",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsContInBirthDay",
+        "wsContInBirthMonth",
+        "wsContInBirthYear",
+        "wsContInCreditScore",
+        "wsContInNumber",
+        "wsContInSortcode",
+        "wsContainerLen",
+        "wsContainerName",
+        "wsDelayAmt",
+        "wsNewCredscore",
+        "wsOrigDate",
+        "wsSeed",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "bb883e0ca4f6e28e37e5dcb543589082faaed48945c01349e62a6627978c948d"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/Crdtagy4AbndinfoRec.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy4AbndinfoRec"
+      ],
+      "endpoints": [],
+      "fields": [
+        "sysId",
+        "wsAbendPgm",
+        "wsChannelName",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsContInBirthDay",
+        "wsContInBirthMonth",
+        "wsContInBirthYear",
+        "wsContInCreditScore",
+        "wsContInNumber",
+        "wsContInSortcode",
+        "wsContainerLen",
+        "wsContainerName",
+        "wsDelayAmt",
+        "wsNewCredscore",
+        "wsOrigDate",
+        "wsSeed",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "917d31df9f1c45f036540143a364eba7640ba0c04eb5778c7486ad074816eb6f"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/Crdtagy5AbndinfoRec.java": {
+      "calls": [],
+      "classes": [
+        "Crdtagy5AbndinfoRec"
+      ],
+      "endpoints": [],
+      "fields": [
+        "sysId",
+        "wsAbendPgm",
+        "wsChannelName",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsContInBirthDay",
+        "wsContInBirthMonth",
+        "wsContInBirthYear",
+        "wsContInCreditScore",
+        "wsContInNumber",
+        "wsContInSortcode",
+        "wsContainerLen",
+        "wsContainerName",
+        "wsDelayAmt",
+        "wsNewCredscore",
+        "wsOrigDate",
+        "wsSeed",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "341991b7c978d2e9fd08aadf85669e42fd40375206360f4001802ce715854c35"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/DelaccAbndinfoRec.java": {
+      "calls": [],
+      "classes": [
+        "DelaccAbndinfoRec"
+      ],
+      "endpoints": [],
+      "fields": [
+        "accountActBalStore",
+        "db2DateRefDay",
+        "db2DateRefMnth",
+        "db2DateRefYr",
+        "hvAccountAccNo",
+        "hvAccountAccType",
+        "hvAccountActualBal",
+        "hvAccountAvailBal",
+        "hvAccountCustNo",
+        "hvAccountEyecatcher",
+        "hvAccountIntRate",
+        "hvAccountLastStmt",
+        "hvAccountNextStmt",
+        "hvAccountOpened",
+        "hvAccountOverdraftLim",
+        "hvAccountSortcode",
+        "hvProctranAccNumber",
+        "hvProctranAmount",
+        "hvProctranDate",
+        "hvProctranDesc",
+        "hvProctranEyecatcher",
+        "hvProctranRef",
+        "hvProctranSortCode",
+        "hvProctranTime",
+        "hvProctranType",
+        "requiredSortCode",
+        "returnedNumber",
+        "returnedSortCode",
+        "sqlcodeDisplay",
+        "sysId",
+        "wsAbendPgm",
+        "wsEibtaskn12",
+        "wsOrigDate",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "3761a6a748ad4c99bb3954cab6362d4181e4ba68df3060029ca54ebb4e814b3c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/InqaccAbndinfoRec.java": {
+      "calls": [],
+      "classes": [
+        "InqaccAbndinfoRec"
+      ],
+      "endpoints": [],
+      "fields": [
+        "db2DateRefDay",
+        "db2DateRefMnth",
+        "db2DateRefYr",
+        "hvAccountAccNo",
+        "hvAccountAccType",
+        "hvAccountActualBal",
+        "hvAccountAvailBal",
+        "hvAccountCustNo",
+        "hvAccountEyecatcher",
+        "hvAccountIntRate",
+        "hvAccountLastStmt",
+        "hvAccountNextStmt",
+        "hvAccountOpened",
+        "hvAccountOverdraftLim",
+        "hvAccountSortcode",
+        "myAbendCode",
+        "ncsAccNoActName",
+        "ncsAccNoFill",
+        "ncsAccNoTestSort",
+        "ncsAccNoValue",
+        "requiredAccNumber2",
+        "requiredSortCode",
+        "returnedNumber",
+        "returnedSortCode",
+        "sqlcodeDisplay",
+        "stormDrainCondition",
+        "sysId",
+        "wsAbendPgm",
+        "wsCicsResp",
+        "wsCicsResp2",
+        "wsOrigDate",
+        "wsStormDrain",
+        "wsTimeNow",
+        "wsTimeNowGrpHh",
+        "wsTimeNowGrpMm",
+        "wsTimeNowGrpSs",
+        "wsUTime"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "bfa63ff1efd6f68427b70caa0b8ff359401151e32001e6eca05af2181786f0a8"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/vsam/CobolRecords.java": {
+      "calls": [],
+      "classes": [
+        "CobolRecords"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "data",
+      "methods": [
+        "CobolRecords",
+        "binary",
+        "blank",
+        "decimal",
+        "packed",
+        "putBinary",
+        "putPacked",
+        "putText",
+        "putZoned",
+        "text",
+        "toInteger",
+        "toLong",
+        "zoned"
+      ],
+      "program": null,
+      "sha256": "c17fecbda436dc40d85c1621789b46ae0feaa28023ff85a5bfb46990b895811c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/vsam/OutputData.java": {
+      "calls": [],
+      "classes": [
+        "OutputData"
+      ],
+      "endpoints": [],
+      "fields": [
+        "customerAddress",
+        "customerCreditScore",
+        "customerCsReviewDate",
+        "customerDateOfBirth",
+        "customerEyecatcher",
+        "customerName",
+        "id"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromRecord",
+        "toRecord"
+      ],
+      "program": null,
+      "sha256": "a4812a208c96ae9c991e458b21635d1cbace2f20cabd5bc87df5070e1a2d20c1"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/vsam/OutputDataKey.java": {
+      "calls": [],
+      "classes": [
+        "OutputDataKey"
+      ],
+      "endpoints": [],
+      "fields": [
+        "customerNumber",
+        "customerSortcode"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "fb0fd617cc7a59d07e139349fd4e127dcb9c2d19e1b0ee8b54bac66f0cfcee24"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/vsam/WsAbndArea.java": {
+      "calls": [],
+      "classes": [
+        "WsAbndArea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndApplid",
+        "abndCode",
+        "abndDate",
+        "abndFreeform",
+        "abndProgram",
+        "abndResp2Code",
+        "abndRespcode",
+        "abndSqlcode",
+        "abndTime",
+        "abndTranid",
+        "id"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromRecord",
+        "toRecord"
+      ],
+      "program": null,
+      "sha256": "180524987f2fdc886d98c10bef155148fef86a8d12be57eecba5491982a287ef"
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/vsam/WsAbndAreaKey.java": {
+      "calls": [],
+      "classes": [
+        "WsAbndAreaKey"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndTasknoKey",
+        "abndUtimeKey"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "31d8382abfe95af9eeae4e7e0a4c0a5d53b9cf935dfcc17fc54584dc882514f6"
+    },
+    "src/main/java/com/gitgalaxy/modernized/exception/CicsAbendException.java": {
+      "calls": [],
+      "classes": [
+        "CicsAbendException"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abcode",
+        "program",
+        "site"
+      ],
+      "kind": "other",
+      "methods": [
+        "CicsAbendException",
+        "getAbcode",
+        "getProgram",
+        "getSite"
+      ],
+      "program": null,
+      "sha256": "7a4b43c853981a4a14f34e31430f86f8ae559fa94826baebb78ccad3aada5ab5"
+    },
+    "src/main/java/com/gitgalaxy/modernized/exception/CicsConditionException.java": {
+      "calls": [],
+      "classes": [
+        "CicsConditionException"
+      ],
+      "endpoints": [],
+      "fields": [
+        "condition",
+        "program",
+        "site"
+      ],
+      "kind": "other",
+      "methods": [
+        "CicsConditionException",
+        "getCondition",
+        "getProgram",
+        "getSite"
+      ],
+      "program": null,
+      "sha256": "4681ba93a21c503978ec2fa20d11e478940bea1b3f2c14ce370b1bbadef2b079"
+    },
+    "src/main/java/com/gitgalaxy/modernized/exception/UnitOfWorkRollbackException.java": {
+      "calls": [],
+      "classes": [
+        "UnitOfWorkRollbackException"
+      ],
+      "endpoints": [],
+      "fields": [
+        "program",
+        "site"
+      ],
+      "kind": "other",
+      "methods": [
+        "UnitOfWorkRollbackException",
+        "getProgram",
+        "getSite"
+      ],
+      "program": null,
+      "sha256": "6627df9c7f31a53445901ed03f40f50663d1ae5e8d1c871ea5b5b5d35c92ed86"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java": {
+      "calls": [],
+      "classes": [
+        "AccountRepository"
+      ],
+      "endpoints": [],
+      "fields": [
+        "jdbc"
+      ],
+      "kind": "repository",
+      "methods": [
+        "AccountRepository",
+        "cursorAccCursorL66Inqacc",
+        "cursorAccCursorL74Inqacccu",
+        "deleteL1192Bankdata",
+        "deleteL438Delacc",
+        "insertL808Bankdata",
+        "insertL826Creacc",
+        "selectL1057Xfrfun",
+        "selectL165Acctctrl",
+        "selectL191Updacc",
+        "selectL245Dbcrfun",
+        "selectL248Delacc",
+        "selectL843Inqacc",
+        "selectL930Xfrfun",
+        "updateL1362Xfrfun",
+        "updateL278Updacc",
+        "updateL392Dbcrfun",
+        "updateL992Xfrfun"
+      ],
+      "program": null,
+      "sha256": "f092a0cef10107e4ea36b1044e5ecb593e5f66145deab7cd3d4d4fbcc2c95320"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java": {
+      "calls": [],
+      "classes": [
+        "ControlRepository"
+      ],
+      "endpoints": [],
+      "fields": [
+        "jdbc"
+      ],
+      "kind": "repository",
+      "methods": [
+        "ControlRepository",
+        "deleteL1256Bankdata",
+        "deleteL1322Bankdata",
+        "insertL613Bankdata",
+        "insertL642Bankdata",
+        "selectL444Creacc",
+        "selectL611Creacc",
+        "updateL529Creacc",
+        "updateL694Creacc"
+      ],
+      "program": null,
+      "sha256": "07f98fbf3457d17111e10663b9cecb580af546e028269a842e5acb50f7946768"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java": {
+      "calls": [],
+      "classes": [
+        "ProctranRepository"
+      ],
+      "endpoints": [],
+      "fields": [
+        "jdbc"
+      ],
+      "kind": "repository",
+      "methods": [
+        "ProctranRepository",
+        "insertL1168Crecust",
+        "insertL1616Xfrfun",
+        "insertL521Delacc",
+        "insertL524Dbcrfun",
+        "insertL636Delcus",
+        "insertL969Creacc"
+      ],
+      "program": null,
+      "sha256": "8ff0c3cd3e7a08581b4d6d1265777291207835a567b3b7d790b56e4861c04da1"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/vsam/OutputDataRepository.java": {
+      "calls": [
+        "JpaRepository"
+      ],
+      "classes": [
+        "OutputDataRepository"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "repository",
+      "methods": [],
+      "program": null,
+      "sha256": "bac46e52a78991d8300678006697751942a0b2078f8318248749a190c2366cd8"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/vsam/WsAbndAreaRepository.java": {
+      "calls": [
+        "JpaRepository"
+      ],
+      "classes": [
+        "WsAbndAreaRepository"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "repository",
+      "methods": [],
+      "program": null,
+      "sha256": "d22bb18a7b3c017248b7fa7048aeeadd07ad2063096c0b3ae09a87d4ae87c025"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/AbndprocService.java": {
+      "calls": [
+        "WsAbndAreaRepository"
+      ],
+      "classes": [
+        "AbndprocService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "wsAbndAreaRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeAbndproc",
+        "handleLink",
+        "writeAbndfile"
+      ],
+      "program": "src/base/cobol_src/ABNDPROC.cbl",
+      "sha256": "3d2142ba90b5820814e403014eaaf66cd2785db69fdb8bac9a39526e2439ad53"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/AcctctrlService.java": {
+      "calls": [
+        "AccountRepository"
+      ],
+      "classes": [
+        "AcctctrlService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "accountRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeAcctctrl"
+      ],
+      "program": "src/base/cobol_src/ACCTCTRL.cbl",
+      "sha256": "d65f0334d51acd48a17537f4fdf231926ebf84f85ca88d1c0704d25ad11587ae"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/BankdataService.java": {
+      "calls": [
+        "AccountRepository",
+        "ControlRepository"
+      ],
+      "classes": [
+        "BankdataService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "accountRepository",
+        "controlRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "commitPointL1375",
+        "commitPointL581",
+        "commitPointL706",
+        "executeBankdata",
+        "runBatch"
+      ],
+      "program": "src/base/cobol_src/BANKDATA.cbl",
+      "sha256": "e37a1c41e90faf0014f209798c0f9215dc20c1bd92e22e57a2e98a73e3276108"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Bnk1cacService.java": {
+      "calls": [
+        "AbndprocService",
+        "CreaccService"
+      ],
+      "classes": [
+        "Bnk1cacService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "creaccService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHbnkL1274",
+        "dispatchWsAbendPgmL1026",
+        "dispatchWsAbendPgmL1102",
+        "dispatchWsAbendPgmL1179",
+        "dispatchWsAbendPgmL1257",
+        "dispatchWsAbendPgmL309",
+        "dispatchWsAbendPgmL416",
+        "dispatchWsAbendPgmL834",
+        "executeBnk1cac",
+        "handleTransaction",
+        "linkCreacc",
+        "renderBnk1ca",
+        "submitBnk1ca"
+      ],
+      "program": "src/base/cobol_src/BNK1CAC.cbl",
+      "sha256": "a7c5c71cebae51bc2889b89eba1b60ae055bb91cf13d4de56d4820d0d13b30af"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java": {
+      "calls": [
+        "AbndprocService",
+        "InqacccuService"
+      ],
+      "classes": [
+        "Bnk1ccaService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "inqacccuService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHbnkL928",
+        "dispatchInqacccuProgramL435",
+        "dispatchWsAbendPgmL280",
+        "dispatchWsAbendPgmL389",
+        "dispatchWsAbendPgmL490",
+        "dispatchWsAbendPgmL677",
+        "dispatchWsAbendPgmL752",
+        "dispatchWsAbendPgmL830",
+        "dispatchWsAbendPgmL909",
+        "executeBnk1cca",
+        "handleTransaction",
+        "renderBnk1acc",
+        "submitBnk1acc"
+      ],
+      "program": "src/base/cobol_src/BNK1CCA.cbl",
+      "sha256": "804d5f9b2ebeea19a07893ebfb9837635ebf058a90c1a58eedd12b9c01404acc"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java": {
+      "calls": [
+        "AbndprocService",
+        "CrecustService"
+      ],
+      "classes": [
+        "Bnk1ccsService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "crecustService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHbnkL1613",
+        "abendWsabcodeL1652",
+        "dispatchWsAbendPgmL1031",
+        "dispatchWsAbendPgmL1181",
+        "dispatchWsAbendPgmL1264",
+        "dispatchWsAbendPgmL1342",
+        "dispatchWsAbendPgmL1420",
+        "dispatchWsAbendPgmL1498",
+        "dispatchWsAbendPgmL1578",
+        "dispatchWsAbendPgmL331",
+        "dispatchWsAbendPgmL462",
+        "dispatchWsAbendPgmL557",
+        "executeBnk1ccs",
+        "handleTransaction",
+        "linkCrecust",
+        "onAbendL161",
+        "onAbendL1649",
+        "renderBnk1cc",
+        "submitBnk1cc"
+      ],
+      "program": "src/base/cobol_src/BNK1CCS.cbl",
+      "sha256": "162719671037eaf3357b3aef99a3780aad57e358b43c4028ab298989fbd516bc"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java": {
+      "calls": [
+        "AbndprocService",
+        "DbcrfunService"
+      ],
+      "classes": [
+        "Bnk1craService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "dbcrfunService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHbnkL950",
+        "dispatchWsAbendPgmL318",
+        "dispatchWsAbendPgmL425",
+        "dispatchWsAbendPgmL566",
+        "dispatchWsAbendPgmL704",
+        "dispatchWsAbendPgmL778",
+        "dispatchWsAbendPgmL853",
+        "dispatchWsAbendPgmL931",
+        "executeBnk1cra",
+        "handleTransaction",
+        "linkDbcrfun",
+        "renderBnk1cd",
+        "submitBnk1cd"
+      ],
+      "program": "src/base/cobol_src/BNK1CRA.cbl",
+      "sha256": "a1b25dc81e0121392589c17f126ad4bab0e441e794eac8e450661687b6f152c3"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java": {
+      "calls": [
+        "AbndprocService",
+        "DelaccService",
+        "InqaccService"
+      ],
+      "classes": [
+        "Bnk1dacService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "delaccService",
+        "inqaccService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHbnkL1133",
+        "dispatchWsAbendPgmL1036",
+        "dispatchWsAbendPgmL1115",
+        "dispatchWsAbendPgmL350",
+        "dispatchWsAbendPgmL481",
+        "dispatchWsAbendPgmL608",
+        "dispatchWsAbendPgmL882",
+        "dispatchWsAbendPgmL961",
+        "executeBnk1dac",
+        "handleTransaction",
+        "linkDelacc",
+        "linkInqacc",
+        "renderBnk1da",
+        "submitBnk1da"
+      ],
+      "program": "src/base/cobol_src/BNK1DAC.cbl",
+      "sha256": "0b2d024249c0d79b159e6913620b3e18aee4d6c2a03f8ebe95fb12c2048772ce"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java": {
+      "calls": [
+        "AbndprocService",
+        "DelcusService",
+        "InqcustService",
+        "UpdcustService"
+      ],
+      "classes": [
+        "Bnk1dcsService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "delcusService",
+        "inqcustService",
+        "updcustService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHbnkL1911",
+        "dispatchWsAbendPgmL1024",
+        "dispatchWsAbendPgmL1210",
+        "dispatchWsAbendPgmL1466",
+        "dispatchWsAbendPgmL1543",
+        "dispatchWsAbendPgmL1621",
+        "dispatchWsAbendPgmL1723",
+        "dispatchWsAbendPgmL1807",
+        "dispatchWsAbendPgmL1888",
+        "dispatchWsAbendPgmL381",
+        "dispatchWsAbendPgmL579",
+        "dispatchWsAbendPgmL654",
+        "dispatchWsAbendPgmL888",
+        "executeBnk1dcs",
+        "handleTransaction",
+        "linkDelcus",
+        "linkInqcust",
+        "linkUpdcust",
+        "onAbendL195",
+        "onAbendL2045",
+        "renderBnk1dc",
+        "submitBnk1dc"
+      ],
+      "program": "src/base/cobol_src/BNK1DCS.cbl",
+      "sha256": "6a5843f4a1eb6ec264e67f50c856e1dd5b6562e17fe8ce3a976bbe889c7f3d2c"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java": {
+      "calls": [
+        "AbndprocService",
+        "XfrfunService"
+      ],
+      "classes": [
+        "Bnk1tfnService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "xfrfunService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHbnkL976",
+        "dispatchWsAbendPgmL302",
+        "dispatchWsAbendPgmL411",
+        "dispatchWsAbendPgmL551",
+        "dispatchWsAbendPgmL727",
+        "dispatchWsAbendPgmL801",
+        "dispatchWsAbendPgmL876",
+        "dispatchWsAbendPgmL954",
+        "executeBnk1tfn",
+        "handleTransaction",
+        "linkXfrfun",
+        "renderBnk1tf",
+        "submitBnk1tf"
+      ],
+      "program": "src/base/cobol_src/BNK1TFN.cbl",
+      "sha256": "f073f0323f962b2d2a557b984eb28c899346acd7cd02555936daaf5dca3be7ce"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java": {
+      "calls": [
+        "AbndprocService",
+        "InqaccService",
+        "UpdaccService"
+      ],
+      "classes": [
+        "Bnk1uacService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "inqaccService",
+        "updaccService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHbnkL1381",
+        "dispatchWsAbendPgmL1009",
+        "dispatchWsAbendPgmL1130",
+        "dispatchWsAbendPgmL1206",
+        "dispatchWsAbendPgmL1282",
+        "dispatchWsAbendPgmL1361",
+        "dispatchWsAbendPgmL350",
+        "dispatchWsAbendPgmL474",
+        "dispatchWsAbendPgmL822",
+        "executeBnk1uac",
+        "handleTransaction",
+        "linkInqacc",
+        "linkUpdacc",
+        "renderBnk1ua",
+        "submitBnk1ua"
+      ],
+      "program": "src/base/cobol_src/BNK1UAC.cbl",
+      "sha256": "2e1ca18ef25bca7d0dceed58c30976254136ffefede605d76619172d751db7cf"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java": {
+      "calls": [
+        "AbndprocService"
+      ],
+      "classes": [
+        "BnkmenuService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHbnkL1286",
+        "dispatchWsAbendPgmL1034",
+        "dispatchWsAbendPgmL1109",
+        "dispatchWsAbendPgmL1186",
+        "dispatchWsAbendPgmL1265",
+        "dispatchWsAbendPgmL225",
+        "dispatchWsAbendPgmL337",
+        "dispatchWsAbendPgmL441",
+        "dispatchWsAbendPgmL513",
+        "dispatchWsAbendPgmL586",
+        "dispatchWsAbendPgmL659",
+        "dispatchWsAbendPgmL732",
+        "dispatchWsAbendPgmL805",
+        "dispatchWsAbendPgmL878",
+        "dispatchWsAbendPgmL952",
+        "executeBnkmenu",
+        "handleTransaction",
+        "renderBnk1me",
+        "submitBnk1me"
+      ],
+      "program": "src/base/cobol_src/BNKMENU.cbl",
+      "sha256": "38207ba71a06be0a07b423bc23d15039237e6f0ce37202c799eb5f5010ef7523"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java": {
+      "calls": [
+        "AbndprocService"
+      ],
+      "classes": [
+        "Crdtagy1Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendPlopL185",
+        "dispatchWsAbendPgmL180",
+        "executeCrdtagy1",
+        "handleTransaction"
+      ],
+      "program": "src/base/cobol_src/CRDTAGY1.cbl",
+      "sha256": "ef4b077385164c3ce3156aafe12128cd02984c861de2b6931d18a048c8f5022e"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java": {
+      "calls": [
+        "AbndprocService"
+      ],
+      "classes": [
+        "Crdtagy2Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendPlopL185",
+        "dispatchWsAbendPgmL179",
+        "executeCrdtagy2",
+        "handleTransaction"
+      ],
+      "program": "src/base/cobol_src/CRDTAGY2.cbl",
+      "sha256": "9c199dadb74c0b41007e96360911e124ebc45d80724ffe660b32cf69c85f358b"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java": {
+      "calls": [
+        "AbndprocService"
+      ],
+      "classes": [
+        "Crdtagy3Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendPlopL184",
+        "dispatchWsAbendPgmL179",
+        "executeCrdtagy3",
+        "handleTransaction"
+      ],
+      "program": "src/base/cobol_src/CRDTAGY3.cbl",
+      "sha256": "fd15ff0e276ce77171dccc6de316210f50c54113e17102f326f36ff7eb4d2927"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java": {
+      "calls": [
+        "AbndprocService"
+      ],
+      "classes": [
+        "Crdtagy4Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendPlopL186",
+        "dispatchWsAbendPgmL180",
+        "executeCrdtagy4",
+        "handleTransaction"
+      ],
+      "program": "src/base/cobol_src/CRDTAGY4.cbl",
+      "sha256": "7734733130b527794326d9cf891e1b25dc8aa4213e3a03cbc011996de8fdea40"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java": {
+      "calls": [
+        "AbndprocService"
+      ],
+      "classes": [
+        "Crdtagy5Service"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendPlopL185",
+        "dispatchWsAbendPgmL179",
+        "executeCrdtagy5",
+        "handleTransaction"
+      ],
+      "program": "src/base/cobol_src/CRDTAGY5.cbl",
+      "sha256": "67258840571b4e1d73760bdd63162ecb6083be050f0e75991b3ffe6322888870"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/CreaccService.java": {
+      "calls": [
+        "AbndprocService",
+        "AccountRepository",
+        "ControlRepository",
+        "InqacccuService",
+        "InqcustService",
+        "ProctranRepository"
+      ],
+      "classes": [
+        "CreaccService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "accountRepository",
+        "controlRepository",
+        "inqacccuService",
+        "inqcustService",
+        "proctranRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHncsL517",
+        "abendHncsL595",
+        "abendHncsL683",
+        "abendHncsL760",
+        "abendHwptL1059",
+        "dispatchWsAbendPgmL1055",
+        "dispatchWsAbendPgmL508",
+        "dispatchWsAbendPgmL586",
+        "dispatchWsAbendPgmL674",
+        "dispatchWsAbendPgmL751",
+        "executeCreacc",
+        "handleLink",
+        "linkInqacccu",
+        "linkInqcust"
+      ],
+      "program": "src/base/cobol_src/CREACC.cbl",
+      "sha256": "2f74998bd34fc0b7f6dff4ee298543c49ffecfa9d8df629c5a33d7c6508323b8"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/CrecustService.java": {
+      "calls": [
+        "AbndprocService",
+        "OutputDataRepository",
+        "ProctranRepository"
+      ],
+      "classes": [
+        "CrecustService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "outputDataRepository",
+        "proctranRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHwptL1262",
+        "dispatchWsAbendPgmL1250",
+        "executeCrecust",
+        "handleLink",
+        "readCustomer",
+        "rewriteCustomer",
+        "writeCustomer"
+      ],
+      "program": "src/base/cobol_src/CRECUST.cbl",
+      "sha256": "1e8dff07afa89fe181d0084f25cd029727000936f5cbca9a783dd9f558a04cd9"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/CustctrlService.java": {
+      "calls": [
+        "OutputDataRepository"
+      ],
+      "classes": [
+        "CustctrlService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "outputDataRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeCustctrl",
+        "handleLink",
+        "readCustomer"
+      ],
+      "program": "src/base/cobol_src/CUSTCTRL.cbl",
+      "sha256": "134013fdcf3f64faa596cc08a493e16b6a453f98c006617365f4ad013dcd8552"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/DbcrfunService.java": {
+      "calls": [
+        "AbndprocService",
+        "AccountRepository",
+        "ProctranRepository"
+      ],
+      "classes": [
+        "DbcrfunService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "accountRepository",
+        "proctranRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHrolL630",
+        "abendHrolL818",
+        "abendMyabendcodeL834",
+        "dispatchWsAbendPgmL620",
+        "dispatchWsAbendPgmL807",
+        "executeDbcrfun",
+        "handleLink",
+        "onAbendL207",
+        "rollbackL564",
+        "rollbackL750"
+      ],
+      "program": "src/base/cobol_src/DBCRFUN.cbl",
+      "sha256": "571309f557884c81cbdd53209cd4f5871736cd7eb5069f34d409bec4a4f97de2"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/DelaccService.java": {
+      "calls": [
+        "AbndprocService",
+        "AccountRepository",
+        "ProctranRepository"
+      ],
+      "classes": [
+        "DelaccService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "accountRepository",
+        "proctranRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHracL339",
+        "abendHwptL612",
+        "dispatchWsAbendPgmL603",
+        "executeDelacc",
+        "handleLink"
+      ],
+      "program": "src/base/cobol_src/DELACC.cbl",
+      "sha256": "748be588b2e3096779fc4724684fa7c6f9009b5d07a081218984a595472abcc2"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/DelcusService.java": {
+      "calls": [
+        "AbndprocService",
+        "DelaccService",
+        "InqacccuService",
+        "InqcustService",
+        "OutputDataRepository",
+        "ProctranRepository"
+      ],
+      "classes": [
+        "DelcusService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "delaccService",
+        "inqacccuService",
+        "inqcustService",
+        "outputDataRepository",
+        "proctranRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHwptL726",
+        "abendWpv6L448",
+        "abendWpv7L574",
+        "deleteCustomer",
+        "dispatchInqcustProgramL260",
+        "dispatchWsAbendPgmL439",
+        "dispatchWsAbendPgmL565",
+        "dispatchWsAbendPgmL717",
+        "executeDelcus",
+        "handleLink",
+        "linkDelacc",
+        "linkInqacccu",
+        "readCustomer"
+      ],
+      "program": "src/base/cobol_src/DELCUS.cbl",
+      "sha256": "2dac943adc728da408c0d52604edd660cc7cb953913f7b24bae8bb1a340bab58"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/GetcompyService.java": {
+      "calls": [],
+      "classes": [
+        "GetcompyService"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "service",
+      "methods": [
+        "executeGetcompy",
+        "handleLink"
+      ],
+      "program": "src/base/cobol_src/GETCOMPY.cbl",
+      "sha256": "4d04249c3bc424c377a12e18a53fc5ae9bb330c794ac47cf2cf73015961c88a3"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/GetscodeService.java": {
+      "calls": [],
+      "classes": [
+        "GetscodeService"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "service",
+      "methods": [
+        "executeGetscode",
+        "handleLink"
+      ],
+      "program": "src/base/cobol_src/GETSCODE.cbl",
+      "sha256": "8d4d8daa92e803f5d31d9c317a49c7a84afc830eb55e58beeced55b5fe1ffe91"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/InqaccService.java": {
+      "calls": [
+        "AbndprocService",
+        "AccountRepository"
+      ],
+      "classes": [
+        "InqaccService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "accountRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHncsL932",
+        "abendHracL335",
+        "abendHracL415",
+        "abendHracL524",
+        "abendHrolL748",
+        "abendMyabendcodeL814",
+        "dispatchWsAbendPgmL321",
+        "dispatchWsAbendPgmL401",
+        "dispatchWsAbendPgmL516",
+        "dispatchWsAbendPgmL738",
+        "dispatchWsAbendPgmL810",
+        "dispatchWsAbendPgmL924",
+        "executeInqacc",
+        "handleLink",
+        "onAbendL210",
+        "rollbackL682"
+      ],
+      "program": "src/base/cobol_src/INQACC.cbl",
+      "sha256": "c715f1850f1f913860514489667b95a5f4310882ce2b0339a7ea1ef876c22b91"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/InqacccuService.java": {
+      "calls": [
+        "AbndprocService",
+        "AccountRepository",
+        "InqcustService"
+      ],
+      "classes": [
+        "InqacccuService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "accountRepository",
+        "inqcustService"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendHrolL331",
+        "abendHrolL439",
+        "abendHrolL573",
+        "abendHrolL803",
+        "abendMyabendcodeL818",
+        "dispatchWsAbendPgmL321",
+        "dispatchWsAbendPgmL424",
+        "dispatchWsAbendPgmL563",
+        "dispatchWsAbendPgmL794",
+        "executeInqacccu",
+        "handleLink",
+        "linkInqcust",
+        "onAbendL199",
+        "rollbackL266",
+        "rollbackL368",
+        "rollbackL507",
+        "rollbackL738"
+      ],
+      "program": "src/base/cobol_src/INQACCCU.cbl",
+      "sha256": "68311c4d1c3d23e2a70636aff98a80c44d39b402f555a6c4e669adc17a4b98ea"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/InqcustService.java": {
+      "calls": [
+        "AbndprocService",
+        "OutputDataRepository"
+      ],
+      "classes": [
+        "InqcustService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "outputDataRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendCvr1L418",
+        "abendHrolL537",
+        "abendMyabendcodeL554",
+        "dispatchWsAbendPgmL406",
+        "dispatchWsAbendPgmL528",
+        "executeInqcust",
+        "handleLink",
+        "onAbendL171",
+        "readCustomer",
+        "rollbackL472"
+      ],
+      "program": "src/base/cobol_src/INQCUST.cbl",
+      "sha256": "49494be212957b7fb897fc0c80a858d944bc61c3841299d68ac7a9ee3c2ffb5e"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/UpdaccService.java": {
+      "calls": [
+        "AccountRepository"
+      ],
+      "classes": [
+        "UpdaccService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "accountRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeUpdacc",
+        "handleLink"
+      ],
+      "program": "src/base/cobol_src/UPDACC.cbl",
+      "sha256": "9ea076da0c9b3c231ab25402ead9dd008fd5d22adc1951374b254e557fe19974"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/UpdcustService.java": {
+      "calls": [
+        "OutputDataRepository"
+      ],
+      "classes": [
+        "UpdcustService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "outputDataRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "executeUpdcust",
+        "handleLink",
+        "readCustomer",
+        "rewriteCustomer"
+      ],
+      "program": "src/base/cobol_src/UPDCUST.cbl",
+      "sha256": "778595b8e18928fd63160e275422c4449cb16c2b00e351648312664c5a945043"
+    },
+    "src/main/java/com/gitgalaxy/modernized/service/XfrfunService.java": {
+      "calls": [
+        "AbndprocService",
+        "AccountRepository",
+        "ProctranRepository"
+      ],
+      "classes": [
+        "XfrfunService"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abndprocService",
+        "accountRepository",
+        "proctranRepository"
+      ],
+      "kind": "service",
+      "methods": [
+        "abendFromL579",
+        "abendFromL669",
+        "abendHrolL1174",
+        "abendHrolL1271",
+        "abendHrolL1468",
+        "abendHrolL1882",
+        "abendHrolL472",
+        "abendHrolL519",
+        "abendHrolL747",
+        "abendHrolL890",
+        "abendMyabendcodeL1899",
+        "abendRuf2L1345",
+        "abendRuf3L1545",
+        "abendSameL370",
+        "abendToL488",
+        "abendToL819",
+        "abendWpcdL1716",
+        "dispatchWsAbendPgmL1165",
+        "dispatchWsAbendPgmL1262",
+        "dispatchWsAbendPgmL1341",
+        "dispatchWsAbendPgmL1459",
+        "dispatchWsAbendPgmL1541",
+        "dispatchWsAbendPgmL1701",
+        "dispatchWsAbendPgmL1873",
+        "dispatchWsAbendPgmL364",
+        "dispatchWsAbendPgmL463",
+        "dispatchWsAbendPgmL573",
+        "dispatchWsAbendPgmL664",
+        "dispatchWsAbendPgmL737",
+        "dispatchWsAbendPgmL813",
+        "dispatchWsAbendPgmL881",
+        "executeXfrfun",
+        "handleLink",
+        "onAbendL272",
+        "rollbackL1111",
+        "rollbackL1204",
+        "rollbackL1403",
+        "rollbackL1815",
+        "rollbackL407",
+        "rollbackL503",
+        "rollbackL679",
+        "rollbackL826"
+      ],
+      "program": "src/base/cobol_src/XFRFUN.cbl",
+      "sha256": "f7ce260a4d12253bf3a7d3ed5feff6f1723ce18bad20e35f397cfe4f26d4d6a4"
+    },
+    "src/main/java/com/gitgalaxy/modernized/util/EbcdicDecoderUtil.java": {
+      "calls": [],
+      "classes": [
+        "EbcdicDecoderUtil"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [
+        "decodeEbcdicString",
+        "unpackComp3"
+      ],
+      "program": null,
+      "sha256": "f9bf62f55bcca4c66115180c88d95b12a1b1f998daae76d21b558f30c1447c81"
+    },
+    "src/main/java/com/gitgalaxy/modernized/web/CicsExceptionAdvice.java": {
+      "calls": [],
+      "classes": [
+        "CicsExceptionAdvice"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [
+        "handleAbend",
+        "handleCondition",
+        "handleRollback"
+      ],
+      "program": null,
+      "sha256": "04f56d60cc4077d1db88e11c4c7702544bcab34b2f8ad55a754acf6331207ce6"
+    }
+  },
+  "generated_from": {
+    "clean_room": "cics-banking-sample-application-cbsa_gitgalaxy_clean_TIMESTAMP"
+  },
+  "tables": [
+    "ACCOUNT",
+    "CONTROL",
+    "PROCTRAN"
+  ],
+  "version": 1
+}

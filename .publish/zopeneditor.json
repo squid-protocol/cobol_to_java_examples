@@ -1,0 +1,120 @@
+{
+  "slug": "zopeneditor",
+  "corpus": {
+    "name": "zopeneditor-sample",
+    "url": "https://github.com/IBM/zopeneditor-sample",
+    "branch": "main",
+    "ref": "8f9835308de6159eb54f226041d5f81a780cb8eb",
+    "license": "Apache-2.0",
+    "languages": [
+      "cobol",
+      "jcl",
+      "pli",
+      "rexx",
+      "hlasm"
+    ],
+    "answer_key": "tests/cobol_mainframe/answer_key/zopeneditor-sample.json",
+    "notes": "Batch COBOL with zapp.yaml copybook libraries, and the same-name COBOL/SAM2 + multiroot/sam/SAM2 layout (#3218). No .bms maps.",
+    "excerpt": {
+      "why": "Every program with its copybooks (both zapp.yaml libraries) and the one JCL that EXECs one: the #3218 same-name COBOL/SAM2 + multiroot/sam/SAM2 layout. Plus every PL/I program (#3250): DECLAREd structures (BASED, DEFINED, PIC, INIT) and the MACSAMP preprocessor sample.",
+      "files": [
+        "COBOL/SAM1.cbl",
+        "COBOL/SAM1LIB.cbl",
+        "COBOL/SAM2.cbl",
+        "COPYBOOK/CUSTCOPY.cpy",
+        "COPYBOOK/TRANREC.cpy",
+        "JCL/RUN.jcl",
+        "PLI/MACSAMP.pli",
+        "PLI/PSAM1.pli",
+        "PLI/PSAM1LIB.pli",
+        "PLI/PSAM2.pli",
+        "multiroot/copybooks/cust/CUSTCOPY.cpy",
+        "multiroot/copybooks/trans/SAM2PAR5.cpy",
+        "multiroot/copybooks/trans/SAM2PARM.cpy",
+        "multiroot/copybooks/trans/TRANREC.cpy",
+        "multiroot/sam/SAM1.cbl",
+        "multiroot/sam/SAM2.cbl",
+        "multiroot/sam/zapp.yaml",
+        "zapp.yaml"
+      ]
+    }
+  },
+  "what": "IBM Z Open Editor sample: batch COBOL and PL/I with JCL",
+  "metrics": {
+    "source": {
+      "files": 23,
+      "total_loc": 3438,
+      "coding_loc": 2456,
+      "functions": 71,
+      "avg_complexity": 3.69,
+      "max_complexity": 16,
+      "avg_function_loc": 29.5,
+      "functions_complexity_over_10": 7,
+      "risk_cognitive_load": 24.8,
+      "risk_tech_debt": 6.8,
+      "risk_safety_score": 44.9,
+      "risk_verification": 12.5,
+      "risk_documentation": 56.5,
+      "risk_api_exposure": 1.2,
+      "risk_state_flux": 44.9,
+      "languages": {
+        "cobol": 13,
+        "jcl": 10,
+        "plaintext": 7,
+        "shell": 4,
+        "rexx": 4,
+        "pli": 4,
+        "yaml": 3,
+        "markdown": 2,
+        "json": 2,
+        "hlasm": 2
+      }
+    },
+    "java": {
+      "files": 30,
+      "total_loc": 1779,
+      "coding_loc": 1069,
+      "functions": 46,
+      "avg_complexity": 1.98,
+      "max_complexity": 9,
+      "avg_function_loc": 8.5,
+      "functions_complexity_over_10": 0,
+      "risk_cognitive_load": 5.3,
+      "risk_tech_debt": 39.4,
+      "risk_safety_score": 28.8,
+      "risk_verification": 7.5,
+      "risk_documentation": 39.0,
+      "risk_api_exposure": 9.2,
+      "risk_state_flux": 10.8,
+      "languages": {
+        "java": 30,
+        "json": 4,
+        "yaml": 1,
+        "xml": 1,
+        "plaintext": 1,
+        "markdown": 1
+      }
+    }
+  },
+  "legal": [
+    "LICENSE"
+  ],
+  "java_files": 30,
+  "services": 9,
+  "controllers": 3,
+  "entities": 5,
+  "dtos": 3,
+  "batch_jobs": {
+    "utility": 4,
+    "build": 2,
+    "application": 2
+  },
+  "worklist": {
+    "missing-layout": 2,
+    "batch-utility": 7,
+    "interface-call": 3,
+    "business-logic": 12,
+    "configuration": 1
+  },
+  "traced_artifacts": 35
+}

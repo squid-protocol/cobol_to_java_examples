@@ -1,0 +1,417 @@
+{
+  "categories": {
+    "batch-utility": {
+      "nature": "port",
+      "resolution": "Replace the utility with its Spring Batch equivalent (SORT -> a sorting step, IDCAMS REPRO -> a copy, a TSO / IMS runner -> the program's runBatch), reading its control statements in SYSIN.",
+      "title": "Utility job steps to port"
+    },
+    "business-logic": {
+      "nature": "port",
+      "resolution": "Port the cited paragraphs; the skeleton names the COBOL lines and the facts they touch.",
+      "title": "Business logic to port"
+    },
+    "configuration": {
+      "nature": "review",
+      "resolution": "Point the datasource at the target database; the password comes from SPRING_DATASOURCE_PASSWORD at run time, never from a file.",
+      "title": "Target configuration"
+    },
+    "interface-call": {
+      "nature": "port",
+      "resolution": "Wire the called service (or a mock) in place of the placeholder.",
+      "title": "Calls to other services"
+    },
+    "missing-layout": {
+      "nature": "fact-gap",
+      "resolution": "Add the missing copybook / %INCLUDE member or record to the repository and re-run; the DTO then gets its real fields.",
+      "title": "Unresolved layouts"
+    }
+  },
+  "generated_from": {
+    "clean_room": "zopeneditor-sample_gitgalaxy_clean_TIMESTAMP"
+  },
+  "items": [
+    {
+      "category": "missing-layout",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CobolSam2Service.java",
+      "id": "WL-0001",
+      "line": 28,
+      "nature": "fact-gap",
+      "program": "COBOL/SAM2.cbl",
+      "symbols": [],
+      "text": "CUST-REC was not found in the DATA DIVISION; carried as text"
+    },
+    {
+      "category": "missing-layout",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam2Service.java",
+      "id": "WL-0002",
+      "line": 29,
+      "nature": "fact-gap",
+      "program": "multiroot/sam/SAM2.cbl",
+      "symbols": [],
+      "text": "CUST-REC was not found in the DATA DIVISION; carried as text"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "CMPLSAM1 EXEC IGYCRCTL",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUN.jcl:72"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/ZderunJobConfig.java",
+      "id": "WL-0003",
+      "line": null,
+      "nature": "port",
+      "program": "JCL/RUN.jcl",
+      "symbols": [
+        "ZderunJobConfig#CMPLSAM1"
+      ],
+      "text": "CMPLSAM1 runs the utility IGYCRCTL (its control statements are in SYSIN) -- a utility step to port"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "CMPLSAM2 EXEC IGYCRCTL",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUN.jcl:42"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/ZderunJobConfig.java",
+      "id": "WL-0004",
+      "line": null,
+      "nature": "port",
+      "program": "JCL/RUN.jcl",
+      "symbols": [
+        "ZderunJobConfig#CMPLSAM2"
+      ],
+      "text": "CMPLSAM2 runs the utility IGYCRCTL (its control statements are in SYSIN) -- a utility step to port"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "LINKSAM1 EXEC IEWL",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUN.jcl:120"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/ZderunJobConfig.java",
+      "id": "WL-0005",
+      "line": null,
+      "nature": "port",
+      "program": "JCL/RUN.jcl",
+      "symbols": [
+        "ZderunJobConfig#LINKSAM1"
+      ],
+      "text": "LINKSAM1 runs the utility IEWL (its control statements are in SYSIN) -- a utility step to port"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "LINKSAM2 EXEC IEWL",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUN.jcl:103"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/ZderunJobConfig.java",
+      "id": "WL-0006",
+      "line": null,
+      "nature": "port",
+      "program": "JCL/RUN.jcl",
+      "symbols": [
+        "ZderunJobConfig#LINKSAM2"
+      ],
+      "text": "LINKSAM2 runs the utility IEWL (its control statements are in SYSIN) -- a utility step to port"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "CMPPSAM1 EXEC IBMZPLI",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUNPSAM1.jcl:46"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/Zdepsm1JobConfig.java",
+      "id": "WL-0007",
+      "line": null,
+      "nature": "port",
+      "program": "JCL/RUNPSAM1.jcl",
+      "symbols": [
+        "Zdepsm1JobConfig#CMPPSAM1"
+      ],
+      "text": "CMPPSAM1 runs the utility IBMZPLI (its control statements are in SYSIN) -- a utility step to port"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "CMPPSAM2 EXEC IBMZPLI",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUNPSAM1.jcl:35"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/Zdepsm1JobConfig.java",
+      "id": "WL-0008",
+      "line": null,
+      "nature": "port",
+      "program": "JCL/RUNPSAM1.jcl",
+      "symbols": [
+        "Zdepsm1JobConfig#CMPPSAM2"
+      ],
+      "text": "CMPPSAM2 runs the utility IBMZPLI (its control statements are in SYSIN) -- a utility step to port"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "LNKPSAM1 EXEC IEWL",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUNPSAM1.jcl:59"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/Zdepsm1JobConfig.java",
+      "id": "WL-0009",
+      "line": null,
+      "nature": "port",
+      "program": "JCL/RUNPSAM1.jcl",
+      "symbols": [
+        "Zdepsm1JobConfig#LNKPSAM1"
+      ],
+      "text": "LNKPSAM1 runs the utility IEWL (its control statements are in SYSIN) -- a utility step to port"
+    },
+    {
+      "category": "interface-call",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CobolSam1Service.java",
+      "id": "WL-0010",
+      "line": 28,
+      "nature": "port",
+      "program": "COBOL/SAM1.cbl",
+      "symbols": [],
+      "text": "Implement or mock interface call to: Sam2Service"
+    },
+    {
+      "category": "interface-call",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Sam1libService.java",
+      "id": "WL-0011",
+      "line": 26,
+      "nature": "port",
+      "program": "COBOL/SAM1LIB.cbl",
+      "symbols": [],
+      "text": "Implement or mock interface call to: Sam2Service"
+    },
+    {
+      "category": "interface-call",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam1Service.java",
+      "id": "WL-0012",
+      "line": 27,
+      "nature": "port",
+      "program": "multiroot/sam/SAM1.cbl",
+      "symbols": [],
+      "text": "Implement or mock interface call to: Sam2Service"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CobolSam1Service.java",
+      "id": "WL-0013",
+      "line": 32,
+      "nature": "port",
+      "program": "COBOL/SAM1.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "ZDERUN SAM1",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUN.jcl:147"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CobolSam1Service.java",
+      "id": "WL-0014",
+      "line": 54,
+      "nature": "port",
+      "program": "COBOL/SAM1.cbl",
+      "symbols": [
+        "CobolSam1Service#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Sam1libService.java",
+      "id": "WL-0015",
+      "line": 30,
+      "nature": "port",
+      "program": "COBOL/SAM1LIB.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CobolSam2Service.java",
+      "id": "WL-0016",
+      "line": 24,
+      "nature": "port",
+      "program": "COBOL/SAM2.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CobolSam2Service.java",
+      "id": "WL-0017",
+      "line": 27,
+      "nature": "port",
+      "program": "COBOL/SAM2.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/MacsampService.java",
+      "id": "WL-0018",
+      "line": 23,
+      "nature": "port",
+      "program": "PLI/MACSAMP.pli",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Psam1Service.java",
+      "id": "WL-0019",
+      "line": 25,
+      "nature": "port",
+      "program": "PLI/PSAM1.pli",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "ZDEPSM1 RUNPSAM1",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "JCL/RUNPSAM1.jcl:74"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Psam1Service.java",
+      "id": "WL-0020",
+      "line": 31,
+      "nature": "port",
+      "program": "PLI/PSAM1.pli",
+      "symbols": [
+        "Psam1Service#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Psam1libService.java",
+      "id": "WL-0021",
+      "line": 23,
+      "nature": "port",
+      "program": "PLI/PSAM1LIB.pli",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam1Service.java",
+      "id": "WL-0022",
+      "line": 31,
+      "nature": "port",
+      "program": "multiroot/sam/SAM1.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam2Service.java",
+      "id": "WL-0023",
+      "line": 25,
+      "nature": "port",
+      "program": "multiroot/sam/SAM2.cbl",
+      "symbols": [],
+      "text": "Implement extracted business rules here"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam2Service.java",
+      "id": "WL-0024",
+      "line": 28,
+      "nature": "port",
+      "program": "multiroot/sam/SAM2.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules"
+    },
+    {
+      "category": "configuration",
+      "facts": [],
+      "file": "src/main/resources/application.yml",
+      "id": "WL-0025",
+      "line": 9,
+      "nature": "review",
+      "program": "(project configuration)",
+      "symbols": [],
+      "text": "Update these credentials for your target environment"
+    }
+  ],
+  "summary": {
+    "by_category": {
+      "batch-utility": 7,
+      "business-logic": 12,
+      "configuration": 1,
+      "interface-call": 3,
+      "missing-layout": 2
+    },
+    "by_nature": {
+      "conflict": 0,
+      "fact-gap": 2,
+      "port": 22,
+      "review": 1
+    },
+    "items": 25,
+    "programs": 10
+  },
+  "version": 1
+}
