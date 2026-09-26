@@ -1,0 +1,36 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.service.Cosgn00cService;
+
+/**
+ * CICS program COSGN00C (app/cbl/COSGN00C.cbl), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * TODO: no COMMAREA layout: DFHCOMMAREA is variable-length or of unknown width, and no resolved LINK / XCTL / RETURN TRANSID passes this program a record.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/cosgn00c")
+@RequiredArgsConstructor
+public class Cosgn00cController {
+
+    private final Cosgn00cService cosgn00cService;
+
+    /** CICS transaction CC00 -> Cosgn00c (CSD app/csd/CARDDEMO.CSD:249 group CARDDEMO; app/csd/CARDDEMO.CSD:378 group CARDDEMO; app/jcl/CBADMCDJ.jcl:98 group CARDDEMO). */
+    @PostMapping("/transactions/CC00")
+    public ResponseEntity<Void> transactionCC00() {
+        cosgn00cService.handleTransaction("CC00");
+        return ResponseEntity.noContent().build();
+    }
+
+    /** Program-to-program entry: XCTL at app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:322 (data-driven, moves), XCTL at app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:674 (data-driven, moves), XCTL at app/cbl/COADM01C.cbl:168 (data-driven, moves), XCTL at app/cbl/COBIL00C.cbl:281 (data-driven, moves), XCTL at app/cbl/COMEN01C.cbl:201 (data-driven, moves), XCTL at app/cbl/CORPT00C.cbl:548 (data-driven, moves), XCTL at app/cbl/COTRN00C.cbl:192 (data-driven, moves), XCTL at app/cbl/COTRN00C.cbl:518 (data-driven, moves), XCTL at app/cbl/COTRN01C.cbl:205 (data-driven, moves), XCTL at app/cbl/COTRN02C.cbl:508 (data-driven, moves), XCTL at app/cbl/COUSR00C.cbl:196 (data-driven, moves), XCTL at app/cbl/COUSR00C.cbl:206 (data-driven, moves), XCTL at app/cbl/COUSR00C.cbl:514 (data-driven, moves), XCTL at app/cbl/COUSR01C.cbl:175 (data-driven, moves), XCTL at app/cbl/COUSR02C.cbl:258 (data-driven, moves), XCTL at app/cbl/COUSR03C.cbl:205 (data-driven, moves). */
+    @PostMapping("/link")
+    public ResponseEntity<Void> link() {
+        cosgn00cService.handleLink();
+        return ResponseEntity.noContent().build();
+    }
+
+}

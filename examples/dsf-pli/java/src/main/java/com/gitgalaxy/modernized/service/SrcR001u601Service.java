@@ -1,0 +1,148 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.exception.*;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * HANDLE AID mapping (field testing: field-tested (6 public / 0 private estates)):
+ *   HANDLE AID at line 155: PF1 -> PF1
+ *   HANDLE AID at line 155: PF2 -> PF2
+ *   HANDLE AID at line 155: PF7 -> PF7
+ *   HANDLE AID at line 155: PF8 -> PF8
+ *   HANDLE AID at line 696: ENTER -> PF1
+ *   HANDLE AID at line 954: PF1 -> PF1
+ *   HANDLE AID at line 954: PF2 -> PF2
+ *   HANDLE AID at line 954: PF7 -> PF7
+ *   HANDLE AID at line 954: PF8 -> PF8
+ *
+ * Screens (#3619): none resolved.
+ * TODO: SEND MAP S001U62 (mapset S001U63) at src/R001U601.pli:182: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U63 (mapset S001U63) at src/R001U601.pli:190: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001201 (mapset S001203) at src/R001U601.pli:198: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U61 (mapset S001U63) at src/R001U601.pli:206: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001U61 (mapset S001U63) at src/R001U601.pli:219: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001U62 (mapset S001U63) at src/R001U601.pli:225: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001U63 (mapset S001U63) at src/R001U601.pli:231: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001201 (mapset S001203) at src/R001U601.pli:237: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U61 (mapset S001U63) at src/R001U601.pli:515: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U62 (mapset S001U63) at src/R001U601.pli:522: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U63 (mapset S001U63) at src/R001U601.pli:529: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001201 (mapset S001203) at src/R001U601.pli:535: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U61 (mapset S001U63) at src/R001U601.pli:542: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U62 (mapset S001U63) at src/R001U601.pli:547: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U63 (mapset S001U63) at src/R001U601.pli:552: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001201 (mapset S001203) at src/R001U601.pli:557: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U62 (mapset S001U63) at src/R001U601.pli:588: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U63 (mapset S001U63) at src/R001U601.pli:615: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001201 (mapset S001203) at src/R001U601.pli:651: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U61 (mapset S001U63) at src/R001U601.pli:702: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001U61 (mapset S001U63) at src/R001U601.pli:705: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U62 (mapset S001U63) at src/R001U601.pli:715: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001U62 (mapset S001U63) at src/R001U601.pli:718: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U63 (mapset S001U63) at src/R001U601.pli:728: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001U63 (mapset S001U63) at src/R001U601.pli:732: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001201 (mapset S001203) at src/R001U601.pli:743: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001201 (mapset S001203) at src/R001U601.pli:747: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U61 (mapset S001U63) at src/R001U601.pli:786: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001U61 (mapset S001U63) at src/R001U601.pli:789: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U61 (mapset S001U63) at src/R001U601.pli:856: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U61 (mapset S001U63) at src/R001U601.pli:860: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001201 (mapset S001203) at src/R001U601.pli:867: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001201 (mapset S001203) at src/R001U601.pli:871: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U61 (mapset S001U63) at src/R001U601.pli:897: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U61 (mapset S001U63) at src/R001U601.pli:901: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001201 (mapset S001203) at src/R001U601.pli:908: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001201 (mapset S001203) at src/R001U601.pli:912: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U61 (mapset S001U63) at src/R001U601.pli:929: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001U61 (mapset S001U63) at src/R001U601.pli:933: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001201 (mapset S001203) at src/R001U601.pli:939: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001201 (mapset S001203) at src/R001U601.pli:943: no single BMS source defines it (candidates: none in the repository)
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class SrcR001u601Service {
+
+    private static final Logger log = LoggerFactory.getLogger(SrcR001u601Service.class);
+
+    private final ObjectProvider<SrcR0010490Service> srcR0010490Service;
+    private final ObjectProvider<SrcR0010301Service> srcR0010301Service;
+    private final ObjectProvider<SrcR0010401Service> srcR0010401Service;
+
+    public void executeSrcR001u601(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for src__R001U601");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("SrcR001u601: handleLink");
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0010490) at src/R001U601.pli:846.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void linkSrcR0010490() {
+        srcR0010490Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010301) at src/R001U601.pli:253, src/R001U601.pli:280, src/R001U601.pli:288. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcR0010301() {
+        srcR0010301Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010401) at src/R001U601.pli:263, src/R001U601.pli:306, src/R001U601.pli:688. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcR0010401() {
+        srcR0010401Service.getObject().handleLink();
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/R001U601.pli:752 (paragraph UTGANG): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL752() {
+        throw new UnitOfWorkRollbackException("SRC__R001U601", "src/R001U601.pli:752");
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/R001U601.pli:793 (paragraph UTGANG): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL793() {
+        throw new UnitOfWorkRollbackException("SRC__R001U601", "src/R001U601.pli:793");
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R001U601.pli:154 (paragraph R001U6) routes ERROR to FEILBEH.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL154(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL FEILBEH at line 154", e);
+        // TODO: port paragraph FEILBEH's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R001U601.pli:761 (paragraph UTGANG) routes ERROR to ABEND.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL761(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL ABEND at line 761", e);
+        // TODO: port paragraph ABEND's logic
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(FEIL) at src/R001U601.pli:803 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendFeilL803() {
+        throw new CicsAbendException("FEIL", "SRC__R001U601", "src/R001U601.pli:803");
+    }
+
+}

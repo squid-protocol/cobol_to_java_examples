@@ -1,0 +1,57 @@
+package com.gitgalaxy.modernized.batch;
+
+import com.gitgalaxy.modernized.service.Psam1Service;
+import java.util.List;
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.job.builder.JobBuilder;
+import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.step.builder.StepBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.PlatformTransactionManager;
+
+/** JCL job ZDEPSM1 (JCL/RUNPSAM1.jcl) as a Spring Batch job (#3622): its steps in JCL order,
+ *  each bypassed when its COND= (or the job's) is satisfied, as JCL does.
+ *  JOB COND=(4,LT).
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLI.CUSTFILE (step RUNPSAM1), produced by JCL/PLIALLOC.jcl step ALLOCAT.
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLI.CUSTFILE (step RUNPSAM1), produced by JCL/PLIALLOC.jcl step DELETE.
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLI.INCLLIB (step CMPPSAM1), produced by JCL/PLIALLOC.jcl step ALLOCAT.
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLI.INCLLIB (step CMPPSAM1), produced by JCL/PLIALLOC.jcl step DELETE.
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLI.TRANFILE (step RUNPSAM1), produced by JCL/PLIALLOC.jcl step ALLOCAT.
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLI.TRANFILE (step RUNPSAM1), produced by JCL/PLIALLOC.jcl step DELETE.
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLILOAD (step LNKPSAM1), produced by JCL/PLIALLOC.jcl step ALLOCAT.
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLILOAD (step LNKPSAM1), produced by JCL/PLIALLOC.jcl step DELETE.
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLILOAD (step RUNPSAM1), produced by JCL/PLIALLOC.jcl step ALLOCAT.
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLILOAD (step RUNPSAM1), produced by JCL/PLIALLOC.jcl step DELETE.
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLINC (step CMPPSAM1), produced by JCL/PLIALLOC.jcl step ALLOCAT.
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLINC (step CMPPSAM1), produced by JCL/PLIALLOC.jcl step DELETE.
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLINC (step CMPPSAM2), produced by JCL/PLIALLOC.jcl step ALLOCAT.
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLINC (step CMPPSAM2), produced by JCL/PLIALLOC.jcl step DELETE.
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLIOBJ (step LNKPSAM1), produced by JCL/PLIALLOC.jcl step ALLOCAT.
+ *  Dataset flow: reads IBMUSER.SAMPLE.PLIOBJ (step LNKPSAM1), produced by JCL/PLIALLOC.jcl step DELETE.
+ *  JCL job flow field testing: open (5 public / 0 private estates). */
+@Configuration
+public class Zdepsm1JobConfig {
+
+    static final List<Dd> DDS_DELETE = List.of(new Dd("DD1", "IBMUSER.SAMPLE.PLI.CUSTRPT", "MOD", "DELETE", null));
+    static final List<Dd> DDS_CMPPSAM2 = List.of(new Dd("STEPLIB", "IBMZ.V5R3M0.SIBMZCMP", "SHR", null, null), new Dd("SYSLIB", "IBMUSER.SAMPLE.PLINC", "SHR", null, null), new Dd("SYSLIN", "IBMUSER.SAMPLE.PLIOBJ(PSAM2)", "OLD", null, null), new Dd("SYSIN", "IBMUSER.SAMPLE.PLI(PSAM2)", "SHR", null, null));
+    static final List<Dd> DDS_CMPPSAM1 = List.of(new Dd("STEPLIB", "IBMZ.V5R3M0.SIBMZCMP", "SHR", null, null), new Dd("SYSLIB", "IBMUSER.SAMPLE.PLINC", "SHR", null, null), new Dd("MYFILE", "IBMUSER.SAMPLE.PLI.INCLLIB", "SHR", null, null), new Dd("MYLIB", "IBMUSER.SAMPLE.PLI.INCLLIB", "SHR", null, null), new Dd("SYSLIN", "IBMUSER.SAMPLE.PLIOBJ(PSAM1)", "OLD", null, null), new Dd("SYSIN", "IBMUSER.SAMPLE.PLI(PSAM1)", "SHR", null, null));
+    static final List<Dd> DDS_LNKPSAM1 = List.of(new Dd("SYSLIB", "CEE.SCEELKED", "SHR", null, null), new Dd("SYSLMOD", "IBMUSER.SAMPLE.PLILOAD", "SHR", null, null), new Dd("INOBJ", "IBMUSER.SAMPLE.PLIOBJ", "SHR", null, null));
+    static final List<Dd> DDS_RUNPSAM1 = List.of(new Dd("STEPLIB", "IBMUSER.SAMPLE.PLILOAD", "SHR", null, null), new Dd("CUSTFILE", "IBMUSER.SAMPLE.PLI.CUSTFILE", "SHR", null, null), new Dd("TRANFILE", "IBMUSER.SAMPLE.PLI.TRANFILE", "SHR", null, null), new Dd("CUSTRPT", "IBMUSER.SAMPLE.PLI.CUSTRPT", "NEW", "CATLG", null));
+
+    @Bean
+    public Job zdepsm1Job(JobRepository jobRepository, PlatformTransactionManager tx, JclSteps steps, Psam1Service psam1Service) {
+        return new JobBuilder("ZDEPSM1", jobRepository)
+                .start(new StepBuilder("DELETE", jobRepository)
+                        .tasklet(steps.iefbr14("DELETE", "DELETE", "(4,LT)", null, null, DDS_DELETE), tx).build())
+                .next(new StepBuilder("CMPPSAM2", jobRepository)
+                        .tasklet(steps.utility("CMPPSAM2", "CMPPSAM2", "(4,LT)", null, null, "IBMZPLI", "CMPPSAM2 runs the utility IBMZPLI (its control statements are in SYSIN) -- a utility step to port"), tx).build())
+                .next(new StepBuilder("CMPPSAM1", jobRepository)
+                        .tasklet(steps.utility("CMPPSAM1", "CMPPSAM1", "(4,LT)", null, null, "IBMZPLI", "CMPPSAM1 runs the utility IBMZPLI (its control statements are in SYSIN) -- a utility step to port"), tx).build())
+                .next(new StepBuilder("LNKPSAM1", jobRepository)
+                        .tasklet(steps.utility("LNKPSAM1", "LNKPSAM1", "(4,LT)", null, null, "IEWL", "LNKPSAM1 runs the utility IEWL (its control statements are in SYSIN) -- a utility step to port"), tx).build())
+                .next(new StepBuilder("RUNPSAM1", jobRepository)
+                        .tasklet(steps.program("RUNPSAM1", "RUNPSAM1", "(4,LT)", null, null, () -> psam1Service.runBatch(DDS_RUNPSAM1, null)), tx).build())
+                .build();
+    }
+}

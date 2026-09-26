@@ -1,0 +1,73 @@
+package com.gitgalaxy.modernized.entity.vsam;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * VSAM INDEXED AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS (app/jcl/CARDFILE.jcl:50),
+ * record CARD-RECORD (app/cpy/CVACT02Y.cpy, 150 bytes, RECORDSIZE 150).
+ * Key: CARD-NUM (offset 0, 16 bytes, from IDCAMS KEYS).
+ * CICS files: CARDAIX (path AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX.PATH), CARDDAT.
+ * Generated from GitGalaxy's verified skeleton; VSAM defines field testing: open (3 public / 0 private estates).
+ */
+@Entity(name = "VsamCardRecord")
+@Table(name = "vsam_carddata")
+@Data
+@NoArgsConstructor
+public class CardRecord {
+
+    // CARD-NUM: PIC X(16), offset 0, 16 bytes
+    @Id
+    @Column(name = "CARD_NUM", length = 16)
+    private String cardNum;
+
+    // CARD-ACCT-ID: PIC 9(11), offset 16, 11 bytes
+    @Column(name = "CARD_ACCT_ID")
+    private Long cardAcctId;
+
+    // CARD-CVV-CD: PIC 9(03), offset 27, 3 bytes
+    @Column(name = "CARD_CVV_CD")
+    private Integer cardCvvCd;
+
+    // CARD-EMBOSSED-NAME: PIC X(50), offset 30, 50 bytes
+    @Column(name = "CARD_EMBOSSED_NAME", length = 50)
+    private String cardEmbossedName;
+
+    // CARD-EXPIRAION-DATE: PIC X(10), offset 80, 10 bytes
+    @Column(name = "CARD_EXPIRAION_DATE", length = 10)
+    private String cardExpiraionDate;
+
+    // CARD-ACTIVE-STATUS: PIC X(01), offset 90, 1 bytes
+    @Column(name = "CARD_ACTIVE_STATUS", length = 1)
+    private String cardActiveStatus;
+
+
+    /** #3624: this record from its fixed-width VSAM form (150 bytes, as REPRO unloads it), each
+     *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
+     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+    public static CardRecord fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        CardRecord r = new CardRecord();
+        r.cardNum = CobolRecords.text(rec, 0, 16, text);
+        r.cardAcctId = CobolRecords.toLong(CobolRecords.zoned(rec, 16, 11, 0, text));
+        r.cardCvvCd = CobolRecords.toInteger(CobolRecords.zoned(rec, 27, 3, 0, text));
+        r.cardEmbossedName = CobolRecords.text(rec, 30, 50, text);
+        r.cardExpiraionDate = CobolRecords.text(rec, 80, 10, text);
+        r.cardActiveStatus = CobolRecords.text(rec, 90, 1, text);
+        return r;
+    }
+
+    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    public byte[] toRecord(java.nio.charset.Charset text) {
+        byte[] rec = CobolRecords.blank(150, text);
+        CobolRecords.putText(rec, 0, 16, cardNum, text);
+        CobolRecords.putZoned(rec, 16, 11, 0, false, CobolRecords.decimal(cardAcctId), text);
+        CobolRecords.putZoned(rec, 27, 3, 0, false, CobolRecords.decimal(cardCvvCd), text);
+        CobolRecords.putText(rec, 30, 50, cardEmbossedName, text);
+        CobolRecords.putText(rec, 80, 10, cardExpiraionDate, text);
+        CobolRecords.putText(rec, 90, 1, cardActiveStatus, text);
+        return rec;
+    }
+}

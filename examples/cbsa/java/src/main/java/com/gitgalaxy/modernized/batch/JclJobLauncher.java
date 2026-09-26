@@ -1,0 +1,40 @@
+package com.gitgalaxy.modernized.batch;
+
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobExecution;
+import org.springframework.batch.core.JobParametersBuilder;
+import org.springframework.batch.core.launch.JobLauncher;
+import org.springframework.stereotype.Component;
+
+/** Runs a generated JCL job by its JCL name (#3622): for the REST endpoint and for programs that submit
+ *  jobs through the internal reader. */
+@Component
+public class JclJobLauncher {
+
+    private final JobLauncher launcher;
+    private final Map<String, Job> jobs = new TreeMap<>();
+
+    public JclJobLauncher(JobLauncher launcher, List<Job> jobs) {
+        this.launcher = launcher;
+        jobs.forEach(j -> this.jobs.put(j.getName(), j));
+    }
+
+    public List<String> names() {
+        return List.copyOf(jobs.keySet());
+    }
+
+    public JobExecution launch(String name) {
+        Job job = jobs.get(name);
+        if (job == null) {
+            throw new IllegalArgumentException("no generated job " + name + " (see resources/batch/jcl-jobs.json)");
+        }
+        try {
+            return launcher.run(job, new JobParametersBuilder().addLong("run.id", System.nanoTime()).toJobParameters());
+        } catch (Exception e) {
+            throw new IllegalStateException("job " + name + " could not start", e);
+        }
+    }
+}

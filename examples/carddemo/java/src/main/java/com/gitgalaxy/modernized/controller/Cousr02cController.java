@@ -1,0 +1,36 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.dto.contract.CarddemoCommarea;
+import com.gitgalaxy.modernized.service.Cousr02cService;
+
+/**
+ * CICS program COUSR02C (app/cbl/COUSR02C.cbl), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * COMMAREA: DFHCOMMAREA (app/cbl/COUSR02C.cbl, 160 bytes) -> CarddemoCommarea.
+ * TODO: callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COUSR02C.cbl:135.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/cousr02c")
+@RequiredArgsConstructor
+public class Cousr02cController {
+
+    private final Cousr02cService cousr02cService;
+
+    /** CICS transaction CU02 -> Cousr02c (CSD app/csd/CARDDEMO.CSD:469 group CARDDEMO). */
+    @PostMapping("/transactions/CU02")
+    public ResponseEntity<CarddemoCommarea> transactionCU02(@RequestBody CarddemoCommarea request) {
+        return ResponseEntity.ok(cousr02cService.handleTransaction("CU02", request));
+    }
+
+    /** Program-to-program entry: XCTL at app/cbl/COADM01C.cbl:145 (data-driven, table), XCTL at app/cbl/COUSR00C.cbl:196 (data-driven, moves), XCTL at app/cbl/COUSR00C.cbl:206 (data-driven, moves), XCTL at app/cbl/COUSR00C.cbl:514 (data-driven, moves). */
+    @PostMapping("/link")
+    public ResponseEntity<CarddemoCommarea> link(@RequestBody CarddemoCommarea request) {
+        return ResponseEntity.ok(cousr02cService.handleLink(request));
+    }
+
+}

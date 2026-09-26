@@ -1,0 +1,53 @@
+package com.gitgalaxy.modernized.dto.contract;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+
+/**
+ * PL/I structure KOM_OMR (src/R001I501.pli), 67 bytes, from GitGalaxy's verified skeleton.
+ * The COMMAREA SrcR0013301 receives, as passed by LINK at src/R001I501.pli:2052.
+ * The COMMAREA SrcR001i601 receives, as passed by LINK at src/R001I501.pli:364.
+ * Record fields field testing: field-tested (6 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class SrcR001i501KomOmr {
+
+    // TYPE: CHAR(1), offset 0, 1 bytes (src/R001I501.pli)
+    private String type;
+
+    // ETYPE: CHAR(1), offset 1, 1 bytes (src/R001I501.pli)
+    private String etype;
+
+    // IÅR: PIC '(4)9', offset 2, 4 bytes (src/R001I501.pli)
+    private Integer iår;
+
+    // KOMMNR: FIXED DEC(4), offset 6, 3 bytes (src/R001I501.pli)
+    private Integer kommnr;
+
+    // RAPPDATOM: FIXED DEC(9), offset 9, 5 bytes (src/R001I501.pli)
+    private Integer rappdatom;
+
+    // FNR: FIXED DEC(11), offset 14, 6 bytes (src/R001I501.pli)
+    private Long fnr;
+
+    // GMLFNR: FIXED DEC(11), offset 20, 6 bytes (src/R001I501.pli)
+    private Long gmlfnr;
+
+    // AINNTEKT: FIXED DEC(9), offset 26, 5 bytes (src/R001I501.pli)
+    private Integer ainntekt;
+
+    // SINNTEKT: FIXED DEC(9), offset 31, 5 bytes (src/R001I501.pli)
+    private Integer sinntekt;
+
+    // BINNTEKT: FIXED DEC(9), offset 36, 5 bytes (src/R001I501.pli)
+    private Integer binntekt;
+
+    // INNTOMB: PIC '(1)9', offset 41, 1 bytes (src/R001I501.pli)
+    private Integer inntomb;
+
+    // NAVN: CHAR(25), offset 42, 25 bytes (src/R001I501.pli)
+    private String navn;
+
+}

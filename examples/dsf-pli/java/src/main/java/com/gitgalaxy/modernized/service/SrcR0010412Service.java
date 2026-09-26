@@ -1,0 +1,78 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.messaging.TempStorage;
+import java.util.Optional;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Response handling (field testing: field-tested (6 public / 0 private estates)):
+ * TODO: the RESP of READQ at line 126 (paragraph R001B41) is never tested
+ * TODO: the RESP of DELETEQ at line 128 (paragraph R001B41) is never tested
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class SrcR0010412Service {
+
+    private static final Logger log = LoggerFactory.getLogger(SrcR0010412Service.class);
+
+    private final ObjectProvider<SrcR001a412Service> srcR001a412Service;
+    private final ObjectProvider<SrcR001b412Service> srcR001b412Service;
+    private final ObjectProvider<SrcR001c412Service> srcR001c412Service;
+    private final TempStorage tempStorage;
+
+    public void executeSrcR0010412(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for src__R0010412");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("SrcR0010412: handleLink");
+    }
+
+    /** EXEC CICS LINK PROGRAM(R001A412) at src/R0010412.pli:200.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void linkSrcR001a412() {
+        srcR001a412Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS LINK PROGRAM(R001B412) at src/R0010412.pli:206.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void linkSrcR001b412() {
+        srcR001b412Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS LINK PROGRAM(R001C412) at src/R0010412.pli:211.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void linkSrcR001c412() {
+        srcR001c412Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS READQ TS QUEUE(QUENAME) INTO(COMMAREA_PEKER) at src/R0010412.pli:126 (#3620).
+     *  TODO: the queue name is data-driven (QUEUE(QUENAME)): pass it.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected Optional<String> readqTsL126(String queue) {
+        return tempStorage.readNext(queue);
+    }
+
+    /** EXEC CICS DELETEQ TS QUEUE(QUENAME) at src/R0010412.pli:128 (#3620).
+     *  TODO: the queue name is data-driven (QUEUE(QUENAME)): pass it.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected void deleteqTsL128(String queue) {
+        tempStorage.delete(queue);
+    }
+
+    /** EXEC CICS WRITEQ TS QUEUE(QUENAME) FROM(KOM_OMR) at src/R0010412.pli:234 (#3620).
+     *  TODO: the queue name is data-driven (QUEUE(QUENAME)): pass it.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected int writeqTsL234(String queue, String record) {
+        return tempStorage.writeItem(queue, record);
+    }
+
+}

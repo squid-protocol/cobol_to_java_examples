@@ -1,0 +1,158 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.FnrReg2;
+import com.gitgalaxy.modernized.dto.contract.SrcR001i101InternKomOmr;
+import com.gitgalaxy.modernized.exception.*;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * HANDLE AID mapping (field testing: field-tested (6 public / 0 private estates)):
+ *   HANDLE AID at line 141: PF1 -> PF2
+ *   HANDLE AID at line 142: PF2 -> PF2
+ *
+ * Screens (#3619): none resolved.
+ * TODO: RECEIVE MAP S001I01 (mapset S001I13) at src/R001I101.pli:184: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:236: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001IA1 (mapset S001IA3) at src/R001I101.pli:365: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:387: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I01 (mapset S001I13) at src/R001I101.pli:392: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:414: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I01 (mapset S001I13) at src/R001I101.pli:419: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:441: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I01 (mapset S001I13) at src/R001I101.pli:446: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:469: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I01 (mapset S001I13) at src/R001I101.pli:474: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:504: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I01 (mapset S001I13) at src/R001I101.pli:509: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:532: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I01 (mapset S001I13) at src/R001I101.pli:537: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:562: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I01 (mapset S001I13) at src/R001I101.pli:567: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:595: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I01 (mapset S001I13) at src/R001I101.pli:600: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:635: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I01 (mapset S001I13) at src/R001I101.pli:640: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:678: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I01 (mapset S001I13) at src/R001I101.pli:683: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:705: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I01 (mapset S001I13) at src/R001I101.pli:710: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:733: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I01 (mapset S001I13) at src/R001I101.pli:738: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:766: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I01 (mapset S001I13) at src/R001I101.pli:769: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:819: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I101.pli:835: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I01 (mapset S001I13) at src/R001I101.pli:838: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001013 (mapset S001013) at src/R001I101.pli:844: no single BMS source defines it (candidates: none in the repository)
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class SrcR001i101Service {
+
+    private static final Logger log = LoggerFactory.getLogger(SrcR001i101Service.class);
+
+    private final ObjectProvider<SrcR0019906Service> srcR0019906Service;
+    private final ObjectProvider<SrcR001i201Service> srcR001i201Service;
+    private final ObjectProvider<SrcR001i301Service> srcR001i301Service;
+    private final ObjectProvider<SrcR001i701Service> srcR001i701Service;
+    private final ObjectProvider<SrcR001i801Service> srcR001i801Service;
+    private final ObjectProvider<SrcR0010301Service> srcR0010301Service;
+    private final ObjectProvider<SrcR001ia01Service> srcR001ia01Service;
+
+    // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
+    // TODO: AI AGENT - Implement or mock interface call to: R001i101Service
+
+    public void executeSrcR001i101(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for src__R001I101");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("SrcR001i101: handleLink");
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0019906) at src/R001I101.pli:490, src/R001I101.pli:621, src/R001I101.pli:754.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public FnrReg2 linkSrcR0019906(FnrReg2 request) {
+        return srcR0019906Service.getObject().handleLink(request);
+    }
+
+    /** EXEC CICS LINK PROGRAM(R001I201) at src/R001I101.pli:288.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public SrcR001i101InternKomOmr linkSrcR001i201(SrcR001i101InternKomOmr request) {
+        return srcR001i201Service.getObject().handleLink(request);
+    }
+
+    /** EXEC CICS LINK PROGRAM(R001I301) at src/R001I101.pli:306.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public SrcR001i101InternKomOmr linkSrcR001i301(SrcR001i101InternKomOmr request) {
+        return srcR001i301Service.getObject().handleLink(request);
+    }
+
+    /** EXEC CICS LINK PROGRAM(R001I701) at src/R001I101.pli:324.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public SrcR001i101InternKomOmr linkSrcR001i701(SrcR001i101InternKomOmr request) {
+        return srcR001i701Service.getObject().handleLink(request);
+    }
+
+    /** EXEC CICS LINK PROGRAM(R001I801) at src/R001I101.pli:340.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public SrcR001i101InternKomOmr linkSrcR001i801(SrcR001i101InternKomOmr request) {
+        return srcR001i801Service.getObject().handleLink(request);
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010301) at src/R001I101.pli:256, src/R001I101.pli:804. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcR0010301() {
+        srcR0010301Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R001IA01) at src/R001I101.pli:368. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcR001ia01() {
+        srcR001ia01Service.getObject().handleLink();
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/R001I101.pli:842 (paragraph OVER_OG_UT): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL842() {
+        throw new UnitOfWorkRollbackException("SRC__R001I101", "src/R001I101.pli:842");
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R001I101.pli:139 (paragraph R001I10) routes ERROR to FEILBEH.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL139(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL FEILBEH at line 139", e);
+        // TODO: port paragraph FEILBEH's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R001I101.pli:828 (paragraph OVER_OG_UT) routes ERROR to ABEND.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL828(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL ABEND at line 828", e);
+        // TODO: port paragraph ABEND's logic
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(FEIL) at src/R001I101.pli:857 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendFeilL857() {
+        throw new CicsAbendException("FEIL", "SRC__R001I101", "src/R001I101.pli:857");
+    }
+
+}

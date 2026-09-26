@@ -1,0 +1,151 @@
+package com.gitgalaxy.modernized.dto.screen;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * BMS map SSMAPC1 of mapset SSMAP (base/src/ssmap.bms): the screen as a view model (#3619).
+ * SEND at base/src/lgtestc1.cbl:64, base/src/lgtestc1.cbl:107, base/src/lgtestc1.cbl:142, base/src/lgtestc1.cbl:168, base/src/lgtestc1.cbl:203, base/src/lgtestc1.cbl:215, base/src/lgtestc1.cbl:249, base/src/lgtestc1.cbl:272; RECEIVE at base/src/lgtestc1.cbl:79, base/src/lgtestc1.cbl:172.
+ * One property per named field (symbolic map SSMAPC1I / SSMAPC1O); LAYOUT is every field in
+ * screen order, labels included. BMS screen fields field testing: open (3 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class Ssmapc1Screen implements ScreenModel {
+
+    public static final String MAPSET = "SSMAP";
+    public static final String MAP = "SSMAPC1";
+    public static final List<ScreenField> LAYOUT = List.of(
+            new ScreenField(null, 1, 1, 4, false, false, true, false, false, "SSC1", null, 1),
+            new ScreenField(null, 1, 12, 31, false, false, true, false, false, "General Insurance Customer Menu", null, 1),
+            new ScreenField(null, 4, 8, 16, false, false, false, false, false, "1. Cust Inquiry ", null, 1),
+            new ScreenField(null, 5, 8, 16, false, false, false, false, false, "2. Cust Add     ", null, 1),
+            new ScreenField(null, 6, 8, 16, false, false, false, false, false, "                ", null, 1),
+            new ScreenField(null, 7, 8, 16, false, false, false, false, false, "4. Cust Update  ", null, 1),
+            new ScreenField(null, 4, 30, 12, false, false, false, false, false, "Cust Number ", null, 1),
+            new ScreenField("ENT1CNO", 4, 50, 10, true, false, false, false, true, null, null, 1),
+            new ScreenField(null, 4, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 5, 30, 16, false, false, false, false, false, "Cust Name :First", null, 1),
+            new ScreenField("ENT1FNA", 5, 50, 10, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 5, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 6, 30, 16, false, false, false, false, false, "          :Last", null, 1),
+            new ScreenField("ENT1LNA", 6, 50, 20, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 6, 71, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 7, 30, 12, false, false, false, false, false, "DOB         ", null, 1),
+            new ScreenField("ENT1DOB", 7, 50, 10, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 7, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 7, 63, 12, false, false, false, false, false, "(yyyy-mm-dd)", null, 1),
+            new ScreenField(null, 8, 30, 12, false, false, false, false, false, "House Name  ", null, 1),
+            new ScreenField("ENT1HNM", 8, 50, 20, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 8, 71, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 9, 30, 12, false, false, false, false, false, "House Number", null, 1),
+            new ScreenField("ENT1HNO", 9, 50, 4, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 9, 55, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 10, 30, 12, false, false, false, false, false, "Postcode    ", null, 1),
+            new ScreenField("ENT1HPC", 10, 50, 8, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 10, 59, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 11, 30, 12, false, false, false, false, false, "Phone: Home ", null, 1),
+            new ScreenField("ENT1HP1", 11, 50, 20, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 11, 71, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 12, 30, 12, false, false, false, false, false, "Phone: Mob  ", null, 1),
+            new ScreenField("ENT1HP2", 12, 50, 20, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 12, 71, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 13, 30, 12, false, false, false, false, false, "Email  Addr ", null, 1),
+            new ScreenField("ENT1HMO", 13, 50, 27, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 13, 78, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 22, 8, 14, false, false, false, false, false, "Select Option ", null, 1),
+            new ScreenField("ENT1OPT", 22, 24, 1, true, true, false, false, false, " ", null, 1),
+            new ScreenField(null, 22, 26, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField("ERRFLD", 24, 8, 40, false, false, true, false, false, " ", null, 1));
+
+    /** ENT1CNO: (4,50), 10 bytes, ATTRB=FSET,IC,NORM,UNPROT -- base/src/ssmap.bms:29. Symbolic map ENT1CNOI, ENT1CNOO. */
+    private String ent1cno;
+
+    /** ENT1FNA: (5,50), 10 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:36. Symbolic map ENT1FNAI, ENT1FNAO. */
+    private String ent1fna;
+
+    /** ENT1LNA: (6,50), 20 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:42. Symbolic map ENT1LNAI, ENT1LNAO. */
+    private String ent1lna;
+
+    /** ENT1DOB: (7,50), 10 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:49. Symbolic map ENT1DOBI, ENT1DOBO. */
+    private String ent1dob;
+
+    /** ENT1HNM: (8,50), 20 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:58. Symbolic map ENT1HNMI, ENT1HNMO. */
+    private String ent1hnm;
+
+    /** ENT1HNO: (9,50), 4 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:65. Symbolic map ENT1HNOI, ENT1HNOO. */
+    private String ent1hno;
+
+    /** ENT1HPC: (10,50), 8 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:72. Symbolic map ENT1HPCI, ENT1HPCO. */
+    private String ent1hpc;
+
+    /** ENT1HP1: (11,50), 20 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:79. Symbolic map ENT1HP1I, ENT1HP1O. */
+    private String ent1hp1;
+
+    /** ENT1HP2: (12,50), 20 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:86. Symbolic map ENT1HP2I, ENT1HP2O. */
+    private String ent1hp2;
+
+    /** ENT1HMO: (13,50), 27 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:93. Symbolic map ENT1HMOI, ENT1HMOO. */
+    private String ent1hmo;
+
+    /** ENT1OPT: (22,24), 1 bytes, ATTRB=FSET,NORM,NUM,UNPROT -- base/src/ssmap.bms:100. Symbolic map ENT1OPTI, ENT1OPTO. */
+    private String ent1opt;
+
+    /** ERRFLD: (24,8), 40 bytes, ATTRB=ASKIP,BRT,PROT -- base/src/ssmap.bms:105. Symbolic map ERRFLDI, ERRFLDO. */
+    private String errfld;
+
+    @Override
+    public String mapsetName() {
+        return MAPSET;
+    }
+
+    @Override
+    public String mapName() {
+        return MAP;
+    }
+
+    @Override
+    public List<ScreenField> screenLayout() {
+        return LAYOUT;
+    }
+
+    @Override
+    public Map<String, String> screenValues() {
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("ENT1CNO", ent1cno);
+        values.put("ENT1FNA", ent1fna);
+        values.put("ENT1LNA", ent1lna);
+        values.put("ENT1DOB", ent1dob);
+        values.put("ENT1HNM", ent1hnm);
+        values.put("ENT1HNO", ent1hno);
+        values.put("ENT1HPC", ent1hpc);
+        values.put("ENT1HP1", ent1hp1);
+        values.put("ENT1HP2", ent1hp2);
+        values.put("ENT1HMO", ent1hmo);
+        values.put("ENT1OPT", ent1opt);
+        values.put("ERRFLD", errfld);
+        return values;
+    }
+
+    /** A view model from posted form values (keys as `screenValues` writes them). */
+    public static Ssmapc1Screen fromValues(Map<String, String> values) {
+        Ssmapc1Screen screen = new Ssmapc1Screen();
+        screen.setEnt1cno(values.get("ENT1CNO"));
+        screen.setEnt1fna(values.get("ENT1FNA"));
+        screen.setEnt1lna(values.get("ENT1LNA"));
+        screen.setEnt1dob(values.get("ENT1DOB"));
+        screen.setEnt1hnm(values.get("ENT1HNM"));
+        screen.setEnt1hno(values.get("ENT1HNO"));
+        screen.setEnt1hpc(values.get("ENT1HPC"));
+        screen.setEnt1hp1(values.get("ENT1HP1"));
+        screen.setEnt1hp2(values.get("ENT1HP2"));
+        screen.setEnt1hmo(values.get("ENT1HMO"));
+        screen.setEnt1opt(values.get("ENT1OPT"));
+        screen.setErrfld(values.get("ERRFLD"));
+        return screen;
+    }
+}

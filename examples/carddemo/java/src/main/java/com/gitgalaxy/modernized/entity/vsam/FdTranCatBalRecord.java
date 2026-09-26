@@ -1,0 +1,52 @@
+package com.gitgalaxy.modernized.entity.vsam;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * VSAM INDEXED AWS.M2.CARDDEMO.TCATBALF.VSAM.KSDS (app/jcl/TCATBALF.jcl:36),
+ * record FD-TRAN-CAT-BAL-RECORD (app/cbl/CBACT04C.cbl, 50 bytes, RECORDSIZE 50).
+ * Key: FD-TRANCAT-ACCT-ID, FD-TRANCAT-TYPE-CD, FD-TRANCAT-CD together (offset 0, 17 bytes, from IDCAMS KEYS): the @EmbeddedId FdTranCatBalRecordKey.
+ * Generated from GitGalaxy's verified skeleton; VSAM defines field testing: open (3 public / 0 private estates).
+ */
+@Entity(name = "VsamFdTranCatBalRecord")
+@Table(name = "vsam_tcatbalf")
+@Data
+@NoArgsConstructor
+public class FdTranCatBalRecord {
+
+    // FD-TRANCAT-ACCT-ID, FD-TRANCAT-TYPE-CD, FD-TRANCAT-CD together (offset 0, 17 bytes, from IDCAMS KEYS): the @EmbeddedId FdTranCatBalRecordKey
+    @EmbeddedId
+    private FdTranCatBalRecordKey id;
+
+    // FD-FD-TRAN-CAT-DATA: PIC X(33), offset 17, 33 bytes
+    @Column(name = "FD_FD_TRAN_CAT_DATA", length = 33)
+    private String fdFdTranCatData;
+
+
+    /** #3624: this record from its fixed-width VSAM form (50 bytes, as REPRO unloads it), each
+     *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
+     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+    public static FdTranCatBalRecord fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        FdTranCatBalRecord r = new FdTranCatBalRecord();
+        r.id = new FdTranCatBalRecordKey();
+        r.id.setFdTrancatAcctId(CobolRecords.toLong(CobolRecords.zoned(rec, 0, 11, 0, text)));
+        r.id.setFdTrancatTypeCd(CobolRecords.text(rec, 11, 2, text));
+        r.id.setFdTrancatCd(CobolRecords.toInteger(CobolRecords.zoned(rec, 13, 4, 0, text)));
+        r.fdFdTranCatData = CobolRecords.text(rec, 17, 33, text);
+        return r;
+    }
+
+    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    public byte[] toRecord(java.nio.charset.Charset text) {
+        byte[] rec = CobolRecords.blank(50, text);
+        CobolRecords.putZoned(rec, 0, 11, 0, false, CobolRecords.decimal(id.getFdTrancatAcctId()), text);
+        CobolRecords.putText(rec, 11, 2, id.getFdTrancatTypeCd(), text);
+        CobolRecords.putZoned(rec, 13, 4, 0, false, CobolRecords.decimal(id.getFdTrancatCd()), text);
+        CobolRecords.putText(rec, 17, 33, fdFdTranCatData, text);
+        return rec;
+    }
+}

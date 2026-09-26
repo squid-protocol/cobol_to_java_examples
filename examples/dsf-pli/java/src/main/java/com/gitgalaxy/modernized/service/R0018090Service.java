@@ -1,0 +1,70 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.exception.*;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Screens (#3619): none resolved.
+ * TODO: SEND MAP S00101E (mapset S001013) at src/R0018090.pli:1804: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S00101E (mapset S001013) at src/R0018090.pli:1817: no single BMS source defines it (candidates: none in the repository)
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class R0018090Service {
+
+    private static final Logger log = LoggerFactory.getLogger(R0018090Service.class);
+
+    // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
+    // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
+
+    public void executeR0018090(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for R0018090");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("R0018090: handleLink");
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/R0018090.pli:1793 (paragraph P020_SKRIV_BARN_AV_TRANHIST): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL1793() {
+        throw new UnitOfWorkRollbackException("R0018090", "src/R0018090.pli:1793");
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R0018090.pli:268 (paragraph R001809) routes ERROR to FEILBEH.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL268(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL FEILBEH at line 268", e);
+        // TODO: port paragraph FEILBEH's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R0018090.pli:1790 (paragraph P020_SKRIV_BARN_AV_TRANHIST) routes ERROR to ABEND.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL1790(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL ABEND at line 1790", e);
+        // TODO: port paragraph ABEND's logic
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(FEIL) at src/R0018090.pli:1823 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendFeilL1823() {
+        throw new CicsAbendException("FEIL", "R0018090", "src/R0018090.pli:1823");
+    }
+
+}

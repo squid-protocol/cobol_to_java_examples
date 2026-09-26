@@ -1,0 +1,29 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.service.SrcR0010490Service;
+
+/**
+ * CICS program R0010490 (src/R0010490.pli), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * TODO: no COMMAREA layout: no structure parameter, or structure BASED on the main procedure's parameter COMMAREA_PEKER, is declared in the program or its %INCLUDE members; %INCLUDE members not in the repository: P0010501, P0010601, P0010701, P0010801, P0010901, P0011001, P0011101, P0011201, P0011401, P0011601, P0011701, P0011831, P0011901, P0012001, P0012002, P0012003, P0019906, P0019908, P0019910, P0019911, P0019912, P001N501, P001N601, P001N801, P001N901, P001NB01, P001NC01, P001U601, P001U801, P001UC01, P001UE01, P001UJ01, S00101; no resolved caller passes a COMMAREA.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/src-r0010490")
+@RequiredArgsConstructor
+public class SrcR0010490Controller {
+
+    private final SrcR0010490Service srcR0010490Service;
+
+    /** Program-to-program entry: LINK at src/R0010450.pli:554, LINK at src/R0010450.pli:663, LINK at src/R0010501.pli:478, LINK at src/R0010601.pli:614, LINK at src/R0010801.pli:507, LINK at src/R0011001.pli:490, LINK at src/R0011101.pli:253, LINK at src/R0011201.pli:290, LINK at src/R0011401.pli:275, LINK at src/R0011601.pli:243, LINK at src/R0011701.pli:245, LINK at src/R0011901.pli:405, LINK at src/R001N501.pli:444, LINK at src/R001N601.pli:618, LINK at src/R001N801.pli:504, LINK at src/R001N901.pli:275, LINK at src/R001NB01.pli:254, LINK at src/R001NC01.pli:350, LINK at src/R001U601.pli:846, LINK at src/R001U801.pli:827, LINK at src/R001UC01.pli:354, LINK at src/R001UE01.pli:306, LINK at src/R001UJ01.pli:343. */
+    @PostMapping("/link")
+    public ResponseEntity<Void> link() {
+        srcR0010490Service.handleLink();
+        return ResponseEntity.noContent().build();
+    }
+
+}

@@ -1,0 +1,42 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.batch.Dd;
+import com.gitgalaxy.modernized.dto.contract.Cbstm03bLkM03bArea;
+import java.util.List;
+import org.springframework.beans.factory.ObjectProvider;
+
+@Service
+@RequiredArgsConstructor
+public class Cbstm03aService {
+
+    private static final Logger log = LoggerFactory.getLogger(Cbstm03aService.class);
+
+    private final ObjectProvider<Cbstm03bService> cbstm03bService;
+
+    public void executeCbstm03a(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for CBSTM03A");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** CALL 'CBSTM03B' at app/cbl/CBSTM03A.CBL:351, app/cbl/CBSTM03A.CBL:377, app/cbl/CBSTM03A.CBL:401, app/cbl/CBSTM03A.CBL:734, app/cbl/CBSTM03A.CBL:746, app/cbl/CBSTM03A.CBL:769, app/cbl/CBSTM03A.CBL:787, app/cbl/CBSTM03A.CBL:805, app/cbl/CBSTM03A.CBL:835, app/cbl/CBSTM03A.CBL:860, app/cbl/CBSTM03A.CBL:877, app/cbl/CBSTM03A.CBL:893, app/cbl/CBSTM03A.CBL:909; the parameters are Cbstm03b's USING items.
+     *  Call targets open (6 public / 0 private estates); CALL USING open (5 public / 0 private estates). */
+    public void callCbstm03b(Cbstm03bLkM03bArea lkM03bArea) {
+        cbstm03bService.getObject().handleCall(lkM03bArea);
+    }
+
+    /** The batch entry (#3622): run by job CREASTMT step STEP040 (app/jcl/CREASTMT.JCL:79).
+     *  `dds` are the step's DD statements (DatasetResolver maps each to its file); `parm` the
+     *  text its EXEC PARM= passes (null without one) -- a PROCEDURE DIVISION USING area's data.
+     *  DD HTMLFILE (OUTPUT) -> AWS.M2.CARDDEMO.STATEMNT.HTML.
+     *  DD STMTFILE (OUTPUT) -> AWS.M2.CARDDEMO.STATEMNT.PS.
+     *  TODO: port the PROCEDURE DIVISION main line; return its RETURN-CODE.
+     *  JCL job flow field testing: open (5 public / 0 private estates). */
+    public int runBatch(List<Dd> dds, String parm) {
+        return 0;
+    }
+
+}

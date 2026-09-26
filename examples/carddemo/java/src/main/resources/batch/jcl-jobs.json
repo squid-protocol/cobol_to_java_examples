@@ -1,0 +1,1156 @@
+[
+  {
+    "job": "CBPAUP0J",
+    "file": "app/app-authorization-ims-db2-mq/jcl/CBPAUP0J.jcl",
+    "kind": "application",
+    "reason": "runs CBPAUP0C",
+    "generated": "Cbpaup0jJobConfig",
+    "spring_job": "CBPAUP0J",
+    "steps": [
+      {
+        "step": "STEP01",
+        "program": "CBPAUP0C"
+      }
+    ]
+  },
+  {
+    "job": "DBPAUTP0",
+    "file": "app/app-authorization-ims-db2-mq/jcl/DBPAUTP0.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DFSURGU0, IEFBR14)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEPDEL",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "UNLOAD",
+        "program": "DFSURGU0"
+      }
+    ]
+  },
+  {
+    "job": "LOADPADB",
+    "file": "app/app-authorization-ims-db2-mq/jcl/LOADPADB.JCL",
+    "kind": "application",
+    "reason": "runs PAUDBLOD",
+    "generated": "LoadpadbJobConfig",
+    "spring_job": "LOADPADB",
+    "steps": [
+      {
+        "step": "STEP01",
+        "program": "PAUDBLOD"
+      }
+    ]
+  },
+  {
+    "job": "UNLDGSAM",
+    "file": "app/app-authorization-ims-db2-mq/jcl/UNLDGSAM.JCL",
+    "kind": "application",
+    "reason": "runs DBUNLDGS",
+    "generated": "UnldgsamJobConfig",
+    "spring_job": "UNLDGSAM",
+    "steps": [
+      {
+        "step": "STEP01",
+        "program": "DBUNLDGS"
+      }
+    ]
+  },
+  {
+    "job": "UNLDPADB",
+    "file": "app/app-authorization-ims-db2-mq/jcl/UNLDPADB.JCL",
+    "kind": "application",
+    "reason": "runs PAUDBUNL",
+    "generated": "UnldpadbJobConfig",
+    "spring_job": "UNLDPADB",
+    "steps": [
+      {
+        "step": "STEP0",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "STEP01",
+        "program": "PAUDBUNL"
+      }
+    ]
+  },
+  {
+    "job": "CREADB2",
+    "file": "app/app-transaction-type-db2/jcl/CREADB21.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTEP4, DSNTIAD, IEFBR14, IKJEFT01 (TSO commands))",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "FREEPLN",
+        "program": "IKJEFT01"
+      },
+      {
+        "step": "CRCRDDB",
+        "program": "DSNTIAD"
+      },
+      {
+        "step": "LDTTYPE",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "RUNTEP2",
+        "program": "DSNTEP4"
+      },
+      {
+        "step": "LDTCCAT",
+        "program": "DSNTEP4"
+      }
+    ]
+  },
+  {
+    "job": "MNTTRDB2",
+    "file": "app/app-transaction-type-db2/jcl/MNTTRDB2.jcl",
+    "kind": "application",
+    "reason": "runs COBTUPDT",
+    "generated": "Mnttrdb2JobConfig",
+    "spring_job": "MNTTRDB2",
+    "steps": [
+      {
+        "step": "STEP1",
+        "program": "COBTUPDT"
+      }
+    ]
+  },
+  {
+    "job": "TRANEXTR",
+    "file": "app/app-transaction-type-db2/jcl/TRANEXTR.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTIAUL, IEBGENER, IEFBR14)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP10",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP20",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP30",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "STEP40",
+        "program": "DSNTIAUL"
+      },
+      {
+        "step": "STEP50",
+        "program": "DSNTIAUL"
+      }
+    ]
+  },
+  {
+    "job": "ACCTFILE",
+    "file": "app/jcl/ACCTFILE.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP10",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP15",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "CARDFILE",
+    "file": "app/jcl/CARDFILE.jcl",
+    "kind": "build",
+    "reason": "tooling (IDCAMS, SDSF)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CLCIFIL",
+        "program": "SDSF"
+      },
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP10",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP15",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP40",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP50",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP60",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "OPCIFIL",
+        "program": "SDSF"
+      }
+    ]
+  },
+  {
+    "job": "CBADMCDJ",
+    "file": "app/jcl/CBADMCDJ.jcl",
+    "kind": "build",
+    "reason": "builds / installs (DFHCSDUP)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP1",
+        "program": "DFHCSDUP"
+      }
+    ]
+  },
+  {
+    "job": "CBEXPORT",
+    "file": "app/jcl/CBEXPORT.jcl",
+    "kind": "application",
+    "reason": "runs CBEXPORT",
+    "generated": "CbexportJobConfig",
+    "spring_job": "CBEXPORT",
+    "steps": [
+      {
+        "step": "STEP01",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP02",
+        "program": "CBEXPORT"
+      }
+    ]
+  },
+  {
+    "job": "CBIMPORT",
+    "file": "app/jcl/CBIMPORT.jcl",
+    "kind": "application",
+    "reason": "runs CBIMPORT",
+    "generated": "CbimportJobConfig",
+    "spring_job": "CBIMPORT",
+    "steps": [
+      {
+        "step": "STEP01",
+        "program": "CBIMPORT"
+      }
+    ]
+  },
+  {
+    "job": "CLOSEFIL",
+    "file": "app/jcl/CLOSEFIL.jcl",
+    "kind": "build",
+    "reason": "builds / installs (SDSF)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CLCIFIL",
+        "program": "SDSF"
+      }
+    ]
+  },
+  {
+    "job": "COMBTRAN",
+    "file": "app/jcl/COMBTRAN.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS, SORT)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP05R",
+        "program": "SORT"
+      },
+      {
+        "step": "STEP10",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "CREASTMT",
+    "file": "app/jcl/CREASTMT.JCL",
+    "kind": "application",
+    "reason": "runs CBSTM03A",
+    "generated": "CreastmtJobConfig",
+    "spring_job": "CREASTMT",
+    "steps": [
+      {
+        "step": "DELDEF01",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP010",
+        "program": "SORT"
+      },
+      {
+        "step": "STEP020",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP030",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "STEP040",
+        "program": "CBSTM03A"
+      }
+    ]
+  },
+  {
+    "job": "CUSTFILE",
+    "file": "app/jcl/CUSTFILE.jcl",
+    "kind": "build",
+    "reason": "tooling (IDCAMS, SDSF)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CLCIFIL",
+        "program": "SDSF"
+      },
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP10",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP15",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "OPCIFIL",
+        "program": "SDSF"
+      }
+    ]
+  },
+  {
+    "job": "DALYREJS",
+    "file": "app/jcl/DALYREJS.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "DEFCUST",
+    "file": "app/jcl/DEFCUST.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "DEFGDGB",
+    "file": "app/jcl/DEFGDGB.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "DEFGDGD",
+    "file": "app/jcl/DEFGDGD.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS, IEBGENER)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP10",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP20",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP30",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP40",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP50",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP60",
+        "program": "IEBGENER"
+      }
+    ]
+  },
+  {
+    "job": "DISCGRP",
+    "file": "app/jcl/DISCGRP.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP10",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP15",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "DUSRSECJ",
+    "file": "app/jcl/DUSRSECJ.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS, IEBGENER, IEFBR14)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "PREDEL",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "STEP01",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP02",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP03",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "ESDSRRDS",
+    "file": "app/jcl/ESDSRRDS.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS, IEBGENER, IEFBR14)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "PREDEL",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "STEP01",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP02",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP03",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP04",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "FTPJCLS",
+    "file": "app/jcl/FTPJCL.JCL",
+    "kind": "utility",
+    "reason": "data utilities only (FTP)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP1",
+        "program": "FTP"
+      }
+    ]
+  },
+  {
+    "job": "INTCALC",
+    "file": "app/jcl/INTCALC.jcl",
+    "kind": "application",
+    "reason": "runs CBACT04C",
+    "generated": "IntcalcJobConfig",
+    "spring_job": "INTCALC",
+    "steps": [
+      {
+        "step": "STEP15",
+        "program": "CBACT04C"
+      }
+    ]
+  },
+  {
+    "job": "INTRDRJ1",
+    "file": "app/jcl/INTRDRJ1.JCL",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS, IEBGENER)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "IDCAMS",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP01",
+        "program": "IEBGENER"
+      }
+    ]
+  },
+  {
+    "job": "INTRDRJ2",
+    "file": "app/jcl/INTRDRJ2.JCL",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "IDCAMS",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "OPENFIL",
+    "file": "app/jcl/OPENFIL.jcl",
+    "kind": "build",
+    "reason": "builds / installs (SDSF)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "OPCIFIL",
+        "program": "SDSF"
+      }
+    ]
+  },
+  {
+    "job": "POSTTRAN",
+    "file": "app/jcl/POSTTRAN.jcl",
+    "kind": "application",
+    "reason": "runs CBTRN02C",
+    "generated": "PosttranJobConfig",
+    "spring_job": "POSTTRAN",
+    "steps": [
+      {
+        "step": "STEP15",
+        "program": "CBTRN02C"
+      }
+    ]
+  },
+  {
+    "job": "PRTCATBL",
+    "file": "app/jcl/PRTCATBL.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS, IEFBR14, SORT)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "DELDEF",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "STEP05R.PRC001",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP10R",
+        "program": "SORT"
+      }
+    ]
+  },
+  {
+    "job": "READACCT",
+    "file": "app/jcl/READACCT.jcl",
+    "kind": "application",
+    "reason": "runs CBACT01C",
+    "generated": "ReadacctJobConfig",
+    "spring_job": "READACCT",
+    "steps": [
+      {
+        "step": "PREDEL",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "STEP05",
+        "program": "CBACT01C"
+      }
+    ]
+  },
+  {
+    "job": "READCARD",
+    "file": "app/jcl/READCARD.jcl",
+    "kind": "application",
+    "reason": "runs CBACT02C",
+    "generated": "ReadcardJobConfig",
+    "spring_job": "READCARD",
+    "steps": [
+      {
+        "step": "STEP05",
+        "program": "CBACT02C"
+      }
+    ]
+  },
+  {
+    "job": "READCUST",
+    "file": "app/jcl/READCUST.jcl",
+    "kind": "application",
+    "reason": "runs CBCUS01C",
+    "generated": "ReadcustJobConfig",
+    "spring_job": "READCUST",
+    "steps": [
+      {
+        "step": "STEP05",
+        "program": "CBCUS01C"
+      }
+    ]
+  },
+  {
+    "job": "READXREF",
+    "file": "app/jcl/READXREF.jcl",
+    "kind": "application",
+    "reason": "runs CBACT03C",
+    "generated": "ReadxrefJobConfig",
+    "spring_job": "READXREF",
+    "steps": [
+      {
+        "step": "STEP05",
+        "program": "CBACT03C"
+      }
+    ]
+  },
+  {
+    "job": "REPTFILE",
+    "file": "app/jcl/REPTFILE.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "TCATBALF",
+    "file": "app/jcl/TCATBALF.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP10",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP15",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "TRANBKP",
+    "file": "app/jcl/TRANBKP.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP05R.PRC001",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP10",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "TRANCATG",
+    "file": "app/jcl/TRANCATG.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP10",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP15",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "TRANFILE",
+    "file": "app/jcl/TRANFILE.jcl",
+    "kind": "build",
+    "reason": "tooling (IDCAMS, SDSF)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CLCIFIL",
+        "program": "SDSF"
+      },
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP10",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP15",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP20",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP25",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP30",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "OPCIFIL",
+        "program": "SDSF"
+      }
+    ]
+  },
+  {
+    "job": "TRANIDX",
+    "file": "app/jcl/TRANIDX.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP20",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP25",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP30",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "TRANREPT",
+    "file": "app/jcl/TRANREPT.jcl",
+    "kind": "application",
+    "reason": "runs CBTRN03C",
+    "generated": "TranreptJobConfig",
+    "spring_job": "TRANREPT",
+    "steps": [
+      {
+        "step": "STEP05R.PRC001",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP05R",
+        "program": "SORT"
+      },
+      {
+        "step": "STEP10R",
+        "program": "CBTRN03C"
+      }
+    ]
+  },
+  {
+    "job": "TRANTYPE",
+    "file": "app/jcl/TRANTYPE.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP10",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP15",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "TXT2PDF1",
+    "file": "app/jcl/TXT2PDF1.JCL",
+    "kind": "runner",
+    "reason": "runs IKJEFT1B (the REXX / CLIST exec TXT2PDF)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "TXT2PDF",
+        "program": "IKJEFT1B"
+      }
+    ]
+  },
+  {
+    "job": "WAITSTEP",
+    "file": "app/jcl/WAITSTEP.jcl",
+    "kind": "application",
+    "reason": "runs COBSWAIT",
+    "generated": "WaitstepJobConfig",
+    "spring_job": "WAITSTEP",
+    "steps": [
+      {
+        "step": "WAIT",
+        "program": "COBSWAIT"
+      }
+    ]
+  },
+  {
+    "job": "XREFFILE",
+    "file": "app/jcl/XREFFILE.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP10",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP15",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP20",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP25",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "STEP30",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "CNJBATMP",
+    "file": "samples/jcl/BATCMP.jcl",
+    "kind": "build",
+    "reason": "tooling (HEWL, IEBGENER, IGYCRCTL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "BATCMP.COMPILE",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "BATCMP.CBLPRINT",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "BATCMP.LKED",
+        "program": "HEWL"
+      }
+    ]
+  },
+  {
+    "job": "CBLDBMS",
+    "file": "samples/jcl/BMSCMP.jcl",
+    "kind": "build",
+    "reason": "tooling (ASMA90, HEWL, IEBGENER, IEFBR14, SDSF)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP1.PRINT",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP1.MAP",
+        "program": "ASMA90"
+      },
+      {
+        "step": "STEP1.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "STEP1.DSECT",
+        "program": "ASMA90"
+      },
+      {
+        "step": "STEP1.DISPLIST",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "STEP1.DELTEMP",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "SDSF1",
+        "program": "SDSF"
+      }
+    ]
+  },
+  {
+    "job": "CICCMP",
+    "file": "samples/jcl/CICCMP.jcl",
+    "kind": "build",
+    "reason": "tooling (HEWL, IEBGENER, IGYCRCTL, SDSF)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CICSCMP.COB",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "CICSCMP.DISPLIST",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "CICSCMP.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "CICSCMP.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "NEWCOPY",
+        "program": "SDSF"
+      }
+    ]
+  },
+  {
+    "job": "CIDBCMP",
+    "file": "samples/jcl/CICDBCMP.jcl",
+    "kind": "build",
+    "reason": "tooling (DFHECP1$, DSNHPC, HEWL, IGYCRCTL, IKJEFT01 (TSO commands))",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CICSCMP.PRECMP",
+        "program": "DSNHPC"
+      },
+      {
+        "step": "CICSCMP.TRN",
+        "program": "DFHECP1$"
+      },
+      {
+        "step": "CICSCMP.COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "CICSCMP.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "CICSCMP.BINDPK",
+        "program": "IKJEFT01"
+      },
+      {
+        "step": "CICSCMP.BINDPL",
+        "program": "IKJEFT01"
+      }
+    ]
+  },
+  {
+    "job": "IMSMQCMP",
+    "file": "samples/jcl/IMSMQCMP.jcl",
+    "kind": "build",
+    "reason": "tooling (DFHECP1$, IEBGENER, IEWL, IGYCRCTL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "TRN",
+        "program": "DFHECP1$"
+      },
+      {
+        "step": "COBOL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "COPYIMS",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "COPYMQ",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LKED",
+        "program": "IEWL"
+      }
+    ]
+  },
+  {
+    "job": "LISTFILS",
+    "file": "samples/jcl/LISTCAT.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS, IEFBR14)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP01",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "STEP05",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "RACFCMDS",
+    "file": "samples/jcl/RACFCMDS.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IKJEFT01 (TSO commands))",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "TSOBAT",
+        "program": "IKJEFT01"
+      }
+    ]
+  },
+  {
+    "job": "REPRTEST",
+    "file": "samples/jcl/REPRTEST.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP05.PRC001",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "SORTTEST",
+    "file": "samples/jcl/SORTTEST.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (SORT)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP05R",
+        "program": "SORT"
+      }
+    ]
+  }
+]

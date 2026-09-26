@@ -1,0 +1,52 @@
+package com.gitgalaxy.modernized.entity.vsam;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * VSAM file NORREST (no IDCAMS DEFINE in the repository),
+ * record REST_REC (src/GML/R001NO10.pli, 29 bytes).
+ * Key: TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey.
+ * Generated from GitGalaxy's verified skeleton; VSAM defines field testing: open (3 public / 0 private estates).
+ */
+@Entity(name = "VsamRestRec")
+@Table(name = "vsam_norrest")
+@Data
+@NoArgsConstructor
+public class RestRec {
+
+    // TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey
+    @Id
+    @Column(name = "VSAM_KEY")
+    private String vsamKey;
+
+    // REST_TKNR: PIC '( 4)9', offset 0, 4 bytes
+    @Column(name = "REST_TKNR", length = 4)
+    private String restTknr;
+
+    // REST_TRANS_DATO_ÅMD: PIC '( 6)9', offset 4, 6 bytes
+    @Column(name = "REST_TRANS_DATO_ÅMD", length = 6)
+    private String restTransDatoÅmd;
+
+    // REST_TRANS_TID: PIC '( 4)9', offset 10, 4 bytes
+    @Column(name = "REST_TRANS_TID", length = 4)
+    private String restTransTid;
+
+    // REST_FNR: PIC '(11)9', offset 14, 11 bytes
+    @Column(name = "REST_FNR")
+    private Long restFnr;
+
+    // REST_BLANKETT_TYPE: CHAR(2), offset 25, 2 bytes
+    @Column(name = "REST_BLANKETT_TYPE", length = 2)
+    private String restBlankettType;
+
+    // REST_REC_NR: CHAR(2), offset 27, 2 bytes
+    @Column(name = "REST_REC_NR", length = 2)
+    private String restRecNr;
+
+
+    // #3624: no record codec: a PL/I record (its types are not COBOL PICTUREs).
+}

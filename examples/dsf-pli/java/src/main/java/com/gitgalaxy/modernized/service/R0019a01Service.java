@@ -1,0 +1,91 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.entity.vsam.OmrfeilFeilMeld;
+import com.gitgalaxy.modernized.exception.*;
+import com.gitgalaxy.modernized.repository.vsam.OmrfeilFeilMeldRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Screens (#3619): none resolved.
+ * TODO: SEND MAP S0019A1 (mapset S0019A3) at src/R0019A01.pli:112: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S0019A1 (mapset S0019A3) at src/R0019A01.pli:122: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S0019A1 (mapset S0019A3) at src/R0019A01.pli:173: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S0019A1 (mapset S0019A3) at src/R0019A01.pli:176: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S0019A1 (mapset S0019A3) at src/R0019A01.pli:277: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S0019A1 (mapset S0019A3) at src/R0019A01.pli:280: no single BMS source defines it (candidates: none in the repository)
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class R0019a01Service {
+
+    private static final Logger log = LoggerFactory.getLogger(R0019a01Service.class);
+
+    private final ObjectProvider<SrcR0010301Service> srcR0010301Service;
+    private final OmrfeilFeilMeldRepository omrfeilFeilMeldRepository;
+
+    public void executeR0019a01(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for R0019A01");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("R0019a01: handleLink");
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010301) at src/R0019A01.pli:132. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcR0010301() {
+        srcR0010301Service.getObject().handleLink();
+    }
+
+    /** OMRFEIL as CICS file OMRFEIL at src/R0019A01.pli:225, 230, 234, 238, 250, 256, 262, 270; VSAM defines field testing: open (3 public / 0 private estates). */
+    public OmrfeilFeilMeld writeOmrfeil(OmrfeilFeilMeld record) {
+        return omrfeilFeilMeldRepository.save(record);
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/R0019A01.pli:284 (paragraph UTGANG): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL284() {
+        throw new UnitOfWorkRollbackException("R0019A01", "src/R0019A01.pli:284");
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R0019A01.pli:96 (paragraph R0019A) routes ERROR to FEILBEH.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL96(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL FEILBEH at line 96", e);
+        // TODO: port paragraph FEILBEH's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R0019A01.pli:242 (paragraph UTGANG) routes ERROR to ABEND.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL242(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL ABEND at line 242", e);
+        // TODO: port paragraph ABEND's logic
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(FEIL) at src/R0019A01.pli:296 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendFeilL296() {
+        throw new CicsAbendException("FEIL", "R0019A01", "src/R0019A01.pli:296");
+    }
+
+}

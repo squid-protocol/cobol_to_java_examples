@@ -1,0 +1,335 @@
+package com.gitgalaxy.modernized.dto.screen;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * BMS map CACTVWA of mapset COACTVW (app/bms/COACTVW.bms): the screen as a view model (#3619).
+ * SEND at app/cbl/COACTVWC.cbl:583; RECEIVE at app/cbl/COACTVWC.cbl:611.
+ * One property per named field (symbolic map CACTVWAI / CACTVWAO); LAYOUT is every field in
+ * screen order, labels included. BMS screen fields field testing: open (3 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class CactvwaScreen implements ScreenModel {
+
+    public static final String MAPSET = "COACTVW";
+    public static final String MAP = "CACTVWA";
+    public static final List<ScreenField> LAYOUT = List.of(
+            new ScreenField(null, 1, 1, 5, false, false, false, false, false, "Tran:", "BLUE", 1),
+            new ScreenField("TRNNAME", 1, 7, 4, false, false, false, false, false, null, "BLUE", 1),
+            new ScreenField("TITLE01", 1, 21, 40, false, false, false, false, false, null, "YELLOW", 1),
+            new ScreenField(null, 1, 65, 5, false, false, false, false, false, "Date:", "BLUE", 1),
+            new ScreenField("CURDATE", 1, 71, 8, false, false, false, false, false, "mm/dd/yy", "BLUE", 1),
+            new ScreenField(null, 2, 1, 5, false, false, false, false, false, "Prog:", "BLUE", 1),
+            new ScreenField("PGMNAME", 2, 7, 8, false, false, false, false, false, null, "BLUE", 1),
+            new ScreenField("TITLE02", 2, 21, 40, false, false, false, false, false, null, "YELLOW", 1),
+            new ScreenField(null, 2, 65, 5, false, false, false, false, false, "Time:", "BLUE", 1),
+            new ScreenField("CURTIME", 2, 71, 8, false, false, false, false, false, "hh:mm:ss", "BLUE", 1),
+            new ScreenField(null, 4, 33, 12, false, false, false, false, false, "View Account", "NEUTRAL", 1),
+            new ScreenField(null, 5, 19, 16, false, false, false, false, false, "Account Number :", "TURQUOISE", 1),
+            new ScreenField("ACCTSID", 5, 38, 11, true, false, false, false, true, null, "GREEN", 1),
+            new ScreenField(null, 5, 50, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 5, 57, 12, false, false, false, false, false, "Active Y/N: ", "TURQUOISE", 1),
+            new ScreenField("ACSTTUS", 5, 70, 1, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 5, 72, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 6, 8, 7, false, false, false, false, false, "Opened:", "TURQUOISE", 1),
+            new ScreenField("ADTOPEN", 6, 17, 10, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 6, 28, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 6, 39, 21, false, false, false, false, false, "Credit Limit        :", "TURQUOISE", 1),
+            new ScreenField("ACRDLIM", 6, 61, 15, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 6, 77, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 7, 8, 7, false, false, false, false, false, "Expiry:", "TURQUOISE", 1),
+            new ScreenField("AEXPDT", 7, 17, 10, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 7, 28, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 7, 39, 21, false, false, false, false, false, "Cash credit Limit   :", "TURQUOISE", 1),
+            new ScreenField("ACSHLIM", 7, 61, 15, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 7, 77, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 8, 8, 8, false, false, false, false, false, "Reissue:", "TURQUOISE", 1),
+            new ScreenField("AREISDT", 8, 17, 10, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 8, 28, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 8, 39, 21, false, false, false, false, false, "Current Balance     :", "TURQUOISE", 1),
+            new ScreenField("ACURBAL", 8, 61, 15, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 8, 77, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 9, 39, 21, false, false, false, false, false, "Current Cycle Credit:", "TURQUOISE", 1),
+            new ScreenField("ACRCYCR", 9, 61, 15, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 9, 77, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 10, 8, 14, false, false, false, false, false, "Account Group:", "TURQUOISE", 1),
+            new ScreenField("AADDGRP", 10, 23, 10, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 10, 34, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 10, 39, 21, false, false, false, false, false, "Current Cycle Debit :", "TURQUOISE", 1),
+            new ScreenField("ACRCYDB", 10, 61, 15, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 10, 77, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 11, 32, 16, false, false, false, false, false, "Customer Details", "NEUTRAL", 1),
+            new ScreenField(null, 12, 8, 14, false, false, false, false, false, "Customer id  :", "TURQUOISE", 1),
+            new ScreenField("ACSTNUM", 12, 23, 9, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 12, 33, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 12, 49, 4, false, false, false, false, false, "SSN:", "TURQUOISE", 1),
+            new ScreenField("ACSTSSN", 12, 54, 12, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 12, 67, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 13, 8, 14, false, false, false, false, false, "Date of birth:", "TURQUOISE", 1),
+            new ScreenField("ACSTDOB", 13, 23, 10, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 13, 34, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 13, 49, 11, false, false, false, false, false, "FICO Score:", "TURQUOISE", 1),
+            new ScreenField("ACSTFCO", 13, 61, 3, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 13, 65, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 14, 1, 10, false, false, false, false, false, "First Name", "TURQUOISE", 1),
+            new ScreenField(null, 14, 28, 13, false, false, false, false, false, "Middle Name: ", "TURQUOISE", 1),
+            new ScreenField(null, 14, 55, 12, false, false, false, false, false, "Last Name : ", "TURQUOISE", 1),
+            new ScreenField("ACSFNAM", 15, 1, 25, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 15, 27, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("ACSMNAM", 15, 28, 25, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 15, 54, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("ACSLNAM", 15, 55, 25, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 16, 1, 8, false, false, false, false, false, "Address:", "TURQUOISE", 1),
+            new ScreenField("ACSADL1", 16, 10, 50, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 16, 61, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 16, 63, 6, false, false, false, false, false, "State ", "TURQUOISE", 1),
+            new ScreenField("ACSSTTE", 16, 73, 2, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 16, 76, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("ACSADL2", 17, 10, 50, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 17, 61, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 17, 63, 3, false, false, false, false, false, "Zip", "TURQUOISE", 1),
+            new ScreenField("ACSZIPC", 17, 73, 5, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 17, 79, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 18, 1, 5, false, false, false, false, false, "City ", "TURQUOISE", 1),
+            new ScreenField("ACSCITY", 18, 10, 50, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 18, 61, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 18, 63, 7, false, false, false, false, false, "Country", "TURQUOISE", 1),
+            new ScreenField("ACSCTRY", 18, 73, 3, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 18, 77, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 19, 1, 8, false, false, false, false, false, "Phone 1:", "TURQUOISE", 1),
+            new ScreenField("ACSPHN1", 19, 10, 13, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 19, 24, 30, false, false, false, false, false, "Government Issued Id Ref    : ", "TURQUOISE", 1),
+            new ScreenField("ACSGOVT", 19, 58, 20, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 19, 79, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 20, 1, 8, false, false, false, false, false, "Phone 2:", "TURQUOISE", 1),
+            new ScreenField("ACSPHN2", 20, 10, 13, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 20, 24, 16, false, false, false, false, false, "EFT Account Id: ", "TURQUOISE", 1),
+            new ScreenField("ACSEFTC", 20, 41, 10, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 20, 52, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 20, 53, 24, false, false, false, false, false, "Primary Card Holder Y/N:", "TURQUOISE", 1),
+            new ScreenField("ACSPFLG", 20, 78, 1, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 20, 80, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("INFOMSG", 22, 23, 45, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 22, 69, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 1, 1, 9, false, false, false, false, false, null, null, 1),
+            new ScreenField("ERRMSG", 23, 1, 78, false, false, true, false, false, null, "RED", 1),
+            new ScreenField(null, 24, 1, 60, false, false, false, false, false, "  F3=Exit ", "TURQUOISE", 1));
+
+    /** TRNNAME: (1,7), 4 bytes, ATTRB=ASKIP,FSET,NORM -- app/bms/COACTVW.bms:34. Symbolic map TRNNAMEI, TRNNAMEO. */
+    private String trnname;
+
+    /** TITLE01: (1,21), 40 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:38. Symbolic map TITLE01I, TITLE01O. */
+    private String title01;
+
+    /** CURDATE: (1,71), 8 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:47. Symbolic map CURDATEI, CURDATEO. */
+    private String curdate;
+
+    /** PGMNAME: (2,7), 8 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:57. Symbolic map PGMNAMEI, PGMNAMEO. */
+    private String pgmname;
+
+    /** TITLE02: (2,21), 40 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:61. Symbolic map TITLE02I, TITLE02O. */
+    private String title02;
+
+    /** CURTIME: (2,71), 8 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:70. Symbolic map CURTIMEI, CURTIMEO. */
+    private String curtime;
+
+    /** ACCTSID: (5,38), 11 bytes, ATTRB=FSET,IC,NORM,UNPROT; PICIN=99999999999 PICOUT=- -- app/bms/COACTVW.bms:84. Symbolic map ACCTSIDI, ACCTSIDO. */
+    private String acctsid;
+
+    /** ACSTTUS: (5,70), 1 bytes, ATTRB=ASKIP -- app/bms/COACTVW.bms:97. Symbolic map ACSTTUSI, ACSTTUSO. */
+    private String acsttus;
+
+    /** ADTOPEN: (6,17), 10 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:107. Symbolic map ADTOPENI, ADTOPENO. */
+    private String adtopen;
+
+    /** ACRDLIM: (6,61), 15 bytes, ATTRB=ASKIP,NORM; PICIN=- PICOUT=+ZZZ,ZZZ,ZZZ.99 -- app/bms/COACTVW.bms:117. Symbolic map ACRDLIMI, ACRDLIMO. */
+    private String acrdlim;
+
+    /** AEXPDT: (7,17), 10 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:128. Symbolic map AEXPDTI, AEXPDTO. */
+    private String aexpdt;
+
+    /** ACSHLIM: (7,61), 15 bytes, ATTRB=ASKIP,NORM; PICIN=- PICOUT=+ZZZ,ZZZ,ZZZ.99 -- app/bms/COACTVW.bms:138. Symbolic map ACSHLIMI, ACSHLIMO. */
+    private String acshlim;
+
+    /** AREISDT: (8,17), 10 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:149. Symbolic map AREISDTI, AREISDTO. */
+    private String areisdt;
+
+    /** ACURBAL: (8,61), 15 bytes, ATTRB=ASKIP,NORM; PICIN=- PICOUT=+ZZZ,ZZZ,ZZZ.99 -- app/bms/COACTVW.bms:159. Symbolic map ACURBALI, ACURBALO. */
+    private String acurbal;
+
+    /** ACRCYCR: (9,61), 15 bytes, ATTRB=ASKIP,NORM; PICIN=- PICOUT=+ZZZ,ZZZ,ZZZ.99 -- app/bms/COACTVW.bms:171. Symbolic map ACRCYCRI, ACRCYCRO. */
+    private String acrcycr;
+
+    /** AADDGRP: (10,23), 10 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:182. Symbolic map AADDGRPI, AADDGRPO. */
+    private String aaddgrp;
+
+    /** ACRCYDB: (10,61), 15 bytes, ATTRB=ASKIP,NORM; PICIN=- PICOUT=+ZZZ,ZZZ,ZZZ.99 -- app/bms/COACTVW.bms:192. Symbolic map ACRCYDBI, ACRCYDBO. */
+    private String acrcydb;
+
+    /** ACSTNUM: (12,23), 9 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:207. Symbolic map ACSTNUMI, ACSTNUMO. */
+    private String acstnum;
+
+    /** ACSTSSN: (12,54), 12 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:216. Symbolic map ACSTSSNI, ACSTSSNO. */
+    private String acstssn;
+
+    /** ACSTDOB: (13,23), 10 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:225. Symbolic map ACSTDOBI, ACSTDOBO. */
+    private String acstdob;
+
+    /** ACSTFCO: (13,61), 3 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:234. Symbolic map ACSTFCOI, ACSTFCOO. */
+    private String acstfco;
+
+    /** ACSFNAM: (15,1), 25 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:251. Symbolic map ACSFNAMI, ACSFNAMO. */
+    private String acsfnam;
+
+    /** ACSMNAM: (15,28), 25 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:256. Symbolic map ACSMNAMI, ACSMNAMO. */
+    private String acsmnam;
+
+    /** ACSLNAM: (15,55), 25 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:261. Symbolic map ACSLNAMI, ACSLNAMO. */
+    private String acslnam;
+
+    /** ACSADL1: (16,10), 50 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:268. Symbolic map ACSADL1I, ACSADL1O. */
+    private String acsadl1;
+
+    /** ACSSTTE: (16,73), 2 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:277. Symbolic map ACSSTTEI, ACSSTTEO. */
+    private String acsstte;
+
+    /** ACSADL2: (17,10), 50 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:282. Symbolic map ACSADL2I, ACSADL2O. */
+    private String acsadl2;
+
+    /** ACSZIPC: (17,73), 5 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:291. Symbolic map ACSZIPCI, ACSZIPCO. */
+    private String acszipc;
+
+    /** ACSCITY: (18,10), 50 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:301. Symbolic map ACSCITYI, ACSCITYO. */
+    private String acscity;
+
+    /** ACSCTRY: (18,73), 3 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:310. Symbolic map ACSCTRYI, ACSCTRYO. */
+    private String acsctry;
+
+    /** ACSPHN1: (19,10), 13 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:319. Symbolic map ACSPHN1I, ACSPHN1O. */
+    private String acsphn1;
+
+    /** ACSGOVT: (19,58), 20 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:326. Symbolic map ACSGOVTI, ACSGOVTO. */
+    private String acsgovt;
+
+    /** ACSPHN2: (20,10), 13 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:335. Symbolic map ACSPHN2I, ACSPHN2O. */
+    private String acsphn2;
+
+    /** ACSEFTC: (20,41), 10 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:342. Symbolic map ACSEFTCI, ACSEFTCO. */
+    private String acseftc;
+
+    /** ACSPFLG: (20,78), 1 bytes, ATTRB=ASKIP,NORM -- app/bms/COACTVW.bms:351. Symbolic map ACSPFLGI, ACSPFLGO. */
+    private String acspflg;
+
+    /** INFOMSG: (22,23), 45 bytes, ATTRB=PROT -- app/bms/COACTVW.bms:356. Symbolic map INFOMSGI, INFOMSGO. */
+    private String infomsg;
+
+    /** ERRMSG: (23,1), 78 bytes, ATTRB=ASKIP,BRT,FSET -- app/bms/COACTVW.bms:365. Symbolic map ERRMSGI, ERRMSGO. */
+    private String errmsg;
+
+    @Override
+    public String mapsetName() {
+        return MAPSET;
+    }
+
+    @Override
+    public String mapName() {
+        return MAP;
+    }
+
+    @Override
+    public List<ScreenField> screenLayout() {
+        return LAYOUT;
+    }
+
+    @Override
+    public Map<String, String> screenValues() {
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("TRNNAME", trnname);
+        values.put("TITLE01", title01);
+        values.put("CURDATE", curdate);
+        values.put("PGMNAME", pgmname);
+        values.put("TITLE02", title02);
+        values.put("CURTIME", curtime);
+        values.put("ACCTSID", acctsid);
+        values.put("ACSTTUS", acsttus);
+        values.put("ADTOPEN", adtopen);
+        values.put("ACRDLIM", acrdlim);
+        values.put("AEXPDT", aexpdt);
+        values.put("ACSHLIM", acshlim);
+        values.put("AREISDT", areisdt);
+        values.put("ACURBAL", acurbal);
+        values.put("ACRCYCR", acrcycr);
+        values.put("AADDGRP", aaddgrp);
+        values.put("ACRCYDB", acrcydb);
+        values.put("ACSTNUM", acstnum);
+        values.put("ACSTSSN", acstssn);
+        values.put("ACSTDOB", acstdob);
+        values.put("ACSTFCO", acstfco);
+        values.put("ACSFNAM", acsfnam);
+        values.put("ACSMNAM", acsmnam);
+        values.put("ACSLNAM", acslnam);
+        values.put("ACSADL1", acsadl1);
+        values.put("ACSSTTE", acsstte);
+        values.put("ACSADL2", acsadl2);
+        values.put("ACSZIPC", acszipc);
+        values.put("ACSCITY", acscity);
+        values.put("ACSCTRY", acsctry);
+        values.put("ACSPHN1", acsphn1);
+        values.put("ACSGOVT", acsgovt);
+        values.put("ACSPHN2", acsphn2);
+        values.put("ACSEFTC", acseftc);
+        values.put("ACSPFLG", acspflg);
+        values.put("INFOMSG", infomsg);
+        values.put("ERRMSG", errmsg);
+        return values;
+    }
+
+    /** A view model from posted form values (keys as `screenValues` writes them). */
+    public static CactvwaScreen fromValues(Map<String, String> values) {
+        CactvwaScreen screen = new CactvwaScreen();
+        screen.setTrnname(values.get("TRNNAME"));
+        screen.setTitle01(values.get("TITLE01"));
+        screen.setCurdate(values.get("CURDATE"));
+        screen.setPgmname(values.get("PGMNAME"));
+        screen.setTitle02(values.get("TITLE02"));
+        screen.setCurtime(values.get("CURTIME"));
+        screen.setAcctsid(values.get("ACCTSID"));
+        screen.setAcsttus(values.get("ACSTTUS"));
+        screen.setAdtopen(values.get("ADTOPEN"));
+        screen.setAcrdlim(values.get("ACRDLIM"));
+        screen.setAexpdt(values.get("AEXPDT"));
+        screen.setAcshlim(values.get("ACSHLIM"));
+        screen.setAreisdt(values.get("AREISDT"));
+        screen.setAcurbal(values.get("ACURBAL"));
+        screen.setAcrcycr(values.get("ACRCYCR"));
+        screen.setAaddgrp(values.get("AADDGRP"));
+        screen.setAcrcydb(values.get("ACRCYDB"));
+        screen.setAcstnum(values.get("ACSTNUM"));
+        screen.setAcstssn(values.get("ACSTSSN"));
+        screen.setAcstdob(values.get("ACSTDOB"));
+        screen.setAcstfco(values.get("ACSTFCO"));
+        screen.setAcsfnam(values.get("ACSFNAM"));
+        screen.setAcsmnam(values.get("ACSMNAM"));
+        screen.setAcslnam(values.get("ACSLNAM"));
+        screen.setAcsadl1(values.get("ACSADL1"));
+        screen.setAcsstte(values.get("ACSSTTE"));
+        screen.setAcsadl2(values.get("ACSADL2"));
+        screen.setAcszipc(values.get("ACSZIPC"));
+        screen.setAcscity(values.get("ACSCITY"));
+        screen.setAcsctry(values.get("ACSCTRY"));
+        screen.setAcsphn1(values.get("ACSPHN1"));
+        screen.setAcsgovt(values.get("ACSGOVT"));
+        screen.setAcsphn2(values.get("ACSPHN2"));
+        screen.setAcseftc(values.get("ACSEFTC"));
+        screen.setAcspflg(values.get("ACSPFLG"));
+        screen.setInfomsg(values.get("INFOMSG"));
+        screen.setErrmsg(values.get("ERRMSG"));
+        return screen;
+    }
+}

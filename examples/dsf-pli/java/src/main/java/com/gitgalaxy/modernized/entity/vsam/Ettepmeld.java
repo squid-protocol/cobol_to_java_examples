@@ -1,0 +1,48 @@
+package com.gitgalaxy.modernized.entity.vsam;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * VSAM file OMRNULL (no IDCAMS DEFINE in the repository),
+ * record ETTEPMELD (src/GML/R0019H01.pli, 48 bytes).
+ * Key: TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey.
+ * Generated from GitGalaxy's verified skeleton; VSAM defines field testing: open (3 public / 0 private estates).
+ */
+@Entity(name = "VsamEttepmeld")
+@Table(name = "vsam_omrnull")
+@Data
+@NoArgsConstructor
+public class Ettepmeld {
+
+    // TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey
+    @Id
+    @Column(name = "VSAM_KEY")
+    private String vsamKey;
+
+    // FNR: PIC '(11)9', offset 0, 11 bytes
+    @Column(name = "FNR")
+    private Long fnr;
+
+    // NAVN: CHAR(25), offset 11, 25 bytes
+    @Column(name = "NAVN", length = 25)
+    private String navn;
+
+    // SPROG: CHAR(1), offset 36, 1 bytes
+    @Column(name = "SPROG", length = 1)
+    private String sprog;
+
+    // TKNR: PIC '(4)9', offset 37, 4 bytes
+    @Column(name = "TKNR")
+    private Integer tknr;
+
+    // INNTGRENSE: PIC '(7)9', offset 41, 7 bytes
+    @Column(name = "INNTGRENSE")
+    private Integer inntgrense;
+
+
+    // #3624: no record codec: a PL/I record (its types are not COBOL PICTUREs).
+}

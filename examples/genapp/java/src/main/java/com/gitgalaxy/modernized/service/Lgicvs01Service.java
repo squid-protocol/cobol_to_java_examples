@@ -1,0 +1,86 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.Lgicvs01Dfhcommarea;
+import com.gitgalaxy.modernized.entity.vsam.CaCustomerNum;
+import com.gitgalaxy.modernized.messaging.TempStorage;
+import com.gitgalaxy.modernized.repository.vsam.CaCustomerNumRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Response handling (field testing: field-tested (6 public / 0 private estates)):
+ * READQ at line 132 tests NORMAL
+ * READQ at line 140 tests NORMAL
+ * READ at line 199 tests NORMAL
+ * TODO: the RESP of ASSIGN at line 97 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of ASSIGN at line 101 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of ASSIGN at line 105 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of RECEIVE at line 114 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of WRITEQ at line 163 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of WRITEQ at line 172 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of WRITEQ at line 181 (paragraph MAINLINE) is never tested
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class Lgicvs01Service {
+
+    private static final Logger log = LoggerFactory.getLogger(Lgicvs01Service.class);
+
+    private final CaCustomerNumRepository caCustomerNumRepository;
+    private final TempStorage tempStorage;
+
+    public void executeLgicvs01(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for lgicvs01");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** A CICS transaction entered the program. TODO: [AI AGENT] implement from the program's business rules. */
+    public Lgicvs01Dfhcommarea handleTransaction(String transid, Lgicvs01Dfhcommarea request) {
+        log.info("Lgicvs01: handleTransaction");
+        return request;
+    }
+
+    /** <USRHLQ>.GENAPP.KSDSCUST as CICS file KSDSCUST at base/src/lgicvs01.cbl:199; VSAM defines field testing: open (3 public / 0 private estates). */
+    // TODO: this program uses CA-AREA (225 bytes); the entity follows CA-CUSTOMER-NUM (10 bytes) -- map one onto the other
+    public Optional<CaCustomerNum> readKsdscust(Long key) {
+        return caCustomerNumRepository.findById(key);
+    }
+
+    /** EXEC CICS READQ TS QUEUE(STSQ-NAME) INTO(READ-MSG) ITEM(1) at base/src/lgicvs01.cbl:132 (#3620). Shared through TS GENACNTL: written by base/src/lgsetup.cbl, base/src/lgtestc1.cbl; read by base/src/lgtestc1.cbl.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected Optional<String> readqTsGenacntlL132() {
+        return tempStorage.readItem("GENACNTL", 1);
+    }
+
+    /** EXEC CICS READQ TS QUEUE(STSQ-NAME) INTO(READ-MSG) at base/src/lgicvs01.cbl:140 (#3620). Shared through TS GENACNTL: written by base/src/lgsetup.cbl, base/src/lgtestc1.cbl; read by base/src/lgtestc1.cbl.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected Optional<String> readqTsGenacntlL140() {
+        return tempStorage.readNext("GENACNTL");
+    }
+
+    /** EXEC CICS WRITEQ TS QUEUE(STSQ-NAME) FROM(WRITE-MSG-E) at base/src/lgicvs01.cbl:163 (#3620). Shared through TS GENACNTL: written by base/src/lgsetup.cbl, base/src/lgtestc1.cbl; read by base/src/lgtestc1.cbl.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected int writeqTsGenacntlL163(String record) {
+        return tempStorage.writeItem("GENACNTL", record);
+    }
+
+    /** EXEC CICS WRITEQ TS QUEUE(STSQ-NAME) FROM(WRITE-MSG-L) at base/src/lgicvs01.cbl:172 (#3620). Shared through TS GENACNTL: written by base/src/lgsetup.cbl, base/src/lgtestc1.cbl; read by base/src/lgtestc1.cbl.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected int writeqTsGenacntlL172(String record) {
+        return tempStorage.writeItem("GENACNTL", record);
+    }
+
+    /** EXEC CICS WRITEQ TS QUEUE(STSQ-NAME) FROM(WRITE-MSG-H) at base/src/lgicvs01.cbl:181 (#3620). Shared through TS GENACNTL: written by base/src/lgsetup.cbl, base/src/lgtestc1.cbl; read by base/src/lgtestc1.cbl.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected int writeqTsGenacntlL181(String record) {
+        return tempStorage.writeItem("GENACNTL", record);
+    }
+
+}

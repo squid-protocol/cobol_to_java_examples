@@ -1,0 +1,58 @@
+package com.gitgalaxy.modernized.client;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+import com.gitgalaxy.modernized.dto.contract.Lgtestc1CommArea;
+import com.gitgalaxy.modernized.dto.contract.Lgtestp1CommArea;
+
+/**
+ * CICS region AOR1: the programs the CSD routes there (distributed program link), called
+ * over HTTP. Point gitgalaxy.remote.aor1.url at the service that hosts them.
+ */
+@Component
+public class Aor1RemoteClient {
+
+    private final RestTemplate rest = new RestTemplate();
+    private final String baseUrl;
+
+    public Aor1RemoteClient(@Value("${gitgalaxy.remote.aor1.url:http://localhost:8080}") String baseUrl) {
+        this.baseUrl = baseUrl;
+    }
+
+    /** LINK to LGACUS01 on AOR1 (CSD base/cntl/cdef122.jcl:85 group GENATORP). */
+    public Lgtestc1CommArea linkLgacus01(Lgtestc1CommArea request) {
+        return rest.postForObject(baseUrl + "/api/v1/lgacus01/link", request, Lgtestc1CommArea.class);
+    }
+
+    /** LINK to LGAPOL01 on AOR1 (CSD base/cntl/cdef122.jcl:88 group GENATORP). */
+    public Lgtestp1CommArea linkLgapol01(Lgtestp1CommArea request) {
+        return rest.postForObject(baseUrl + "/api/v1/lgapol01/link", request, Lgtestp1CommArea.class);
+    }
+
+    /** LINK to LGDPOL01 on AOR1 (CSD base/cntl/cdef122.jcl:94 group GENATORP). */
+    public Lgtestp1CommArea linkLgdpol01(Lgtestp1CommArea request) {
+        return rest.postForObject(baseUrl + "/api/v1/lgdpol01/link", request, Lgtestp1CommArea.class);
+    }
+
+    /** LINK to LGICUS01 on AOR1 (CSD base/cntl/cdef122.jcl:97 group GENATORP). */
+    public Lgtestc1CommArea linkLgicus01(Lgtestc1CommArea request) {
+        return rest.postForObject(baseUrl + "/api/v1/lgicus01/link", request, Lgtestc1CommArea.class);
+    }
+
+    /** LINK to LGIPOL01 on AOR1 (CSD base/cntl/cdef122.jcl:100 group GENATORP). */
+    public Lgtestp1CommArea linkLgipol01(Lgtestp1CommArea request) {
+        return rest.postForObject(baseUrl + "/api/v1/lgipol01/link", request, Lgtestp1CommArea.class);
+    }
+
+    /** LINK to LGUCUS01 on AOR1 (CSD base/cntl/cdef122.jcl:103 group GENATORP). */
+    public Lgtestc1CommArea linkLgucus01(Lgtestc1CommArea request) {
+        return rest.postForObject(baseUrl + "/api/v1/lgucus01/link", request, Lgtestc1CommArea.class);
+    }
+
+    /** LINK to LGUPOL01 on AOR1 (CSD base/cntl/cdef122.jcl:106 group GENATORP). */
+    public Lgtestp1CommArea linkLgupol01(Lgtestp1CommArea request) {
+        return rest.postForObject(baseUrl + "/api/v1/lgupol01/link", request, Lgtestp1CommArea.class);
+    }
+
+}

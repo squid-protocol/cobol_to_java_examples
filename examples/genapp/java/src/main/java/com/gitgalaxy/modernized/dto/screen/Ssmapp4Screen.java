@@ -1,0 +1,226 @@
+package com.gitgalaxy.modernized.dto.screen;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * BMS map SSMAPP4 of mapset SSMAP (base/src/ssmap.bms): the screen as a view model (#3619).
+ * SEND at base/src/lgtestp4.cbl:52, base/src/lgtestp4.cbl:150, base/src/lgtestp4.cbl:191, base/src/lgtestp4.cbl:230, base/src/lgtestp4.cbl:242, base/src/lgtestp4.cbl:276, base/src/lgtestp4.cbl:309; RECEIVE at base/src/lgtestp4.cbl:66.
+ * One property per named field (symbolic map SSMAPP4I / SSMAPP4O); LAYOUT is every field in
+ * screen order, labels included. BMS screen fields field testing: open (3 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class Ssmapp4Screen implements ScreenModel {
+
+    public static final String MAPSET = "SSMAP";
+    public static final String MAP = "SSMAPP4";
+    public static final List<ScreenField> LAYOUT = List.of(
+            new ScreenField(null, 1, 1, 4, false, false, true, false, false, "SSP4", null, 1),
+            new ScreenField(null, 1, 12, 41, false, false, true, false, false, "General Insurance Commercial Policy Menu ", null, 1),
+            new ScreenField(null, 4, 8, 18, false, false, false, false, false, "1. Policy Inquiry ", null, 1),
+            new ScreenField(null, 5, 8, 16, false, false, false, false, false, "2. Policy Add     ", null, 1),
+            new ScreenField(null, 6, 8, 16, false, false, false, false, false, "3. Policy Delete  ", null, 1),
+            new ScreenField(null, 4, 30, 15, false, false, false, false, false, "Policy Number ", null, 1),
+            new ScreenField("ENP4PNO", 4, 50, 10, true, false, false, false, true, null, null, 1),
+            new ScreenField(null, 4, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 5, 30, 16, false, false, false, false, false, "Cust Number ", null, 1),
+            new ScreenField("ENP4CNO", 5, 50, 10, true, false, false, false, true, null, null, 1),
+            new ScreenField(null, 5, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 6, 30, 16, false, false, false, false, false, "Start date ", null, 1),
+            new ScreenField("ENP4IDA", 6, 50, 10, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 6, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 6, 63, 12, false, false, false, false, false, "(yyyy-mm-dd)", null, 1),
+            new ScreenField(null, 7, 30, 16, false, false, false, false, false, "Expiry date ", null, 1),
+            new ScreenField("ENP4EDA", 7, 50, 10, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 7, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 7, 63, 12, false, false, false, false, false, "(yyyy-mm-dd)", null, 1),
+            new ScreenField(null, 8, 30, 16, false, false, false, false, false, "Address ", null, 1),
+            new ScreenField("ENP4ADD", 8, 50, 25, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 8, 76, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 9, 30, 16, false, false, false, false, false, "Postcode     ", null, 1),
+            new ScreenField("ENP4HPC", 9, 50, 8, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 9, 59, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 10, 30, 18, false, false, false, false, false, "Latitude/Longitude", null, 1),
+            new ScreenField("ENP4LAT", 10, 50, 11, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 10, 62, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField("ENP4LON", 10, 64, 11, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 10, 76, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 11, 30, 16, false, false, false, false, false, "Customer Name", null, 1),
+            new ScreenField("ENP4CUS", 11, 50, 25, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 11, 76, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 12, 30, 16, false, false, false, false, false, "Property Type", null, 1),
+            new ScreenField("ENP4PTY", 12, 50, 25, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 12, 76, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 13, 30, 16, false, false, false, false, false, "Fire Peril/Prem", null, 1),
+            new ScreenField("ENP4FPE", 13, 50, 4, true, false, false, false, false, null, null, 1),
+            new ScreenField(null, 13, 55, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField("ENP4FPR", 13, 56, 8, true, false, false, false, false, null, null, 1),
+            new ScreenField(null, 13, 65, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 14, 30, 16, false, false, false, false, false, "Crime Peril/Prem", null, 1),
+            new ScreenField("ENP4CPE", 14, 50, 4, true, false, false, false, false, null, null, 1),
+            new ScreenField(null, 14, 55, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField("ENP4CPR", 14, 56, 8, true, false, false, false, false, null, null, 1),
+            new ScreenField(null, 14, 65, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 15, 30, 16, false, false, false, false, false, "Flood Peril/Prem", null, 1),
+            new ScreenField("ENP4XPE", 15, 50, 4, true, false, false, false, false, null, null, 1),
+            new ScreenField(null, 15, 55, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField("ENP4XPR", 15, 56, 8, true, false, false, false, false, null, null, 1),
+            new ScreenField(null, 15, 65, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 16, 30, 18, false, false, false, false, false, "Weather Peril/Prem", null, 1),
+            new ScreenField("ENP4WPE", 16, 50, 4, true, false, false, false, false, null, null, 1),
+            new ScreenField(null, 16, 55, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField("ENP4WPR", 16, 56, 8, true, false, false, false, false, null, null, 1),
+            new ScreenField(null, 16, 65, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 17, 30, 16, false, false, false, false, false, "Status", null, 1),
+            new ScreenField("ENP4STA", 17, 50, 4, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 17, 55, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 18, 30, 16, false, false, false, false, false, "Reject Reason", null, 1),
+            new ScreenField("ENP4REJ", 18, 50, 25, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 18, 76, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 22, 8, 14, false, false, false, false, false, "Select Option ", null, 1),
+            new ScreenField("ENP4OPT", 22, 24, 1, true, true, false, false, false, " ", null, 1),
+            new ScreenField(null, 22, 26, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField("ERP4FLD", 24, 8, 40, false, false, true, false, false, " ", null, 1));
+
+    /** ENP4PNO: (4,50), 10 bytes, ATTRB=FSET,IC,NORM,UNPROT -- base/src/ssmap.bms:465. Symbolic map ENP4PNOI, ENP4PNOO. */
+    private String enp4pno;
+
+    /** ENP4CNO: (5,50), 10 bytes, ATTRB=FSET,IC,NORM,UNPROT -- base/src/ssmap.bms:472. Symbolic map ENP4CNOI, ENP4CNOO. */
+    private String enp4cno;
+
+    /** ENP4IDA: (6,50), 10 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:479. Symbolic map ENP4IDAI, ENP4IDAO. */
+    private String enp4ida;
+
+    /** ENP4EDA: (7,50), 10 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:488. Symbolic map ENP4EDAI, ENP4EDAO. */
+    private String enp4eda;
+
+    /** ENP4ADD: (8,50), 25 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:497. Symbolic map ENP4ADDI, ENP4ADDO. */
+    private String enp4add;
+
+    /** ENP4HPC: (9,50), 8 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:504. Symbolic map ENP4HPCI, ENP4HPCO. */
+    private String enp4hpc;
+
+    /** ENP4LAT: (10,50), 11 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:511. Symbolic map ENP4LATI, ENP4LATO. */
+    private String enp4lat;
+
+    /** ENP4LON: (10,64), 11 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:515. Symbolic map ENP4LONI, ENP4LONO. */
+    private String enp4lon;
+
+    /** ENP4CUS: (11,50), 25 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:522. Symbolic map ENP4CUSI, ENP4CUSO. */
+    private String enp4cus;
+
+    /** ENP4PTY: (12,50), 25 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:529. Symbolic map ENP4PTYI, ENP4PTYO. */
+    private String enp4pty;
+
+    /** ENP4FPE: (13,50), 4 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:536. Symbolic map ENP4FPEI, ENP4FPEO. */
+    private String enp4fpe;
+
+    /** ENP4FPR: (13,56), 8 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:540. Symbolic map ENP4FPRI, ENP4FPRO. */
+    private String enp4fpr;
+
+    /** ENP4CPE: (14,50), 4 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:547. Symbolic map ENP4CPEI, ENP4CPEO. */
+    private String enp4cpe;
+
+    /** ENP4CPR: (14,56), 8 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:551. Symbolic map ENP4CPRI, ENP4CPRO. */
+    private String enp4cpr;
+
+    /** ENP4XPE: (15,50), 4 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:558. Symbolic map ENP4XPEI, ENP4XPEO. */
+    private String enp4xpe;
+
+    /** ENP4XPR: (15,56), 8 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:562. Symbolic map ENP4XPRI, ENP4XPRO. */
+    private String enp4xpr;
+
+    /** ENP4WPE: (16,50), 4 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:569. Symbolic map ENP4WPEI, ENP4WPEO. */
+    private String enp4wpe;
+
+    /** ENP4WPR: (16,56), 8 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:573. Symbolic map ENP4WPRI, ENP4WPRO. */
+    private String enp4wpr;
+
+    /** ENP4STA: (17,50), 4 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:580. Symbolic map ENP4STAI, ENP4STAO. */
+    private String enp4sta;
+
+    /** ENP4REJ: (18,50), 25 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:587. Symbolic map ENP4REJI, ENP4REJO. */
+    private String enp4rej;
+
+    /** ENP4OPT: (22,24), 1 bytes, ATTRB=FSET,NORM,NUM,UNPROT -- base/src/ssmap.bms:594. Symbolic map ENP4OPTI, ENP4OPTO. */
+    private String enp4opt;
+
+    /** ERP4FLD: (24,8), 40 bytes, ATTRB=ASKIP,BRT,PROT -- base/src/ssmap.bms:599. Symbolic map ERP4FLDI, ERP4FLDO. */
+    private String erp4fld;
+
+    @Override
+    public String mapsetName() {
+        return MAPSET;
+    }
+
+    @Override
+    public String mapName() {
+        return MAP;
+    }
+
+    @Override
+    public List<ScreenField> screenLayout() {
+        return LAYOUT;
+    }
+
+    @Override
+    public Map<String, String> screenValues() {
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("ENP4PNO", enp4pno);
+        values.put("ENP4CNO", enp4cno);
+        values.put("ENP4IDA", enp4ida);
+        values.put("ENP4EDA", enp4eda);
+        values.put("ENP4ADD", enp4add);
+        values.put("ENP4HPC", enp4hpc);
+        values.put("ENP4LAT", enp4lat);
+        values.put("ENP4LON", enp4lon);
+        values.put("ENP4CUS", enp4cus);
+        values.put("ENP4PTY", enp4pty);
+        values.put("ENP4FPE", enp4fpe);
+        values.put("ENP4FPR", enp4fpr);
+        values.put("ENP4CPE", enp4cpe);
+        values.put("ENP4CPR", enp4cpr);
+        values.put("ENP4XPE", enp4xpe);
+        values.put("ENP4XPR", enp4xpr);
+        values.put("ENP4WPE", enp4wpe);
+        values.put("ENP4WPR", enp4wpr);
+        values.put("ENP4STA", enp4sta);
+        values.put("ENP4REJ", enp4rej);
+        values.put("ENP4OPT", enp4opt);
+        values.put("ERP4FLD", erp4fld);
+        return values;
+    }
+
+    /** A view model from posted form values (keys as `screenValues` writes them). */
+    public static Ssmapp4Screen fromValues(Map<String, String> values) {
+        Ssmapp4Screen screen = new Ssmapp4Screen();
+        screen.setEnp4pno(values.get("ENP4PNO"));
+        screen.setEnp4cno(values.get("ENP4CNO"));
+        screen.setEnp4ida(values.get("ENP4IDA"));
+        screen.setEnp4eda(values.get("ENP4EDA"));
+        screen.setEnp4add(values.get("ENP4ADD"));
+        screen.setEnp4hpc(values.get("ENP4HPC"));
+        screen.setEnp4lat(values.get("ENP4LAT"));
+        screen.setEnp4lon(values.get("ENP4LON"));
+        screen.setEnp4cus(values.get("ENP4CUS"));
+        screen.setEnp4pty(values.get("ENP4PTY"));
+        screen.setEnp4fpe(values.get("ENP4FPE"));
+        screen.setEnp4fpr(values.get("ENP4FPR"));
+        screen.setEnp4cpe(values.get("ENP4CPE"));
+        screen.setEnp4cpr(values.get("ENP4CPR"));
+        screen.setEnp4xpe(values.get("ENP4XPE"));
+        screen.setEnp4xpr(values.get("ENP4XPR"));
+        screen.setEnp4wpe(values.get("ENP4WPE"));
+        screen.setEnp4wpr(values.get("ENP4WPR"));
+        screen.setEnp4sta(values.get("ENP4STA"));
+        screen.setEnp4rej(values.get("ENP4REJ"));
+        screen.setEnp4opt(values.get("ENP4OPT"));
+        screen.setErp4fld(values.get("ERP4FLD"));
+        return screen;
+    }
+}

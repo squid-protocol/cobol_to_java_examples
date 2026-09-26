@@ -1,0 +1,148 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.Bnk1ccaInqacccuCommarea;
+import com.gitgalaxy.modernized.dto.contract.Bnk1dacParmsSubpgm;
+import com.gitgalaxy.modernized.dto.contract.Bnk1dcsDelcusCommarea;
+import com.gitgalaxy.modernized.dto.contract.Bnk1dcsInqcustCommarea;
+import com.gitgalaxy.modernized.dto.contract.BnkmenuAbndinfoRec;
+import com.gitgalaxy.modernized.entity.vsam.OutputData;
+import com.gitgalaxy.modernized.entity.vsam.OutputDataKey;
+import com.gitgalaxy.modernized.exception.*;
+import com.gitgalaxy.modernized.repository.db2.ProctranRepository;
+import com.gitgalaxy.modernized.repository.vsam.OutputDataRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Response handling (field testing: field-tested (6 public / 0 private estates)):
+ * READ at line 353 tests NORMAL,SYSIDERR
+ * READ at line 371 tests NORMAL,NOTFND
+ * DELETE at line 491 tests NORMAL,SYSIDERR
+ * DELETE at line 508 tests NORMAL
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class DelcusService {
+
+    private static final Logger log = LoggerFactory.getLogger(DelcusService.class);
+
+    private final ObjectProvider<DelaccService> delaccService;
+    private final ObjectProvider<InqacccuService> inqacccuService;
+    private final ObjectProvider<InqcustService> inqcustService;
+    private final ObjectProvider<AbndprocService> abndprocService;
+    private final OutputDataRepository outputDataRepository;
+    private final ProctranRepository proctranRepository;
+
+    public void executeDelcus(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for DELCUS");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public Bnk1dcsDelcusCommarea handleLink(Bnk1dcsDelcusCommarea request) {
+        log.info("Delcus: handleLink");
+        return request;
+    }
+
+    /** EXEC CICS LINK PROGRAM(DELACC) at src/base/cobol_src/DELCUS.cbl:312.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    // TODO: this site passes DELACC-COMMAREA; DELACC receives PARMS-SUBPGM (src/base/cobol_src/BNK1DAC.cbl) -- map one layout onto the other
+    public Bnk1dacParmsSubpgm linkDelacc(Bnk1dacParmsSubpgm request) {
+        return delaccService.getObject().handleLink(request);
+    }
+
+    /** EXEC CICS LINK PROGRAM(INQACCCU) at src/base/cobol_src/DELCUS.cbl:334.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public Bnk1ccaInqacccuCommarea linkInqacccu(Bnk1ccaInqacccuCommarea request) {
+        return inqacccuService.getObject().handleLink(request);
+    }
+
+    /** LINK PROGRAM(INQCUST-PROGRAM) at src/base/cobol_src/DELCUS.cbl:260: the target is data-driven. Candidates: INQCUST (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchInqcustProgramL260(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "INQCUST":
+                return inqcustService.getObject().handleLink((Bnk1dcsInqcustCommarea) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(INQCUST-PROGRAM) at src/base/cobol_src/DELCUS.cbl:260: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DELCUS.cbl:439: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL439(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DELCUS.cbl:439: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DELCUS.cbl:565: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL565(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DELCUS.cbl:565: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DELCUS.cbl:717: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL717(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DELCUS.cbl:717: no known target " + program);
+        }
+    }
+
+    /** CBSA.CICSBSA.CUSTOMER as CICS file CUSTOMER at src/base/cobol_src/DELCUS.cbl:353, 371, 491, 508; VSAM defines field testing: open (3 public / 0 private estates). */
+    public Optional<OutputData> readCustomer(OutputDataKey key) {
+        return outputDataRepository.findById(key);
+    }
+
+    public void deleteCustomer(OutputDataKey key) {
+        outputDataRepository.deleteById(key);
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(WPV6) at src/base/cobol_src/DELCUS.cbl:448 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendWpv6L448() {
+        throw new CicsAbendException("WPV6", "DELCUS", "src/base/cobol_src/DELCUS.cbl:448");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(WPV7) at src/base/cobol_src/DELCUS.cbl:574 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendWpv7L574() {
+        throw new CicsAbendException("WPV7", "DELCUS", "src/base/cobol_src/DELCUS.cbl:574");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(HWPT) at src/base/cobol_src/DELCUS.cbl:726 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendHwptL726() {
+        throw new CicsAbendException("HWPT", "DELCUS", "src/base/cobol_src/DELCUS.cbl:726");
+    }
+
+}

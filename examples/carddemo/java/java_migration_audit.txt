@@ -1,0 +1,81 @@
+==========================================================
+ GITGALAXY JAVA SPRING BOOT MIGRATION AUDIT
+==========================================================
+
+  • Source Staging Environment : aws-mainframe-modernization-carddemo_gitgalaxy_clean_TIMESTAMP
+  • Target Artifact            : aws-mainframe-modernization-carddemo
+  • Target Package             : com.gitgalaxy.modernized
+  • Corporate Header Applied   : No
+  • Target Config              : default.json
+  • Java / Spring Boot / Build : 17 / 3.2.4 / maven
+  • Data Classes / DTO Style   : lombok / class
+  • Database                   : postgresql
+
+[1] GENERATED CLOUD SCAFFOLDING
+----------------------------------------------------------
+  • Build & Config Files Scaffolded : 4
+  • JPA Entities Generated          : 32
+  • Transient DTOs Generated        : 46
+  • REST Controllers Generated      : 40
+  • AI Agent Tickets Generated      : 0
+
+[2] VERIFIED SKELETON (engine facts, 06_skeleton)
+----------------------------------------------------------
+  • Programs with a skeleton : 44
+  • Fact channel (ledger field)       facts  programs  field testing (public / private estates)
+    BMS screen fields                    47        21  open (3 / 0)
+    CALL USING                          124        44  open (5 / 0)
+    CICS resources                      201        24  open (5 / 0)
+    CICS task control                     3         3  open (5 / 0)
+    DB2 table access                     25         4  open (3 / 0)
+    DD names                             54        15  open (4 / 0)
+    DL/I calls                           70         7  open (2 / 0)
+    IMS access check                     14         7  open (2 / 0)
+    JCL resolved DSNs                    84        15  open (5 / 0)
+    MQ calls                             30         3  open (1 / 0)
+    call targets                        190        40  open (6 / 0)
+    data moves                         5355        44  field-tested (6 / 0)
+    dynamic call targets                 32        20  open (5 / 0)
+    entry transactions                  237        25  open (4 / 0)
+    file control                         85        15  open (4 / 0)
+    job submissions                       3         1  open (1 / 0)
+    record fields                       430        44  field-tested (6 / 0)
+    units                               871        43  open (6 / 0)
+    units of work and handlers          195        25  field-tested (6 / 0)
+  'open' = verified on the keyed reference corpora, still being field-tested on fresh estates.
+  • CICS programs (#3615)    : 25 -- 22 with a COMMAREA DTO, 26 transaction endpoints, 23 COMMAREA / channel DTOs
+  • Service calls (#3616)    : 0 LINK, 2 XCTL, 3 CALL, 32 data-driven dispatch, 0 remote; 0 remote-region clients
+  • VSAM stores (#3617)      : 11 entities + repositories (7 keyed by one field); 4 not generated
+      - AWS.CUSTDATA.CLUSTER: no program in the repository touches it
+      - AWS.M2.CARDDEMO.TRXFL.VSAM.KSDS: no program in the repository touches it
+      - AWS.M2.CARDDEMO.USRSEC.VSAM.ESDS: no program in the repository touches it
+      - AWS.M2.CARDDEMO.USRSEC.VSAM.RRDS: no program in the repository touches it
+  • DB2 tables (#3618)       : 2 repositories (2 with DECLAREd row classes), 14 statements as written; 0 positioned (TODO)
+  • BMS screens (#3619)      : 21 view models (585 fields) for 21 programs; 26 SEND / 21 RECEIVE sites; 0 unresolved maps; UI: none
+  • Messaging (#3620)        : 0 TS / 2 TD / 8 MQ sites; TD routes: 1 log, 1 reader; 3 MQ-triggered programs; adapter: in-memory
+  • Batch jobs (#3622)       : 55 JCL jobs -- 16 application (generated: 25 steps, 6 utility steps to port), 1 runner, 27 utility, 11 build (resources/batch/jcl-jobs.json)
+  • Units of work (#3621)   : 25 @Transactional services, 14 commit points, 2 rollback points, 5 abends, 11 handlers; 40 unchecked responses
+  • Traceability (#3650)    : 1312 artifacts, 1524 facts, 180 TODOs -> traceability.json
+
+[3] MIGRATION WORKLIST (migration_worklist.md / .json)
+----------------------------------------------------------
+  • Open items : 277 across 47 program sources
+  • By nature  : conflict 31, fact-gap 5, review 55, port 186
+    COMMAREA layout mismatches                    20  (conflict)
+    Programs reading another record layout        11  (conflict)
+    Unresolved layouts                             3  (fact-gap)
+    Keys that are not one field                    2  (fact-gap)
+    Utility job steps to port                      6  (port)
+    CICS responses the COBOL never tests          40  (review)
+    DB2 SQL on another database                   14  (review)
+    Unit-of-work boundaries to split              14  (port)
+    Calls to other services                        1  (port)
+    Business logic to port                       165  (port)
+    Target configuration                           1  (review)
+
+[4] AI AGENT GUARDRAIL
+----------------------------------------------------------
+  • Baseline : 237 files, 238 classes, 5 SQL tables -> guardrail_baseline.json
+  • Not run  : after agent edits, python -m gitgalaxy.tools.cobol_to_java.cobol_to_java_guardrail <this project>
+
+==========================================================

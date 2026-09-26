@@ -1,0 +1,119 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.entity.vsam.AutoRec;
+import com.gitgalaxy.modernized.entity.vsam.OmrfeilFeilMeld;
+import com.gitgalaxy.modernized.exception.*;
+import com.gitgalaxy.modernized.repository.vsam.AutoRecRepository;
+import com.gitgalaxy.modernized.repository.vsam.OmrfeilFeilMeldRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * HANDLE AID mapping (field testing: field-tested (6 public / 0 private estates)):
+ *   HANDLE AID at line 83: PF14 -> PF14
+ *   HANDLE AID at line 83: PF15 -> PF15
+ *   HANDLE AID at line 83: PF12 -> PF12
+ *
+ * Screens (#3619): none resolved.
+ * TODO: SEND MAP S001181 (mapset S001183) at src/GML/R0011801.pli:96: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001181 (mapset S001183) at src/GML/R0011801.pli:104: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001181 (mapset S001183) at src/GML/R0011801.pli:157: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001181 (mapset S001183) at src/GML/R0011801.pli:160: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001181 (mapset S001183) at src/GML/R0011801.pli:254: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001181 (mapset S001183) at src/GML/R0011801.pli:257: no single BMS source defines it (candidates: none in the repository)
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class SrcGmlR0011801Service {
+
+    private static final Logger log = LoggerFactory.getLogger(SrcGmlR0011801Service.class);
+
+    private final ObjectProvider<SrcGmlR0012002Service> srcGmlR0012002Service;
+    private final ObjectProvider<SrcGmlR0010301Service> srcGmlR0010301Service;
+    private final ObjectProvider<SrcGmlR0010401Service> srcGmlR0010401Service;
+    private final AutoRecRepository autoRecRepository;
+    private final OmrfeilFeilMeldRepository omrfeilFeilMeldRepository;
+
+    public void executeSrcGmlR0011801(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for src__GML__R0011801");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("SrcGmlR0011801: handleLink");
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0012002) at src/GML/R0011801.pli:363.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void linkSrcGmlR0012002() {
+        srcGmlR0012002Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010301) at src/GML/R0011801.pli:109. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcGmlR0010301() {
+        srcGmlR0010301Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010401) at src/GML/R0011801.pli:116, src/GML/R0011801.pli:192. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcGmlR0010401() {
+        srcGmlR0010401Service.getObject().handleLink();
+    }
+
+    /** F001E41 as CICS file F001E41 at src/GML/R0011801.pli:331, 335, 339, 375; VSAM defines field testing: open (3 public / 0 private estates). */
+    public Optional<AutoRec> readF001e41(String key) {
+        return autoRecRepository.findById(key);
+    }
+
+    /** OMRFEIL as CICS file OMRFEIL at src/GML/R0011801.pli:202, 208, 212, 216, 227, 233, 239, 247, 319, 347, 355, 369, 387; VSAM defines field testing: open (3 public / 0 private estates). */
+    // TODO: this program uses FEIL_MELD (61 bytes); the entity follows FEIL_MELD (61 bytes) -- map one onto the other
+    public OmrfeilFeilMeld writeOmrfeil(OmrfeilFeilMeld record) {
+        return omrfeilFeilMeldRepository.save(record);
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/GML/R0011801.pli:261 (paragraph UTGANG): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL261() {
+        throw new UnitOfWorkRollbackException("SRC__GML__R0011801", "src/GML/R0011801.pli:261");
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R0011801.pli:81 (paragraph R00118) routes ERROR to FEILBEH.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL81(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL FEILBEH at line 81", e);
+        // TODO: port paragraph FEILBEH's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R0011801.pli:220 (paragraph UTGANG) routes ERROR to ABEND.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL220(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL ABEND at line 220", e);
+        // TODO: port paragraph ABEND's logic
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(FEIL) at src/GML/R0011801.pli:272 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendFeilL272() {
+        throw new CicsAbendException("FEIL", "SRC__GML__R0011801", "src/GML/R0011801.pli:272");
+    }
+
+}

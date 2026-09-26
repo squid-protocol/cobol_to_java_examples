@@ -1,0 +1,29 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.service.SrcR0019e04Service;
+
+/**
+ * CICS program R0019E04 (src/R0019E04.pli), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * TODO: no COMMAREA layout: no structure parameter, or structure BASED on the main procedure's parameter COMMAREA_PEKER, is declared in the program or its %INCLUDE members; %INCLUDE members not in the repository: P0010601, P0012002, P0012003, P0014009, P0019014, P0019906, P0019908, P0019910, P0019911, P0019912, P0019921, P0019924, P0019925, P0019940, P0019941, P0019942, P0019943, P0019944, P0019945, P0019946, P0019947, P0019948, P0019949, P0019950, P0019951, P0019952, P0019960, P0019967, P0019968, P0019N41, P0019N42, P0019N44, P0019N45, P0019N46, P0019N47, P0019N48, P0019U42, P0019U45, P0019U49, P0019U67; no resolved caller passes a COMMAREA.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/src-r0019e04")
+@RequiredArgsConstructor
+public class SrcR0019e04Controller {
+
+    private final SrcR0019e04Service srcR0019e04Service;
+
+    /** Program-to-program entry: no CSD transaction enters this program. */
+    @PostMapping("/link")
+    public ResponseEntity<Void> link() {
+        srcR0019e04Service.handleLink();
+        return ResponseEntity.noContent().build();
+    }
+
+}

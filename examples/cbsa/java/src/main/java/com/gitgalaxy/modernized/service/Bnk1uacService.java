@@ -1,0 +1,178 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.Bnk1uacDfhcommarea;
+import com.gitgalaxy.modernized.dto.contract.BnkmenuAbndinfoRec;
+import com.gitgalaxy.modernized.dto.contract.InqaccCommarea;
+import com.gitgalaxy.modernized.dto.contract.UpdaccDfhcommarea;
+import com.gitgalaxy.modernized.dto.screen.Bnk1uaScreen;
+import com.gitgalaxy.modernized.dto.screen.ScreenModel;
+import com.gitgalaxy.modernized.exception.*;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Response handling (field testing: field-tested (6 public / 0 private estates)):
+ * RETURN at line 295 tests NORMAL
+ * RECEIVE at line 419 tests NORMAL
+ * LINK at line 767 tests NORMAL
+ * LINK at line 954 tests NORMAL
+ * SEND at line 1074 tests NORMAL
+ * SEND at line 1150 tests NORMAL
+ * SEND at line 1225 tests NORMAL
+ * SEND at line 1306 tests NORMAL
+ * TODO: the RESP of RETURN at line 222 (paragraph A010) is never tested
+ * Screens (#3619): Bnk1uaScreen.
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class Bnk1uacService {
+
+    private static final Logger log = LoggerFactory.getLogger(Bnk1uacService.class);
+
+    private final ObjectProvider<InqaccService> inqaccService;
+    private final ObjectProvider<UpdaccService> updaccService;
+    private final ObjectProvider<AbndprocService> abndprocService;
+
+    public void executeBnk1uac(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for BNK1UAC");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** A CICS transaction entered the program. TODO: [AI AGENT] implement from the program's business rules. */
+    public Bnk1uacDfhcommarea handleTransaction(String transid, Bnk1uacDfhcommarea request) {
+        log.info("Bnk1uac: handleTransaction");
+        return request;
+    }
+
+    /** EXEC CICS LINK PROGRAM(INQACC) at src/base/cobol_src/BNK1UAC.cbl:767.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    // TODO: this site passes DFHCOMMAREA; INQACC receives INQACC-COMMAREA (src/base/cobol_copy/INQACC.cpy) -- map one layout onto the other
+    public InqaccCommarea linkInqacc(InqaccCommarea request) {
+        return inqaccService.getObject().handleLink(request);
+    }
+
+    /** EXEC CICS LINK PROGRAM(UPDACC) at src/base/cobol_src/BNK1UAC.cbl:954.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    // TODO: this site passes DFHCOMMAREA (103 bytes); UPDACC declares DFHCOMMAREA (src/base/cobol_src/UPDACC.cbl, 99 bytes) -- map one layout onto the other
+    public UpdaccDfhcommarea linkUpdacc(UpdaccDfhcommarea request) {
+        return updaccService.getObject().handleLink(request);
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:350: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL350(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:350: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:474: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL474(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:474: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:822: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL822(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:822: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:1009: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL1009(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:1009: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:1130: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL1130(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:1130: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:1206: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL1206(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:1206: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:1282: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL1282(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:1282: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:1361: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL1361(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1UAC.cbl:1361: no known target " + program);
+        }
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(HBNK) at src/base/cobol_src/BNK1UAC.cbl:1381 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendHbnkL1381() {
+        throw new CicsAbendException("HBNK", "BNK1UAC", "src/base/cobol_src/BNK1UAC.cbl:1381");
+    }
+
+    /** SEND MAP(BNK1UA) MAPSET(BNK1UAM) FROM(BNK1UAO) at src/base/cobol_src/BNK1UAC.cbl:1074, src/base/cobol_src/BNK1UAC.cbl:1150, src/base/cobol_src/BNK1UAC.cbl:1225 (#3619).
+     *  TODO: port the logic that fills BNK1UAO before the SEND.
+     *  BMS screen fields field testing: open (3 public / 0 private estates). */
+    public Bnk1uaScreen renderBnk1ua(Bnk1uaScreen screen) {
+        return screen;
+    }
+
+    /** RECEIVE MAP(BNK1UA) MAPSET(BNK1UAM) INTO(BNK1UAI) at src/base/cobol_src/BNK1UAC.cbl:419 (#3619).
+     *  `aid` is the key the user pressed (EIBAID): ENTER, PF1-PF24, CLEAR, PA1-PA3.
+     *  TODO: port the logic that reads BNK1UAI after the RECEIVE, and return the screen to show next.
+     *  BMS screen fields field testing: open (3 public / 0 private estates). */
+    public ScreenModel submitBnk1ua(Bnk1uaScreen input, String aid) {
+        return renderBnk1ua(input);
+    }
+
+}

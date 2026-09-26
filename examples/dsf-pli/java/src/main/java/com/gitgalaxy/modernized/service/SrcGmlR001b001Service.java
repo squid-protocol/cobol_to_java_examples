@@ -1,0 +1,237 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.FnrReg;
+import com.gitgalaxy.modernized.entity.vsam.W01DiaRecl;
+import com.gitgalaxy.modernized.entity.vsam.W021Ykode;
+import com.gitgalaxy.modernized.entity.vsam.W070Rec;
+import com.gitgalaxy.modernized.exception.*;
+import com.gitgalaxy.modernized.repository.vsam.W01DiaReclRepository;
+import com.gitgalaxy.modernized.repository.vsam.W021YkodeRepository;
+import com.gitgalaxy.modernized.repository.vsam.W070RecRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * HANDLE AID mapping (field testing: field-tested (6 public / 0 private estates)):
+ *   HANDLE AID at line 276: PF1 -> PF2
+ *   HANDLE AID at line 277: PF2 -> PF2
+ *
+ * Screens (#3619): none resolved.
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:299: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:305: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:394: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:425: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:431: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:438: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:445: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:453: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:460: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:467: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:475: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:482: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:502: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:505: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:539: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:550: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:557: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:590: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:599: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:606: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:663: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:672: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:679: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:703: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:715: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:722: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:736: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:746: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:753: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:766: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:776: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:783: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:825: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:836: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:843: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:873: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:880: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:888: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:1638: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:1660: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:1671: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001B01 (mapset S001B03) at src/GML/R001B001.pli:1681: no single BMS source defines it (candidates: none in the repository)
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class SrcGmlR001b001Service {
+
+    private static final Logger log = LoggerFactory.getLogger(SrcGmlR001b001Service.class);
+
+    private final ObjectProvider<SrcGmlR0019906Service> srcGmlR0019906Service;
+    private final ObjectProvider<SrcGmlR0010301Service> srcGmlR0010301Service;
+    private final ObjectProvider<SrcGmlR0010401Service> srcGmlR0010401Service;
+    private final W070RecRepository w070RecRepository;
+    private final W01DiaReclRepository w01DiaReclRepository;
+    private final W021YkodeRepository w021YkodeRepository;
+
+    // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
+    // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
+    // TODO: AI AGENT - Implement or mock interface call to: R001b001Service
+
+    public void executeSrcGmlR001b001(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for src__GML__R001B001");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("SrcGmlR001b001: handleLink");
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0019906) at src/GML/R001B001.pli:490.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public FnrReg linkSrcGmlR0019906(FnrReg request) {
+        return srcGmlR0019906Service.getObject().handleLink(request);
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010301) at src/GML/R001B001.pli:1476. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcGmlR0010301() {
+        srcGmlR0010301Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010401) at src/GML/R001B001.pli:1484. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcGmlR0010401() {
+        srcGmlR0010401Service.getObject().handleLink();
+    }
+
+    /** DIAGKON as CICS file DIAGKON at src/GML/R001B001.pli:1552, 1568, 1593, 1612; VSAM defines field testing: open (3 public / 0 private estates). */
+    public Optional<W070Rec> readDiagkon(String key) {
+        return w070RecRepository.findById(key);
+    }
+
+    public W070Rec writeDiagkon(W070Rec record) {
+        return w070RecRepository.save(record);
+    }
+
+    public W070Rec rewriteDiagkon(W070Rec record) {
+        return w070RecRepository.save(record);
+    }
+
+    /** DIAGNOS as CICS file DIAGNOS at src/GML/R001B001.pli:569, 690, 729; VSAM defines field testing: open (3 public / 0 private estates). */
+    // TODO: this program uses W015_DIAG (6 bytes); the entity follows W01_DIA_RECL (6 bytes) -- map one onto the other
+    public Optional<W01DiaRecl> readDiagnos(String key) {
+        return w01DiaReclRepository.findById(key);
+    }
+
+    /** YRKEKOD as CICS file YRKEKOD at src/GML/R001B001.pli:819; VSAM defines field testing: open (3 public / 0 private estates). */
+    public Optional<W021Ykode> readYrkekod(String key) {
+        return w021YkodeRepository.findById(key);
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/GML/R001B001.pli:1646 (paragraph P070_OPPDAT_DIAG): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL1646() {
+        throw new UnitOfWorkRollbackException("SRC__GML__R001B001", "src/GML/R001B001.pli:1646");
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/GML/R001B001.pli:1666 (paragraph P070_OPPDAT_DIAG): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL1666() {
+        throw new UnitOfWorkRollbackException("SRC__GML__R001B001", "src/GML/R001B001.pli:1666");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(ONK) at src/GML/R001B001.pli:269 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendOnkL269() {
+        throw new CicsAbendException("ONK", "SRC__GML__R001B001", "src/GML/R001B001.pli:269");
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R001B001.pli:275 (paragraph R001B00) routes ERROR to ERRBEH.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL275(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL ERRBEH at line 275", e);
+        // TODO: port paragraph ERRBEH's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R001B001.pli:568 (paragraph P015_SJEKK_DIAG1) routes NOTFND to L015NOTF.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionNotfndL568(CicsConditionException e) {
+        log.info("HANDLE CONDITION NOTFND LABEL L015NOTF at line 568", e);
+        // TODO: port paragraph L015NOTF's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R001B001.pli:689 (paragraph P020_SJEKK_DIAG2) routes NOTFND to L020NOT1.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionNotfndL689(CicsConditionException e) {
+        log.info("HANDLE CONDITION NOTFND LABEL L020NOT1 at line 689", e);
+        // TODO: port paragraph L020NOT1's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R001B001.pli:728 (paragraph P020_SJEKK_DIAG2) routes NOTFND to L020NOT1.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionNotfndL728(CicsConditionException e) {
+        log.info("HANDLE CONDITION NOTFND LABEL L020NOT1 at line 728", e);
+        // TODO: port paragraph L020NOT1's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R001B001.pli:818 (paragraph P021_SJEKK_YRKESKODE) routes NOTFND to L020NOTF.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionNotfndL818(CicsConditionException e) {
+        log.info("HANDLE CONDITION NOTFND LABEL L020NOTF at line 818", e);
+        // TODO: port paragraph L020NOTF's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R001B001.pli:1551 (paragraph P070_OPPDAT_DIAG) routes NOTFND to L070NOTF.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionNotfndL1551(CicsConditionException e) {
+        log.info("HANDLE CONDITION NOTFND LABEL L070NOTF at line 1551", e);
+        // TODO: port paragraph L070NOTF's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R001B001.pli:1647 (paragraph P070_OPPDAT_DIAG) routes ERROR to None.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL1647(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL None at line 1647", e);
+        // TODO: port paragraph None's logic
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(FEIL) at src/GML/R001B001.pli:1649 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendFeilL1649() {
+        throw new CicsAbendException("FEIL", "SRC__GML__R001B001", "src/GML/R001B001.pli:1649");
+    }
+
+}

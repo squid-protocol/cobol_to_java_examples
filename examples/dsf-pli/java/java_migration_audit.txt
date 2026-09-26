@@ -1,0 +1,86 @@
+==========================================================
+ GITGALAXY JAVA SPRING BOOT MIGRATION AUDIT
+==========================================================
+
+  • Source Staging Environment : dsf_gitgalaxy_clean_TIMESTAMP
+  • Target Artifact            : dsf
+  • Target Package             : com.gitgalaxy.modernized
+  • Corporate Header Applied   : No
+  • Target Config              : default.json
+  • Java / Spring Boot / Build : 17 / 3.2.4 / maven
+  • Data Classes / DTO Style   : lombok / class
+  • Database                   : postgresql
+
+[1] GENERATED CLOUD SCAFFOLDING
+----------------------------------------------------------
+  • Build & Config Files Scaffolded : 4
+  • JPA Entities Generated          : 65
+  • Transient DTOs Generated        : 10
+  • REST Controllers Generated      : 431
+  • AI Agent Tickets Generated      : 0
+
+[2] VERIFIED SKELETON (engine facts, 06_skeleton)
+----------------------------------------------------------
+  • Programs with a skeleton : 438
+  • Fact channel (ledger field)       facts  programs  field testing (public / private estates)
+    BMS screen fields                  2384       202  open (3 / 0)
+    CALL USING                         2651       438  open (5 / 0)
+    CICS resources                     5874       409  open (5 / 0)
+    CICS task control                   167        66  open (5 / 0)
+    DD names                             22         7  open (4 / 0)
+    DL/I calls                            2         1  open (2 / 0)
+    IMS access check                      1         1  open (2 / 0)
+    JCL resolved DSNs                    22         7  open (5 / 0)
+    call targets                       5286       420  open (6 / 0)
+    data moves                       177596       438  field-tested (6 / 0)
+    dynamic call targets                 54        22  open (5 / 0)
+    entry transactions                 2468       370  open (4 / 0)
+    file control                         22         7  open (4 / 0)
+    record fields                     12921       438  field-tested (6 / 0)
+    units                              2437       438  open (6 / 0)
+    units of work and handlers         2561       224  field-tested (6 / 0)
+  'open' = verified on the keyed reference corpora, still being field-tested on fresh estates.
+  • CICS programs (#3615)    : 409 -- 17 with a COMMAREA DTO, 0 transaction endpoints, 10 COMMAREA / channel DTOs
+  • Service calls (#3616)    : 447 LINK, 366 XCTL, 0 CALL, 54 data-driven dispatch, 0 remote; 0 remote-region clients
+  • VSAM stores (#3617)      : 58 entities + repositories (1 keyed by one field); 14 not generated
+      - CICS FILE ALDKONV: no program's record layout for it was resolved
+      - CICS FILE AUSTART: used only by programs this generator does not convert (pli)
+      - CICS FILE BRUKAU: no program's record layout for it was resolved
+      - CICS FILE FUNKTAD: no program's record layout for it was resolved
+      - CICS FILE INFOINFO: used only by programs this generator does not convert (pli)
+      - CICS FILE INITTAB: used only by programs this generator does not convert (pli)
+      - CICS FILE KOMMTAB: used only by programs this generator does not convert (pli)
+      - CICS FILE NORFREG: no program's record layout for it was resolved
+      - CICS FILE NORINFO: used only by programs this generator does not convert (pli)
+      - CICS FILE NORSTAT: no program's record layout for it was resolved
+      - CICS FILE OMSORGE: used only by programs this generator does not convert (pli)
+      - CICS FILE REGION: used only by programs this generator does not convert (pli)
+      - CICS FILE STASTIK: used only by programs this generator does not convert (pli)
+      - CICS FILE STATUSFL: no program's record layout for it was resolved
+  • DB2 tables (#3618)       : 0 repositories (0 with DECLAREd row classes), 0 statements as written; 0 positioned (TODO)
+  • BMS screens (#3619)      : 0 view models (0 fields) for 0 programs; 0 SEND / 0 RECEIVE sites; 2384 unresolved maps; UI: none
+  • Messaging (#3620)        : 20 TS / 0 TD / 0 MQ sites; TD routes: none; 0 MQ-triggered programs; adapter: in-memory
+  • Units of work (#3621)   : 409 @Transactional services, 22 commit points, 131 rollback points, 321 abends, 517 handlers; 9 unchecked responses
+  • Traceability (#3650)    : 3048 artifacts, 5058 facts, 668 TODOs -> traceability.json
+
+[3] MIGRATION WORKLIST (migration_worklist.md / .json)
+----------------------------------------------------------
+  • Open items : 4668 across 438 program sources
+  • By nature  : conflict 183, fact-gap 2930, review 10, port 1545
+    COMMAREA layout mismatches                   138  (conflict)
+    Programs reading another record layout        45  (conflict)
+    Unresolved layouts                          2776  (fact-gap)
+    Keys that are not one field                  134  (fact-gap)
+    Data-driven queue names                       20  (fact-gap)
+    CICS responses the COBOL never tests           9  (review)
+    Unit-of-work boundaries to split              22  (port)
+    Calls to other services                      159  (port)
+    Business logic to port                      1364  (port)
+    Target configuration                           1  (review)
+
+[4] AI AGENT GUARDRAIL
+----------------------------------------------------------
+  • Baseline : 1029 files, 1029 classes, 0 SQL tables -> guardrail_baseline.json
+  • Not run  : after agent edits, python -m gitgalaxy.tools.cobol_to_java.cobol_to_java_guardrail <this project>
+
+==========================================================

@@ -1,0 +1,32 @@
+package com.gitgalaxy.modernized.entity.vsam;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * VSAM file OSLO67 (no IDCAMS DEFINE in the repository),
+ * record CHAR_37 (src/GML/R001TE01.pli, 37 bytes).
+ * Key: TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey.
+ * Generated from GitGalaxy's verified skeleton; VSAM defines field testing: open (3 public / 0 private estates).
+ */
+@Entity(name = "VsamChar37")
+@Table(name = "vsam_oslo67")
+@Data
+@NoArgsConstructor
+public class Char37 {
+
+    // TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey
+    @Id
+    @Column(name = "VSAM_KEY")
+    private String vsamKey;
+
+    // CHAR_37: CHAR(37), offset 0, 37 bytes
+    @Column(name = "CHAR_37", length = 37)
+    private String char37;
+
+
+    // #3624: no record codec: a PL/I record (its types are not COBOL PICTUREs).
+}

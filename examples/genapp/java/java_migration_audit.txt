@@ -1,0 +1,70 @@
+==========================================================
+ GITGALAXY JAVA SPRING BOOT MIGRATION AUDIT
+==========================================================
+
+  • Source Staging Environment : cics-genapp_gitgalaxy_clean_TIMESTAMP
+  • Target Artifact            : cics-genapp
+  • Target Package             : com.gitgalaxy.modernized
+  • Corporate Header Applied   : No
+  • Target Config              : default.json
+  • Java / Spring Boot / Build : 17 / 3.2.4 / maven
+  • Data Classes / DTO Style   : lombok / class
+  • Database                   : postgresql
+
+[1] GENERATED CLOUD SCAFFOLDING
+----------------------------------------------------------
+  • Build & Config Files Scaffolded : 4
+  • JPA Entities Generated          : 7
+  • Transient DTOs Generated        : 53
+  • REST Controllers Generated      : 31
+  • AI Agent Tickets Generated      : 0
+
+[2] VERIFIED SKELETON (engine facts, 06_skeleton)
+----------------------------------------------------------
+  • Programs with a skeleton : 31
+  • Fact channel (ledger field)       facts  programs  field testing (public / private estates)
+    BMS screen fields                    52         5  open (3 / 0)
+    CALL USING                           31        31  open (5 / 0)
+    CICS resources                      337        31  open (5 / 0)
+    CICS task control                     5         3  open (5 / 0)
+    DB2 table access                     63         8  open (3 / 0)
+    call targets                        106        26  open (6 / 0)
+    data moves                         1379        31  field-tested (6 / 0)
+    dynamic call targets                 13        12  open (5 / 0)
+    entry transactions                  244        31  open (4 / 0)
+    record fields                       492        31  field-tested (6 / 0)
+    units                               157        31  open (6 / 0)
+    units of work and handlers          391        31  field-tested (6 / 0)
+  'open' = verified on the keyed reference corpora, still being field-tested on fresh estates.
+  • CICS programs (#3615)    : 31 -- 31 with a COMMAREA DTO, 25 transaction endpoints, 27 COMMAREA / channel DTOs
+  • Service calls (#3616)    : 20 LINK, 0 XCTL, 0 CALL, 13 data-driven dispatch, 35 remote; 2 remote-region clients
+  • VSAM stores (#3617)      : 2 entities + repositories (1 keyed by one field); 2 not generated
+      - <USRHLQ>.<CMASAPPL>.EYUDREP: no program in the repository touches it
+      - <USRHLQ>.<WUIAPPL>.EYUWREP: no program in the repository touches it
+  • DB2 tables (#3618)       : 7 repositories (0 with DECLAREd row classes), 33 statements as written; 1 positioned (TODO)
+  • BMS screens (#3619)      : 5 view models (74 fields) for 5 programs; 43 SEND / 9 RECEIVE sites; 0 unresolved maps; UI: none
+  • Messaging (#3620)        : 30 TS / 1 TD / 0 MQ sites; TD routes: 1 log; 0 MQ-triggered programs; adapter: in-memory
+  • Batch jobs (#3622)       : 29 JCL jobs -- 0 application (generated: 0 steps, 0 utility steps to port), 0 runner, 8 utility, 21 build (resources/batch/jcl-jobs.json)
+  • Units of work (#3621)   : 31 @Transactional services, 0 commit points, 10 rollback points, 24 abends, 5 handlers; 150 unchecked responses
+  • Traceability (#3650)    : 685 artifacts, 900 facts, 285 TODOs -> traceability.json
+
+[3] MIGRATION WORKLIST (migration_worklist.md / .json)
+----------------------------------------------------------
+  • Open items : 362 across 31 program sources
+  • By nature  : conflict 72, fact-gap 14, review 185, port 91
+    COMMAREA layout mismatches                    70  (conflict)
+    Programs reading another record layout         2  (conflict)
+    Unresolved layouts                             5  (fact-gap)
+    Data-driven queue names                        9  (fact-gap)
+    CICS responses the COBOL never tests         150  (review)
+    Positioned SQL (WHERE CURRENT OF)              1  (review)
+    DB2 SQL on another database                   33  (review)
+    Business logic to port                        91  (port)
+    Target configuration                           1  (review)
+
+[4] AI AGENT GUARDRAIL
+----------------------------------------------------------
+  • Baseline : 153 files, 153 classes, 8 SQL tables -> guardrail_baseline.json
+  • Not run  : after agent edits, python -m gitgalaxy.tools.cobol_to_java.cobol_to_java_guardrail <this project>
+
+==========================================================

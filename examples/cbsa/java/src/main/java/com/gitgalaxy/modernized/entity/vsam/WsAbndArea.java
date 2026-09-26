@@ -1,0 +1,106 @@
+package com.gitgalaxy.modernized.entity.vsam;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * VSAM INDEXED CBSA.CICSBSA.ABNDFILE (etc/install/base/installjcl/BANKDATA.jcl:42),
+ * IDCAMS define matched by installation-symbol pattern @BANK_PREFIX@.ABNDFILE (a candidate join: RIDFLD ABND-VSAM-KEY at 0/12 equals KEYS(12 0); program record of 681 bytes equals RECORDSIZE max 681).
+ * record WS-ABND-AREA (src/base/cobol_src/ABNDPROC.cbl, 681 bytes, RECORDSIZE 681).
+ * Key: ABND-UTIME-KEY, ABND-TASKNO-KEY together (offset 0, 12 bytes, from IDCAMS KEYS): the @EmbeddedId WsAbndAreaKey.
+ * CICS files: ABNDFILE.
+ * Generated from GitGalaxy's verified skeleton; VSAM defines field testing: open (3 public / 0 private estates).
+ */
+@Entity(name = "VsamWsAbndArea")
+@Table(name = "vsam_abndfile")
+@Data
+@NoArgsConstructor
+public class WsAbndArea {
+
+    // ABND-UTIME-KEY, ABND-TASKNO-KEY together (offset 0, 12 bytes, from IDCAMS KEYS): the @EmbeddedId WsAbndAreaKey
+    @EmbeddedId
+    private WsAbndAreaKey id;
+
+    // ABND-APPLID: PIC X(8), offset 12, 8 bytes
+    @Column(name = "ABND_APPLID", length = 8)
+    private String abndApplid;
+
+    // ABND-TRANID: PIC X(4), offset 20, 4 bytes
+    @Column(name = "ABND_TRANID", length = 4)
+    private String abndTranid;
+
+    // ABND-DATE: PIC X(10), offset 24, 10 bytes
+    @Column(name = "ABND_DATE", length = 10)
+    private String abndDate;
+
+    // ABND-TIME: PIC X(8), offset 34, 8 bytes
+    @Column(name = "ABND_TIME", length = 8)
+    private String abndTime;
+
+    // ABND-CODE: PIC X(4), offset 42, 4 bytes
+    @Column(name = "ABND_CODE", length = 4)
+    private String abndCode;
+
+    // ABND-PROGRAM: PIC X(8), offset 46, 8 bytes
+    @Column(name = "ABND_PROGRAM", length = 8)
+    private String abndProgram;
+
+    // ABND-RESPCODE: PIC S9(8), offset 54, 9 bytes
+    @Column(name = "ABND_RESPCODE")
+    private Integer abndRespcode;
+
+    // ABND-RESP2CODE: PIC S9(8), offset 63, 9 bytes
+    @Column(name = "ABND_RESP2CODE")
+    private Integer abndResp2Code;
+
+    // ABND-SQLCODE: PIC S9(8), offset 72, 9 bytes
+    @Column(name = "ABND_SQLCODE")
+    private Integer abndSqlcode;
+
+    // ABND-FREEFORM: PIC X(600), offset 81, 600 bytes
+    @Column(name = "ABND_FREEFORM", length = 600)
+    private String abndFreeform;
+
+
+    /** #3624: this record from its fixed-width VSAM form (681 bytes, as REPRO unloads it), each
+     *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
+     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+    public static WsAbndArea fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        WsAbndArea r = new WsAbndArea();
+        r.id = new WsAbndAreaKey();
+        r.id.setAbndUtimeKey(CobolRecords.toLong(CobolRecords.packed(rec, 0, 8, 0)));
+        r.id.setAbndTasknoKey(CobolRecords.toInteger(CobolRecords.zoned(rec, 8, 4, 0, text)));
+        r.abndApplid = CobolRecords.text(rec, 12, 8, text);
+        r.abndTranid = CobolRecords.text(rec, 20, 4, text);
+        r.abndDate = CobolRecords.text(rec, 24, 10, text);
+        r.abndTime = CobolRecords.text(rec, 34, 8, text);
+        r.abndCode = CobolRecords.text(rec, 42, 4, text);
+        r.abndProgram = CobolRecords.text(rec, 46, 8, text);
+        r.abndRespcode = CobolRecords.toInteger(CobolRecords.zoned(rec, 54, 9, 0, text));
+        r.abndResp2Code = CobolRecords.toInteger(CobolRecords.zoned(rec, 63, 9, 0, text));
+        r.abndSqlcode = CobolRecords.toInteger(CobolRecords.zoned(rec, 72, 9, 0, text));
+        r.abndFreeform = CobolRecords.text(rec, 81, 600, text);
+        return r;
+    }
+
+    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    public byte[] toRecord(java.nio.charset.Charset text) {
+        byte[] rec = CobolRecords.blank(681, text);
+        CobolRecords.putPacked(rec, 0, 8, 0, true, CobolRecords.decimal(id.getAbndUtimeKey()));
+        CobolRecords.putZoned(rec, 8, 4, 0, false, CobolRecords.decimal(id.getAbndTasknoKey()), text);
+        CobolRecords.putText(rec, 12, 8, abndApplid, text);
+        CobolRecords.putText(rec, 20, 4, abndTranid, text);
+        CobolRecords.putText(rec, 24, 10, abndDate, text);
+        CobolRecords.putText(rec, 34, 8, abndTime, text);
+        CobolRecords.putText(rec, 42, 4, abndCode, text);
+        CobolRecords.putText(rec, 46, 8, abndProgram, text);
+        CobolRecords.putZoned(rec, 54, 8, 0, true, CobolRecords.decimal(abndRespcode), text);
+        CobolRecords.putZoned(rec, 63, 8, 0, true, CobolRecords.decimal(abndResp2Code), text);
+        CobolRecords.putZoned(rec, 72, 8, 0, true, CobolRecords.decimal(abndSqlcode), text);
+        CobolRecords.putText(rec, 81, 600, abndFreeform, text);
+        return rec;
+    }
+}

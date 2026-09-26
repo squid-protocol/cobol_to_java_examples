@@ -1,0 +1,50 @@
+package com.gitgalaxy.modernized.entity.vsam;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * VSAM INDEXED AWS.M2.CARDDEMO.TRANCATG.VSAM.KSDS (app/jcl/TRANCATG.jcl:36),
+ * record FD-TRAN-CAT-RECORD (app/cbl/CBTRN03C.cbl, 60 bytes, RECORDSIZE 60).
+ * Key: FD-TRAN-TYPE-CD, FD-TRAN-CAT-CD together (offset 0, 6 bytes, from IDCAMS KEYS): the @EmbeddedId FdTranCatRecordKey.
+ * Generated from GitGalaxy's verified skeleton; VSAM defines field testing: open (3 public / 0 private estates).
+ */
+@Entity(name = "VsamFdTranCatRecord")
+@Table(name = "vsam_trancatg")
+@Data
+@NoArgsConstructor
+public class FdTranCatRecord {
+
+    // FD-TRAN-TYPE-CD, FD-TRAN-CAT-CD together (offset 0, 6 bytes, from IDCAMS KEYS): the @EmbeddedId FdTranCatRecordKey
+    @EmbeddedId
+    private FdTranCatRecordKey id;
+
+    // FD-TRAN-CAT-DATA: PIC X(54), offset 6, 54 bytes
+    @Column(name = "FD_TRAN_CAT_DATA", length = 54)
+    private String fdTranCatData;
+
+
+    /** #3624: this record from its fixed-width VSAM form (60 bytes, as REPRO unloads it), each
+     *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
+     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+    public static FdTranCatRecord fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        FdTranCatRecord r = new FdTranCatRecord();
+        r.id = new FdTranCatRecordKey();
+        r.id.setFdTranTypeCd(CobolRecords.text(rec, 0, 2, text));
+        r.id.setFdTranCatCd(CobolRecords.toInteger(CobolRecords.zoned(rec, 2, 4, 0, text)));
+        r.fdTranCatData = CobolRecords.text(rec, 6, 54, text);
+        return r;
+    }
+
+    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    public byte[] toRecord(java.nio.charset.Charset text) {
+        byte[] rec = CobolRecords.blank(60, text);
+        CobolRecords.putText(rec, 0, 2, id.getFdTranTypeCd(), text);
+        CobolRecords.putZoned(rec, 2, 4, 0, false, CobolRecords.decimal(id.getFdTranCatCd()), text);
+        CobolRecords.putText(rec, 6, 54, fdTranCatData, text);
+        return rec;
+    }
+}

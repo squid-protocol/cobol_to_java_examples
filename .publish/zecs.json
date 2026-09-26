@@ -1,0 +1,103 @@
+{
+  "slug": "zecs",
+  "corpus": {
+    "name": "zecs",
+    "url": "https://github.com/walmartlabs/zECS",
+    "branch": "master",
+    "ref": "6d6bcbbc89c9be086a58cb7ad2ff4d702e873d02",
+    "license": "Apache-2.0",
+    "languages": [
+      "cobol",
+      "hlasm",
+      "jcl",
+      "csd",
+      "rexx"
+    ],
+    "answer_key": "tests/cobol_mainframe/answer_key/zecs.json",
+    "notes": "Walmart's z/OS Enterprise Cache Service: production CICS code. The only keyed corpus with command-level EXEC CICS in HLASM (#3495: ZECS002 / ZECSNC, DFHEIENT entries), a CICS HTTP server and client in COBOL (WEB RECEIVE / SEND / OPEN / CONVERSE, #3512), and CSD definitions in `.rdo` DFHCSDUP members.",
+    "excerpt": {
+      "why": "The HLASM CICS slice: ZECSNC (DFHEIENT entry; ASSIGN, ABEND, RECEIVE, DEFINE DCOUNTER checked by `OC EIBRESP,EIBRESP`, START TRANSID from a DS field, WRITEQ TD) and ZECS002 (ABEND through a DC constant, VERIFY), the CSDZECS.rdo member that defines them, and the CSDZECS.jcl job that feeds it to DFHCSDUP. ECS001.cbl is the COBOL side: a CICS web client (WEB OPEN / CONVERSE / CLOSE) whose `MOVE DFHVALUE(DELETE) TO METHOD-CDVA` moves a CICS translator constant, not a data item (the zECS census finding).",
+      "files": [
+        "JCL/CSDZECS.jcl",
+        "Source/CSDZECS.rdo",
+        "Source/ECS001.cbl",
+        "Source/ZECS002.asm",
+        "Source/ZECSNC.asm"
+      ]
+    }
+  },
+  "what": "Walmart zECS: an assembler + COBOL CICS key/value service",
+  "metrics": {
+    "source": {
+      "files": 10,
+      "total_loc": 4838,
+      "coding_loc": 3138,
+      "functions": 218,
+      "avg_complexity": 1.04,
+      "max_complexity": 19,
+      "avg_function_loc": 13.2,
+      "functions_complexity_over_10": 3,
+      "risk_cognitive_load": 46.9,
+      "risk_tech_debt": 5.3,
+      "risk_safety_score": 67.2,
+      "risk_verification": 25.7,
+      "risk_documentation": 70.0,
+      "risk_api_exposure": 0.9,
+      "risk_state_flux": 55.5,
+      "languages": {
+        "jcl": 10,
+        "cobol": 7,
+        "csd": 6,
+        "markdown": 4,
+        "plaintext": 3,
+        "hlasm": 2,
+        "yaml": 1,
+        "rexx": 1
+      }
+    },
+    "java": {
+      "files": 33,
+      "total_loc": 2350,
+      "coding_loc": 1481,
+      "functions": 77,
+      "avg_complexity": 1.3,
+      "max_complexity": 9,
+      "avg_function_loc": 5.6,
+      "functions_complexity_over_10": 0,
+      "risk_cognitive_load": 6.4,
+      "risk_tech_debt": 42.7,
+      "risk_safety_score": 20.6,
+      "risk_verification": 7.1,
+      "risk_documentation": 29.3,
+      "risk_api_exposure": 15.1,
+      "risk_state_flux": 16.8,
+      "languages": {
+        "java": 33,
+        "json": 2,
+        "yaml": 1,
+        "xml": 1,
+        "plaintext": 1,
+        "markdown": 1
+      }
+    }
+  },
+  "java_files": 33,
+  "services": 6,
+  "controllers": 5,
+  "entities": 6,
+  "dtos": 5,
+  "batch_jobs": {
+    "build": 7,
+    "runner": 3
+  },
+  "worklist": {
+    "missing-layout": 1,
+    "queue-name": 3,
+    "unchecked-resp": 73,
+    "transaction-split": 3,
+    "interface-call": 1,
+    "business-logic": 11,
+    "configuration": 1
+  },
+  "traced_artifacts": 110
+}

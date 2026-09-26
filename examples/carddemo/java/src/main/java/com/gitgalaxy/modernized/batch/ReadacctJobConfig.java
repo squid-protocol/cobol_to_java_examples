@@ -1,0 +1,31 @@
+package com.gitgalaxy.modernized.batch;
+
+import com.gitgalaxy.modernized.service.Cbact01cService;
+import java.util.List;
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.job.builder.JobBuilder;
+import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.step.builder.StepBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.PlatformTransactionManager;
+
+/** JCL job READACCT (app/jcl/READACCT.jcl) as a Spring Batch job (#3622): its steps in JCL order,
+ *  each bypassed when its COND= (or the job's) is satisfied, as JCL does.
+ *  JCL job flow field testing: open (5 public / 0 private estates). */
+@Configuration
+public class ReadacctJobConfig {
+
+    static final List<Dd> DDS_PREDEL = List.of(new Dd("DD01", "AWS.M2.CARDDEMO.ACCTDATA.PSCOMP", "MOD", "DELETE", null), new Dd("DD02", "AWS.M2.CARDDEMO.ACCTDATA.ARRYPS", "MOD", "DELETE", null), new Dd("DD03", "AWS.M2.CARDDEMO.ACCTDATA.VBPS", "MOD", "DELETE", null));
+    static final List<Dd> DDS_STEP05 = List.of(new Dd("STEPLIB", "AWS.M2.CARDDEMO.LOADLIB", "SHR", null, null), new Dd("ACCTFILE", "AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS", "SHR", null, null), new Dd("OUTFILE", "AWS.M2.CARDDEMO.ACCTDATA.PSCOMP", "NEW", "CATLG", null), new Dd("ARRYFILE", "AWS.M2.CARDDEMO.ACCTDATA.ARRYPS", "NEW", "CATLG", null), new Dd("VBRCFILE", "AWS.M2.CARDDEMO.ACCTDATA.VBPS", "NEW", "CATLG", null));
+
+    @Bean
+    public Job readacctJob(JobRepository jobRepository, PlatformTransactionManager tx, JclSteps steps, Cbact01cService cbact01cService) {
+        return new JobBuilder("READACCT", jobRepository)
+                .start(new StepBuilder("PREDEL", jobRepository)
+                        .tasklet(steps.iefbr14("PREDEL", "PREDEL", null, null, null, DDS_PREDEL), tx).build())
+                .next(new StepBuilder("STEP05", jobRepository)
+                        .tasklet(steps.program("STEP05", "STEP05", null, null, null, () -> cbact01cService.runBatch(DDS_STEP05, null)), tx).build())
+                .build();
+    }
+}

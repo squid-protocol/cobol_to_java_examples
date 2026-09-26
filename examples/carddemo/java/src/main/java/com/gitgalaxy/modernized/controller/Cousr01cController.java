@@ -1,0 +1,36 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.dto.contract.CarddemoCommarea;
+import com.gitgalaxy.modernized.service.Cousr01cService;
+
+/**
+ * CICS program COUSR01C (app/cbl/COUSR01C.cbl), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * COMMAREA: DFHCOMMAREA (app/cbl/COUSR01C.cbl, 160 bytes) -> CarddemoCommarea.
+ * TODO: callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COUSR01C.cbl:107.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/cousr01c")
+@RequiredArgsConstructor
+public class Cousr01cController {
+
+    private final Cousr01cService cousr01cService;
+
+    /** CICS transaction CU01 -> Cousr01c (CSD app/csd/CARDDEMO.CSD:459 group CARDDEMO). */
+    @PostMapping("/transactions/CU01")
+    public ResponseEntity<CarddemoCommarea> transactionCU01(@RequestBody CarddemoCommarea request) {
+        return ResponseEntity.ok(cousr01cService.handleTransaction("CU01", request));
+    }
+
+    /** Program-to-program entry: XCTL at app/cbl/COADM01C.cbl:145 (data-driven, table). */
+    @PostMapping("/link")
+    public ResponseEntity<CarddemoCommarea> link(@RequestBody CarddemoCommarea request) {
+        return ResponseEntity.ok(cousr01cService.handleLink(request));
+    }
+
+}

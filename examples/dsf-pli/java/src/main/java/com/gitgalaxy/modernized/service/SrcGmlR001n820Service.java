@@ -1,0 +1,35 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class SrcGmlR001n820Service {
+
+    private static final Logger log = LoggerFactory.getLogger(SrcGmlR001n820Service.class);
+
+    private final ObjectProvider<SrcGmlR0019928Service> srcGmlR0019928Service;
+
+    public void executeSrcGmlR001n820(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for src__GML__R001N820");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("SrcGmlR001n820: handleLink");
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0019928) at src/GML/R001N820.pli:160.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void linkSrcGmlR0019928() {
+        srcGmlR0019928Service.getObject().handleLink();
+    }
+
+}

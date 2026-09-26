@@ -1,0 +1,51 @@
+package com.gitgalaxy.modernized.web;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import java.util.HashMap;
+import java.util.Map;
+import com.gitgalaxy.modernized.exception.CicsAbendException;
+import com.gitgalaxy.modernized.exception.CicsConditionException;
+import com.gitgalaxy.modernized.exception.UnitOfWorkRollbackException;
+
+@RestControllerAdvice
+public class CicsExceptionAdvice {
+
+    @ExceptionHandler(CicsConditionException.class)
+    public ResponseEntity<Map<String, String>> handleCondition(CicsConditionException e) {
+        Map<String, String> body = new HashMap<>();
+        body.put("condition", e.getCondition());
+        body.put("program", e.getProgram());
+        body.put("site", e.getSite());
+        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
+        if (e.getCondition().equals("NOTFND")) {
+            status = HttpStatus.NOT_FOUND;
+        } else if (e.getCondition().equals("DUPREC") || e.getCondition().equals("DUPKEY")) {
+            status = HttpStatus.CONFLICT;
+        } else if (e.getCondition().equals("NOTAUTH")) {
+            status = HttpStatus.FORBIDDEN;
+        } else if (e.getCondition().equals("INVREQ") || e.getCondition().equals("LENGERR")) {
+            status = HttpStatus.BAD_REQUEST;
+        }
+        return new ResponseEntity<>(body, status);
+    }
+
+    @ExceptionHandler(CicsAbendException.class)
+    public ResponseEntity<Map<String, String>> handleAbend(CicsAbendException e) {
+        Map<String, String> body = new HashMap<>();
+        body.put("abcode", e.getAbcode());
+        body.put("program", e.getProgram());
+        body.put("site", e.getSite());
+        return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(UnitOfWorkRollbackException.class)
+    public ResponseEntity<Map<String, String>> handleRollback(UnitOfWorkRollbackException e) {
+        Map<String, String> body = new HashMap<>();
+        body.put("program", e.getProgram());
+        body.put("site", e.getSite());
+        return new ResponseEntity<>(body, HttpStatus.CONFLICT);
+    }
+}

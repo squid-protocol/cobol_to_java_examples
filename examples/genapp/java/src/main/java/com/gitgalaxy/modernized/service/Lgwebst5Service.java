@@ -1,0 +1,129 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.Lgwebst5Dfhcommarea;
+import com.gitgalaxy.modernized.messaging.TempStorage;
+import java.util.Optional;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Response handling (field testing: field-tested (6 public / 0 private estates)):
+ * READQ at line 720 tests NORMAL
+ * TODO: the RESP of QUERY at line 268 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 281 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 296 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 304 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 318 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 327 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 341 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 349 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 363 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 371 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 385 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 393 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 407 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 416 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 430 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 438 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 452 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 460 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 474 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 482 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 496 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 505 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 519 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 527 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 541 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 549 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 563 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 571 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of QUERY at line 585 (paragraph MAINLINE) is never tested
+ * ... and 16 more
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class Lgwebst5Service {
+
+    private static final Logger log = LoggerFactory.getLogger(Lgwebst5Service.class);
+
+    private final TempStorage tempStorage;
+
+    public void executeLgwebst5(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for lgwebst5");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** A CICS transaction entered the program. TODO: [AI AGENT] implement from the program's business rules. */
+    public Lgwebst5Dfhcommarea handleTransaction(String transid, Lgwebst5Dfhcommarea request) {
+        log.info("Lgwebst5: handleTransaction");
+        return request;
+    }
+
+    /** EXEC CICS READQ TS QUEUE(WS-TSQname) INTO(WS-OLDV) ITEM(1) at base/src/lgwebst5.cbl:720 (#3620).
+     *  TODO: the queue name is data-driven (QUEUE(WS-TSQname)): pass it.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected Optional<String> readqTsL720(String queue) {
+        return tempStorage.readItem(queue, 1);
+    }
+
+    /** EXEC CICS DELETEQ TS QUEUE(WS-TSQNAME) at base/src/lgwebst5.cbl:729 (#3620).
+     *  TODO: the queue name is data-driven (QUEUE(WS-TSQNAME)): pass it.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected void deleteqTsL729(String queue) {
+        tempStorage.delete(queue);
+    }
+
+    /** EXEC CICS WRITEQ TS QUEUE(WS-TSQNAME) FROM(WS-HHMMSS) at base/src/lgwebst5.cbl:734 (#3620).
+     *  TODO: the queue name is data-driven (QUEUE(WS-TSQNAME)): pass it.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected int writeqTsL734(String queue, String record) {
+        return tempStorage.writeItem(queue, record);
+    }
+
+    /** EXEC CICS WRITEQ TS QUEUE(WS-TSQNAME) FROM(WS-NEWV) at base/src/lgwebst5.cbl:756 (#3620).
+     *  TODO: the queue name is data-driven (QUEUE(WS-TSQNAME)): pass it.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected int writeqTsL756(String queue, String record) {
+        return tempStorage.writeItem(queue, record);
+    }
+
+    /** EXEC CICS READQ TS QUEUE(WS-TSQname) INTO(WS-TSQDATA) ITEM(1) at base/src/lgwebst5.cbl:771 (#3620).
+     *  TODO: the queue name is data-driven (QUEUE(WS-TSQname)): pass it.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected Optional<String> readqTsL771(String queue) {
+        return tempStorage.readItem(queue, 1);
+    }
+
+    /** EXEC CICS DELETEQ TS QUEUE(WS-TSQname) at base/src/lgwebst5.cbl:778 (#3620).
+     *  TODO: the queue name is data-driven (QUEUE(WS-TSQname)): pass it.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected void deleteqTsL778(String queue) {
+        tempStorage.delete(queue);
+    }
+
+    /** EXEC CICS WRITEQ TS QUEUE(WS-TSQname) FROM(WS-TSQDATA) at base/src/lgwebst5.cbl:783 (#3620).
+     *  TODO: the queue name is data-driven (QUEUE(WS-TSQname)): pass it.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected int writeqTsL783(String queue, String record) {
+        return tempStorage.writeItem(queue, record);
+    }
+
+    /** EXEC CICS WRITEQ TS QUEUE(WS-TSQname) FROM(WS-TSQDATA) at base/src/lgwebst5.cbl:789 (#3620).
+     *  TODO: the queue name is data-driven (QUEUE(WS-TSQname)): pass it.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected int writeqTsL789(String queue, String record) {
+        return tempStorage.writeItem(queue, record);
+    }
+
+    /** EXEC CICS WRITEQ TS QUEUE(WS-TSQname) FROM(WS-TSQDATA) at base/src/lgwebst5.cbl:796 (#3620).
+     *  TODO: the queue name is data-driven (QUEUE(WS-TSQname)): pass it.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected int writeqTsL796(String queue, String record) {
+        return tempStorage.writeItem(queue, record);
+    }
+
+}

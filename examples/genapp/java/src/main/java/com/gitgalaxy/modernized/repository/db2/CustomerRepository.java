@@ -1,0 +1,59 @@
+package com.gitgalaxy.modernized.repository.db2;
+
+import java.util.List;
+import java.util.Map;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+/**
+ * DB2 table CUSTOMER: the embedded SQL of LGACDB01, LGICDB01, LGUCDB01, one method per statement, as written.
+ * Each returns what JDBC returns; mapping onto business types is the service's job.
+ * TODO: this SQL is DB2's; the configured database is postgresql -- review each statement.
+ */
+@Repository
+public class CustomerRepository {
+
+    private final NamedParameterJdbcTemplate jdbc;
+
+    public CustomerRepository(NamedParameterJdbcTemplate jdbc) {
+        this.jdbc = jdbc;
+    }
+
+    /** EXEC SQL INSERT at base/src/lgacdb01.cbl:222 (LGACDB01, insert access).
+     *  Parameters: caDob = :CA-DOB, caEmailAddress = :CA-EMAIL-ADDRESS, caFirstName = :CA-FIRST-NAME, caHouseName = :CA-HOUSE-NAME, caHouseNum = :CA-HOUSE-NUM, caLastName = :CA-LAST-NAME, caPhoneHome = :CA-PHONE-HOME, caPhoneMobile = :CA-PHONE-MOBILE, caPostcode = :CA-POSTCODE, db2CustomernumInt = :DB2-CUSTOMERNUM-INT.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public int insertL222Lgacdb01(Map<String, ?> params) {
+        return jdbc.update("""
+            INSERT INTO CUSTOMER ( CUSTOMERNUMBER, FIRSTNAME, LASTNAME, DATEOFBIRTH, HOUSENAME, HOUSENUMBER, POSTCODE, PHONEMOBILE, PHONEHOME, EMAILADDRESS ) VALUES ( :db2CustomernumInt, :caFirstName, :caLastName, :caDob, :caHouseName, :caHouseNum, :caPostcode, :caPhoneMobile, :caPhoneHome, :caEmailAddress )
+            """, params);
+    }
+
+    /** EXEC SQL INSERT at base/src/lgacdb01.cbl:251 (LGACDB01, insert access).
+     *  Parameters: caDob = :CA-DOB, caEmailAddress = :CA-EMAIL-ADDRESS, caFirstName = :CA-FIRST-NAME, caHouseName = :CA-HOUSE-NAME, caHouseNum = :CA-HOUSE-NUM, caLastName = :CA-LAST-NAME, caPhoneHome = :CA-PHONE-HOME, caPhoneMobile = :CA-PHONE-MOBILE, caPostcode = :CA-POSTCODE.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public int insertL251Lgacdb01(Map<String, ?> params) {
+        return jdbc.update("""
+            INSERT INTO CUSTOMER ( CUSTOMERNUMBER, FIRSTNAME, LASTNAME, DATEOFBIRTH, HOUSENAME, HOUSENUMBER, POSTCODE, PHONEMOBILE, PHONEHOME, EMAILADDRESS ) VALUES ( DEFAULT, :caFirstName, :caLastName, :caDob, :caHouseName, :caHouseNum, :caPostcode, :caPhoneMobile, :caPhoneHome, :caEmailAddress )
+            """, params);
+    }
+
+    /** EXEC SQL SELECT at base/src/lgicdb01.cbl:169 (LGICDB01, read access).
+     *  Parameters: db2CustomernumberInt = :DB2-CUSTOMERNUMBER-INT.
+     *  The INTO host variables are the columns of the returned row.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public Map<String, Object> selectL169Lgicdb01(Map<String, ?> params) {
+        return jdbc.queryForMap("""
+            SELECT FIRSTNAME, LASTNAME, DATEOFBIRTH, HOUSENAME, HOUSENUMBER, POSTCODE, PHONEMOBILE, PHONEHOME, EMAILADDRESS FROM CUSTOMER WHERE CUSTOMERNUMBER = :db2CustomernumberInt
+            """, params);
+    }
+
+    /** EXEC SQL UPDATE at base/src/lgucdb01.cbl:155 (LGUCDB01, update access).
+     *  Parameters: caDob = :CA-DOB, caEmailAddress = :CA-EMAIL-ADDRESS, caFirstName = :CA-FIRST-NAME, caHouseName = :CA-HOUSE-NAME, caHouseNum = :CA-HOUSE-NUM, caLastName = :CA-LAST-NAME, caPhoneHome = :CA-PHONE-HOME, caPhoneMobile = :CA-PHONE-MOBILE, caPostcode = :CA-POSTCODE, db2CustomernumInt = :DB2-CUSTOMERNUM-INT.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public int updateL155Lgucdb01(Map<String, ?> params) {
+        return jdbc.update("""
+            UPDATE CUSTOMER SET FIRSTNAME = :caFirstName, LASTNAME = :caLastName, DATEOFBIRTH = :caDob, HOUSENAME = :caHouseName, HOUSENUMBER = :caHouseNum, POSTCODE = :caPostcode, PHONEMOBILE = :caPhoneMobile, PHONEHOME = :caPhoneHome, EMAILADDRESS = :caEmailAddress WHERE CUSTOMERNUMBER = :db2CustomernumInt
+            """, params);
+    }
+
+}

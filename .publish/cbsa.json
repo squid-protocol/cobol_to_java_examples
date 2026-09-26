@@ -1,0 +1,122 @@
+{
+  "slug": "cbsa",
+  "corpus": {
+    "name": "cics-banking-sample-application-cbsa",
+    "url": "https://github.com/cicsdev/cics-banking-sample-application-cbsa",
+    "branch": "July2024Refresh",
+    "ref": "417334533178ab6e753cc64b0e0e5cf0b4952704",
+    "license": "EPL-2.0",
+    "languages": [
+      "cobol",
+      "bms",
+      "jcl"
+    ],
+    "answer_key": "tests/cobol_mainframe/answer_key/cics-banking-sample-application-cbsa.json",
+    "notes": "CICS online COBOL with SECTIONs. Its main branch was emptied at the 2024 sunset (README only), so the ref lives on July2024Refresh. 10 BMS maps under src/base/bms_src.",
+    "excerpt": {
+      "why": "BANKDATA (batch, dead CALC-DAY-OF-WEEK, OPEN OUTPUT behind A010), BNK1CAC (CICS SECTIONs, dead POPULATE-TIME-DATE) and ABNDPROC, with their copybooks -- including BANKDATA's EXEC SQL INCLUDEd DB2 DECLARE TABLE members ACCDB2/CONTDB2 (#3344). Plus three BMS maps (#3347): BNK1CAM (the map BNK1CAC COPYs; an INITIAL literal continued mid-word), BNK1ACC (OCCURS=10) and BNK1UAM (PICOUT). Plus the BANK.csd DFHCSDUP deck (#3356): FILE with KEYLENGTH/RECORDSIZE, DB2CONN/DB2ENTRY/DB2TRAN, MAPSET, TCPIPSERVICE and the transaction map. Plus CRDTAGY1 (#3354): GET/PUT CONTAINER on a channel whose container and channel names are set by MOVE, not VALUE.",
+      "files": [
+        "etc/install/base/installjcl/BANK.csd",
+        "src/base/bms_src/BNK1ACC.bms",
+        "src/base/bms_src/BNK1CAM.bms",
+        "src/base/bms_src/BNK1UAM.bms",
+        "src/base/cobol_copy/ABNDINFO.cpy",
+        "src/base/cobol_copy/ACCDB2.cpy",
+        "src/base/cobol_copy/ACCTCTRL.cpy",
+        "src/base/cobol_copy/CONTDB2.cpy",
+        "src/base/cobol_copy/CUSTCTRL.cpy",
+        "src/base/cobol_copy/CUSTOMER.cpy",
+        "src/base/cobol_copy/SORTCODE.cpy",
+        "src/base/cobol_src/ABNDPROC.cbl",
+        "src/base/cobol_src/BANKDATA.cbl",
+        "src/base/cobol_src/BNK1CAC.cbl",
+        "src/base/cobol_src/CRDTAGY1.cbl"
+      ]
+    }
+  },
+  "what": "IBM CICS Bank Sample Application: CICS / DB2 online banking and its DB2 install JCL",
+  "metrics": {
+    "source": {
+      "files": 68,
+      "total_loc": 27768,
+      "coding_loc": 18609,
+      "functions": 682,
+      "avg_complexity": 1.46,
+      "max_complexity": 117,
+      "avg_function_loc": 28.4,
+      "functions_complexity_over_10": 22,
+      "risk_cognitive_load": 38.3,
+      "risk_tech_debt": 15.1,
+      "risk_safety_score": 38.1,
+      "risk_verification": 21.7,
+      "risk_documentation": 47.1,
+      "risk_api_exposure": 11.0,
+      "risk_state_flux": 42.4,
+      "languages": {
+        "jcl": 109,
+        "java": 82,
+        "cobol": 68,
+        "json": 53,
+        "xml": 47,
+        "markdown": 33,
+        "css": 32,
+        "javascript": 31,
+        "plaintext": 17,
+        "html": 13,
+        "bms": 10,
+        "shell": 2,
+        "batch": 2,
+        "yaml": 1,
+        "csd": 1
+      }
+    },
+    "java": {
+      "files": 164,
+      "total_loc": 11802,
+      "coding_loc": 6965,
+      "functions": 474,
+      "avg_complexity": 2.58,
+      "max_complexity": 24,
+      "avg_function_loc": 6.0,
+      "functions_complexity_over_10": 1,
+      "risk_cognitive_load": 4.6,
+      "risk_tech_debt": 27.7,
+      "risk_safety_score": 22.0,
+      "risk_verification": 10.9,
+      "risk_documentation": 14.2,
+      "risk_api_exposure": 14.8,
+      "risk_state_flux": 10.9,
+      "languages": {
+        "java": 164,
+        "yaml": 1,
+        "xml": 1,
+        "plaintext": 1,
+        "markdown": 1,
+        "json": 1
+      }
+    }
+  },
+  "java_files": 167,
+  "services": 31,
+  "controllers": 30,
+  "entities": 14,
+  "dtos": 74,
+  "batch_jobs": {
+    "build": 9,
+    "utility": 36,
+    "application": 1
+  },
+  "worklist": {
+    "commarea-mismatch": 35,
+    "record-variant": 1,
+    "missing-layout": 6,
+    "vsam-key": 1,
+    "batch-utility": 2,
+    "unchecked-resp": 14,
+    "db2-dialect": 31,
+    "transaction-split": 3,
+    "business-logic": 93,
+    "configuration": 1
+  },
+  "traced_artifacts": 829
+}

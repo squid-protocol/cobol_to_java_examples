@@ -1,0 +1,83 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.exception.*;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Screens (#3619): none resolved.
+ * TODO: SEND MAP S001IA1 (mapset S001IA3) at src/GML/R001IA01.pli:201: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001IA1 (mapset S001IA3) at src/GML/R001IA01.pli:212: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001IA1 (mapset S001IA3) at src/GML/R001IA01.pli:289: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001IA1 (mapset S001IA3) at src/GML/R001IA01.pli:308: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001IA1 (mapset S001IA3) at src/GML/R001IA01.pli:312: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001IA1 (mapset S001IA3) at src/GML/R001IA01.pli:318: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001IA1 (mapset S001IA3) at src/GML/R001IA01.pli:322: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001IA1 (mapset S001IA3) at src/GML/R001IA01.pli:375: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001IA1 (mapset S001IA3) at src/GML/R001IA01.pli:378: no single BMS source defines it (candidates: none in the repository)
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class SrcGmlR001ia01Service {
+
+    private static final Logger log = LoggerFactory.getLogger(SrcGmlR001ia01Service.class);
+
+    private final ObjectProvider<SrcGmlR0010301Service> srcGmlR0010301Service;
+
+    public void executeSrcGmlR001ia01(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for src__GML__R001IA01");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("SrcGmlR001ia01: handleLink");
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010301) at src/GML/R001IA01.pli:223. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcGmlR0010301() {
+        srcGmlR0010301Service.getObject().handleLink();
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/GML/R001IA01.pli:382 (paragraph UTGANG): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL382() {
+        throw new UnitOfWorkRollbackException("SRC__GML__R001IA01", "src/GML/R001IA01.pli:382");
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R001IA01.pli:186 (paragraph R001IA) routes ERROR to FEILBEH.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL186(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL FEILBEH at line 186", e);
+        // TODO: port paragraph FEILBEH's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R001IA01.pli:350 (paragraph UTGANG) routes ERROR to ABEND.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL350(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL ABEND at line 350", e);
+        // TODO: port paragraph ABEND's logic
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(FEIL) at src/GML/R001IA01.pli:392 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendFeilL392() {
+        throw new CicsAbendException("FEIL", "SRC__GML__R001IA01", "src/GML/R001IA01.pli:392");
+    }
+
+}

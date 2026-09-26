@@ -1,0 +1,29 @@
+package com.gitgalaxy.modernized.repository.vsam;
+
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import com.gitgalaxy.modernized.entity.vsam.TranRecord;
+
+/**
+ * AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS: READ / WRITE / REWRITE / DELETE are JpaRepository's
+ * findById / save / deleteById. Used by app/cbl/CBEXPORT.cbl (INPUT); app/cbl/CBTRN02C.cbl (OUTPUT); app/cbl/COBIL00C.cbl (ENDBR,READPREV,STARTBR,WRITE); app/cbl/COTRN00C.cbl (ENDBR,READNEXT,READPREV,STARTBR); app/cbl/COTRN01C.cbl (READ); app/cbl/COTRN02C.cbl (ENDBR,READPREV,STARTBR,WRITE).
+ */
+@Repository
+public interface TranRecordRepository extends JpaRepository<TranRecord, String> {
+
+    /** EXEC CICS STARTBR + READNEXT: records from a key onward, in key order. */
+    List<TranRecord> findByTranIdGreaterThanEqualOrderByTranIdAsc(String tranId, Pageable page);
+
+    /** EXEC CICS READPREV: records from a key backward, in reverse key order. */
+    List<TranRecord> findByTranIdLessThanEqualOrderByTranIdDesc(String tranId, Pageable page);
+
+    /** Alternate index AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX (path AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX.PATH, AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX.PATH) on TRAN-PROC-TS, non-unique. */
+    List<TranRecord> findByTranProcTs(String tranProcTs);
+
+    // Alternate index AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX (path AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX.PATH, AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX.PATH) is on TRAN-PROC-TS too: findByTranProcTs above.
+
+}

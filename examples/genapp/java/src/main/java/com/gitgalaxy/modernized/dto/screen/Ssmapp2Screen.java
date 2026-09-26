@@ -1,0 +1,160 @@
+package com.gitgalaxy.modernized.dto.screen;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * BMS map SSMAPP2 of mapset SSMAP (base/src/ssmap.bms): the screen as a view model (#3619).
+ * SEND at base/src/lgtestp2.cbl:42, base/src/lgtestp2.cbl:84, base/src/lgtestp2.cbl:119, base/src/lgtestp2.cbl:149, base/src/lgtestp2.cbl:176, base/src/lgtestp2.cbl:211, base/src/lgtestp2.cbl:224, base/src/lgtestp2.cbl:258, base/src/lgtestp2.cbl:291; RECEIVE at base/src/lgtestp2.cbl:56, base/src/lgtestp2.cbl:180.
+ * One property per named field (symbolic map SSMAPP2I / SSMAPP2O); LAYOUT is every field in
+ * screen order, labels included. BMS screen fields field testing: open (3 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class Ssmapp2Screen implements ScreenModel {
+
+    public static final String MAPSET = "SSMAP";
+    public static final String MAP = "SSMAPP2";
+    public static final List<ScreenField> LAYOUT = List.of(
+            new ScreenField(null, 1, 1, 4, false, false, true, false, false, "SSP2", null, 1),
+            new ScreenField(null, 1, 12, 40, false, false, true, false, false, "General Insurance Endowment Policy Menu ", null, 1),
+            new ScreenField(null, 4, 8, 18, false, false, false, false, false, "1. Policy Inquiry ", null, 1),
+            new ScreenField(null, 5, 8, 16, false, false, false, false, false, "2. Policy Add     ", null, 1),
+            new ScreenField(null, 6, 8, 16, false, false, false, false, false, "3. Policy Delete  ", null, 1),
+            new ScreenField(null, 7, 8, 16, false, false, false, false, false, "4. Policy Update  ", null, 1),
+            new ScreenField(null, 4, 30, 15, false, false, false, false, false, "Policy Number ", null, 1),
+            new ScreenField("ENP2PNO", 4, 50, 10, true, false, false, false, true, null, null, 1),
+            new ScreenField(null, 4, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 5, 30, 16, false, false, false, false, false, "Cust Number ", null, 1),
+            new ScreenField("ENP2CNO", 5, 50, 10, true, false, false, false, true, null, null, 1),
+            new ScreenField(null, 5, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 6, 30, 16, false, false, false, false, false, "Issue date ", null, 1),
+            new ScreenField("ENP2IDA", 6, 50, 10, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 6, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 6, 63, 12, false, false, false, false, false, "(yyyy-mm-dd)", null, 1),
+            new ScreenField(null, 7, 30, 16, false, false, false, false, false, "Expiry date ", null, 1),
+            new ScreenField("ENP2EDA", 7, 50, 10, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 7, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 7, 63, 12, false, false, false, false, false, "(yyyy-mm-dd)", null, 1),
+            new ScreenField(null, 8, 30, 16, false, false, false, false, false, "Fund Name ", null, 1),
+            new ScreenField("ENP2FNM", 8, 50, 10, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 8, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 9, 30, 16, false, false, false, false, false, "Term      ", null, 1),
+            new ScreenField("ENP2TER", 9, 50, 2, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 9, 53, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 10, 30, 16, false, false, false, false, false, "Sum Assured ", null, 1),
+            new ScreenField("ENP2SUM", 10, 50, 6, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 10, 57, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 11, 30, 16, false, false, false, false, false, "Life Assured ", null, 1),
+            new ScreenField("ENP2LIF", 11, 50, 25, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 11, 76, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 12, 30, 16, false, false, false, false, false, "With Profits ", null, 1),
+            new ScreenField("ENP2WPR", 12, 50, 1, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 12, 52, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 13, 30, 16, false, false, false, false, false, "Equities     ", null, 1),
+            new ScreenField("ENP2EQU", 13, 50, 1, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 13, 52, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 14, 30, 16, false, false, false, false, false, "Managed Funds", null, 1),
+            new ScreenField("ENP2MAN", 14, 50, 1, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 14, 52, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 22, 8, 14, false, false, false, false, false, "Select Option ", null, 1),
+            new ScreenField("ENP2OPT", 22, 24, 1, true, true, false, false, false, " ", null, 1),
+            new ScreenField(null, 22, 26, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField("ERP2FLD", 24, 8, 40, false, false, true, false, false, " ", null, 1));
+
+    /** ENP2PNO: (4,50), 10 bytes, ATTRB=FSET,IC,NORM,UNPROT -- base/src/ssmap.bms:253. Symbolic map ENP2PNOI, ENP2PNOO. */
+    private String enp2pno;
+
+    /** ENP2CNO: (5,50), 10 bytes, ATTRB=FSET,IC,NORM,UNPROT -- base/src/ssmap.bms:260. Symbolic map ENP2CNOI, ENP2CNOO. */
+    private String enp2cno;
+
+    /** ENP2IDA: (6,50), 10 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:267. Symbolic map ENP2IDAI, ENP2IDAO. */
+    private String enp2ida;
+
+    /** ENP2EDA: (7,50), 10 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:276. Symbolic map ENP2EDAI, ENP2EDAO. */
+    private String enp2eda;
+
+    /** ENP2FNM: (8,50), 10 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:285. Symbolic map ENP2FNMI, ENP2FNMO. */
+    private String enp2fnm;
+
+    /** ENP2TER: (9,50), 2 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:292. Symbolic map ENP2TERI, ENP2TERO. */
+    private String enp2ter;
+
+    /** ENP2SUM: (10,50), 6 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:299. Symbolic map ENP2SUMI, ENP2SUMO. */
+    private String enp2sum;
+
+    /** ENP2LIF: (11,50), 25 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:306. Symbolic map ENP2LIFI, ENP2LIFO. */
+    private String enp2lif;
+
+    /** ENP2WPR: (12,50), 1 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:313. Symbolic map ENP2WPRI, ENP2WPRO. */
+    private String enp2wpr;
+
+    /** ENP2EQU: (13,50), 1 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:320. Symbolic map ENP2EQUI, ENP2EQUO. */
+    private String enp2equ;
+
+    /** ENP2MAN: (14,50), 1 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:327. Symbolic map ENP2MANI, ENP2MANO. */
+    private String enp2man;
+
+    /** ENP2OPT: (22,24), 1 bytes, ATTRB=FSET,NORM,NUM,UNPROT -- base/src/ssmap.bms:334. Symbolic map ENP2OPTI, ENP2OPTO. */
+    private String enp2opt;
+
+    /** ERP2FLD: (24,8), 40 bytes, ATTRB=ASKIP,BRT,PROT -- base/src/ssmap.bms:339. Symbolic map ERP2FLDI, ERP2FLDO. */
+    private String erp2fld;
+
+    @Override
+    public String mapsetName() {
+        return MAPSET;
+    }
+
+    @Override
+    public String mapName() {
+        return MAP;
+    }
+
+    @Override
+    public List<ScreenField> screenLayout() {
+        return LAYOUT;
+    }
+
+    @Override
+    public Map<String, String> screenValues() {
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("ENP2PNO", enp2pno);
+        values.put("ENP2CNO", enp2cno);
+        values.put("ENP2IDA", enp2ida);
+        values.put("ENP2EDA", enp2eda);
+        values.put("ENP2FNM", enp2fnm);
+        values.put("ENP2TER", enp2ter);
+        values.put("ENP2SUM", enp2sum);
+        values.put("ENP2LIF", enp2lif);
+        values.put("ENP2WPR", enp2wpr);
+        values.put("ENP2EQU", enp2equ);
+        values.put("ENP2MAN", enp2man);
+        values.put("ENP2OPT", enp2opt);
+        values.put("ERP2FLD", erp2fld);
+        return values;
+    }
+
+    /** A view model from posted form values (keys as `screenValues` writes them). */
+    public static Ssmapp2Screen fromValues(Map<String, String> values) {
+        Ssmapp2Screen screen = new Ssmapp2Screen();
+        screen.setEnp2pno(values.get("ENP2PNO"));
+        screen.setEnp2cno(values.get("ENP2CNO"));
+        screen.setEnp2ida(values.get("ENP2IDA"));
+        screen.setEnp2eda(values.get("ENP2EDA"));
+        screen.setEnp2fnm(values.get("ENP2FNM"));
+        screen.setEnp2ter(values.get("ENP2TER"));
+        screen.setEnp2sum(values.get("ENP2SUM"));
+        screen.setEnp2lif(values.get("ENP2LIF"));
+        screen.setEnp2wpr(values.get("ENP2WPR"));
+        screen.setEnp2equ(values.get("ENP2EQU"));
+        screen.setEnp2man(values.get("ENP2MAN"));
+        screen.setEnp2opt(values.get("ENP2OPT"));
+        screen.setErp2fld(values.get("ERP2FLD"));
+        return screen;
+    }
+}

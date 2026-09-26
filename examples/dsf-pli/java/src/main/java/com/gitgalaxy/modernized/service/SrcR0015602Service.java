@@ -1,0 +1,42 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.entity.vsam.OverforRec;
+import com.gitgalaxy.modernized.repository.vsam.OverforRecRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class SrcR0015602Service {
+
+    private static final Logger log = LoggerFactory.getLogger(SrcR0015602Service.class);
+
+    private final OverforRecRepository overforRecRepository;
+
+    // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
+    // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
+
+    public void executeSrcR0015602(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for src__R0015602");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("SrcR0015602: handleLink");
+    }
+
+    /** OVERFOR as CICS file OVERFOR at src/R0015602.pli:186; VSAM defines field testing: open (3 public / 0 private estates). */
+    // TODO: this program uses OVERFOR_REC (80 bytes); the entity follows OVERFOR_REC (80 bytes) -- map one onto the other
+    public OverforRec writeOverfor(OverforRec record) {
+        return overforRecRepository.save(record);
+    }
+
+}

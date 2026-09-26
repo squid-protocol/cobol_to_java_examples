@@ -1,0 +1,92 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.CarddemoCommarea4;
+import com.gitgalaxy.modernized.dto.contract.CarddemoCommarea5;
+import com.gitgalaxy.modernized.dto.contract.CarddemoCommarea;
+import com.gitgalaxy.modernized.dto.screen.Cotrn1aScreen;
+import com.gitgalaxy.modernized.dto.screen.ScreenModel;
+import com.gitgalaxy.modernized.entity.vsam.TranRecord;
+import com.gitgalaxy.modernized.repository.vsam.TranRecordRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Response handling (field testing: field-tested (6 public / 0 private estates)):
+ * READ at line 269 tests NORMAL,NOTFND
+ * TODO: the RESP of RECEIVE at line 232 (paragraph RECEIVE-TRNVIEW-SCREEN) is never tested
+ * Screens (#3619): Cotrn1aScreen.
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class Cotrn01cService {
+
+    private static final Logger log = LoggerFactory.getLogger(Cotrn01cService.class);
+
+    private final ObjectProvider<Comen01cService> comen01cService;
+    private final ObjectProvider<Cosgn00cService> cosgn00cService;
+    private final ObjectProvider<Cotrn00cService> cotrn00cService;
+    private final TranRecordRepository tranRecordRepository;
+
+    public void executeCotrn01c(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for COTRN01C");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** A CICS transaction entered the program. TODO: [AI AGENT] implement from the program's business rules. */
+    public CarddemoCommarea5 handleTransaction(String transid, CarddemoCommarea5 request) {
+        log.info("Cotrn01c: handleTransaction");
+        return request;
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public CarddemoCommarea5 handleLink(CarddemoCommarea5 request) {
+        log.info("Cotrn01c: handleLink");
+        return request;
+    }
+
+    /** XCTL PROGRAM(CDEMO-TO-PROGRAM) at app/cbl/COTRN01C.cbl:205: the target is data-driven. Candidates: COMEN01C (moves), COSGN00C (moves), COTRN00C (moves).
+     *  Also MOVEd from CDEMO-FROM-PROGRAM, whose content is not known statically: those names reach the default branch.
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchCdemoToProgramL205(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "COMEN01C":
+                return comen01cService.getObject().handleLink((CarddemoCommarea) request);
+            case "COSGN00C":
+                cosgn00cService.getObject().handleLink();
+                return null;
+            case "COTRN00C":
+                return cotrn00cService.getObject().handleLink((CarddemoCommarea4) request);
+            default:
+                throw new IllegalArgumentException("XCTL PROGRAM(CDEMO-TO-PROGRAM) at app/cbl/COTRN01C.cbl:205: no known target " + program);
+        }
+    }
+
+    /** AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS as CICS file TRANSACT at app/cbl/COTRN01C.cbl:269; VSAM defines field testing: open (3 public / 0 private estates). */
+    public Optional<TranRecord> readTransact(String key) {
+        return tranRecordRepository.findById(key);
+    }
+
+    /** SEND MAP(COTRN1A) MAPSET(COTRN01) FROM(COTRN1AO) at app/cbl/COTRN01C.cbl:219 (#3619).
+     *  TODO: port the logic that fills COTRN1AO before the SEND.
+     *  BMS screen fields field testing: open (3 public / 0 private estates). */
+    public Cotrn1aScreen renderCotrn1a(Cotrn1aScreen screen) {
+        return screen;
+    }
+
+    /** RECEIVE MAP(COTRN1A) MAPSET(COTRN01) INTO(COTRN1AI) at app/cbl/COTRN01C.cbl:232 (#3619).
+     *  `aid` is the key the user pressed (EIBAID): ENTER, PF1-PF24, CLEAR, PA1-PA3.
+     *  TODO: port the logic that reads COTRN1AI after the RECEIVE, and return the screen to show next.
+     *  BMS screen fields field testing: open (3 public / 0 private estates). */
+    public ScreenModel submitCotrn1a(Cotrn1aScreen input, String aid) {
+        return renderCotrn1a(input);
+    }
+
+}

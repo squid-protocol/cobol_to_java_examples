@@ -1,0 +1,82 @@
+package com.gitgalaxy.modernized.entity.vsam;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * VSAM INDEXED CBSA.CICSBSA.CUSTOMER (etc/install/base/installjcl/BANKDATA.jcl:62),
+ * IDCAMS define matched by installation-symbol pattern @BANK_PREFIX@.CUSTOMER (a candidate join: RIDFLD CUSTOMER-CONTROL-KEY at 4/16 equals KEYS(16 4); RIDFLD CUSTOMER-KEY at 4/16 equals KEYS(16 4); program record of 259 bytes equals RECORDSIZE max 259).
+ * record OUTPUT-DATA (src/base/cobol_src/CRECUST.cbl, 259 bytes, RECORDSIZE 259).
+ * Key: CUSTOMER-SORTCODE, CUSTOMER-NUMBER together (offset 4, 16 bytes, from IDCAMS KEYS): the @EmbeddedId OutputDataKey.
+ * CICS files: CUSTOMER.
+ * Generated from GitGalaxy's verified skeleton; VSAM defines field testing: open (3 public / 0 private estates).
+ */
+@Entity(name = "VsamOutputData")
+@Table(name = "vsam_customer")
+@Data
+@NoArgsConstructor
+public class OutputData {
+
+    // CUSTOMER-SORTCODE, CUSTOMER-NUMBER together (offset 4, 16 bytes, from IDCAMS KEYS): the @EmbeddedId OutputDataKey
+    @EmbeddedId
+    private OutputDataKey id;
+
+    // CUSTOMER-EYECATCHER: PIC X(4), offset 0, 4 bytes
+    @Column(name = "CUSTOMER_EYECATCHER", length = 4)
+    private String customerEyecatcher;
+
+    // CUSTOMER-NAME: PIC X(60), offset 20, 60 bytes
+    @Column(name = "CUSTOMER_NAME", length = 60)
+    private String customerName;
+
+    // CUSTOMER-ADDRESS: PIC X(160), offset 80, 160 bytes
+    @Column(name = "CUSTOMER_ADDRESS", length = 160)
+    private String customerAddress;
+
+    // CUSTOMER-DATE-OF-BIRTH: PIC 9(8), offset 240, 8 bytes
+    @Column(name = "CUSTOMER_DATE_OF_BIRTH")
+    private Integer customerDateOfBirth;
+
+    // CUSTOMER-CREDIT-SCORE: PIC 999, offset 248, 3 bytes
+    @Column(name = "CUSTOMER_CREDIT_SCORE")
+    private Integer customerCreditScore;
+
+    // CUSTOMER-CS-REVIEW-DATE: PIC 9(8), offset 251, 8 bytes
+    @Column(name = "CUSTOMER_CS_REVIEW_DATE")
+    private Integer customerCsReviewDate;
+
+
+    /** #3624: this record from its fixed-width VSAM form (259 bytes, as REPRO unloads it), each
+     *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
+     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+    public static OutputData fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        OutputData r = new OutputData();
+        r.id = new OutputDataKey();
+        r.customerEyecatcher = CobolRecords.text(rec, 0, 4, text);
+        r.id.setCustomerSortcode(CobolRecords.toInteger(CobolRecords.zoned(rec, 4, 6, 0, text)));
+        r.id.setCustomerNumber(CobolRecords.toLong(CobolRecords.zoned(rec, 10, 10, 0, text)));
+        r.customerName = CobolRecords.text(rec, 20, 60, text);
+        r.customerAddress = CobolRecords.text(rec, 80, 160, text);
+        r.customerDateOfBirth = CobolRecords.toInteger(CobolRecords.zoned(rec, 240, 8, 0, text));
+        r.customerCreditScore = CobolRecords.toInteger(CobolRecords.zoned(rec, 248, 3, 0, text));
+        r.customerCsReviewDate = CobolRecords.toInteger(CobolRecords.zoned(rec, 251, 8, 0, text));
+        return r;
+    }
+
+    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    public byte[] toRecord(java.nio.charset.Charset text) {
+        byte[] rec = CobolRecords.blank(259, text);
+        CobolRecords.putText(rec, 0, 4, customerEyecatcher, text);
+        CobolRecords.putZoned(rec, 4, 6, 0, false, CobolRecords.decimal(id.getCustomerSortcode()), text);
+        CobolRecords.putZoned(rec, 10, 10, 0, false, CobolRecords.decimal(id.getCustomerNumber()), text);
+        CobolRecords.putText(rec, 20, 60, customerName, text);
+        CobolRecords.putText(rec, 80, 160, customerAddress, text);
+        CobolRecords.putZoned(rec, 240, 8, 0, false, CobolRecords.decimal(customerDateOfBirth), text);
+        CobolRecords.putZoned(rec, 248, 3, 0, false, CobolRecords.decimal(customerCreditScore), text);
+        CobolRecords.putZoned(rec, 251, 8, 0, false, CobolRecords.decimal(customerCsReviewDate), text);
+        return rec;
+    }
+}

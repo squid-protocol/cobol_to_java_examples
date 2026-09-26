@@ -1,0 +1,96 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.FeilStruc2;
+import com.gitgalaxy.modernized.dto.contract.FnrReg2;
+import com.gitgalaxy.modernized.entity.vsam.BrukerinfoRec;
+import com.gitgalaxy.modernized.exception.*;
+import com.gitgalaxy.modernized.repository.vsam.BrukerinfoRecRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Screens (#3619): none resolved.
+ * TODO: RECEIVE MAP S00101E (mapset S001013) at src/R0010450.pli:279: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S00101E (mapset S001013) at src/R0010450.pli:692: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S00101E (mapset S001013) at src/R0010450.pli:756: no single BMS source defines it (candidates: none in the repository)
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class SrcR0010450Service {
+
+    private static final Logger log = LoggerFactory.getLogger(SrcR0010450Service.class);
+
+    private final ObjectProvider<R0018090Service> r0018090Service;
+    private final ObjectProvider<SrcR0010490Service> srcR0010490Service;
+    private final ObjectProvider<SrcR0019906Service> srcR0019906Service;
+    private final ObjectProvider<SrcR0019921Service> srcR0019921Service;
+    private final ObjectProvider<SrcR0010301Service> srcR0010301Service;
+    private final BrukerinfoRecRepository brukerinfoRecRepository;
+
+    // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
+    // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
+
+    public void executeSrcR0010450(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for src__R0010450");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("SrcR0010450: handleLink");
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0018090) at src/R0010450.pli:540, src/R0010450.pli:652.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void linkR0018090() {
+        r0018090Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0010490) at src/R0010450.pli:554, src/R0010450.pli:663.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void linkSrcR0010490() {
+        srcR0010490Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0019906) at src/R0010450.pli:428.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public FnrReg2 linkSrcR0019906(FnrReg2 request) {
+        return srcR0019906Service.getObject().handleLink(request);
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0019921) at src/R0010450.pli:715.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public FeilStruc2 linkSrcR0019921(FeilStruc2 request) {
+        return srcR0019921Service.getObject().handleLink(request);
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010301) at src/R0010450.pli:292, src/R0010450.pli:372. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcR0010301() {
+        srcR0010301Service.getObject().handleLink();
+    }
+
+    /** BRUKINFO as CICS file BRUKINFO at src/R0010450.pli:871; VSAM defines field testing: open (3 public / 0 private estates). */
+    // TODO: this program uses BRUKERINFO_REC (52 bytes); the entity follows BRUKERINFO_REC (50 bytes) -- map one onto the other
+    public BrukerinfoRec writeBrukinfo(BrukerinfoRec record) {
+        return brukerinfoRecRepository.save(record);
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(0450) at src/R0010450.pli:743 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendLegacy0450L743() {
+        throw new CicsAbendException("0450", "SRC__R0010450", "src/R0010450.pli:743");
+    }
+
+}

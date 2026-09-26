@@ -1,0 +1,29 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.service.SrcR0010420Service;
+
+/**
+ * CICS program R0010420 (src/R0010420.pli), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * TODO: no COMMAREA layout: no structure parameter, or structure BASED on the main procedure's parameter COMMAREA_PEKER, is declared in the program or its %INCLUDE members; %INCLUDE members not in the repository: P0019906, P0019908, P0019910, P0019912, P0019921, S00101, S001A0; no resolved caller passes a COMMAREA.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/src-r0010420")
+@RequiredArgsConstructor
+public class SrcR0010420Controller {
+
+    private final SrcR0010420Service srcR0010420Service;
+
+    /** Program-to-program entry: XCTL at src/A0010301.pli:215, XCTL at src/R0010301.pli:258, XCTL at src/R0010421.pli:69, XCTL at src/R0010422.pli:93, XCTL at src/R0010422.pli:139, XCTL at src/R0010423.pli:91, XCTL at src/R0010423.pli:211, XCTL at src/R0010424.pli:89, XCTL at src/R0010424.pli:210, XCTL at src/R0010425.pli:92, XCTL at src/R0010425.pli:221, XCTL at src/R0010430.pli:1106, XCTL at src/R0010430.pli:1319, XCTL at src/R0018010.pli:513, XCTL at src/R0019H60.pli:525, XCTL at src/R0019H60.pli:1700. */
+    @PostMapping("/link")
+    public ResponseEntity<Void> link() {
+        srcR0010420Service.handleLink();
+        return ResponseEntity.noContent().build();
+    }
+
+}

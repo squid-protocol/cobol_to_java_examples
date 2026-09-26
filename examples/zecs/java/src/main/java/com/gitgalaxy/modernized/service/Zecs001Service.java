@@ -1,0 +1,131 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.Zecs001Dfhcommarea;
+import com.gitgalaxy.modernized.dto.contract.Zecs001Zecs003CommArea;
+import com.gitgalaxy.modernized.exception.*;
+import com.gitgalaxy.modernized.messaging.TransientData;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Response handling (field testing: field-tested (6 public / 0 private estates)):
+ * WEB at line 542 tests NORMAL
+ * DOCUMENT at line 643 tests NORMAL
+ * WEB at line 782 tests NORMAL
+ * READ at line 927 tests NORMAL,NOTFND
+ * INQUIRE at line 1004 tests NORMAL
+ * READ at line 1030 tests NORMAL,NOTFND
+ * ASKTIME at line 1065 tests NORMAL
+ * READ at line 1137 tests NORMAL,NOTFND
+ * READ at line 1265 tests NORMAL,NOTFND
+ * WRITE at line 1329 tests DUPREC,NORMAL
+ * READ at line 1365 tests NORMAL,NOTFND
+ * WEB at line 1457 tests NORMAL
+ * WRITE at line 1499 tests NORMAL
+ * REWRITE at line 1529 tests NORMAL
+ * READ at line 1589 tests NORMAL
+ * READ at line 1712 tests NORMAL
+ * DOCUMENT at line 1781 tests NORMAL
+ * DOCUMENT at line 1789 tests NORMAL
+ * WEB at line 1802 tests NORMAL
+ * TODO: the RESP of WEB at line 467 (paragraph 1000-ACCESS-PARMS) is never tested
+ * TODO: the RESP of WEB at line 530 (paragraph 1000-ACCESS-PARMS) is never tested
+ * TODO: the RESP of DOCUMENT at line 652 (paragraph 1210-ZCXXSD) is never tested
+ * TODO: the RESP of INQUIRE at line 731 (paragraph 1312-CHECK-ETTL) is never tested
+ * TODO: the RESP of XCTL at line 753 (paragraph 1320-CLEAR) is never tested
+ * TODO: the RESP of LINK at line 795 (paragraph 1500-AUTHENTICATE) is never tested
+ * TODO: the RESP of READ at line 1011 (paragraph 3300-READ-FILE) is never tested
+ * TODO: the RESP of REWRITE at line 1023 (paragraph 3300-READ-FILE) is never tested
+ * TODO: the RESP of GETMAIN at line 1104 (paragraph 3400-STAGE) is never tested
+ * TODO: the RESP of FREEMAIN at line 1180 (paragraph 3510-FREEMAIN) is never tested
+ * TODO: the RESP of WEB at line 1214 (paragraph 3600-SEND-RESPONSE) is never tested
+ * ... and 25 more
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class Zecs001Service {
+
+    private static final Logger log = LoggerFactory.getLogger(Zecs001Service.class);
+
+    private final ObjectProvider<Zecs003Service> zecs003Service;
+    private final TransientData transientData;
+
+    // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
+    // TODO: AI AGENT - Implement or mock interface call to: ZuidstckService
+
+    public void executeZecs001(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for ZECS001");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** A CICS transaction entered the program. TODO: [AI AGENT] implement from the program's business rules. */
+    public Zecs001Dfhcommarea handleTransaction(String transid, Zecs001Dfhcommarea request) {
+        log.info("Zecs001: handleTransaction");
+        return request;
+    }
+
+    /** XCTL PROGRAM(ZECS003) at Source/ZECS001.cbl:753: the target is data-driven. Candidates: ZECS003 (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchZecs003L753(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ZECS003":
+                return zecs003Service.getObject().handleLink((Zecs001Zecs003CommArea) request);
+            default:
+                throw new IllegalArgumentException("XCTL PROGRAM(ZECS003) at Source/ZECS001.cbl:753: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(ZECS002) at Source/ZECS001.cbl:795: the target is data-driven. Candidates: ZECS002 (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchZecs002L795(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ZECS002":
+                throw new UnsupportedOperationException("ZECS002 is not in this repository");
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(ZECS002) at Source/ZECS001.cbl:795: no known target " + program);
+        }
+    }
+
+    /** CALL ZUIDSTCK at Source/ZECS001.cbl:1244: the target is data-driven. Candidates: ZUIDSTCK (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchZuidstckL1244(String program, Object... args) {
+        switch (program.trim().toUpperCase()) {
+            case "ZUIDSTCK":
+                throw new UnsupportedOperationException("ZUIDSTCK is not in this repository");
+            default:
+                throw new IllegalArgumentException("CALL ZUIDSTCK at Source/ZECS001.cbl:1244: no known target " + program);
+        }
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT at Source/ZECS001.cbl:1444 (paragraph 4300-SEND-RESPONSE).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * commits the work so far and starts a new unit of work; in Spring, split the work at this point into separate @Transactional calls (TransactionTemplate).
+     */
+    public void commitPointL1444() {
+        log.info("EXEC CICS SYNCPOINT at line 1444");
+        // TODO: [AI AGENT] split the transaction here
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at Source/ZECS001.cbl:2160 (paragraph 9999-ROLLBACK): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL2160() {
+        throw new UnitOfWorkRollbackException("ZECS001", "Source/ZECS001.cbl:2160");
+    }
+
+    /** EXEC CICS WRITEQ TD QUEUE(CSSL) FROM(TD-RECORD) at Source/ZECS001.cbl:2137 (#3620).
+     *  Route: symbol -- an installation symbol, not the queue's name.
+     *  TODO: @tdq@ is an installation symbol: set the real queue name.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected void writeqTdL2137(String record) {
+        transientData.write("@tdq@", record);
+    }
+
+}

@@ -1,0 +1,35 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.dto.contract.Lgupol01Dfhcommarea;
+import com.gitgalaxy.modernized.service.Lgupdb01Service;
+
+/**
+ * CICS program LGUPDB01 (base/src/lgupdb01.cbl), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * COMMAREA: DFHCOMMAREA (base/src/lgupol01.cbl, 32500 bytes) -> Lgupol01Dfhcommarea.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/lgupdb01")
+@RequiredArgsConstructor
+public class Lgupdb01Controller {
+
+    private final Lgupdb01Service lgupdb01Service;
+
+    /** CICS transaction DSPI -> Lgupdb01 (CSD base/cntl/cdef123.jcl:159 group GENAAORP). */
+    @PostMapping("/transactions/DSPI")
+    public ResponseEntity<Lgupol01Dfhcommarea> transactionDSPI(@RequestBody Lgupol01Dfhcommarea request) {
+        return ResponseEntity.ok(lgupdb01Service.handleTransaction("DSPI", request));
+    }
+
+    /** Program-to-program entry: LINK at base/src/lgupol01.cbl:157. */
+    @PostMapping("/link")
+    public ResponseEntity<Lgupol01Dfhcommarea> link(@RequestBody Lgupol01Dfhcommarea request) {
+        return ResponseEntity.ok(lgupdb01Service.handleLink(request));
+    }
+
+}

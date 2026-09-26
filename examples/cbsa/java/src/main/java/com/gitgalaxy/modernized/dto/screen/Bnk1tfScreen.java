@@ -1,0 +1,150 @@
+package com.gitgalaxy.modernized.dto.screen;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * BMS map BNK1TF of mapset BNK1TFM (src/base/bms_src/BNK1TFM.bms): the screen as a view model (#3619).
+ * SEND at src/base/cobol_src/BNK1TFN.cbl:672, src/base/cobol_src/BNK1TFN.cbl:746, src/base/cobol_src/BNK1TFN.cbl:820; RECEIVE at src/base/cobol_src/BNK1TFN.cbl:356.
+ * One property per named field (symbolic map BNK1TFI / BNK1TFO); LAYOUT is every field in
+ * screen order, labels included. BMS screen fields field testing: open (3 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class Bnk1tfScreen implements ScreenModel {
+
+    public static final String MAPSET = "BNK1TFM";
+    public static final String MAP = "BNK1TF";
+    public static final List<ScreenField> LAYOUT = List.of(
+            new ScreenField(null, 1, 1, 7, false, false, false, false, false, "BNK1TF ", "BLUE", 1),
+            new ScreenField("COMPANY", 1, 17, 58, false, false, false, false, false, "CICS Bank Sample Application - Transfer funds.", "RED", 1),
+            new ScreenField(null, 3, 1, 70, false, false, false, false, false, "Provide a FROM account, a TO account and an Amount and press Enter.", "TURQUOISE", 1),
+            new ScreenField(null, 8, 1, 21, false, false, false, false, false, "FROM Account Number:", "TURQUOISE", 1),
+            new ScreenField("FACCNO", 8, 23, 8, false, true, false, false, false, null, "GREEN", 1),
+            new ScreenField(null, 8, 32, 19, false, false, false, false, false, "TO Account Number:", "TURQUOISE", 1),
+            new ScreenField("TACCNO", 8, 52, 8, false, true, false, false, false, null, "GREEN", 1),
+            new ScreenField(null, 8, 61, 1, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 9, 1, 7, false, false, false, false, false, "AMOUNT:", "TURQUOISE", 1),
+            new ScreenField("AMT", 9, 23, 13, true, false, false, false, false, "0000000000.00", "GREEN", 1),
+            new ScreenField(null, 9, 37, 1, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 11, 1, 16, false, false, false, false, false, "FROM Account   :", "TURQUOISE", 1),
+            new ScreenField("FACCNO2", 11, 20, 8, false, true, false, false, false, null, "TURQUOISE", 1),
+            new ScreenField(null, 11, 35, 16, false, false, false, false, false, "TO Account     :", "TURQUOISE", 1),
+            new ScreenField("TACCNO2", 11, 55, 8, false, false, false, false, false, null, "TURQUOISE", 1),
+            new ScreenField(null, 12, 1, 16, false, false, false, false, false, "Sort Code      :", "TURQUOISE", 1),
+            new ScreenField("FSORTC", 12, 20, 6, false, true, false, false, false, "      ", "NEUTRAL", 1),
+            new ScreenField(null, 12, 35, 16, false, false, false, false, false, "Sort Code      :", "TURQUOISE", 1),
+            new ScreenField("TSORTC", 12, 55, 6, false, true, false, false, false, "      ", "NEUTRAL", 1),
+            new ScreenField(null, 13, 1, 16, false, false, false, false, false, "Actual Balance :", "TURQUOISE", 1),
+            new ScreenField("FACTBAL", 13, 19, 14, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 13, 35, 16, false, false, false, false, false, "Actual Balance :", "TURQUOISE", 1),
+            new ScreenField("TACTBAL", 13, 54, 14, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 14, 1, 16, false, false, false, false, false, "Avail Balance  :", "TURQUOISE", 1),
+            new ScreenField("FAVBAL", 14, 19, 14, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 14, 35, 18, false, false, false, false, false, "Avail Balance  :", "TURQUOISE", 1),
+            new ScreenField("TAVBAL", 14, 54, 14, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField("MESSAGE", 23, 1, 79, false, false, true, false, false, null, "YELLOW", 1),
+            new ScreenField(null, 24, 1, 20, false, false, false, false, false, "F3=Exit   F12=Cancel", "BLUE", 1),
+            new ScreenField("DUMMY", 24, 79, 1, false, false, false, true, false, " ", null, 1));
+
+    /** COMPANY: (1,17), 58 bytes, ATTRB=NORM,PROT -- src/base/bms_src/BNK1TFM.bms:30. Symbolic map COMPANYI, COMPANYO. */
+    private String company;
+
+    /** FACCNO: (8,23), 8 bytes, ATTRB=FSET,NORM,NUM -- src/base/bms_src/BNK1TFM.bms:38. Symbolic map FACCNOI, FACCNOO. */
+    private String faccno;
+
+    /** TACCNO: (8,52), 8 bytes, ATTRB=FSET,NORM,NUM -- src/base/bms_src/BNK1TFM.bms:43. Symbolic map TACCNOI, TACCNOO. */
+    private String taccno;
+
+    /** AMT: (9,23), 13 bytes, ATTRB=FSET,NORM,UNPROT -- src/base/bms_src/BNK1TFM.bms:48. Symbolic map AMTI, AMTO. */
+    private String amt;
+
+    /** FACCNO2: (11,20), 8 bytes, ATTRB=NORM,NUM,PROT -- src/base/bms_src/BNK1TFM.bms:53. Symbolic map FACCNO2I, FACCNO2O. */
+    private String faccno2;
+
+    /** TACCNO2: (11,55), 8 bytes, ATTRB=NORM,PROT -- src/base/bms_src/BNK1TFM.bms:57. Symbolic map TACCNO2I, TACCNO2O. */
+    private String taccno2;
+
+    /** FSORTC: (12,20), 6 bytes, ATTRB=NORM,NUM,PROT -- src/base/bms_src/BNK1TFM.bms:60. Symbolic map FSORTCI, FSORTCO. */
+    private String fsortc;
+
+    /** TSORTC: (12,55), 6 bytes, ATTRB=NORM,NUM,PROT -- src/base/bms_src/BNK1TFM.bms:64. Symbolic map TSORTCI, TSORTCO. */
+    private String tsortc;
+
+    /** FACTBAL: (13,19), 14 bytes, ATTRB=NORM,PROT -- src/base/bms_src/BNK1TFM.bms:68. Symbolic map FACTBALI, FACTBALO. */
+    private String factbal;
+
+    /** TACTBAL: (13,54), 14 bytes, ATTRB=NORM,PROT -- src/base/bms_src/BNK1TFM.bms:72. Symbolic map TACTBALI, TACTBALO. */
+    private String tactbal;
+
+    /** FAVBAL: (14,19), 14 bytes, ATTRB=NORM,PROT -- src/base/bms_src/BNK1TFM.bms:76. Symbolic map FAVBALI, FAVBALO. */
+    private String favbal;
+
+    /** TAVBAL: (14,54), 14 bytes, ATTRB=NORM,PROT -- src/base/bms_src/BNK1TFM.bms:80. Symbolic map TAVBALI, TAVBALO. */
+    private String tavbal;
+
+    /** MESSAGE: (23,1), 79 bytes, ATTRB=BRT,PROT -- src/base/bms_src/BNK1TFM.bms:83. Symbolic map MESSAGEI, MESSAGEO. */
+    private String message;
+
+    /** DUMMY: (24,79), 1 bytes, ATTRB=DRK,FSET,PROT -- src/base/bms_src/BNK1TFM.bms:86. Symbolic map DUMMYI, DUMMYO. */
+    private String dummy;
+
+    @Override
+    public String mapsetName() {
+        return MAPSET;
+    }
+
+    @Override
+    public String mapName() {
+        return MAP;
+    }
+
+    @Override
+    public List<ScreenField> screenLayout() {
+        return LAYOUT;
+    }
+
+    @Override
+    public Map<String, String> screenValues() {
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("COMPANY", company);
+        values.put("FACCNO", faccno);
+        values.put("TACCNO", taccno);
+        values.put("AMT", amt);
+        values.put("FACCNO2", faccno2);
+        values.put("TACCNO2", taccno2);
+        values.put("FSORTC", fsortc);
+        values.put("TSORTC", tsortc);
+        values.put("FACTBAL", factbal);
+        values.put("TACTBAL", tactbal);
+        values.put("FAVBAL", favbal);
+        values.put("TAVBAL", tavbal);
+        values.put("MESSAGE", message);
+        values.put("DUMMY", dummy);
+        return values;
+    }
+
+    /** A view model from posted form values (keys as `screenValues` writes them). */
+    public static Bnk1tfScreen fromValues(Map<String, String> values) {
+        Bnk1tfScreen screen = new Bnk1tfScreen();
+        screen.setCompany(values.get("COMPANY"));
+        screen.setFaccno(values.get("FACCNO"));
+        screen.setTaccno(values.get("TACCNO"));
+        screen.setAmt(values.get("AMT"));
+        screen.setFaccno2(values.get("FACCNO2"));
+        screen.setTaccno2(values.get("TACCNO2"));
+        screen.setFsortc(values.get("FSORTC"));
+        screen.setTsortc(values.get("TSORTC"));
+        screen.setFactbal(values.get("FACTBAL"));
+        screen.setTactbal(values.get("TACTBAL"));
+        screen.setFavbal(values.get("FAVBAL"));
+        screen.setTavbal(values.get("TAVBAL"));
+        screen.setMessage(values.get("MESSAGE"));
+        screen.setDummy(values.get("DUMMY"));
+        return screen;
+    }
+}

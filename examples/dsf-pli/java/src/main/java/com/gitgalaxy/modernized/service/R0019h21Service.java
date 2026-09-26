@@ -1,0 +1,171 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.FeilStruc2;
+import com.gitgalaxy.modernized.entity.vsam.MeldXx;
+import com.gitgalaxy.modernized.entity.vsam.OmrfeilFeilMeld;
+import com.gitgalaxy.modernized.entity.vsam.OmrloggBmsmapbr;
+import com.gitgalaxy.modernized.entity.vsam.Text;
+import com.gitgalaxy.modernized.exception.*;
+import com.gitgalaxy.modernized.repository.vsam.MeldXxRepository;
+import com.gitgalaxy.modernized.repository.vsam.OmrfeilFeilMeldRepository;
+import com.gitgalaxy.modernized.repository.vsam.OmrloggBmsmapbrRepository;
+import com.gitgalaxy.modernized.repository.vsam.TextRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Screens (#3619): none resolved.
+ * TODO: SEND MAP S0019H (mapset S0019H3) at src/R0019H21.pli:444: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S0019H (mapset S0019H3) at src/R0019H21.pli:532: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S0019H (mapset S0019H3) at src/R0019H21.pli:645: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S0019H (mapset S0019H3) at src/R0019H21.pli:969: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S0019H (mapset S0019H3) at src/R0019H21.pli:1274: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S0019H (mapset S0019H3) at src/R0019H21.pli:1295: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S0019H (mapset S0019H3) at src/R0019H21.pli:1665: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S0019H (mapset S0019H3) at src/R0019H21.pli:1683: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001012 (mapset S001013) at src/R0019H21.pli:1689: no single BMS source defines it (candidates: none in the repository)
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class R0019h21Service {
+
+    private static final Logger log = LoggerFactory.getLogger(R0019h21Service.class);
+
+    private final ObjectProvider<SrcR0013101Service> srcR0013101Service;
+    private final ObjectProvider<SrcR0014001Service> srcR0014001Service;
+    private final ObjectProvider<SrcR0019921Service> srcR0019921Service;
+    private final ObjectProvider<SrcR0010301Service> srcR0010301Service;
+    private final MeldXxRepository meldXxRepository;
+    private final TextRepository textRepository;
+    private final OmrfeilFeilMeldRepository omrfeilFeilMeldRepository;
+    private final OmrloggBmsmapbrRepository omrloggBmsmapbrRepository;
+
+    // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
+    // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
+
+    public void executeR0019h21(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for R0019H21");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("R0019h21: handleLink");
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0013101) at src/R0019H21.pli:860.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void linkSrcR0013101() {
+        srcR0013101Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0014001) at src/R0019H21.pli:1179.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void linkSrcR0014001() {
+        srcR0014001Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0019921) at src/R0019H21.pli:1065.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public FeilStruc2 linkSrcR0019921(FeilStruc2 request) {
+        return srcR0019921Service.getObject().handleLink(request);
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010301) at src/R0019H21.pli:540. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcR0010301() {
+        srcR0010301Service.getObject().handleLink();
+    }
+
+    /** F0019H01 as CICS file F0019H01 at src/R0019H21.pli:784; VSAM defines field testing: open (3 public / 0 private estates). */
+    public MeldXx writeF0019h01(MeldXx record) {
+        return meldXxRepository.save(record);
+    }
+
+    /** F0019H21 as CICS file F0019H21 at src/R0019H21.pli:1407, 1418, 1458; VSAM defines field testing: open (3 public / 0 private estates). */
+    public Text writeF0019h21(Text record) {
+        return textRepository.save(record);
+    }
+
+    /** OMRFEIL as CICS file OMRFEIL at src/R0019H21.pli:1320; VSAM defines field testing: open (3 public / 0 private estates). */
+    public OmrfeilFeilMeld writeOmrfeil(OmrfeilFeilMeld record) {
+        return omrfeilFeilMeldRepository.save(record);
+    }
+
+    /** OMRLOGG as CICS file OMRLOGG at src/R0019H21.pli:425, 429, 647, 972, 1673; VSAM defines field testing: open (3 public / 0 private estates). */
+    public OmrloggBmsmapbr writeOmrlogg(OmrloggBmsmapbr record) {
+        return omrloggBmsmapbrRepository.save(record);
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R0019H21.pli:347 (paragraph R0019H) routes ERROR to CICS_ABEND.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL347(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL CICS_ABEND at line 347", e);
+        // TODO: port paragraph CICS_ABEND's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R0019H21.pli:424 (paragraph R0019H) routes NOTFND to NOTFND.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionNotfndL424(CicsConditionException e) {
+        log.info("HANDLE CONDITION NOTFND LABEL NOTFND at line 424", e);
+        // TODO: port paragraph NOTFND's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R0019H21.pli:424 (paragraph R0019H) routes ENDFILE to NOTFND.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionEndfileL424(CicsConditionException e) {
+        log.info("HANDLE CONDITION ENDFILE LABEL NOTFND at line 424", e);
+        // TODO: port paragraph NOTFND's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R0019H21.pli:607 (paragraph R0019H) routes EXPIRED to EXPIRED.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionExpiredL607(CicsConditionException e) {
+        log.info("HANDLE CONDITION EXPIRED LABEL EXPIRED at line 607", e);
+        // TODO: port paragraph EXPIRED's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R0019H21.pli:782 (paragraph R0019H) routes ERROR to F999.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL782(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL F999 at line 782", e);
+        // TODO: port paragraph F999's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R0019H21.pli:1593 (paragraph P999_SLUTT) routes ERROR to ABEND.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL1593(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL ABEND at line 1593", e);
+        // TODO: port paragraph ABEND's logic
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(FEIL) at src/R0019H21.pli:1707 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendFeilL1707() {
+        throw new CicsAbendException("FEIL", "R0019H21", "src/R0019H21.pli:1707");
+    }
+
+}

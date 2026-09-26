@@ -1,0 +1,57 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.exception.*;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class SrcR0016101Service {
+
+    private static final Logger log = LoggerFactory.getLogger(SrcR0016101Service.class);
+
+    private final ObjectProvider<SrcR0015301Service> srcR0015301Service;
+
+    // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
+    // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
+
+    public void executeSrcR0016101(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for src__R0016101");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("SrcR0016101: handleLink");
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0015301) at src/R0016101.pli:279, src/R0016101.pli:286.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void linkSrcR0015301() {
+        srcR0015301Service.getObject().handleLink();
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(TRY) at src/R0016101.pli:346 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendTryL346() {
+        throw new CicsAbendException("TRY", "SRC__R0016101", "src/R0016101.pli:346");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(TRY) at src/R0016101.pli:464 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendTryL464() {
+        throw new CicsAbendException("TRY", "SRC__R0016101", "src/R0016101.pli:464");
+    }
+
+}

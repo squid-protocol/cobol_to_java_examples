@@ -1,0 +1,29 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.dto.contract.Bnk1ccaWsCommArea;
+import com.gitgalaxy.modernized.service.Bnk1ccaService;
+
+/**
+ * CICS program BNK1CCA (src/base/cobol_src/BNK1CCA.cbl), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * COMMAREA: WS-COMM-AREA (src/base/cobol_src/BNK1CCA.cbl, 248 bytes) -> Bnk1ccaWsCommArea.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/bnk1cca")
+@RequiredArgsConstructor
+public class Bnk1ccaController {
+
+    private final Bnk1ccaService bnk1ccaService;
+
+    /** CICS transaction OCCA -> Bnk1cca (CSD etc/install/base/installjcl/BANK.csd:425 group BANK). */
+    @PostMapping("/transactions/OCCA")
+    public ResponseEntity<Bnk1ccaWsCommArea> transactionOCCA(@RequestBody Bnk1ccaWsCommArea request) {
+        return ResponseEntity.ok(bnk1ccaService.handleTransaction("OCCA", request));
+    }
+
+}

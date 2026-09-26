@@ -1,0 +1,116 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.Bnk1craSubpgmParms;
+import com.gitgalaxy.modernized.dto.contract.BnkmenuAbndinfoRec;
+import com.gitgalaxy.modernized.exception.*;
+import com.gitgalaxy.modernized.repository.db2.AccountRepository;
+import com.gitgalaxy.modernized.repository.db2.ProctranRepository;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Response handling (field testing: field-tested (6 public / 0 private estates)):
+ * SYNCPOINT at line 564 tests NORMAL
+ * SYNCPOINT at line 750 tests NORMAL
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class DbcrfunService {
+
+    private static final Logger log = LoggerFactory.getLogger(DbcrfunService.class);
+
+    private final ObjectProvider<AbndprocService> abndprocService;
+    private final AccountRepository accountRepository;
+    private final ProctranRepository proctranRepository;
+
+    public void executeDbcrfun(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for DBCRFUN");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public Bnk1craSubpgmParms handleLink(Bnk1craSubpgmParms request) {
+        log.info("Dbcrfun: handleLink");
+        return request;
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DBCRFUN.cbl:620: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL620(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DBCRFUN.cbl:620: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DBCRFUN.cbl:807: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL807(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DBCRFUN.cbl:807: no known target " + program);
+        }
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/base/cobol_src/DBCRFUN.cbl:564 (paragraph WTPD010): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL564() {
+        throw new UnitOfWorkRollbackException("DBCRFUN", "src/base/cobol_src/DBCRFUN.cbl:564");
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/base/cobol_src/DBCRFUN.cbl:750 (paragraph AH010): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL750() {
+        throw new UnitOfWorkRollbackException("DBCRFUN", "src/base/cobol_src/DBCRFUN.cbl:750");
+    }
+
+    /**
+     * EXEC CICS HANDLE ABEND at src/base/cobol_src/DBCRFUN.cbl:207 (paragraph A010) routes abends to ABEND-HANDLING.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onAbendL207(CicsAbendException e) {
+        log.info("HANDLE ABEND LABEL ABEND-HANDLING at line 207", e);
+        // TODO: port paragraph ABEND-HANDLING's logic
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(HROL) at src/base/cobol_src/DBCRFUN.cbl:630 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendHrolL630() {
+        throw new CicsAbendException("HROL", "DBCRFUN", "src/base/cobol_src/DBCRFUN.cbl:630");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(HROL) at src/base/cobol_src/DBCRFUN.cbl:818 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendHrolL818() {
+        throw new CicsAbendException("HROL", "DBCRFUN", "src/base/cobol_src/DBCRFUN.cbl:818");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(MY-ABEND-CODE) at src/base/cobol_src/DBCRFUN.cbl:834 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendMyabendcodeL834() {
+        throw new CicsAbendException("MY-ABEND-CODE", "DBCRFUN", "src/base/cobol_src/DBCRFUN.cbl:834");
+    }
+
+}

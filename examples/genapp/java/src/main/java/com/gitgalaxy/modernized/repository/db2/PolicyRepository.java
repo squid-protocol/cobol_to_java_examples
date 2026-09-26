@@ -1,0 +1,150 @@
+package com.gitgalaxy.modernized.repository.db2;
+
+import java.util.List;
+import java.util.Map;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+/**
+ * DB2 table POLICY: the embedded SQL of LGAPDB01, LGDPDB01, LGIPDB01, LGUPDB01, one method per statement, as written.
+ * Each returns what JDBC returns; mapping onto business types is the service's job.
+ * TODO: this SQL is DB2's; the configured database is postgresql -- review each statement.
+ */
+@Repository
+public class PolicyRepository {
+
+    private final NamedParameterJdbcTemplate jdbc;
+
+    public PolicyRepository(NamedParameterJdbcTemplate jdbc) {
+        this.jdbc = jdbc;
+    }
+
+    /** EXEC SQL INSERT at base/src/lgapdb01.cbl:268 (LGAPDB01, insert access).
+     *  Parameters: caBrokersref = :CA-BROKERSREF, caExpiryDate = :CA-EXPIRY-DATE, caIssueDate = :CA-ISSUE-DATE, db2BrokeridInt = :DB2-BROKERID-INT, db2CustomernumInt = :DB2-CUSTOMERNUM-INT, db2PaymentInt = :DB2-PAYMENT-INT, db2Policytype = :DB2-POLICYTYPE.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public int insertL268Lgapdb01(Map<String, ?> params) {
+        return jdbc.update("""
+            INSERT INTO POLICY ( POLICYNUMBER, CUSTOMERNUMBER, ISSUEDATE, EXPIRYDATE, POLICYTYPE, LASTCHANGED, BROKERID, BROKERSREFERENCE, PAYMENT ) VALUES ( DEFAULT, :db2CustomernumInt, :caIssueDate, :caExpiryDate, :db2Policytype, CURRENT TIMESTAMP, :db2BrokeridInt, :caBrokersref, :db2PaymentInt )
+            """, params);
+    }
+
+    /** EXEC SQL SELECT at base/src/lgapdb01.cbl:316 (LGAPDB01, read access).
+     *  Parameters: db2PolicynumInt = :DB2-POLICYNUM-INT.
+     *  The INTO host variables are the columns of the returned row.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public Map<String, Object> selectL316Lgapdb01(Map<String, ?> params) {
+        return jdbc.queryForMap("""
+            SELECT LASTCHANGED FROM POLICY WHERE POLICYNUMBER = :db2PolicynumInt
+            """, params);
+    }
+
+    /** EXEC SQL DELETE at base/src/lgdpdb01.cbl:189 (LGDPDB01, delete access).
+     *  Parameters: db2CustomernumInt = :DB2-CUSTOMERNUM-INT, db2PolicynumInt = :DB2-POLICYNUM-INT.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public int deleteL189Lgdpdb01(Map<String, ?> params) {
+        return jdbc.update("""
+            DELETE FROM POLICY WHERE ( CUSTOMERNUMBER = :db2CustomernumInt AND POLICYNUMBER = :db2PolicynumInt )
+            """, params);
+    }
+
+    /** EXEC SQL DECLARE CURSOR at base/src/lgipdb01.cbl:89 (LGIPDB01, read access).
+     *  The cursor's OPEN at line 840, CLOSE at line 852, FETCH at line 865.
+     *  Parameters: db2CustomernumInt = :DB2-CUSTOMERNUM-INT.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public List<Map<String, Object>> cursorCustCursorL89Lgipdb01(Map<String, ?> params) {
+        return jdbc.queryForList("""
+            SELECT CustomerNumber, Policy.PolicyNumber, RequestDate, StartDate, RenewalDate, Address, Zipcode, LatitudeN, LongitudeW, Customer, PropertyType, FirePeril, FirePremium, CrimePeril, CrimePremium, FloodPeril, FloodPremium, WeatherPeril, WeatherPremium, Status, RejectionReason FROM POLICY,COMMERCIAL WHERE ( POLICY.POLICYNUMBER = Commercial.POLICYNUMBER AND Policy.CustomerNumber = :db2CustomernumInt )
+            """, params);
+    }
+
+    /** EXEC SQL DECLARE CURSOR at base/src/lgipdb01.cbl:120 (LGIPDB01, read access).
+     *  The cursor's OPEN at line 923, CLOSE at line 935, FETCH at line 947.
+     *  Parameters: caBPostcode = :CA-B-POSTCODE.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public List<Map<String, Object>> cursorZipCursorL120Lgipdb01(Map<String, ?> params) {
+        return jdbc.queryForList("""
+            SELECT CustomerNumber, Policy.PolicyNumber, RequestDate, StartDate, RenewalDate, Address, Zipcode, LatitudeN, LongitudeW, Customer, PropertyType, FirePeril, FirePremium, CrimePeril, CrimePremium, FloodPeril, FloodPremium, WeatherPeril, WeatherPremium, Status, RejectionReason FROM POLICY,COMMERCIAL WHERE ( POLICY.POLICYNUMBER = Commercial.POLICYNUMBER AND Commercial.Zipcode = :caBPostcode )
+            """, params);
+    }
+
+    /** EXEC SQL SELECT at base/src/lgipdb01.cbl:330 (LGIPDB01, read access).
+     *  Parameters: db2CustomernumInt = :DB2-CUSTOMERNUM-INT, db2PolicynumInt = :DB2-POLICYNUM-INT.
+     *  The INTO host variables are the columns of the returned row.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public Map<String, Object> selectL330Lgipdb01(Map<String, ?> params) {
+        return jdbc.queryForMap("""
+            SELECT ISSUEDATE, EXPIRYDATE, LASTCHANGED, BROKERID, BROKERSREFERENCE, PAYMENT, WITHPROFITS, EQUITIES, MANAGEDFUND, FUNDNAME, TERM, SUMASSURED, LIFEASSURED, PADDINGDATA, LENGTH(PADDINGDATA) FROM POLICY,ENDOWMENT WHERE ( POLICY.POLICYNUMBER = ENDOWMENT.POLICYNUMBER AND POLICY.CUSTOMERNUMBER = :db2CustomernumInt AND POLICY.POLICYNUMBER = :db2PolicynumInt )
+            """, params);
+    }
+
+    /** EXEC SQL SELECT at base/src/lgipdb01.cbl:444 (LGIPDB01, read access).
+     *  Parameters: db2CustomernumInt = :DB2-CUSTOMERNUM-INT, db2PolicynumInt = :DB2-POLICYNUM-INT.
+     *  The INTO host variables are the columns of the returned row.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public Map<String, Object> selectL444Lgipdb01(Map<String, ?> params) {
+        return jdbc.queryForMap("""
+            SELECT ISSUEDATE, EXPIRYDATE, LASTCHANGED, BROKERID, BROKERSREFERENCE, PAYMENT, PROPERTYTYPE, BEDROOMS, VALUE, HOUSENAME, HOUSENUMBER, POSTCODE FROM POLICY,HOUSE WHERE ( POLICY.POLICYNUMBER = HOUSE.POLICYNUMBER AND POLICY.CUSTOMERNUMBER = :db2CustomernumInt AND POLICY.POLICYNUMBER = :db2PolicynumInt )
+            """, params);
+    }
+
+    /** EXEC SQL SELECT at base/src/lgipdb01.cbl:532 (LGIPDB01, read access).
+     *  Parameters: db2CustomernumInt = :DB2-CUSTOMERNUM-INT, db2PolicynumInt = :DB2-POLICYNUM-INT.
+     *  The INTO host variables are the columns of the returned row.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public Map<String, Object> selectL532Lgipdb01(Map<String, ?> params) {
+        return jdbc.queryForMap("""
+            SELECT ISSUEDATE, EXPIRYDATE, LASTCHANGED, BROKERID, BROKERSREFERENCE, PAYMENT, MAKE, MODEL, VALUE, REGNUMBER, COLOUR, CC, YEAROFMANUFACTURE, PREMIUM, ACCIDENTS FROM POLICY,MOTOR WHERE ( POLICY.POLICYNUMBER = MOTOR.POLICYNUMBER AND POLICY.CUSTOMERNUMBER = :db2CustomernumInt AND POLICY.POLICYNUMBER = :db2PolicynumInt )
+            """, params);
+    }
+
+    /** EXEC SQL SELECT at base/src/lgipdb01.cbl:631 (LGIPDB01, read access).
+     *  Parameters: db2CustomernumInt = :DB2-CUSTOMERNUM-INT, db2PolicynumInt = :DB2-POLICYNUM-INT.
+     *  The INTO host variables are the columns of the returned row.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public Map<String, Object> selectL631Lgipdb01(Map<String, ?> params) {
+        return jdbc.queryForMap("""
+            SELECT RequestDate, StartDate, RenewalDate, Address, Zipcode, LatitudeN, LongitudeW, Customer, PropertyType, FirePeril, FirePremium, CrimePeril, CrimePremium, FloodPeril, FloodPremium, WeatherPeril, WeatherPremium, Status, RejectionReason FROM POLICY,COMMERCIAL WHERE ( POLICY.POLICYNUMBER = COMMERCIAL.POLICYNUMBER AND POLICY.CUSTOMERNUMBER = :db2CustomernumInt AND POLICY.POLICYNUMBER = :db2PolicynumInt )
+            """, params);
+    }
+
+    /** EXEC SQL SELECT at base/src/lgipdb01.cbl:734 (LGIPDB01, read access).
+     *  Parameters: db2PolicynumInt = :DB2-POLICYNUM-INT.
+     *  The INTO host variables are the columns of the returned row.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public Map<String, Object> selectL734Lgipdb01(Map<String, ?> params) {
+        return jdbc.queryForMap("""
+            SELECT CustomerNumber, RequestDate, StartDate, RenewalDate, Address, Zipcode, LatitudeN, LongitudeW, Customer, PropertyType, FirePeril, FirePremium, CrimePeril, CrimePremium, FloodPeril, FloodPremium, WeatherPeril, WeatherPremium, Status, RejectionReason FROM POLICY,COMMERCIAL WHERE ( POLICY.POLICYNUMBER = COmmercial.POLICYNUMBER AND POLICY.POLICYNUMBER = :db2PolicynumInt )
+            """, params);
+    }
+
+    /** EXEC SQL DECLARE CURSOR at base/src/lgupdb01.cbl:128 (LGUPDB01, read access).
+     *  The cursor's FETCH at line 230, OPEN at line 255, CLOSE at line 365.
+     *  Parameters: db2CustomernumInt = :DB2-CUSTOMERNUM-INT, db2PolicynumInt = :DB2-POLICYNUM-INT.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public List<Map<String, Object>> cursorPolicyCursorL128Lgupdb01(Map<String, ?> params) {
+        return jdbc.queryForList("""
+            SELECT ISSUEDATE, EXPIRYDATE, LASTCHANGED, BROKERID, BROKERSREFERENCE FROM POLICY WHERE ( CUSTOMERNUMBER = :db2CustomernumInt AND POLICYNUMBER = :db2PolicynumInt ) FOR UPDATE OF ISSUEDATE, EXPIRYDATE, LASTCHANGED, BROKERID, BROKERSREFERENCE
+            """, params);
+    }
+
+    /** EXEC SQL UPDATE at base/src/lgupdb01.cbl:318 (LGUPDB01, update access).
+     *  Parameters: caBrokersref = :CA-BROKERSREF, caExpiryDate = :CA-EXPIRY-DATE, caIssueDate = :CA-ISSUE-DATE, db2BrokeridInt = :DB2-BROKERID-INT.
+     *  TODO: a positioned statement (WHERE CURRENT OF): rewrite it to the row's key.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public int updateL318Lgupdb01(Map<String, ?> params) {
+        return jdbc.update("""
+            UPDATE POLICY SET ISSUEDATE = :caIssueDate, EXPIRYDATE = :caExpiryDate, LASTCHANGED = CURRENT TIMESTAMP , BROKERID = :db2BrokeridInt, BROKERSREFERENCE = :caBrokersref WHERE CURRENT OF POLICY_CURSOR
+            """, params);
+    }
+
+    /** EXEC SQL SELECT at base/src/lgupdb01.cbl:329 (LGUPDB01, read access).
+     *  Parameters: db2PolicynumInt = :DB2-POLICYNUM-INT.
+     *  The INTO host variables are the columns of the returned row.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public Map<String, Object> selectL329Lgupdb01(Map<String, ?> params) {
+        return jdbc.queryForMap("""
+            SELECT LASTCHANGED FROM POLICY WHERE POLICYNUMBER = :db2PolicynumInt
+            """, params);
+    }
+
+}

@@ -1,0 +1,76 @@
+package com.gitgalaxy.modernized.entity.vsam;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * VSAM file CMSSEKR (no IDCAMS DEFINE in the repository),
+ * record FIL_REC (src/GML/R001TK82.pli, 80 bytes).
+ * Key: TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey.
+ * Generated from GitGalaxy's verified skeleton; VSAM defines field testing: open (3 public / 0 private estates).
+ */
+@Entity(name = "VsamCmssekrFilRec")
+@Table(name = "vsam_cmssekr")
+@Data
+@NoArgsConstructor
+public class CmssekrFilRec {
+
+    // TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey
+    @Id
+    @Column(name = "VSAM_KEY")
+    private String vsamKey;
+
+    // NAVN_ADR: CHAR(50), offset 0, 50 bytes
+    @Column(name = "NAVN_ADR", length = 50)
+    private String navnAdr;
+
+    // BL: CHAR(8), offset 50, 8 bytes
+    @Column(name = "BL", length = 8)
+    private String bl;
+
+    // RTR: CHAR(2), offset 58, 2 bytes
+    @Column(name = "RTR", length = 2)
+    private String rtr;
+
+    // PH: CHAR(2), offset 60, 2 bytes
+    @Column(name = "PH", length = 2)
+    private String ph;
+
+    // FM: CHAR(2), offset 62, 2 bytes
+    @Column(name = "FM", length = 2)
+    private String fm;
+
+    // FU: CHAR(2), offset 64, 2 bytes
+    @Column(name = "FU", length = 2)
+    private String fu;
+
+    // FT: CHAR(2), offset 66, 2 bytes
+    @Column(name = "FT", length = 2)
+    private String ft;
+
+    // FOK: CHAR(2), offset 68, 2 bytes
+    @Column(name = "FOK", length = 2)
+    private String fok;
+
+    // KJ: CHAR(2), offset 70, 2 bytes
+    @Column(name = "KJ", length = 2)
+    private String kj;
+
+    // IN: CHAR(2), offset 72, 2 bytes
+    @Column(name = "IN", length = 2)
+    private String in;
+
+    // SS: CHAR(2), offset 74, 2 bytes
+    @Column(name = "SS", length = 2)
+    private String ss;
+
+    // NR_M_SEQ: PIC '( 4)9', offset 76, 4 bytes
+    @Column(name = "NR_M_SEQ", length = 4)
+    private String nrMSeq;
+
+
+    // #3624: no record codec: a PL/I record (its types are not COBOL PICTUREs).
+}

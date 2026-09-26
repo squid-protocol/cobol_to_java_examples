@@ -1,0 +1,88 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.batch.Dd;
+import com.gitgalaxy.modernized.entity.vsam.AccountRecord;
+import com.gitgalaxy.modernized.entity.vsam.CardRecord;
+import com.gitgalaxy.modernized.entity.vsam.CardXrefRecord;
+import com.gitgalaxy.modernized.entity.vsam.CustomerRecord;
+import com.gitgalaxy.modernized.entity.vsam.ExportInputRecord;
+import com.gitgalaxy.modernized.entity.vsam.TranRecord;
+import com.gitgalaxy.modernized.repository.vsam.AccountRecordRepository;
+import com.gitgalaxy.modernized.repository.vsam.CardRecordRepository;
+import com.gitgalaxy.modernized.repository.vsam.CardXrefRecordRepository;
+import com.gitgalaxy.modernized.repository.vsam.CustomerRecordRepository;
+import com.gitgalaxy.modernized.repository.vsam.ExportInputRecordRepository;
+import com.gitgalaxy.modernized.repository.vsam.TranRecordRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+
+@Service
+@RequiredArgsConstructor
+public class CbexportService {
+
+    private static final Logger log = LoggerFactory.getLogger(CbexportService.class);
+
+    private final AccountRecordRepository accountRecordRepository;
+    private final CardRecordRepository cardRecordRepository;
+    private final CardXrefRecordRepository cardXrefRecordRepository;
+    private final CustomerRecordRepository customerRecordRepository;
+    private final ExportInputRecordRepository exportInputRecordRepository;
+    private final TranRecordRepository tranRecordRepository;
+
+    public void executeCbexport(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for CBEXPORT");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS as BATCH SELECT ACCOUNT-INPUT at app/cbl/CBEXPORT.cbl (SELECT ACCOUNT-INPUT); VSAM defines field testing: open (3 public / 0 private estates). */
+    public List<AccountRecord> readAllAccountInput() {
+        return accountRecordRepository.findAll();
+    }
+
+    /** AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS as BATCH SELECT CARD-INPUT at app/cbl/CBEXPORT.cbl (SELECT CARD-INPUT); VSAM defines field testing: open (3 public / 0 private estates). */
+    public List<CardRecord> readAllCardInput() {
+        return cardRecordRepository.findAll();
+    }
+
+    /** AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS as BATCH SELECT XREF-INPUT at app/cbl/CBEXPORT.cbl (SELECT XREF-INPUT); VSAM defines field testing: open (3 public / 0 private estates). */
+    public List<CardXrefRecord> readAllXrefInput() {
+        return cardXrefRecordRepository.findAll();
+    }
+
+    /** AWS.M2.CARDDEMO.CUSTDATA.VSAM.KSDS as BATCH SELECT CUSTOMER-INPUT at app/cbl/CBEXPORT.cbl (SELECT CUSTOMER-INPUT); VSAM defines field testing: open (3 public / 0 private estates). */
+    public List<CustomerRecord> readAllCustomerInput() {
+        return customerRecordRepository.findAll();
+    }
+
+    /** AWS.M2.CARDDEMO.EXPORT.DATA as BATCH SELECT EXPORT-OUTPUT at app/cbl/CBEXPORT.cbl (SELECT EXPORT-OUTPUT); VSAM defines field testing: open (3 public / 0 private estates). */
+    // TODO: this program uses EXPORT-OUTPUT-RECORD (500 bytes); the entity follows EXPORT-INPUT-RECORD (500 bytes) -- map one onto the other
+    public ExportInputRecord writeExportOutput(ExportInputRecord record) {
+        return exportInputRecordRepository.save(record);
+    }
+
+    /** AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS as BATCH SELECT TRANSACTION-INPUT at app/cbl/CBEXPORT.cbl (SELECT TRANSACTION-INPUT); VSAM defines field testing: open (3 public / 0 private estates). */
+    public List<TranRecord> readAllTransactionInput() {
+        return tranRecordRepository.findAll();
+    }
+
+    /** The batch entry (#3622): run by job CBEXPORT step STEP02 (app/jcl/CBEXPORT.jcl:43).
+     *  `dds` are the step's DD statements (DatasetResolver maps each to its file); `parm` the
+     *  text its EXEC PARM= passes (null without one) -- a PROCEDURE DIVISION USING area's data.
+     *  DD ACCTFILE (INPUT) -> AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS.
+     *  DD CARDFILE (INPUT) -> AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS.
+     *  DD CUSTFILE (INPUT) -> AWS.M2.CARDDEMO.CUSTDATA.VSAM.KSDS.
+     *  DD EXPFILE (OUTPUT) -> AWS.M2.CARDDEMO.EXPORT.DATA.
+     *  DD TRANSACT (INPUT) -> AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS.
+     *  DD XREFFILE (INPUT) -> AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS.
+     *  TODO: port the PROCEDURE DIVISION main line; return its RETURN-CODE.
+     *  JCL job flow field testing: open (5 public / 0 private estates). */
+    public int runBatch(List<Dd> dds, String parm) {
+        return 0;
+    }
+
+}

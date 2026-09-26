@@ -1,0 +1,29 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.dto.contract.Lgtestp4CommArea;
+import com.gitgalaxy.modernized.service.Lgtestp4Service;
+
+/**
+ * CICS program LGTESTP4 (base/src/lgtestp4.cbl), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * COMMAREA: COMM-AREA (base/src/lgtestp4.cbl, 32500 bytes) -> Lgtestp4CommArea.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/lgtestp4")
+@RequiredArgsConstructor
+public class Lgtestp4Controller {
+
+    private final Lgtestp4Service lgtestp4Service;
+
+    /** CICS transaction SSP4 -> Lgtestp4 (CSD base/cntl/cdef121.jcl:42 group GENASAT; base/cntl/cdef122.jcl:50 group GENATORT; base/cntl/cdef123.jcl:51 group GENATORT). */
+    @PostMapping("/transactions/SSP4")
+    public ResponseEntity<Lgtestp4CommArea> transactionSSP4(@RequestBody Lgtestp4CommArea request) {
+        return ResponseEntity.ok(lgtestp4Service.handleTransaction("SSP4", request));
+    }
+
+}

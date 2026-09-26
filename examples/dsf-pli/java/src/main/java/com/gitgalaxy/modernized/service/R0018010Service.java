@@ -1,0 +1,112 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.messaging.TempStorage;
+import java.util.Optional;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * HANDLE AID mapping (field testing: field-tested (6 public / 0 private estates)):
+ *   HANDLE AID at line 361: PF7 -> PF7
+ *   HANDLE AID at line 361: PF8 -> PF8
+ *   HANDLE AID at line 361: PF1 -> PF1
+ *   HANDLE AID at line 361: PF3 -> PF3
+ *   HANDLE AID at line 361: ENTER -> ENTER
+ *
+ * Response handling (field testing: field-tested (6 public / 0 private estates)):
+ * TODO: the RESP of DELETEQ at line 357 (paragraph R001D81) is never tested
+ * Screens (#3619): none resolved.
+ * TODO: SEND MAP S001D81 (mapset S001D83) at src/R0018010.pli:389: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001D81 (mapset S001D83) at src/R0018010.pli:407: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001D82 (mapset S001D83) at src/R0018010.pli:588: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001D81 (mapset S001D83) at src/R0018010.pli:741: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001D81 (mapset S001D83) at src/R0018010.pli:750: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001D81 (mapset S001D83) at src/R0018010.pli:768: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001D81 (mapset S001D83) at src/R0018010.pli:1048: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001D81 (mapset S001D83) at src/R0018010.pli:1051: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001D81 (mapset S001D83) at src/R0018010.pli:1263: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001D81 (mapset S001D83) at src/R0018010.pli:1270: no single BMS source defines it (candidates: none in the repository)
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class R0018010Service {
+
+    private static final Logger log = LoggerFactory.getLogger(R0018010Service.class);
+
+    private final ObjectProvider<R0018021Service> r0018021Service;
+    private final ObjectProvider<SrcR0010411Service> srcR0010411Service;
+    private final ObjectProvider<R0018012Service> r0018012Service;
+    private final ObjectProvider<SrcR0010301Service> srcR0010301Service;
+    private final ObjectProvider<SrcR0010420Service> srcR0010420Service;
+    private final TempStorage tempStorage;
+
+    // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
+    // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
+
+    public void executeR0018010(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for R0018010");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("R0018010: handleLink");
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0018021) at src/R0018010.pli:1158.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void linkR0018021() {
+        r0018021Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0010411) at src/R0018010.pli:1231.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void linkSrcR0010411() {
+        srcR0010411Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0018012) at src/R0018010.pli:1249. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlR0018012() {
+        r0018012Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010301) at src/R0018010.pli:419. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcR0010301() {
+        srcR0010301Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010420) at src/R0018010.pli:513. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcR0010420() {
+        srcR0010420Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS READQ TS QUEUE(QUENAME) INTO(COMMAREA_PEKER) at src/R0018010.pli:354 (#3620).
+     *  TODO: the queue name is data-driven (QUEUE(QUENAME)): pass it.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected Optional<String> readqTsL354(String queue) {
+        return tempStorage.readNext(queue);
+    }
+
+    /** EXEC CICS DELETEQ TS QUEUE(QUENAME) at src/R0018010.pli:357 (#3620).
+     *  TODO: the queue name is data-driven (QUEUE(QUENAME)): pass it.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected void deleteqTsL357(String queue) {
+        tempStorage.delete(queue);
+    }
+
+    /** EXEC CICS WRITEQ TS QUEUE(QUENAME) FROM(KOM_OMR) at src/R0018010.pli:1248 (#3620).
+     *  TODO: the queue name is data-driven (QUEUE(QUENAME)): pass it.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected int writeqTsL1248(String queue, String record) {
+        return tempStorage.writeItem(queue, record);
+    }
+
+}

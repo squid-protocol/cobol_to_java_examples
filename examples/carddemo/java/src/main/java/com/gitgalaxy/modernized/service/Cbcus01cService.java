@@ -1,0 +1,43 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.batch.Dd;
+import com.gitgalaxy.modernized.entity.vsam.CustomerRecord;
+import com.gitgalaxy.modernized.repository.vsam.CustomerRecordRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+
+@Service
+@RequiredArgsConstructor
+public class Cbcus01cService {
+
+    private static final Logger log = LoggerFactory.getLogger(Cbcus01cService.class);
+
+    private final CustomerRecordRepository customerRecordRepository;
+
+    public void executeCbcus01c(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for CBCUS01C");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** AWS.M2.CARDDEMO.CUSTDATA.VSAM.KSDS as BATCH SELECT CUSTFILE-FILE at app/cbl/CBCUS01C.cbl (SELECT CUSTFILE-FILE); VSAM defines field testing: open (3 public / 0 private estates). */
+    // TODO: this program uses FD-CUSTFILE-REC (500 bytes); the entity follows CUSTOMER-RECORD (500 bytes) -- map one onto the other
+    public List<CustomerRecord> readAllCustfileFile() {
+        return customerRecordRepository.findAll();
+    }
+
+    /** The batch entry (#3622): run by job READCUST step STEP05 (app/jcl/READCUST.jcl:21).
+     *  `dds` are the step's DD statements (DatasetResolver maps each to its file); `parm` the
+     *  text its EXEC PARM= passes (null without one) -- a PROCEDURE DIVISION USING area's data.
+     *  DD CUSTFILE (INPUT) -> AWS.M2.CARDDEMO.CUSTDATA.VSAM.KSDS.
+     *  TODO: port the PROCEDURE DIVISION main line; return its RETURN-CODE.
+     *  JCL job flow field testing: open (5 public / 0 private estates). */
+    public int runBatch(List<Dd> dds, String parm) {
+        return 0;
+    }
+
+}

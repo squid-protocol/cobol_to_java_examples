@@ -1,0 +1,150 @@
+package com.gitgalaxy.modernized.dto.screen;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * BMS map CTRTUPA of mapset COTRTUP (app/app-transaction-type-db2/bms/COTRTUP.bms): the screen as a view model (#3619).
+ * SEND at app/app-transaction-type-db2/cbl/COTRTUPC.cbl:1433; RECEIVE at app/app-transaction-type-db2/cbl/COTRTUPC.cbl:642.
+ * One property per named field (symbolic map CTRTUPAI / CTRTUPAO); LAYOUT is every field in
+ * screen order, labels included. BMS screen fields field testing: open (3 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class CtrtupaScreen implements ScreenModel {
+
+    public static final String MAPSET = "COTRTUP";
+    public static final String MAP = "CTRTUPA";
+    public static final List<ScreenField> LAYOUT = List.of(
+            new ScreenField(null, 1, 1, 5, false, false, false, false, false, "Tran:", "BLUE", 1),
+            new ScreenField("TRNNAME", 1, 7, 4, false, false, false, false, false, null, "BLUE", 1),
+            new ScreenField("TITLE01", 1, 21, 40, false, false, false, false, false, null, "YELLOW", 1),
+            new ScreenField(null, 1, 65, 5, false, false, false, false, false, "Date:", "BLUE", 1),
+            new ScreenField("CURDATE", 1, 71, 8, false, false, false, false, false, "mm/dd/yy", "BLUE", 1),
+            new ScreenField(null, 2, 1, 5, false, false, false, false, false, "Prog:", "BLUE", 1),
+            new ScreenField("PGMNAME", 2, 7, 8, false, false, false, false, false, null, "BLUE", 1),
+            new ScreenField("TITLE02", 2, 21, 40, false, false, false, false, false, null, "YELLOW", 1),
+            new ScreenField(null, 2, 65, 5, false, false, false, false, false, "Time:", "BLUE", 1),
+            new ScreenField("CURTIME", 2, 71, 8, false, false, false, false, false, "hh:mm:ss", "BLUE", 1),
+            new ScreenField(null, 7, 28, 25, false, false, false, false, false, "Maintain Transaction Type", "NEUTRAL", 1),
+            new ScreenField(null, 12, 4, 19, false, false, false, false, false, "Transaction Type  :", "TURQUOISE", 1),
+            new ScreenField("TRTYPCD", 12, 26, 2, true, false, false, false, true, null, null, 1),
+            new ScreenField(null, 12, 29, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 14, 4, 19, false, false, false, false, false, "Description       :", "TURQUOISE", 1),
+            new ScreenField("TRTYDSC", 14, 26, 50, true, false, false, false, false, null, null, 1),
+            new ScreenField(null, 14, 77, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("INFOMSG", 22, 23, 45, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 22, 69, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("ERRMSG", 23, 1, 78, false, false, true, false, false, null, "RED", 1),
+            new ScreenField("FKEYS", 24, 1, 21, false, false, false, false, false, "ENTER=Process F3=Exit", "YELLOW", 1),
+            new ScreenField("FKEY04", 24, 23, 9, false, false, false, true, false, "F4=Delete", "YELLOW", 1),
+            new ScreenField("FKEY05", 24, 33, 8, false, false, false, true, false, "F5=Save", "YELLOW", 1),
+            new ScreenField("FKEY06", 24, 43, 6, false, false, false, true, false, "F6=Add", "YELLOW", 1),
+            new ScreenField("FKEY12", 24, 69, 10, false, false, false, true, false, "F12=Cancel", "YELLOW", 1));
+
+    /** TRNNAME: (1,7), 4 bytes, ATTRB=ASKIP,FSET,NORM -- app/app-transaction-type-db2/bms/COTRTUP.bms:34. Symbolic map TRNNAMEI, TRNNAMEO. */
+    private String trnname;
+
+    /** TITLE01: (1,21), 40 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTUP.bms:38. Symbolic map TITLE01I, TITLE01O. */
+    private String title01;
+
+    /** CURDATE: (1,71), 8 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTUP.bms:47. Symbolic map CURDATEI, CURDATEO. */
+    private String curdate;
+
+    /** PGMNAME: (2,7), 8 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTUP.bms:57. Symbolic map PGMNAMEI, PGMNAMEO. */
+    private String pgmname;
+
+    /** TITLE02: (2,21), 40 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTUP.bms:61. Symbolic map TITLE02I, TITLE02O. */
+    private String title02;
+
+    /** CURTIME: (2,71), 8 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTUP.bms:70. Symbolic map CURTIMEI, CURTIMEO. */
+    private String curtime;
+
+    /** TRTYPCD: (12,26), 2 bytes, ATTRB=IC,UNPROT -- app/app-transaction-type-db2/bms/COTRTUP.bms:84. Symbolic map TRTYPCDI, TRTYPCDO. */
+    private String trtypcd;
+
+    /** TRTYDSC: (14,26), 50 bytes, ATTRB=UNPROT -- app/app-transaction-type-db2/bms/COTRTUP.bms:94. Symbolic map TRTYDSCI, TRTYDSCO. */
+    private String trtydsc;
+
+    /** INFOMSG: (22,23), 45 bytes, ATTRB=ASKIP -- app/app-transaction-type-db2/bms/COTRTUP.bms:100. Symbolic map INFOMSGI, INFOMSGO. */
+    private String infomsg;
+
+    /** ERRMSG: (23,1), 78 bytes, ATTRB=ASKIP,BRT,FSET -- app/app-transaction-type-db2/bms/COTRTUP.bms:107. Symbolic map ERRMSGI, ERRMSGO. */
+    private String errmsg;
+
+    /** FKEYS: (24,1), 21 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTUP.bms:111. Symbolic map FKEYSI, FKEYSO. */
+    private String fkeys;
+
+    /** FKEY04: (24,23), 9 bytes, ATTRB=ASKIP,DRK -- app/app-transaction-type-db2/bms/COTRTUP.bms:116. Symbolic map FKEY04I, FKEY04O. */
+    private String fkey04;
+
+    /** FKEY05: (24,33), 8 bytes, ATTRB=ASKIP,DRK -- app/app-transaction-type-db2/bms/COTRTUP.bms:121. Symbolic map FKEY05I, FKEY05O. */
+    private String fkey05;
+
+    /** FKEY06: (24,43), 6 bytes, ATTRB=ASKIP,DRK -- app/app-transaction-type-db2/bms/COTRTUP.bms:126. Symbolic map FKEY06I, FKEY06O. */
+    private String fkey06;
+
+    /** FKEY12: (24,69), 10 bytes, ATTRB=ASKIP,DRK -- app/app-transaction-type-db2/bms/COTRTUP.bms:131. Symbolic map FKEY12I, FKEY12O. */
+    private String fkey12;
+
+    @Override
+    public String mapsetName() {
+        return MAPSET;
+    }
+
+    @Override
+    public String mapName() {
+        return MAP;
+    }
+
+    @Override
+    public List<ScreenField> screenLayout() {
+        return LAYOUT;
+    }
+
+    @Override
+    public Map<String, String> screenValues() {
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("TRNNAME", trnname);
+        values.put("TITLE01", title01);
+        values.put("CURDATE", curdate);
+        values.put("PGMNAME", pgmname);
+        values.put("TITLE02", title02);
+        values.put("CURTIME", curtime);
+        values.put("TRTYPCD", trtypcd);
+        values.put("TRTYDSC", trtydsc);
+        values.put("INFOMSG", infomsg);
+        values.put("ERRMSG", errmsg);
+        values.put("FKEYS", fkeys);
+        values.put("FKEY04", fkey04);
+        values.put("FKEY05", fkey05);
+        values.put("FKEY06", fkey06);
+        values.put("FKEY12", fkey12);
+        return values;
+    }
+
+    /** A view model from posted form values (keys as `screenValues` writes them). */
+    public static CtrtupaScreen fromValues(Map<String, String> values) {
+        CtrtupaScreen screen = new CtrtupaScreen();
+        screen.setTrnname(values.get("TRNNAME"));
+        screen.setTitle01(values.get("TITLE01"));
+        screen.setCurdate(values.get("CURDATE"));
+        screen.setPgmname(values.get("PGMNAME"));
+        screen.setTitle02(values.get("TITLE02"));
+        screen.setCurtime(values.get("CURTIME"));
+        screen.setTrtypcd(values.get("TRTYPCD"));
+        screen.setTrtydsc(values.get("TRTYDSC"));
+        screen.setInfomsg(values.get("INFOMSG"));
+        screen.setErrmsg(values.get("ERRMSG"));
+        screen.setFkeys(values.get("FKEYS"));
+        screen.setFkey04(values.get("FKEY04"));
+        screen.setFkey05(values.get("FKEY05"));
+        screen.setFkey06(values.get("FKEY06"));
+        screen.setFkey12(values.get("FKEY12"));
+        return screen;
+    }
+}

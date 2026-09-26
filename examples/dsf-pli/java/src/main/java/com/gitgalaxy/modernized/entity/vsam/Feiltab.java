@@ -1,0 +1,40 @@
+package com.gitgalaxy.modernized.entity.vsam;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * VSAM file FEILTAB (no IDCAMS DEFINE in the repository),
+ * record FEILTAB (src/GML/R0019921.pli, 78 bytes).
+ * Key: TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey.
+ * Generated from GitGalaxy's verified skeleton; VSAM defines field testing: open (3 public / 0 private estates).
+ */
+@Entity(name = "VsamFeiltab")
+@Table(name = "vsam_feiltab")
+@Data
+@NoArgsConstructor
+public class Feiltab {
+
+    // TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey
+    @Id
+    @Column(name = "VSAM_KEY")
+    private String vsamKey;
+
+    // FEILNUMMER: CHAR(4), offset 0, 4 bytes
+    @Column(name = "FEILNUMMER", length = 4)
+    private String feilnummer;
+
+    // FEILBLANK: CHAR(1), offset 4, 1 bytes
+    @Column(name = "FEILBLANK", length = 1)
+    private String feilblank;
+
+    // FEILMELDING: CHAR(73), offset 5, 73 bytes
+    @Column(name = "FEILMELDING", length = 73)
+    private String feilmelding;
+
+
+    // #3624: no record codec: a PL/I record (its types are not COBOL PICTUREs).
+}

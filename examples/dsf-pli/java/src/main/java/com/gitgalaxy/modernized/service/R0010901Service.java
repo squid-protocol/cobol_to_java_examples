@@ -1,0 +1,104 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.exception.*;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * HANDLE AID mapping (field testing: field-tested (6 public / 0 private estates)):
+ *   HANDLE AID at line 50: PF1 -> PF1
+ *   HANDLE AID at line 50: PF2 -> PF2
+ *
+ * Screens (#3619): none resolved.
+ * TODO: SEND MAP S001091 (mapset S001093) at src/GML/R0010901.pli:63: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001091 (mapset S001093) at src/GML/R0010901.pli:72: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001091 (mapset S001093) at src/GML/R0010901.pli:161: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001091 (mapset S001093) at src/GML/R0010901.pli:163: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001091 (mapset S001093) at src/GML/R0010901.pli:222: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001091 (mapset S001093) at src/GML/R0010901.pli:225: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001091 (mapset S001093) at src/GML/R0010901.pli:289: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001091 (mapset S001093) at src/GML/R0010901.pli:293: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001091 (mapset S001093) at src/GML/R0010901.pli:314: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001091 (mapset S001093) at src/GML/R0010901.pli:318: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001091 (mapset S001093) at src/GML/R0010901.pli:333: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001091 (mapset S001093) at src/GML/R0010901.pli:337: no single BMS source defines it (candidates: none in the repository)
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class R0010901Service {
+
+    private static final Logger log = LoggerFactory.getLogger(R0010901Service.class);
+
+    private final ObjectProvider<SrcGmlR0010490Service> srcGmlR0010490Service;
+    private final ObjectProvider<SrcGmlR0010301Service> srcGmlR0010301Service;
+    private final ObjectProvider<SrcGmlR0010401Service> srcGmlR0010401Service;
+
+    public void executeR0010901(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for R0010901");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("R0010901: handleLink");
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0010490) at src/GML/R0010901.pli:281.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void linkSrcGmlR0010490() {
+        srcGmlR0010490Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010301) at src/GML/R0010901.pli:81. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcGmlR0010301() {
+        srcGmlR0010301Service.getObject().handleLink();
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010401) at src/GML/R0010901.pli:88, src/GML/R0010901.pli:192. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcGmlR0010401() {
+        srcGmlR0010401Service.getObject().handleLink();
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/GML/R0010901.pli:229 (paragraph UTGANG): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL229() {
+        throw new UnitOfWorkRollbackException("R0010901", "src/GML/R0010901.pli:229");
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R0010901.pli:48 (paragraph R00109) routes ERROR to FEILBEH.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL48(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL FEILBEH at line 48", e);
+        // TODO: port paragraph FEILBEH's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R0010901.pli:200 (paragraph UTGANG) routes ERROR to ABEND.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL200(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL ABEND at line 200", e);
+        // TODO: port paragraph ABEND's logic
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(FEIL) at src/GML/R0010901.pli:239 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendFeilL239() {
+        throw new CicsAbendException("FEIL", "R0010901", "src/GML/R0010901.pli:239");
+    }
+
+}

@@ -1,0 +1,35 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.dto.contract.Lgicus01Dfhcommarea;
+import com.gitgalaxy.modernized.service.Lgicdb01Service;
+
+/**
+ * CICS program LGICDB01 (base/src/lgicdb01.cbl), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * COMMAREA: DFHCOMMAREA (base/src/lgicus01.cbl, 32500 bytes) -> Lgicus01Dfhcommarea.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/lgicdb01")
+@RequiredArgsConstructor
+public class Lgicdb01Controller {
+
+    private final Lgicdb01Service lgicdb01Service;
+
+    /** CICS transaction DSCI -> Lgicdb01 (CSD base/cntl/cdef123.jcl:150 group GENAAORP). */
+    @PostMapping("/transactions/DSCI")
+    public ResponseEntity<Lgicus01Dfhcommarea> transactionDSCI(@RequestBody Lgicus01Dfhcommarea request) {
+        return ResponseEntity.ok(lgicdb01Service.handleTransaction("DSCI", request));
+    }
+
+    /** Program-to-program entry: LINK at base/src/lgicus01.cbl:122. */
+    @PostMapping("/link")
+    public ResponseEntity<Lgicus01Dfhcommarea> link(@RequestBody Lgicus01Dfhcommarea request) {
+        return ResponseEntity.ok(lgicdb01Service.handleLink(request));
+    }
+
+}

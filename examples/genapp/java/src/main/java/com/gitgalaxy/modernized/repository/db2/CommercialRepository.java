@@ -1,0 +1,71 @@
+package com.gitgalaxy.modernized.repository.db2;
+
+import java.util.List;
+import java.util.Map;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+/**
+ * DB2 table COMMERCIAL: the embedded SQL of LGAPDB01, LGIPDB01, one method per statement, as written.
+ * Each returns what JDBC returns; mapping onto business types is the service's job.
+ * TODO: this SQL is DB2's; the configured database is postgresql -- review each statement.
+ */
+@Repository
+public class CommercialRepository {
+
+    private final NamedParameterJdbcTemplate jdbc;
+
+    public CommercialRepository(NamedParameterJdbcTemplate jdbc) {
+        this.jdbc = jdbc;
+    }
+
+    /** EXEC SQL INSERT at base/src/lgapdb01.cbl:499 (LGAPDB01, insert access).
+     *  Parameters: caBAddress = :CA-B-ADDRESS, caBCustomer = :CA-B-CUSTOMER, caBLatitude = :CA-B-LATITUDE, caBLongitude = :CA-B-LONGITUDE, caBPostcode = :CA-B-POSTCODE, caBProptype = :CA-B-PROPTYPE, caBRejectreason = :CA-B-REJECTREASON, caExpiryDate = :CA-EXPIRY-DATE, caIssueDate = :CA-ISSUE-DATE, caLastchanged = :CA-LASTCHANGED, db2BCrimeperilInt = :DB2-B-CRIMEPERIL-INT, db2BCrimepremiumInt = :DB2-B-CRIMEPREMIUM-INT, db2BFireperilInt = :DB2-B-FIREPERIL-INT, db2BFirepremiumInt = :DB2-B-FIREPREMIUM-INT, db2BFloodperilInt = :DB2-B-FLOODPERIL-INT, db2BFloodpremiumInt = :DB2-B-FLOODPREMIUM-INT, db2BStatusInt = :DB2-B-STATUS-INT, db2BWeatherperilInt = :DB2-B-WEATHERPERIL-INT, db2BWeatherpremiumInt = :DB2-B-WEATHERPREMIUM-INT, db2PolicynumInt = :DB2-POLICYNUM-INT.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public int insertL499Lgapdb01(Map<String, ?> params) {
+        return jdbc.update("""
+            INSERT INTO COMMERCIAL ( PolicyNumber, RequestDate, StartDate, RenewalDate, Address, Zipcode, LatitudeN, LongitudeW, Customer, PropertyType, FirePeril, FirePremium, CrimePeril, CrimePremium, FloodPeril, FloodPremium, WeatherPeril, WeatherPremium, Status, RejectionReason ) VALUES ( :db2PolicynumInt, :caLastchanged, :caIssueDate, :caExpiryDate, :caBAddress, :caBPostcode, :caBLatitude, :caBLongitude, :caBCustomer, :caBProptype, :db2BFireperilInt, :db2BFirepremiumInt, :db2BCrimeperilInt, :db2BCrimepremiumInt, :db2BFloodperilInt, :db2BFloodpremiumInt, :db2BWeatherperilInt, :db2BWeatherpremiumInt, :db2BStatusInt, :caBRejectreason )
+            """, params);
+    }
+
+    /** EXEC SQL DECLARE CURSOR at base/src/lgipdb01.cbl:89 (LGIPDB01, read access).
+     *  The cursor's OPEN at line 840, CLOSE at line 852, FETCH at line 865.
+     *  Parameters: db2CustomernumInt = :DB2-CUSTOMERNUM-INT.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public List<Map<String, Object>> cursorCustCursorL89Lgipdb01(Map<String, ?> params) {
+        return jdbc.queryForList("""
+            SELECT CustomerNumber, Policy.PolicyNumber, RequestDate, StartDate, RenewalDate, Address, Zipcode, LatitudeN, LongitudeW, Customer, PropertyType, FirePeril, FirePremium, CrimePeril, CrimePremium, FloodPeril, FloodPremium, WeatherPeril, WeatherPremium, Status, RejectionReason FROM POLICY,COMMERCIAL WHERE ( POLICY.POLICYNUMBER = Commercial.POLICYNUMBER AND Policy.CustomerNumber = :db2CustomernumInt )
+            """, params);
+    }
+
+    /** EXEC SQL DECLARE CURSOR at base/src/lgipdb01.cbl:120 (LGIPDB01, read access).
+     *  The cursor's OPEN at line 923, CLOSE at line 935, FETCH at line 947.
+     *  Parameters: caBPostcode = :CA-B-POSTCODE.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public List<Map<String, Object>> cursorZipCursorL120Lgipdb01(Map<String, ?> params) {
+        return jdbc.queryForList("""
+            SELECT CustomerNumber, Policy.PolicyNumber, RequestDate, StartDate, RenewalDate, Address, Zipcode, LatitudeN, LongitudeW, Customer, PropertyType, FirePeril, FirePremium, CrimePeril, CrimePremium, FloodPeril, FloodPremium, WeatherPeril, WeatherPremium, Status, RejectionReason FROM POLICY,COMMERCIAL WHERE ( POLICY.POLICYNUMBER = Commercial.POLICYNUMBER AND Commercial.Zipcode = :caBPostcode )
+            """, params);
+    }
+
+    /** EXEC SQL SELECT at base/src/lgipdb01.cbl:631 (LGIPDB01, read access).
+     *  Parameters: db2CustomernumInt = :DB2-CUSTOMERNUM-INT, db2PolicynumInt = :DB2-POLICYNUM-INT.
+     *  The INTO host variables are the columns of the returned row.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public Map<String, Object> selectL631Lgipdb01(Map<String, ?> params) {
+        return jdbc.queryForMap("""
+            SELECT RequestDate, StartDate, RenewalDate, Address, Zipcode, LatitudeN, LongitudeW, Customer, PropertyType, FirePeril, FirePremium, CrimePeril, CrimePremium, FloodPeril, FloodPremium, WeatherPeril, WeatherPremium, Status, RejectionReason FROM POLICY,COMMERCIAL WHERE ( POLICY.POLICYNUMBER = COMMERCIAL.POLICYNUMBER AND POLICY.CUSTOMERNUMBER = :db2CustomernumInt AND POLICY.POLICYNUMBER = :db2PolicynumInt )
+            """, params);
+    }
+
+    /** EXEC SQL SELECT at base/src/lgipdb01.cbl:734 (LGIPDB01, read access).
+     *  Parameters: db2PolicynumInt = :DB2-POLICYNUM-INT.
+     *  The INTO host variables are the columns of the returned row.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public Map<String, Object> selectL734Lgipdb01(Map<String, ?> params) {
+        return jdbc.queryForMap("""
+            SELECT CustomerNumber, RequestDate, StartDate, RenewalDate, Address, Zipcode, LatitudeN, LongitudeW, Customer, PropertyType, FirePeril, FirePremium, CrimePeril, CrimePremium, FloodPeril, FloodPremium, WeatherPeril, WeatherPremium, Status, RejectionReason FROM POLICY,COMMERCIAL WHERE ( POLICY.POLICYNUMBER = COmmercial.POLICYNUMBER AND POLICY.POLICYNUMBER = :db2PolicynumInt )
+            """, params);
+    }
+
+}

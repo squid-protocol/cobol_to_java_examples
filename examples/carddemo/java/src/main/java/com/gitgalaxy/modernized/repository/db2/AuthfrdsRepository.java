@@ -1,0 +1,41 @@
+package com.gitgalaxy.modernized.repository.db2;
+
+import java.util.List;
+import java.util.Map;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+/**
+ * DB2 table CARDDEMO.AUTHFRDS: the embedded SQL of COPAUS2C, one method per statement, as written.
+ * Each returns what JDBC returns; mapping onto business types is the service's job.
+ * Columns: com.gitgalaxy.modernized.dto.db2.AuthfrdsRow.
+ * TODO: this SQL is DB2's; the configured database is postgresql -- review each statement.
+ */
+@Repository
+public class AuthfrdsRepository {
+
+    private final NamedParameterJdbcTemplate jdbc;
+
+    public AuthfrdsRepository(NamedParameterJdbcTemplate jdbc) {
+        this.jdbc = jdbc;
+    }
+
+    /** EXEC SQL INSERT at app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl:141 (COPAUS2C, insert access).
+     *  Parameters: acctId = :ACCT-ID, acqrCountryCode = :ACQR-COUNTRY-CODE, approvedAmt = :APPROVED-AMT, authFraud = :AUTH-FRAUD, authIdCode = :AUTH-ID-CODE, authRespCode = :AUTH-RESP-CODE, authRespReason = :AUTH-RESP-REASON, authTs = :AUTH-TS, authType = :AUTH-TYPE, cardExpiryDate = :CARD-EXPIRY-DATE, cardNum = :CARD-NUM, custId = :CUST-ID, matchStatus = :MATCH-STATUS, merchantCatagoryCode = :MERCHANT-CATAGORY-CODE, merchantCity = :MERCHANT-CITY, merchantId = :MERCHANT-ID, merchantName = :MERCHANT-NAME, merchantState = :MERCHANT-STATE, merchantZip = :MERCHANT-ZIP, messageSource = :MESSAGE-SOURCE, messageType = :MESSAGE-TYPE, posEntryMode = :POS-ENTRY-MODE, processingCode = :PROCESSING-CODE, transactionAmt = :TRANSACTION-AMT, transactionId = :TRANSACTION-ID.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public int insertL141Copaus2c(Map<String, ?> params) {
+        return jdbc.update("""
+            INSERT INTO CARDDEMO.AUTHFRDS (CARD_NUM ,AUTH_TS ,AUTH_TYPE ,CARD_EXPIRY_DATE ,MESSAGE_TYPE ,MESSAGE_SOURCE ,AUTH_ID_CODE ,AUTH_RESP_CODE ,AUTH_RESP_REASON ,PROCESSING_CODE ,TRANSACTION_AMT ,APPROVED_AMT ,MERCHANT_CATAGORY_CODE ,ACQR_COUNTRY_CODE ,POS_ENTRY_MODE ,MERCHANT_ID ,MERCHANT_NAME ,MERCHANT_CITY ,MERCHANT_STATE ,MERCHANT_ZIP ,TRANSACTION_ID ,MATCH_STATUS ,AUTH_FRAUD ,FRAUD_RPT_DATE ,ACCT_ID ,CUST_ID) VALUES ( :cardNum ,TIMESTAMP_FORMAT (:authTs, 'YY-MM-DD HH24.MI.SSNNNNNN') ,:authType ,:cardExpiryDate ,:messageType ,:messageSource ,:authIdCode ,:authRespCode ,:authRespReason ,:processingCode ,:transactionAmt ,:approvedAmt ,:merchantCatagoryCode ,:acqrCountryCode ,:posEntryMode ,:merchantId ,:merchantName ,:merchantCity ,:merchantState ,:merchantZip ,:transactionId ,:matchStatus ,:authFraud ,CURRENT DATE ,:acctId ,:custId )
+            """, params);
+    }
+
+    /** EXEC SQL UPDATE at app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl:222 (COPAUS2C, update access).
+     *  Parameters: authFraud = :AUTH-FRAUD, authTs = :AUTH-TS, cardNum = :CARD-NUM.
+     *  DB2 table access field testing: open (3 public / 0 private estates). */
+    public int updateL222Copaus2c(Map<String, ?> params) {
+        return jdbc.update("""
+            UPDATE CARDDEMO.AUTHFRDS SET AUTH_FRAUD = :authFraud, FRAUD_RPT_DATE = CURRENT DATE WHERE CARD_NUM = :cardNum AND AUTH_TS = TIMESTAMP_FORMAT (:authTs, 'YY-MM-DD HH24.MI.SSNNNNNN')
+            """, params);
+    }
+
+}

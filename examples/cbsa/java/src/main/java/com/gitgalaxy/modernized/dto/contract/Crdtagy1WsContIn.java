@@ -1,0 +1,45 @@
+package com.gitgalaxy.modernized.dto.contract;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+
+/**
+ * COBOL record WS-CONT-IN (src/base/cobol_src/CRDTAGY1.cbl), 261 bytes, from GitGalaxy's verified skeleton.
+ * Record fields field testing: field-tested (6 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class Crdtagy1WsContIn {
+
+    // WS-CONT-IN-EYECATCHER: PIC X(4), offset 0, 4 bytes (src/base/cobol_src/CRDTAGY1.cbl)
+    private String wsContInEyecatcher;
+
+    // WS-CONT-IN-SORTCODE: PIC 9(6) DISPLAY, offset 4, 6 bytes (src/base/cobol_src/CRDTAGY1.cbl)
+    private Integer wsContInSortcode;
+
+    // WS-CONT-IN-NUMBER: PIC 9(10) DISPLAY, offset 10, 10 bytes (src/base/cobol_src/CRDTAGY1.cbl)
+    private Long wsContInNumber;
+
+    // WS-CONT-IN-NAME: PIC X(60), offset 20, 60 bytes (src/base/cobol_src/CRDTAGY1.cbl)
+    private String wsContInName;
+
+    // WS-CONT-IN-ADDRESS: PIC X(160), offset 80, 160 bytes (src/base/cobol_src/CRDTAGY1.cbl)
+    private String wsContInAddress;
+
+    // WS-CONT-IN-DATE-OF-BIRTH: PIC 9(8), offset 240, 8 bytes (src/base/cobol_src/CRDTAGY1.cbl)
+    private Integer wsContInDateOfBirth;
+
+    // WS-CONT-IN-CREDIT-SCORE: PIC 999, offset 248, 3 bytes (src/base/cobol_src/CRDTAGY1.cbl)
+    private Integer wsContInCreditScore;
+
+    // WS-CONT-IN-CS-REVIEW-DATE: PIC 9(8), offset 251, 8 bytes (src/base/cobol_src/CRDTAGY1.cbl)
+    private Integer wsContInCsReviewDate;
+
+    // WS-CONT-IN-SUCCESS: PIC X, offset 259, 1 bytes (src/base/cobol_src/CRDTAGY1.cbl)
+    private String wsContInSuccess;
+
+    // WS-CONT-IN-FAIL-CODE: PIC X, offset 260, 1 bytes (src/base/cobol_src/CRDTAGY1.cbl)
+    private String wsContInFailCode;
+
+}

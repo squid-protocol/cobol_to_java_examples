@@ -1,0 +1,27 @@
+package com.gitgalaxy.modernized.dto.contract;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+
+/**
+ * The COMMAREA Cocrdslc reads, as app/cbl/COCRDSLC.cbl unpacks DFHCOMMAREA at lines 274, 276: CARDDEMO-COMMAREA + WS-THIS-PROGCOMMAREA = 172 bytes.
+ * Record fields field testing: field-tested (6 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class CocrdslcCommarea {
+
+    // DFHCOMMAREA(1:LENGTH OF CARDDEMO-COMMAREA) at line 274: offset 0, 160 bytes -> CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy)
+    private CarddemoCommarea carddemoCommarea;
+
+    // DFHCOMMAREA(LENGTH OF CARDDEMO-COMMAREA + 1:LENGTH OF WS-THIS-PROGCOMMAREA) at line 276: offset 160, 12 bytes -> WS-THIS-PROGCOMMAREA (app/cbl/COCRDSLC.cbl)
+    private CocrdslcWsThisProgcommarea wsThisProgcommarea;
+
+    /** A caller that passes only CARDDEMO-COMMAREA (the leading 160 bytes): the rest is not supplied. */
+    public static CocrdslcCommarea fromPrefix(CarddemoCommarea carddemoCommarea) {
+        CocrdslcCommarea commarea = new CocrdslcCommarea();
+        commarea.carddemoCommarea = carddemoCommarea;
+        return commarea;
+    }
+}

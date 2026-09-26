@@ -1,0 +1,55 @@
+package com.gitgalaxy.modernized.entity;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import java.math.BigDecimal;
+
+@Data
+@NoArgsConstructor
+@Entity
+@Table(name = "PENDING_AUTH_DETAILS")
+public class PaudbunlPendingAuthDetails {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "sys_id")
+    private Long sysId;
+
+    @Column(name = "OPFIL1_REC")
+    private String opfil1Rec;
+
+    @Column(name = "ROOT_SEG_KEY")
+    private Integer rootSegKey;
+
+    @Column(name = "CHILD_SEG_REC")
+    private String childSegRec;
+
+    @Column(name = "CURRENT_DATE")
+    private Integer currentDate;
+
+    @Column(name = "CURRENT_YYDDD")
+    private Integer currentYyddd;
+
+    @Column(name = "WS_AUTH_SMRY_PROC_CNT")
+    private Integer wsAuthSmryProcCnt;
+
+    @Column(name = "WS_NO_SUMRY_READ")
+    private Integer wsNoSumryRead;
+
+    @Column(name = "WS_END_OF_ROOT_SEG")
+    private String wsEndOfRootSeg;
+
+    @Column(name = "WS_END_OF_CHILD_SEG")
+    private String wsEndOfChildSeg;
+
+    @Column(name = "WS_OUTFL1_STATUS")
+    private String wsOutfl1Status;
+
+    @Column(name = "WS_OUTFL2_STATUS")
+    private String wsOutfl2Status;
+
+    @Column(name = "WK_CHKPT_ID_CTR")
+    private Integer wkChkptIdCtr;
+
+}

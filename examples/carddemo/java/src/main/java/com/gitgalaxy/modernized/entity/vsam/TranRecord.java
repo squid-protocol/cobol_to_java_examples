@@ -1,0 +1,115 @@
+package com.gitgalaxy.modernized.entity.vsam;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * VSAM INDEXED AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS (app/jcl/TRANBKP.jcl:54),
+ * record TRAN-RECORD (app/cpy/CVTRA05Y.cpy, 350 bytes, RECORDSIZE 350).
+ * Key: TRAN-ID (offset 0, 16 bytes, from IDCAMS KEYS).
+ * CICS files: TRANSACT.
+ * Generated from GitGalaxy's verified skeleton; VSAM defines field testing: open (3 public / 0 private estates).
+ */
+@Entity(name = "VsamTranRecord")
+@Table(name = "vsam_transact")
+@Data
+@NoArgsConstructor
+public class TranRecord {
+
+    // TRAN-ID: PIC X(16), offset 0, 16 bytes
+    @Id
+    @Column(name = "TRAN_ID", length = 16)
+    private String tranId;
+
+    // TRAN-TYPE-CD: PIC X(02), offset 16, 2 bytes
+    @Column(name = "TRAN_TYPE_CD", length = 2)
+    private String tranTypeCd;
+
+    // TRAN-CAT-CD: PIC 9(04), offset 18, 4 bytes
+    @Column(name = "TRAN_CAT_CD")
+    private Integer tranCatCd;
+
+    // TRAN-SOURCE: PIC X(10), offset 22, 10 bytes
+    @Column(name = "TRAN_SOURCE", length = 10)
+    private String tranSource;
+
+    // TRAN-DESC: PIC X(100), offset 32, 100 bytes
+    @Column(name = "TRAN_DESC", length = 100)
+    private String tranDesc;
+
+    // TRAN-AMT: PIC S9(09)V99, offset 132, 11 bytes
+    @Column(name = "TRAN_AMT")
+    private BigDecimal tranAmt;
+
+    // TRAN-MERCHANT-ID: PIC 9(09), offset 143, 9 bytes
+    @Column(name = "TRAN_MERCHANT_ID")
+    private Integer tranMerchantId;
+
+    // TRAN-MERCHANT-NAME: PIC X(50), offset 152, 50 bytes
+    @Column(name = "TRAN_MERCHANT_NAME", length = 50)
+    private String tranMerchantName;
+
+    // TRAN-MERCHANT-CITY: PIC X(50), offset 202, 50 bytes
+    @Column(name = "TRAN_MERCHANT_CITY", length = 50)
+    private String tranMerchantCity;
+
+    // TRAN-MERCHANT-ZIP: PIC X(10), offset 252, 10 bytes
+    @Column(name = "TRAN_MERCHANT_ZIP", length = 10)
+    private String tranMerchantZip;
+
+    // TRAN-CARD-NUM: PIC X(16), offset 262, 16 bytes
+    @Column(name = "TRAN_CARD_NUM", length = 16)
+    private String tranCardNum;
+
+    // TRAN-ORIG-TS: PIC X(26), offset 278, 26 bytes
+    @Column(name = "TRAN_ORIG_TS", length = 26)
+    private String tranOrigTs;
+
+    // TRAN-PROC-TS: PIC X(26), offset 304, 26 bytes
+    @Column(name = "TRAN_PROC_TS", length = 26)
+    private String tranProcTs;
+
+
+    /** #3624: this record from its fixed-width VSAM form (350 bytes, as REPRO unloads it), each
+     *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
+     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+    public static TranRecord fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        TranRecord r = new TranRecord();
+        r.tranId = CobolRecords.text(rec, 0, 16, text);
+        r.tranTypeCd = CobolRecords.text(rec, 16, 2, text);
+        r.tranCatCd = CobolRecords.toInteger(CobolRecords.zoned(rec, 18, 4, 0, text));
+        r.tranSource = CobolRecords.text(rec, 22, 10, text);
+        r.tranDesc = CobolRecords.text(rec, 32, 100, text);
+        r.tranAmt = CobolRecords.zoned(rec, 132, 11, 2, text);
+        r.tranMerchantId = CobolRecords.toInteger(CobolRecords.zoned(rec, 143, 9, 0, text));
+        r.tranMerchantName = CobolRecords.text(rec, 152, 50, text);
+        r.tranMerchantCity = CobolRecords.text(rec, 202, 50, text);
+        r.tranMerchantZip = CobolRecords.text(rec, 252, 10, text);
+        r.tranCardNum = CobolRecords.text(rec, 262, 16, text);
+        r.tranOrigTs = CobolRecords.text(rec, 278, 26, text);
+        r.tranProcTs = CobolRecords.text(rec, 304, 26, text);
+        return r;
+    }
+
+    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    public byte[] toRecord(java.nio.charset.Charset text) {
+        byte[] rec = CobolRecords.blank(350, text);
+        CobolRecords.putText(rec, 0, 16, tranId, text);
+        CobolRecords.putText(rec, 16, 2, tranTypeCd, text);
+        CobolRecords.putZoned(rec, 18, 4, 0, false, CobolRecords.decimal(tranCatCd), text);
+        CobolRecords.putText(rec, 22, 10, tranSource, text);
+        CobolRecords.putText(rec, 32, 100, tranDesc, text);
+        CobolRecords.putZoned(rec, 132, 11, 2, true, CobolRecords.decimal(tranAmt), text);
+        CobolRecords.putZoned(rec, 143, 9, 0, false, CobolRecords.decimal(tranMerchantId), text);
+        CobolRecords.putText(rec, 152, 50, tranMerchantName, text);
+        CobolRecords.putText(rec, 202, 50, tranMerchantCity, text);
+        CobolRecords.putText(rec, 252, 10, tranMerchantZip, text);
+        CobolRecords.putText(rec, 262, 16, tranCardNum, text);
+        CobolRecords.putText(rec, 278, 26, tranOrigTs, text);
+        CobolRecords.putText(rec, 304, 26, tranProcTs, text);
+        return rec;
+    }
+}

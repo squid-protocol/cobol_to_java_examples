@@ -1,0 +1,29 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.service.SrcGmlR0010301Service;
+
+/**
+ * CICS program R0010301 (src/GML/R0010301.pli), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * TODO: no COMMAREA layout: no structure parameter, or structure BASED on the main procedure's parameter COMMAREA_PEKER, is declared in the program or its %INCLUDE members; %INCLUDE members not in the repository: P0019906, P0019908, P0019910, P0019912, P0019959, S00101, S0010R, S001I1, S001S1, S001S3, S001V1; no resolved caller passes a COMMAREA.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/src-gml-r0010301")
+@RequiredArgsConstructor
+public class SrcGmlR0010301Controller {
+
+    private final SrcGmlR0010301Service srcGmlR0010301Service;
+
+    /** Program-to-program entry: XCTL at src/GML/R0010410.pli:3288, XCTL at src/GML/R0010421.pli:60, XCTL at src/GML/R0010422.pli:88, XCTL at src/GML/R0010423.pli:83, XCTL at src/GML/R0010424.pli:83, XCTL at src/GML/R0010425.pli:86, XCTL at src/GML/R0010426.pli:80, XCTL at src/GML/R0010430.pli:1110, XCTL at src/GML/R0010440.pli:167, XCTL at src/GML/R0010450.pli:359, XCTL at src/GML/R0010501.pli:183, XCTL at src/GML/R0010601.pli:198, XCTL at src/GML/R0010601.pli:218, XCTL at src/GML/R0010701.pli:144, XCTL at src/GML/R0010801.pli:119, XCTL at src/GML/R0010801.pli:134, XCTL at src/GML/R0010901.pli:81, XCTL at src/GML/R0011001.pli:116, XCTL at src/GML/R0011001.pli:134, XCTL at src/GML/R0011001.pli:366, XCTL at src/GML/R0011101.pli:84, XCTL at src/GML/R0011201.pli:96, XCTL at src/GML/R0011301.pli:139, XCTL at src/GML/R0011301.pli:158, XCTL at src/GML/R0011301.pli:177, XCTL at src/GML/R0011301.pli:198, XCTL at src/GML/R0011304.pli:106, XCTL at src/GML/R0011401.pli:87, XCTL at src/GML/R0011501.pli:92, XCTL at src/GML/R0011601.pli:84, XCTL at src/GML/R0011701.pli:82, XCTL at src/GML/R0011801.pli:109, XCTL at src/GML/R0011831.pli:146, XCTL at src/GML/R0011901.pli:171, XCTL at src/GML/R0019D70.pli:240, XCTL at src/GML/R0019F01.pli:342, XCTL at src/GML/R0019F02.pli:392, XCTL at src/GML/R0019F03.pli:420, XCTL at src/GML/R0019F05.pli:415, XCTL at src/GML/R0019H01.pli:522, XCTL at src/GML/R0019H60.pli:518, XCTL at src/GML/R001B001.pli:1476, XCTL at src/GML/R001I101.pli:261, XCTL at src/GML/R001I101.pli:807, XCTL at src/GML/R001I401.pli:151, XCTL at src/GML/R001IA01.pli:223, XCTL at src/GML/R001N501.pli:165, XCTL at src/GML/R001N601.pli:189, XCTL at src/GML/R001N601.pli:209, XCTL at src/GML/R001N801.pli:111, XCTL at src/GML/R001N801.pli:126, XCTL at src/GML/R001N901.pli:80, XCTL at src/GML/R001NB01.pli:85, XCTL at src/GML/R001NC01.pli:116, XCTL at src/GML/R001NO10.pli:471, XCTL at src/GML/R001S001.pli:207, XCTL at src/GML/R001S003.pli:209, XCTL at src/GML/R001U601.pli:225, XCTL at src/GML/R001U601.pli:245, XCTL at src/GML/R001U801.pli:214, XCTL at src/GML/R001U801.pli:234, XCTL at src/GML/R001UC01.pli:111, XCTL at src/GML/R001UE01.pli:98, XCTL at src/GML/R001UJ01.pli:163. */
+    @PostMapping("/link")
+    public ResponseEntity<Void> link() {
+        srcGmlR0010301Service.handleLink();
+        return ResponseEntity.noContent().build();
+    }
+
+}

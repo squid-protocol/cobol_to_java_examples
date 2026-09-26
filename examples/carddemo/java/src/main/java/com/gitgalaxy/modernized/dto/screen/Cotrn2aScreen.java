@@ -1,0 +1,216 @@
+package com.gitgalaxy.modernized.dto.screen;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * BMS map COTRN2A of mapset COTRN02 (app/bms/COTRN02.bms): the screen as a view model (#3619).
+ * SEND at app/cbl/COTRN02C.cbl:522; RECEIVE at app/cbl/COTRN02C.cbl:541.
+ * One property per named field (symbolic map COTRN2AI / COTRN2AO); LAYOUT is every field in
+ * screen order, labels included. BMS screen fields field testing: open (3 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class Cotrn2aScreen implements ScreenModel {
+
+    public static final String MAPSET = "COTRN02";
+    public static final String MAP = "COTRN2A";
+    public static final List<ScreenField> LAYOUT = List.of(
+            new ScreenField(null, 1, 1, 5, false, false, false, false, false, "Tran:", "BLUE", 1),
+            new ScreenField("TRNNAME", 1, 7, 4, false, false, false, false, false, null, "BLUE", 1),
+            new ScreenField("TITLE01", 1, 21, 40, false, false, false, false, false, null, "YELLOW", 1),
+            new ScreenField(null, 1, 65, 5, false, false, false, false, false, "Date:", "BLUE", 1),
+            new ScreenField("CURDATE", 1, 71, 8, false, false, false, false, false, "mm/dd/yy", "BLUE", 1),
+            new ScreenField(null, 2, 1, 5, false, false, false, false, false, "Prog:", "BLUE", 1),
+            new ScreenField("PGMNAME", 2, 7, 8, false, false, false, false, false, null, "BLUE", 1),
+            new ScreenField("TITLE02", 2, 21, 40, false, false, false, false, false, null, "YELLOW", 1),
+            new ScreenField(null, 2, 65, 5, false, false, false, false, false, "Time:", "BLUE", 1),
+            new ScreenField("CURTIME", 2, 71, 8, false, false, false, false, false, "hh:mm:ss", "BLUE", 1),
+            new ScreenField(null, 4, 30, 15, false, false, true, false, false, "Add Transaction", "NEUTRAL", 1),
+            new ScreenField(null, 6, 6, 13, false, false, false, false, false, "Enter Acct #:", "TURQUOISE", 1),
+            new ScreenField("ACTIDIN", 6, 21, 11, true, false, false, false, true, " ", "GREEN", 1),
+            new ScreenField(null, 6, 33, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 6, 37, 4, false, false, false, false, false, "(or)", "NEUTRAL", 1),
+            new ScreenField(null, 6, 46, 7, false, false, false, false, false, "Card #:", "TURQUOISE", 1),
+            new ScreenField("CARDNIN", 6, 55, 16, true, false, false, false, false, null, "GREEN", 1),
+            new ScreenField(null, 6, 72, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 8, 6, 70, false, false, false, false, false, "----------------------------------------------------------------------", "NEUTRAL", 1),
+            new ScreenField(null, 10, 6, 8, false, false, false, false, false, "Type CD:", "TURQUOISE", 1),
+            new ScreenField("TTYPCD", 10, 15, 2, true, false, false, false, false, " ", "GREEN", 1),
+            new ScreenField(null, 10, 18, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 10, 23, 12, false, false, false, false, false, "Category CD:", "TURQUOISE", 1),
+            new ScreenField("TCATCD", 10, 36, 4, true, false, false, false, false, " ", "GREEN", 1),
+            new ScreenField(null, 10, 41, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 10, 46, 7, false, false, false, false, false, "Source:", "TURQUOISE", 1),
+            new ScreenField("TRNSRC", 10, 54, 10, true, false, false, false, false, " ", "GREEN", 1),
+            new ScreenField(null, 10, 65, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 12, 6, 12, false, false, false, false, false, "Description:", "TURQUOISE", 1),
+            new ScreenField("TDESC", 12, 19, 60, true, false, false, false, false, " ", "GREEN", 1),
+            new ScreenField(null, 12, 80, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 14, 6, 7, false, false, false, false, false, "Amount:", "TURQUOISE", 1),
+            new ScreenField("TRNAMT", 14, 14, 12, true, false, false, false, false, " ", "GREEN", 1),
+            new ScreenField(null, 14, 27, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 14, 31, 10, false, false, false, false, false, "Orig Date:", "TURQUOISE", 1),
+            new ScreenField("TORIGDT", 14, 42, 10, true, false, false, false, false, " ", "GREEN", 1),
+            new ScreenField(null, 14, 53, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 14, 57, 10, false, false, false, false, false, "Proc Date:", "TURQUOISE", 1),
+            new ScreenField("TPROCDT", 14, 68, 10, true, false, false, false, false, " ", "GREEN", 1),
+            new ScreenField(null, 14, 79, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 15, 13, 14, false, false, false, false, false, "(-99999999.99)", "BLUE", 1),
+            new ScreenField(null, 15, 41, 12, false, false, false, false, false, "(YYYY-MM-DD)", "BLUE", 1),
+            new ScreenField(null, 15, 67, 12, false, false, false, false, false, "(YYYY-MM-DD)", "BLUE", 1),
+            new ScreenField(null, 16, 6, 12, false, false, false, false, false, "Merchant ID:", "TURQUOISE", 1),
+            new ScreenField("MID", 16, 19, 9, true, false, false, false, false, " ", "GREEN", 1),
+            new ScreenField(null, 16, 29, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 16, 33, 14, false, false, false, false, false, "Merchant Name:", "TURQUOISE", 1),
+            new ScreenField("MNAME", 16, 48, 30, true, false, false, false, false, " ", "GREEN", 1),
+            new ScreenField(null, 16, 79, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 18, 6, 14, false, false, false, false, false, "Merchant City:", "TURQUOISE", 1),
+            new ScreenField("MCITY", 18, 21, 25, true, false, false, false, false, " ", "GREEN", 1),
+            new ScreenField(null, 18, 47, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 18, 53, 13, false, false, false, false, false, "Merchant Zip:", "TURQUOISE", 1),
+            new ScreenField("MZIP", 18, 67, 10, true, false, false, false, false, " ", "GREEN", 1),
+            new ScreenField(null, 18, 78, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 21, 6, 55, false, false, false, false, false, "You are about to add this transaction. Please confirm :", "TURQUOISE", 1),
+            new ScreenField("CONFIRM", 21, 63, 1, true, false, false, false, false, null, "GREEN", 1),
+            new ScreenField(null, 21, 65, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 21, 66, 5, false, false, false, false, false, "(Y/N)", "NEUTRAL", 1),
+            new ScreenField("ERRMSG", 23, 1, 78, false, false, true, false, false, null, "RED", 1),
+            new ScreenField(null, 24, 1, 53, false, false, false, false, false, "ENTER=Continue  F3=Back  F4=Clear  F5=Copy Last Tran.", "YELLOW", 1));
+
+    /** TRNNAME: (1,7), 4 bytes, ATTRB=ASKIP,FSET,NORM -- app/bms/COTRN02.bms:34. Symbolic map TRNNAMEI, TRNNAMEO. */
+    private String trnname;
+
+    /** TITLE01: (1,21), 40 bytes, ATTRB=ASKIP,FSET,NORM -- app/bms/COTRN02.bms:38. Symbolic map TITLE01I, TITLE01O. */
+    private String title01;
+
+    /** CURDATE: (1,71), 8 bytes, ATTRB=ASKIP,FSET,NORM -- app/bms/COTRN02.bms:47. Symbolic map CURDATEI, CURDATEO. */
+    private String curdate;
+
+    /** PGMNAME: (2,7), 8 bytes, ATTRB=ASKIP,FSET,NORM -- app/bms/COTRN02.bms:57. Symbolic map PGMNAMEI, PGMNAMEO. */
+    private String pgmname;
+
+    /** TITLE02: (2,21), 40 bytes, ATTRB=ASKIP,FSET,NORM -- app/bms/COTRN02.bms:61. Symbolic map TITLE02I, TITLE02O. */
+    private String title02;
+
+    /** CURTIME: (2,71), 8 bytes, ATTRB=ASKIP,FSET,NORM -- app/bms/COTRN02.bms:70. Symbolic map CURTIMEI, CURTIMEO. */
+    private String curtime;
+
+    /** ACTIDIN: (6,21), 11 bytes, ATTRB=FSET,IC,NORM,UNPROT -- app/bms/COTRN02.bms:85. Symbolic map ACTIDINI, ACTIDINO. */
+    private String actidin;
+
+    /** CARDNIN: (6,55), 16 bytes, ATTRB=FSET,NORM,UNPROT -- app/bms/COTRN02.bms:104. Symbolic map CARDNINI, CARDNINO. */
+    private String cardnin;
+
+    /** TTYPCD: (10,15), 2 bytes, ATTRB=FSET,NORM,UNPROT -- app/bms/COTRN02.bms:122. Symbolic map TTYPCDI, TTYPCDO. */
+    private String ttypcd;
+
+    /** TCATCD: (10,36), 4 bytes, ATTRB=FSET,NORM,UNPROT -- app/bms/COTRN02.bms:135. Symbolic map TCATCDI, TCATCDO. */
+    private String tcatcd;
+
+    /** TRNSRC: (10,54), 10 bytes, ATTRB=FSET,NORM,UNPROT -- app/bms/COTRN02.bms:148. Symbolic map TRNSRCI, TRNSRCO. */
+    private String trnsrc;
+
+    /** TDESC: (12,19), 60 bytes, ATTRB=FSET,NORM,UNPROT -- app/bms/COTRN02.bms:161. Symbolic map TDESCI, TDESCO. */
+    private String tdesc;
+
+    /** TRNAMT: (14,14), 12 bytes, ATTRB=FSET,NORM,UNPROT -- app/bms/COTRN02.bms:174. Symbolic map TRNAMTI, TRNAMTO. */
+    private String trnamt;
+
+    /** TORIGDT: (14,42), 10 bytes, ATTRB=FSET,NORM,UNPROT -- app/bms/COTRN02.bms:187. Symbolic map TORIGDTI, TORIGDTO. */
+    private String torigdt;
+
+    /** TPROCDT: (14,68), 10 bytes, ATTRB=FSET,NORM,UNPROT -- app/bms/COTRN02.bms:200. Symbolic map TPROCDTI, TPROCDTO. */
+    private String tprocdt;
+
+    /** MID: (16,19), 9 bytes, ATTRB=FSET,NORM,UNPROT -- app/bms/COTRN02.bms:228. Symbolic map MIDI, MIDO. */
+    private String mid;
+
+    /** MNAME: (16,48), 30 bytes, ATTRB=FSET,NORM,UNPROT -- app/bms/COTRN02.bms:241. Symbolic map MNAMEI, MNAMEO. */
+    private String mname;
+
+    /** MCITY: (18,21), 25 bytes, ATTRB=FSET,NORM,UNPROT -- app/bms/COTRN02.bms:254. Symbolic map MCITYI, MCITYO. */
+    private String mcity;
+
+    /** MZIP: (18,67), 10 bytes, ATTRB=FSET,NORM,UNPROT -- app/bms/COTRN02.bms:267. Symbolic map MZIPI, MZIPO. */
+    private String mzip;
+
+    /** CONFIRM: (21,63), 1 bytes, ATTRB=FSET,NORM,UNPROT -- app/bms/COTRN02.bms:281. Symbolic map CONFIRMI, CONFIRMO. */
+    private String confirm;
+
+    /** ERRMSG: (23,1), 78 bytes, ATTRB=ASKIP,BRT,FSET -- app/bms/COTRN02.bms:293. Symbolic map ERRMSGI, ERRMSGO. */
+    private String errmsg;
+
+    @Override
+    public String mapsetName() {
+        return MAPSET;
+    }
+
+    @Override
+    public String mapName() {
+        return MAP;
+    }
+
+    @Override
+    public List<ScreenField> screenLayout() {
+        return LAYOUT;
+    }
+
+    @Override
+    public Map<String, String> screenValues() {
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("TRNNAME", trnname);
+        values.put("TITLE01", title01);
+        values.put("CURDATE", curdate);
+        values.put("PGMNAME", pgmname);
+        values.put("TITLE02", title02);
+        values.put("CURTIME", curtime);
+        values.put("ACTIDIN", actidin);
+        values.put("CARDNIN", cardnin);
+        values.put("TTYPCD", ttypcd);
+        values.put("TCATCD", tcatcd);
+        values.put("TRNSRC", trnsrc);
+        values.put("TDESC", tdesc);
+        values.put("TRNAMT", trnamt);
+        values.put("TORIGDT", torigdt);
+        values.put("TPROCDT", tprocdt);
+        values.put("MID", mid);
+        values.put("MNAME", mname);
+        values.put("MCITY", mcity);
+        values.put("MZIP", mzip);
+        values.put("CONFIRM", confirm);
+        values.put("ERRMSG", errmsg);
+        return values;
+    }
+
+    /** A view model from posted form values (keys as `screenValues` writes them). */
+    public static Cotrn2aScreen fromValues(Map<String, String> values) {
+        Cotrn2aScreen screen = new Cotrn2aScreen();
+        screen.setTrnname(values.get("TRNNAME"));
+        screen.setTitle01(values.get("TITLE01"));
+        screen.setCurdate(values.get("CURDATE"));
+        screen.setPgmname(values.get("PGMNAME"));
+        screen.setTitle02(values.get("TITLE02"));
+        screen.setCurtime(values.get("CURTIME"));
+        screen.setActidin(values.get("ACTIDIN"));
+        screen.setCardnin(values.get("CARDNIN"));
+        screen.setTtypcd(values.get("TTYPCD"));
+        screen.setTcatcd(values.get("TCATCD"));
+        screen.setTrnsrc(values.get("TRNSRC"));
+        screen.setTdesc(values.get("TDESC"));
+        screen.setTrnamt(values.get("TRNAMT"));
+        screen.setTorigdt(values.get("TORIGDT"));
+        screen.setTprocdt(values.get("TPROCDT"));
+        screen.setMid(values.get("MID"));
+        screen.setMname(values.get("MNAME"));
+        screen.setMcity(values.get("MCITY"));
+        screen.setMzip(values.get("MZIP"));
+        screen.setConfirm(values.get("CONFIRM"));
+        screen.setErrmsg(values.get("ERRMSG"));
+        return screen;
+    }
+}

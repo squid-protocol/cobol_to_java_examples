@@ -1,0 +1,38 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.TransactionRecord;
+import org.springframework.beans.factory.ObjectProvider;
+
+@Service
+@RequiredArgsConstructor
+public class Sam1libService {
+
+    private static final Logger log = LoggerFactory.getLogger(Sam1libService.class);
+
+    private final ObjectProvider<CobolSam2Service> cobolSam2Service;
+
+    // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
+    // TODO: AI AGENT - Implement or mock interface call to: Sam2Service
+
+    public void executeSam1lib(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for SAM1LIB");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** CALL SAM2 at COBOL/SAM1LIB.cbl:287: the target is data-driven. Candidates: SAM2 (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchSam2L287(String program, Object... args) {
+        switch (program.trim().toUpperCase()) {
+            case "SAM2":
+                cobolSam2Service.getObject().handleCall((String) args[0], (TransactionRecord) args[1], (String) args[2], (String) args[3]);
+                return null;
+            default:
+                throw new IllegalArgumentException("CALL SAM2 at COBOL/SAM1LIB.cbl:287: no known target " + program);
+        }
+    }
+
+}

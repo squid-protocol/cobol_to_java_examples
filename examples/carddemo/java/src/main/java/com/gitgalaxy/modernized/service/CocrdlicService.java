@@ -1,0 +1,127 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.CarddemoCommarea;
+import com.gitgalaxy.modernized.dto.contract.CocrdlicCommarea;
+import com.gitgalaxy.modernized.dto.contract.CocrdslcCommarea;
+import com.gitgalaxy.modernized.dto.contract.CocrdupcCommarea;
+import com.gitgalaxy.modernized.dto.screen.CcrdliaScreen;
+import com.gitgalaxy.modernized.dto.screen.ScreenModel;
+import com.gitgalaxy.modernized.entity.vsam.CardRecord;
+import com.gitgalaxy.modernized.repository.vsam.CardRecordRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Response handling (field testing: field-tested (6 public / 0 private estates)):
+ * READNEXT at line 1146 tests DUPREC,NORMAL
+ * READNEXT at line 1197 tests DUPREC,ENDFILE,NORMAL
+ * READPREV at line 1294 tests DUPREC,NORMAL
+ * READPREV at line 1322 tests DUPREC,NORMAL
+ * TODO: the RESP of SEND at line 939 (paragraph 1500-SEND-SCREEN) is never tested
+ * TODO: the RESP of RECEIVE at line 963 (paragraph 2100-RECEIVE-SCREEN) is never tested
+ * TODO: the RESP of STARTBR at line 1129 (paragraph 9000-READ-FORWARD) is never tested
+ * TODO: the RESP of STARTBR at line 1273 (paragraph 9100-READ-BACKWARDS) is never tested
+ * Screens (#3619): CcrdliaScreen.
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class CocrdlicService {
+
+    private static final Logger log = LoggerFactory.getLogger(CocrdlicService.class);
+
+    private final ObjectProvider<Comen01cService> comen01cService;
+    private final ObjectProvider<CocrdslcService> cocrdslcService;
+    private final ObjectProvider<CocrdupcService> cocrdupcService;
+    private final CardRecordRepository cardRecordRepository;
+
+    public void executeCocrdlic(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for COCRDLIC");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** A CICS transaction entered the program. TODO: [AI AGENT] implement from the program's business rules. */
+    public CocrdlicCommarea handleTransaction(String transid, CocrdlicCommarea request) {
+        log.info("Cocrdlic: handleTransaction");
+        return request;
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public CocrdlicCommarea handleLink(CocrdlicCommarea request) {
+        log.info("Cocrdlic: handleLink");
+        return request;
+    }
+
+    /** XCTL PROGRAM(LIT-MENUPGM) at app/cbl/COCRDLIC.cbl:402: the target is data-driven. Candidates: COMEN01C (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchLitMenupgmL402(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "COMEN01C":
+                return comen01cService.getObject().handleLink((CarddemoCommarea) request);
+            default:
+                throw new IllegalArgumentException("XCTL PROGRAM(LIT-MENUPGM) at app/cbl/COCRDLIC.cbl:402: no known target " + program);
+        }
+    }
+
+    /** XCTL PROGRAM(CCARD-NEXT-PROG) at app/cbl/COCRDLIC.cbl:538: the target is data-driven. Candidates: COCRDLIC (moves), COCRDSLC (moves), COCRDUPC (moves).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchCcardNextProgL538(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "COCRDLIC":
+                return this.handleLink(CocrdlicCommarea.fromPrefix((CarddemoCommarea) request));
+            case "COCRDSLC":
+                return cocrdslcService.getObject().handleLink(CocrdslcCommarea.fromPrefix((CarddemoCommarea) request));
+            case "COCRDUPC":
+                return cocrdupcService.getObject().handleLink(CocrdupcCommarea.fromPrefix((CarddemoCommarea) request));
+            default:
+                throw new IllegalArgumentException("XCTL PROGRAM(CCARD-NEXT-PROG) at app/cbl/COCRDLIC.cbl:538: no known target " + program);
+        }
+    }
+
+    /** XCTL PROGRAM(CCARD-NEXT-PROG) at app/cbl/COCRDLIC.cbl:566: the target is data-driven. Candidates: COCRDLIC (moves), COCRDSLC (moves), COCRDUPC (moves).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchCcardNextProgL566(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "COCRDLIC":
+                return this.handleLink(CocrdlicCommarea.fromPrefix((CarddemoCommarea) request));
+            case "COCRDSLC":
+                return cocrdslcService.getObject().handleLink(CocrdslcCommarea.fromPrefix((CarddemoCommarea) request));
+            case "COCRDUPC":
+                return cocrdupcService.getObject().handleLink(CocrdupcCommarea.fromPrefix((CarddemoCommarea) request));
+            default:
+                throw new IllegalArgumentException("XCTL PROGRAM(CCARD-NEXT-PROG) at app/cbl/COCRDLIC.cbl:566: no known target " + program);
+        }
+    }
+
+    /** AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS as CICS file CARDDAT at app/cbl/COCRDLIC.cbl:1129, 1146, 1197, 1258, 1273, 1294, 1322, 1375; VSAM defines field testing: open (3 public / 0 private estates). */
+    public List<CardRecord> browseCarddat(String from, int count) {
+        return cardRecordRepository.findByCardNumGreaterThanEqualOrderByCardNumAsc(from, org.springframework.data.domain.PageRequest.of(0, count));
+    }
+
+    public List<CardRecord> browseBackCarddat(String from, int count) {
+        return cardRecordRepository.findByCardNumLessThanEqualOrderByCardNumDesc(from, org.springframework.data.domain.PageRequest.of(0, count));
+    }
+
+    /** SEND MAP(CCRDLIA) MAPSET(COCRDLI) FROM(CCRDLIAO) at app/cbl/COCRDLIC.cbl:939 (#3619).
+     *  TODO: port the logic that fills CCRDLIAO before the SEND.
+     *  BMS screen fields field testing: open (3 public / 0 private estates). */
+    public CcrdliaScreen renderCcrdlia(CcrdliaScreen screen) {
+        return screen;
+    }
+
+    /** RECEIVE MAP(CCRDLIA) MAPSET(COCRDLI) INTO(CCRDLIAI) at app/cbl/COCRDLIC.cbl:963 (#3619).
+     *  `aid` is the key the user pressed (EIBAID): ENTER, PF1-PF24, CLEAR, PA1-PA3.
+     *  TODO: port the logic that reads CCRDLIAI after the RECEIVE, and return the screen to show next.
+     *  BMS screen fields field testing: open (3 public / 0 private estates). */
+    public ScreenModel submitCcrdlia(CcrdliaScreen input, String aid) {
+        return renderCcrdlia(input);
+    }
+
+}

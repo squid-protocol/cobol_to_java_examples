@@ -1,0 +1,152 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.FeilStruc2;
+import com.gitgalaxy.modernized.dto.contract.SrcR001i101InternKomOmr;
+import com.gitgalaxy.modernized.dto.contract.SrcR001i501KomOmr;
+import com.gitgalaxy.modernized.entity.vsam.OliRec;
+import com.gitgalaxy.modernized.exception.*;
+import com.gitgalaxy.modernized.repository.vsam.OliRecRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * HANDLE AID mapping (field testing: field-tested (6 public / 0 private estates)):
+ *   HANDLE AID at line 238: PF2 -> PF2
+ *   HANDLE AID at line 239: PF1 -> PF2
+ *
+ * Screens (#3619): none resolved.
+ * TODO: SEND MAP S001I03 (mapset S001I33) at src/R001I301.pli:307: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I03 (mapset S001I33) at src/R001I301.pli:309: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I03 (mapset S001I33) at src/R001I301.pli:322: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I301.pli:408: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I301.pli:466: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I301.pli:586: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001I03 (mapset S001I33) at src/R001I301.pli:626: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I03 (mapset S001I33) at src/R001I301.pli:667: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I03 (mapset S001I33) at src/R001I301.pli:680: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I03 (mapset S001I33) at src/R001I301.pli:737: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I03 (mapset S001I33) at src/R001I301.pli:760: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I03 (mapset S001I33) at src/R001I301.pli:773: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I01 (mapset S001I13) at src/R001I301.pli:2112: no single BMS source defines it (candidates: none in the repository)
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class SrcR001i301Service {
+
+    private static final Logger log = LoggerFactory.getLogger(SrcR001i301Service.class);
+
+    private final ObjectProvider<SrcR0019921Service> srcR0019921Service;
+    private final ObjectProvider<SrcR001i601Service> srcR001i601Service;
+    private final ObjectProvider<SrcR001i101Service> srcR001i101Service;
+    private final OliRecRepository oliRecRepository;
+
+    // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
+    // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
+    // TODO: AI AGENT - Implement or mock interface call to: R001i301Service
+
+    public void executeSrcR001i301(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for src__R001I301");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public SrcR001i101InternKomOmr handleLink(SrcR001i101InternKomOmr request) {
+        log.info("SrcR001i301: handleLink");
+        return request;
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0019921) at src/R001I301.pli:2156.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public FeilStruc2 linkSrcR0019921(FeilStruc2 request) {
+        return srcR0019921Service.getObject().handleLink(request);
+    }
+
+    /** EXEC CICS LINK PROGRAM(R001I601) at src/R001I301.pli:388.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public SrcR001i501KomOmr linkSrcR001i601(SrcR001i501KomOmr request) {
+        return srcR001i601Service.getObject().handleLink(request);
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R001I101) at src/R001I301.pli:2117. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcR001i101() {
+        srcR001i101Service.getObject().handleLink();
+    }
+
+    /** OLINNTE as CICS file OLINNTE at src/R001I301.pli:1658; VSAM defines field testing: open (3 public / 0 private estates). */
+    public OliRec writeOlinnte(OliRec record) {
+        return oliRecRepository.save(record);
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(ONKODE) at src/R001I301.pli:233 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendOnkodeL233() {
+        throw new CicsAbendException("ONKODE", "SRC__R001I301", "src/R001I301.pli:233");
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R001I301.pli:236 (paragraph R001I30) routes ERROR to ERRBEH.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL236(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL ERRBEH at line 236", e);
+        // TODO: port paragraph ERRBEH's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R001I301.pli:1656 (paragraph SKRIV_INNT) routes ERROR to L105.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL1656(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL L105 at line 1656", e);
+        // TODO: port paragraph L105's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R001I301.pli:1657 (paragraph SKRIV_INNT) routes DUPREC to RETUR.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionDuprecL1657(CicsConditionException e) {
+        log.info("HANDLE CONDITION DUPREC LABEL RETUR at line 1657", e);
+        // TODO: port paragraph RETUR's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/R001I301.pli:2122 (paragraph F100_FINN_TKNR) routes ERROR to None.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL2122(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL None at line 2122", e);
+        // TODO: port paragraph None's logic
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(FEIL) at src/R001I301.pli:2124 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendFeilL2124() {
+        throw new CicsAbendException("FEIL", "SRC__R001I301", "src/R001I301.pli:2124");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(STOP) at src/R001I301.pli:2194 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendStopL2194() {
+        throw new CicsAbendException("STOP", "SRC__R001I301", "src/R001I301.pli:2194");
+    }
+
+}

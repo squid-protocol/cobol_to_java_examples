@@ -1,0 +1,85 @@
+package com.gitgalaxy.modernized.dto.contract;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+
+/**
+ * COBOL record WS-THIS-PROGCOMMAREA (app/cbl/COCRDUPC.cbl), 329 bytes, from GitGalaxy's verified skeleton.
+ * Bytes 160-488 of the COMMAREA Cocrdupc reads: MOVE DFHCOMMAREA(LENGTH OF CARDDEMO-COMMAREA + 1:LENGTH OF WS-THIS-PROGCOMMAREA) at app/cbl/COCRDUPC.cbl:398.
+ * Record fields field testing: field-tested (6 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class CocrdupcWsThisProgcommarea {
+
+    // CCUP-CHANGE-ACTION: PIC X(1), offset 0, 1 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupChangeAction;
+
+    // CCUP-OLD-ACCTID: PIC X(11), offset 1, 11 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupOldAcctid;
+
+    // CCUP-OLD-CARDID: PIC X(16), offset 12, 16 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupOldCardid;
+
+    // CCUP-OLD-CVV-CD: PIC X(3), offset 28, 3 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupOldCvvCd;
+
+    // CCUP-OLD-CRDNAME: PIC X(50), offset 31, 50 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupOldCrdname;
+
+    // CCUP-OLD-EXPYEAR: PIC X(4), offset 81, 4 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupOldExpyear;
+
+    // CCUP-OLD-EXPMON: PIC X(2), offset 85, 2 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupOldExpmon;
+
+    // CCUP-OLD-EXPDAY: PIC X(2), offset 87, 2 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupOldExpday;
+
+    // CCUP-OLD-CRDSTCD: PIC X(1), offset 89, 1 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupOldCrdstcd;
+
+    // CCUP-NEW-ACCTID: PIC X(11), offset 90, 11 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupNewAcctid;
+
+    // CCUP-NEW-CARDID: PIC X(16), offset 101, 16 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupNewCardid;
+
+    // CCUP-NEW-CVV-CD: PIC X(3), offset 117, 3 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupNewCvvCd;
+
+    // CCUP-NEW-CRDNAME: PIC X(50), offset 120, 50 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupNewCrdname;
+
+    // CCUP-NEW-EXPYEAR: PIC X(4), offset 170, 4 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupNewExpyear;
+
+    // CCUP-NEW-EXPMON: PIC X(2), offset 174, 2 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupNewExpmon;
+
+    // CCUP-NEW-EXPDAY: PIC X(2), offset 176, 2 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupNewExpday;
+
+    // CCUP-NEW-CRDSTCD: PIC X(1), offset 178, 1 bytes (app/cbl/COCRDUPC.cbl)
+    private String ccupNewCrdstcd;
+
+    // CARD-UPDATE-NUM: PIC X(16), offset 179, 16 bytes (app/cbl/COCRDUPC.cbl)
+    private String cardUpdateNum;
+
+    // CARD-UPDATE-ACCT-ID: PIC 9(11), offset 195, 11 bytes (app/cbl/COCRDUPC.cbl)
+    private Long cardUpdateAcctId;
+
+    // CARD-UPDATE-CVV-CD: PIC 9(03), offset 206, 3 bytes (app/cbl/COCRDUPC.cbl)
+    private Integer cardUpdateCvvCd;
+
+    // CARD-UPDATE-EMBOSSED-NAME: PIC X(50), offset 209, 50 bytes (app/cbl/COCRDUPC.cbl)
+    private String cardUpdateEmbossedName;
+
+    // CARD-UPDATE-EXPIRAION-DATE: PIC X(10), offset 259, 10 bytes (app/cbl/COCRDUPC.cbl)
+    private String cardUpdateExpiraionDate;
+
+    // CARD-UPDATE-ACTIVE-STATUS: PIC X(01), offset 269, 1 bytes (app/cbl/COCRDUPC.cbl)
+    private String cardUpdateActiveStatus;
+
+}

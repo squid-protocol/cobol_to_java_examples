@@ -1,0 +1,29 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.service.SrcR0019928Service;
+
+/**
+ * CICS program R0019928 (src/R0019928.pli), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * TODO: no COMMAREA layout: no structure parameter, or structure BASED on the main procedure's parameter COMMAREA_PEKER, is declared in the program or its %INCLUDE members; %INCLUDE members not in the repository: P0019906, P0019908, P0019911, P0019912, P0019921; no resolved caller passes a COMMAREA.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/src-r0019928")
+@RequiredArgsConstructor
+public class SrcR0019928Controller {
+
+    private final SrcR0019928Service srcR0019928Service;
+
+    /** Program-to-program entry: LINK at src/R0010520.pli:436, LINK at src/R0010520.pli:542, LINK at src/R0010620.pli:576, LINK at src/R0010620.pli:690, LINK at src/R0010820.pli:99, LINK at src/R0011020.pli:109, LINK at src/R0011020.pli:143, LINK at src/R0011020.pli:501, LINK at src/R0011120.pli:99, LINK at src/R0011120.pli:537, LINK at src/R0011220.pli:378, LINK at src/R0011430.pli:95, LINK at src/R0011920.pli:489, LINK at src/R001N520.pli:432, LINK at src/R001N520.pli:538, LINK at src/R001N620.pli:542, LINK at src/R001N620.pli:665, LINK at src/R001N820.pli:153, LINK at src/R001NB20.pli:91, LINK at src/R001NB20.pli:533, LINK at src/R001NC20.pli:439, LINK at src/R001U620.pli:708, LINK at src/R001U820.pli:159, LINK at src/R001UC20.pli:465, LINK at src/R001UE30.pli:98, LINK at src/R001UJ20.pli:482. */
+    @PostMapping("/link")
+    public ResponseEntity<Void> link() {
+        srcR0019928Service.handleLink();
+        return ResponseEntity.noContent().build();
+    }
+
+}

@@ -1,0 +1,88 @@
+package com.gitgalaxy.modernized.entity.vsam;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * VSAM file DIVPATH (no IDCAMS DEFINE in the repository),
+ * record FIL_REC (src/GML/R001TK83.pli, 80 bytes).
+ * Key: TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey.
+ * Generated from GitGalaxy's verified skeleton; VSAM defines field testing: open (3 public / 0 private estates).
+ */
+@Entity(name = "VsamDivpathFilRec")
+@Table(name = "vsam_divpath")
+@Data
+@NoArgsConstructor
+public class DivpathFilRec {
+
+    // TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey
+    @Id
+    @Column(name = "VSAM_KEY")
+    private String vsamKey;
+
+    // NR_M_SEQ: PIC '( 4)9', offset 0, 4 bytes
+    @Column(name = "NR_M_SEQ", length = 4)
+    private String nrMSeq;
+
+    // NAVN_ADR: CHAR(49), offset 4, 49 bytes
+    @Column(name = "NAVN_ADR", length = 49)
+    private String navnAdr;
+
+    // F1Ø: CHAR(2), offset 53, 2 bytes
+    @Column(name = "F1Ø", length = 2)
+    private String f1ø;
+
+    // RTV: CHAR(2), offset 55, 2 bytes
+    @Column(name = "RTV", length = 2)
+    private String rtv;
+
+    // PEN: CHAR(2), offset 57, 2 bytes
+    @Column(name = "PEN", length = 2)
+    private String pen;
+
+    // F30: CHAR(2), offset 59, 2 bytes
+    @Column(name = "F30", length = 2)
+    private String f30;
+
+    // FT: CHAR(3), offset 61, 3 bytes
+    @Column(name = "FT", length = 3)
+    private String ft;
+
+    // RS: CHAR(2), offset 64, 2 bytes
+    @Column(name = "RS", length = 2)
+    private String rs;
+
+    // RP: CHAR(2), offset 66, 2 bytes
+    @Column(name = "RP", length = 2)
+    private String rp;
+
+    // GP: CHAR(2), offset 68, 2 bytes
+    @Column(name = "GP", length = 2)
+    private String gp;
+
+    // AM: CHAR(2), offset 70, 2 bytes
+    @Column(name = "AM", length = 2)
+    private String am;
+
+    // AS: CHAR(2), offset 72, 2 bytes
+    @Column(name = "AS", length = 2)
+    private String as;
+
+    // LP: CHAR(2), offset 74, 2 bytes
+    @Column(name = "LP", length = 2)
+    private String lp;
+
+    // FRH: CHAR(2), offset 76, 2 bytes
+    @Column(name = "FRH", length = 2)
+    private String frh;
+
+    // F235: CHAR(2), offset 78, 2 bytes
+    @Column(name = "F235", length = 2)
+    private String f235;
+
+
+    // #3624: no record codec: a PL/I record (its types are not COBOL PICTUREs).
+}

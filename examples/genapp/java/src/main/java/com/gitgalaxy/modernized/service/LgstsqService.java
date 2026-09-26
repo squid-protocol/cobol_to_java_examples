@@ -1,0 +1,54 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.Lgacdb01CaErrorMsg;
+import com.gitgalaxy.modernized.messaging.TempStorage;
+import com.gitgalaxy.modernized.messaging.TransientData;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Response handling (field testing: field-tested (6 public / 0 private estates)):
+ * TODO: the RESP of ASSIGN at line 60 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of ASSIGN at line 64 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of RECEIVE at line 73 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of WRITEQ at line 94 (paragraph MAINLINE) is never tested
+ * TODO: the RESP of WRITEQ at line 105 (paragraph MAINLINE) is never tested
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class LgstsqService {
+
+    private static final Logger log = LoggerFactory.getLogger(LgstsqService.class);
+
+    private final TempStorage tempStorage;
+    private final TransientData transientData;
+
+    public void executeLgstsq(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for lgstsq");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public Lgacdb01CaErrorMsg handleLink(Lgacdb01CaErrorMsg request) {
+        log.info("Lgstsq: handleLink");
+        return request;
+    }
+
+    /** EXEC CICS WRITEQ TS QUEUE(STSQ-NAME) FROM(WRITE-MSG) at base/src/lgstsq.cbl:105 (#3620).
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected int writeqTsGenaerrsL105(String record) {
+        return tempStorage.writeItem("GENAERRS", record);
+    }
+
+    /** EXEC CICS WRITEQ TD QUEUE(STDQ-NAME) FROM(WRITE-MSG) at base/src/lgstsq.cbl:94 (#3620).
+     *  Route: log -- a CICS-supplied log destination.
+     *  CICS resources field testing: open (5 public / 0 private estates). */
+    protected void writeqTdCsmtL94(String record) {
+        transientData.write("CSMT", record);
+    }
+
+}

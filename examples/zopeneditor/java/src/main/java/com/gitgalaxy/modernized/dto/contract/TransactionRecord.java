@@ -1,0 +1,34 @@
+package com.gitgalaxy.modernized.dto.contract;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+
+/**
+ * COBOL record TRANSACTION-RECORD (COPYBOOK/TRANREC.cpy), 80 bytes, from GitGalaxy's verified skeleton.
+ * USING parameter 2 of CobolSam2.
+ * Record fields field testing: field-tested (6 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class TransactionRecord {
+
+    // TRAN-CODE: PIC X(6), offset 0, 6 bytes (COPYBOOK/TRANREC.cpy)
+    private String tranCode;
+
+    // TRAN-KEY: PIC X(06), offset 7, 6 bytes (COPYBOOK/TRANREC.cpy)
+    private String tranKey;
+
+    // TRAN-ACTION: PIC X(8), offset 21, 8 bytes (COPYBOOK/TRANREC.cpy)
+    private String tranAction;
+
+    // TRAN-FIELD-NAME: PIC X(10), offset 30, 10 bytes (COPYBOOK/TRANREC.cpy)
+    private String tranFieldName;
+
+    // TRAN-FIELD-SS: PIC 99, offset 41, 2 bytes (COPYBOOK/TRANREC.cpy)
+    private Integer tranFieldSs;
+
+    // TRAN-UPDATE-DATA: PIC X(36), offset 44, 36 bytes (COPYBOOK/TRANREC.cpy)
+    private String tranUpdateData;
+
+}

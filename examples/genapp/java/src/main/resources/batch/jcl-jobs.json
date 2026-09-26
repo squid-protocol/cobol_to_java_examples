@@ -1,0 +1,895 @@
+[
+  {
+    "job": "GENAVSAM",
+    "file": "base/cntl/adef121.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "DELETE1",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "DEFINE1",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "DELETE2",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "DEFINE2",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "CUSTDATA",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "POLYDATA",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "GENAMAP",
+    "file": "base/cntl/asmmap.jcl",
+    "kind": "build",
+    "reason": "tooling (ASMA90, IEBGENER, IEWL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "COPY",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "ASMMAP",
+        "program": "ASMA90"
+      },
+      {
+        "step": "LINKMAP",
+        "program": "IEWL"
+      },
+      {
+        "step": "ASMDSECT",
+        "program": "ASMA90"
+      }
+    ]
+  },
+  {
+    "job": "GENACSD",
+    "file": "base/cntl/cdef121.jcl",
+    "kind": "build",
+    "reason": "builds / installs (DFHCSDUP)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CSDDEFS",
+        "program": "DFHCSDUP"
+      }
+    ]
+  },
+  {
+    "job": "GENACSD",
+    "file": "base/cntl/cdef122.jcl",
+    "kind": "build",
+    "reason": "builds / installs (DFHCSDUP)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CSDDEFS",
+        "program": "DFHCSDUP"
+      }
+    ]
+  },
+  {
+    "job": "GENACSD",
+    "file": "base/cntl/cdef123.jcl",
+    "kind": "build",
+    "reason": "builds / installs (DFHCSDUP)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CSDDEFS",
+        "program": "DFHCSDUP"
+      }
+    ]
+  },
+  {
+    "job": "GENACSD",
+    "file": "base/cntl/cdef124.jcl",
+    "kind": "build",
+    "reason": "builds / installs (DFHCSDUP)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CSDDEFS",
+        "program": "DFHCSDUP"
+      }
+    ]
+  },
+  {
+    "job": "GENACSD",
+    "file": "base/cntl/cdef125.jcl",
+    "kind": "build",
+    "reason": "builds / installs (DFHCSDUP)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CSDDEFS",
+        "program": "DFHCSDUP"
+      }
+    ]
+  },
+  {
+    "job": "GENACOMP",
+    "file": "base/cntl/cobol.jcl",
+    "kind": "build",
+    "reason": "tooling (HEWL, IEBGENER, IGYCRCTL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "LGACDB01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGACDB01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGACDB01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGACDB02.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGACDB02.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGACDB02.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGACUS01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGACUS01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGACUS01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGACVS01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGACVS01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGACVS01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGAPDB01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGAPDB01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGAPDB01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGAPOL01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGAPOL01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGAPOL01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGAPVS01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGAPVS01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGAPVS01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGASTAT1.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGASTAT1.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGASTAT1.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGDPDB01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGDPDB01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGDPDB01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGDPOL01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGDPOL01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGDPOL01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGDPVS01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGDPVS01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGDPVS01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGICDB01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGICDB01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGICDB01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGICUS01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGICUS01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGICUS01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGICVS01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGICVS01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGICVS01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGIPDB01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGIPDB01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGIPDB01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGIPOL01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGIPOL01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGIPOL01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGIPVS01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGIPVS01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGIPVS01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGSETUP.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGSETUP.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGSETUP.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGSTSQ.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGSTSQ.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGSTSQ.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGTESTC1.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGTESTC1.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGTESTC1.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGTESTP1.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGTESTP1.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGTESTP1.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGTESTP2.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGTESTP2.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGTESTP2.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGTESTP3.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGTESTP3.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGTESTP3.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGTESTP4.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGTESTP4.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGTESTP4.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGUCDB01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGUCDB01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGUCDB01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGUCUS01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGUCUS01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGUCUS01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGUCVS01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGUCVS01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGUCVS01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGUPDB01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGUPDB01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGUPDB01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGUPOL01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGUPOL01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGUPOL01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGUPVS01.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGUPVS01.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGUPVS01.LKED",
+        "program": "HEWL"
+      },
+      {
+        "step": "LGWEBST5.COBL",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LGWEBST5.COPYLINK",
+        "program": "IEBGENER"
+      },
+      {
+        "step": "LGWEBST5.LKED",
+        "program": "HEWL"
+      }
+    ]
+  },
+  {
+    "job": "DEFCPSM",
+    "file": "base/cntl/cpsmde2.jcl",
+    "kind": "build",
+    "reason": "tooling (no program)",
+    "generated": null,
+    "spring_job": null,
+    "steps": []
+  },
+  {
+    "job": "GENABIND",
+    "file": "base/cntl/db2bind.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTIAD)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "BIND",
+        "program": "DSNTIAD"
+      }
+    ]
+  },
+  {
+    "job": "GENADB2",
+    "file": "base/cntl/db2cre.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTIAD)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CREATE",
+        "program": "DSNTIAD"
+      },
+      {
+        "step": "CRTABS",
+        "program": "DSNTIAD"
+      },
+      {
+        "step": "CRTABS",
+        "program": "DSNTIAD"
+      },
+      {
+        "step": "CRTABS",
+        "program": "DSNTIAD"
+      },
+      {
+        "step": "CRTABS",
+        "program": "DSNTIAD"
+      },
+      {
+        "step": "CRTABS",
+        "program": "DSNTIAD"
+      },
+      {
+        "step": "CRTABS",
+        "program": "DSNTIAD"
+      },
+      {
+        "step": "CRTABS",
+        "program": "DSNTIAD"
+      },
+      {
+        "step": "CRGRACC",
+        "program": "DSNTIAD"
+      },
+      {
+        "step": "INSERT",
+        "program": "DSNTIAD"
+      }
+    ]
+  },
+  {
+    "job": "GENADB2",
+    "file": "base/cntl/db2del.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DSNTIAD)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "DELETE",
+        "program": "DSNTIAD"
+      }
+    ]
+  },
+  {
+    "job": "EYUDREP",
+    "file": "base/cntl/defdrep.jcl",
+    "kind": "build",
+    "reason": "tooling (EYU9XDUT, IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "DELWREP",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "DEFDREP",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "DREPINIT",
+        "program": "EYU9XDUT"
+      }
+    ]
+  },
+  {
+    "job": "EYUWREP",
+    "file": "base/cntl/defwrep.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IDCAMS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "DELWREP",
+        "program": "IDCAMS"
+      },
+      {
+        "step": "DEFWREP",
+        "program": "IDCAMS"
+      }
+    ]
+  },
+  {
+    "job": "GENAWSIM",
+    "file": "base/cntl/itpentr.jcl",
+    "kind": "build",
+    "reason": "builds / installs (ITPENTER)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "RUNSIM",
+        "program": "ITPENTER"
+      }
+    ]
+  },
+  {
+    "job": "GENALL",
+    "file": "base/cntl/itpll.jcl",
+    "kind": "build",
+    "reason": "builds / installs (ITPLL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "LOGLIST",
+        "program": "ITPLL"
+      }
+    ]
+  },
+  {
+    "job": "GENASTL",
+    "file": "base/cntl/itpstl.jcl",
+    "kind": "build",
+    "reason": "builds / installs (ITPSTL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "#ONCICS.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "#SSVARS.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSC1A1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSC1I1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSP1A1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSP1D1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSP1I1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSP1U1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSP2A1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSP2D1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSP2I1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSP2U1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSP3A1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSP3D1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSP3I1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSP3U1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSP4A1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSP4D1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "SSP4I1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "STOP.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "WSC1A1.ITPSTL",
+        "program": "ITPSTL"
+      },
+      {
+        "step": "WSC1I1.ITPSTL",
+        "program": "ITPSTL"
+      }
+    ]
+  },
+  {
+    "job": "<CMASAPPL>",
+    "file": "base/cntl/sampcma.jcl",
+    "kind": "build",
+    "reason": "builds / installs (EYU9XECS)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "CMAS",
+        "program": "EYU9XECS"
+      }
+    ]
+  },
+  {
+    "job": "CICSCNCS",
+    "file": "base/cntl/sampncs.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DFHNCMN)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "NCSERVER",
+        "program": "DFHNCMN"
+      }
+    ]
+  },
+  {
+    "job": "CICSSTSQ",
+    "file": "base/cntl/samptsq.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DFHXQMN)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "SHARETSQ",
+        "program": "DFHXQMN"
+      }
+    ]
+  },
+  {
+    "job": "<WUIAPPL>",
+    "file": "base/cntl/sampwui.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (DFHSIP)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "GENAPP1",
+        "program": "DFHSIP"
+      }
+    ]
+  },
+  {
+    "job": "GENASOAP",
+    "file": "base/cntl/wsaac01.jcl",
+    "kind": "build",
+    "reason": "tooling (no program)",
+    "generated": null,
+    "spring_job": null,
+    "steps": []
+  },
+  {
+    "job": "GENASOAP",
+    "file": "base/cntl/wsaap01.jcl",
+    "kind": "build",
+    "reason": "tooling (no program)",
+    "generated": null,
+    "spring_job": null,
+    "steps": []
+  },
+  {
+    "job": "GENASOAP",
+    "file": "base/cntl/wsaic01.jcl",
+    "kind": "build",
+    "reason": "tooling (no program)",
+    "generated": null,
+    "spring_job": null,
+    "steps": []
+  },
+  {
+    "job": "GENASOAP",
+    "file": "base/cntl/wsaip01.jcl",
+    "kind": "build",
+    "reason": "tooling (no program)",
+    "generated": null,
+    "spring_job": null,
+    "steps": []
+  },
+  {
+    "job": "GENASOAP",
+    "file": "base/cntl/wsauc01.jcl",
+    "kind": "build",
+    "reason": "tooling (no program)",
+    "generated": null,
+    "spring_job": null,
+    "steps": []
+  },
+  {
+    "job": "GENASOAP",
+    "file": "base/cntl/wsaup01.jcl",
+    "kind": "build",
+    "reason": "tooling (no program)",
+    "generated": null,
+    "spring_job": null,
+    "steps": []
+  },
+  {
+    "job": "GENASOAP",
+    "file": "base/cntl/wsavc01.jcl",
+    "kind": "build",
+    "reason": "tooling (no program)",
+    "generated": null,
+    "spring_job": null,
+    "steps": []
+  },
+  {
+    "job": "GENASOAP",
+    "file": "base/cntl/wsavp01.jcl",
+    "kind": "build",
+    "reason": "tooling (no program)",
+    "generated": null,
+    "spring_job": null,
+    "steps": []
+  }
+]

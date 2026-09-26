@@ -1,0 +1,239 @@
+package com.gitgalaxy.modernized.dto.screen;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * BMS map COPAU1A of mapset COPAU01 (app/app-authorization-ims-db2-mq/bms/COPAU01.bms): the screen as a view model (#3619).
+ * SEND at app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl:381, app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl:389; RECEIVE at app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl:400.
+ * One property per named field (symbolic map COPAU1AI / COPAU1AO); LAYOUT is every field in
+ * screen order, labels included. BMS screen fields field testing: open (3 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class Copau1aScreen implements ScreenModel {
+
+    public static final String MAPSET = "COPAU01";
+    public static final String MAP = "COPAU1A";
+    public static final List<ScreenField> LAYOUT = List.of(
+            new ScreenField(null, 1, 1, 5, false, false, false, false, false, "Tran:", "BLUE", 1),
+            new ScreenField("TRNNAME", 1, 7, 4, false, false, false, false, false, null, "BLUE", 1),
+            new ScreenField("TITLE01", 1, 21, 40, false, false, false, false, false, null, "YELLOW", 1),
+            new ScreenField(null, 1, 65, 5, false, false, false, false, false, "Date:", "BLUE", 1),
+            new ScreenField("CURDATE", 1, 71, 8, false, false, false, false, false, "mm/dd/yy", "BLUE", 1),
+            new ScreenField(null, 2, 1, 5, false, false, false, false, false, "Prog:", "BLUE", 1),
+            new ScreenField("PGMNAME", 2, 7, 8, false, false, false, false, false, null, "BLUE", 1),
+            new ScreenField("TITLE02", 2, 21, 40, false, false, false, false, false, null, "YELLOW", 1),
+            new ScreenField(null, 2, 65, 5, false, false, false, false, false, "Time:", "BLUE", 1),
+            new ScreenField("CURTIME", 2, 71, 8, false, false, false, false, false, "hh:mm:ss", "BLUE", 1),
+            new ScreenField(null, 4, 27, 26, false, false, true, false, false, "View Authorization Details", "NEUTRAL", 1),
+            new ScreenField(null, 7, 2, 7, false, false, false, false, false, "Card #:", "TURQUOISE", 1),
+            new ScreenField("CARDNUM", 7, 11, 16, false, false, false, false, false, null, "PINK", 1),
+            new ScreenField(null, 7, 31, 10, false, false, false, false, false, "Auth Date:", "TURQUOISE", 1),
+            new ScreenField("AUTHDT", 7, 43, 10, false, false, false, false, false, " ", "PINK", 1),
+            new ScreenField(null, 7, 56, 10, false, false, false, false, false, "Auth Time:", "TURQUOISE", 1),
+            new ScreenField("AUTHTM", 7, 68, 10, false, false, false, false, false, " ", "PINK", 1),
+            new ScreenField(null, 9, 2, 10, false, false, false, false, false, "Auth Resp:", "TURQUOISE", 1),
+            new ScreenField("AUTHRSP", 9, 14, 1, false, false, false, false, false, " ", "PINK", 1),
+            new ScreenField(null, 9, 18, 12, false, false, false, false, false, "Resp Reason:", "TURQUOISE", 1),
+            new ScreenField("AUTHRSN", 9, 32, 20, false, false, false, false, false, " ", "BLUE", 1),
+            new ScreenField(null, 9, 56, 10, false, false, false, false, false, "Auth Code:", "TURQUOISE", 1),
+            new ScreenField("AUTHCD", 9, 68, 6, false, false, false, false, false, " ", "BLUE", 1),
+            new ScreenField(null, 11, 2, 7, false, false, false, false, false, "Amount:", "TURQUOISE", 1),
+            new ScreenField("AUTHAMT", 11, 11, 12, false, false, false, false, false, " ", "BLUE", 1),
+            new ScreenField(null, 11, 29, 15, false, false, false, false, false, "POS Entry Mode:", "TURQUOISE", 1),
+            new ScreenField("POSEMD", 11, 46, 4, false, false, false, false, false, " ", "BLUE", 1),
+            new ScreenField(null, 11, 56, 10, false, false, false, false, false, "Source   :", "TURQUOISE", 1),
+            new ScreenField("AUTHSRC", 11, 68, 10, false, false, false, false, false, " ", "BLUE", 1),
+            new ScreenField(null, 13, 2, 9, false, false, false, false, false, "MCC Code:", "TURQUOISE", 1),
+            new ScreenField("MCCCD", 13, 13, 4, false, false, false, false, false, " ", "BLUE", 1),
+            new ScreenField(null, 13, 25, 15, false, false, false, false, false, "Card Exp. Date:", "TURQUOISE", 1),
+            new ScreenField("CRDEXP", 13, 42, 5, false, false, false, false, false, " ", "BLUE", 1),
+            new ScreenField(null, 13, 52, 10, false, false, false, false, false, "Auth Type:", "TURQUOISE", 1),
+            new ScreenField("AUTHTYP", 13, 64, 14, false, false, false, false, false, " ", "BLUE", 1),
+            new ScreenField(null, 15, 2, 18, false, false, false, false, false, "Tran Id:", "TURQUOISE", 1),
+            new ScreenField("TRNID", 15, 12, 15, false, false, false, false, false, " ", "BLUE", 1),
+            new ScreenField(null, 15, 31, 13, false, false, false, false, false, "Match Status:", "TURQUOISE", 1),
+            new ScreenField("AUTHMTC", 15, 46, 1, false, false, false, false, false, " ", "RED", 1),
+            new ScreenField(null, 15, 52, 13, false, false, false, false, false, "Fraud Status:", "TURQUOISE", 1),
+            new ScreenField("AUTHFRD", 15, 67, 10, false, false, false, false, false, " ", "RED", 1),
+            new ScreenField(null, 17, 2, 76, false, false, false, false, false, "Merchant Details -----------------------------------------------------------", "NEUTRAL", 1),
+            new ScreenField(null, 19, 2, 5, false, false, false, false, false, "Name:", "TURQUOISE", 1),
+            new ScreenField("MERNAME", 19, 9, 25, false, false, false, false, false, " ", "BLUE", 1),
+            new ScreenField(null, 19, 41, 12, false, false, false, false, false, "Merchant ID:", "TURQUOISE", 1),
+            new ScreenField("MERID", 19, 55, 15, false, false, false, false, false, " ", "BLUE", 1),
+            new ScreenField(null, 21, 2, 5, false, false, false, false, false, "City:", "TURQUOISE", 1),
+            new ScreenField("MERCITY", 21, 9, 25, false, false, false, false, false, " ", "BLUE", 1),
+            new ScreenField(null, 21, 41, 6, false, false, false, false, false, "State:", "TURQUOISE", 1),
+            new ScreenField("MERST", 21, 49, 2, false, false, false, false, false, " ", "BLUE", 1),
+            new ScreenField(null, 21, 55, 4, false, false, false, false, false, "Zip:", "TURQUOISE", 1),
+            new ScreenField("MERZIP", 21, 61, 10, false, false, false, false, false, " ", "BLUE", 1),
+            new ScreenField("ERRMSG", 23, 1, 78, false, false, true, false, false, null, "RED", 1),
+            new ScreenField(null, 24, 1, 45, false, false, false, false, false, " F3=Back  F5=Mark/Remove Fraud  F8=Next Auth", "YELLOW", 1));
+
+    /** TRNNAME: (1,7), 4 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:34. Symbolic map TRNNAMEI, TRNNAMEO. */
+    private String trnname;
+
+    /** TITLE01: (1,21), 40 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:38. Symbolic map TITLE01I, TITLE01O. */
+    private String title01;
+
+    /** CURDATE: (1,71), 8 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:47. Symbolic map CURDATEI, CURDATEO. */
+    private String curdate;
+
+    /** PGMNAME: (2,7), 8 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:57. Symbolic map PGMNAMEI, PGMNAMEO. */
+    private String pgmname;
+
+    /** TITLE02: (2,21), 40 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:61. Symbolic map TITLE02I, TITLE02O. */
+    private String title02;
+
+    /** CURTIME: (2,71), 8 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:70. Symbolic map CURTIMEI, CURTIMEO. */
+    private String curtime;
+
+    /** CARDNUM: (7,11), 16 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:85. Symbolic map CARDNUMI, CARDNUMO. */
+    private String cardnum;
+
+    /** AUTHDT: (7,43), 10 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:94. Symbolic map AUTHDTI, AUTHDTO. */
+    private String authdt;
+
+    /** AUTHTM: (7,68), 10 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:104. Symbolic map AUTHTMI, AUTHTMO. */
+    private String authtm;
+
+    /** AUTHRSP: (9,14), 1 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:114. Symbolic map AUTHRSPI, AUTHRSPO. */
+    private String authrsp;
+
+    /** AUTHRSN: (9,32), 20 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:124. Symbolic map AUTHRSNI, AUTHRSNO. */
+    private String authrsn;
+
+    /** AUTHCD: (9,68), 6 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:134. Symbolic map AUTHCDI, AUTHCDO. */
+    private String authcd;
+
+    /** AUTHAMT: (11,11), 12 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:144. Symbolic map AUTHAMTI, AUTHAMTO. */
+    private String authamt;
+
+    /** POSEMD: (11,46), 4 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:154. Symbolic map POSEMDI, POSEMDO. */
+    private String posemd;
+
+    /** AUTHSRC: (11,68), 10 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:164. Symbolic map AUTHSRCI, AUTHSRCO. */
+    private String authsrc;
+
+    /** MCCCD: (13,13), 4 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:174. Symbolic map MCCCDI, MCCCDO. */
+    private String mcccd;
+
+    /** CRDEXP: (13,42), 5 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:184. Symbolic map CRDEXPI, CRDEXPO. */
+    private String crdexp;
+
+    /** AUTHTYP: (13,64), 14 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:194. Symbolic map AUTHTYPI, AUTHTYPO. */
+    private String authtyp;
+
+    /** TRNID: (15,12), 15 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:204. Symbolic map TRNIDI, TRNIDO. */
+    private String trnid;
+
+    /** AUTHMTC: (15,46), 1 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:214. Symbolic map AUTHMTCI, AUTHMTCO. */
+    private String authmtc;
+
+    /** AUTHFRD: (15,67), 10 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:224. Symbolic map AUTHFRDI, AUTHFRDO. */
+    private String authfrd;
+
+    /** MERNAME: (19,9), 25 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:239. Symbolic map MERNAMEI, MERNAMEO. */
+    private String mername;
+
+    /** MERID: (19,55), 15 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:249. Symbolic map MERIDI, MERIDO. */
+    private String merid;
+
+    /** MERCITY: (21,9), 25 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:259. Symbolic map MERCITYI, MERCITYO. */
+    private String mercity;
+
+    /** MERST: (21,49), 2 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:269. Symbolic map MERSTI, MERSTO. */
+    private String merst;
+
+    /** MERZIP: (21,61), 10 bytes, ATTRB=ASKIP,NORM -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:279. Symbolic map MERZIPI, MERZIPO. */
+    private String merzip;
+
+    /** ERRMSG: (23,1), 78 bytes, ATTRB=ASKIP,BRT,FSET -- app/app-authorization-ims-db2-mq/bms/COPAU01.bms:284. Symbolic map ERRMSGI, ERRMSGO. */
+    private String errmsg;
+
+    @Override
+    public String mapsetName() {
+        return MAPSET;
+    }
+
+    @Override
+    public String mapName() {
+        return MAP;
+    }
+
+    @Override
+    public List<ScreenField> screenLayout() {
+        return LAYOUT;
+    }
+
+    @Override
+    public Map<String, String> screenValues() {
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("TRNNAME", trnname);
+        values.put("TITLE01", title01);
+        values.put("CURDATE", curdate);
+        values.put("PGMNAME", pgmname);
+        values.put("TITLE02", title02);
+        values.put("CURTIME", curtime);
+        values.put("CARDNUM", cardnum);
+        values.put("AUTHDT", authdt);
+        values.put("AUTHTM", authtm);
+        values.put("AUTHRSP", authrsp);
+        values.put("AUTHRSN", authrsn);
+        values.put("AUTHCD", authcd);
+        values.put("AUTHAMT", authamt);
+        values.put("POSEMD", posemd);
+        values.put("AUTHSRC", authsrc);
+        values.put("MCCCD", mcccd);
+        values.put("CRDEXP", crdexp);
+        values.put("AUTHTYP", authtyp);
+        values.put("TRNID", trnid);
+        values.put("AUTHMTC", authmtc);
+        values.put("AUTHFRD", authfrd);
+        values.put("MERNAME", mername);
+        values.put("MERID", merid);
+        values.put("MERCITY", mercity);
+        values.put("MERST", merst);
+        values.put("MERZIP", merzip);
+        values.put("ERRMSG", errmsg);
+        return values;
+    }
+
+    /** A view model from posted form values (keys as `screenValues` writes them). */
+    public static Copau1aScreen fromValues(Map<String, String> values) {
+        Copau1aScreen screen = new Copau1aScreen();
+        screen.setTrnname(values.get("TRNNAME"));
+        screen.setTitle01(values.get("TITLE01"));
+        screen.setCurdate(values.get("CURDATE"));
+        screen.setPgmname(values.get("PGMNAME"));
+        screen.setTitle02(values.get("TITLE02"));
+        screen.setCurtime(values.get("CURTIME"));
+        screen.setCardnum(values.get("CARDNUM"));
+        screen.setAuthdt(values.get("AUTHDT"));
+        screen.setAuthtm(values.get("AUTHTM"));
+        screen.setAuthrsp(values.get("AUTHRSP"));
+        screen.setAuthrsn(values.get("AUTHRSN"));
+        screen.setAuthcd(values.get("AUTHCD"));
+        screen.setAuthamt(values.get("AUTHAMT"));
+        screen.setPosemd(values.get("POSEMD"));
+        screen.setAuthsrc(values.get("AUTHSRC"));
+        screen.setMcccd(values.get("MCCCD"));
+        screen.setCrdexp(values.get("CRDEXP"));
+        screen.setAuthtyp(values.get("AUTHTYP"));
+        screen.setTrnid(values.get("TRNID"));
+        screen.setAuthmtc(values.get("AUTHMTC"));
+        screen.setAuthfrd(values.get("AUTHFRD"));
+        screen.setMername(values.get("MERNAME"));
+        screen.setMerid(values.get("MERID"));
+        screen.setMercity(values.get("MERCITY"));
+        screen.setMerst(values.get("MERST"));
+        screen.setMerzip(values.get("MERZIP"));
+        screen.setErrmsg(values.get("ERRMSG"));
+        return screen;
+    }
+}

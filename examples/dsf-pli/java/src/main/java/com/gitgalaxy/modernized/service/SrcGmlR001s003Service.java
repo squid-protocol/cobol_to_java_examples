@@ -1,0 +1,102 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.FnrReg;
+import com.gitgalaxy.modernized.entity.vsam.YrkekodeYkodeRec;
+import com.gitgalaxy.modernized.exception.*;
+import com.gitgalaxy.modernized.repository.vsam.YrkekodeYkodeRecRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Screens (#3619): none resolved.
+ * TODO: SEND MAP S001S03 (mapset S001S33) at src/GML/R001S003.pli:187: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001S03 (mapset S001S33) at src/GML/R001S003.pli:197: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001S03 (mapset S001S33) at src/GML/R001S003.pli:259: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001S03 (mapset S001S33) at src/GML/R001S003.pli:274: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001S03 (mapset S001S33) at src/GML/R001S003.pli:308: no single BMS source defines it (candidates: none in the repository)
+ * TODO: RECEIVE MAP S001S03 (mapset S001S33) at src/GML/R001S003.pli:311: no single BMS source defines it (candidates: none in the repository)
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class SrcGmlR001s003Service {
+
+    private static final Logger log = LoggerFactory.getLogger(SrcGmlR001s003Service.class);
+
+    private final ObjectProvider<SrcGmlR0019906Service> srcGmlR0019906Service;
+    private final ObjectProvider<SrcGmlR0010301Service> srcGmlR0010301Service;
+    private final YrkekodeYkodeRecRepository yrkekodeYkodeRecRepository;
+
+    // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
+    // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
+
+    public void executeSrcGmlR001s003(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for src__GML__R001S003");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("SrcGmlR001s003: handleLink");
+    }
+
+    /** EXEC CICS LINK PROGRAM(R0019906) at src/GML/R001S003.pli:386.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public FnrReg linkSrcGmlR0019906(FnrReg request) {
+        return srcGmlR0019906Service.getObject().handleLink(request);
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R0010301) at src/GML/R001S003.pli:209. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcGmlR0010301() {
+        srcGmlR0010301Service.getObject().handleLink();
+    }
+
+    /** YRKEKODE as CICS file YRKEKODE at src/GML/R001S003.pli:250; VSAM defines field testing: open (3 public / 0 private estates). */
+    public YrkekodeYkodeRec writeYrkekode(YrkekodeYkodeRec record) {
+        return yrkekodeYkodeRecRepository.save(record);
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/GML/R001S003.pli:315 (paragraph R001S1): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL315() {
+        throw new UnitOfWorkRollbackException("SRC__GML__R001S003", "src/GML/R001S003.pli:315");
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R001S003.pli:171 (paragraph R001S1) routes ERROR to FEILBEH.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL171(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL FEILBEH at line 171", e);
+        // TODO: port paragraph FEILBEH's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R001S003.pli:288 (paragraph R001S1) routes ERROR to ABEND.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL288(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL ABEND at line 288", e);
+        // TODO: port paragraph ABEND's logic
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(FEIL) at src/GML/R001S003.pli:325 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendFeilL325() {
+        throw new CicsAbendException("FEIL", "SRC__GML__R001S003", "src/GML/R001S003.pli:325");
+    }
+
+}

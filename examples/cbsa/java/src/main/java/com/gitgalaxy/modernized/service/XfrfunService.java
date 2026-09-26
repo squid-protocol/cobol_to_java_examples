@@ -1,0 +1,428 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.dto.contract.Bnk1tfnSubpgmParms;
+import com.gitgalaxy.modernized.dto.contract.BnkmenuAbndinfoRec;
+import com.gitgalaxy.modernized.exception.*;
+import com.gitgalaxy.modernized.repository.db2.AccountRepository;
+import com.gitgalaxy.modernized.repository.db2.ProctranRepository;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Response handling (field testing: field-tested (6 public / 0 private estates)):
+ * SYNCPOINT at line 407 tests NORMAL
+ * SYNCPOINT at line 503 tests NORMAL
+ * SYNCPOINT at line 679 tests NORMAL
+ * SYNCPOINT at line 826 tests NORMAL
+ * SYNCPOINT at line 1111 tests NORMAL
+ * SYNCPOINT at line 1204 tests NORMAL
+ * SYNCPOINT at line 1403 tests NORMAL
+ * SYNCPOINT at line 1815 tests NORMAL
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class XfrfunService {
+
+    private static final Logger log = LoggerFactory.getLogger(XfrfunService.class);
+
+    private final ObjectProvider<AbndprocService> abndprocService;
+    private final AccountRepository accountRepository;
+    private final ProctranRepository proctranRepository;
+
+    public void executeXfrfun(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for XFRFUN");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public Bnk1tfnSubpgmParms handleLink(Bnk1tfnSubpgmParms request) {
+        log.info("Xfrfun: handleLink");
+        return request;
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:364: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL364(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:364: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:463: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL463(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:463: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:573: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL573(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:573: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:664: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL664(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:664: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:737: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL737(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:737: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:813: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL813(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:813: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:881: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL881(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:881: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:1165: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL1165(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:1165: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:1262: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL1262(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:1262: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:1341: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL1341(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:1341: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:1459: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL1459(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:1459: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:1541: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL1541(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:1541: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:1701: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL1701(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:1701: no known target " + program);
+        }
+    }
+
+    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:1873: the target is data-driven. Candidates: ABNDPROC (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchWsAbendPgmL1873(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "ABNDPROC":
+                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/XFRFUN.cbl:1873: no known target " + program);
+        }
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/base/cobol_src/XFRFUN.cbl:407 (paragraph UAD010): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL407() {
+        throw new UnitOfWorkRollbackException("XFRFUN", "src/base/cobol_src/XFRFUN.cbl:407");
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/base/cobol_src/XFRFUN.cbl:503 (paragraph UAD010): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL503() {
+        throw new UnitOfWorkRollbackException("XFRFUN", "src/base/cobol_src/XFRFUN.cbl:503");
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/base/cobol_src/XFRFUN.cbl:679 (paragraph UAD010): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL679() {
+        throw new UnitOfWorkRollbackException("XFRFUN", "src/base/cobol_src/XFRFUN.cbl:679");
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/base/cobol_src/XFRFUN.cbl:826 (paragraph UAD010): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL826() {
+        throw new UnitOfWorkRollbackException("XFRFUN", "src/base/cobol_src/XFRFUN.cbl:826");
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/base/cobol_src/XFRFUN.cbl:1111 (paragraph UADT010): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL1111() {
+        throw new UnitOfWorkRollbackException("XFRFUN", "src/base/cobol_src/XFRFUN.cbl:1111");
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/base/cobol_src/XFRFUN.cbl:1204 (paragraph UADT010): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL1204() {
+        throw new UnitOfWorkRollbackException("XFRFUN", "src/base/cobol_src/XFRFUN.cbl:1204");
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/base/cobol_src/XFRFUN.cbl:1403 (paragraph UADT010): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL1403() {
+        throw new UnitOfWorkRollbackException("XFRFUN", "src/base/cobol_src/XFRFUN.cbl:1403");
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT ROLLBACK at src/base/cobol_src/XFRFUN.cbl:1815 (paragraph AH010): rolls the unit of work back.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void rollbackL1815() {
+        throw new UnitOfWorkRollbackException("XFRFUN", "src/base/cobol_src/XFRFUN.cbl:1815");
+    }
+
+    /**
+     * EXEC CICS HANDLE ABEND at src/base/cobol_src/XFRFUN.cbl:272 (paragraph A010) routes abends to ABEND-HANDLING.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onAbendL272(CicsAbendException e) {
+        log.info("HANDLE ABEND LABEL ABEND-HANDLING at line 272", e);
+        // TODO: port paragraph ABEND-HANDLING's logic
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(SAME) at src/base/cobol_src/XFRFUN.cbl:370 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendSameL370() {
+        throw new CicsAbendException("SAME", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:370");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(HROL) at src/base/cobol_src/XFRFUN.cbl:472 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendHrolL472() {
+        throw new CicsAbendException("HROL", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:472");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(TO) at src/base/cobol_src/XFRFUN.cbl:488 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendToL488() {
+        throw new CicsAbendException("TO", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:488");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(HROL) at src/base/cobol_src/XFRFUN.cbl:519 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendHrolL519() {
+        throw new CicsAbendException("HROL", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:519");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(FROM) at src/base/cobol_src/XFRFUN.cbl:579 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendFromL579() {
+        throw new CicsAbendException("FROM", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:579");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(FROM) at src/base/cobol_src/XFRFUN.cbl:669 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendFromL669() {
+        throw new CicsAbendException("FROM", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:669");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(HROL) at src/base/cobol_src/XFRFUN.cbl:747 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendHrolL747() {
+        throw new CicsAbendException("HROL", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:747");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(TO) at src/base/cobol_src/XFRFUN.cbl:819 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendToL819() {
+        throw new CicsAbendException("TO", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:819");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(HROL) at src/base/cobol_src/XFRFUN.cbl:890 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendHrolL890() {
+        throw new CicsAbendException("HROL", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:890");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(HROL) at src/base/cobol_src/XFRFUN.cbl:1174 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendHrolL1174() {
+        throw new CicsAbendException("HROL", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:1174");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(HROL) at src/base/cobol_src/XFRFUN.cbl:1271 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendHrolL1271() {
+        throw new CicsAbendException("HROL", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:1271");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(RUF2) at src/base/cobol_src/XFRFUN.cbl:1345 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendRuf2L1345() {
+        throw new CicsAbendException("RUF2", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:1345");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(HROL) at src/base/cobol_src/XFRFUN.cbl:1468 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendHrolL1468() {
+        throw new CicsAbendException("HROL", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:1468");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(RUF3) at src/base/cobol_src/XFRFUN.cbl:1545 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendRuf3L1545() {
+        throw new CicsAbendException("RUF3", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:1545");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(WPCD) at src/base/cobol_src/XFRFUN.cbl:1716 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendWpcdL1716() {
+        throw new CicsAbendException("WPCD", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:1716");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(HROL) at src/base/cobol_src/XFRFUN.cbl:1882 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendHrolL1882() {
+        throw new CicsAbendException("HROL", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:1882");
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(MY-ABEND-CODE) at src/base/cobol_src/XFRFUN.cbl:1899 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendMyabendcodeL1899() {
+        throw new CicsAbendException("MY-ABEND-CODE", "XFRFUN", "src/base/cobol_src/XFRFUN.cbl:1899");
+    }
+
+}

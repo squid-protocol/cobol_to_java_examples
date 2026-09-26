@@ -1,0 +1,36 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.dto.contract.CocrdupcCommarea;
+import com.gitgalaxy.modernized.service.CocrdupcService;
+
+/**
+ * CICS program COCRDUPC (app/cbl/COCRDUPC.cbl), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * COMMAREA: DFHCOMMAREA (app/cbl/COCRDUPC.cbl, 489 bytes) -> CocrdupcCommarea.
+ * TODO: callers also pass WS-COMMAREA (app/cbl/COCRDUPC.cbl, 2000 bytes) at app/cbl/COCRDUPC.cbl:554.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/cocrdupc")
+@RequiredArgsConstructor
+public class CocrdupcController {
+
+    private final CocrdupcService cocrdupcService;
+
+    /** CICS transaction CCUP -> Cocrdupc (CSD app/csd/CARDDEMO.CSD:367 group CARDDEMO). */
+    @PostMapping("/transactions/CCUP")
+    public ResponseEntity<CocrdupcCommarea> transactionCCUP(@RequestBody CocrdupcCommarea request) {
+        return ResponseEntity.ok(cocrdupcService.handleTransaction("CCUP", request));
+    }
+
+    /** Program-to-program entry: XCTL at app/cbl/COCRDLIC.cbl:538 (data-driven, moves), XCTL at app/cbl/COCRDLIC.cbl:566 (data-driven, moves), XCTL at app/cbl/COMEN01C.cbl:156 (data-driven, table), XCTL at app/cbl/COMEN01C.cbl:184 (data-driven, table). */
+    @PostMapping("/link")
+    public ResponseEntity<CocrdupcCommarea> link(@RequestBody CocrdupcCommarea request) {
+        return ResponseEntity.ok(cocrdupcService.handleLink(request));
+    }
+
+}

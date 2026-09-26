@@ -1,0 +1,331 @@
+package com.gitgalaxy.modernized.dto.screen;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * BMS map CTRTLIA of mapset COTRTLI (app/app-transaction-type-db2/bms/COTRTLI.bms): the screen as a view model (#3619).
+ * SEND at app/app-transaction-type-db2/cbl/COTRTLIC.cbl:1588; RECEIVE at app/app-transaction-type-db2/cbl/COTRTLIC.cbl:931.
+ * One property per named field (symbolic map CTRTLIAI / CTRTLIAO); LAYOUT is every field in
+ * screen order, labels included. BMS screen fields field testing: open (3 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class CtrtliaScreen implements ScreenModel {
+
+    public static final String MAPSET = "COTRTLI";
+    public static final String MAP = "CTRTLIA";
+    public static final List<ScreenField> LAYOUT = List.of(
+            new ScreenField(null, 1, 1, 5, false, false, false, false, false, "Tran:", "BLUE", 1),
+            new ScreenField("TRNNAME", 1, 7, 4, false, false, false, false, false, null, "BLUE", 1),
+            new ScreenField("TITLE01", 1, 21, 40, false, false, false, false, false, null, "YELLOW", 1),
+            new ScreenField(null, 1, 65, 5, false, false, false, false, false, "Date:", "BLUE", 1),
+            new ScreenField("CURDATE", 1, 71, 8, false, false, false, false, false, "mm/dd/yy", "BLUE", 1),
+            new ScreenField(null, 2, 1, 5, false, false, false, false, false, "Prog:", "BLUE", 1),
+            new ScreenField("PGMNAME", 2, 7, 8, false, false, false, false, false, null, "BLUE", 1),
+            new ScreenField("TITLE02", 2, 21, 40, false, false, false, false, false, null, "YELLOW", 1),
+            new ScreenField(null, 2, 65, 5, false, false, false, false, false, "Time:", "BLUE", 1),
+            new ScreenField("CURTIME", 2, 71, 8, false, false, false, false, false, "hh:mm:ss", "BLUE", 1),
+            new ScreenField(null, 4, 28, 25, false, false, false, false, false, "Maintain Transaction Type", "NEUTRAL", 1),
+            new ScreenField(null, 4, 70, 5, false, false, false, false, false, "Page ", null, 1),
+            new ScreenField("PAGENO", 4, 76, 3, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 6, 30, 12, false, false, false, false, false, "Type Filter:", "TURQUOISE", 1),
+            new ScreenField("TRTYPE", 6, 44, 2, true, false, false, false, true, null, "GREEN", 1),
+            new ScreenField(null, 6, 47, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 8, 4, 19, false, false, false, false, false, "Description Filter:", "TURQUOISE", 1),
+            new ScreenField("TRDESC", 8, 25, 50, true, false, false, false, false, null, "GREEN", 1),
+            new ScreenField(null, 8, 76, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 10, 4, 10, false, false, false, false, false, "Select    ", "NEUTRAL", 1),
+            new ScreenField(null, 10, 16, 4, false, false, false, false, false, "Type", "NEUTRAL", 1),
+            new ScreenField(null, 10, 42, 11, false, false, false, false, false, "Description", "NEUTRAL", 1),
+            new ScreenField(null, 11, 4, 6, false, false, false, false, false, "------", "NEUTRAL", 1),
+            new ScreenField(null, 11, 15, 5, false, false, false, false, false, "-----", "NEUTRAL", 1),
+            new ScreenField(null, 11, 25, 50, false, false, false, false, false, "--------------------------------------------------", "NEUTRAL", 1),
+            new ScreenField("TRTSEL1", 12, 6, 1, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 12, 8, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTTYP1", 12, 17, 2, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 12, 20, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTYPD1", 12, 25, 50, true, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 12, 76, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTSEL2", 13, 6, 1, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 13, 8, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTTYP2", 13, 17, 2, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 13, 20, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTYPD2", 13, 25, 50, true, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 13, 76, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTSEL3", 14, 6, 1, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 14, 8, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTTYP3", 14, 17, 2, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 14, 20, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTYPD3", 14, 25, 50, true, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 14, 76, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTSEL4", 15, 6, 1, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 15, 8, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTTYP4", 15, 17, 2, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 15, 20, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTYPD4", 15, 25, 50, true, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 15, 76, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTSEL5", 16, 6, 1, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 16, 8, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTTYP5", 16, 17, 2, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 16, 20, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTYPD5", 16, 25, 50, true, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 16, 76, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTSEL6", 17, 6, 1, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 17, 8, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTTYP6", 17, 17, 2, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 17, 20, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTYPD6", 17, 25, 50, true, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 17, 76, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTSEL7", 18, 6, 1, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 18, 8, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTTYP7", 18, 17, 2, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 18, 20, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTYPD7", 18, 25, 50, true, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 18, 76, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTSELA", 19, 6, 1, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 19, 8, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTTYPA", 19, 17, 2, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 19, 20, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("TRTDSCA", 19, 25, 50, false, false, false, false, false, null, "DEFAULT", 1),
+            new ScreenField(null, 19, 76, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("INFOMSG", 21, 19, 45, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 21, 65, 0, false, false, false, false, false, null, null, 1),
+            new ScreenField("ERRMSG", 23, 1, 78, false, false, true, false, false, null, "RED", 1),
+            new ScreenField("BUTNF02", 24, 1, 7, false, false, false, false, false, "F2=Add", "TURQUOISE", 1),
+            new ScreenField("BUTNF03", 24, 10, 7, false, false, false, false, false, "F3=Exit", "TURQUOISE", 1),
+            new ScreenField("BUTNF07", 24, 19, 10, false, false, false, false, false, "F7=Page Up", "TURQUOISE", 1),
+            new ScreenField("BUTNF08", 24, 32, 10, false, false, false, false, false, "F8=Page Dn", "TURQUOISE", 1),
+            new ScreenField("BUTNF10", 24, 44, 8, false, false, false, false, false, "F10=Save", "TURQUOISE", 1));
+
+    /** TRNNAME: (1,7), 4 bytes, ATTRB=ASKIP,FSET,NORM -- app/app-transaction-type-db2/bms/COTRTLI.bms:34. Symbolic map TRNNAMEI, TRNNAMEO. */
+    private String trnname;
+
+    /** TITLE01: (1,21), 40 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTLI.bms:38. Symbolic map TITLE01I, TITLE01O. */
+    private String title01;
+
+    /** CURDATE: (1,71), 8 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTLI.bms:47. Symbolic map CURDATEI, CURDATEO. */
+    private String curdate;
+
+    /** PGMNAME: (2,7), 8 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTLI.bms:57. Symbolic map PGMNAMEI, PGMNAMEO. */
+    private String pgmname;
+
+    /** TITLE02: (2,21), 40 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTLI.bms:61. Symbolic map TITLE02I, TITLE02O. */
+    private String title02;
+
+    /** CURTIME: (2,71), 8 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTLI.bms:70. Symbolic map CURTIMEI, CURTIMEO. */
+    private String curtime;
+
+    /** PAGENO: (4,76), 3 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTLI.bms:82. Symbolic map PAGENOI, PAGENOO. */
+    private String pageno;
+
+    /** TRTYPE: (6,44), 2 bytes, ATTRB=FSET,IC,NORM,UNPROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:89. Symbolic map TRTYPEI, TRTYPEO. */
+    private String trtype;
+
+    /** TRDESC: (8,25), 50 bytes, ATTRB=FSET,NORM,UNPROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:101. Symbolic map TRDESCI, TRDESCO. */
+    private String trdesc;
+
+    /** TRTSEL1: (12,6), 1 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:133. Symbolic map TRTSEL1I, TRTSEL1O. */
+    private String trtsel1;
+
+    /** TRTTYP1: (12,17), 2 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:140. Symbolic map TRTTYP1I, TRTTYP1O. */
+    private String trttyp1;
+
+    /** TRTYPD1: (12,25), 50 bytes, ATTRB=FSET,NORM,UNPROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:147. Symbolic map TRTYPD1I, TRTYPD1O. */
+    private String trtypd1;
+
+    /** TRTSEL2: (13,6), 1 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:154. Symbolic map TRTSEL2I, TRTSEL2O. */
+    private String trtsel2;
+
+    /** TRTTYP2: (13,17), 2 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:161. Symbolic map TRTTYP2I, TRTTYP2O. */
+    private String trttyp2;
+
+    /** TRTYPD2: (13,25), 50 bytes, ATTRB=FSET,NORM,UNPROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:168. Symbolic map TRTYPD2I, TRTYPD2O. */
+    private String trtypd2;
+
+    /** TRTSEL3: (14,6), 1 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:175. Symbolic map TRTSEL3I, TRTSEL3O. */
+    private String trtsel3;
+
+    /** TRTTYP3: (14,17), 2 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:182. Symbolic map TRTTYP3I, TRTTYP3O. */
+    private String trttyp3;
+
+    /** TRTYPD3: (14,25), 50 bytes, ATTRB=FSET,NORM,UNPROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:189. Symbolic map TRTYPD3I, TRTYPD3O. */
+    private String trtypd3;
+
+    /** TRTSEL4: (15,6), 1 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:196. Symbolic map TRTSEL4I, TRTSEL4O. */
+    private String trtsel4;
+
+    /** TRTTYP4: (15,17), 2 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:203. Symbolic map TRTTYP4I, TRTTYP4O. */
+    private String trttyp4;
+
+    /** TRTYPD4: (15,25), 50 bytes, ATTRB=FSET,NORM,UNPROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:210. Symbolic map TRTYPD4I, TRTYPD4O. */
+    private String trtypd4;
+
+    /** TRTSEL5: (16,6), 1 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:217. Symbolic map TRTSEL5I, TRTSEL5O. */
+    private String trtsel5;
+
+    /** TRTTYP5: (16,17), 2 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:224. Symbolic map TRTTYP5I, TRTTYP5O. */
+    private String trttyp5;
+
+    /** TRTYPD5: (16,25), 50 bytes, ATTRB=FSET,NORM,UNPROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:231. Symbolic map TRTYPD5I, TRTYPD5O. */
+    private String trtypd5;
+
+    /** TRTSEL6: (17,6), 1 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:238. Symbolic map TRTSEL6I, TRTSEL6O. */
+    private String trtsel6;
+
+    /** TRTTYP6: (17,17), 2 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:245. Symbolic map TRTTYP6I, TRTTYP6O. */
+    private String trttyp6;
+
+    /** TRTYPD6: (17,25), 50 bytes, ATTRB=FSET,NORM,UNPROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:252. Symbolic map TRTYPD6I, TRTYPD6O. */
+    private String trtypd6;
+
+    /** TRTSEL7: (18,6), 1 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:259. Symbolic map TRTSEL7I, TRTSEL7O. */
+    private String trtsel7;
+
+    /** TRTTYP7: (18,17), 2 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:266. Symbolic map TRTTYP7I, TRTTYP7O. */
+    private String trttyp7;
+
+    /** TRTYPD7: (18,25), 50 bytes, ATTRB=FSET,NORM,UNPROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:273. Symbolic map TRTYPD7I, TRTYPD7O. */
+    private String trtypd7;
+
+    /** TRTSELA: (19,6), 1 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:280. Symbolic map TRTSELAI, TRTSELAO. */
+    private String trtsela;
+
+    /** TRTTYPA: (19,17), 2 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:287. Symbolic map TRTTYPAI, TRTTYPAO. */
+    private String trttypa;
+
+    /** TRTDSCA: (19,25), 50 bytes, ATTRB=FSET,NORM,PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:294. Symbolic map TRTDSCAI, TRTDSCAO. */
+    private String trtdsca;
+
+    /** INFOMSG: (21,19), 45 bytes, ATTRB=PROT -- app/app-transaction-type-db2/bms/COTRTLI.bms:301. Symbolic map INFOMSGI, INFOMSGO. */
+    private String infomsg;
+
+    /** ERRMSG: (23,1), 78 bytes, ATTRB=ASKIP,BRT,FSET -- app/app-transaction-type-db2/bms/COTRTLI.bms:308. Symbolic map ERRMSGI, ERRMSGO. */
+    private String errmsg;
+
+    /** BUTNF02: (24,1), 7 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTLI.bms:312. Symbolic map BUTNF02I, BUTNF02O. */
+    private String butnf02;
+
+    /** BUTNF03: (24,10), 7 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTLI.bms:317. Symbolic map BUTNF03I, BUTNF03O. */
+    private String butnf03;
+
+    /** BUTNF07: (24,19), 10 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTLI.bms:322. Symbolic map BUTNF07I, BUTNF07O. */
+    private String butnf07;
+
+    /** BUTNF08: (24,32), 10 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTLI.bms:327. Symbolic map BUTNF08I, BUTNF08O. */
+    private String butnf08;
+
+    /** BUTNF10: (24,44), 8 bytes, ATTRB=ASKIP,NORM -- app/app-transaction-type-db2/bms/COTRTLI.bms:332. Symbolic map BUTNF10I, BUTNF10O. */
+    private String butnf10;
+
+    @Override
+    public String mapsetName() {
+        return MAPSET;
+    }
+
+    @Override
+    public String mapName() {
+        return MAP;
+    }
+
+    @Override
+    public List<ScreenField> screenLayout() {
+        return LAYOUT;
+    }
+
+    @Override
+    public Map<String, String> screenValues() {
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("TRNNAME", trnname);
+        values.put("TITLE01", title01);
+        values.put("CURDATE", curdate);
+        values.put("PGMNAME", pgmname);
+        values.put("TITLE02", title02);
+        values.put("CURTIME", curtime);
+        values.put("PAGENO", pageno);
+        values.put("TRTYPE", trtype);
+        values.put("TRDESC", trdesc);
+        values.put("TRTSEL1", trtsel1);
+        values.put("TRTTYP1", trttyp1);
+        values.put("TRTYPD1", trtypd1);
+        values.put("TRTSEL2", trtsel2);
+        values.put("TRTTYP2", trttyp2);
+        values.put("TRTYPD2", trtypd2);
+        values.put("TRTSEL3", trtsel3);
+        values.put("TRTTYP3", trttyp3);
+        values.put("TRTYPD3", trtypd3);
+        values.put("TRTSEL4", trtsel4);
+        values.put("TRTTYP4", trttyp4);
+        values.put("TRTYPD4", trtypd4);
+        values.put("TRTSEL5", trtsel5);
+        values.put("TRTTYP5", trttyp5);
+        values.put("TRTYPD5", trtypd5);
+        values.put("TRTSEL6", trtsel6);
+        values.put("TRTTYP6", trttyp6);
+        values.put("TRTYPD6", trtypd6);
+        values.put("TRTSEL7", trtsel7);
+        values.put("TRTTYP7", trttyp7);
+        values.put("TRTYPD7", trtypd7);
+        values.put("TRTSELA", trtsela);
+        values.put("TRTTYPA", trttypa);
+        values.put("TRTDSCA", trtdsca);
+        values.put("INFOMSG", infomsg);
+        values.put("ERRMSG", errmsg);
+        values.put("BUTNF02", butnf02);
+        values.put("BUTNF03", butnf03);
+        values.put("BUTNF07", butnf07);
+        values.put("BUTNF08", butnf08);
+        values.put("BUTNF10", butnf10);
+        return values;
+    }
+
+    /** A view model from posted form values (keys as `screenValues` writes them). */
+    public static CtrtliaScreen fromValues(Map<String, String> values) {
+        CtrtliaScreen screen = new CtrtliaScreen();
+        screen.setTrnname(values.get("TRNNAME"));
+        screen.setTitle01(values.get("TITLE01"));
+        screen.setCurdate(values.get("CURDATE"));
+        screen.setPgmname(values.get("PGMNAME"));
+        screen.setTitle02(values.get("TITLE02"));
+        screen.setCurtime(values.get("CURTIME"));
+        screen.setPageno(values.get("PAGENO"));
+        screen.setTrtype(values.get("TRTYPE"));
+        screen.setTrdesc(values.get("TRDESC"));
+        screen.setTrtsel1(values.get("TRTSEL1"));
+        screen.setTrttyp1(values.get("TRTTYP1"));
+        screen.setTrtypd1(values.get("TRTYPD1"));
+        screen.setTrtsel2(values.get("TRTSEL2"));
+        screen.setTrttyp2(values.get("TRTTYP2"));
+        screen.setTrtypd2(values.get("TRTYPD2"));
+        screen.setTrtsel3(values.get("TRTSEL3"));
+        screen.setTrttyp3(values.get("TRTTYP3"));
+        screen.setTrtypd3(values.get("TRTYPD3"));
+        screen.setTrtsel4(values.get("TRTSEL4"));
+        screen.setTrttyp4(values.get("TRTTYP4"));
+        screen.setTrtypd4(values.get("TRTYPD4"));
+        screen.setTrtsel5(values.get("TRTSEL5"));
+        screen.setTrttyp5(values.get("TRTTYP5"));
+        screen.setTrtypd5(values.get("TRTYPD5"));
+        screen.setTrtsel6(values.get("TRTSEL6"));
+        screen.setTrttyp6(values.get("TRTTYP6"));
+        screen.setTrtypd6(values.get("TRTYPD6"));
+        screen.setTrtsel7(values.get("TRTSEL7"));
+        screen.setTrttyp7(values.get("TRTTYP7"));
+        screen.setTrtypd7(values.get("TRTYPD7"));
+        screen.setTrtsela(values.get("TRTSELA"));
+        screen.setTrttypa(values.get("TRTTYPA"));
+        screen.setTrtdsca(values.get("TRTDSCA"));
+        screen.setInfomsg(values.get("INFOMSG"));
+        screen.setErrmsg(values.get("ERRMSG"));
+        screen.setButnf02(values.get("BUTNF02"));
+        screen.setButnf03(values.get("BUTNF03"));
+        screen.setButnf07(values.get("BUTNF07"));
+        screen.setButnf08(values.get("BUTNF08"));
+        screen.setButnf10(values.get("BUTNF10"));
+        return screen;
+    }
+}

@@ -1,0 +1,29 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.service.SrcGmlR0014001Service;
+
+/**
+ * CICS program R0014001 (src/GML/R0014001.pli), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * TODO: no COMMAREA layout: no structure parameter, or structure BASED on the main procedure's parameter COMMAREA_PEKER, is declared in the program or its %INCLUDE members; %INCLUDE members not in the repository: P0019906, P0019908, P0019910, P0019912, P0019921, P0019925; no resolved caller passes a COMMAREA.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/src-gml-r0014001")
+@RequiredArgsConstructor
+public class SrcGmlR0014001Controller {
+
+    private final SrcGmlR0014001Service srcGmlR0014001Service;
+
+    /** Program-to-program entry: LINK at src/GML/R0011820.pli:357, LINK at src/GML/R0013001.pli:346, LINK at src/GML/R0013001.pli:1035, LINK at src/GML/R0014901.pli:454, LINK at src/GML/R00149X1.pli:342, LINK at src/GML/R0019951.pli:122, LINK at src/GML/R0019951.pli:292, LINK at src/GML/R0019961.pli:52, LINK at src/GML/R0019H01.pli:1177, LINK at src/GML/R0019H60.pli:1104. */
+    @PostMapping("/link")
+    public ResponseEntity<Void> link() {
+        srcGmlR0014001Service.handleLink();
+        return ResponseEntity.noContent().build();
+    }
+
+}

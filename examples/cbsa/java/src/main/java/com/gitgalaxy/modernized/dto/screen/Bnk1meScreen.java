@@ -1,0 +1,86 @@
+package com.gitgalaxy.modernized.dto.screen;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * BMS map BNK1ME of mapset BNK1MAI (src/base/bms_src/BNK1MAI.bms): the screen as a view model (#3619).
+ * SEND at src/base/cobol_src/BNKMENU.cbl:979, src/base/cobol_src/BNKMENU.cbl:1053, src/base/cobol_src/BNKMENU.cbl:1129; RECEIVE at src/base/cobol_src/BNKMENU.cbl:274.
+ * One property per named field (symbolic map BNK1MEI / BNK1MEO); LAYOUT is every field in
+ * screen order, labels included. BMS screen fields field testing: open (3 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class Bnk1meScreen implements ScreenModel {
+
+    public static final String MAPSET = "BNK1MAI";
+    public static final String MAP = "BNK1ME";
+    public static final List<ScreenField> LAYOUT = List.of(
+            new ScreenField(null, 1, 1, 7, false, false, false, false, false, "BNK1MA ", "BLUE", 1),
+            new ScreenField("COMPANY", 1, 20, 40, false, false, false, false, false, "CICS Bank Sample Application - Main Menu.", "RED", 1),
+            new ScreenField(null, 3, 1, 36, false, false, false, false, false, "Select an option. Then press Enter.", "TURQUOISE", 1),
+            new ScreenField(null, 5, 1, 14, false, false, false, false, false, "Action . . . .", "TURQUOISE", 1),
+            new ScreenField("ACTION", 5, 16, 1, true, false, false, false, true, " ", "GREEN", 1),
+            new ScreenField(null, 5, 18, 46, false, false, false, false, false, "1.  Display/Delete/Update CUSTOMER information", "NEUTRAL", 1),
+            new ScreenField(null, 6, 18, 38, false, false, false, false, false, "2.  Display/Delete ACCOUNT information", "NEUTRAL", 1),
+            new ScreenField(null, 7, 18, 19, false, false, false, false, false, "3.  Create CUSTOMER", "NEUTRAL", 1),
+            new ScreenField(null, 8, 18, 18, false, false, false, false, false, "4.  Create ACCOUNT", "NEUTRAL", 1),
+            new ScreenField(null, 9, 18, 18, false, false, false, false, false, "5.  Update ACCOUNT", "NEUTRAL", 1),
+            new ScreenField(null, 10, 18, 36, false, false, false, false, false, "6.  Credit/Debit funds to an ACCOUNT", "NEUTRAL", 1),
+            new ScreenField(null, 11, 18, 42, false, false, false, false, false, "7.  Transfer funds", "NEUTRAL", 1),
+            new ScreenField(null, 13, 18, 41, false, false, false, false, false, "A.  Look up Accounts with Customer Number", "NEUTRAL", 1),
+            new ScreenField("MESSAGE", 23, 1, 79, false, false, true, false, false, null, "YELLOW", 1),
+            new ScreenField(null, 24, 1, 20, false, false, false, false, false, "F3=Exit   F12=Cancel", "BLUE", 1),
+            new ScreenField("DUMMY", 24, 79, 1, false, false, false, true, false, " ", null, 1));
+
+    /** COMPANY: (1,20), 40 bytes, ATTRB=NORM,PROT -- src/base/bms_src/BNK1MAI.bms:28. Symbolic map COMPANYI, COMPANYO. */
+    private String company;
+
+    /** ACTION: (5,16), 1 bytes, ATTRB=IC,NORM,UNPROT -- src/base/bms_src/BNK1MAI.bms:35. Symbolic map ACTIONI, ACTIONO. */
+    private String action;
+
+    /** MESSAGE: (23,1), 79 bytes, ATTRB=ASKIP,BRT,PROT -- src/base/bms_src/BNK1MAI.bms:55. Symbolic map MESSAGEI, MESSAGEO. */
+    private String message;
+
+    /** DUMMY: (24,79), 1 bytes, ATTRB=ASKIP,DRK,FSET,PROT -- src/base/bms_src/BNK1MAI.bms:60. Symbolic map DUMMYI, DUMMYO. */
+    private String dummy;
+
+    @Override
+    public String mapsetName() {
+        return MAPSET;
+    }
+
+    @Override
+    public String mapName() {
+        return MAP;
+    }
+
+    @Override
+    public List<ScreenField> screenLayout() {
+        return LAYOUT;
+    }
+
+    @Override
+    public Map<String, String> screenValues() {
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("COMPANY", company);
+        values.put("ACTION", action);
+        values.put("MESSAGE", message);
+        values.put("DUMMY", dummy);
+        return values;
+    }
+
+    /** A view model from posted form values (keys as `screenValues` writes them). */
+    public static Bnk1meScreen fromValues(Map<String, String> values) {
+        Bnk1meScreen screen = new Bnk1meScreen();
+        screen.setCompany(values.get("COMPANY"));
+        screen.setAction(values.get("ACTION"));
+        screen.setMessage(values.get("MESSAGE"));
+        screen.setDummy(values.get("DUMMY"));
+        return screen;
+    }
+}

@@ -1,0 +1,178 @@
+[
+  {
+    "job": "ZDEALLC",
+    "file": "JCL/ALLOCATE.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IEFBR14)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "DELETE",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "ALLOCAT",
+        "program": "IEFBR14"
+      }
+    ]
+  },
+  {
+    "job": "WAZIASMA",
+    "file": "JCL/ASMALLOC.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IEFBR14)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "DELETE",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "ALLOCAT",
+        "program": "IEFBR14"
+      }
+    ]
+  },
+  {
+    "job": "IBMUSER",
+    "file": "JCL/INCLUDE.jcl",
+    "kind": "build",
+    "reason": "builds / installs (IGYCRCTL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "STEP1.CMPLSAM2",
+        "program": "IGYCRCTL"
+      }
+    ]
+  },
+  {
+    "job": "ZDEPLIA",
+    "file": "JCL/PLIALLOC.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IEFBR14)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "DELETE",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "ALLOCAT",
+        "program": "IEFBR14"
+      }
+    ]
+  },
+  {
+    "job": "ZDEALLC",
+    "file": "JCL/REXALLOC.jcl",
+    "kind": "utility",
+    "reason": "data utilities only (IEFBR14)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "DELETE",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "ALLOCAT",
+        "program": "IEFBR14"
+      }
+    ]
+  },
+  {
+    "job": "ZDERUN",
+    "file": "JCL/RUN.jcl",
+    "kind": "application",
+    "reason": "runs SAM1",
+    "generated": "ZderunJobConfig",
+    "spring_job": "ZDERUN",
+    "steps": [
+      {
+        "step": "CMPLSAM2",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "CMPLSAM1",
+        "program": "IGYCRCTL"
+      },
+      {
+        "step": "LINKSAM2",
+        "program": "IEWL"
+      },
+      {
+        "step": "LINKSAM1",
+        "program": "IEWL"
+      },
+      {
+        "step": "DELETE",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "SAM1",
+        "program": "SAM1"
+      }
+    ]
+  },
+  {
+    "job": "WAZIASM1",
+    "file": "JCL/RUNASAM1.jcl",
+    "kind": "build",
+    "reason": "tooling (ASAM1, ASMA90, IEFBR14, IEWL)",
+    "generated": null,
+    "spring_job": null,
+    "steps": [
+      {
+        "step": "DELETE",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "ASM1",
+        "program": "ASMA90"
+      },
+      {
+        "step": "LKED",
+        "program": "IEWL"
+      },
+      {
+        "step": "EXECUTE",
+        "program": "ASAM1"
+      }
+    ]
+  },
+  {
+    "job": "ZDEPSM1",
+    "file": "JCL/RUNPSAM1.jcl",
+    "kind": "application",
+    "reason": "runs PSAM1",
+    "generated": "Zdepsm1JobConfig",
+    "spring_job": "ZDEPSM1",
+    "steps": [
+      {
+        "step": "DELETE",
+        "program": "IEFBR14"
+      },
+      {
+        "step": "CMPPSAM2",
+        "program": "IBMZPLI"
+      },
+      {
+        "step": "CMPPSAM1",
+        "program": "IBMZPLI"
+      },
+      {
+        "step": "LNKPSAM1",
+        "program": "IEWL"
+      },
+      {
+        "step": "RUNPSAM1",
+        "program": "PSAM1"
+      }
+    ]
+  }
+]

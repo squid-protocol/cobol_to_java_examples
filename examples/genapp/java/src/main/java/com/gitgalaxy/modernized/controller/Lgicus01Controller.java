@@ -1,0 +1,29 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.dto.contract.Lgtestc1CommArea;
+import com.gitgalaxy.modernized.service.Lgicus01Service;
+
+/**
+ * CICS program LGICUS01 (base/src/lgicus01.cbl), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * COMMAREA: COMM-AREA (base/src/lgtestc1.cbl, 32500 bytes) -> Lgtestc1CommArea.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/lgicus01")
+@RequiredArgsConstructor
+public class Lgicus01Controller {
+
+    private final Lgicus01Service lgicus01Service;
+
+    /** Program-to-program entry: LINK at base/src/lgtestc1.cbl:89, LINK at base/src/lgtestc1.cbl:151. */
+    @PostMapping("/link")
+    public ResponseEntity<Lgtestc1CommArea> link(@RequestBody Lgtestc1CommArea request) {
+        return ResponseEntity.ok(lgicus01Service.handleLink(request));
+    }
+
+}

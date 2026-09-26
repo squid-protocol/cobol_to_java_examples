@@ -1,0 +1,66 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.exception.*;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Screens (#3619): none resolved.
+ * TODO: RECEIVE MAP S001011 (mapset S001I93) at src/GML/R001I902.pli:98: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001011 (mapset S001I93) at src/GML/R001I902.pli:132: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001012 (mapset S001I93) at src/GML/R001I902.pli:138: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001011 (mapset S001I93) at src/GML/R001I902.pli:154: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001011 (mapset S001I93) at src/GML/R001I902.pli:174: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001I09 (mapset S001I93) at src/GML/R001I902.pli:197: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001012 (mapset S001I93) at src/GML/R001I902.pli:206: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001011 (mapset S001I93) at src/GML/R001I902.pli:216: no single BMS source defines it (candidates: none in the repository)
+ * TODO: SEND MAP S001012 (mapset S001I93) at src/GML/R001I902.pli:229: no single BMS source defines it (candidates: none in the repository)
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class SrcGmlR001i902Service {
+
+    private static final Logger log = LoggerFactory.getLogger(SrcGmlR001i902Service.class);
+
+    private final ObjectProvider<SrcGmlR001i904Service> srcGmlR001i904Service;
+
+    public void executeSrcGmlR001i902(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for src__GML__R001I902");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleLink() {
+        log.info("SrcGmlR001i902: handleLink");
+    }
+
+    /** EXEC CICS XCTL PROGRAM(R001I904) at src/GML/R001I902.pli:188. XCTL transfers control: nothing after it runs in the caller.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    public void xctlSrcGmlR001i904() {
+        srcGmlR001i904Service.getObject().handleLink();
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R001I902.pli:93 (paragraph R001I92) routes ERROR to FEILBEH.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionErrorL93(CicsConditionException e) {
+        log.info("HANDLE CONDITION ERROR LABEL FEILBEH at line 93", e);
+        // TODO: port paragraph FEILBEH's logic
+    }
+
+    /**
+     * EXEC CICS HANDLE CONDITION at src/GML/R001I902.pli:109 (paragraph R001I92) routes NOTFND to IKKEFUNNET.
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     */
+    public void onConditionNotfndL109(CicsConditionException e) {
+        log.info("HANDLE CONDITION NOTFND LABEL IKKEFUNNET at line 109", e);
+        // TODO: port paragraph IKKEFUNNET's logic
+    }
+
+}

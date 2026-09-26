@@ -1,0 +1,29 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.dto.contract.SrcR001i501KomOmr;
+import com.gitgalaxy.modernized.service.SrcR0013301Service;
+
+/**
+ * CICS program R0013301 (src/R0013301.pli), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * COMMAREA: KOM_OMR (src/R001I501.pli, 67 bytes) -> SrcR001i501KomOmr.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/src-r0013301")
+@RequiredArgsConstructor
+public class SrcR0013301Controller {
+
+    private final SrcR0013301Service srcR0013301Service;
+
+    /** Program-to-program entry: LINK at src/R0010480.pli:3189, LINK at src/R0011520.pli:719, LINK at src/R0013001.pli:215, LINK at src/R0013001.pli:866, LINK at src/R0013501.pli:89, LINK at src/R0013520.pli:466, LINK at src/R0013601.pli:73, LINK at src/R001I501.pli:2052. */
+    @PostMapping("/link")
+    public ResponseEntity<SrcR001i501KomOmr> link(@RequestBody SrcR001i501KomOmr request) {
+        return ResponseEntity.ok(srcR0013301Service.handleLink(request));
+    }
+
+}

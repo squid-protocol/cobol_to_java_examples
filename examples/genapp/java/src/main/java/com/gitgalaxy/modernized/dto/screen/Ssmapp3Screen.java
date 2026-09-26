@@ -1,0 +1,152 @@
+package com.gitgalaxy.modernized.dto.screen;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * BMS map SSMAPP3 of mapset SSMAP (base/src/ssmap.bms): the screen as a view model (#3619).
+ * SEND at base/src/lgtestp3.cbl:45, base/src/lgtestp3.cbl:86, base/src/lgtestp3.cbl:119, base/src/lgtestp3.cbl:149, base/src/lgtestp3.cbl:175, base/src/lgtestp3.cbl:209, base/src/lgtestp3.cbl:223, base/src/lgtestp3.cbl:257, base/src/lgtestp3.cbl:290; RECEIVE at base/src/lgtestp3.cbl:59, base/src/lgtestp3.cbl:179.
+ * One property per named field (symbolic map SSMAPP3I / SSMAPP3O); LAYOUT is every field in
+ * screen order, labels included. BMS screen fields field testing: open (3 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class Ssmapp3Screen implements ScreenModel {
+
+    public static final String MAPSET = "SSMAP";
+    public static final String MAP = "SSMAPP3";
+    public static final List<ScreenField> LAYOUT = List.of(
+            new ScreenField(null, 1, 1, 4, false, false, true, false, false, "SSP3", null, 1),
+            new ScreenField(null, 1, 12, 40, false, false, true, false, false, "General Insurance House Policy Menu ", null, 1),
+            new ScreenField(null, 4, 8, 18, false, false, false, false, false, "1. Policy Inquiry ", null, 1),
+            new ScreenField(null, 5, 8, 16, false, false, false, false, false, "2. Policy Add     ", null, 1),
+            new ScreenField(null, 6, 8, 16, false, false, false, false, false, "3. Policy Delete  ", null, 1),
+            new ScreenField(null, 7, 8, 16, false, false, false, false, false, "4. Policy Update  ", null, 1),
+            new ScreenField(null, 4, 30, 15, false, false, false, false, false, "Policy Number ", null, 1),
+            new ScreenField("ENP3PNO", 4, 50, 10, true, false, false, false, true, null, null, 1),
+            new ScreenField(null, 4, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 5, 30, 16, false, false, false, false, false, "Cust Number ", null, 1),
+            new ScreenField("ENP3CNO", 5, 50, 10, true, false, false, false, true, null, null, 1),
+            new ScreenField(null, 5, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 6, 30, 16, false, false, false, false, false, "Issue date ", null, 1),
+            new ScreenField("ENP3IDA", 6, 50, 10, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 6, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 6, 63, 12, false, false, false, false, false, "(yyyy-mm-dd)", null, 1),
+            new ScreenField(null, 7, 30, 16, false, false, false, false, false, "Expiry date ", null, 1),
+            new ScreenField("ENP3EDA", 7, 50, 10, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 7, 61, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 7, 63, 12, false, false, false, false, false, "(yyyy-mm-dd)", null, 1),
+            new ScreenField(null, 8, 30, 16, false, false, false, false, false, "Property Type  ", null, 1),
+            new ScreenField("ENP3TYP", 8, 50, 15, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 8, 66, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 9, 30, 16, false, false, false, false, false, "Bedrooms  ", null, 1),
+            new ScreenField("ENP3BED", 9, 50, 3, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 9, 54, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 10, 30, 16, false, false, false, false, false, "House Value ", null, 1),
+            new ScreenField("ENP3VAL", 10, 50, 8, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 10, 59, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 11, 30, 16, false, false, false, false, false, "House Name   ", null, 1),
+            new ScreenField("ENP3HNM", 11, 50, 20, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 11, 71, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 12, 30, 16, false, false, false, false, false, "House Number ", null, 1),
+            new ScreenField("ENP3HNO", 12, 50, 4, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 12, 55, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 13, 30, 16, false, false, false, false, false, "Postcode     ", null, 1),
+            new ScreenField("ENP3HPC", 13, 50, 8, true, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 13, 59, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField(null, 22, 8, 14, false, false, false, false, false, "Select Option ", null, 1),
+            new ScreenField("ENP3OPT", 22, 24, 1, true, true, false, false, false, " ", null, 1),
+            new ScreenField(null, 22, 26, 1, false, false, false, false, false, " ", null, 1),
+            new ScreenField("ERP3FLD", 24, 8, 40, false, false, true, false, false, " ", null, 1));
+
+    /** ENP3PNO: (4,50), 10 bytes, ATTRB=FSET,IC,NORM,UNPROT -- base/src/ssmap.bms:362. Symbolic map ENP3PNOI, ENP3PNOO. */
+    private String enp3pno;
+
+    /** ENP3CNO: (5,50), 10 bytes, ATTRB=FSET,IC,NORM,UNPROT -- base/src/ssmap.bms:369. Symbolic map ENP3CNOI, ENP3CNOO. */
+    private String enp3cno;
+
+    /** ENP3IDA: (6,50), 10 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:376. Symbolic map ENP3IDAI, ENP3IDAO. */
+    private String enp3ida;
+
+    /** ENP3EDA: (7,50), 10 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:385. Symbolic map ENP3EDAI, ENP3EDAO. */
+    private String enp3eda;
+
+    /** ENP3TYP: (8,50), 15 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:394. Symbolic map ENP3TYPI, ENP3TYPO. */
+    private String enp3typ;
+
+    /** ENP3BED: (9,50), 3 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:401. Symbolic map ENP3BEDI, ENP3BEDO. */
+    private String enp3bed;
+
+    /** ENP3VAL: (10,50), 8 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:408. Symbolic map ENP3VALI, ENP3VALO. */
+    private String enp3val;
+
+    /** ENP3HNM: (11,50), 20 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:415. Symbolic map ENP3HNMI, ENP3HNMO. */
+    private String enp3hnm;
+
+    /** ENP3HNO: (12,50), 4 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:422. Symbolic map ENP3HNOI, ENP3HNOO. */
+    private String enp3hno;
+
+    /** ENP3HPC: (13,50), 8 bytes, ATTRB=FSET,NORM,UNPROT -- base/src/ssmap.bms:429. Symbolic map ENP3HPCI, ENP3HPCO. */
+    private String enp3hpc;
+
+    /** ENP3OPT: (22,24), 1 bytes, ATTRB=FSET,NORM,NUM,UNPROT -- base/src/ssmap.bms:437. Symbolic map ENP3OPTI, ENP3OPTO. */
+    private String enp3opt;
+
+    /** ERP3FLD: (24,8), 40 bytes, ATTRB=ASKIP,BRT,PROT -- base/src/ssmap.bms:442. Symbolic map ERP3FLDI, ERP3FLDO. */
+    private String erp3fld;
+
+    @Override
+    public String mapsetName() {
+        return MAPSET;
+    }
+
+    @Override
+    public String mapName() {
+        return MAP;
+    }
+
+    @Override
+    public List<ScreenField> screenLayout() {
+        return LAYOUT;
+    }
+
+    @Override
+    public Map<String, String> screenValues() {
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("ENP3PNO", enp3pno);
+        values.put("ENP3CNO", enp3cno);
+        values.put("ENP3IDA", enp3ida);
+        values.put("ENP3EDA", enp3eda);
+        values.put("ENP3TYP", enp3typ);
+        values.put("ENP3BED", enp3bed);
+        values.put("ENP3VAL", enp3val);
+        values.put("ENP3HNM", enp3hnm);
+        values.put("ENP3HNO", enp3hno);
+        values.put("ENP3HPC", enp3hpc);
+        values.put("ENP3OPT", enp3opt);
+        values.put("ERP3FLD", erp3fld);
+        return values;
+    }
+
+    /** A view model from posted form values (keys as `screenValues` writes them). */
+    public static Ssmapp3Screen fromValues(Map<String, String> values) {
+        Ssmapp3Screen screen = new Ssmapp3Screen();
+        screen.setEnp3pno(values.get("ENP3PNO"));
+        screen.setEnp3cno(values.get("ENP3CNO"));
+        screen.setEnp3ida(values.get("ENP3IDA"));
+        screen.setEnp3eda(values.get("ENP3EDA"));
+        screen.setEnp3typ(values.get("ENP3TYP"));
+        screen.setEnp3bed(values.get("ENP3BED"));
+        screen.setEnp3val(values.get("ENP3VAL"));
+        screen.setEnp3hnm(values.get("ENP3HNM"));
+        screen.setEnp3hno(values.get("ENP3HNO"));
+        screen.setEnp3hpc(values.get("ENP3HPC"));
+        screen.setEnp3opt(values.get("ENP3OPT"));
+        screen.setErp3fld(values.get("ERP3FLD"));
+        return screen;
+    }
+}

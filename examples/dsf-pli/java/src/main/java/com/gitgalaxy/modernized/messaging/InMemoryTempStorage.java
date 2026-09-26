@@ -1,0 +1,63 @@
+package com.gitgalaxy.modernized.messaging;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
+import org.springframework.stereotype.Component;
+
+/**
+ * Temporary storage kept in this application's memory (#3620): shared by every program in it, as one
+ * CICS region shares its TS queues. Behind several instances, replace it with a shared store (Redis,
+ * a table) implementing TempStorage.
+ */
+@Component
+public class InMemoryTempStorage implements TempStorage {
+
+    private final Map<String, List<String>> queues = new ConcurrentHashMap<>();
+    private final Map<String, Integer> cursors = new ConcurrentHashMap<>();
+
+    @Override
+    public synchronized int writeItem(String queue, String record) {
+        List<String> items = queues.computeIfAbsent(queue, q -> new ArrayList<>());
+        items.add(record);
+        return items.size();
+    }
+
+    @Override
+    public synchronized void rewriteItem(String queue, int item, String record) {
+        List<String> items = queues.get(queue);
+        if (items == null || item < 1 || item > items.size()) {
+            throw new IllegalArgumentException("TS " + queue + " has no item " + item + " (ITEMERR)");
+        }
+        items.set(item - 1, record);
+    }
+
+    @Override
+    public synchronized Optional<String> readItem(String queue, int item) {
+        List<String> items = queues.get(queue);
+        if (items == null || item < 1 || item > items.size()) {
+            return Optional.empty();
+        }
+        cursors.put(queue, item);
+        return Optional.of(items.get(item - 1));
+    }
+
+    @Override
+    public synchronized Optional<String> readNext(String queue) {
+        return readItem(queue, cursors.getOrDefault(queue, 0) + 1);
+    }
+
+    @Override
+    public synchronized void delete(String queue) {
+        queues.remove(queue);
+        cursors.remove(queue);
+    }
+
+    @Override
+    public synchronized int numItems(String queue) {
+        List<String> items = queues.get(queue);
+        return items == null ? 0 : items.size();
+    }
+}

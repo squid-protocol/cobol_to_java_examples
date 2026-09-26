@@ -1,0 +1,75 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.entity.vsam.AccountRecord;
+import com.gitgalaxy.modernized.messaging.MessageQueue;
+import com.gitgalaxy.modernized.repository.vsam.AccountRecordRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * Response handling (field testing: field-tested (6 public / 0 private estates)):
+ * RETRIEVE at line 191 tests NORMAL
+ * READ at line 396 tests NORMAL,NOTFND
+ */
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class Coacct01Service {
+
+    private static final Logger log = LoggerFactory.getLogger(Coacct01Service.class);
+
+    private final AccountRecordRepository accountRecordRepository;
+    private final MessageQueue messageQueue;
+
+    public void executeCoacct01(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for COACCT01");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** A CICS transaction entered the program. TODO: [AI AGENT] implement from the program's business rules. */
+    public void handleTransaction(String transid) {
+        log.info("Coacct01: handleTransaction");
+    }
+
+    /** AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS as CICS file ACCTDAT at app/app-vsam-mq/cbl/COACCT01.cbl:396; VSAM defines field testing: open (3 public / 0 private estates). */
+    public Optional<AccountRecord> readAcctdat(Long key) {
+        return accountRecordRepository.findById(key);
+    }
+
+    /**
+     * EXEC CICS SYNCPOINT at app/app-vsam-mq/cbl/COACCT01.cbl:326 (paragraph 4000-MAIN-PROCESS).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * commits the work so far and starts a new unit of work; in Spring, split the work at this point into separate @Transactional calls (TransactionTemplate).
+     */
+    public void commitPointL326() {
+        log.info("EXEC CICS SYNCPOINT at line 326");
+        // TODO: [AI AGENT] split the transaction here
+    }
+
+    /** MQPUT to queue CARD.DEMO.REPLY.ACCT (move) at app/app-vsam-mq/cbl/COACCT01.cbl:479 (#3620).
+     *  MQ calls field testing: open (1 public / 0 private estates). */
+    protected void mqputCardDemoReplyAcctL479(String message) {
+        messageQueue.send("CARD.DEMO.REPLY.ACCT", message);
+    }
+
+    /** MQPUT to queue CARD.DEMO.ERROR (move) at app/app-vsam-mq/cbl/COACCT01.cbl:516 (#3620).
+     *  MQ calls field testing: open (1 public / 0 private estates). */
+    protected void mqputCardDemoErrorL516(String message) {
+        messageQueue.send("CARD.DEMO.ERROR", message);
+    }
+
+    /** The MQ request this triggered program serves (#3620): its MQGET at line 352 reads the
+     *  queue its trigger message names (INPUT-QUEUE-NAME), started by CDRA; call it directly (in-memory adapter: no listener).
+     *  `replyTo` is the request's reply-to queue.
+     *  TODO: port the logic that handles the MQ request, and reply through this program's MQPUT helpers.
+     *  MQ calls field testing: open (1 public / 0 private estates). */
+    public void handleMqMessage(String request, String replyTo) {
+    }
+
+}

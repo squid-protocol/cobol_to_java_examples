@@ -1,0 +1,174 @@
+package com.gitgalaxy.modernized.dto.screen;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * BMS map BNK1DC of mapset BNK1DCM (src/base/bms_src/BNK1DCM.bms): the screen as a view model (#3619).
+ * SEND at src/base/cobol_src/BNK1DCS.cbl:1410, src/base/cobol_src/BNK1DCS.cbl:1487, src/base/cobol_src/BNK1DCS.cbl:1564; RECEIVE at src/base/cobol_src/BNK1DCS.cbl:597.
+ * One property per named field (symbolic map BNK1DCI / BNK1DCO); LAYOUT is every field in
+ * screen order, labels included. BMS screen fields field testing: open (3 public / 0 private estates).
+ */
+@Data
+@NoArgsConstructor
+public class Bnk1dcScreen implements ScreenModel {
+
+    public static final String MAPSET = "BNK1DCM";
+    public static final String MAP = "BNK1DC";
+    public static final List<ScreenField> LAYOUT = List.of(
+            new ScreenField(null, 1, 1, 7, false, false, false, false, false, "BNK1DC ", "BLUE", 1),
+            new ScreenField("COMPANY", 1, 16, 52, false, false, false, false, false, "CICS Bank Sample Application - Display Customer.", "RED", 1),
+            new ScreenField(null, 3, 1, 44, false, false, false, false, false, "Provide a CUSTOMER number. Then press Enter.", "TURQUOISE", 1),
+            new ScreenField(null, 5, 1, 16, false, false, false, false, false, "CUSTOMER NUMBER", "TURQUOISE", 1),
+            new ScreenField("CUSTNO", 5, 17, 10, false, false, false, false, true, null, "GREEN", 1),
+            new ScreenField(null, 5, 28, 1, false, false, false, false, false, null, null, 1),
+            new ScreenField(null, 7, 1, 16, false, false, false, false, false, "Sort Code       ", "NEUTRAL", 1),
+            new ScreenField("SORTC", 7, 18, 6, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 8, 1, 16, false, false, false, false, false, "Customer Number ", "NEUTRAL", 1),
+            new ScreenField("CUSTNO2", 8, 18, 10, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 9, 1, 16, false, false, false, false, false, "Customer Name   ", "NEUTRAL", 1),
+            new ScreenField("CUSTNAM", 9, 18, 60, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 9, 79, 0, false, false, false, false, false, null, "GREEN", 1),
+            new ScreenField(null, 10, 1, 16, false, false, false, false, false, "Customer Address", "NEUTRAL", 1),
+            new ScreenField("CUSTAD1", 10, 18, 60, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 10, 79, 0, false, false, false, false, false, null, "GREEN", 1),
+            new ScreenField(null, 11, 1, 1, false, false, false, false, false, " ", "NEUTRAL", 1),
+            new ScreenField("CUSTAD2", 11, 18, 60, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 11, 79, 0, false, false, false, false, false, null, "GREEN", 1),
+            new ScreenField(null, 12, 1, 1, false, false, false, false, false, " ", "NEUTRAL", 1),
+            new ScreenField("CUSTAD3", 12, 18, 40, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 12, 59, 0, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 13, 1, 16, false, false, false, false, false, "Customer D.O.B.", "NEUTRAL", 1),
+            new ScreenField("DOBDD", 13, 18, 2, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 13, 21, 1, false, false, false, false, false, "/", "NEUTRAL", 1),
+            new ScreenField("DOBMM", 13, 23, 2, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 13, 26, 1, false, false, false, false, false, "/", "NEUTRAL", 1),
+            new ScreenField("DOBYY", 13, 28, 4, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 14, 1, 17, false, false, false, false, false, "Credit Score    ", "NEUTRAL", 1),
+            new ScreenField("CREDSC", 14, 18, 3, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 15, 1, 17, false, false, false, false, false, "CS Review Date  ", "NEUTRAL", 1),
+            new ScreenField("SCRDTDD", 15, 18, 2, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 15, 21, 1, false, false, false, false, false, "/", "NEUTRAL", 1),
+            new ScreenField("SCRDTMM", 15, 23, 2, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField(null, 15, 26, 1, false, false, false, false, false, "/", "NEUTRAL", 1),
+            new ScreenField("SCRDTYY", 15, 28, 4, false, false, false, false, false, null, "NEUTRAL", 1),
+            new ScreenField("MESSAGE", 23, 1, 79, false, false, true, false, false, null, "YELLOW", 1),
+            new ScreenField(null, 24, 1, 20, false, false, false, false, false, "F3=Exit   F12=Cancel", "BLUE", 1),
+            new ScreenField("DUMMY", 24, 79, 1, false, false, false, true, false, " ", null, 1));
+
+    /** COMPANY: (1,16), 52 bytes, ATTRB=NORM,PROT -- src/base/bms_src/BNK1DCM.bms:29. Symbolic map COMPANYI, COMPANYO. */
+    private String company;
+
+    /** CUSTNO: (5,17), 10 bytes, ATTRB=IC,NORM -- src/base/bms_src/BNK1DCM.bms:37. Symbolic map CUSTNOI, CUSTNOO. */
+    private String custno;
+
+    /** SORTC: (7,18), 6 bytes, ATTRB=ASKIP,FSET,NORM,PROT -- src/base/bms_src/BNK1DCM.bms:42. Symbolic map SORTCI, SORTCO. */
+    private String sortc;
+
+    /** CUSTNO2: (8,18), 10 bytes, ATTRB=ASKIP,FSET,NORM,PROT -- src/base/bms_src/BNK1DCM.bms:46. Symbolic map CUSTNO2I, CUSTNO2O. */
+    private String custno2;
+
+    /** CUSTNAM: (9,18), 60 bytes, ATTRB=ASKIP,FSET,NORM,PROT -- src/base/bms_src/BNK1DCM.bms:50. Symbolic map CUSTNAMI, CUSTNAMO. */
+    private String custnam;
+
+    /** CUSTAD1: (10,18), 60 bytes, ATTRB=ASKIP,FSET,NORM,PROT -- src/base/bms_src/BNK1DCM.bms:56. Symbolic map CUSTAD1I, CUSTAD1O. */
+    private String custad1;
+
+    /** CUSTAD2: (11,18), 60 bytes, ATTRB=ASKIP,FSET,NORM,PROT -- src/base/bms_src/BNK1DCM.bms:62. Symbolic map CUSTAD2I, CUSTAD2O. */
+    private String custad2;
+
+    /** CUSTAD3: (12,18), 40 bytes, ATTRB=ASKIP,FSET,NORM,PROT -- src/base/bms_src/BNK1DCM.bms:68. Symbolic map CUSTAD3I, CUSTAD3O. */
+    private String custad3;
+
+    /** DOBDD: (13,18), 2 bytes, ATTRB=ASKIP,FSET,NORM,PROT -- src/base/bms_src/BNK1DCM.bms:74. Symbolic map DOBDDI, DOBDDO. */
+    private String dobdd;
+
+    /** DOBMM: (13,23), 2 bytes, ATTRB=ASKIP,FSET,NORM,PROT -- src/base/bms_src/BNK1DCM.bms:78. Symbolic map DOBMMI, DOBMMO. */
+    private String dobmm;
+
+    /** DOBYY: (13,28), 4 bytes, ATTRB=ASKIP,FSET,NORM,PROT -- src/base/bms_src/BNK1DCM.bms:82. Symbolic map DOBYYI, DOBYYO. */
+    private String dobyy;
+
+    /** CREDSC: (14,18), 3 bytes, ATTRB=ASKIP,FSET,NORM,PROT -- src/base/bms_src/BNK1DCM.bms:86. Symbolic map CREDSCI, CREDSCO. */
+    private String credsc;
+
+    /** SCRDTDD: (15,18), 2 bytes, ATTRB=ASKIP,FSET,NORM,PROT -- src/base/bms_src/BNK1DCM.bms:90. Symbolic map SCRDTDDI, SCRDTDDO. */
+    private String scrdtdd;
+
+    /** SCRDTMM: (15,23), 2 bytes, ATTRB=ASKIP,FSET,NORM,PROT -- src/base/bms_src/BNK1DCM.bms:94. Symbolic map SCRDTMMI, SCRDTMMO. */
+    private String scrdtmm;
+
+    /** SCRDTYY: (15,28), 4 bytes, ATTRB=ASKIP,FSET,NORM,PROT -- src/base/bms_src/BNK1DCM.bms:98. Symbolic map SCRDTYYI, SCRDTYYO. */
+    private String scrdtyy;
+
+    /** MESSAGE: (23,1), 79 bytes, ATTRB=ASKIP,BRT,PROT -- src/base/bms_src/BNK1DCM.bms:101. Symbolic map MESSAGEI, MESSAGEO. */
+    private String message;
+
+    /** DUMMY: (24,79), 1 bytes, ATTRB=ASKIP,DRK,FSET,PROT -- src/base/bms_src/BNK1DCM.bms:105. Symbolic map DUMMYI, DUMMYO. */
+    private String dummy;
+
+    @Override
+    public String mapsetName() {
+        return MAPSET;
+    }
+
+    @Override
+    public String mapName() {
+        return MAP;
+    }
+
+    @Override
+    public List<ScreenField> screenLayout() {
+        return LAYOUT;
+    }
+
+    @Override
+    public Map<String, String> screenValues() {
+        Map<String, String> values = new LinkedHashMap<>();
+        values.put("COMPANY", company);
+        values.put("CUSTNO", custno);
+        values.put("SORTC", sortc);
+        values.put("CUSTNO2", custno2);
+        values.put("CUSTNAM", custnam);
+        values.put("CUSTAD1", custad1);
+        values.put("CUSTAD2", custad2);
+        values.put("CUSTAD3", custad3);
+        values.put("DOBDD", dobdd);
+        values.put("DOBMM", dobmm);
+        values.put("DOBYY", dobyy);
+        values.put("CREDSC", credsc);
+        values.put("SCRDTDD", scrdtdd);
+        values.put("SCRDTMM", scrdtmm);
+        values.put("SCRDTYY", scrdtyy);
+        values.put("MESSAGE", message);
+        values.put("DUMMY", dummy);
+        return values;
+    }
+
+    /** A view model from posted form values (keys as `screenValues` writes them). */
+    public static Bnk1dcScreen fromValues(Map<String, String> values) {
+        Bnk1dcScreen screen = new Bnk1dcScreen();
+        screen.setCompany(values.get("COMPANY"));
+        screen.setCustno(values.get("CUSTNO"));
+        screen.setSortc(values.get("SORTC"));
+        screen.setCustno2(values.get("CUSTNO2"));
+        screen.setCustnam(values.get("CUSTNAM"));
+        screen.setCustad1(values.get("CUSTAD1"));
+        screen.setCustad2(values.get("CUSTAD2"));
+        screen.setCustad3(values.get("CUSTAD3"));
+        screen.setDobdd(values.get("DOBDD"));
+        screen.setDobmm(values.get("DOBMM"));
+        screen.setDobyy(values.get("DOBYY"));
+        screen.setCredsc(values.get("CREDSC"));
+        screen.setScrdtdd(values.get("SCRDTDD"));
+        screen.setScrdtmm(values.get("SCRDTMM"));
+        screen.setScrdtyy(values.get("SCRDTYY"));
+        screen.setMessage(values.get("MESSAGE"));
+        screen.setDummy(values.get("DUMMY"));
+        return screen;
+    }
+}

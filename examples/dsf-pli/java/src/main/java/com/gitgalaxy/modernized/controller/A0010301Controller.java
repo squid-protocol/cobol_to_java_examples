@@ -1,0 +1,29 @@
+package com.gitgalaxy.modernized.controller;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import com.gitgalaxy.modernized.service.A0010301Service;
+
+/**
+ * CICS program A0010301 (src/A0010301.pli), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * TODO: no COMMAREA layout: no structure parameter, or structure BASED on the main procedure's parameter COMMAREA_PEKER, is declared in the program or its %INCLUDE members; %INCLUDE members not in the repository: P0019906, P0019908, P0019910, P0019912, S00101, S0010R, S00115, S00118, S001A0, S001I1, S001I4, S001S1, S001S3, S001V0; no resolved caller passes a COMMAREA.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields field-tested (6 public / 0 private estates).
+ */
+@RestController
+@RequestMapping("/api/v1/a0010301")
+@RequiredArgsConstructor
+public class A0010301Controller {
+
+    private final A0010301Service a0010301Service;
+
+    /** Program-to-program entry: no CSD transaction enters this program. */
+    @PostMapping("/link")
+    public ResponseEntity<Void> link() {
+        a0010301Service.handleLink();
+        return ResponseEntity.noContent().build();
+    }
+
+}

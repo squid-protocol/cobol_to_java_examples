@@ -1,0 +1,70 @@
+package com.gitgalaxy.modernized.service;
+
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.client.Dor1RemoteClient;
+import com.gitgalaxy.modernized.dto.contract.Lgacdb01CaErrorMsg;
+import com.gitgalaxy.modernized.dto.contract.Lgicus01Dfhcommarea;
+import com.gitgalaxy.modernized.dto.contract.Lgtestc1CommArea;
+import com.gitgalaxy.modernized.exception.*;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+@Transactional
+@RequiredArgsConstructor
+public class Lgicus01Service {
+
+    private static final Logger log = LoggerFactory.getLogger(Lgicus01Service.class);
+
+    private final Dor1RemoteClient dor1RemoteClient;
+    private final ObjectProvider<LgstsqService> lgstsqService;
+    private final ObjectProvider<Lgicdb01Service> lgicdb01Service;
+
+    public void executeLgicus01(/* Parameters mapped from Controller */) {
+        log.info("Executing modernized business logic for lgicus01");
+        // TODO: [AI AGENT] Implement extracted business rules here.
+    }
+
+    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    public Lgtestc1CommArea handleLink(Lgtestc1CommArea request) {
+        log.info("Lgicus01: handleLink");
+        return request;
+    }
+
+    /** EXEC CICS LINK PROGRAM(LGICDB01) at 122: the CSD routes it to region DOR1 (distributed program link).
+     *  Remote calls field testing: open (5 public / 0 private estates). */
+    public Lgicus01Dfhcommarea remoteLgicdb01L122(Lgicus01Dfhcommarea request) {
+        return dor1RemoteClient.linkLgicdb01(request);
+    }
+
+    /** EXEC CICS LINK PROGRAM(LGSTSQ) at base/src/lgicus01.cbl:146, base/src/lgicus01.cbl:154, base/src/lgicus01.cbl:160.
+     *  Call targets field testing: open (6 public / 0 private estates). */
+    // TODO: this site passes ERROR-MSG; LGSTSQ receives CA-ERROR-MSG (base/src/lgacdb01.cbl) -- map one layout onto the other
+    public Lgacdb01CaErrorMsg linkLgstsq(Lgacdb01CaErrorMsg request) {
+        return lgstsqService.getObject().handleLink(request);
+    }
+
+    /** LINK PROGRAM(LGICDB01) at base/src/lgicus01.cbl:122: the target is data-driven. Candidates: LGICDB01 (value).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public Object dispatchLgicdb01L122(String program, Object request) {
+        switch (program.trim().toUpperCase()) {
+            case "LGICDB01":
+                return lgicdb01Service.getObject().handleLink((Lgicus01Dfhcommarea) request);
+            default:
+                throw new IllegalArgumentException("LINK PROGRAM(LGICDB01) at base/src/lgicus01.cbl:122: no known target " + program);
+        }
+    }
+
+    /**
+     * EXEC CICS ABEND ABCODE(LGCA) at base/src/lgicus01.cbl:90 (paragraph paragraph).
+     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
+     * Note: resolved at run time if an identifier.
+     */
+    public void abendLgcaL90() {
+        throw new CicsAbendException("LGCA", "LGICUS01", "base/src/lgicus01.cbl:90");
+    }
+
+}
