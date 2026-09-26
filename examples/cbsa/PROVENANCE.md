@@ -6,7 +6,7 @@
   notice files are copied here unchanged (LICENSE, NOTICES), and every
   generated Java file opens with a notice naming the source, its commit and licence, and that it was
   modified in generation.
-- **Generator:** [GitGalaxy](https://github.com/squid-protocol/gitgalaxy) at commit [`695773d5a7a2`](https://github.com/squid-protocol/gitgalaxy/commit/695773d5a7a2d06311b764e89d713620083044a2).
+- **Generator:** [GitGalaxy](https://github.com/squid-protocol/gitgalaxy) at commit [`0c2e00183aeb`](https://github.com/squid-protocol/gitgalaxy/commit/0c2e00183aebfc87b66a1f75296920e474abf5c5).
 - **Commands** (from a GitGalaxy checkout at that commit, the corpus at that ref):
 
   ```
