@@ -11,9 +11,10 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.FeilStruc;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.dto.contract.R001o301InternKomOmr;
-import com.gitgalaxy.modernized.dto.contract.SrcGmlR001i101InternKomOmr;
+import com.gitgalaxy.modernized.dto.contract.SrcGmlR0019921FeilStruc;
+import com.gitgalaxy.modernized.dto.contract.SrcGmlR001i301InternKomOmr;
 import com.gitgalaxy.modernized.entity.vsam.OliRec;
 import com.gitgalaxy.modernized.exception.*;
 import com.gitgalaxy.modernized.repository.vsam.OliRecRepository;
@@ -57,43 +58,78 @@ public class R001o301Service {
     // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
     // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
 
-    public void executeR001o301(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for R001O301");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("R001o301: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on `request`, passed by reference -- what it changes, the caller sees. */
     public R001o301InternKomOmr handleLink(R001o301InternKomOmr request) {
         log.info("R001o301: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R001O301", request);
+        region.run(task, "R001O301", this::runTask);
         return request;
     }
 
+    /** #5053: handleLink with the raw bytes of the LINK's COMMAREA (passed by address: what the program
+     *  leaves there the caller sees); lastLinkBytes() then answers the bytes it left. */
+    public R001o301InternKomOmr handleLink(R001o301InternKomOmr request, byte[] area) {
+        log.info("R001o301: handleLink (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R001O301", request, area);
+        region.run(task, "R001O301", this::runTask);
+        byte[] left = task.linkAreaView();
+        lastLinkBytes = task.linkAreaTaken() && left != null ? java.util.Arrays.copyOf(left, left.length) : null;
+        return request;
+    }
+
+    // @facade-helper: the bytes the last byte-carrying handleLink's program left in the COMMAREA
+    private byte[] lastLinkBytes;
+
+    /** The bytes the last byte-carrying handleLink's program left in the LINK COMMAREA (a copy; null: it took
+     *  none -- its DTO is the COMMAREA). @facade-helper */
+    public byte[] lastLinkBytes() {
+        return lastLinkBytes == null ? null : java.util.Arrays.copyOf(lastLinkBytes, lastLinkBytes.length);
+    }
+
     /** EXEC CICS LINK PROGRAM(R0019921) at src/GML/R001O301.pli:2003.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public FeilStruc linkSrcGmlR0019921(FeilStruc request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcGmlR0019921FeilStruc linkSrcGmlR0019921(SrcGmlR0019921FeilStruc request) {
         return srcGmlR0019921Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS LINK PROGRAM(R001I601) at src/GML/R001O301.pli:384.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcGmlR001i601() {
         srcGmlR001i601Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R001I101) at src/GML/R001O301.pli:1964. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcGmlR001i101() {
         srcGmlR001i101Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R001I301) at src/GML/R001O301.pli:658. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public SrcGmlR001i101InternKomOmr xctlSrcGmlR001i301(SrcGmlR001i101InternKomOmr request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcGmlR001i301InternKomOmr xctlSrcGmlR001i301(SrcGmlR001i301InternKomOmr request) {
         return srcGmlR001i301Service.getObject().handleLink(request);
     }
 
     /** OLINNTE as CICS file OLINNTE at src/GML/R001O301.pli:1525; VSAM defines field testing: open (3 public / 0 private estates). */
     public OliRec writeOlinnte(OliRec record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<OliRec> onFile = oliRecRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file OLINNTE already holds the key of this record");
+        }
         return oliRecRepository.save(record);
     }
 
@@ -131,15 +167,6 @@ public class R001o301Service {
     public void onConditionDuprecL1524(CicsConditionException e) {
         log.info("HANDLE CONDITION DUPREC LABEL ALT_OK at line 1524", e);
         // TODO: port paragraph ALT_OK's logic
-    }
-
-    /**
-     * EXEC CICS HANDLE CONDITION at src/GML/R001O301.pli:1969 (paragraph F100_FINN_TKNR) routes ERROR to None.
-     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
-     */
-    public void onConditionErrorL1969(CicsConditionException e) {
-        log.info("HANDLE CONDITION ERROR LABEL None at line 1969", e);
-        // TODO: port paragraph None's logic
     }
 
     /**

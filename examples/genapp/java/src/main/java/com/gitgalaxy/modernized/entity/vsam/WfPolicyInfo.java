@@ -15,8 +15,8 @@ import java.util.List;
 
 /**
  * VSAM INDEXED <USRHLQ>.GENAPP.KSDSPOLY (base/cntl/adef121.jcl:40),
- * record WF-POLICY-INFO (base/src/lgapvs01.cbl, 64 bytes).
- * Key: WF-REQUEST-ID, WF-CUSTOMER-NUM, WF-POLICY-NUM together (offset 0, 21 bytes, from the programs' RIDFLD / RECORD KEY): the @EmbeddedId WfPolicyInfoKey.
+ * record WF-POLICY-INFO (base/src/lgapvs01.cbl, 64 bytes, RECORDSIZE 64).
+ * Key: WF-REQUEST-ID, WF-CUSTOMER-NUM, WF-POLICY-NUM together (offset 0, 21 bytes, from IDCAMS KEYS): the @EmbeddedId WfPolicyInfoKey.
  * CICS files: KSDSPOLY.
  * Generated from GitGalaxy's verified skeleton; VSAM defines field testing: open (3 public / 0 private estates).
  */
@@ -26,7 +26,7 @@ import java.util.List;
 @NoArgsConstructor
 public class WfPolicyInfo {
 
-    // WF-REQUEST-ID, WF-CUSTOMER-NUM, WF-POLICY-NUM together (offset 0, 21 bytes, from the programs' RIDFLD / RECORD KEY): the @EmbeddedId WfPolicyInfoKey
+    // WF-REQUEST-ID, WF-CUSTOMER-NUM, WF-POLICY-NUM together (offset 0, 21 bytes, from IDCAMS KEYS): the @EmbeddedId WfPolicyInfoKey
     @EmbeddedId
     private WfPolicyInfoKey id;
 
@@ -35,26 +35,52 @@ public class WfPolicyInfo {
     private String wfPolicyData;
 
 
+    /** #4875: the record bytes this entity was read from, kept beside the typed columns: a field whose
+     *  value is unchanged is written back as these bytes, so a value no column type holds (spaces in a
+     *  PIC 9, a non-preferred sign) and FILLER survive the round trip, as the VSAM record keeps them. */
+    @Column(name = "VSAM_RECORD", length = 64)
+    @lombok.Getter(lombok.AccessLevel.NONE)
+    @lombok.Setter(lombok.AccessLevel.NONE)
+    @lombok.EqualsAndHashCode.Exclude
+    @lombok.ToString.Exclude
+    private byte[] vsamRecord;
+
     /** #3624: this record from its fixed-width VSAM form (64 bytes, as REPRO unloads it), each
      *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
-     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+     *  transfer, IBM037 on z/OS). The bytes themselves are kept in vsamRecord (#4875). */
     public static WfPolicyInfo fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        if (rec.length < 64) {  // a WRITE ... LENGTH(n) short of the record: the rest is spaces
+            byte[] full = CobolRecords.blank(64, text);
+            System.arraycopy(rec, 0, full, 0, rec.length);
+            rec = full;
+        }
         WfPolicyInfo r = new WfPolicyInfo();
         r.id = new WfPolicyInfoKey();
         r.id.setWfRequestId(CobolRecords.text(rec, 0, 1, text));
         r.id.setWfCustomerNum(CobolRecords.text(rec, 1, 10, text));
         r.id.setWfPolicyNum(CobolRecords.text(rec, 11, 10, text));
         r.wfPolicyData = CobolRecords.text(rec, 21, 43, text);
+        r.vsamRecord = java.util.Arrays.copyOf(rec, 64);
         return r;
     }
 
-    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    /** #3624: the fixed-width VSAM record of this entity: the bytes it was read from (vsamRecord), each field
+     *  whose value changed since re-encoded; a new entity's FILLER as spaces. */
     public byte[] toRecord(java.nio.charset.Charset text) {
-        byte[] rec = CobolRecords.blank(64, text);
-        CobolRecords.putText(rec, 0, 1, id.getWfRequestId(), text);
-        CobolRecords.putText(rec, 1, 10, id.getWfCustomerNum(), text);
-        CobolRecords.putText(rec, 11, 10, id.getWfPolicyNum(), text);
-        CobolRecords.putText(rec, 21, 43, wfPolicyData, text);
+        byte[] read = vsamRecord != null && vsamRecord.length == 64 ? vsamRecord : null;
+        byte[] rec = read != null ? read.clone() : CobolRecords.blank(64, text);
+        if (read == null || !java.util.Objects.equals(id.getWfRequestId(), CobolRecords.text(read, 0, 1, text))) {
+            CobolRecords.putText(rec, 0, 1, id.getWfRequestId(), text);
+        }
+        if (read == null || !java.util.Objects.equals(id.getWfCustomerNum(), CobolRecords.text(read, 1, 10, text))) {
+            CobolRecords.putText(rec, 1, 10, id.getWfCustomerNum(), text);
+        }
+        if (read == null || !java.util.Objects.equals(id.getWfPolicyNum(), CobolRecords.text(read, 11, 10, text))) {
+            CobolRecords.putText(rec, 11, 10, id.getWfPolicyNum(), text);
+        }
+        if (read == null || !java.util.Objects.equals(wfPolicyData, CobolRecords.text(read, 21, 43, text))) {
+            CobolRecords.putText(rec, 21, 43, wfPolicyData, text);
+        }
         return rec;
     }
 }

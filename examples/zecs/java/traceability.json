@@ -96,7 +96,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The DFHCOMMAREA Zecs000 declares in its LINKAGE SECTION."
@@ -110,7 +110,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "DFHCOMMAREA @0+1",
           "ledger_field": "record fields",
           "section": "interface",
@@ -125,7 +125,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The DFHCOMMAREA Zecs001 declares in its LINKAGE SECTION."
@@ -139,7 +139,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "DFHCOMMAREA @0+1",
           "ledger_field": "record fields",
           "section": "interface",
@@ -154,51 +154,51 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The COMMAREA Zecs003 receives, as passed by XCTL at Source/ZECS001.cbl:753."
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs001Zecs003CommArea.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs003Dfhcommarea.java",
       "kind": "commarea-dto",
-      "symbol": "Zecs001Zecs003CommArea",
+      "symbol": "Zecs003Dfhcommarea",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-TYPE @0+3",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "Source/ZECS001.cbl"
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs001Zecs003CommArea.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs003Dfhcommarea.java",
       "kind": "dto-field",
-      "symbol": "Zecs001Zecs003CommArea#caType",
+      "symbol": "Zecs003Dfhcommarea#caType",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-URI-FIELD-01 @3+10",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "Source/ZECS001.cbl"
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs001Zecs003CommArea.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs003Dfhcommarea.java",
       "kind": "dto-field",
-      "symbol": "Zecs001Zecs003CommArea#caUriField01",
+      "symbol": "Zecs003Dfhcommarea#caUriField01",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The DFHCOMMAREA Zecsplt declares in its LINKAGE SECTION."
@@ -212,7 +212,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "DFHCOMMAREA @0+1",
           "ledger_field": "record fields",
           "section": "interface",
@@ -230,7 +230,49 @@
           "field_testing": "open (3 public / 0 private estates)",
           "ledger_field": "VSAM defines",
           "section": "vsam_stores",
-          "source": ""
+          "source": "Source/ZECSFILE.idcams:4"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/ZfRecord.java",
+      "kind": "vsam-entity",
+      "symbol": "ZfRecord",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECSFILE.idcams:4"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/ZfRecordKey.java",
+      "kind": "vsam-key",
+      "symbol": "ZfRecordKey",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECSKEY.idcams:4"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/ZkRecord.java",
+      "kind": "vsam-entity",
+      "symbol": "ZkRecord",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZCEXPIRE.idcams:4"
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/ZxRecord.java",
@@ -244,7 +286,35 @@
           "field_testing": "open (3 public / 0 private estates)",
           "ledger_field": "VSAM defines",
           "section": "vsam_stores",
-          "source": ""
+          "source": "Source/ZECSFILE.idcams:4"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/ZfRecordRepository.java",
+      "kind": "vsam-repository",
+      "symbol": "ZfRecordRepository",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECSKEY.idcams:4"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/ZkRecordRepository.java",
+      "kind": "vsam-repository",
+      "symbol": "ZkRecordRepository",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZCEXPIRE.idcams:4"
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/ZxRecordRepository.java",
@@ -701,6 +771,52 @@
     {
       "facts": [
         {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:411"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:478"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:498"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:546"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs000Service#deleteZcIdFile",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:525"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs000Service#deleteZcIdKey",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
           "field_testing": "field-tested (6 public / 0 private estates)",
           "ledger_field": "units of work and handlers",
           "section": "uow_handlers",
@@ -710,6 +826,38 @@
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "kind": "abend-handler",
       "symbol": "Zecs000Service#onAbendL252",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:411"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:478"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:498"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:546"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs000Service#readZcIdFile",
       "todos": []
     },
     {
@@ -736,6 +884,38 @@
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "kind": "service-file-op",
       "symbol": "Zecs000Service#readZcexpire",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:411"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:478"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:498"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS000.cbl:546"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs000Service#rewriteZcIdFile",
       "todos": []
     },
     {
@@ -1426,6 +1606,112 @@
     {
       "facts": [
         {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1011"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1023"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1030"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1137"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1499"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1572"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1631"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1712"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs001Service#deleteZcIdFile",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:927"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1265"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1329"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1365"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1529"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1589"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1614"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs001Service#deleteZcIdKey",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "dynamic call targets",
           "section": "dynamic_call_targets",
@@ -1468,6 +1754,218 @@
     {
       "facts": [
         {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1011"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1023"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1030"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1137"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1499"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1572"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1631"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1712"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs001Service#readZcIdFile",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:927"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1265"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1329"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1365"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1529"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1589"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1614"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs001Service#readZcIdKey",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1011"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1023"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1030"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1137"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1499"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1572"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1631"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1712"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs001Service#rewriteZcIdFile",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:927"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1265"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1329"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1365"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1529"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1589"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1614"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs001Service#rewriteZcIdKey",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
           "field_testing": "field-tested (6 public / 0 private estates)",
           "ledger_field": "units of work and handlers",
           "section": "units_of_work",
@@ -1477,6 +1975,112 @@
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "kind": "rollback",
       "symbol": "Zecs001Service#rollbackL2160",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1011"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1023"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1030"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1137"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1499"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1572"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1631"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1712"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs001Service#writeZcIdFile",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:927"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1265"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1329"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1365"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1529"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1589"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS001.cbl:1614"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs001Service#writeZcIdKey",
       "todos": []
     },
     {
@@ -1647,6 +2251,60 @@
     {
       "facts": [
         {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS003.cbl:249"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS003.cbl:272"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs003Service#deleteZcIdFile",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS003.cbl:279"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs003Service#deleteZcIdKey",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS003.cbl:249"
+        },
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "Source/ZECS003.cbl:272"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
+      "kind": "service-file-op",
+      "symbol": "Zecs003Service#readZcIdFile",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
           "field_testing": "open (4 public / 0 private estates)",
           "ledger_field": "entry transactions",
           "section": "entry_transactions",
@@ -1767,7 +2425,7 @@
     "skeleton_version": 1
   },
   "summary": {
-    "artifacts": 110,
+    "artifacts": 130,
     "by_kind": {
       "abend-handler": 1,
       "commarea-dto": 4,
@@ -1777,13 +2435,14 @@
       "dto-field": 5,
       "queue-op": 3,
       "rollback": 1,
-      "service-file-op": 3,
+      "service-file-op": 18,
       "transactional": 5,
       "unchecked-response": 73,
-      "vsam-entity": 1,
-      "vsam-repository": 1
+      "vsam-entity": 3,
+      "vsam-key": 1,
+      "vsam-repository": 3
     },
-    "facts": 120,
+    "facts": 203,
     "todos": 77
   },
   "version": 1

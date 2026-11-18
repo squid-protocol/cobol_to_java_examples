@@ -10,15 +10,15 @@ package com.gitgalaxy.modernized.controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import lombok.RequiredArgsConstructor;
-import com.gitgalaxy.modernized.dto.contract.SrcR001i101InternKomOmr;
+import com.gitgalaxy.modernized.dto.contract.SrcR001i801InternKomOmr;
 import com.gitgalaxy.modernized.service.SrcR001i801Service;
 
 /**
  * CICS program R001I801 (src/R001I801.pli), generated from GitGalaxy's
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
- * COMMAREA: INTERN_KOM_OMR (src/R001I101.pli, 26 bytes) -> SrcR001i101InternKomOmr.
+ * COMMAREA: INTERN_KOM_OMR (src/R001I101.pli, 26 bytes) -> SrcR001i801InternKomOmr.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/src-r001i801")
@@ -29,7 +29,7 @@ public class SrcR001i801Controller {
 
     /** Program-to-program entry: LINK at src/R001I101.pli:340. */
     @PostMapping("/link")
-    public ResponseEntity<SrcR001i101InternKomOmr> link(@RequestBody SrcR001i101InternKomOmr request) {
+    public ResponseEntity<SrcR001i801InternKomOmr> link(@RequestBody SrcR001i801InternKomOmr request) {
         return ResponseEntity.ok(srcR001i801Service.handleLink(request));
     }
 

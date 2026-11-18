@@ -12,8 +12,11 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.gitgalaxy.modernized.batch.Dd;
+import com.gitgalaxy.modernized.call.CobolRef;
+import com.gitgalaxy.modernized.dto.contract.CobolSam2CustRec;
 import com.gitgalaxy.modernized.dto.contract.TransactionRecord;
 import java.util.List;
+import java.util.Locale;
 import org.springframework.beans.factory.ObjectProvider;
 
 @Service
@@ -27,17 +30,12 @@ public class CobolSam1Service {
     // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
     // TODO: AI AGENT - Implement or mock interface call to: Sam2Service
 
-    public void executeCobolSam1(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for COBOL__SAM1");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
     /** CALL SAM2 at COBOL/SAM1.cbl:304: the target is data-driven. Candidates: SAM2 (value).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
     public Object dispatchSam2L304(String program, Object... args) {
-        switch (program.trim().toUpperCase()) {
+        switch (program.trim().toUpperCase(Locale.ROOT)) {
             case "SAM2":
-                cobolSam2Service.getObject().handleCall((String) args[0], (TransactionRecord) args[1], (String) args[2], (String) args[3]);
+                cobolSam2Service.getObject().handleCall((CobolSam2CustRec) args[0], (TransactionRecord) args[1], (CobolRef<String>) args[2], (CobolRef<String>) args[3]);
                 return null;
             default:
                 throw new IllegalArgumentException("CALL SAM2 at COBOL/SAM1.cbl:304: no known target " + program);

@@ -799,7 +799,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/XFRFUN.cbl, 681 bytes) at src/base/cobol_src/XFRFUN.cbl:364, src/base/cobol_src/XFRFUN.cbl:463, src/base/cobol_src/XFRFUN.cbl:573, src/base/cobol_src/XFRFUN.cbl:664, src/base/cobol_src/XFRFUN.cbl:737, src/base/cobol_src/XFRFUN.cbl:813, src/base/cobol_src/XFRFUN.cbl:881, src/base/cobol_src/XFRFUN.cbl:1165, src/base/cobol_src/XFRFUN.cbl:1262, src/base/cobol_src/XFRFUN.cbl:1341, src/base/cobol_src/XFRFUN.cbl:1459, src/base/cobol_src/XFRFUN.cbl:1541, src/base/cobol_src/XFRFUN.cbl:1701, src/base/cobol_src/XFRFUN.cbl:1873"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/XFRFUN.cbl, 681 bytes) at src/base/cobol_src/XFRFUN.cbl:364, src/base/cobol_src/XFRFUN.cbl:463, src/base/cobol_src/XFRFUN.cbl:573, src/base/cobol_src/XFRFUN.cbl:664, src/base/cobol_src/XFRFUN.cbl:737, src/base/cobol_src/XFRFUN.cbl:813, src/base/cobol_src/XFRFUN.cbl:881, src/base/cobol_src/XFRFUN.cbl:1165, src/base/cobol_src/XFRFUN.cbl:1262, src/base/cobol_src/XFRFUN.cbl:1341, src/base/cobol_src/XFRFUN.cbl:1459, src/base/cobol_src/XFRFUN.cbl:1541, src/base/cobol_src/XFRFUN.cbl:1701, src/base/cobol_src/XFRFUN.cbl:1873",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -1545,7 +1546,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1DCS.cbl, 681 bytes) at src/base/cobol_src/BNK1DCS.cbl:381, src/base/cobol_src/BNK1DCS.cbl:579, src/base/cobol_src/BNK1DCS.cbl:654, src/base/cobol_src/BNK1DCS.cbl:888, src/base/cobol_src/BNK1DCS.cbl:1024, src/base/cobol_src/BNK1DCS.cbl:1210, src/base/cobol_src/BNK1DCS.cbl:1466, src/base/cobol_src/BNK1DCS.cbl:1543, src/base/cobol_src/BNK1DCS.cbl:1621, src/base/cobol_src/BNK1DCS.cbl:1723, src/base/cobol_src/BNK1DCS.cbl:1807, src/base/cobol_src/BNK1DCS.cbl:1888"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1DCS.cbl, 681 bytes) at src/base/cobol_src/BNK1DCS.cbl:381, src/base/cobol_src/BNK1DCS.cbl:579, src/base/cobol_src/BNK1DCS.cbl:654, src/base/cobol_src/BNK1DCS.cbl:888, src/base/cobol_src/BNK1DCS.cbl:1024, src/base/cobol_src/BNK1DCS.cbl:1210, src/base/cobol_src/BNK1DCS.cbl:1466, src/base/cobol_src/BNK1DCS.cbl:1543, src/base/cobol_src/BNK1DCS.cbl:1621, src/base/cobol_src/BNK1DCS.cbl:1723, src/base/cobol_src/BNK1DCS.cbl:1807, src/base/cobol_src/BNK1DCS.cbl:1888",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -2291,7 +2293,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1CCS.cbl, 681 bytes) at src/base/cobol_src/BNK1CCS.cbl:331, src/base/cobol_src/BNK1CCS.cbl:462, src/base/cobol_src/BNK1CCS.cbl:557, src/base/cobol_src/BNK1CCS.cbl:1031, src/base/cobol_src/BNK1CCS.cbl:1181, src/base/cobol_src/BNK1CCS.cbl:1264, src/base/cobol_src/BNK1CCS.cbl:1342, src/base/cobol_src/BNK1CCS.cbl:1420, src/base/cobol_src/BNK1CCS.cbl:1498, src/base/cobol_src/BNK1CCS.cbl:1578"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1CCS.cbl, 681 bytes) at src/base/cobol_src/BNK1CCS.cbl:331, src/base/cobol_src/BNK1CCS.cbl:462, src/base/cobol_src/BNK1CCS.cbl:557, src/base/cobol_src/BNK1CCS.cbl:1031, src/base/cobol_src/BNK1CCS.cbl:1181, src/base/cobol_src/BNK1CCS.cbl:1264, src/base/cobol_src/BNK1CCS.cbl:1342, src/base/cobol_src/BNK1CCS.cbl:1420, src/base/cobol_src/BNK1CCS.cbl:1498, src/base/cobol_src/BNK1CCS.cbl:1578",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -3037,7 +3040,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1UAC.cbl, 681 bytes) at src/base/cobol_src/BNK1UAC.cbl:350, src/base/cobol_src/BNK1UAC.cbl:474, src/base/cobol_src/BNK1UAC.cbl:822, src/base/cobol_src/BNK1UAC.cbl:1009, src/base/cobol_src/BNK1UAC.cbl:1130, src/base/cobol_src/BNK1UAC.cbl:1206, src/base/cobol_src/BNK1UAC.cbl:1282, src/base/cobol_src/BNK1UAC.cbl:1361"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1UAC.cbl, 681 bytes) at src/base/cobol_src/BNK1UAC.cbl:350, src/base/cobol_src/BNK1UAC.cbl:474, src/base/cobol_src/BNK1UAC.cbl:822, src/base/cobol_src/BNK1UAC.cbl:1009, src/base/cobol_src/BNK1UAC.cbl:1130, src/base/cobol_src/BNK1UAC.cbl:1206, src/base/cobol_src/BNK1UAC.cbl:1282, src/base/cobol_src/BNK1UAC.cbl:1361",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -3783,7 +3787,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1CAC.cbl, 681 bytes) at src/base/cobol_src/BNK1CAC.cbl:309, src/base/cobol_src/BNK1CAC.cbl:416, src/base/cobol_src/BNK1CAC.cbl:834, src/base/cobol_src/BNK1CAC.cbl:1026, src/base/cobol_src/BNK1CAC.cbl:1102, src/base/cobol_src/BNK1CAC.cbl:1179, src/base/cobol_src/BNK1CAC.cbl:1257"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1CAC.cbl, 681 bytes) at src/base/cobol_src/BNK1CAC.cbl:309, src/base/cobol_src/BNK1CAC.cbl:416, src/base/cobol_src/BNK1CAC.cbl:834, src/base/cobol_src/BNK1CAC.cbl:1026, src/base/cobol_src/BNK1CAC.cbl:1102, src/base/cobol_src/BNK1CAC.cbl:1179, src/base/cobol_src/BNK1CAC.cbl:1257",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -4529,7 +4534,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1CCA.cbl, 681 bytes) at src/base/cobol_src/BNK1CCA.cbl:280, src/base/cobol_src/BNK1CCA.cbl:389, src/base/cobol_src/BNK1CCA.cbl:490, src/base/cobol_src/BNK1CCA.cbl:677, src/base/cobol_src/BNK1CCA.cbl:752, src/base/cobol_src/BNK1CCA.cbl:830, src/base/cobol_src/BNK1CCA.cbl:909"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1CCA.cbl, 681 bytes) at src/base/cobol_src/BNK1CCA.cbl:280, src/base/cobol_src/BNK1CCA.cbl:389, src/base/cobol_src/BNK1CCA.cbl:490, src/base/cobol_src/BNK1CCA.cbl:677, src/base/cobol_src/BNK1CCA.cbl:752, src/base/cobol_src/BNK1CCA.cbl:830, src/base/cobol_src/BNK1CCA.cbl:909",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -5275,7 +5281,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1CRA.cbl, 681 bytes) at src/base/cobol_src/BNK1CRA.cbl:318, src/base/cobol_src/BNK1CRA.cbl:425, src/base/cobol_src/BNK1CRA.cbl:566, src/base/cobol_src/BNK1CRA.cbl:704, src/base/cobol_src/BNK1CRA.cbl:778, src/base/cobol_src/BNK1CRA.cbl:853, src/base/cobol_src/BNK1CRA.cbl:931"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1CRA.cbl, 681 bytes) at src/base/cobol_src/BNK1CRA.cbl:318, src/base/cobol_src/BNK1CRA.cbl:425, src/base/cobol_src/BNK1CRA.cbl:566, src/base/cobol_src/BNK1CRA.cbl:704, src/base/cobol_src/BNK1CRA.cbl:778, src/base/cobol_src/BNK1CRA.cbl:853, src/base/cobol_src/BNK1CRA.cbl:931",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -6021,7 +6028,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1DAC.cbl, 681 bytes) at src/base/cobol_src/BNK1DAC.cbl:350, src/base/cobol_src/BNK1DAC.cbl:481, src/base/cobol_src/BNK1DAC.cbl:608, src/base/cobol_src/BNK1DAC.cbl:882, src/base/cobol_src/BNK1DAC.cbl:961, src/base/cobol_src/BNK1DAC.cbl:1036, src/base/cobol_src/BNK1DAC.cbl:1115"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1DAC.cbl, 681 bytes) at src/base/cobol_src/BNK1DAC.cbl:350, src/base/cobol_src/BNK1DAC.cbl:481, src/base/cobol_src/BNK1DAC.cbl:608, src/base/cobol_src/BNK1DAC.cbl:882, src/base/cobol_src/BNK1DAC.cbl:961, src/base/cobol_src/BNK1DAC.cbl:1036, src/base/cobol_src/BNK1DAC.cbl:1115",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -6767,7 +6775,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1TFN.cbl, 681 bytes) at src/base/cobol_src/BNK1TFN.cbl:302, src/base/cobol_src/BNK1TFN.cbl:411, src/base/cobol_src/BNK1TFN.cbl:551, src/base/cobol_src/BNK1TFN.cbl:727, src/base/cobol_src/BNK1TFN.cbl:801, src/base/cobol_src/BNK1TFN.cbl:876, src/base/cobol_src/BNK1TFN.cbl:954"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/BNK1TFN.cbl, 681 bytes) at src/base/cobol_src/BNK1TFN.cbl:302, src/base/cobol_src/BNK1TFN.cbl:411, src/base/cobol_src/BNK1TFN.cbl:551, src/base/cobol_src/BNK1TFN.cbl:727, src/base/cobol_src/BNK1TFN.cbl:801, src/base/cobol_src/BNK1TFN.cbl:876, src/base/cobol_src/BNK1TFN.cbl:954",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -7513,7 +7522,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/INQACC.cbl, 681 bytes) at src/base/cobol_src/INQACC.cbl:321, src/base/cobol_src/INQACC.cbl:401, src/base/cobol_src/INQACC.cbl:516, src/base/cobol_src/INQACC.cbl:738, src/base/cobol_src/INQACC.cbl:810, src/base/cobol_src/INQACC.cbl:924"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/INQACC.cbl, 681 bytes) at src/base/cobol_src/INQACC.cbl:321, src/base/cobol_src/INQACC.cbl:401, src/base/cobol_src/INQACC.cbl:516, src/base/cobol_src/INQACC.cbl:738, src/base/cobol_src/INQACC.cbl:810, src/base/cobol_src/INQACC.cbl:924",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -8259,7 +8269,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/CREACC.cbl, 681 bytes) at src/base/cobol_src/CREACC.cbl:508, src/base/cobol_src/CREACC.cbl:586, src/base/cobol_src/CREACC.cbl:674, src/base/cobol_src/CREACC.cbl:751, src/base/cobol_src/CREACC.cbl:1055"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/CREACC.cbl, 681 bytes) at src/base/cobol_src/CREACC.cbl:508, src/base/cobol_src/CREACC.cbl:586, src/base/cobol_src/CREACC.cbl:674, src/base/cobol_src/CREACC.cbl:751, src/base/cobol_src/CREACC.cbl:1055",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -9005,7 +9016,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/INQACCCU.cbl, 681 bytes) at src/base/cobol_src/INQACCCU.cbl:321, src/base/cobol_src/INQACCCU.cbl:424, src/base/cobol_src/INQACCCU.cbl:563, src/base/cobol_src/INQACCCU.cbl:794"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/INQACCCU.cbl, 681 bytes) at src/base/cobol_src/INQACCCU.cbl:321, src/base/cobol_src/INQACCCU.cbl:424, src/base/cobol_src/INQACCCU.cbl:563, src/base/cobol_src/INQACCCU.cbl:794",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -9751,7 +9763,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/DELCUS.cbl, 681 bytes) at src/base/cobol_src/DELCUS.cbl:439, src/base/cobol_src/DELCUS.cbl:565, src/base/cobol_src/DELCUS.cbl:717"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/DELCUS.cbl, 681 bytes) at src/base/cobol_src/DELCUS.cbl:439, src/base/cobol_src/DELCUS.cbl:565, src/base/cobol_src/DELCUS.cbl:717",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -10497,7 +10510,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/DBCRFUN.cbl, 681 bytes) at src/base/cobol_src/DBCRFUN.cbl:620, src/base/cobol_src/DBCRFUN.cbl:807"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/DBCRFUN.cbl, 681 bytes) at src/base/cobol_src/DBCRFUN.cbl:620, src/base/cobol_src/DBCRFUN.cbl:807",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -11243,7 +11257,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/INQCUST.cbl, 681 bytes) at src/base/cobol_src/INQCUST.cbl:406, src/base/cobol_src/INQCUST.cbl:528"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/INQCUST.cbl, 681 bytes) at src/base/cobol_src/INQCUST.cbl:406, src/base/cobol_src/INQCUST.cbl:528",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -11989,7 +12004,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/CRDTAGY1.cbl, 681 bytes) at src/base/cobol_src/CRDTAGY1.cbl:180"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/CRDTAGY1.cbl, 681 bytes) at src/base/cobol_src/CRDTAGY1.cbl:180",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -12735,7 +12751,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/CRDTAGY2.cbl, 681 bytes) at src/base/cobol_src/CRDTAGY2.cbl:179"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/CRDTAGY2.cbl, 681 bytes) at src/base/cobol_src/CRDTAGY2.cbl:179",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -13481,7 +13498,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/CRDTAGY3.cbl, 681 bytes) at src/base/cobol_src/CRDTAGY3.cbl:179"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/CRDTAGY3.cbl, 681 bytes) at src/base/cobol_src/CRDTAGY3.cbl:179",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -14227,7 +14245,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/CRDTAGY4.cbl, 681 bytes) at src/base/cobol_src/CRDTAGY4.cbl:180"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/CRDTAGY4.cbl, 681 bytes) at src/base/cobol_src/CRDTAGY4.cbl:180",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -14973,7 +14992,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/CRDTAGY5.cbl, 681 bytes) at src/base/cobol_src/CRDTAGY5.cbl:179"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/CRDTAGY5.cbl, 681 bytes) at src/base/cobol_src/CRDTAGY5.cbl:179",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -15719,7 +15739,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/CRECUST.cbl, 681 bytes) at src/base/cobol_src/CRECUST.cbl:1250"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/CRECUST.cbl, 681 bytes) at src/base/cobol_src/CRECUST.cbl:1250",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -16465,7 +16486,8 @@
       "symbols": [
         "AbndprocController#link"
       ],
-      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/DELACC.cbl, 681 bytes) at src/base/cobol_src/DELACC.cbl:603"
+      "text": "callers also pass ABNDINFO-REC (src/base/cobol_src/DELACC.cbl, 681 bytes) at src/base/cobol_src/DELACC.cbl:603",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -16485,7 +16507,8 @@
       "symbols": [
         "Bnk1ccsController#transactionOCCS"
       ],
-      "text": "callers also pass WS-COMM-AREA (src/base/cobol_src/BNK1CCS.cbl, 5 bytes) at src/base/cobol_src/BNK1CCS.cbl:249, src/base/cobol_src/BNK1CCS.cbl:276"
+      "text": "callers also pass WS-COMM-AREA (src/base/cobol_src/BNK1CCS.cbl, 5 bytes) at src/base/cobol_src/BNK1CCS.cbl:249, src/base/cobol_src/BNK1CCS.cbl:276",
+      "ticket": "ai_agent_jobs/BNK1CCS_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -16505,13 +16528,14 @@
       "symbols": [
         "Bnk1uacController#transactionOUAC"
       ],
-      "text": "WS-COMM-AREA (src/base/cobol_src/BNK1UAC.cbl, 99 bytes), passed at src/base/cobol_src/BNK1UAC.cbl:295, disagrees with this program's declared DFHCOMMAREA (103 bytes: 99 vs 103 bytes; fields first differ at None / COMM-PCB1-POINTER) -- confirm which layout the program reads"
+      "text": "WS-COMM-AREA (src/base/cobol_src/BNK1UAC.cbl, 99 bytes), passed at src/base/cobol_src/BNK1UAC.cbl:295, disagrees with this program's declared DFHCOMMAREA (103 bytes: 99 vs 103 bytes; fields first differ at None / COMM-PCB1-POINTER) -- confirm which layout the program reads",
+      "ticket": "ai_agent_jobs/BNK1UAC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "src/base/cobol_src/BNK1UAC.cbl:767"
@@ -16519,19 +16543,20 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java",
       "id": "WL-0025",
-      "line": 61,
+      "line": 87,
       "nature": "conflict",
       "program": "src/base/cobol_src/BNK1UAC.cbl",
       "symbols": [
         "Bnk1uacService#linkInqacc"
       ],
-      "text": "this site passes DFHCOMMAREA; INQACC receives INQACC-COMMAREA (src/base/cobol_copy/INQACC.cpy) -- map one layout onto the other"
+      "text": "this site passes DFHCOMMAREA; INQACC receives INQACC-COMMAREA (src/base/cobol_copy/INQACC.cpy) -- map one layout onto the other",
+      "ticket": "ai_agent_jobs/BNK1UAC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "src/base/cobol_src/BNK1UAC.cbl:954"
@@ -16539,13 +16564,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java",
       "id": "WL-0026",
-      "line": 68,
+      "line": 94,
       "nature": "conflict",
       "program": "src/base/cobol_src/BNK1UAC.cbl",
       "symbols": [
         "Bnk1uacService#linkUpdacc"
       ],
-      "text": "this site passes DFHCOMMAREA (103 bytes); UPDACC declares DFHCOMMAREA (src/base/cobol_src/UPDACC.cbl, 99 bytes) -- map one layout onto the other"
+      "text": "this site passes DFHCOMMAREA (103 bytes); UPDACC declares DFHCOMMAREA (src/base/cobol_src/UPDACC.cbl, 99 bytes) -- map one layout onto the other",
+      "ticket": "ai_agent_jobs/BNK1UAC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -16571,13 +16597,14 @@
       "symbols": [
         "DelaccController#link"
       ],
-      "text": "callers also pass DELACC-COMMAREA (src/base/cobol_src/DELCUS.cbl, 118 bytes) at src/base/cobol_src/DELCUS.cbl:312"
+      "text": "callers also pass DELACC-COMMAREA (src/base/cobol_src/DELCUS.cbl, 118 bytes) at src/base/cobol_src/DELCUS.cbl:312",
+      "ticket": "ai_agent_jobs/DELACC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "src/base/cobol_src/DELCUS.cbl:312"
@@ -16585,13 +16612,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/DelcusService.java",
       "id": "WL-0028",
-      "line": 64,
+      "line": 90,
       "nature": "conflict",
       "program": "src/base/cobol_src/DELCUS.cbl",
       "symbols": [
         "DelcusService#linkDelacc"
       ],
-      "text": "this site passes DELACC-COMMAREA; DELACC receives PARMS-SUBPGM (src/base/cobol_src/BNK1DAC.cbl) -- map one layout onto the other"
+      "text": "this site passes DELACC-COMMAREA; DELACC receives PARMS-SUBPGM (src/base/cobol_src/BNK1DAC.cbl) -- map one layout onto the other",
+      "ticket": "ai_agent_jobs/DELCUS_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -16617,7 +16645,8 @@
       "symbols": [
         "InqaccController#link"
       ],
-      "text": "callers also pass DFHCOMMAREA (src/base/cobol_src/BNK1UAC.cbl, 103 bytes) at src/base/cobol_src/BNK1UAC.cbl:767"
+      "text": "callers also pass DFHCOMMAREA (src/base/cobol_src/BNK1UAC.cbl, 103 bytes) at src/base/cobol_src/BNK1UAC.cbl:767",
+      "ticket": "ai_agent_jobs/INQACC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -16649,7 +16678,8 @@
       "symbols": [
         "InqacccuController#link"
       ],
-      "text": "callers also pass INQACCCU-COMMAREA (src/base/cobol_src/CREACC.cbl, 1981 bytes) at src/base/cobol_src/CREACC.cbl:1088"
+      "text": "callers also pass INQACCCU-COMMAREA (src/base/cobol_src/CREACC.cbl, 1981 bytes) at src/base/cobol_src/CREACC.cbl:1088",
+      "ticket": "ai_agent_jobs/INQACCCU_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -16681,7 +16711,8 @@
       "symbols": [
         "InqacccuController#link"
       ],
-      "text": "callers also pass INQACCCU-COMMAREA (src/base/cobol_src/DELCUS.cbl, 1981 bytes) at src/base/cobol_src/DELCUS.cbl:334"
+      "text": "callers also pass INQACCCU-COMMAREA (src/base/cobol_src/DELCUS.cbl, 1981 bytes) at src/base/cobol_src/DELCUS.cbl:334",
+      "ticket": "ai_agent_jobs/INQACCCU_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -16719,7 +16750,8 @@
       "symbols": [
         "InqcustController#link"
       ],
-      "text": "callers also pass INQCUST-COMMAREA (src/base/cobol_src/CREACC.cbl, 265 bytes) at src/base/cobol_src/CREACC.cbl:304"
+      "text": "callers also pass INQCUST-COMMAREA (src/base/cobol_src/CREACC.cbl, 265 bytes) at src/base/cobol_src/CREACC.cbl:304",
+      "ticket": "ai_agent_jobs/INQCUST_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -16757,7 +16789,8 @@
       "symbols": [
         "InqcustController#link"
       ],
-      "text": "callers also pass INQCUST-COMMAREA (src/base/cobol_src/DELCUS.cbl, 265 bytes) at src/base/cobol_src/DELCUS.cbl:260"
+      "text": "callers also pass INQCUST-COMMAREA (src/base/cobol_src/DELCUS.cbl, 265 bytes) at src/base/cobol_src/DELCUS.cbl:260",
+      "ticket": "ai_agent_jobs/INQCUST_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -16795,7 +16828,8 @@
       "symbols": [
         "InqcustController#link"
       ],
-      "text": "callers also pass INQCUST-COMMAREA (src/base/cobol_src/INQACCCU.cbl, 265 bytes) at src/base/cobol_src/INQACCCU.cbl:851"
+      "text": "callers also pass INQCUST-COMMAREA (src/base/cobol_src/INQACCCU.cbl, 265 bytes) at src/base/cobol_src/INQACCCU.cbl:851",
+      "ticket": "ai_agent_jobs/INQCUST_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -16815,7 +16849,8 @@
       "symbols": [
         "UpdaccController#link"
       ],
-      "text": "DFHCOMMAREA (src/base/cobol_src/BNK1UAC.cbl, 103 bytes), passed at src/base/cobol_src/BNK1UAC.cbl:954, disagrees with this program's declared DFHCOMMAREA (99 bytes: 103 vs 99 bytes; fields first differ at COMM-PCB1-POINTER / None) -- confirm which layout the program reads"
+      "text": "DFHCOMMAREA (src/base/cobol_src/BNK1UAC.cbl, 103 bytes), passed at src/base/cobol_src/BNK1UAC.cbl:954, disagrees with this program's declared DFHCOMMAREA (99 bytes: 103 vs 99 bytes; fields first differ at COMM-PCB1-POINTER / None) -- confirm which layout the program reads",
+      "ticket": "ai_agent_jobs/UPDACC_port_ticket.md"
     },
     {
       "category": "record-variant",
@@ -16835,24 +16870,26 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CustctrlService.java",
       "id": "WL-0036",
-      "line": 49,
+      "line": 79,
       "nature": "conflict",
       "program": "src/base/cobol_src/CUSTCTRL.cbl",
       "symbols": [
         "CustctrlService#readCustomer"
       ],
-      "text": "this program uses DFHCOMMAREA (259 bytes); the entity follows OUTPUT-DATA (259 bytes) -- map one onto the other"
+      "text": "this program uses DFHCOMMAREA (259 bytes); the entity follows OUTPUT-DATA (259 bytes) -- map one onto the other",
+      "ticket": "ai_agent_jobs/CUSTCTRL_port_ticket.md"
     },
     {
       "category": "missing-layout",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java",
       "id": "WL-0037",
-      "line": 40,
+      "line": 39,
       "nature": "fact-gap",
       "program": "src/base/cobol_src/BNK1CCS.cbl",
       "symbols": [],
-      "text": "SEND MAP BNK1CCM (mapset BNK1CCM) at src/base/cobol_src/BNK1CCS.cbl:236: no single BMS source defines it (candidates: none in the repository); mapset BNK1CCM defines BNK1CC"
+      "text": "SEND MAP BNK1CCM (mapset BNK1CCM) at src/base/cobol_src/BNK1CCS.cbl:236: no single BMS source defines it (candidates: none in the repository); mapset BNK1CCM defines BNK1CC",
+      "ticket": "ai_agent_jobs/BNK1CCS_port_ticket.md"
     },
     {
       "category": "missing-layout",
@@ -16872,7 +16909,8 @@
       "symbols": [
         "Crdtagy1Controller#transactionOCR1"
       ],
-      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA"
+      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA",
+      "ticket": "ai_agent_jobs/CRDTAGY1_port_ticket.md"
     },
     {
       "category": "missing-layout",
@@ -16892,7 +16930,8 @@
       "symbols": [
         "Crdtagy2Controller#transactionOCR2"
       ],
-      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA"
+      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA",
+      "ticket": "ai_agent_jobs/CRDTAGY2_port_ticket.md"
     },
     {
       "category": "missing-layout",
@@ -16912,7 +16951,8 @@
       "symbols": [
         "Crdtagy3Controller#transactionOCR3"
       ],
-      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA"
+      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA",
+      "ticket": "ai_agent_jobs/CRDTAGY3_port_ticket.md"
     },
     {
       "category": "missing-layout",
@@ -16932,7 +16972,8 @@
       "symbols": [
         "Crdtagy4Controller#transactionOCR4"
       ],
-      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA"
+      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA",
+      "ticket": "ai_agent_jobs/CRDTAGY4_port_ticket.md"
     },
     {
       "category": "missing-layout",
@@ -16952,7 +16993,8 @@
       "symbols": [
         "Crdtagy5Controller#transactionOCR5"
       ],
-      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA"
+      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA",
+      "ticket": "ai_agent_jobs/CRDTAGY5_port_ticket.md"
     },
     {
       "category": "vsam-key",
@@ -16984,7 +17026,7 @@
       "symbols": [
         "BankdataJobConfig#BANKDAT0"
       ],
-      "text": "BANKDAT0 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port"
+      "text": "BANKDAT0 runs IDCAMS, which uses more than one IDCAMS command, which the IDCAMS model refuses -- not run as a record copy: a utility step to port"
     },
     {
       "category": "batch-utility",
@@ -17005,7 +17047,28 @@
       "symbols": [
         "BankdataJobConfig#BANKDAT1"
       ],
-      "text": "BANKDAT1 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port"
+      "text": "BANKDAT1 runs IDCAMS, which uses more than one IDCAMS command, which the IDCAMS model refuses -- not run as a record copy: a utility step to port"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "BANKDAT5 EXEC BANKDATA",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "etc/install/base/installjcl/BANKDATA.jcl:94"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/BankdataJobConfig.java",
+      "id": "WL-0046",
+      "line": null,
+      "nature": "port",
+      "program": "etc/install/base/installjcl/BANKDATA.jcl",
+      "symbols": [
+        "BankdataJobConfig#BANKDAT5"
+      ],
+      "text": "BANKDAT5 runs BANKDATA through IKJEFT01, which uses the DSN operand 'SYSTEM(@DB2_SUBSYSTE' (a TSO / DSN subcommand the oracle has no model of), which the IKJEFT01 model refuses -- not run: a utility step to port"
     },
     {
       "category": "unchecked-resp",
@@ -17018,14 +17081,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1cacService.java",
-      "id": "WL-0046",
-      "line": 32,
+      "id": "WL-0047",
+      "line": 31,
       "nature": "review",
       "program": "src/base/cobol_src/BNK1CAC.cbl",
       "symbols": [
         "Bnk1cacService"
       ],
-      "text": "the RESP of RETURN at line 186 (paragraph A010) is never tested"
+      "text": "the RESP of RETURN at line 186 (paragraph A010) is never tested",
+      "ticket": "ai_agent_jobs/BNK1CAC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -17038,14 +17102,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java",
-      "id": "WL-0047",
-      "line": 32,
+      "id": "WL-0048",
+      "line": 29,
       "nature": "review",
       "program": "src/base/cobol_src/BNK1CCA.cbl",
       "symbols": [
         "Bnk1ccaService"
       ],
-      "text": "the RESP of RETURN at line 178 (paragraph A010) is never tested"
+      "text": "the RESP of RETURN at line 178 (paragraph A010) is never tested",
+      "ticket": "ai_agent_jobs/BNK1CCA_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -17058,14 +17123,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java",
-      "id": "WL-0048",
-      "line": 35,
+      "id": "WL-0049",
+      "line": 34,
       "nature": "review",
       "program": "src/base/cobol_src/BNK1CCS.cbl",
       "symbols": [
         "Bnk1ccsService"
       ],
-      "text": "the RESP of RETURN at line 208 (paragraph A010) is never tested"
+      "text": "the RESP of RETURN at line 208 (paragraph A010) is never tested",
+      "ticket": "ai_agent_jobs/BNK1CCS_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -17078,14 +17144,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java",
-      "id": "WL-0049",
-      "line": 36,
+      "id": "WL-0050",
+      "line": 35,
       "nature": "review",
       "program": "src/base/cobol_src/BNK1CCS.cbl",
       "symbols": [
         "Bnk1ccsService"
       ],
-      "text": "the RESP of INQUIRE at line 392 (paragraph RM010) is never tested"
+      "text": "the RESP of INQUIRE at line 392 (paragraph RM010) is never tested",
+      "ticket": "ai_agent_jobs/BNK1CCS_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -17098,14 +17165,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java",
-      "id": "WL-0050",
-      "line": 37,
+      "id": "WL-0051",
+      "line": 36,
       "nature": "review",
       "program": "src/base/cobol_src/BNK1CCS.cbl",
       "symbols": [
         "Bnk1ccsService"
       ],
-      "text": "the RESP of INQUIRE at line 1105 (paragraph STD010) is never tested"
+      "text": "the RESP of INQUIRE at line 1105 (paragraph STD010) is never tested",
+      "ticket": "ai_agent_jobs/BNK1CCS_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -17118,14 +17186,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java",
-      "id": "WL-0051",
-      "line": 38,
+      "id": "WL-0052",
+      "line": 37,
       "nature": "review",
       "program": "src/base/cobol_src/BNK1CCS.cbl",
       "symbols": [
         "Bnk1ccsService"
       ],
-      "text": "the RESP of SET at line 1605 (paragraph ATT010) is never tested"
+      "text": "the RESP of SET at line 1605 (paragraph ATT010) is never tested",
+      "ticket": "ai_agent_jobs/BNK1CCS_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -17138,14 +17207,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java",
-      "id": "WL-0052",
-      "line": 32,
+      "id": "WL-0053",
+      "line": 31,
       "nature": "review",
       "program": "src/base/cobol_src/BNK1CRA.cbl",
       "symbols": [
         "Bnk1craService"
       ],
-      "text": "the RESP of RETURN at line 201 (paragraph A010) is never tested"
+      "text": "the RESP of RETURN at line 201 (paragraph A010) is never tested",
+      "ticket": "ai_agent_jobs/BNK1CRA_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -17158,14 +17228,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
-      "id": "WL-0053",
-      "line": 34,
+      "id": "WL-0054",
+      "line": 33,
       "nature": "review",
       "program": "src/base/cobol_src/BNK1DAC.cbl",
       "symbols": [
         "Bnk1dacService"
       ],
-      "text": "the RESP of RETURN at line 213 (paragraph A010) is never tested"
+      "text": "the RESP of RETURN at line 213 (paragraph A010) is never tested",
+      "ticket": "ai_agent_jobs/BNK1DAC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -17178,14 +17249,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java",
-      "id": "WL-0054",
-      "line": 39,
+      "id": "WL-0055",
+      "line": 38,
       "nature": "review",
       "program": "src/base/cobol_src/BNK1DCS.cbl",
       "symbols": [
         "Bnk1dcsService"
       ],
-      "text": "the RESP of RETURN at line 233 (paragraph A010) is never tested"
+      "text": "the RESP of RETURN at line 233 (paragraph A010) is never tested",
+      "ticket": "ai_agent_jobs/BNK1DCS_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -17198,14 +17270,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java",
-      "id": "WL-0055",
-      "line": 40,
+      "id": "WL-0056",
+      "line": 39,
       "nature": "review",
       "program": "src/base/cobol_src/BNK1DCS.cbl",
       "symbols": [
         "Bnk1dcsService"
       ],
-      "text": "the RESP of INQUIRE at line 509 (paragraph RM010) is never tested"
+      "text": "the RESP of INQUIRE at line 509 (paragraph RM010) is never tested",
+      "ticket": "ai_agent_jobs/BNK1DCS_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -17218,14 +17291,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java",
-      "id": "WL-0056",
-      "line": 41,
+      "id": "WL-0057",
+      "line": 40,
       "nature": "review",
       "program": "src/base/cobol_src/BNK1DCS.cbl",
       "symbols": [
         "Bnk1dcsService"
       ],
-      "text": "the RESP of INQUIRE at line 1648 (paragraph STD010) is never tested"
+      "text": "the RESP of INQUIRE at line 1648 (paragraph STD010) is never tested",
+      "ticket": "ai_agent_jobs/BNK1DCS_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -17238,14 +17312,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java",
-      "id": "WL-0057",
-      "line": 32,
+      "id": "WL-0058",
+      "line": 31,
       "nature": "review",
       "program": "src/base/cobol_src/BNK1TFN.cbl",
       "symbols": [
         "Bnk1tfnService"
       ],
-      "text": "the RESP of RETURN at line 198 (paragraph A010) is never tested"
+      "text": "the RESP of RETURN at line 198 (paragraph A010) is never tested",
+      "ticket": "ai_agent_jobs/BNK1TFN_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -17258,14 +17333,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java",
-      "id": "WL-0058",
-      "line": 34,
+      "id": "WL-0059",
+      "line": 33,
       "nature": "review",
       "program": "src/base/cobol_src/BNK1UAC.cbl",
       "symbols": [
         "Bnk1uacService"
       ],
-      "text": "the RESP of RETURN at line 222 (paragraph A010) is never tested"
+      "text": "the RESP of RETURN at line 222 (paragraph A010) is never tested",
+      "ticket": "ai_agent_jobs/BNK1UAC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -17278,14 +17354,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CreaccService.java",
-      "id": "WL-0059",
+      "id": "WL-0060",
       "line": 30,
       "nature": "review",
       "program": "src/base/cobol_src/CREACC.cbl",
       "symbols": [
         "CreaccService"
       ],
-      "text": "the RESP of LINK at line 1088 (paragraph CAC010) is never tested"
+      "text": "the RESP of LINK at line 1088 (paragraph CAC010) is never tested",
+      "ticket": "ai_agent_jobs/CREACC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17299,14 +17376,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0060",
+      "id": "WL-0061",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/ACCTCTRL.cbl",
       "symbols": [
         "AccountRepository#selectL165Acctctrl"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/ACCTCTRL_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17320,14 +17398,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0061",
+      "id": "WL-0062",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/BANKDATA.cbl",
       "symbols": [
         "AccountRepository#deleteL1192Bankdata"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/BANKDATA_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17341,14 +17420,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0062",
+      "id": "WL-0063",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/BANKDATA.cbl",
       "symbols": [
         "AccountRepository#insertL808Bankdata"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/BANKDATA_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17362,14 +17442,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java",
-      "id": "WL-0063",
+      "id": "WL-0064",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/BANKDATA.cbl",
       "symbols": [
         "ControlRepository#deleteL1256Bankdata"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/BANKDATA_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17383,14 +17464,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java",
-      "id": "WL-0064",
+      "id": "WL-0065",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/BANKDATA.cbl",
       "symbols": [
         "ControlRepository#deleteL1322Bankdata"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/BANKDATA_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17404,14 +17486,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java",
-      "id": "WL-0065",
+      "id": "WL-0066",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/BANKDATA.cbl",
       "symbols": [
         "ControlRepository#insertL613Bankdata"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/BANKDATA_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17425,14 +17508,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java",
-      "id": "WL-0066",
+      "id": "WL-0067",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/BANKDATA.cbl",
       "symbols": [
         "ControlRepository#insertL642Bankdata"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/BANKDATA_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17446,14 +17530,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0067",
+      "id": "WL-0068",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/CREACC.cbl",
       "symbols": [
         "AccountRepository#insertL826Creacc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/CREACC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17467,14 +17552,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java",
-      "id": "WL-0068",
+      "id": "WL-0069",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/CREACC.cbl",
       "symbols": [
         "ControlRepository#selectL444Creacc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/CREACC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17488,14 +17574,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java",
-      "id": "WL-0069",
+      "id": "WL-0070",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/CREACC.cbl",
       "symbols": [
         "ControlRepository#selectL611Creacc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/CREACC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17509,14 +17596,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java",
-      "id": "WL-0070",
+      "id": "WL-0071",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/CREACC.cbl",
       "symbols": [
         "ControlRepository#updateL529Creacc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/CREACC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17530,14 +17618,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java",
-      "id": "WL-0071",
+      "id": "WL-0072",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/CREACC.cbl",
       "symbols": [
         "ControlRepository#updateL694Creacc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/CREACC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17551,14 +17640,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java",
-      "id": "WL-0072",
+      "id": "WL-0073",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/CREACC.cbl",
       "symbols": [
         "ProctranRepository#insertL969Creacc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/CREACC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17572,14 +17662,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java",
-      "id": "WL-0073",
+      "id": "WL-0074",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/CRECUST.cbl",
       "symbols": [
         "ProctranRepository#insertL1168Crecust"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/CRECUST_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17593,14 +17684,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0074",
+      "id": "WL-0075",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/DBCRFUN.cbl",
       "symbols": [
         "AccountRepository#selectL245Dbcrfun"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/DBCRFUN_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17614,14 +17706,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0075",
+      "id": "WL-0076",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/DBCRFUN.cbl",
       "symbols": [
         "AccountRepository#updateL392Dbcrfun"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/DBCRFUN_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17635,14 +17728,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java",
-      "id": "WL-0076",
+      "id": "WL-0077",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/DBCRFUN.cbl",
       "symbols": [
         "ProctranRepository#insertL524Dbcrfun"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/DBCRFUN_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17656,14 +17750,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0077",
+      "id": "WL-0078",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/DELACC.cbl",
       "symbols": [
         "AccountRepository#deleteL438Delacc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/DELACC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17677,14 +17772,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0078",
+      "id": "WL-0079",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/DELACC.cbl",
       "symbols": [
         "AccountRepository#selectL248Delacc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/DELACC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17698,14 +17794,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java",
-      "id": "WL-0079",
+      "id": "WL-0080",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/DELACC.cbl",
       "symbols": [
         "ProctranRepository#insertL521Delacc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/DELACC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17719,14 +17816,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java",
-      "id": "WL-0080",
+      "id": "WL-0081",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/DELCUS.cbl",
       "symbols": [
         "ProctranRepository#insertL636Delcus"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/DELCUS_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17740,14 +17838,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0081",
+      "id": "WL-0082",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/INQACC.cbl",
       "symbols": [
         "AccountRepository#cursorAccCursorL66Inqacc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/INQACC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17761,14 +17860,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0082",
+      "id": "WL-0083",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/INQACC.cbl",
       "symbols": [
         "AccountRepository#selectL843Inqacc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/INQACC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17782,14 +17882,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0083",
+      "id": "WL-0084",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/INQACCCU.cbl",
       "symbols": [
         "AccountRepository#cursorAccCursorL74Inqacccu"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/INQACCCU_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17803,14 +17904,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0084",
+      "id": "WL-0085",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/UPDACC.cbl",
       "symbols": [
         "AccountRepository#selectL191Updacc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/UPDACC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17824,14 +17926,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0085",
+      "id": "WL-0086",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/UPDACC.cbl",
       "symbols": [
         "AccountRepository#updateL278Updacc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/UPDACC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17845,14 +17948,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0086",
+      "id": "WL-0087",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/XFRFUN.cbl",
       "symbols": [
         "AccountRepository#selectL1057Xfrfun"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/XFRFUN_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17866,14 +17970,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0087",
+      "id": "WL-0088",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/XFRFUN.cbl",
       "symbols": [
         "AccountRepository#selectL930Xfrfun"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/XFRFUN_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17887,14 +17992,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0088",
+      "id": "WL-0089",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/XFRFUN.cbl",
       "symbols": [
         "AccountRepository#updateL1362Xfrfun"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/XFRFUN_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17908,14 +18014,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java",
-      "id": "WL-0089",
+      "id": "WL-0090",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/XFRFUN.cbl",
       "symbols": [
         "AccountRepository#updateL992Xfrfun"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/XFRFUN_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -17929,91 +18036,99 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java",
-      "id": "WL-0090",
+      "id": "WL-0091",
       "line": null,
       "nature": "review",
       "program": "src/base/cobol_src/XFRFUN.cbl",
       "symbols": [
         "ProctranRepository#insertL1616Xfrfun"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
-    },
-    {
-      "category": "transaction-split",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/BankdataService.java",
-      "id": "WL-0091",
-      "line": 42,
-      "nature": "port",
-      "program": "src/base/cobol_src/BANKDATA.cbl",
-      "symbols": [],
-      "text": "split the transaction here"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/XFRFUN_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/BankdataService.java",
       "id": "WL-0092",
-      "line": 52,
+      "line": 48,
       "nature": "port",
       "program": "src/base/cobol_src/BANKDATA.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/BANKDATA_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/BankdataService.java",
       "id": "WL-0093",
-      "line": 62,
+      "line": 58,
       "nature": "port",
       "program": "src/base/cobol_src/BANKDATA.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/BANKDATA_port_ticket.md"
     },
     {
-      "category": "business-logic",
+      "category": "transaction-split",
       "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/AbndprocService.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/BankdataService.java",
       "id": "WL-0094",
-      "line": 38,
+      "line": 68,
       "nature": "port",
-      "program": "src/base/cobol_src/ABNDPROC.cbl",
+      "program": "src/base/cobol_src/BANKDATA.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/BANKDATA_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/AbndprocService.java",
       "id": "WL-0095",
-      "line": 41,
+      "line": 37,
       "nature": "port",
       "program": "src/base/cobol_src/ABNDPROC.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/AbndprocService.java",
+      "id": "WL-0096",
+      "line": 43,
+      "nature": "port",
+      "program": "src/base/cobol_src/ABNDPROC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/ABNDPROC_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/AcctctrlService.java",
-      "id": "WL-0096",
+      "id": "WL-0097",
       "line": 26,
       "nature": "port",
       "program": "src/base/cobol_src/ACCTCTRL.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/ACCTCTRL_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/BankdataService.java",
-      "id": "WL-0097",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/AcctctrlService.java",
+      "id": "WL-0098",
       "line": 32,
       "nature": "port",
-      "program": "src/base/cobol_src/BANKDATA.cbl",
+      "program": "src/base/cobol_src/ACCTCTRL.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/ACCTCTRL_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -18027,1258 +18142,897 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/BankdataService.java",
-      "id": "WL-0098",
-      "line": 69,
+      "id": "WL-0099",
+      "line": 75,
       "nature": "port",
       "program": "src/base/cobol_src/BANKDATA.cbl",
       "symbols": [
         "BankdataService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1cacService.java",
-      "id": "WL-0099",
-      "line": 47,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1CAC.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/BANKDATA_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1cacService.java",
       "id": "WL-0100",
-      "line": 50,
+      "line": 73,
       "nature": "port",
       "program": "src/base/cobol_src/BNK1CAC.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/BNK1CAC_port_ticket.md"
     },
     {
       "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CAC.cbl:966"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CAC.cbl:1040"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CAC.cbl:1117"
-        }
-      ],
+      "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1cacService.java",
       "id": "WL-0101",
-      "line": 149,
+      "line": 79,
       "nature": "port",
       "program": "src/base/cobol_src/BNK1CAC.cbl",
-      "symbols": [
-        "Bnk1cacService#renderBnk1ca"
-      ],
-      "text": "port the logic that fills BNK1CAO before the SEND"
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/BNK1CAC_port_ticket.md"
     },
     {
       "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CAC.cbl:356"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1cacService.java",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java",
       "id": "WL-0102",
-      "line": 157,
+      "line": 69,
       "nature": "port",
-      "program": "src/base/cobol_src/BNK1CAC.cbl",
-      "symbols": [
-        "Bnk1cacService#submitBnk1ca"
-      ],
-      "text": "port the logic that reads BNK1CAI after the RECEIVE"
+      "program": "src/base/cobol_src/BNK1CCA.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/BNK1CCA_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java",
       "id": "WL-0103",
-      "line": 47,
+      "line": 75,
       "nature": "port",
       "program": "src/base/cobol_src/BNK1CCA.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java",
-      "id": "WL-0104",
-      "line": 50,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1CCA.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CCA.cbl:622"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CCA.cbl:696"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CCA.cbl:772"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java",
-      "id": "WL-0105",
-      "line": 154,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1CCA.cbl",
-      "symbols": [
-        "Bnk1ccaService#renderBnk1acc"
-      ],
-      "text": "port the logic that fills BNK1ACCO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CCA.cbl:333"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java",
-      "id": "WL-0106",
-      "line": 162,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1CCA.cbl",
-      "symbols": [
-        "Bnk1ccaService#submitBnk1acc"
-      ],
-      "text": "port the logic that reads BNK1ACCI after the RECEIVE"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/BNK1CCA_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java",
-      "id": "WL-0107",
-      "line": 54,
+      "id": "WL-0104",
+      "line": 80,
       "nature": "port",
       "program": "src/base/cobol_src/BNK1CCS.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/BNK1CCS_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java",
+      "id": "WL-0105",
+      "line": 86,
+      "nature": "port",
+      "program": "src/base/cobol_src/BNK1CCS.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/BNK1CCS_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java",
+      "id": "WL-0106",
+      "line": 191,
+      "nature": "port",
+      "program": "src/base/cobol_src/BNK1CCS.cbl",
+      "symbols": [],
+      "text": "port paragraph HANDLE-ABEND's logic",
+      "ticket": "ai_agent_jobs/BNK1CCS_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java",
+      "id": "WL-0107",
+      "line": 73,
+      "nature": "port",
+      "program": "src/base/cobol_src/BNK1CRA.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/BNK1CRA_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java",
       "id": "WL-0108",
+      "line": 79,
+      "nature": "port",
+      "program": "src/base/cobol_src/BNK1CRA.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/BNK1CRA_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+      "id": "WL-0109",
+      "line": 76,
+      "nature": "port",
+      "program": "src/base/cobol_src/BNK1DAC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/BNK1DAC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+      "id": "WL-0110",
+      "line": 82,
+      "nature": "port",
+      "program": "src/base/cobol_src/BNK1DAC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/BNK1DAC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java",
+      "id": "WL-0111",
+      "line": 84,
+      "nature": "port",
+      "program": "src/base/cobol_src/BNK1DCS.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/BNK1DCS_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java",
+      "id": "WL-0112",
+      "line": 90,
+      "nature": "port",
+      "program": "src/base/cobol_src/BNK1DCS.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/BNK1DCS_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java",
+      "id": "WL-0113",
+      "line": 225,
+      "nature": "port",
+      "program": "src/base/cobol_src/BNK1DCS.cbl",
+      "symbols": [],
+      "text": "port paragraph ABEND-HANDLING's logic",
+      "ticket": "ai_agent_jobs/BNK1DCS_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java",
+      "id": "WL-0114",
+      "line": 73,
+      "nature": "port",
+      "program": "src/base/cobol_src/BNK1TFN.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/BNK1TFN_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java",
+      "id": "WL-0115",
+      "line": 79,
+      "nature": "port",
+      "program": "src/base/cobol_src/BNK1TFN.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/BNK1TFN_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java",
+      "id": "WL-0116",
+      "line": 76,
+      "nature": "port",
+      "program": "src/base/cobol_src/BNK1UAC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/BNK1UAC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java",
+      "id": "WL-0117",
+      "line": 82,
+      "nature": "port",
+      "program": "src/base/cobol_src/BNK1UAC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/BNK1UAC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+      "id": "WL-0118",
+      "line": 75,
+      "nature": "port",
+      "program": "src/base/cobol_src/BNKMENU.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/BNKMENU_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+      "id": "WL-0119",
+      "line": 81,
+      "nature": "port",
+      "program": "src/base/cobol_src/BNKMENU.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/BNKMENU_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java",
+      "id": "WL-0120",
+      "line": 33,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY1.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules",
+      "ticket": "ai_agent_jobs/CRDTAGY1_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java",
+      "id": "WL-0121",
+      "line": 36,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY1.cbl",
+      "symbols": [],
+      "text": "build the response",
+      "ticket": "ai_agent_jobs/CRDTAGY1_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java",
+      "id": "WL-0122",
+      "line": 39,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY1.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/CRDTAGY1_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java",
+      "id": "WL-0123",
+      "line": 45,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY1.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/CRDTAGY1_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java",
+      "id": "WL-0124",
+      "line": 33,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY2.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules",
+      "ticket": "ai_agent_jobs/CRDTAGY2_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java",
+      "id": "WL-0125",
+      "line": 36,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY2.cbl",
+      "symbols": [],
+      "text": "build the response",
+      "ticket": "ai_agent_jobs/CRDTAGY2_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java",
+      "id": "WL-0126",
+      "line": 39,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY2.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/CRDTAGY2_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java",
+      "id": "WL-0127",
+      "line": 45,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY2.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/CRDTAGY2_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java",
+      "id": "WL-0128",
+      "line": 33,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY3.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules",
+      "ticket": "ai_agent_jobs/CRDTAGY3_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java",
+      "id": "WL-0129",
+      "line": 36,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY3.cbl",
+      "symbols": [],
+      "text": "build the response",
+      "ticket": "ai_agent_jobs/CRDTAGY3_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java",
+      "id": "WL-0130",
+      "line": 39,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY3.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/CRDTAGY3_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java",
+      "id": "WL-0131",
+      "line": 45,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY3.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/CRDTAGY3_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java",
+      "id": "WL-0132",
+      "line": 33,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY4.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules",
+      "ticket": "ai_agent_jobs/CRDTAGY4_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java",
+      "id": "WL-0133",
+      "line": 36,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY4.cbl",
+      "symbols": [],
+      "text": "build the response",
+      "ticket": "ai_agent_jobs/CRDTAGY4_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java",
+      "id": "WL-0134",
+      "line": 39,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY4.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/CRDTAGY4_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java",
+      "id": "WL-0135",
+      "line": 45,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY4.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/CRDTAGY4_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java",
+      "id": "WL-0136",
+      "line": 33,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY5.cbl",
+      "symbols": [],
+      "text": "implement from the program's business rules",
+      "ticket": "ai_agent_jobs/CRDTAGY5_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java",
+      "id": "WL-0137",
+      "line": 36,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY5.cbl",
+      "symbols": [],
+      "text": "build the response",
+      "ticket": "ai_agent_jobs/CRDTAGY5_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java",
+      "id": "WL-0138",
+      "line": 39,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY5.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/CRDTAGY5_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java",
+      "id": "WL-0139",
+      "line": 45,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRDTAGY5.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/CRDTAGY5_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CreaccService.java",
+      "id": "WL-0140",
+      "line": 45,
+      "nature": "port",
+      "program": "src/base/cobol_src/CREACC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/CREACC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CreaccService.java",
+      "id": "WL-0141",
+      "line": 51,
+      "nature": "port",
+      "program": "src/base/cobol_src/CREACC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/CREACC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CrecustService.java",
+      "id": "WL-0142",
+      "line": 51,
+      "nature": "port",
+      "program": "src/base/cobol_src/CRECUST.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/CRECUST_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CrecustService.java",
+      "id": "WL-0143",
       "line": 57,
       "nature": "port",
-      "program": "src/base/cobol_src/BNK1CCS.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java",
-      "id": "WL-0109",
-      "line": 185,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1CCS.cbl",
-      "symbols": [],
-      "text": "port paragraph HANDLE-ABEND's logic"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java",
-      "id": "WL-0110",
-      "line": 203,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1CCS.cbl",
-      "symbols": [],
-      "text": "port paragraph None's logic"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CCS.cbl:1286"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CCS.cbl:1364"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CCS.cbl:1441"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java",
-      "id": "WL-0111",
-      "line": 216,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1CCS.cbl",
-      "symbols": [
-        "Bnk1ccsService#renderBnk1cc"
-      ],
-      "text": "port the logic that fills BNK1CCO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CCS.cbl:500"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java",
-      "id": "WL-0112",
-      "line": 224,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1CCS.cbl",
-      "symbols": [
-        "Bnk1ccsService#submitBnk1cc"
-      ],
-      "text": "port the logic that reads BNK1CCI after the RECEIVE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java",
-      "id": "WL-0113",
-      "line": 47,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1CRA.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java",
-      "id": "WL-0114",
-      "line": 50,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1CRA.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CRA.cbl:649"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CRA.cbl:723"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CRA.cbl:797"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java",
-      "id": "WL-0115",
-      "line": 149,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1CRA.cbl",
-      "symbols": [
-        "Bnk1craService#renderBnk1cd"
-      ],
-      "text": "port the logic that fills BNK1CDO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1CRA.cbl:370"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java",
-      "id": "WL-0116",
-      "line": 157,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1CRA.cbl",
-      "symbols": [
-        "Bnk1craService#submitBnk1cd"
-      ],
-      "text": "port the logic that reads BNK1CDI after the RECEIVE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
-      "id": "WL-0117",
-      "line": 50,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1DAC.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
-      "id": "WL-0118",
-      "line": 53,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1DAC.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1DAC.cbl:827"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1DAC.cbl:906"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1DAC.cbl:980"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
-      "id": "WL-0119",
-      "line": 158,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1DAC.cbl",
-      "symbols": [
-        "Bnk1dacService#renderBnk1da"
-      ],
-      "text": "port the logic that fills BNK1DAO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1DAC.cbl:426"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
-      "id": "WL-0120",
-      "line": 166,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1DAC.cbl",
-      "symbols": [
-        "Bnk1dacService#submitBnk1da"
-      ],
-      "text": "port the logic that reads BNK1DAI after the RECEIVE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java",
-      "id": "WL-0121",
-      "line": 58,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1DCS.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java",
-      "id": "WL-0122",
-      "line": 61,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1DCS.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java",
-      "id": "WL-0123",
-      "line": 223,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1DCS.cbl",
-      "symbols": [],
-      "text": "port paragraph ABEND-HANDLING's logic"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java",
-      "id": "WL-0124",
-      "line": 241,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1DCS.cbl",
-      "symbols": [],
-      "text": "port paragraph None's logic"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1DCS.cbl:1410"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1DCS.cbl:1487"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1DCS.cbl:1564"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java",
-      "id": "WL-0125",
-      "line": 245,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1DCS.cbl",
-      "symbols": [
-        "Bnk1dcsService#renderBnk1dc"
-      ],
-      "text": "port the logic that fills BNK1DCO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1DCS.cbl:597"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java",
-      "id": "WL-0126",
-      "line": 253,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1DCS.cbl",
-      "symbols": [
-        "Bnk1dcsService#submitBnk1dc"
-      ],
-      "text": "port the logic that reads BNK1DCI after the RECEIVE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java",
-      "id": "WL-0127",
-      "line": 47,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1TFN.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java",
-      "id": "WL-0128",
-      "line": 50,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1TFN.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1TFN.cbl:672"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1TFN.cbl:746"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1TFN.cbl:820"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java",
-      "id": "WL-0129",
-      "line": 149,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1TFN.cbl",
-      "symbols": [
-        "Bnk1tfnService#renderBnk1tf"
-      ],
-      "text": "port the logic that fills BNK1TFO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1TFN.cbl:356"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java",
-      "id": "WL-0130",
-      "line": 157,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1TFN.cbl",
-      "symbols": [
-        "Bnk1tfnService#submitBnk1tf"
-      ],
-      "text": "port the logic that reads BNK1TFI after the RECEIVE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java",
-      "id": "WL-0131",
-      "line": 50,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1UAC.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java",
-      "id": "WL-0132",
-      "line": 53,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1UAC.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1UAC.cbl:1074"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1UAC.cbl:1150"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1UAC.cbl:1225"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java",
-      "id": "WL-0133",
-      "line": 171,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1UAC.cbl",
-      "symbols": [
-        "Bnk1uacService#renderBnk1ua"
-      ],
-      "text": "port the logic that fills BNK1UAO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNK1UAC.cbl:419"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java",
-      "id": "WL-0134",
-      "line": 179,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNK1UAC.cbl",
-      "symbols": [
-        "Bnk1uacService#submitBnk1ua"
-      ],
-      "text": "port the logic that reads BNK1UAI after the RECEIVE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
-      "id": "WL-0135",
-      "line": 51,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNKMENU.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
-      "id": "WL-0136",
-      "line": 54,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNKMENU.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNKMENU.cbl:979"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNKMENU.cbl:1053"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNKMENU.cbl:1129"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
-      "id": "WL-0137",
-      "line": 224,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNKMENU.cbl",
-      "symbols": [
-        "BnkmenuService#renderBnk1me"
-      ],
-      "text": "port the logic that fills BNK1MEO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "src/base/cobol_src/BNKMENU.cbl:274"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
-      "id": "WL-0138",
-      "line": 232,
-      "nature": "port",
-      "program": "src/base/cobol_src/BNKMENU.cbl",
-      "symbols": [
-        "BnkmenuService#submitBnk1me"
-      ],
-      "text": "port the logic that reads BNK1MEI after the RECEIVE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java",
-      "id": "WL-0139",
-      "line": 38,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRDTAGY1.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java",
-      "id": "WL-0140",
-      "line": 41,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRDTAGY1.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java",
-      "id": "WL-0141",
-      "line": 44,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRDTAGY1.cbl",
-      "symbols": [],
-      "text": "build the response"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java",
-      "id": "WL-0142",
-      "line": 38,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRDTAGY2.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java",
-      "id": "WL-0143",
-      "line": 41,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRDTAGY2.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java",
-      "id": "WL-0144",
-      "line": 44,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRDTAGY2.cbl",
-      "symbols": [],
-      "text": "build the response"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java",
-      "id": "WL-0145",
-      "line": 38,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRDTAGY3.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java",
-      "id": "WL-0146",
-      "line": 41,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRDTAGY3.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java",
-      "id": "WL-0147",
-      "line": 44,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRDTAGY3.cbl",
-      "symbols": [],
-      "text": "build the response"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java",
-      "id": "WL-0148",
-      "line": 38,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRDTAGY4.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java",
-      "id": "WL-0149",
-      "line": 41,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRDTAGY4.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java",
-      "id": "WL-0150",
-      "line": 44,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRDTAGY4.cbl",
-      "symbols": [],
-      "text": "build the response"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java",
-      "id": "WL-0151",
-      "line": 38,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRDTAGY5.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java",
-      "id": "WL-0152",
-      "line": 41,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRDTAGY5.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java",
-      "id": "WL-0153",
-      "line": 44,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRDTAGY5.cbl",
-      "symbols": [],
-      "text": "build the response"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CreaccService.java",
-      "id": "WL-0154",
-      "line": 48,
-      "nature": "port",
-      "program": "src/base/cobol_src/CREACC.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CreaccService.java",
-      "id": "WL-0155",
-      "line": 51,
-      "nature": "port",
-      "program": "src/base/cobol_src/CREACC.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CrecustService.java",
-      "id": "WL-0156",
-      "line": 55,
-      "nature": "port",
       "program": "src/base/cobol_src/CRECUST.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CrecustService.java",
-      "id": "WL-0157",
-      "line": 58,
-      "nature": "port",
-      "program": "src/base/cobol_src/CRECUST.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/CRECUST_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CustctrlService.java",
+      "id": "WL-0144",
+      "line": 38,
+      "nature": "port",
+      "program": "src/base/cobol_src/CUSTCTRL.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/CUSTCTRL_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CustctrlService.java",
+      "id": "WL-0145",
+      "line": 44,
+      "nature": "port",
+      "program": "src/base/cobol_src/CUSTCTRL.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/CUSTCTRL_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/DbcrfunService.java",
+      "id": "WL-0146",
+      "line": 36,
+      "nature": "port",
+      "program": "src/base/cobol_src/DBCRFUN.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/DBCRFUN_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/DbcrfunService.java",
+      "id": "WL-0147",
+      "line": 42,
+      "nature": "port",
+      "program": "src/base/cobol_src/DBCRFUN.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/DBCRFUN_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/DbcrfunService.java",
+      "id": "WL-0148",
+      "line": 116,
+      "nature": "port",
+      "program": "src/base/cobol_src/DBCRFUN.cbl",
+      "symbols": [],
+      "text": "port paragraph ABEND-HANDLING's logic",
+      "ticket": "ai_agent_jobs/DBCRFUN_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/DelaccService.java",
+      "id": "WL-0149",
+      "line": 31,
+      "nature": "port",
+      "program": "src/base/cobol_src/DELACC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/DELACC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/DelaccService.java",
+      "id": "WL-0150",
+      "line": 37,
+      "nature": "port",
+      "program": "src/base/cobol_src/DELACC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/DELACC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/DelcusService.java",
+      "id": "WL-0151",
+      "line": 48,
+      "nature": "port",
+      "program": "src/base/cobol_src/DELCUS.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/DELCUS_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/DelcusService.java",
+      "id": "WL-0152",
+      "line": 54,
+      "nature": "port",
+      "program": "src/base/cobol_src/DELCUS.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/DELCUS_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/GetcompyService.java",
+      "id": "WL-0153",
+      "line": 23,
+      "nature": "port",
+      "program": "src/base/cobol_src/GETCOMPY.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/GETCOMPY_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/GetcompyService.java",
+      "id": "WL-0154",
+      "line": 29,
+      "nature": "port",
+      "program": "src/base/cobol_src/GETCOMPY.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/GETCOMPY_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/GetscodeService.java",
+      "id": "WL-0155",
+      "line": 23,
+      "nature": "port",
+      "program": "src/base/cobol_src/GETSCODE.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/GETSCODE_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/GetscodeService.java",
+      "id": "WL-0156",
+      "line": 29,
+      "nature": "port",
+      "program": "src/base/cobol_src/GETSCODE.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/GETSCODE_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/InqaccService.java",
+      "id": "WL-0157",
+      "line": 33,
+      "nature": "port",
+      "program": "src/base/cobol_src/INQACC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/INQACC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/InqaccService.java",
       "id": "WL-0158",
       "line": 39,
       "nature": "port",
-      "program": "src/base/cobol_src/CUSTCTRL.cbl",
+      "program": "src/base/cobol_src/INQACC.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/INQACC_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CustctrlService.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/InqaccService.java",
       "id": "WL-0159",
-      "line": 42,
-      "nature": "port",
-      "program": "src/base/cobol_src/CUSTCTRL.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/DbcrfunService.java",
-      "id": "WL-0160",
-      "line": 40,
-      "nature": "port",
-      "program": "src/base/cobol_src/DBCRFUN.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/DbcrfunService.java",
-      "id": "WL-0161",
-      "line": 43,
-      "nature": "port",
-      "program": "src/base/cobol_src/DBCRFUN.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/DbcrfunService.java",
-      "id": "WL-0162",
-      "line": 93,
-      "nature": "port",
-      "program": "src/base/cobol_src/DBCRFUN.cbl",
-      "symbols": [],
-      "text": "port paragraph ABEND-HANDLING's logic"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/DelaccService.java",
-      "id": "WL-0163",
-      "line": 35,
-      "nature": "port",
-      "program": "src/base/cobol_src/DELACC.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/DelaccService.java",
-      "id": "WL-0164",
-      "line": 38,
-      "nature": "port",
-      "program": "src/base/cobol_src/DELACC.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/DelcusService.java",
-      "id": "WL-0165",
-      "line": 53,
-      "nature": "port",
-      "program": "src/base/cobol_src/DELCUS.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/DelcusService.java",
-      "id": "WL-0166",
-      "line": 56,
-      "nature": "port",
-      "program": "src/base/cobol_src/DELCUS.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/GetcompyService.java",
-      "id": "WL-0167",
-      "line": 24,
-      "nature": "port",
-      "program": "src/base/cobol_src/GETCOMPY.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/GetcompyService.java",
-      "id": "WL-0168",
-      "line": 27,
-      "nature": "port",
-      "program": "src/base/cobol_src/GETCOMPY.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/GetscodeService.java",
-      "id": "WL-0169",
-      "line": 24,
-      "nature": "port",
-      "program": "src/base/cobol_src/GETSCODE.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/GetscodeService.java",
-      "id": "WL-0170",
-      "line": 27,
-      "nature": "port",
-      "program": "src/base/cobol_src/GETSCODE.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/InqaccService.java",
-      "id": "WL-0171",
-      "line": 37,
+      "line": 141,
       "nature": "port",
       "program": "src/base/cobol_src/INQACC.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/InqaccService.java",
-      "id": "WL-0172",
-      "line": 40,
-      "nature": "port",
-      "program": "src/base/cobol_src/INQACC.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/InqaccService.java",
-      "id": "WL-0173",
-      "line": 126,
-      "nature": "port",
-      "program": "src/base/cobol_src/INQACC.cbl",
-      "symbols": [],
-      "text": "port paragraph ABEND-HANDLING's logic"
+      "text": "port paragraph ABEND-HANDLING's logic",
+      "ticket": "ai_agent_jobs/INQACC_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/InqacccuService.java",
-      "id": "WL-0174",
-      "line": 42,
+      "id": "WL-0160",
+      "line": 39,
       "nature": "port",
       "program": "src/base/cobol_src/INQACCCU.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/INQACCCU_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/InqacccuService.java",
-      "id": "WL-0175",
+      "id": "WL-0161",
       "line": 45,
       "nature": "port",
       "program": "src/base/cobol_src/INQACCCU.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/INQACCCU_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/InqacccuService.java",
-      "id": "WL-0176",
-      "line": 139,
+      "id": "WL-0162",
+      "line": 159,
       "nature": "port",
       "program": "src/base/cobol_src/INQACCCU.cbl",
       "symbols": [],
-      "text": "port paragraph ABEND-HANDLING's logic"
+      "text": "port paragraph ABEND-HANDLING's logic",
+      "ticket": "ai_agent_jobs/INQACCCU_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/InqcustService.java",
-      "id": "WL-0177",
-      "line": 50,
-      "nature": "port",
-      "program": "src/base/cobol_src/INQCUST.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/InqcustService.java",
-      "id": "WL-0178",
-      "line": 53,
-      "nature": "port",
-      "program": "src/base/cobol_src/INQCUST.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/InqcustService.java",
-      "id": "WL-0179",
-      "line": 100,
-      "nature": "port",
-      "program": "src/base/cobol_src/INQCUST.cbl",
-      "symbols": [],
-      "text": "port paragraph ABEND-HANDLING's logic"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/UpdaccService.java",
-      "id": "WL-0180",
-      "line": 29,
-      "nature": "port",
-      "program": "src/base/cobol_src/UPDACC.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/UpdaccService.java",
-      "id": "WL-0181",
-      "line": 32,
-      "nature": "port",
-      "program": "src/base/cobol_src/UPDACC.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/UpdcustService.java",
-      "id": "WL-0182",
-      "line": 39,
-      "nature": "port",
-      "program": "src/base/cobol_src/UPDCUST.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/UpdcustService.java",
-      "id": "WL-0183",
-      "line": 42,
-      "nature": "port",
-      "program": "src/base/cobol_src/UPDCUST.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/XfrfunService.java",
-      "id": "WL-0184",
+      "id": "WL-0163",
       "line": 46,
       "nature": "port",
-      "program": "src/base/cobol_src/XFRFUN.cbl",
+      "program": "src/base/cobol_src/INQCUST.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/INQCUST_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/InqcustService.java",
+      "id": "WL-0164",
+      "line": 52,
+      "nature": "port",
+      "program": "src/base/cobol_src/INQCUST.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/INQCUST_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/InqcustService.java",
+      "id": "WL-0165",
+      "line": 123,
+      "nature": "port",
+      "program": "src/base/cobol_src/INQCUST.cbl",
+      "symbols": [],
+      "text": "port paragraph ABEND-HANDLING's logic",
+      "ticket": "ai_agent_jobs/INQCUST_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/UpdaccService.java",
+      "id": "WL-0166",
+      "line": 28,
+      "nature": "port",
+      "program": "src/base/cobol_src/UPDACC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/UPDACC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/UpdaccService.java",
+      "id": "WL-0167",
+      "line": 34,
+      "nature": "port",
+      "program": "src/base/cobol_src/UPDACC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/UPDACC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/UpdcustService.java",
+      "id": "WL-0168",
+      "line": 38,
+      "nature": "port",
+      "program": "src/base/cobol_src/UPDCUST.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/UPDCUST_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/UpdcustService.java",
+      "id": "WL-0169",
+      "line": 44,
+      "nature": "port",
+      "program": "src/base/cobol_src/UPDCUST.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/UPDCUST_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/XfrfunService.java",
-      "id": "WL-0185",
-      "line": 49,
+      "id": "WL-0170",
+      "line": 42,
       "nature": "port",
       "program": "src/base/cobol_src/XFRFUN.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/XFRFUN_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/XfrfunService.java",
-      "id": "WL-0186",
-      "line": 279,
+      "id": "WL-0171",
+      "line": 48,
       "nature": "port",
       "program": "src/base/cobol_src/XFRFUN.cbl",
       "symbols": [],
-      "text": "port paragraph ABEND-HANDLING's logic"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/XFRFUN_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/XfrfunService.java",
+      "id": "WL-0172",
+      "line": 278,
+      "nature": "port",
+      "program": "src/base/cobol_src/XFRFUN.cbl",
+      "symbols": [],
+      "text": "port paragraph ABEND-HANDLING's logic",
+      "ticket": "ai_agent_jobs/XFRFUN_port_ticket.md"
     },
     {
       "category": "configuration",
       "facts": [],
       "file": "src/main/resources/application.yml",
-      "id": "WL-0187",
+      "id": "WL-0173",
       "line": 9,
       "nature": "review",
       "program": "(project configuration)",
@@ -19286,10 +19040,136 @@
       "text": "Update these credentials for your target environment"
     }
   ],
+  "port_order": [
+    {
+      "file": "src/base/cobol_src/ABNDPROC.cbl",
+      "rank": 1
+    },
+    {
+      "file": "src/base/cobol_src/INQCUST.cbl",
+      "rank": 2
+    },
+    {
+      "file": "src/base/cobol_src/INQACCCU.cbl",
+      "rank": 3
+    },
+    {
+      "file": "src/base/cobol_src/INQACC.cbl",
+      "rank": 4
+    },
+    {
+      "file": "src/base/cobol_src/DELACC.cbl",
+      "rank": 5
+    },
+    {
+      "file": "src/base/cobol_src/GETSCODE.cbl",
+      "rank": 6
+    },
+    {
+      "file": "src/base/cobol_src/BANKDATA.cbl",
+      "rank": 7
+    },
+    {
+      "file": "src/base/cobol_src/GETCOMPY.cbl",
+      "rank": 8
+    },
+    {
+      "file": "src/base/cobol_src/CREACC.cbl",
+      "rank": 9
+    },
+    {
+      "file": "src/base/cobol_src/CRECUST.cbl",
+      "rank": 10
+    },
+    {
+      "file": "src/base/cobol_src/DBCRFUN.cbl",
+      "rank": 11
+    },
+    {
+      "file": "src/base/cobol_src/XFRFUN.cbl",
+      "rank": 12
+    },
+    {
+      "file": "src/base/cobol_src/UPDACC.cbl",
+      "rank": 13
+    },
+    {
+      "file": "src/base/cobol_src/DELCUS.cbl",
+      "rank": 14
+    },
+    {
+      "file": "src/base/cobol_src/UPDCUST.cbl",
+      "rank": 15
+    },
+    {
+      "file": "src/base/cobol_src/ACCTCTRL.cbl",
+      "rank": 16
+    },
+    {
+      "file": "src/base/cobol_src/BNK1CAC.cbl",
+      "rank": 17
+    },
+    {
+      "file": "src/base/cobol_src/BNK1CCA.cbl",
+      "rank": 18
+    },
+    {
+      "file": "src/base/cobol_src/BNK1CCS.cbl",
+      "rank": 19
+    },
+    {
+      "file": "src/base/cobol_src/BNK1CRA.cbl",
+      "rank": 20
+    },
+    {
+      "file": "src/base/cobol_src/BNK1DAC.cbl",
+      "rank": 21
+    },
+    {
+      "file": "src/base/cobol_src/BNK1DCS.cbl",
+      "rank": 22
+    },
+    {
+      "file": "src/base/cobol_src/BNK1TFN.cbl",
+      "rank": 23
+    },
+    {
+      "file": "src/base/cobol_src/BNK1UAC.cbl",
+      "rank": 24
+    },
+    {
+      "file": "src/base/cobol_src/BNKMENU.cbl",
+      "rank": 25
+    },
+    {
+      "file": "src/base/cobol_src/CRDTAGY1.cbl",
+      "rank": 26
+    },
+    {
+      "file": "src/base/cobol_src/CRDTAGY2.cbl",
+      "rank": 27
+    },
+    {
+      "file": "src/base/cobol_src/CRDTAGY3.cbl",
+      "rank": 28
+    },
+    {
+      "file": "src/base/cobol_src/CRDTAGY4.cbl",
+      "rank": 29
+    },
+    {
+      "file": "src/base/cobol_src/CRDTAGY5.cbl",
+      "rank": 30
+    },
+    {
+      "file": "src/base/cobol_src/CUSTCTRL.cbl",
+      "rank": 31
+    }
+  ],
   "summary": {
     "by_category": {
-      "batch-utility": 2,
-      "business-logic": 93,
+      "batch-utility": 3,
+      "business-logic": 78,
       "commarea-mismatch": 35,
       "configuration": 1,
       "db2-dialect": 31,
@@ -19302,10 +19182,10 @@
     "by_nature": {
       "conflict": 36,
       "fact-gap": 7,
-      "port": 98,
+      "port": 84,
       "review": 46
     },
-    "items": 187,
+    "items": 173,
     "programs": 32
   },
   "version": 1

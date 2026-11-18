@@ -18,7 +18,7 @@ import com.gitgalaxy.modernized.service.Zecs001Service;
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
  * COMMAREA: DFHCOMMAREA (Source/ZECS001.cbl, 1 bytes) -> Zecs001Dfhcommarea.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/zecs001")

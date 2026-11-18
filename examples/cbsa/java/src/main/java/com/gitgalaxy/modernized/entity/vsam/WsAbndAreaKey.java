@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class WsAbndAreaKey implements Serializable {
 
-    // ABND-UTIME-KEY: PIC S9(15), offset 0, 8 bytes
+    // ABND-UTIME-KEY: PIC S9(15) COMP-3, offset 0, 8 bytes
     @Column(name = "ABND_UTIME_KEY")
     private Long abndUtimeKey;
 

@@ -11,7 +11,9 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.Sam2Parms;
+import com.gitgalaxy.modernized.call.CobolRef;
+import com.gitgalaxy.modernized.dto.contract.MultirootSamSam2CustRec;
+import com.gitgalaxy.modernized.dto.contract.MultirootSamSam2Sam2Parms;
 import com.gitgalaxy.modernized.dto.contract.TransactionRecord2;
 
 @Service
@@ -20,17 +22,12 @@ public class MultirootSamSam2Service {
 
     private static final Logger log = LoggerFactory.getLogger(MultirootSamSam2Service.class);
 
-    public void executeMultirootSamSam2(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for multiroot__sam__SAM2");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
-    /** CALLed by another program USING CUST-REC, TRANSACTION-RECORD, TRAN-OK, TRAN-MSG, SAM2-PARMS. TODO: [AI AGENT] implement from the program's business rules. */
-    // CUST-REC: TODO: CUST-REC was not found in the DATA DIVISION; carried as text
+    /** CALLed by another program USING CUST-REC, TRANSACTION-RECORD, TRAN-OK, TRAN-MSG, SAM2-PARMS; returns its RETURN-CODE. A BY REFERENCE item is a CobolRef: set() it where the program changes it -- the caller sees the change. TODO: [AI AGENT] implement from the program's business rules. */
     // TRAN-OK: PIC X
     // TRAN-MSG: PIC X(50)
-    public void handleCall(String custRec, TransactionRecord2 transactionRecord, String tranOk, String tranMsg, Sam2Parms sam2Parms) {
+    public int handleCall(MultirootSamSam2CustRec custRec, TransactionRecord2 transactionRecord, CobolRef<String> tranOk, CobolRef<String> tranMsg, MultirootSamSam2Sam2Parms sam2Parms) {
         log.info("MultirootSamSam2: handleCall");
+        return 0;
     }
 
 }

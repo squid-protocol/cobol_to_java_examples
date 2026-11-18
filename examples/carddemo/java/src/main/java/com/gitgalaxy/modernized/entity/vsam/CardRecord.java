@@ -28,7 +28,7 @@ public class CardRecord {
 
     // CARD-NUM: PIC X(16), offset 0, 16 bytes
     @Id
-    @Column(name = "CARD_NUM", length = 16)
+    @Column(name = "CARD_NUM", columnDefinition = "varchar(16) COLLATE \"C\"")
     private String cardNum;
 
     // CARD-ACCT-ID: PIC 9(11), offset 16, 11 bytes
@@ -51,11 +51,36 @@ public class CardRecord {
     @Column(name = "CARD_ACTIVE_STATUS", length = 1)
     private String cardActiveStatus;
 
+    // #3822: CARD-NUM as cp037 bytes in hex -- browses order by it, as VSAM orders the key
+    @Column(name = "CARD_NUM_SORT", columnDefinition = "varchar(32) COLLATE \"C\"")
+    private String cardNumSort;
+
+    @PrePersist
+    @PreUpdate
+    void codePageSortKey() {
+        this.cardNumSort = CobolRecords.sortKey(cardNum, "cp037");
+    }
+
+
+    /** #4875: the record bytes this entity was read from, kept beside the typed columns: a field whose
+     *  value is unchanged is written back as these bytes, so a value no column type holds (spaces in a
+     *  PIC 9, a non-preferred sign) and FILLER survive the round trip, as the VSAM record keeps them. */
+    @Column(name = "VSAM_RECORD", length = 150)
+    @lombok.Getter(lombok.AccessLevel.NONE)
+    @lombok.Setter(lombok.AccessLevel.NONE)
+    @lombok.EqualsAndHashCode.Exclude
+    @lombok.ToString.Exclude
+    private byte[] vsamRecord;
 
     /** #3624: this record from its fixed-width VSAM form (150 bytes, as REPRO unloads it), each
      *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
-     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+     *  transfer, IBM037 on z/OS). The bytes themselves are kept in vsamRecord (#4875). */
     public static CardRecord fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        if (rec.length < 150) {  // a WRITE ... LENGTH(n) short of the record: the rest is spaces
+            byte[] full = CobolRecords.blank(150, text);
+            System.arraycopy(rec, 0, full, 0, rec.length);
+            rec = full;
+        }
         CardRecord r = new CardRecord();
         r.cardNum = CobolRecords.text(rec, 0, 16, text);
         r.cardAcctId = CobolRecords.toLong(CobolRecords.zoned(rec, 16, 11, 0, text));
@@ -63,18 +88,33 @@ public class CardRecord {
         r.cardEmbossedName = CobolRecords.text(rec, 30, 50, text);
         r.cardExpiraionDate = CobolRecords.text(rec, 80, 10, text);
         r.cardActiveStatus = CobolRecords.text(rec, 90, 1, text);
+        r.vsamRecord = java.util.Arrays.copyOf(rec, 150);
         return r;
     }
 
-    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    /** #3624: the fixed-width VSAM record of this entity: the bytes it was read from (vsamRecord), each field
+     *  whose value changed since re-encoded; a new entity's FILLER as spaces. */
     public byte[] toRecord(java.nio.charset.Charset text) {
-        byte[] rec = CobolRecords.blank(150, text);
-        CobolRecords.putText(rec, 0, 16, cardNum, text);
-        CobolRecords.putZoned(rec, 16, 11, 0, false, CobolRecords.decimal(cardAcctId), text);
-        CobolRecords.putZoned(rec, 27, 3, 0, false, CobolRecords.decimal(cardCvvCd), text);
-        CobolRecords.putText(rec, 30, 50, cardEmbossedName, text);
-        CobolRecords.putText(rec, 80, 10, cardExpiraionDate, text);
-        CobolRecords.putText(rec, 90, 1, cardActiveStatus, text);
+        byte[] read = vsamRecord != null && vsamRecord.length == 150 ? vsamRecord : null;
+        byte[] rec = read != null ? read.clone() : CobolRecords.blank(150, text);
+        if (read == null || !java.util.Objects.equals(cardNum, CobolRecords.text(read, 0, 16, text))) {
+            CobolRecords.putText(rec, 0, 16, cardNum, text);
+        }
+        if (read == null || !java.util.Objects.equals(cardAcctId, CobolRecords.toLong(CobolRecords.zoned(read, 16, 11, 0, text)))) {
+            CobolRecords.putZoned(rec, 16, 11, 0, false, CobolRecords.decimal(cardAcctId), text);
+        }
+        if (read == null || !java.util.Objects.equals(cardCvvCd, CobolRecords.toInteger(CobolRecords.zoned(read, 27, 3, 0, text)))) {
+            CobolRecords.putZoned(rec, 27, 3, 0, false, CobolRecords.decimal(cardCvvCd), text);
+        }
+        if (read == null || !java.util.Objects.equals(cardEmbossedName, CobolRecords.text(read, 30, 50, text))) {
+            CobolRecords.putText(rec, 30, 50, cardEmbossedName, text);
+        }
+        if (read == null || !java.util.Objects.equals(cardExpiraionDate, CobolRecords.text(read, 80, 10, text))) {
+            CobolRecords.putText(rec, 80, 10, cardExpiraionDate, text);
+        }
+        if (read == null || !java.util.Objects.equals(cardActiveStatus, CobolRecords.text(read, 90, 1, text))) {
+            CobolRecords.putText(rec, 90, 1, cardActiveStatus, text);
+        }
         return rec;
     }
 }

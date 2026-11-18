@@ -11,8 +11,12 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.FnrReg;
-import com.gitgalaxy.modernized.dto.contract.SrcGmlR001i101InternKomOmr;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.SrcGmlR0019906FnrEndrReg;
+import com.gitgalaxy.modernized.dto.contract.SrcGmlR001i201InternKomOmr;
+import com.gitgalaxy.modernized.dto.contract.SrcGmlR001i301InternKomOmr;
+import com.gitgalaxy.modernized.dto.contract.SrcGmlR001i701InternKomOmr;
+import com.gitgalaxy.modernized.dto.contract.SrcGmlR001i801InternKomOmr;
 import com.gitgalaxy.modernized.exception.*;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.transaction.annotation.Transactional;
@@ -75,54 +79,62 @@ public class SrcGmlR001i101Service {
     // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
     // TODO: AI AGENT - Implement or mock interface call to: R001i101Service
 
-    public void executeSrcGmlR001i101(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__GML__R001I101");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcGmlR001i101: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcGmlR001i101: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R001I101", null);
+        region.run(task, "R001I101", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R0019906) at src/GML/R001I101.pli:494, src/GML/R001I101.pli:625, src/GML/R001I101.pli:757.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public FnrReg linkSrcGmlR0019906(FnrReg request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcGmlR0019906FnrEndrReg linkSrcGmlR0019906(SrcGmlR0019906FnrEndrReg request) {
         return srcGmlR0019906Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS LINK PROGRAM(R001I201) at src/GML/R001I101.pli:293.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public SrcGmlR001i101InternKomOmr linkSrcGmlR001i201(SrcGmlR001i101InternKomOmr request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcGmlR001i201InternKomOmr linkSrcGmlR001i201(SrcGmlR001i201InternKomOmr request) {
         return srcGmlR001i201Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS LINK PROGRAM(R001I301) at src/GML/R001I101.pli:311.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public SrcGmlR001i101InternKomOmr linkSrcGmlR001i301(SrcGmlR001i101InternKomOmr request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcGmlR001i301InternKomOmr linkSrcGmlR001i301(SrcGmlR001i301InternKomOmr request) {
         return srcGmlR001i301Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS LINK PROGRAM(R001I701) at src/GML/R001I101.pli:329.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public SrcGmlR001i101InternKomOmr linkSrcGmlR001i701(SrcGmlR001i101InternKomOmr request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcGmlR001i701InternKomOmr linkSrcGmlR001i701(SrcGmlR001i701InternKomOmr request) {
         return srcGmlR001i701Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS LINK PROGRAM(R001I801) at src/GML/R001I101.pli:345.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public SrcGmlR001i101InternKomOmr linkSrcGmlR001i801(SrcGmlR001i101InternKomOmr request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcGmlR001i801InternKomOmr linkSrcGmlR001i801(SrcGmlR001i801InternKomOmr request) {
         return srcGmlR001i801Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010301) at src/GML/R001I101.pli:261, src/GML/R001I101.pli:807. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcGmlR0010301() {
         srcGmlR0010301Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R001IA01) at src/GML/R001I101.pli:372. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcGmlR001ia01() {
         srcGmlR001ia01Service.getObject().handleLink();
     }

@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 /**
  * COBOL record WS-THIS-PROGCOMMAREA (app/cbl/COCRDUPC.cbl), 329 bytes, from GitGalaxy's verified skeleton.
  * Bytes 160-488 of the COMMAREA Cocrdupc reads: MOVE DFHCOMMAREA(LENGTH OF CARDDEMO-COMMAREA + 1:LENGTH OF WS-THIS-PROGCOMMAREA) at app/cbl/COCRDUPC.cbl:398.
- * Record fields field testing: field-tested (6 public / 0 private estates).
+ * Record fields field testing: open (6 public / 0 private estates).
  */
 @Data
 @NoArgsConstructor

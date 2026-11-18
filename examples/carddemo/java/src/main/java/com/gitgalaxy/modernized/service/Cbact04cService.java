@@ -37,11 +37,6 @@ public class Cbact04cService {
     private final FdDiscgrpRecRepository fdDiscgrpRecRepository;
     private final FdTranCatBalRecordRepository fdTranCatBalRecordRepository;
 
-    public void executeCbact04c(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for CBACT04C");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
     /** AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS as BATCH SELECT ACCOUNT-FILE at app/cbl/CBACT04C.cbl (SELECT ACCOUNT-FILE); VSAM defines field testing: open (3 public / 0 private estates). */
     // TODO: this program uses FD-ACCTFILE-REC (300 bytes); the entity follows ACCOUNT-RECORD (300 bytes) -- map one onto the other
     public Optional<AccountRecord> readAccountFile(Long key) {
@@ -64,8 +59,9 @@ public class Cbact04cService {
     }
 
     /** AWS.M2.CARDDEMO.TCATBALF.VSAM.KSDS as BATCH SELECT TCATBAL-FILE at app/cbl/CBACT04C.cbl (SELECT TCATBAL-FILE); VSAM defines field testing: open (3 public / 0 private estates). */
+    // Sequential READ: in key order (FD-TRANCAT-ACCT-ID, FD-TRANCAT-TYPE-CD, FD-TRANCAT-CD, #3945). TODO: its text parts order by the database's collation, not the code page's bytes.
     public List<FdTranCatBalRecord> readAllTcatbalFile() {
-        return fdTranCatBalRecordRepository.findAll();
+        return fdTranCatBalRecordRepository.findAll(org.springframework.data.domain.Sort.by("id.fdTrancatAcctId", "id.fdTrancatTypeCd", "id.fdTrancatCd"));
     }
 
     /** The batch entry (#3622): run by job INTCALC step STEP15 (app/jcl/INTCALC.jcl:22).

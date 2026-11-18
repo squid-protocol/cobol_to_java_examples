@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.batch.Dd;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -18,8 +20,19 @@ public class Cbtrn01cService {
 
     private static final Logger log = LoggerFactory.getLogger(Cbtrn01cService.class);
 
-    public void executeCbtrn01c(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for CBTRN01C");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** The batch entry (#3622): run by no JCL step in this estate (a main program with files of its own: its JCL is elsewhere).
+     *  `dds` are the step's DD statements (DatasetResolver maps each to its file); `parm` the
+     *  text its EXEC PARM= passes (null without one) -- a PROCEDURE DIVISION USING area's data.
+     *  DD ACCTFILE (INPUT) -> ?.
+     *  DD CARDFILE (INPUT) -> ?.
+     *  DD CUSTFILE (INPUT) -> ?.
+     *  DD DALYTRAN (INPUT) -> ?.
+     *  DD TRANFILE (INPUT) -> ?.
+     *  DD XREFFILE (INPUT) -> ?.
+     *  TODO: port the PROCEDURE DIVISION main line; return its RETURN-CODE.
+     *  JCL job flow field testing: open (5 public / 0 private estates). */
+    public int runBatch(List<Dd> dds, String parm) {
+        return 0;
     }
+
 }

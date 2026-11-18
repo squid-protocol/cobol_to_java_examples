@@ -27,7 +27,7 @@ public class Fnrkont {
 
     // TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey
     @Id
-    @Column(name = "VSAM_KEY")
+    @Column(name = "VSAM_KEY", columnDefinition = "varchar(255) COLLATE \"C\"")
     private String vsamKey;
 
     // FNR: FIXED DEC(11), offset 0, 6 bytes
@@ -55,11 +55,11 @@ public class Fnrkont {
     private Integer tp;
 
     // SPT: FIXED DEC(3,2), offset 17, 2 bytes
-    @Column(name = "SPT")
+    @Column(name = "SPT", precision = 3, scale = 2)
     private BigDecimal spt;
 
     // OPT: FIXED DEC(3,2), offset 19, 2 bytes
-    @Column(name = "OPT")
+    @Column(name = "OPT", precision = 3, scale = 2)
     private BigDecimal opt;
 
     // PÅ: FIXED DEC(3), offset 21, 2 bytes
@@ -75,11 +75,11 @@ public class Fnrkont {
     private Integer tpAvd;
 
     // SPT_AVD: FIXED DEC(3,2), offset 28, 2 bytes
-    @Column(name = "SPT_AVD")
+    @Column(name = "SPT_AVD", precision = 3, scale = 2)
     private BigDecimal sptAvd;
 
     // OPT_AVD: FIXED DEC(3,2), offset 30, 2 bytes
-    @Column(name = "OPT_AVD")
+    @Column(name = "OPT_AVD", precision = 3, scale = 2)
     private BigDecimal optAvd;
 
     // PÅ_AVD: FIXED DEC(3), offset 32, 2 bytes
@@ -95,11 +95,11 @@ public class Fnrkont {
     private Integer tpRf;
 
     // SPT_RF: FIXED DEC(3,2), offset 39, 2 bytes
-    @Column(name = "SPT_RF")
+    @Column(name = "SPT_RF", precision = 3, scale = 2)
     private BigDecimal sptRf;
 
     // OPT_RF: FIXED DEC(3,2), offset 41, 2 bytes
-    @Column(name = "OPT_RF")
+    @Column(name = "OPT_RF", precision = 3, scale = 2)
     private BigDecimal optRf;
 
     // PÅ_RF: FIXED DEC(3), offset 43, 2 bytes
@@ -115,11 +115,11 @@ public class Fnrkont {
     private Integer tpAvdRf;
 
     // SPT_AVD_RF: FIXED DEC(3,2), offset 50, 2 bytes
-    @Column(name = "SPT_AVD_RF")
+    @Column(name = "SPT_AVD_RF", precision = 3, scale = 2)
     private BigDecimal sptAvdRf;
 
     // OPT_AVD_RF: FIXED DEC(3,2), offset 52, 2 bytes
-    @Column(name = "OPT_AVD_RF")
+    @Column(name = "OPT_AVD_RF", precision = 3, scale = 2)
     private BigDecimal optAvdRf;
 
     // PÅ_AVD_RF: FIXED DEC(3), offset 54, 2 bytes

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.entity.vsam.BrukerinfoRec;
 import com.gitgalaxy.modernized.repository.vsam.BrukerinfoRecRepository;
 import java.math.BigDecimal;
@@ -47,78 +48,86 @@ public class SrcR0012001Service {
     // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
     // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
 
-    public void executeSrcR0012001(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__R0012001");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcR0012001: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcR0012001: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R0012001", null);
+        region.run(task, "R0012001", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R0012010) at src/R0012001.pli:182.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkR0012010() {
         r0012010Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0011520) at src/R0012001.pli:192, src/R0012001.pli:198.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR0011520() {
         srcR0011520Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0011820) at src/R0012001.pli:217.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR0011820() {
         srcR0011820Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0012201) at src/R0012001.pli:205.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR0012201() {
         srcR0012201Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0013001) at src/R0012001.pli:248.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR0013001() {
         srcR0013001Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0016101) at src/R0012001.pli:210.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR0016101() {
         srcR0016101Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0016501) at src/R0012001.pli:237.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR0016501() {
         srcR0016501Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R001I501) at src/R0012001.pli:223.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR001i501() {
         srcR001i501Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010301) at src/R0012001.pli:359. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0010301() {
         srcR0010301Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010401) at src/R0012001.pli:368. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0010401() {
         srcR0010401Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010480) at src/R0012001.pli:309. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0010480() {
         srcR0010480Service.getObject().handleLink();
     }
@@ -126,6 +135,12 @@ public class SrcR0012001Service {
     /** BRUKINFO as CICS file BRUKINFO at src/R0012001.pli:283; VSAM defines field testing: open (3 public / 0 private estates). */
     // TODO: this program uses BRUKERINFO_REC (52 bytes); the entity follows BRUKERINFO_REC (50 bytes) -- map one onto the other
     public BrukerinfoRec writeBrukinfo(BrukerinfoRec record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<BrukerinfoRec> onFile = brukerinfoRecRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file BRUKINFO already holds the key of this record");
+        }
         return brukerinfoRecRepository.save(record);
     }
 

@@ -1,0 +1,281 @@
+[
+  {
+    "blast_radius": 52.265,
+    "callers": 20,
+    "calls": 0,
+    "file": "base/src/lgstsq.cbl",
+    "key": "lgstsq",
+    "rank": 1,
+    "ticket": "lgstsq_port_ticket.md"
+  },
+  {
+    "blast_radius": 9.776,
+    "callers": 4,
+    "calls": 3,
+    "file": "base/src/lgapol01.cbl",
+    "key": "lgapol01",
+    "rank": 2,
+    "ticket": "lgapol01_port_ticket.md"
+  },
+  {
+    "blast_radius": 9.776,
+    "callers": 4,
+    "calls": 3,
+    "file": "base/src/lgdpol01.cbl",
+    "key": "lgdpol01",
+    "rank": 3,
+    "ticket": "lgdpol01_port_ticket.md"
+  },
+  {
+    "blast_radius": 9.776,
+    "callers": 4,
+    "calls": 4,
+    "file": "base/src/lgipol01.cbl",
+    "key": "lgipol01",
+    "rank": 4,
+    "ticket": "lgipol01_port_ticket.md"
+  },
+  {
+    "blast_radius": 8.57,
+    "callers": 3,
+    "calls": 3,
+    "file": "base/src/lgupol01.cbl",
+    "key": "lgupol01",
+    "rank": 5,
+    "ticket": "lgupol01_port_ticket.md"
+  },
+  {
+    "blast_radius": 8.445,
+    "callers": 1,
+    "calls": 4,
+    "file": "base/src/lgapdb01.cbl",
+    "key": "lgapdb01",
+    "rank": 6,
+    "ticket": "lgapdb01_port_ticket.md"
+  },
+  {
+    "blast_radius": 8.445,
+    "callers": 1,
+    "calls": 3,
+    "file": "base/src/lgdpdb01.cbl",
+    "key": "lgdpdb01",
+    "rank": 7,
+    "ticket": "lgdpdb01_port_ticket.md"
+  },
+  {
+    "blast_radius": 8.104,
+    "callers": 1,
+    "calls": 4,
+    "file": "base/src/lgupdb01.cbl",
+    "key": "lgupdb01",
+    "rank": 8,
+    "ticket": "lgupdb01_port_ticket.md"
+  },
+  {
+    "blast_radius": 8.068,
+    "callers": 1,
+    "calls": 2,
+    "file": "base/src/lgdpvs01.cbl",
+    "key": "lgdpvs01",
+    "rank": 9,
+    "ticket": "lgdpvs01_port_ticket.md"
+  },
+  {
+    "blast_radius": 7.753,
+    "callers": 1,
+    "calls": 3,
+    "file": "base/src/lgipdb01.cbl",
+    "key": "lgipdb01",
+    "rank": 10,
+    "ticket": "lgipdb01_port_ticket.md"
+  },
+  {
+    "blast_radius": 7.625,
+    "callers": 1,
+    "calls": 4,
+    "file": "base/src/lgucdb01.cbl",
+    "key": "lgucdb01",
+    "rank": 11,
+    "ticket": "lgucdb01_port_ticket.md"
+  },
+  {
+    "blast_radius": 7.47,
+    "callers": 1,
+    "calls": 2,
+    "file": "base/src/lgapvs01.cbl",
+    "key": "lgapvs01",
+    "rank": 12,
+    "ticket": "lgapvs01_port_ticket.md"
+  },
+  {
+    "blast_radius": 7.398,
+    "callers": 1,
+    "calls": 2,
+    "file": "base/src/lgupvs01.cbl",
+    "key": "lgupvs01",
+    "rank": 13,
+    "ticket": "lgupvs01_port_ticket.md"
+  },
+  {
+    "blast_radius": 7.296,
+    "callers": 1,
+    "calls": 2,
+    "file": "base/src/lgucvs01.cbl",
+    "key": "lgucvs01",
+    "rank": 14,
+    "ticket": "lgucvs01_port_ticket.md"
+  },
+  {
+    "blast_radius": 7.138,
+    "callers": 1,
+    "calls": 5,
+    "file": "base/src/lgacdb01.cbl",
+    "key": "lgacdb01",
+    "rank": 15,
+    "ticket": "lgacdb01_port_ticket.md"
+  },
+  {
+    "blast_radius": 7.138,
+    "callers": 1,
+    "calls": 3,
+    "file": "base/src/lgicdb01.cbl",
+    "key": "lgicdb01",
+    "rank": 16,
+    "ticket": "lgicdb01_port_ticket.md"
+  },
+  {
+    "blast_radius": 6.889,
+    "callers": 1,
+    "calls": 2,
+    "file": "base/src/lgacdb02.cbl",
+    "key": "lgacdb02",
+    "rank": 17,
+    "ticket": "lgacdb02_port_ticket.md"
+  },
+  {
+    "blast_radius": 6.889,
+    "callers": 1,
+    "calls": 2,
+    "file": "base/src/lgacvs01.cbl",
+    "key": "lgacvs01",
+    "rank": 18,
+    "ticket": "lgacvs01_port_ticket.md"
+  },
+  {
+    "blast_radius": 6.881,
+    "callers": 1,
+    "calls": 4,
+    "file": "base/src/lgacus01.cbl",
+    "key": "lgacus01",
+    "rank": 19,
+    "ticket": "lgacus01_port_ticket.md"
+  },
+  {
+    "blast_radius": 6.881,
+    "callers": 1,
+    "calls": 4,
+    "file": "base/src/lgicus01.cbl",
+    "key": "lgicus01",
+    "rank": 20,
+    "ticket": "lgicus01_port_ticket.md"
+  },
+  {
+    "blast_radius": 6.881,
+    "callers": 1,
+    "calls": 3,
+    "file": "base/src/lgucus01.cbl",
+    "key": "lgucus01",
+    "rank": 21,
+    "ticket": "lgucus01_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.675,
+    "callers": 0,
+    "calls": 1,
+    "file": "base/src/lgastat1.cbl",
+    "key": "lgastat1",
+    "rank": 22,
+    "ticket": "lgastat1_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.675,
+    "callers": 0,
+    "calls": 0,
+    "file": "base/src/lgicvs01.cbl",
+    "key": "lgicvs01",
+    "rank": 23,
+    "ticket": "lgicvs01_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.675,
+    "callers": 0,
+    "calls": 0,
+    "file": "base/src/lgipvs01.cbl",
+    "key": "lgipvs01",
+    "rank": 24,
+    "ticket": "lgipvs01_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.675,
+    "callers": 0,
+    "calls": 0,
+    "file": "base/src/lgsetup.cbl",
+    "key": "lgsetup",
+    "rank": 25,
+    "ticket": "lgsetup_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.675,
+    "callers": 0,
+    "calls": 4,
+    "file": "base/src/lgtestc1.cbl",
+    "key": "lgtestc1",
+    "rank": 26,
+    "ticket": "lgtestc1_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.675,
+    "callers": 0,
+    "calls": 5,
+    "file": "base/src/lgtestp1.cbl",
+    "key": "lgtestp1",
+    "rank": 27,
+    "ticket": "lgtestp1_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.675,
+    "callers": 0,
+    "calls": 5,
+    "file": "base/src/lgtestp2.cbl",
+    "key": "lgtestp2",
+    "rank": 28,
+    "ticket": "lgtestp2_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.675,
+    "callers": 0,
+    "calls": 5,
+    "file": "base/src/lgtestp3.cbl",
+    "key": "lgtestp3",
+    "rank": 29,
+    "ticket": "lgtestp3_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.675,
+    "callers": 0,
+    "calls": 4,
+    "file": "base/src/lgtestp4.cbl",
+    "key": "lgtestp4",
+    "rank": 30,
+    "ticket": "lgtestp4_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.675,
+    "callers": 0,
+    "calls": 0,
+    "file": "base/src/lgwebst5.cbl",
+    "key": "lgwebst5",
+    "rank": 31,
+    "ticket": "lgwebst5_port_ticket.md"
+  }
+]

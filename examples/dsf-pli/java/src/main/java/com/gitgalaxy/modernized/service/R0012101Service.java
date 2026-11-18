@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.FnrReg2;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.SrcR0019906FnrEndrReg;
 import com.gitgalaxy.modernized.entity.vsam.YkodeRec;
 import com.gitgalaxy.modernized.exception.*;
 import com.gitgalaxy.modernized.repository.vsam.YkodeRecRepository;
@@ -45,36 +46,50 @@ public class R0012101Service {
     // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
     // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
 
-    public void executeR0012101(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for R0012101");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("R0012101: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("R0012101: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R0012101", null);
+        region.run(task, "R0012101", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R0019906) at src/R0012101.pli:399.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public FnrReg2 linkSrcR0019906(FnrReg2 request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcR0019906FnrEndrReg linkSrcR0019906(SrcR0019906FnrEndrReg request) {
         return srcR0019906Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010301) at src/R0012101.pli:215. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0010301() {
         srcR0010301Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010401) at src/R0012101.pli:223. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0010401() {
         srcR0010401Service.getObject().handleLink();
     }
 
     /** DSFYKODE as CICS file DSFYKODE at src/R0012101.pli:263; VSAM defines field testing: open (3 public / 0 private estates). */
     public YkodeRec writeDsfykode(YkodeRec record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<YkodeRec> onFile = ykodeRecRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file DSFYKODE already holds the key of this record");
+        }
         return ykodeRecRepository.save(record);
     }
 

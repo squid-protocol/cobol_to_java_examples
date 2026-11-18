@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.FnrReg2;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.SrcR0019906FnrEndrReg;
 import com.gitgalaxy.modernized.entity.vsam.DfPrintLine;
 import com.gitgalaxy.modernized.entity.vsam.StRecl;
 import com.gitgalaxy.modernized.entity.vsam.TkRecl;
@@ -58,42 +59,56 @@ public class SrcR0010430Service {
     // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
     // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
 
-    public void executeSrcR0010430(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__R0010430");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcR0010430: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcR0010430: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R0010430", null);
+        region.run(task, "R0010430", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R0013110) at src/R0010430.pli:1388.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR0013110() {
         srcR0013110Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0019906) at src/R0010430.pli:1434.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public FnrReg2 linkSrcR0019906(FnrReg2 request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcR0019906FnrEndrReg linkSrcR0019906(SrcR0019906FnrEndrReg request) {
         return srcR0019906Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010301) at src/R0010430.pli:1099. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0010301() {
         srcR0010301Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010420) at src/R0010430.pli:1106, src/R0010430.pli:1319. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0010420() {
         srcR0010420Service.getObject().handleLink();
     }
 
     /** PRINTRX as CICS file PRINTRX at src/R0010430.pli:2365, 2436; VSAM defines field testing: open (3 public / 0 private estates). */
     public DfPrintLine writePrintrx(DfPrintLine record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<DfPrintLine> onFile = dfPrintLineRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file PRINTRX already holds the key of this record");
+        }
         return dfPrintLineRepository.save(record);
     }
 

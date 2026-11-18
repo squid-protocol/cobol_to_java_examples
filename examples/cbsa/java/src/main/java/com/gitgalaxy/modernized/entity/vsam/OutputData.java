@@ -56,10 +56,25 @@ public class OutputData {
     private Integer customerCsReviewDate;
 
 
+    /** #4875: the record bytes this entity was read from, kept beside the typed columns: a field whose
+     *  value is unchanged is written back as these bytes, so a value no column type holds (spaces in a
+     *  PIC 9, a non-preferred sign) and FILLER survive the round trip, as the VSAM record keeps them. */
+    @Column(name = "VSAM_RECORD", length = 259)
+    @lombok.Getter(lombok.AccessLevel.NONE)
+    @lombok.Setter(lombok.AccessLevel.NONE)
+    @lombok.EqualsAndHashCode.Exclude
+    @lombok.ToString.Exclude
+    private byte[] vsamRecord;
+
     /** #3624: this record from its fixed-width VSAM form (259 bytes, as REPRO unloads it), each
      *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
-     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+     *  transfer, IBM037 on z/OS). The bytes themselves are kept in vsamRecord (#4875). */
     public static OutputData fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        if (rec.length < 259) {  // a WRITE ... LENGTH(n) short of the record: the rest is spaces
+            byte[] full = CobolRecords.blank(259, text);
+            System.arraycopy(rec, 0, full, 0, rec.length);
+            rec = full;
+        }
         OutputData r = new OutputData();
         r.id = new OutputDataKey();
         r.customerEyecatcher = CobolRecords.text(rec, 0, 4, text);
@@ -70,20 +85,39 @@ public class OutputData {
         r.customerDateOfBirth = CobolRecords.toInteger(CobolRecords.zoned(rec, 240, 8, 0, text));
         r.customerCreditScore = CobolRecords.toInteger(CobolRecords.zoned(rec, 248, 3, 0, text));
         r.customerCsReviewDate = CobolRecords.toInteger(CobolRecords.zoned(rec, 251, 8, 0, text));
+        r.vsamRecord = java.util.Arrays.copyOf(rec, 259);
         return r;
     }
 
-    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    /** #3624: the fixed-width VSAM record of this entity: the bytes it was read from (vsamRecord), each field
+     *  whose value changed since re-encoded; a new entity's FILLER as spaces. */
     public byte[] toRecord(java.nio.charset.Charset text) {
-        byte[] rec = CobolRecords.blank(259, text);
-        CobolRecords.putText(rec, 0, 4, customerEyecatcher, text);
-        CobolRecords.putZoned(rec, 4, 6, 0, false, CobolRecords.decimal(id.getCustomerSortcode()), text);
-        CobolRecords.putZoned(rec, 10, 10, 0, false, CobolRecords.decimal(id.getCustomerNumber()), text);
-        CobolRecords.putText(rec, 20, 60, customerName, text);
-        CobolRecords.putText(rec, 80, 160, customerAddress, text);
-        CobolRecords.putZoned(rec, 240, 8, 0, false, CobolRecords.decimal(customerDateOfBirth), text);
-        CobolRecords.putZoned(rec, 248, 3, 0, false, CobolRecords.decimal(customerCreditScore), text);
-        CobolRecords.putZoned(rec, 251, 8, 0, false, CobolRecords.decimal(customerCsReviewDate), text);
+        byte[] read = vsamRecord != null && vsamRecord.length == 259 ? vsamRecord : null;
+        byte[] rec = read != null ? read.clone() : CobolRecords.blank(259, text);
+        if (read == null || !java.util.Objects.equals(customerEyecatcher, CobolRecords.text(read, 0, 4, text))) {
+            CobolRecords.putText(rec, 0, 4, customerEyecatcher, text);
+        }
+        if (read == null || !java.util.Objects.equals(id.getCustomerSortcode(), CobolRecords.toInteger(CobolRecords.zoned(read, 4, 6, 0, text)))) {
+            CobolRecords.putZoned(rec, 4, 6, 0, false, CobolRecords.decimal(id.getCustomerSortcode()), text);
+        }
+        if (read == null || !java.util.Objects.equals(id.getCustomerNumber(), CobolRecords.toLong(CobolRecords.zoned(read, 10, 10, 0, text)))) {
+            CobolRecords.putZoned(rec, 10, 10, 0, false, CobolRecords.decimal(id.getCustomerNumber()), text);
+        }
+        if (read == null || !java.util.Objects.equals(customerName, CobolRecords.text(read, 20, 60, text))) {
+            CobolRecords.putText(rec, 20, 60, customerName, text);
+        }
+        if (read == null || !java.util.Objects.equals(customerAddress, CobolRecords.text(read, 80, 160, text))) {
+            CobolRecords.putText(rec, 80, 160, customerAddress, text);
+        }
+        if (read == null || !java.util.Objects.equals(customerDateOfBirth, CobolRecords.toInteger(CobolRecords.zoned(read, 240, 8, 0, text)))) {
+            CobolRecords.putZoned(rec, 240, 8, 0, false, CobolRecords.decimal(customerDateOfBirth), text);
+        }
+        if (read == null || !java.util.Objects.equals(customerCreditScore, CobolRecords.toInteger(CobolRecords.zoned(read, 248, 3, 0, text)))) {
+            CobolRecords.putZoned(rec, 248, 3, 0, false, CobolRecords.decimal(customerCreditScore), text);
+        }
+        if (read == null || !java.util.Objects.equals(customerCsReviewDate, CobolRecords.toInteger(CobolRecords.zoned(read, 251, 8, 0, text)))) {
+            CobolRecords.putZoned(rec, 251, 8, 0, false, CobolRecords.decimal(customerCsReviewDate), text);
+        }
         return rec;
     }
 }

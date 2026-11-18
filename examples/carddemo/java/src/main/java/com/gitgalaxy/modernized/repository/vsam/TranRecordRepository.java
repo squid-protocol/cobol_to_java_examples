@@ -22,11 +22,13 @@ import com.gitgalaxy.modernized.entity.vsam.TranRecord;
 @Repository
 public interface TranRecordRepository extends JpaRepository<TranRecord, String> {
 
-    /** EXEC CICS STARTBR + READNEXT: records from a key onward, in key order. */
-    List<TranRecord> findByTranIdGreaterThanEqualOrderByTranIdAsc(String tranId, Pageable page);
+    /** EXEC CICS STARTBR + READNEXT: records from a key onward, in the key's code-page order
+     *  (#3822: pass CobolRecords.sortKey(key, codePage)). */
+    List<TranRecord> findByTranIdSortGreaterThanEqualOrderByTranIdSortAsc(String tranIdSort, Pageable page);
 
-    /** EXEC CICS READPREV: records from a key backward, in reverse key order. */
-    List<TranRecord> findByTranIdLessThanEqualOrderByTranIdDesc(String tranId, Pageable page);
+    /** EXEC CICS READPREV: records from a key backward, in reverse code-page order
+     *  (#3822: pass CobolRecords.sortKey(key, codePage)). */
+    List<TranRecord> findByTranIdSortLessThanEqualOrderByTranIdSortDesc(String tranIdSort, Pageable page);
 
     /** Alternate index AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX (path AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX.PATH, AWS.M2.CARDDEMO.TRANSACT.VSAM.AIX.PATH) on TRAN-PROC-TS, non-unique. */
     List<TranRecord> findByTranProcTs(String tranProcTs);

@@ -1,0 +1,5141 @@
+{
+  "compiler_options": [],
+  "deliverable": {
+    "proof": "The port is laid over the generated project as an overlay and proven by the equivalence harness (tests/tools/equivalence.py in GitGalaxy): the original runs under GnuCOBOL, the port on the same inputs, and every output record is compared field by field; a person approves the port with that report in hand.",
+    "return": "One complete Java file for src/main/java/com/gitgalaxy/modernized/service/SrcGmlR0019906Service.java: the same package, class name and public method signatures, with runTask ported -- what the proof runs -- and helper methods it calls added; every other generated method left as generated (#4255)."
+  },
+  "facts": {
+    "full_skeleton": "dsf_gitgalaxy_clean_TIMESTAMP/06_skeleton/src__GML__R0019906_skeleton.json",
+    "program": {
+      "copy_collisions": [],
+      "copy_edges": {
+        "src/GML/R0019906.pli": {}
+      },
+      "copy_gaps": [],
+      "copybooks": [],
+      "file": "src/GML/R0019906.pli",
+      "language": "pli",
+      "program_id_field_testing": "open",
+      "program_ids": [
+        "R0019906"
+      ],
+      "total_loc": 90
+    },
+    "sections": {
+      "cics_file_lineage": {
+        "facts": [
+          {
+            "accesses": [
+              "read"
+            ],
+            "definitions": [],
+            "lines": [
+              74
+            ],
+            "name": "VSKJEDE",
+            "program": "src/GML/R0019906.pli",
+            "verbs": [
+              "READ"
+            ]
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "cics_resources": {
+        "facts": [
+          {
+            "access": "read",
+            "attributes": "RIDFLD(KEYBIT)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 74,
+            "name": "VSKJEDE",
+            "operand": "'VSKJEDE'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "REG",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "literal",
+            "verb": "READ"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "commarea_contracts": {
+        "facts": [
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010410.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010410.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 3312,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010430.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010430.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1432,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010450.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010450.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 415,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010480.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010480.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 672,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010503.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010503.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 182,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010503.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010503.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 332,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010504.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010504.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 137,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010603.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010603.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 270,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010603.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010603.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 623,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010604.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010604.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 138,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010703.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010703.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 165,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010803.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010803.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 114,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010803.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010803.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 312,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010803.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010803.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1049,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010803.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010803.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1086,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0010903.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0010903.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 107,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011003.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011003.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 187,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011003.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011003.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 327,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011003.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011003.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 514,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011003.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011003.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 838,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011003.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011003.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1059,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011103.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011103.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 119,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011103.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011103.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 196,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011203.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011203.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 128,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011203.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011203.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 205,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011204.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011204.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 95,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011303.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011303.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 74,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011303.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011303.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 206,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011303.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011303.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 339,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011303.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011303.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 441,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011303.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011303.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 556,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011403.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011403.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 172,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011403.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011403.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 346,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011503.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011503.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 73,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011603.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011603.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 103,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011603.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011603.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 159,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011703.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011703.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 93,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011703.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011703.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 156,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011803.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011803.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 61,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011833.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011833.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 109,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011903.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011903.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 205,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R0011903.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0011903.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 384,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001B001.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001B001.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 490,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001I101.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001I101.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 494,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001I101.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001I101.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 625,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001I101.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001I101.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 757,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001I402.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001I402.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 219,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001I801.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001I801.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 355,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001I903.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001I903.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1332,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001IA03.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001IA03.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 58,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001IA03.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001IA03.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 76,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001N503.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001N503.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 158,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001N503.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001N503.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 398,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001N504.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001N504.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 116,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001N603.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001N603.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 249,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001N603.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001N603.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 607,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001N604.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001N604.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 129,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001N803.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001N803.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 115,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001N803.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001N803.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 251,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001N803.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001N803.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 910,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001N803.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001N803.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 947,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001N903.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001N903.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 108,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001NB03.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001NB03.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 110,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001NB03.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001NB03.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 217,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001NC03.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001NC03.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 109,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001NC03.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001NC03.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 214,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001NC04.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001NC04.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 88,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001S001.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001S001.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 385,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001S003.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001S003.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 386,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001U603.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001U603.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 255,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001U603.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001U603.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 872,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001U803.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001U803.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 110,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001U803.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001U803.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 267,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001U803.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001U803.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 888,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001U803.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001U803.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 925,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001UC03.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001UC03.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 94,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001UC03.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001UC03.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 194,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001UC04.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001UC04.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 90,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001UE03.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001UE03.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 140,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001UE03.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001UE03.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 376,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001UJ03.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001UJ03.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 184,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/GML/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/GML/R001UJ03.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/GML/R001UJ03.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 346,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "entry_points": {
+        "facts": [
+          {
+            "entry_name": "R00199",
+            "kind": "PROCEDURE",
+            "line": 33,
+            "params": "COMMAREA_PEKER"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "error_handlers": {
+        "facts": [
+          {
+            "condition": "NOTFND",
+            "file": "src/GML/R0019906.pli",
+            "handler_found": null,
+            "kind": "HANDLE_CONDITION",
+            "line": 64,
+            "target": "NOT_FOUND",
+            "target_kind": "LABEL",
+            "unit": "R00199"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "interface": {
+        "facts": {
+          "commarea": {
+            "alternatives": [
+              {
+                "bytes": 16,
+                "file": "src/GML/R0011303.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0011303.pli",
+                    "line": 74,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R0011303.pli",
+                    "line": 206,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R0011303.pli",
+                    "line": 339,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R0011303.pli",
+                    "line": 441,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R0011303.pli",
+                    "line": 556,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0010803.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0010803.pli",
+                    "line": 114,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R0010803.pli",
+                    "line": 312,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R0010803.pli",
+                    "line": 1049,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R0010803.pli",
+                    "line": 1086,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001N803.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001N803.pli",
+                    "line": 115,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001N803.pli",
+                    "line": 251,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001N803.pli",
+                    "line": 910,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001N803.pli",
+                    "line": 947,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001U803.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001U803.pli",
+                    "line": 110,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001U803.pli",
+                    "line": 267,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001U803.pli",
+                    "line": 888,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001U803.pli",
+                    "line": 925,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001I101.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001I101.pli",
+                    "line": 494,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001I101.pli",
+                    "line": 625,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001I101.pli",
+                    "line": 757,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0010503.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0010503.pli",
+                    "line": 182,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R0010503.pli",
+                    "line": 332,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0010603.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0010603.pli",
+                    "line": 270,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R0010603.pli",
+                    "line": 623,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0011103.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0011103.pli",
+                    "line": 119,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R0011103.pli",
+                    "line": 196,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0011203.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0011203.pli",
+                    "line": 128,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R0011203.pli",
+                    "line": 205,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0011403.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0011403.pli",
+                    "line": 172,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R0011403.pli",
+                    "line": 346,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0011603.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0011603.pli",
+                    "line": 103,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R0011603.pli",
+                    "line": 159,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0011703.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0011703.pli",
+                    "line": 93,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R0011703.pli",
+                    "line": 156,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0011903.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0011903.pli",
+                    "line": 205,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R0011903.pli",
+                    "line": 384,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001IA03.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001IA03.pli",
+                    "line": 58,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001IA03.pli",
+                    "line": 76,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001N503.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001N503.pli",
+                    "line": 158,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001N503.pli",
+                    "line": 398,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001N603.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001N603.pli",
+                    "line": 249,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001N603.pli",
+                    "line": 607,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001NB03.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001NB03.pli",
+                    "line": 110,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001NB03.pli",
+                    "line": 217,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001NC03.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001NC03.pli",
+                    "line": 109,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001NC03.pli",
+                    "line": 214,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001U603.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001U603.pli",
+                    "line": 255,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001U603.pli",
+                    "line": 872,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001UC03.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001UC03.pli",
+                    "line": 94,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001UC03.pli",
+                    "line": 194,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001UE03.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001UE03.pli",
+                    "line": 140,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001UE03.pli",
+                    "line": 376,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001UJ03.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001UJ03.pli",
+                    "line": 184,
+                    "verb": "LINK"
+                  },
+                  {
+                    "caller": "src/GML/R001UJ03.pli",
+                    "line": 346,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0010410.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0010410.pli",
+                    "line": 3312,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0010430.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0010430.pli",
+                    "line": 1432,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0010450.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0010450.pli",
+                    "line": 415,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0010480.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0010480.pli",
+                    "line": 672,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0010504.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0010504.pli",
+                    "line": 137,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0010604.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0010604.pli",
+                    "line": 138,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0010703.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0010703.pli",
+                    "line": 165,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0010903.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0010903.pli",
+                    "line": 107,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0011204.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0011204.pli",
+                    "line": 95,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0011503.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0011503.pli",
+                    "line": 73,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0011803.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0011803.pli",
+                    "line": 61,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R0011833.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R0011833.pli",
+                    "line": 109,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001B001.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001B001.pli",
+                    "line": 490,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001I402.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001I402.pli",
+                    "line": 219,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001I801.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001I801.pli",
+                    "line": 355,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001I903.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001I903.pli",
+                    "line": 1332,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001N504.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001N504.pli",
+                    "line": 116,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001N604.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001N604.pli",
+                    "line": 129,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001N903.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001N903.pli",
+                    "line": 108,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001NC04.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001NC04.pli",
+                    "line": 88,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001S001.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001S001.pli",
+                    "line": 385,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001S003.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001S003.pli",
+                    "line": 386,
+                    "verb": "LINK"
+                  }
+                ]
+              },
+              {
+                "bytes": 16,
+                "file": "src/GML/R001UC04.pli",
+                "record": "FNR_REG",
+                "sources": [
+                  {
+                    "caller": "src/GML/R001UC04.pli",
+                    "line": 90,
+                    "verb": "LINK"
+                  }
+                ]
+              }
+            ],
+            "basis": "caller_record",
+            "bytes": 16,
+            "copybooks": [],
+            "declared_record": "FNR_ENDR_REG",
+            "dialect": "pli",
+            "extended": false,
+            "fields": "Reference: SrcGmlR0019906FnrEndrReg (3 fields: name, PIC, usage, offset, bytes, copybook) in src/main/java/com/gitgalaxy/modernized/dto/contract/SrcGmlR0019906FnrEndrReg.java; level numbers are in the copybook listings",
+            "file": "src/GML/R0011003.pli",
+            "record": "FNR_REG",
+            "sources": [
+              {
+                "caller": "src/GML/R0011003.pli",
+                "line": 187,
+                "verb": "LINK"
+              },
+              {
+                "caller": "src/GML/R0011003.pli",
+                "line": 327,
+                "verb": "LINK"
+              },
+              {
+                "caller": "src/GML/R0011003.pli",
+                "line": 514,
+                "verb": "LINK"
+              },
+              {
+                "caller": "src/GML/R0011003.pli",
+                "line": 838,
+                "verb": "LINK"
+              },
+              {
+                "caller": "src/GML/R0011003.pli",
+                "line": 1059,
+                "verb": "LINK"
+              }
+            ],
+            "unexpanded": [],
+            "variable": false
+          },
+          "commarea_gap": null,
+          "commarea_unpack": null,
+          "containers": [],
+          "inbound": [
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010410.pli",
+              "line": 3312,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010430.pli",
+              "line": 1432,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010450.pli",
+              "line": 415,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010480.pli",
+              "line": 672,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010503.pli",
+              "line": 182,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010503.pli",
+              "line": 332,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010504.pli",
+              "line": 137,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010603.pli",
+              "line": 270,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010603.pli",
+              "line": 623,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010604.pli",
+              "line": 138,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010703.pli",
+              "line": 165,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010803.pli",
+              "line": 114,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010803.pli",
+              "line": 312,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010803.pli",
+              "line": 1049,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010803.pli",
+              "line": 1086,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0010903.pli",
+              "line": 107,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011003.pli",
+              "line": 187,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011003.pli",
+              "line": 327,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011003.pli",
+              "line": 514,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011003.pli",
+              "line": 838,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011003.pli",
+              "line": 1059,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011103.pli",
+              "line": 119,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011103.pli",
+              "line": 196,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011203.pli",
+              "line": 128,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011203.pli",
+              "line": 205,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011204.pli",
+              "line": 95,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011303.pli",
+              "line": 74,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011303.pli",
+              "line": 206,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011303.pli",
+              "line": 339,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011303.pli",
+              "line": 441,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011303.pli",
+              "line": 556,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011403.pli",
+              "line": 172,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011403.pli",
+              "line": 346,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011503.pli",
+              "line": 73,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011603.pli",
+              "line": 103,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011603.pli",
+              "line": 159,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011703.pli",
+              "line": 93,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011703.pli",
+              "line": 156,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011803.pli",
+              "line": 61,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011833.pli",
+              "line": 109,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011903.pli",
+              "line": 205,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R0011903.pli",
+              "line": 384,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001B001.pli",
+              "line": 490,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001I101.pli",
+              "line": 494,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001I101.pli",
+              "line": 625,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001I101.pli",
+              "line": 757,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001I402.pli",
+              "line": 219,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001I801.pli",
+              "line": 355,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001I903.pli",
+              "line": 1332,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001IA03.pli",
+              "line": 58,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001IA03.pli",
+              "line": 76,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001N503.pli",
+              "line": 158,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001N503.pli",
+              "line": 398,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001N504.pli",
+              "line": 116,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001N603.pli",
+              "line": 249,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001N603.pli",
+              "line": 607,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001N604.pli",
+              "line": 129,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001N803.pli",
+              "line": 115,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001N803.pli",
+              "line": 251,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001N803.pli",
+              "line": 910,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001N803.pli",
+              "line": 947,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001N903.pli",
+              "line": 108,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001NB03.pli",
+              "line": 110,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001NB03.pli",
+              "line": 217,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001NC03.pli",
+              "line": 109,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001NC03.pli",
+              "line": 214,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001NC04.pli",
+              "line": 88,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001S001.pli",
+              "line": 385,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001S003.pli",
+              "line": 386,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001U603.pli",
+              "line": 255,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001U603.pli",
+              "line": 872,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001U803.pli",
+              "line": 110,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001U803.pli",
+              "line": 267,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001U803.pli",
+              "line": 888,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001U803.pli",
+              "line": 925,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001UC03.pli",
+              "line": 94,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001UC03.pli",
+              "line": 194,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001UC04.pli",
+              "line": 90,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001UE03.pli",
+              "line": 140,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001UE03.pli",
+              "line": 376,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001UJ03.pli",
+              "line": 184,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 16,
+              "caller": "src/GML/R001UJ03.pli",
+              "line": 346,
+              "passes": "FNR_REG",
+              "verb": "LINK",
+              "via": "static"
+            }
+          ],
+          "parameters": [
+            {
+              "file": "src/GML/R0019906.pli",
+              "layout": {
+                "bytes": 4,
+                "copybooks": [],
+                "dialect": "pli",
+                "extended": false,
+                "fields": [
+                  {
+                    "bytes": 4,
+                    "class": "A",
+                    "dialect": "pli",
+                    "file": "src/GML/R0019906.pli",
+                    "level": 1,
+                    "name": "COMMAREA_PEKER",
+                    "occurs": null,
+                    "offset": 0,
+                    "pic": null,
+                    "usage": "POINTER"
+                  }
+                ],
+                "unexpanded": [],
+                "variable": false
+              },
+              "mode": "REFERENCE",
+              "name": "COMMAREA_PEKER",
+              "position": 1,
+              "record": "COMMAREA_PEKER"
+            }
+          ]
+        },
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "navigation": {
+        "facts": [
+          {
+            "from": "src/GML/R0010410.pli",
+            "line": 3312,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0010430.pli",
+            "line": 1432,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0010450.pli",
+            "line": 415,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0010480.pli",
+            "line": 672,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0010503.pli",
+            "line": 182,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0010503.pli",
+            "line": 332,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0010504.pli",
+            "line": 137,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0010603.pli",
+            "line": 270,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0010603.pli",
+            "line": 623,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0010604.pli",
+            "line": 138,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0010703.pli",
+            "line": 165,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0010803.pli",
+            "line": 114,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0010803.pli",
+            "line": 312,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0010803.pli",
+            "line": 1049,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0010803.pli",
+            "line": 1086,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0010903.pli",
+            "line": 107,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011003.pli",
+            "line": 187,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011003.pli",
+            "line": 327,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011003.pli",
+            "line": 514,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011003.pli",
+            "line": 838,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011003.pli",
+            "line": 1059,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011103.pli",
+            "line": 119,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011103.pli",
+            "line": 196,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011203.pli",
+            "line": 128,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011203.pli",
+            "line": 205,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011204.pli",
+            "line": 95,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011303.pli",
+            "line": 74,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011303.pli",
+            "line": 206,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011303.pli",
+            "line": 339,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011303.pli",
+            "line": 441,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011303.pli",
+            "line": 556,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011403.pli",
+            "line": 172,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011403.pli",
+            "line": 346,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011503.pli",
+            "line": 73,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011603.pli",
+            "line": 103,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011603.pli",
+            "line": 159,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011703.pli",
+            "line": 93,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011703.pli",
+            "line": 156,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011803.pli",
+            "line": 61,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011833.pli",
+            "line": 109,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011903.pli",
+            "line": 205,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R0011903.pli",
+            "line": 384,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001B001.pli",
+            "line": 490,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001I101.pli",
+            "line": 494,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001I101.pli",
+            "line": 625,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001I101.pli",
+            "line": 757,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001I402.pli",
+            "line": 219,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001I801.pli",
+            "line": 355,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001I903.pli",
+            "line": 1332,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001IA03.pli",
+            "line": 58,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001IA03.pli",
+            "line": 76,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001N503.pli",
+            "line": 158,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001N503.pli",
+            "line": 398,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001N504.pli",
+            "line": 116,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001N603.pli",
+            "line": 249,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001N603.pli",
+            "line": 607,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001N604.pli",
+            "line": 129,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001N803.pli",
+            "line": 115,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001N803.pli",
+            "line": 251,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001N803.pli",
+            "line": 910,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001N803.pli",
+            "line": 947,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001N903.pli",
+            "line": 108,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001NB03.pli",
+            "line": 110,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001NB03.pli",
+            "line": 217,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001NC03.pli",
+            "line": 109,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001NC03.pli",
+            "line": 214,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001NC04.pli",
+            "line": 88,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001S001.pli",
+            "line": 385,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001S003.pli",
+            "line": 386,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001U603.pli",
+            "line": 255,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001U603.pli",
+            "line": 872,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001U803.pli",
+            "line": 110,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001U803.pli",
+            "line": 267,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001U803.pli",
+            "line": 888,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001U803.pli",
+            "line": 925,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001UC03.pli",
+            "line": 94,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001UC03.pli",
+            "line": 194,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001UC04.pli",
+            "line": 90,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001UE03.pli",
+            "line": 140,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001UE03.pli",
+            "line": 376,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001UJ03.pli",
+            "line": 184,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/GML/R001UJ03.pli",
+            "line": 346,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/GML/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 4
+      },
+      "uow_handlers": {
+        "facts": [
+          {
+            "attributes": null,
+            "condition": "NOTFND",
+            "kind": "HANDLE_CONDITION",
+            "line": 64,
+            "resp_var": null,
+            "source": "CICS",
+            "target": "NOT_FOUND",
+            "target_kind": "LABEL",
+            "verb": "HANDLE CONDITION"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      }
+    }
+  },
+  "generated": {
+    "imports": [
+      {
+        "class": "com.gitgalaxy.modernized.cics.CicsTask",
+        "file": "src/main/java/com/gitgalaxy/modernized/cics/CicsTask.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.dto.contract.SrcGmlR0019906FnrEndrReg",
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/SrcGmlR0019906FnrEndrReg.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.entity.vsam.Reg",
+        "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/Reg.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.repository.vsam.RegRepository",
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/RegRepository.java"
+      }
+    ],
+    "traced_to_this_program": [
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcGmlR0019906Service.java",
+        "symbol": "SrcGmlR0019906Service"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcGmlR0019906Service.java",
+        "symbol": "SrcGmlR0019906Service#onConditionNotfndL64"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcGmlR0019906Service.java",
+        "symbol": "SrcGmlR0019906Service#readVskjede"
+      }
+    ]
+  },
+  "paragraphs": [
+    {
+      "lines": 57,
+      "name": "R00199",
+      "start_line": 33
+    }
+  ],
+  "priority": {
+    "blast_radius": 17.733,
+    "callers": 46,
+    "calls": 0,
+    "of": 438,
+    "rank": 4
+  },
+  "program": {
+    "file": "src/GML/R0019906.pli",
+    "key": "src__GML__R0019906",
+    "language": "pli",
+    "lines": 90,
+    "program_ids": [
+      "R0019906"
+    ]
+  },
+  "referenced": [
+    {
+      "bytes_after": 220,
+      "bytes_before": 661,
+      "class": "src/main/java/com/gitgalaxy/modernized/dto/contract/SrcGmlR0019906FnrEndrReg.java",
+      "fields": 3,
+      "item": "commarea",
+      "section": "facts.interface"
+    }
+  ],
+  "rounding": [],
+  "rules": [
+    "Deliver the whole port: every paragraph the ported method reaches, every screen field it sets, every file it reads. A partial port or a sketch is not proven: the equivalence harness compares every output.",
+    "Port the PROCEDURE DIVISION into the service's methods, paragraph by paragraph; name the paragraph each block ports in a comment, so the port can be reviewed against the source.",
+    "Keep COBOL's storage semantics: COMPUTE / ADD / SUBTRACT / MULTIPLY / DIVIDE without ROUNDED truncate decimals; a result too long for its PICTURE loses its high-order digits (ON SIZE ERROR aside); MOVE to a numeric field aligns on the decimal point and truncates both ends; MOVE to alphanumeric pads with spaces or truncates on the right. Use BigDecimal with RoundingMode.DOWN, never double, for PIC 9 / COMP-3 data.",
+    "ROUNDED (#3825) rounds half AWAY from zero: setScale(scale, RoundingMode.HALF_UP) -- 2.5 -> 3, -2.5 -> -3. Never HALF_EVEN (banker's rounding) and never Math.round (-2.5 -> -2). ROUNDED MODE maps one to one: NEAREST-EVEN HALF_EVEN, AWAY-FROM-ZERO UP, NEAREST-TOWARD-ZERO HALF_DOWN, TOWARD-GREATER CEILING, TOWARD-LESSER FLOOR, TRUNCATION DOWN. The ticket's `rounding` list names every rounding or SIZE ERROR statement with the RoundingMode of each target. Round the final result only: compute intermediates exactly (IBM's ARITH intermediates carry 18 or 31 digits; the equivalence harness is the oracle when a result differs).",
+    "Keep the program's behaviour, including what looks like a defect (an unreachable branch, a field never reset): the port is proven by comparing its outputs with the original's. Document each such spot with a comment naming the defect and the one-line fix; fixing it is a business decision, not a translation.",
+    "Use the generated code as it is: entities and their fromRecord / toRecord codecs, repositories, DTOs, the batch runtime (DatasetResolver, Dd), the other services. Do not edit generated files other than this service; do not invent calls, files, queues or tables the facts do not name.",
+    "An abend is `throw CobolAbend.user(abcode, why)` (the generated batch runtime; CALL 'CEE3ABD' USING ABCODE: the step ends ABEND Unnnn) -- never another exception; the step's RETURN-CODE is runBatch's return value.",
+    "A DISPLAY is `Sysout.display(...)` (DISPLAY ... WITH NO ADVANCING: `Sysout.displayNoAdvancing`), never a log line: SYSOUT is compared line by line with the COBOL's. Its text is exactly what IBM COBOL writes, the operands concatenated: a literal as written; an alphanumeric or group item as all its bytes, trailing spaces included (a group's numeric fields as stored: zoned digits, the sign overpunched); a numeric item -- DISPLAY, COMP or COMP-3, not edited, no SIGN SEPARATE -- as `Sysout.number(value, digits, scale, signed)`: its PICTURE digits zero-padded, no decimal point, the sign overpunched in the last digit when signed (PIC S9(3) holding -12 is `01K`); an edited item as its edited text.",
+    "Every file I/O statement of a batch program (OPEN, CLOSE, READ, READ NEXT, WRITE, REWRITE, DELETE, START) is ONE call to the generated CobolFiles, per file (its DD name), in the order the program runs them. open(dd) / open(dd, path, input) / close(dd[, action]) / write / rewrite / delete(dd, action) / start(dd, found) return the status String; read(dd, supplier) (\"00\" or \"23\") and readNext(dd, iterator) (\"00\" or \"10\") return a CobolFiles.Read<T> -- status() and record(), null unless found. Take the program's FILE STATUS logic -- IF <status> = '00', AT END, INVALID KEY, its error paragraphs -- from the status returned, exactly as the program does; never skip a statement the program runs (a read-ahead, a CLOSE) or add one it does not. The equivalence harness injects file faults through CobolFiles and through GnuCOBOL at the same statement, and proves the error paths too. A keyed (VSAM KSDS) file keeps its mainframe semantics: WRITE is writeKeyed(dd, () -> repo.existsById(key), () -> repo.save(r)) -- \"22\" when the key is on file, never save() over it -- and REWRITE is rewriteKeyed(dd, exists, save) (\"23\" when it is not). A record the program READs INTO its working storage is the program's own copy: keep Entity.fromRecord(read.toRecord(cs), cs), never the repository's managed entity, so a change that is not REWRITten is never saved; and a READ that fails without INVALID KEY / AT END leaves the previous record in place, as the program's storage does.",
+    "A sequential dataset is fixed-length records (RECFM=FB): write each record's toRecord(...) bytes back to back, with no line separators, to the file DatasetResolver.path(dd) names; read it the same way.",
+    "Decode and encode a numeric field held in record bytes or a text column (zoned with an overpunched sign, COMP-3, COMP) only through the generated CobolRecords (zoned / packed / binary and their put methods) or the entity codecs, never a hand-written decoder.",
+    "Record bytes -- every dataset, file and COMMAREA the program reads or writes -- are in the code page CobolRecords.charset() returns: the migration's declared data.record_charset, a deployment fact. Pass it wherever a record codec, CobolRecords method or String takes a Charset; never Charset.forName, StandardCharsets or a guessed EBCDIC page for record data (#4060).",
+    "Read a number from text (a screen field, FUNCTION NUMVAL, a PARM) only through CobolRecords.numval(text, decimalPoint), with ',' when the program codes DECIMAL-POINT IS COMMA; never Integer.parseInt or new BigDecimal(String), which accept Arabic-Indic, Devanagari and full-width digits that COBOL rejects (#3831).",
+    "Format a numeric-edited field (a display string mapped from a number, often for a screen or print line) only through CobolEdit.format(pic, value, decimalComma, currency), which honours the COBOL picture (Z, 9, ., ,, -, +, CR/DB, $/currency, B, 0, /, and floating $ / + / - strings) as the mainframe does; pass the CURRENCY SIGN string (e.g. 'INR ') as currency, and it replaces the PICTURE SYMBOL (#3933).",
+    "Format and case-map with Locale.ROOT (String.format(Locale.ROOT, ...), toUpperCase(Locale.ROOT)): the default locale prints other digits (Arabic, Devanagari) and maps case differently (Turkish).",
+    "Order and compare VSAM / DB2 keys by the source code page's bytes, as the mainframe does (lower case before upper, letters before digits): browse through the generated sort-key finders, and sort in Java with CobolRecords.sortKey(key, codePage), never by String.compareTo or the database's default collation (#3822).",
+    "Compare alphanumeric operands (PIC X / A items, group items, alphanumeric literals and figurative constants) in IF, EVALUATE, PERFORM UNTIL and SEARCH WHEN only through the generated CobolCompare (compare, eq, gt, ge, lt, le), never String.compareTo or equals: it compares the code page's bytes as the mainframe does -- lower case before upper, letters before digits, so IF CUST-ID > 'A' is true for '1001' -- and pads the shorter operand with spaces ('AB' = 'AB  '). HIGH-VALUES / LOW-VALUES are CobolCompare.highValues(n) / lowValues(n). A numeric comparison stays BigDecimal.compareTo. A program that declares PROGRAM COLLATING SEQUENCE compares by that alphabet instead: flag it in a TODO (#3986).",
+    "A CICS program is ported into runTask(CicsTask task), one task per call (#3754): EIBCALEN = 0 is !task.hasCommarea(), EIBCALEN is task.eibcalen() (#4009: null = the whole record), DFHCOMMAREA is task.commarea(<its DTO>.class), EIBAID is task.aid() (ENTER, CLEAR, PF1-PF24, PA1-PA3), EIBTRMID is task.termid(), EIBTIME / EIBDATE / ASKTIME are task.now() (the task's dispatch time on the region's virtual clock, #3989), RECEIVE MAP is task.receive(map, mapset, <its screen>.class) (empty = MAPFAIL), SEND MAP is task.sendMap(map, mapset, screen, subfields, options...) (#4001: the screen holds each <f>O; CicsTask.MapSubfields each <f>A / <f>C / <f>H as its EBCDIC byte and <f>L = -1 for the cursor), SEND TEXT / SEND is task.sendText(from, length, options...), RETURN TRANSID COMMAREA LENGTH is task.returnTransid(transid, commarea, length), XCTL is task.xctl, LINK is task.link, ABEND is task.abend -- in the order the program does them, and the task ends at RETURN / XCTL / ABEND. A file READ is task.read(file, () -> <the service's generated read method>): its resp() is NORMAL (0), NOTFND (13) when the read finds nothing, or a condition the equivalence harness injects (NOTOPEN, IOERR, DISABLED, ...), and its resp2(); port every arm of the program's RESP handling (EVALUATE WS-RESP-CD ... WHEN OTHER) from it (#4023 follow-up). READ ... UPDATE is task.readForUpdate(file, lookup) (it holds the record for a REWRITE); WRITE FILE RIDFLD FROM is task.write(file, <whether the key is already in the file>, () -> <save the new record>): DUPREC (14) when it is; REWRITE FILE FROM is task.rewrite(file, () -> <save the changed record>): INVREQ (16) without a held record; each returns the RESP, and the injected conditions apply as for a READ. SYNCPOINT is task.syncpoint() and SYNCPOINT ROLLBACK task.rollback(), which undoes the task's file changes: save every change through these calls only -- what each file holds after the task is compared with the COBOL's. DELETE FILE RIDFLD is task.delete(file, <whether the key is there>, () -> <delete it>) (NOTFND 13 when not); DELETE FILE without RIDFLD is task.deleteHeld(file, () -> <delete the held record>). A browse: STARTBR is task.startbr(file, <RIDFLD as text>, <EQUAL given>, () -> <the file's keys, in key order, as a NavigableSet<String>>) (NOTFND 13 when no key qualifies); READNEXT / READPREV are task.readnext(file, <RIDFLD as text>) / task.readprev(file, ...), whose Browsed holds the RESP (ENDFILE 20 past either end) and the key read -- set RIDFLD to it and look the record up by it; ENDBR is task.endbr(file). The task keeps the browse's position and CICS's repositioning rules (a READPREV right after a READNEXT reads the same record again): pass RIDFLD exactly as the program holds it. ASKTIME ABSTIME is task.asktime(); FORMATTIME is CicsTask.formatDate(abstime, \"YYYYMMDD\" (or the form given), <DATESEP>) and CicsTask.formatTime(abstime, <TIMESEP>). ASSIGN APPLID / SYSID are task.assignApplid() / task.assignSysid() (the region's identity: never a literal). WRITEQ TD QUEUE FROM is task.writeqTd(queue, <the record as text, its full LENGTH>), which returns the RESP (QIDERR 44 for a queue the CSD does not define). INQUIRE PROGRAM(p) is task.inquireProgram(p): its RESP (NORMAL 0, PGMIDERR 27). A screen field shows what the symbolic map's O field would hold: text as moved, an edited PICTURE formatted as COBOL formats it. A COMMAREA is the generated DTO of its record; an area no generated DTO describes (a plain PIC X(n) item) is passed as a String of its n characters, or a byte[] of its EBCDIC bytes (#3989).",
+    "CICS condition and abend handling (#3989): HANDLE CONDITION, IGNORE CONDITION, HANDLE AID and RESP are the program's own control flow -- port each transfer to its label as Java control flow. HANDLE ABEND LABEL is task.handleAbend(label) (CANCEL, RESET: handleAbendCancel / handleAbendReset), and PUSH / POP HANDLE are task.pushHandle() / popHandle() besides saving and restoring the program's own handler state. EXEC CICS ABEND is task.abend(abcode) and a condition that takes CICS's default action is task.abendOnCondition(condition): CicsTask searches the active abend exits from this program's level upward, as CICS does, records the ABEND, and returns the label to continue at when this program's own exit took it -- or null, and the program must then return from runTask at once. After task.link(...) returns, task.abendExit() is the label of this program's exit when an abend in a program below reached it (continue there), and task.ended() is true when the task was terminated (stop). Never throw an exception to model a CICS transfer: the services are @Transactional, so an exception out of one marks the whole task rollback-only.",
+    "Dates and times only through java.time -- LocalDate, LocalDateTime, LocalTime and DateTimeFormatter with Locale.ROOT, in the ISO chronology -- never Calendar.getInstance(), new GregorianCalendar(), SimpleDateFormat or WeekFields.of(Locale.getDefault()): a th_TH default locale gives Buddhist-era years (2569), ja_JP_JP the Japanese imperial calendar, and US week fields start on Sunday. FUNCTION DAY-OF-WEEK and ACCEPT ... FROM DAY-OF-WEEK are Monday = 1 ... Sunday = 7, which is DayOfWeek.getValue() (#3833).",
+    "Read the time only from the generated batch runtime's MainframeClock (now() for local, currentDate() for FUNCTION CURRENT-DATE) -- in a CICS task, from task.now() -- never from the system clock directly or ZoneId.systemDefault(): it is how a run is pinned to be compared with the original.",
+    "A DB2 DATE / TIME / TIMESTAMP fetched into, or bound from, a character host variable (a DCLGEN DATE is PIC X(10)) is in the DB2 subsystem's format, the target config's culture.db2_date_format -- eur 26.09.2026 and 14.30.05, usa 09/26/2026 and 02:30 PM, iso 2026-09-26 and 14.30.05, jis 2026-09-26 and 14:30:05 -- and a TIMESTAMP is 2026-09-26-14.30.05.000000: convert only through the generated Db2Dates (date / time / timestamp, parseDate / parseTime / parseTimestamp), never LocalDate.toString() or LocalDate.parse (#3828).",
+    "FUNCTION INTEGER-OF-DATE / INTEGER-OF-DAY count days from day 1 = 1601-01-01 under INTDATE(ANSI), the default, but from day 1 = 1582-10-15 under INTDATE(LILIAN) (the same date is 6653 higher); DATE-OF-INTEGER / DAY-OF-INTEGER invert the same count. Port as ChronoUnit.DAYS.between(dayZero, date) with dayZero 1600-12-31 (ANSI) or 1582-10-14 (LILIAN). The ticket's compiler_options are the program's CBL / PROCESS cards; options given by the compile step's PARM or the installation defaults are not seen there (#3828).",
+    "A fact whose field testing is not 'field-tested' is verified on reference estates but still being field-tested: where the source contradicts it, follow the source and say so in the port's notes.",
+    "The proof calls one method per program: runTask(CicsTask) for a CICS program, handleCall(...) for a CALLed one, runBatch(dds, parm) for a batch one -- the ticket's methods to port. Port all of the program's behaviour into that method and the private helpers it calls. Port nothing into the other generated methods -- execute<Program>, handleTransaction, handleLink, handleChannel, onAbendL<n>, onCondition<C>L<n>, dispatch<X>L<n>, submit<Map> / render<Map>, xctl<P> / link<P>, the generated readqTs / writeqTs / read / browse helpers -- even where their TODO asks: leave each body as generated and keep no second entry point. Code the proof never runs is not proven, and the porting loop lists every method the proof cannot reach that the port changed (#4255)."
+  ],
+  "source": {
+    "copybooks": [],
+    "program": {
+      "file": "src/GML/R0019906.pli",
+      "listing": "sources/src/GML/R0019906.pli.lst"
+    }
+  },
+  "status": "open",
+  "target": {
+    "config": {
+      "culture": {
+        "currency": "auto",
+        "db2_date_format": "iso",
+        "decimal_point": "auto",
+        "display_locale": "ROOT",
+        "format_locale": "ROOT",
+        "key_collation": "ebcdic",
+        "overflow": "cobol",
+        "rounding": "cobol",
+        "zone": "UTC"
+      },
+      "data": {
+        "bidi_layout": "auto",
+        "code_page": "cp037",
+        "dbcs_code_page": null,
+        "record_charset": "latin-1"
+      },
+      "database": "postgresql",
+      "integration": {
+        "messaging": "in-memory",
+        "remote_calls": "http"
+      },
+      "java": {
+        "build_tool": "maven",
+        "data_classes": "lombok",
+        "dto_style": "class",
+        "version": 17
+      },
+      "package": "com.gitgalaxy.modernized",
+      "spring_boot": {
+        "version": "3.2.4"
+      },
+      "ui": {
+        "flavour": "none"
+      }
+    },
+    "file": "src/main/java/com/gitgalaxy/modernized/service/SrcGmlR0019906Service.java",
+    "left_as_generated": [
+      "public void onConditionNotfndL64(CicsConditionException e)"
+    ],
+    "methods": [
+      {
+        "signature": "public void runTask(CicsTask task)",
+        "todo": true
+      },
+      {
+        "signature": "public SrcGmlR0019906FnrEndrReg handleLink(SrcGmlR0019906FnrEndrReg request)",
+        "todo": false
+      },
+      {
+        "signature": "public SrcGmlR0019906FnrEndrReg handleLink(SrcGmlR0019906FnrEndrReg request, byte[] area)",
+        "todo": false
+      },
+      {
+        "signature": "public byte[] lastLinkBytes()",
+        "todo": false
+      },
+      {
+        "signature": "public Optional<Reg> readVskjede(String key)",
+        "todo": false
+      },
+      {
+        "signature": "public void onConditionNotfndL64(CicsConditionException e)",
+        "todo": true
+      }
+    ],
+    "methods_to_port": [
+      "public void runTask(CicsTask task)"
+    ],
+    "overlay": "port/service/SrcGmlR0019906Service.java",
+    "proof_entry_points": [
+      "public void runTask(CicsTask task)"
+    ],
+    "service": "SrcGmlR0019906Service"
+  },
+  "ticket": "PORT-src__GML__R0019906",
+  "version": 1,
+  "worklist": [
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/SrcGmlR0019906Service.java",
+      "id": "WL-3629",
+      "line": 33,
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/SrcGmlR0019906Service.java",
+      "id": "WL-3630",
+      "line": 39,
+      "text": "port the PROCEDURE DIVISION into this task"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/SrcGmlR0019906Service.java",
+      "id": "WL-3631",
+      "line": 84,
+      "text": "port paragraph NOT_FOUND's logic"
+    }
+  ]
+}

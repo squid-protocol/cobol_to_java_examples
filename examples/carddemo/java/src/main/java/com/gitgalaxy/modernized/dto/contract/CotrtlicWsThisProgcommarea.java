@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 /**
  * COBOL record WS-THIS-PROGCOMMAREA (app/app-transaction-type-db2/cbl/COTRTLIC.cbl), 427 bytes, from GitGalaxy's verified skeleton.
  * Bytes 160-586 of the COMMAREA Cotrtlic reads: MOVE DFHCOMMAREA(LENGTH OF CARDDEMO-COMMAREA + 1:LENGTH OF WS-THIS-PROGCOMMAREA) at app/app-transaction-type-db2/cbl/COTRTLIC.cbl:529.
- * Record fields field testing: field-tested (6 public / 0 private estates).
+ * Record fields field testing: open (6 public / 0 private estates).
  */
 @Data
 @NoArgsConstructor

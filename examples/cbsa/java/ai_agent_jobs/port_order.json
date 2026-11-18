@@ -1,0 +1,281 @@
+[
+  {
+    "blast_radius": 9.058,
+    "callers": 23,
+    "calls": 1,
+    "file": "src/base/cobol_src/ABNDPROC.cbl",
+    "key": "ABNDPROC",
+    "rank": 1,
+    "ticket": "ABNDPROC_port_ticket.md"
+  },
+  {
+    "blast_radius": 2.122,
+    "callers": 4,
+    "calls": 5,
+    "file": "src/base/cobol_src/INQCUST.cbl",
+    "key": "INQCUST",
+    "rank": 2,
+    "ticket": "INQCUST_port_ticket.md"
+  },
+  {
+    "blast_radius": 2.087,
+    "callers": 3,
+    "calls": 9,
+    "file": "src/base/cobol_src/INQACCCU.cbl",
+    "key": "INQACCCU",
+    "rank": 3,
+    "ticket": "INQACCCU_port_ticket.md"
+  },
+  {
+    "blast_radius": 2.118,
+    "callers": 2,
+    "calls": 6,
+    "file": "src/base/cobol_src/INQACC.cbl",
+    "key": "INQACC",
+    "rank": 4,
+    "ticket": "INQACC_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.903,
+    "callers": 2,
+    "calls": 9,
+    "file": "src/base/cobol_src/DELACC.cbl",
+    "key": "DELACC",
+    "rank": 5,
+    "ticket": "DELACC_port_ticket.md"
+  },
+  {
+    "blast_radius": 2.974,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/base/cobol_src/GETSCODE.cbl",
+    "key": "GETSCODE",
+    "rank": 6,
+    "ticket": "GETSCODE_port_ticket.md"
+  },
+  {
+    "blast_radius": 2.834,
+    "callers": 1,
+    "calls": 6,
+    "file": "src/base/cobol_src/BANKDATA.cbl",
+    "key": "BANKDATA",
+    "rank": 7,
+    "ticket": "BANKDATA_port_ticket.md"
+  },
+  {
+    "blast_radius": 2.183,
+    "callers": 1,
+    "calls": 1,
+    "file": "src/base/cobol_src/GETCOMPY.cbl",
+    "key": "GETCOMPY",
+    "rank": 8,
+    "ticket": "GETCOMPY_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.966,
+    "callers": 1,
+    "calls": 14,
+    "file": "src/base/cobol_src/CREACC.cbl",
+    "key": "CREACC",
+    "rank": 9,
+    "ticket": "CREACC_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.966,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/base/cobol_src/CRECUST.cbl",
+    "key": "CRECUST",
+    "rank": 10,
+    "ticket": "CRECUST_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.966,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/base/cobol_src/DBCRFUN.cbl",
+    "key": "DBCRFUN",
+    "rank": 11,
+    "ticket": "DBCRFUN_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.966,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/base/cobol_src/XFRFUN.cbl",
+    "key": "XFRFUN",
+    "rank": 12,
+    "ticket": "XFRFUN_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.857,
+    "callers": 1,
+    "calls": 5,
+    "file": "src/base/cobol_src/UPDACC.cbl",
+    "key": "UPDACC",
+    "rank": 13,
+    "ticket": "UPDACC_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.695,
+    "callers": 1,
+    "calls": 13,
+    "file": "src/base/cobol_src/DELCUS.cbl",
+    "key": "DELCUS",
+    "rank": 14,
+    "ticket": "DELCUS_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.695,
+    "callers": 1,
+    "calls": 4,
+    "file": "src/base/cobol_src/UPDCUST.cbl",
+    "key": "UPDCUST",
+    "rank": 15,
+    "ticket": "UPDCUST_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 3,
+    "file": "src/base/cobol_src/ACCTCTRL.cbl",
+    "key": "ACCTCTRL",
+    "rank": 16,
+    "ticket": "ACCTCTRL_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 3,
+    "file": "src/base/cobol_src/BNK1CAC.cbl",
+    "key": "BNK1CAC",
+    "rank": 17,
+    "ticket": "BNK1CAC_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 4,
+    "file": "src/base/cobol_src/BNK1CCA.cbl",
+    "key": "BNK1CCA",
+    "rank": 18,
+    "ticket": "BNK1CCA_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 3,
+    "file": "src/base/cobol_src/BNK1CCS.cbl",
+    "key": "BNK1CCS",
+    "rank": 19,
+    "ticket": "BNK1CCS_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 3,
+    "file": "src/base/cobol_src/BNK1CRA.cbl",
+    "key": "BNK1CRA",
+    "rank": 20,
+    "ticket": "BNK1CRA_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 5,
+    "file": "src/base/cobol_src/BNK1DAC.cbl",
+    "key": "BNK1DAC",
+    "rank": 21,
+    "ticket": "BNK1DAC_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 8,
+    "file": "src/base/cobol_src/BNK1DCS.cbl",
+    "key": "BNK1DCS",
+    "rank": 22,
+    "ticket": "BNK1DCS_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 3,
+    "file": "src/base/cobol_src/BNK1TFN.cbl",
+    "key": "BNK1TFN",
+    "rank": 23,
+    "ticket": "BNK1TFN_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 4,
+    "file": "src/base/cobol_src/BNK1UAC.cbl",
+    "key": "BNK1UAC",
+    "rank": 24,
+    "ticket": "BNK1UAC_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 2,
+    "file": "src/base/cobol_src/BNKMENU.cbl",
+    "key": "BNKMENU",
+    "rank": 25,
+    "ticket": "BNKMENU_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 3,
+    "file": "src/base/cobol_src/CRDTAGY1.cbl",
+    "key": "CRDTAGY1",
+    "rank": 26,
+    "ticket": "CRDTAGY1_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 3,
+    "file": "src/base/cobol_src/CRDTAGY2.cbl",
+    "key": "CRDTAGY2",
+    "rank": 27,
+    "ticket": "CRDTAGY2_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 3,
+    "file": "src/base/cobol_src/CRDTAGY3.cbl",
+    "key": "CRDTAGY3",
+    "rank": 28,
+    "ticket": "CRDTAGY3_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 3,
+    "file": "src/base/cobol_src/CRDTAGY4.cbl",
+    "key": "CRDTAGY4",
+    "rank": 29,
+    "ticket": "CRDTAGY4_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 3,
+    "file": "src/base/cobol_src/CRDTAGY5.cbl",
+    "key": "CRDTAGY5",
+    "rank": 30,
+    "ticket": "CRDTAGY5_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 3,
+    "file": "src/base/cobol_src/CUSTCTRL.cbl",
+    "key": "CUSTCTRL",
+    "rank": 31,
+    "ticket": "CUSTCTRL_port_ticket.md"
+  }
+]

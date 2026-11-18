@@ -23,16 +23,16 @@ public class PaudbunlPendingAuthDetails {
     @Column(name = "sys_id")
     private Long sysId;
 
-    @Column(name = "OPFIL1_REC")
+    @Column(name = "OPFIL1_REC", length = 100)
     private String opfil1Rec;
 
     @Column(name = "ROOT_SEG_KEY")
     private Integer rootSegKey;
 
-    @Column(name = "CHILD_SEG_REC")
+    @Column(name = "CHILD_SEG_REC", length = 200)
     private String childSegRec;
 
-    @Column(name = "CURRENT_DATE")
+    @Column(name = "\"CURRENT_DATE\"")
     private Integer currentDate;
 
     @Column(name = "CURRENT_YYDDD")
@@ -44,16 +44,16 @@ public class PaudbunlPendingAuthDetails {
     @Column(name = "WS_NO_SUMRY_READ")
     private Integer wsNoSumryRead;
 
-    @Column(name = "WS_END_OF_ROOT_SEG")
+    @Column(name = "WS_END_OF_ROOT_SEG", length = 1)
     private String wsEndOfRootSeg;
 
-    @Column(name = "WS_END_OF_CHILD_SEG")
+    @Column(name = "WS_END_OF_CHILD_SEG", length = 1)
     private String wsEndOfChildSeg;
 
-    @Column(name = "WS_OUTFL1_STATUS")
+    @Column(name = "WS_OUTFL1_STATUS", length = 2)
     private String wsOutfl1Status;
 
-    @Column(name = "WS_OUTFL2_STATUS")
+    @Column(name = "WS_OUTFL2_STATUS", length = 2)
     private String wsOutfl2Status;
 
     @Column(name = "WK_CHKPT_ID_CTR")

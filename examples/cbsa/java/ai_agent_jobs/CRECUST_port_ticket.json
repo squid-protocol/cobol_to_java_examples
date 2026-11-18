@@ -1,0 +1,2020 @@
+{
+  "compiler_options": [
+    {
+      "line": 1,
+      "option": "CICS",
+      "value": "'SP,EDF'",
+      "written": "CICS('SP,EDF')"
+    },
+    {
+      "line": 2,
+      "option": "SQL",
+      "value": null,
+      "written": "SQL"
+    }
+  ],
+  "deliverable": {
+    "proof": "The port is laid over the generated project as an overlay and proven by the equivalence harness (tests/tools/equivalence.py in GitGalaxy): the original runs under GnuCOBOL, the port on the same inputs, and every output record is compared field by field; a person approves the port with that report in hand.",
+    "return": "One complete Java file for src/main/java/com/gitgalaxy/modernized/service/CrecustService.java: the same package, class name and public method signatures, with runTask ported -- what the proof runs -- and helper methods it calls added; every other generated method left as generated (#4255)."
+  },
+  "facts": {
+    "full_skeleton": "cics-banking-sample-application-cbsa_gitgalaxy_clean_TIMESTAMP/06_skeleton/CRECUST_skeleton.json",
+    "program": {
+      "copy_collisions": [],
+      "copy_edges": {
+        "src/base/cobol_copy/ABNDINFO.cpy": {},
+        "src/base/cobol_copy/CRECUST.cpy": {},
+        "src/base/cobol_copy/CUSTCTRL.cpy": {},
+        "src/base/cobol_copy/CUSTOMER.cpy": {},
+        "src/base/cobol_copy/PROCDB2.cpy": {},
+        "src/base/cobol_copy/PROCTRAN.cpy": {},
+        "src/base/cobol_copy/SORTCODE.cpy": {},
+        "src/base/cobol_src/CRECUST.cbl": {
+          "src/base/cobol_copy/ABNDINFO.cpy": [],
+          "src/base/cobol_copy/CRECUST.cpy": [],
+          "src/base/cobol_copy/CUSTCTRL.cpy": [],
+          "src/base/cobol_copy/CUSTOMER.cpy": [],
+          "src/base/cobol_copy/PROCDB2.cpy": [],
+          "src/base/cobol_copy/PROCTRAN.cpy": [],
+          "src/base/cobol_copy/SORTCODE.cpy": []
+        }
+      },
+      "copy_gaps": [],
+      "copybooks": [
+        "src/base/cobol_copy/ABNDINFO.cpy",
+        "src/base/cobol_copy/CRECUST.cpy",
+        "src/base/cobol_copy/CUSTCTRL.cpy",
+        "src/base/cobol_copy/CUSTOMER.cpy",
+        "src/base/cobol_copy/PROCDB2.cpy",
+        "src/base/cobol_copy/PROCTRAN.cpy",
+        "src/base/cobol_copy/SORTCODE.cpy"
+      ],
+      "file": "src/base/cobol_src/CRECUST.cbl",
+      "language": "cobol",
+      "program_id_field_testing": "open",
+      "program_ids": [
+        "CRECUST"
+      ],
+      "total_loc": 1441
+    },
+    "sections": {
+      "call_contracts": {
+        "facts": [
+          {
+            "args": [
+              {
+                "argument": "DATE-OF-BIRTH-FOR-CEEDAYS",
+                "callee_bytes": null,
+                "caller_bytes": 10,
+                "length_match": null,
+                "parameter": null,
+                "position": 1
+              },
+              {
+                "argument": "DATE-OF-BIRTH-FORMAT",
+                "callee_bytes": null,
+                "caller_bytes": 10,
+                "length_match": null,
+                "parameter": null,
+                "position": 2
+              },
+              {
+                "argument": "WS-DATE-OF-BIRTH-LILLIAN",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 3
+              },
+              {
+                "argument": "FC",
+                "callee_bytes": null,
+                "caller_bytes": 12,
+                "length_match": null,
+                "parameter": null,
+                "position": 4
+              }
+            ],
+            "callee": null,
+            "caller": "src/base/cobol_src/CRECUST.cbl",
+            "entry": null,
+            "line": 1379,
+            "status": "callee_unresolved",
+            "target": "CEEDAYS"
+          },
+          {
+            "args": [
+              {
+                "argument": "WS-TODAY-LILLIAN",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 1
+              },
+              {
+                "argument": "WS-TODAY-SECONDS",
+                "callee_bytes": null,
+                "caller_bytes": 8,
+                "length_match": null,
+                "parameter": null,
+                "position": 2
+              },
+              {
+                "argument": "WS-TODAY-GREGORIAN",
+                "callee_bytes": null,
+                "caller_bytes": 17,
+                "length_match": null,
+                "parameter": null,
+                "position": 3
+              },
+              {
+                "argument": "FC",
+                "callee_bytes": null,
+                "caller_bytes": 12,
+                "length_match": null,
+                "parameter": null,
+                "position": 4
+              }
+            ],
+            "callee": null,
+            "caller": "src/base/cobol_src/CRECUST.cbl",
+            "entry": null,
+            "line": 1393,
+            "status": "callee_unresolved",
+            "target": "CEELOCT"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "calls": {
+        "facts": [
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 582,
+            "operand": "WS-RUN-TRANSID",
+            "resolves_to": null,
+            "sysid": null,
+            "target": null,
+            "using_args": null,
+            "verb": "RUN TRANSID"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 1250,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1379,
+            "operand": "CEEDAYS",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "CEEDAYS",
+            "using_args": "DATE-OF-BIRTH-FOR-CEEDAYS,DATE-OF-BIRTH-FORMAT,WS-DATE-OF-BIRTH-LILLIAN,FC",
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1393,
+            "operand": "CEELOCT",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "CEELOCT",
+            "using_args": "WS-TODAY-LILLIAN,WS-TODAY-SECONDS,WS-TODAY-GREGORIAN,FC",
+            "verb": "CALL"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 9
+      },
+      "cics_file_lineage": {
+        "facts": [
+          {
+            "accesses": [
+              "read",
+              "update",
+              "write"
+            ],
+            "definitions": [
+              {
+                "batch_programs": [],
+                "bindings": [],
+                "defined_in": "etc/install/base/installjcl/BANK.csd",
+                "dsname": "CBSA.CICSBSA.CUSTOMER",
+                "file": "CUSTOMER",
+                "group": "BANK",
+                "key_length": 16,
+                "line": 10,
+                "record_format": "V",
+                "record_size": 259
+              }
+            ],
+            "lines": [
+              1029,
+              1048,
+              1075,
+              1086,
+              1290,
+              1306,
+              1326,
+              1340
+            ],
+            "name": "CUSTOMER",
+            "program": "src/base/cobol_src/CRECUST.cbl",
+            "verbs": [
+              "READ",
+              "REWRITE",
+              "WRITE"
+            ]
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "cics_resources": {
+        "facts": [
+          {
+            "access": "write",
+            "attributes": "FLENGTH(WS-PUT-CONT-LEN)",
+            "candidates": "CIPA,CIPB,CIPC,CIPD,CIPE,CIPF,CIPG,CIPH,CIPI",
+            "kind": "CONTAINER",
+            "line": 557,
+            "name": null,
+            "operand": "WS-PUT-CONT-NAME",
+            "qualifier": "CIPCREDCHANN",
+            "qualifier_operand": "WS-CHANNEL-NAME",
+            "record": "DFHCOMMAREA",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "ambiguous",
+            "verb": "PUT"
+          },
+          {
+            "access": "pass",
+            "attributes": "CHILD(WS-ANY-CHILD-TKN)",
+            "candidates": null,
+            "kind": "CHANNEL",
+            "line": 582,
+            "name": "CIPCREDCHANN",
+            "operand": "WS-CHANNEL-NAME",
+            "qualifier": null,
+            "qualifier_operand": "WS-RUN-TRANSID",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "move",
+            "verb": "RUN"
+          },
+          {
+            "access": "read",
+            "attributes": "FLENGTH(WS-CHILD-CONTAINER-LEN)",
+            "candidates": "CIPA,CIPB,CIPC,CIPD,CIPE,CIPF,CIPG,CIPH,CIPI",
+            "kind": "CONTAINER",
+            "line": 892,
+            "name": null,
+            "operand": "WS-CONTAINER-NAME",
+            "qualifier": null,
+            "qualifier_operand": "WS-ANY-CHILD-FETCH-CHAN",
+            "record": "WS-CHILD-DATA",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "ambiguous",
+            "verb": "GET"
+          },
+          {
+            "access": "write",
+            "attributes": "RIDFLD(CUSTOMER-KEY) LENGTH(WS-CUST-REC-LEN) KEYLENGTH(16)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1029,
+            "name": "CUSTOMER",
+            "operand": "'CUSTOMER'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "OUTPUT-DATA",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "WRITE"
+          },
+          {
+            "access": "write",
+            "attributes": "RIDFLD(CUSTOMER-KEY) LENGTH(WS-CUST-REC-LEN) KEYLENGTH(16)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1048,
+            "name": "CUSTOMER",
+            "operand": "'CUSTOMER'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "OUTPUT-DATA",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "WRITE"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(CUSTOMER-CONTROL-KEY) UPDATE",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1075,
+            "name": "CUSTOMER",
+            "operand": "'CUSTOMER'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "CUSTOMER-CONTROL",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "literal",
+            "verb": "READ"
+          },
+          {
+            "access": "update",
+            "attributes": null,
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1086,
+            "name": "CUSTOMER",
+            "operand": "'CUSTOMER'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "CUSTOMER-CONTROL",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "REWRITE"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(CUSTOMER-CONTROL-KEY) UPDATE",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1290,
+            "name": "CUSTOMER",
+            "operand": "'CUSTOMER'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "CUSTOMER-CONTROL",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "literal",
+            "verb": "READ"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(CUSTOMER-CONTROL-KEY) UPDATE",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1306,
+            "name": "CUSTOMER",
+            "operand": "'CUSTOMER'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "CUSTOMER-CONTROL",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "literal",
+            "verb": "READ"
+          },
+          {
+            "access": "update",
+            "attributes": null,
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1326,
+            "name": "CUSTOMER",
+            "operand": "'CUSTOMER'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "CUSTOMER-CONTROL",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "REWRITE"
+          },
+          {
+            "access": "update",
+            "attributes": null,
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1340,
+            "name": "CUSTOMER",
+            "operand": "'CUSTOMER'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "CUSTOMER-CONTROL",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "REWRITE"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "cics_tasks": {
+        "facts": [
+          {
+            "attributes": "LENGTH(16)",
+            "candidates": null,
+            "channel": null,
+            "channel_operand": null,
+            "line": 446,
+            "name": null,
+            "operand": "NCS-CUST-NO-NAME",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "unresolved",
+            "target_kind": "RESOURCE",
+            "timing": null,
+            "token": null,
+            "verb": "ENQ"
+          },
+          {
+            "attributes": "LENGTH(16)",
+            "candidates": null,
+            "channel": null,
+            "channel_operand": null,
+            "line": 471,
+            "name": null,
+            "operand": "NCS-CUST-NO-NAME",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "unresolved",
+            "target_kind": "RESOURCE",
+            "timing": null,
+            "token": null,
+            "verb": "DEQ"
+          },
+          {
+            "attributes": null,
+            "candidates": "OCR[0-9]",
+            "channel": "CIPCREDCHANN",
+            "channel_operand": "WS-CHANNEL-NAME",
+            "line": 582,
+            "name": null,
+            "operand": "WS-RUN-TRANSID",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "pattern",
+            "target_kind": "TRANSID",
+            "timing": null,
+            "token": "WS-ANY-CHILD-TKN",
+            "verb": "RUN"
+          },
+          {
+            "attributes": null,
+            "candidates": null,
+            "channel": null,
+            "channel_operand": null,
+            "line": 623,
+            "name": null,
+            "operand": null,
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": null,
+            "target_kind": null,
+            "timing": "FOR SECONDS(3)",
+            "token": null,
+            "verb": "DELAY"
+          },
+          {
+            "attributes": "NOSUSPEND COMPSTATUS(WS-CHILD-FETCH-COMPST) ABCODE(WS-ANY-CHILD-FETCH-ABCODE)",
+            "candidates": null,
+            "channel": null,
+            "channel_operand": "WS-ANY-CHILD-FETCH-CHAN",
+            "line": 639,
+            "name": null,
+            "operand": null,
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": null,
+            "target_kind": null,
+            "timing": null,
+            "token": "WS-ANY-CHILD-FETCH-TKN",
+            "verb": "FETCH ANY"
+          },
+          {
+            "attributes": null,
+            "candidates": null,
+            "channel": null,
+            "channel_operand": null,
+            "line": 1045,
+            "name": null,
+            "operand": null,
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": null,
+            "target_kind": null,
+            "timing": "FOR SECONDS(3)",
+            "token": null,
+            "verb": "DELAY"
+          },
+          {
+            "attributes": null,
+            "candidates": null,
+            "channel": null,
+            "channel_operand": null,
+            "line": 1303,
+            "name": null,
+            "operand": null,
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": null,
+            "target_kind": null,
+            "timing": "FOR SECONDS(3)",
+            "token": null,
+            "verb": "DELAY"
+          },
+          {
+            "attributes": null,
+            "candidates": null,
+            "channel": null,
+            "channel_operand": null,
+            "line": 1337,
+            "name": null,
+            "operand": null,
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": null,
+            "target_kind": null,
+            "timing": "FOR SECONDS(3)",
+            "token": null,
+            "verb": "DELAY"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "commarea_contracts": {
+        "facts": [
+          {
+            "callee": "src/base/cobol_src/CRECUST.cbl",
+            "callee_record": {
+              "bytes": 261,
+              "copybooks": [
+                "src/base/cobol_copy/CRECUST.cpy"
+              ],
+              "fields": 10,
+              "file": "src/base/cobol_src/CRECUST.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNK1CCS.cbl",
+            "caller_record": {
+              "bytes": 261,
+              "copybooks": [],
+              "fields": 10,
+              "file": "src/base/cobol_src/BNK1CCS.cbl",
+              "name": "SUBPGM-PARMS",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "SUBPGM-PARMS",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 976,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "CRECUST",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/CRECUST.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/CRECUST.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1250,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "dynamic_call_targets": {
+        "facts": [
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/CRECUST.cbl",
+            "line": 1250,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "entry_points": {
+        "facts": [
+          {
+            "entry_name": null,
+            "kind": "PROCEDURE",
+            "line": 353,
+            "params": "DFHCOMMAREA"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "interface": {
+        "facts": {
+          "commarea": {
+            "alternatives": [],
+            "basis": "caller_record",
+            "bytes": 261,
+            "copybooks": [],
+            "declared_record": "DFHCOMMAREA",
+            "extended": false,
+            "fields": "Reference: CrecustDfhcommarea (10 fields: name, PIC, usage, offset, bytes, copybook) in src/main/java/com/gitgalaxy/modernized/dto/contract/CrecustDfhcommarea.java; level numbers are in the copybook listings",
+            "file": "src/base/cobol_src/BNK1CCS.cbl",
+            "record": "SUBPGM-PARMS",
+            "sources": [
+              {
+                "caller": "src/base/cobol_src/BNK1CCS.cbl",
+                "line": 976,
+                "verb": "LINK"
+              }
+            ],
+            "unexpanded": [],
+            "variable": false
+          },
+          "commarea_gap": null,
+          "commarea_unpack": null,
+          "containers": [],
+          "inbound": [
+            {
+              "bytes": 261,
+              "caller": "src/base/cobol_src/BNK1CCS.cbl",
+              "line": 976,
+              "passes": "SUBPGM-PARMS",
+              "verb": "LINK",
+              "via": "static"
+            }
+          ],
+          "parameters": [
+            {
+              "file": "src/base/cobol_src/CRECUST.cbl",
+              "layout": {
+                "bytes": 261,
+                "copybooks": [
+                  "src/base/cobol_copy/CRECUST.cpy"
+                ],
+                "extended": false,
+                "fields": [
+                  {
+                    "bytes": 4,
+                    "class": "X",
+                    "file": "src/base/cobol_copy/CRECUST.cpy",
+                    "level": 3,
+                    "name": "COMM-EYECATCHER",
+                    "occurs": null,
+                    "offset": 0,
+                    "pic": "X(4)",
+                    "usage": null
+                  },
+                  {
+                    "bytes": 6,
+                    "class": "9",
+                    "file": "src/base/cobol_copy/CRECUST.cpy",
+                    "level": 5,
+                    "name": "COMM-SORTCODE",
+                    "occurs": null,
+                    "offset": 4,
+                    "pic": "9(6)",
+                    "usage": "DISPLAY"
+                  },
+                  {
+                    "bytes": 10,
+                    "class": "9",
+                    "file": "src/base/cobol_copy/CRECUST.cpy",
+                    "level": 5,
+                    "name": "COMM-NUMBER",
+                    "occurs": null,
+                    "offset": 10,
+                    "pic": "9(10)",
+                    "usage": "DISPLAY"
+                  },
+                  {
+                    "bytes": 60,
+                    "class": "X",
+                    "file": "src/base/cobol_copy/CRECUST.cpy",
+                    "level": 3,
+                    "name": "COMM-NAME",
+                    "occurs": null,
+                    "offset": 20,
+                    "pic": "X(60)",
+                    "usage": null
+                  },
+                  {
+                    "bytes": 160,
+                    "class": "X",
+                    "file": "src/base/cobol_copy/CRECUST.cpy",
+                    "level": 3,
+                    "name": "COMM-ADDRESS",
+                    "occurs": null,
+                    "offset": 80,
+                    "pic": "X(160)",
+                    "usage": null
+                  },
+                  {
+                    "bytes": 8,
+                    "class": "9",
+                    "file": "src/base/cobol_copy/CRECUST.cpy",
+                    "level": 3,
+                    "name": "COMM-DATE-OF-BIRTH",
+                    "occurs": null,
+                    "offset": 240,
+                    "pic": "9(8)",
+                    "usage": null
+                  },
+                  {
+                    "bytes": 3,
+                    "class": "9",
+                    "file": "src/base/cobol_copy/CRECUST.cpy",
+                    "level": 3,
+                    "name": "COMM-CREDIT-SCORE",
+                    "occurs": null,
+                    "offset": 248,
+                    "pic": "999",
+                    "usage": null
+                  },
+                  {
+                    "bytes": 8,
+                    "class": "9",
+                    "file": "src/base/cobol_copy/CRECUST.cpy",
+                    "level": 3,
+                    "name": "COMM-CS-REVIEW-DATE",
+                    "occurs": null,
+                    "offset": 251,
+                    "pic": "9(8)",
+                    "usage": null
+                  },
+                  {
+                    "bytes": 1,
+                    "class": "X",
+                    "file": "src/base/cobol_copy/CRECUST.cpy",
+                    "level": 3,
+                    "name": "COMM-SUCCESS",
+                    "occurs": null,
+                    "offset": 259,
+                    "pic": "X",
+                    "usage": null
+                  },
+                  {
+                    "bytes": 1,
+                    "class": "X",
+                    "file": "src/base/cobol_copy/CRECUST.cpy",
+                    "level": 3,
+                    "name": "COMM-FAIL-CODE",
+                    "occurs": null,
+                    "offset": 260,
+                    "pic": "X",
+                    "usage": null
+                  }
+                ],
+                "unexpanded": [],
+                "variable": false
+              },
+              "mode": "REFERENCE",
+              "name": "DFHCOMMAREA",
+              "position": 1,
+              "record": "DFHCOMMAREA"
+            }
+          ]
+        },
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "navigation": {
+        "facts": [
+          {
+            "from": "src/base/cobol_src/BNK1CCS.cbl",
+            "line": 976,
+            "program": "CRECUST",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/CRECUST.cbl",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/base/cobol_src/CRECUST.cbl",
+            "line": 1250,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 4
+      },
+      "sql_statements": {
+        "facts": [
+          {
+            "access": "insert",
+            "cursor": null,
+            "host_variables": [
+              "HV-PROCTRAN-EYECATCHER",
+              "HV-PROCTRAN-SORT-CODE",
+              "HV-PROCTRAN-ACC-NUMBER",
+              "HV-PROCTRAN-DATE",
+              "HV-PROCTRAN-TIME",
+              "HV-PROCTRAN-REF",
+              "HV-PROCTRAN-TYPE",
+              "HV-PROCTRAN-DESC",
+              "HV-PROCTRAN-AMOUNT"
+            ],
+            "line": 1168,
+            "ordinal": 1,
+            "statement": "INSERT INTO PROCTRAN ( PROCTRAN_EYECATCHER, PROCTRAN_SORTCODE, PROCTRAN_NUMBER, PROCTRAN_DATE, PROCTRAN_TIME, PROCTRAN_REF, PROCTRAN_TYPE, PROCTRAN_DESC, PROCTRAN_AMOUNT ) VALUES ( :HV-PROCTRAN-EYECATCHER, :HV-PROCTRAN-SORT-CODE, :HV-PROCTRAN-ACC-NUMBER, :HV-PROCTRAN-DATE, :HV-PROCTRAN-TIME, :HV-PROCTRAN-REF, :HV-PROCTRAN-TYPE, :HV-PROCTRAN-DESC, :HV-PROCTRAN-AMOUNT )",
+            "table": "PROCTRAN",
+            "verb": "INSERT"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 3
+      },
+      "sql_table_access": {
+        "facts": [
+          {
+            "accesses": [
+              "insert"
+            ],
+            "file": "src/base/cobol_src/CRECUST.cbl",
+            "lines": [
+              1168
+            ],
+            "table": "PROCTRAN",
+            "via_cursor": []
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 3
+      },
+      "unresolved_calls": {
+        "facts": [
+          {
+            "file": "src/base/cobol_src/CRECUST.cbl",
+            "form": "literal",
+            "line": 1379,
+            "operand": "CEEDAYS",
+            "target": "CEEDAYS",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/base/cobol_src/CRECUST.cbl",
+            "form": "literal",
+            "line": 1393,
+            "operand": "CEELOCT",
+            "target": "CEELOCT",
+            "verb": "CALL"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 9
+      },
+      "uow_handlers": {
+        "facts": [
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 446,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "ENQ"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 471,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "DEQ"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 557,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "PUT"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 582,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RUN"
+          },
+          {
+            "attributes": null,
+            "condition": "INVREQ,NORMAL,NOTFINISHED,NOTFND",
+            "kind": "RESP_CHECK",
+            "line": 639,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "FETCH"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 892,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "GET"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL,SYSIDERR",
+            "kind": "RESP_CHECK",
+            "line": 1029,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WRITE"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1048,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WRITE"
+          },
+          {
+            "attributes": null,
+            "condition": "HWPT",
+            "kind": "ABEND",
+            "line": 1262,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "ABEND"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL,SYSIDERR",
+            "kind": "RESP_CHECK",
+            "line": 1290,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "READ"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1306,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "READ"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL,SYSIDERR",
+            "kind": "RESP_CHECK",
+            "line": 1326,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "REWRITE"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1340,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "REWRITE"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      }
+    }
+  },
+  "generated": {
+    "imports": [
+      {
+        "class": "com.gitgalaxy.modernized.cics.CicsTask",
+        "file": "src/main/java/com/gitgalaxy/modernized/cics/CicsTask.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.dto.contract.CrecustDfhcommarea",
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CrecustDfhcommarea.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.entity.vsam.OutputData",
+        "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/OutputData.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.entity.vsam.OutputDataKey",
+        "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/OutputDataKey.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.repository.db2.ProctranRepository",
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.repository.vsam.OutputDataRepository",
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/OutputDataRepository.java"
+      }
+    ],
+    "traced_to_this_program": [
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/AbndprocController.java",
+        "symbol": "AbndprocController#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java",
+        "symbol": "ProctranRepository#insertL1168Crecust"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/CrecustService.java",
+        "symbol": "CrecustService"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/CrecustService.java",
+        "symbol": "CrecustService#abendHwptL1262"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/CrecustService.java",
+        "symbol": "CrecustService#dispatchWsAbendPgmL1250"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/CrecustService.java",
+        "symbol": "CrecustService#readCustomer"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/CrecustService.java",
+        "symbol": "CrecustService#rewriteCustomer"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/CrecustService.java",
+        "symbol": "CrecustService#writeCustomer"
+      }
+    ]
+  },
+  "paragraphs": [
+    {
+      "lines": 1,
+      "name": "PREMIERE",
+      "start_line": 354
+    },
+    {
+      "lines": 63,
+      "name": "P010",
+      "start_line": 355
+    },
+    {
+      "lines": 2,
+      "name": "P999",
+      "start_line": 419
+    },
+    {
+      "lines": 1,
+      "name": "POPULATE-TIME-DATE",
+      "start_line": 423
+    },
+    {
+      "lines": 12,
+      "name": "PTD010",
+      "start_line": 424
+    },
+    {
+      "lines": 2,
+      "name": "PTD999",
+      "start_line": 437
+    },
+    {
+      "lines": 1,
+      "name": "ENQ-NAMED-COUNTER",
+      "start_line": 441
+    },
+    {
+      "lines": 16,
+      "name": "ENC010",
+      "start_line": 442
+    },
+    {
+      "lines": 2,
+      "name": "ENC999",
+      "start_line": 459
+    },
+    {
+      "lines": 1,
+      "name": "DEQ-NAMED-COUNTER",
+      "start_line": 463
+    },
+    {
+      "lines": 19,
+      "name": "DNC010",
+      "start_line": 464
+    },
+    {
+      "lines": 2,
+      "name": "DNC999",
+      "start_line": 484
+    },
+    {
+      "lines": 1,
+      "name": "UPD-NCS",
+      "start_line": 488
+    },
+    {
+      "lines": 9,
+      "name": "UN010",
+      "start_line": 489
+    },
+    {
+      "lines": 2,
+      "name": "UN999",
+      "start_line": 499
+    },
+    {
+      "lines": 1,
+      "name": "CREDIT-CHECK",
+      "start_line": 505
+    },
+    {
+      "lines": 499,
+      "name": "CC010",
+      "start_line": 506
+    },
+    {
+      "lines": 2,
+      "name": "CC999",
+      "start_line": 1007
+    },
+    {
+      "lines": 1,
+      "name": "WRITE-CUSTOMER-VSAM",
+      "start_line": 1011
+    },
+    {
+      "lines": 104,
+      "name": "WCV010",
+      "start_line": 1012
+    },
+    {
+      "lines": 2,
+      "name": "WCV999",
+      "start_line": 1117
+    },
+    {
+      "lines": 1,
+      "name": "WRITE-PROCTRAN",
+      "start_line": 1121
+    },
+    {
+      "lines": 2,
+      "name": "WP010",
+      "start_line": 1122
+    },
+    {
+      "lines": 2,
+      "name": "WP999",
+      "start_line": 1125
+    },
+    {
+      "lines": 1,
+      "name": "WRITE-PROCTRAN-DB2",
+      "start_line": 1129
+    },
+    {
+      "lines": 136,
+      "name": "WPD010",
+      "start_line": 1130
+    },
+    {
+      "lines": 2,
+      "name": "WPD999",
+      "start_line": 1267
+    },
+    {
+      "lines": 1,
+      "name": "GET-ME-OUT-OF-HERE",
+      "start_line": 1271
+    },
+    {
+      "lines": 6,
+      "name": "GMOFH010",
+      "start_line": 1272
+    },
+    {
+      "lines": 2,
+      "name": "GMOFH999",
+      "start_line": 1279
+    },
+    {
+      "lines": 1,
+      "name": "GET-LAST-CUSTOMER-VSAM",
+      "start_line": 1283
+    },
+    {
+      "lines": 75,
+      "name": "GLCV010",
+      "start_line": 1284
+    },
+    {
+      "lines": 2,
+      "name": "GLCV999",
+      "start_line": 1360
+    },
+    {
+      "lines": 1,
+      "name": "DATE-OF-BIRTH-CHECK",
+      "start_line": 1364
+    },
+    {
+      "lines": 53,
+      "name": "DOBC010",
+      "start_line": 1365
+    },
+    {
+      "lines": 2,
+      "name": "DOBC999",
+      "start_line": 1419
+    },
+    {
+      "lines": 1,
+      "name": "POPULATE-TIME-DATE2",
+      "start_line": 1423
+    },
+    {
+      "lines": 13,
+      "name": "PTD2010",
+      "start_line": 1424
+    },
+    {
+      "lines": 2,
+      "name": "PTD2999",
+      "start_line": 1438
+    }
+  ],
+  "priority": {
+    "blast_radius": 1.966,
+    "callers": 1,
+    "calls": 8,
+    "of": 31,
+    "rank": 10
+  },
+  "program": {
+    "file": "src/base/cobol_src/CRECUST.cbl",
+    "key": "CRECUST",
+    "language": "cobol",
+    "lines": 1441,
+    "program_ids": [
+      "CRECUST"
+    ]
+  },
+  "referenced": [
+    {
+      "bytes_after": 209,
+      "bytes_before": 2136,
+      "class": "src/main/java/com/gitgalaxy/modernized/dto/contract/CrecustDfhcommarea.java",
+      "fields": 10,
+      "item": "commarea",
+      "section": "facts.interface"
+    }
+  ],
+  "relations": [
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WS-CREDIT-CHECK-ERROR, 'Y')",
+      "kind": "alphanumeric",
+      "left": "WS-CREDIT-CHECK-ERROR",
+      "left_class": "alphanumeric",
+      "line": 371,
+      "op": "=",
+      "ordering": false,
+      "right": "'Y'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WS-DATE-OF-BIRTH-ERROR, 'Y')",
+      "kind": "alphanumeric",
+      "left": "WS-DATE-OF-BIRTH-ERROR",
+      "left_class": "alphanumeric",
+      "line": 394,
+      "op": "=",
+      "ordering": false,
+      "right": "'Y'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 453,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 478,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 565,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 589,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "PERFORM UNTIL",
+      "java": "CobolCompare.eq(WS-FINISHED-FETCHING, 'Y')",
+      "kind": "alphanumeric",
+      "left": "WS-FINISHED-FETCHING",
+      "left_class": "alphanumeric",
+      "line": 631,
+      "op": "=",
+      "ordering": false,
+      "right": "'Y'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 648,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 657,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NOTFINISHED)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 747,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(INVREQ)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 773,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NOTFND)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "WS-CHILD-FETCH-COMPST",
+      "left_class": "numeric",
+      "line": 855,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHVALUE(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "java": "CobolCompare.eq(WS-ANY-CHILD-FETCH-TKN, WS-CHILD-TKN(1))",
+      "kind": "alphanumeric",
+      "left": "WS-ANY-CHILD-FETCH-TKN",
+      "left_class": "alphanumeric",
+      "line": 861,
+      "op": "=",
+      "ordering": false,
+      "right": "WS-CHILD-TKN(1)",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "java": "CobolCompare.eq(WS-ANY-CHILD-FETCH-TKN, WS-CHILD-TKN(2))",
+      "kind": "alphanumeric",
+      "left": "WS-ANY-CHILD-FETCH-TKN",
+      "left_class": "alphanumeric",
+      "line": 864,
+      "op": "=",
+      "ordering": false,
+      "right": "WS-CHILD-TKN(2)",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "java": "CobolCompare.eq(WS-ANY-CHILD-FETCH-TKN, WS-CHILD-TKN(3))",
+      "kind": "alphanumeric",
+      "left": "WS-ANY-CHILD-FETCH-TKN",
+      "left_class": "alphanumeric",
+      "line": 867,
+      "op": "=",
+      "ordering": false,
+      "right": "WS-CHILD-TKN(3)",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "java": "CobolCompare.eq(WS-ANY-CHILD-FETCH-TKN, WS-CHILD-TKN(4))",
+      "kind": "alphanumeric",
+      "left": "WS-ANY-CHILD-FETCH-TKN",
+      "left_class": "alphanumeric",
+      "line": 870,
+      "op": "=",
+      "ordering": false,
+      "right": "WS-CHILD-TKN(4)",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "java": "CobolCompare.eq(WS-ANY-CHILD-FETCH-TKN, WS-CHILD-TKN(5))",
+      "kind": "alphanumeric",
+      "left": "WS-ANY-CHILD-FETCH-TKN",
+      "left_class": "alphanumeric",
+      "line": 873,
+      "op": "=",
+      "ordering": false,
+      "right": "WS-CHILD-TKN(5)",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "java": "CobolCompare.eq(WS-ANY-CHILD-FETCH-TKN, WS-CHILD-TKN(6))",
+      "kind": "alphanumeric",
+      "left": "WS-ANY-CHILD-FETCH-TKN",
+      "left_class": "alphanumeric",
+      "line": 876,
+      "op": "=",
+      "ordering": false,
+      "right": "WS-CHILD-TKN(6)",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "java": "CobolCompare.eq(WS-ANY-CHILD-FETCH-TKN, WS-CHILD-TKN(7))",
+      "kind": "alphanumeric",
+      "left": "WS-ANY-CHILD-FETCH-TKN",
+      "left_class": "alphanumeric",
+      "line": 879,
+      "op": "=",
+      "ordering": false,
+      "right": "WS-CHILD-TKN(7)",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "java": "CobolCompare.eq(WS-ANY-CHILD-FETCH-TKN, WS-CHILD-TKN(8))",
+      "kind": "alphanumeric",
+      "left": "WS-ANY-CHILD-FETCH-TKN",
+      "left_class": "alphanumeric",
+      "line": 882,
+      "op": "=",
+      "ordering": false,
+      "right": "WS-CHILD-TKN(8)",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "java": "CobolCompare.eq(WS-ANY-CHILD-FETCH-TKN, WS-CHILD-TKN(9))",
+      "kind": "alphanumeric",
+      "left": "WS-ANY-CHILD-FETCH-TKN",
+      "left_class": "alphanumeric",
+      "line": 885,
+      "op": "=",
+      "ordering": false,
+      "right": "WS-CHILD-TKN(9)",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 900,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "WS-CHILD-FETCH-COMPST",
+      "left_class": "numeric",
+      "line": 932,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHVALUE(ABEND)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "WS-CHILD-FETCH-COMPST",
+      "left_class": "numeric",
+      "line": 951,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHVALUE(SECERROR)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1039,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(SYSIDERR)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "PERFORM UNTIL",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1042,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "PERFORM UNTIL",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1043,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(SYSIDERR)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1064,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "SQLCODE",
+      "left_class": "unknown",
+      "line": 1198,
+      "op": "<>",
+      "ordering": false,
+      "right": "0",
+      "right_class": "numeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1298,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(SYSIDERR)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "PERFORM UNTIL",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1301,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "PERFORM UNTIL",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1302,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(SYSIDERR)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1316,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1332,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(SYSIDERR)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "PERFORM UNTIL",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1335,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "PERFORM UNTIL",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1336,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(SYSIDERR)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1347,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    }
+  ],
+  "rounding": [],
+  "rules": [
+    "Deliver the whole port: every paragraph the ported method reaches, every screen field it sets, every file it reads. A partial port or a sketch is not proven: the equivalence harness compares every output.",
+    "Port the PROCEDURE DIVISION into the service's methods, paragraph by paragraph; name the paragraph each block ports in a comment, so the port can be reviewed against the source.",
+    "Keep COBOL's storage semantics: COMPUTE / ADD / SUBTRACT / MULTIPLY / DIVIDE without ROUNDED truncate decimals; a result too long for its PICTURE loses its high-order digits (ON SIZE ERROR aside); MOVE to a numeric field aligns on the decimal point and truncates both ends; MOVE to alphanumeric pads with spaces or truncates on the right. Use BigDecimal with RoundingMode.DOWN, never double, for PIC 9 / COMP-3 data.",
+    "ROUNDED (#3825) rounds half AWAY from zero: setScale(scale, RoundingMode.HALF_UP) -- 2.5 -> 3, -2.5 -> -3. Never HALF_EVEN (banker's rounding) and never Math.round (-2.5 -> -2). ROUNDED MODE maps one to one: NEAREST-EVEN HALF_EVEN, AWAY-FROM-ZERO UP, NEAREST-TOWARD-ZERO HALF_DOWN, TOWARD-GREATER CEILING, TOWARD-LESSER FLOOR, TRUNCATION DOWN. The ticket's `rounding` list names every rounding or SIZE ERROR statement with the RoundingMode of each target. Round the final result only: compute intermediates exactly (IBM's ARITH intermediates carry 18 or 31 digits; the equivalence harness is the oracle when a result differs).",
+    "Keep the program's behaviour, including what looks like a defect (an unreachable branch, a field never reset): the port is proven by comparing its outputs with the original's. Document each such spot with a comment naming the defect and the one-line fix; fixing it is a business decision, not a translation.",
+    "Use the generated code as it is: entities and their fromRecord / toRecord codecs, repositories, DTOs, the batch runtime (DatasetResolver, Dd), the other services. Do not edit generated files other than this service; do not invent calls, files, queues or tables the facts do not name.",
+    "An abend is `throw CobolAbend.user(abcode, why)` (the generated batch runtime; CALL 'CEE3ABD' USING ABCODE: the step ends ABEND Unnnn) -- never another exception; the step's RETURN-CODE is runBatch's return value.",
+    "A DISPLAY is `Sysout.display(...)` (DISPLAY ... WITH NO ADVANCING: `Sysout.displayNoAdvancing`), never a log line: SYSOUT is compared line by line with the COBOL's. Its text is exactly what IBM COBOL writes, the operands concatenated: a literal as written; an alphanumeric or group item as all its bytes, trailing spaces included (a group's numeric fields as stored: zoned digits, the sign overpunched); a numeric item -- DISPLAY, COMP or COMP-3, not edited, no SIGN SEPARATE -- as `Sysout.number(value, digits, scale, signed)`: its PICTURE digits zero-padded, no decimal point, the sign overpunched in the last digit when signed (PIC S9(3) holding -12 is `01K`); an edited item as its edited text.",
+    "Every file I/O statement of a batch program (OPEN, CLOSE, READ, READ NEXT, WRITE, REWRITE, DELETE, START) is ONE call to the generated CobolFiles, per file (its DD name), in the order the program runs them. open(dd) / open(dd, path, input) / close(dd[, action]) / write / rewrite / delete(dd, action) / start(dd, found) return the status String; read(dd, supplier) (\"00\" or \"23\") and readNext(dd, iterator) (\"00\" or \"10\") return a CobolFiles.Read<T> -- status() and record(), null unless found. Take the program's FILE STATUS logic -- IF <status> = '00', AT END, INVALID KEY, its error paragraphs -- from the status returned, exactly as the program does; never skip a statement the program runs (a read-ahead, a CLOSE) or add one it does not. The equivalence harness injects file faults through CobolFiles and through GnuCOBOL at the same statement, and proves the error paths too. A keyed (VSAM KSDS) file keeps its mainframe semantics: WRITE is writeKeyed(dd, () -> repo.existsById(key), () -> repo.save(r)) -- \"22\" when the key is on file, never save() over it -- and REWRITE is rewriteKeyed(dd, exists, save) (\"23\" when it is not). A record the program READs INTO its working storage is the program's own copy: keep Entity.fromRecord(read.toRecord(cs), cs), never the repository's managed entity, so a change that is not REWRITten is never saved; and a READ that fails without INVALID KEY / AT END leaves the previous record in place, as the program's storage does.",
+    "A sequential dataset is fixed-length records (RECFM=FB): write each record's toRecord(...) bytes back to back, with no line separators, to the file DatasetResolver.path(dd) names; read it the same way.",
+    "Decode and encode a numeric field held in record bytes or a text column (zoned with an overpunched sign, COMP-3, COMP) only through the generated CobolRecords (zoned / packed / binary and their put methods) or the entity codecs, never a hand-written decoder.",
+    "Record bytes -- every dataset, file and COMMAREA the program reads or writes -- are in the code page CobolRecords.charset() returns: the migration's declared data.record_charset, a deployment fact. Pass it wherever a record codec, CobolRecords method or String takes a Charset; never Charset.forName, StandardCharsets or a guessed EBCDIC page for record data (#4060).",
+    "Read a number from text (a screen field, FUNCTION NUMVAL, a PARM) only through CobolRecords.numval(text, decimalPoint), with ',' when the program codes DECIMAL-POINT IS COMMA; never Integer.parseInt or new BigDecimal(String), which accept Arabic-Indic, Devanagari and full-width digits that COBOL rejects (#3831).",
+    "Format a numeric-edited field (a display string mapped from a number, often for a screen or print line) only through CobolEdit.format(pic, value, decimalComma, currency), which honours the COBOL picture (Z, 9, ., ,, -, +, CR/DB, $/currency, B, 0, /, and floating $ / + / - strings) as the mainframe does; pass the CURRENCY SIGN string (e.g. 'INR ') as currency, and it replaces the PICTURE SYMBOL (#3933).",
+    "Format and case-map with Locale.ROOT (String.format(Locale.ROOT, ...), toUpperCase(Locale.ROOT)): the default locale prints other digits (Arabic, Devanagari) and maps case differently (Turkish).",
+    "Order and compare VSAM / DB2 keys by the source code page's bytes, as the mainframe does (lower case before upper, letters before digits): browse through the generated sort-key finders, and sort in Java with CobolRecords.sortKey(key, codePage), never by String.compareTo or the database's default collation (#3822).",
+    "Compare alphanumeric operands (PIC X / A items, group items, alphanumeric literals and figurative constants) in IF, EVALUATE, PERFORM UNTIL and SEARCH WHEN only through the generated CobolCompare (compare, eq, gt, ge, lt, le), never String.compareTo or equals: it compares the code page's bytes as the mainframe does -- lower case before upper, letters before digits, so IF CUST-ID > 'A' is true for '1001' -- and pads the shorter operand with spaces ('AB' = 'AB  '). HIGH-VALUES / LOW-VALUES are CobolCompare.highValues(n) / lowValues(n). A numeric comparison stays BigDecimal.compareTo. A program that declares PROGRAM COLLATING SEQUENCE compares by that alphabet instead: flag it in a TODO (#3986).",
+    "A CICS program is ported into runTask(CicsTask task), one task per call (#3754): EIBCALEN = 0 is !task.hasCommarea(), EIBCALEN is task.eibcalen() (#4009: null = the whole record), DFHCOMMAREA is task.commarea(<its DTO>.class), EIBAID is task.aid() (ENTER, CLEAR, PF1-PF24, PA1-PA3), EIBTRMID is task.termid(), EIBTIME / EIBDATE / ASKTIME are task.now() (the task's dispatch time on the region's virtual clock, #3989), RECEIVE MAP is task.receive(map, mapset, <its screen>.class) (empty = MAPFAIL), SEND MAP is task.sendMap(map, mapset, screen, subfields, options...) (#4001: the screen holds each <f>O; CicsTask.MapSubfields each <f>A / <f>C / <f>H as its EBCDIC byte and <f>L = -1 for the cursor), SEND TEXT / SEND is task.sendText(from, length, options...), RETURN TRANSID COMMAREA LENGTH is task.returnTransid(transid, commarea, length), XCTL is task.xctl, LINK is task.link, ABEND is task.abend -- in the order the program does them, and the task ends at RETURN / XCTL / ABEND. A file READ is task.read(file, () -> <the service's generated read method>): its resp() is NORMAL (0), NOTFND (13) when the read finds nothing, or a condition the equivalence harness injects (NOTOPEN, IOERR, DISABLED, ...), and its resp2(); port every arm of the program's RESP handling (EVALUATE WS-RESP-CD ... WHEN OTHER) from it (#4023 follow-up). READ ... UPDATE is task.readForUpdate(file, lookup) (it holds the record for a REWRITE); WRITE FILE RIDFLD FROM is task.write(file, <whether the key is already in the file>, () -> <save the new record>): DUPREC (14) when it is; REWRITE FILE FROM is task.rewrite(file, () -> <save the changed record>): INVREQ (16) without a held record; each returns the RESP, and the injected conditions apply as for a READ. SYNCPOINT is task.syncpoint() and SYNCPOINT ROLLBACK task.rollback(), which undoes the task's file changes: save every change through these calls only -- what each file holds after the task is compared with the COBOL's. DELETE FILE RIDFLD is task.delete(file, <whether the key is there>, () -> <delete it>) (NOTFND 13 when not); DELETE FILE without RIDFLD is task.deleteHeld(file, () -> <delete the held record>). A browse: STARTBR is task.startbr(file, <RIDFLD as text>, <EQUAL given>, () -> <the file's keys, in key order, as a NavigableSet<String>>) (NOTFND 13 when no key qualifies); READNEXT / READPREV are task.readnext(file, <RIDFLD as text>) / task.readprev(file, ...), whose Browsed holds the RESP (ENDFILE 20 past either end) and the key read -- set RIDFLD to it and look the record up by it; ENDBR is task.endbr(file). The task keeps the browse's position and CICS's repositioning rules (a READPREV right after a READNEXT reads the same record again): pass RIDFLD exactly as the program holds it. ASKTIME ABSTIME is task.asktime(); FORMATTIME is CicsTask.formatDate(abstime, \"YYYYMMDD\" (or the form given), <DATESEP>) and CicsTask.formatTime(abstime, <TIMESEP>). ASSIGN APPLID / SYSID are task.assignApplid() / task.assignSysid() (the region's identity: never a literal). WRITEQ TD QUEUE FROM is task.writeqTd(queue, <the record as text, its full LENGTH>), which returns the RESP (QIDERR 44 for a queue the CSD does not define). INQUIRE PROGRAM(p) is task.inquireProgram(p): its RESP (NORMAL 0, PGMIDERR 27). A screen field shows what the symbolic map's O field would hold: text as moved, an edited PICTURE formatted as COBOL formats it. A COMMAREA is the generated DTO of its record; an area no generated DTO describes (a plain PIC X(n) item) is passed as a String of its n characters, or a byte[] of its EBCDIC bytes (#3989).",
+    "CICS condition and abend handling (#3989): HANDLE CONDITION, IGNORE CONDITION, HANDLE AID and RESP are the program's own control flow -- port each transfer to its label as Java control flow. HANDLE ABEND LABEL is task.handleAbend(label) (CANCEL, RESET: handleAbendCancel / handleAbendReset), and PUSH / POP HANDLE are task.pushHandle() / popHandle() besides saving and restoring the program's own handler state. EXEC CICS ABEND is task.abend(abcode) and a condition that takes CICS's default action is task.abendOnCondition(condition): CicsTask searches the active abend exits from this program's level upward, as CICS does, records the ABEND, and returns the label to continue at when this program's own exit took it -- or null, and the program must then return from runTask at once. After task.link(...) returns, task.abendExit() is the label of this program's exit when an abend in a program below reached it (continue there), and task.ended() is true when the task was terminated (stop). Never throw an exception to model a CICS transfer: the services are @Transactional, so an exception out of one marks the whole task rollback-only.",
+    "Dates and times only through java.time -- LocalDate, LocalDateTime, LocalTime and DateTimeFormatter with Locale.ROOT, in the ISO chronology -- never Calendar.getInstance(), new GregorianCalendar(), SimpleDateFormat or WeekFields.of(Locale.getDefault()): a th_TH default locale gives Buddhist-era years (2569), ja_JP_JP the Japanese imperial calendar, and US week fields start on Sunday. FUNCTION DAY-OF-WEEK and ACCEPT ... FROM DAY-OF-WEEK are Monday = 1 ... Sunday = 7, which is DayOfWeek.getValue() (#3833).",
+    "Read the time only from the generated batch runtime's MainframeClock (now() for local, currentDate() for FUNCTION CURRENT-DATE) -- in a CICS task, from task.now() -- never from the system clock directly or ZoneId.systemDefault(): it is how a run is pinned to be compared with the original.",
+    "A DB2 DATE / TIME / TIMESTAMP fetched into, or bound from, a character host variable (a DCLGEN DATE is PIC X(10)) is in the DB2 subsystem's format, the target config's culture.db2_date_format -- eur 26.09.2026 and 14.30.05, usa 09/26/2026 and 02:30 PM, iso 2026-09-26 and 14.30.05, jis 2026-09-26 and 14:30:05 -- and a TIMESTAMP is 2026-09-26-14.30.05.000000: convert only through the generated Db2Dates (date / time / timestamp, parseDate / parseTime / parseTimestamp), never LocalDate.toString() or LocalDate.parse (#3828).",
+    "FUNCTION INTEGER-OF-DATE / INTEGER-OF-DAY count days from day 1 = 1601-01-01 under INTDATE(ANSI), the default, but from day 1 = 1582-10-15 under INTDATE(LILIAN) (the same date is 6653 higher); DATE-OF-INTEGER / DAY-OF-INTEGER invert the same count. Port as ChronoUnit.DAYS.between(dayZero, date) with dayZero 1600-12-31 (ANSI) or 1582-10-14 (LILIAN). The ticket's compiler_options are the program's CBL / PROCESS cards; options given by the compile step's PARM or the installation defaults are not seen there (#3828).",
+    "A fact whose field testing is not 'field-tested' is verified on reference estates but still being field-tested: where the source contradicts it, follow the source and say so in the port's notes.",
+    "The proof calls one method per program: runTask(CicsTask) for a CICS program, handleCall(...) for a CALLed one, runBatch(dds, parm) for a batch one -- the ticket's methods to port. Port all of the program's behaviour into that method and the private helpers it calls. Port nothing into the other generated methods -- execute<Program>, handleTransaction, handleLink, handleChannel, onAbendL<n>, onCondition<C>L<n>, dispatch<X>L<n>, submit<Map> / render<Map>, xctl<P> / link<P>, the generated readqTs / writeqTs / read / browse helpers -- even where their TODO asks: leave each body as generated and keep no second entry point. Code the proof never runs is not proven, and the porting loop lists every method the proof cannot reach that the port changed (#4255)."
+  ],
+  "source": {
+    "copybooks": [
+      {
+        "file": "src/base/cobol_copy/ABNDINFO.cpy",
+        "listing": "sources/src/base/cobol_copy/ABNDINFO.cpy.lst"
+      },
+      {
+        "file": "src/base/cobol_copy/CRECUST.cpy",
+        "listing": "sources/src/base/cobol_copy/CRECUST.cpy.lst"
+      },
+      {
+        "file": "src/base/cobol_copy/CUSTCTRL.cpy",
+        "listing": "sources/src/base/cobol_copy/CUSTCTRL.cpy.lst"
+      },
+      {
+        "file": "src/base/cobol_copy/CUSTOMER.cpy",
+        "listing": "sources/src/base/cobol_copy/CUSTOMER.cpy.lst"
+      },
+      {
+        "file": "src/base/cobol_copy/PROCDB2.cpy",
+        "listing": "sources/src/base/cobol_copy/PROCDB2.cpy.lst"
+      },
+      {
+        "file": "src/base/cobol_copy/PROCTRAN.cpy",
+        "listing": "sources/src/base/cobol_copy/PROCTRAN.cpy.lst"
+      },
+      {
+        "file": "src/base/cobol_copy/SORTCODE.cpy",
+        "listing": "sources/src/base/cobol_copy/SORTCODE.cpy.lst"
+      }
+    ],
+    "program": {
+      "file": "src/base/cobol_src/CRECUST.cbl",
+      "listing": "sources/src/base/cobol_src/CRECUST.cbl.lst"
+    }
+  },
+  "status": "open",
+  "target": {
+    "config": {
+      "culture": {
+        "currency": "auto",
+        "db2_date_format": "iso",
+        "decimal_point": "auto",
+        "display_locale": "ROOT",
+        "format_locale": "ROOT",
+        "key_collation": "ebcdic",
+        "overflow": "cobol",
+        "rounding": "cobol",
+        "zone": "UTC"
+      },
+      "data": {
+        "bidi_layout": "auto",
+        "code_page": "cp037",
+        "dbcs_code_page": null,
+        "record_charset": "latin-1"
+      },
+      "database": "postgresql",
+      "integration": {
+        "messaging": "in-memory",
+        "remote_calls": "http"
+      },
+      "java": {
+        "build_tool": "maven",
+        "data_classes": "lombok",
+        "dto_style": "class",
+        "version": 17
+      },
+      "package": "com.gitgalaxy.modernized",
+      "spring_boot": {
+        "version": "3.2.4"
+      },
+      "ui": {
+        "flavour": "none"
+      }
+    },
+    "file": "src/main/java/com/gitgalaxy/modernized/service/CrecustService.java",
+    "left_as_generated": [],
+    "methods": [
+      {
+        "signature": "public void runTask(CicsTask task)",
+        "todo": true
+      },
+      {
+        "signature": "public CrecustDfhcommarea handleLink(CrecustDfhcommarea request)",
+        "todo": false
+      },
+      {
+        "signature": "public CrecustDfhcommarea handleLink(CrecustDfhcommarea request, byte[] area)",
+        "todo": false
+      },
+      {
+        "signature": "public byte[] lastLinkBytes()",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL1250(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public Optional<OutputData> readCustomer(OutputDataKey key)",
+        "todo": false
+      },
+      {
+        "signature": "public OutputData writeCustomer(OutputData record)",
+        "todo": false
+      },
+      {
+        "signature": "public OutputData rewriteCustomer(OutputData record)",
+        "todo": false
+      },
+      {
+        "signature": "public void abendHwptL1262()",
+        "todo": false
+      }
+    ],
+    "methods_to_port": [
+      "public void runTask(CicsTask task)"
+    ],
+    "overlay": "port/service/CrecustService.java",
+    "proof_entry_points": [
+      "public void runTask(CicsTask task)"
+    ],
+    "service": "CrecustService"
+  },
+  "ticket": "PORT-CRECUST",
+  "version": 1,
+  "worklist": [
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CrecustService.java",
+      "id": "WL-0142",
+      "line": 51,
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CrecustService.java",
+      "id": "WL-0143",
+      "line": 57,
+      "text": "port the PROCEDURE DIVISION into this task"
+    }
+  ]
+}

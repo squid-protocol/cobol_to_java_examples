@@ -1,0 +1,454 @@
+{
+  "copybook_gaps": [],
+  "eras": {
+    "by_era": {
+      "0": 0,
+      "1": 1,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "none": 6
+    },
+    "mixed": 0,
+    "programs": 7,
+    "tells": {
+      "dli": 1
+    }
+  },
+  "features": {
+    "compile_options": {
+      "ARITH: COMPAT": {
+        "count": 7,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FO04F1X1.cobol",
+          "src/GML/FRMERK.cobol",
+          "src/GML/FRREDIG.cobol",
+          "src/GML/PLUKKFR.cobol",
+          "src/GML/PLUKKFRN.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "INTDATE: ANSI": {
+        "count": 7,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FO04F1X1.cobol",
+          "src/GML/FRMERK.cobol",
+          "src/GML/FRREDIG.cobol",
+          "src/GML/PLUKKFR.cobol",
+          "src/GML/PLUKKFRN.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "NUMPROC: NOPFD": {
+        "count": 7,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FO04F1X1.cobol",
+          "src/GML/FRMERK.cobol",
+          "src/GML/FRREDIG.cobol",
+          "src/GML/PLUKKFR.cobol",
+          "src/GML/PLUKKFRN.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "TRUNC: STD": {
+        "count": 7,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FO04F1X1.cobol",
+          "src/GML/FRMERK.cobol",
+          "src/GML/FRREDIG.cobol",
+          "src/GML/PLUKKFR.cobol",
+          "src/GML/PLUKKFRN.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      }
+    },
+    "data_types": {
+      "BINARY": {
+        "count": 2,
+        "programs": [
+          "src/GML/FO04D1X1.cobol"
+        ]
+      },
+      "EDITED": {
+        "count": 20,
+        "programs": [
+          "src/GML/FO04F1X1.cobol"
+        ]
+      },
+      "PACKED": {
+        "count": 127,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FO04F1X1.cobol",
+          "src/GML/PLUKKFR.cobol",
+          "src/GML/PLUKKFRN.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      }
+    },
+    "statements": {
+      "ARITH": {
+        "count": 9,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FO04F1X1.cobol",
+          "src/GML/FRREDIG.cobol",
+          "src/GML/PLUKKFR.cobol",
+          "src/GML/PLUKKFRN.cobol"
+        ]
+      },
+      "CALL": {
+        "count": 3,
+        "programs": [
+          "src/GML/FO04F1X1.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "CLOSE": {
+        "count": 8,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FO04F1X1.cobol",
+          "src/GML/FRMERK.cobol",
+          "src/GML/FRREDIG.cobol",
+          "src/GML/PLUKKFR.cobol",
+          "src/GML/PLUKKFRN.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "COMPUTE": {
+        "count": 5,
+        "programs": [
+          "src/GML/FO04F1X1.cobol"
+        ]
+      },
+      "DISPLAY": {
+        "count": 2,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FO04F1X1.cobol"
+        ]
+      },
+      "ENTRY": {
+        "count": 1,
+        "programs": [
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "EXHIBIT": {
+        "count": 1,
+        "programs": [
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "EXIT": {
+        "count": 1,
+        "programs": [
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "GOTO": {
+        "count": 80,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FO04F1X1.cobol",
+          "src/GML/FRMERK.cobol",
+          "src/GML/FRREDIG.cobol",
+          "src/GML/PLUKKFR.cobol",
+          "src/GML/PLUKKFRN.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "IF": {
+        "count": 43,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FO04F1X1.cobol",
+          "src/GML/FRMERK.cobol",
+          "src/GML/FRREDIG.cobol",
+          "src/GML/PLUKKFR.cobol",
+          "src/GML/PLUKKFRN.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "MOVE": {
+        "count": 93,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FO04F1X1.cobol",
+          "src/GML/FRMERK.cobol",
+          "src/GML/FRREDIG.cobol",
+          "src/GML/PLUKKFR.cobol",
+          "src/GML/PLUKKFRN.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "NEXT-SENTENCE": {
+        "count": 2,
+        "programs": [
+          "src/GML/FO04F1X1.cobol"
+        ]
+      },
+      "OPEN": {
+        "count": 12,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FO04F1X1.cobol",
+          "src/GML/FRMERK.cobol",
+          "src/GML/FRREDIG.cobol",
+          "src/GML/PLUKKFR.cobol",
+          "src/GML/PLUKKFRN.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "PERFORM": {
+        "count": 2,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "READ": {
+        "count": 19,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FO04F1X1.cobol",
+          "src/GML/FRMERK.cobol",
+          "src/GML/FRREDIG.cobol",
+          "src/GML/PLUKKFR.cobol",
+          "src/GML/PLUKKFRN.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "STOP": {
+        "count": 9,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FO04F1X1.cobol",
+          "src/GML/FRMERK.cobol",
+          "src/GML/FRREDIG.cobol",
+          "src/GML/PLUKKFR.cobol",
+          "src/GML/PLUKKFRN.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "WRITE": {
+        "count": 26,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FRMERK.cobol",
+          "src/GML/FRREDIG.cobol",
+          "src/GML/PLUKKFR.cobol",
+          "src/GML/PLUKKFRN.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      },
+      "unknown": {
+        "count": 19,
+        "programs": [
+          "src/GML/FO04D1X1.cobol",
+          "src/GML/FO04F1X1.cobol",
+          "src/GML/FRMERK.cobol",
+          "src/GML/FRREDIG.cobol",
+          "src/GML/PLUKKFR.cobol",
+          "src/GML/PLUKKFRN.cobol",
+          "src/GML/R001BYDL.cobol"
+        ]
+      }
+    }
+  },
+  "other": {},
+  "programs": [
+    {
+      "earliest": null,
+      "era": null,
+      "holes": 9,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "src/GML/FO04D1X1.cobol",
+      "statements": 71,
+      "status": "parsed",
+      "tells": [],
+      "translated_statements": 62,
+      "translation": "holes"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "holes": 21,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "src/GML/FO04F1X1.cobol",
+      "statements": 96,
+      "status": "parsed",
+      "tells": [],
+      "translated_statements": 75,
+      "translation": "holes"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "holes": 16,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "src/GML/FRMERK.cobol",
+      "statements": 31,
+      "status": "parsed",
+      "tells": [],
+      "translated_statements": 15,
+      "translation": "holes"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "holes": 16,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "src/GML/FRREDIG.cobol",
+      "statements": 42,
+      "status": "parsed",
+      "tells": [],
+      "translated_statements": 26,
+      "translation": "holes"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "holes": 9,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "src/GML/PLUKKFR.cobol",
+      "statements": 25,
+      "status": "parsed",
+      "tells": [],
+      "translated_statements": 16,
+      "translation": "holes"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "holes": 9,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "src/GML/PLUKKFRN.cobol",
+      "statements": 25,
+      "status": "parsed",
+      "tells": [],
+      "translated_statements": 16,
+      "translation": "holes"
+    },
+    {
+      "earliest": 1,
+      "era": 1,
+      "holes": 7,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "src/GML/R001BYDL.cobol",
+      "statements": 28,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 1,
+          "tell": "dli"
+        }
+      ],
+      "translated_statements": 21,
+      "translation": "holes"
+    }
+  ],
+  "redacted": false,
+  "rules": {
+    "classes": 10,
+    "ranked": [
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "CLOSE: no batch package",
+        "touched": 7
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "OPEN: no batch package",
+        "touched": 7
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "READ: no batch package",
+        "touched": 7
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "WRITE: no batch package",
+        "touched": 6
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "HOLE: not modelled",
+        "touched": 4
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "HOLE",
+        "touched": 3
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "CALL",
+        "touched": 1
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "EXHIBIT",
+        "touched": 1
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "OPEN",
+        "touched": 1
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "READ",
+        "touched": 1
+      }
+    ]
+  },
+  "schema": "gitgalaxy-assess/1",
+  "tool_version": "2.4.9.dev334+gacd547e89.d20260901",
+  "totals": {
+    "assembler_members": 0,
+    "parsed": 7,
+    "programs": 7,
+    "refused_by_family": 0,
+    "translation": {
+      "holes": 7,
+      "refused": 0,
+      "whole": 0
+    },
+    "unparsed": 0
+  }
+}

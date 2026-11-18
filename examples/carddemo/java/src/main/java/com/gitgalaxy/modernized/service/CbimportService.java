@@ -26,14 +26,10 @@ public class CbimportService {
 
     private final ExportInputRecordRepository exportInputRecordRepository;
 
-    public void executeCbimport(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for CBIMPORT");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
     /** AWS.M2.CARDDEMO.EXPORT.DATA as BATCH SELECT EXPORT-INPUT at app/cbl/CBIMPORT.cbl (SELECT EXPORT-INPUT); VSAM defines field testing: open (3 public / 0 private estates). */
+    // Sequential READ: in key order (the vsamKey, #3945). TODO: the key is not one field, so it orders by its text, not the code page's bytes.
     public List<ExportInputRecord> readAllExportInput() {
-        return exportInputRecordRepository.findAll();
+        return exportInputRecordRepository.findAll(org.springframework.data.domain.Sort.by("vsamKey"));
     }
 
     /** The batch entry (#3622): run by job CBIMPORT step STEP01 (app/jcl/CBIMPORT.jcl:22).

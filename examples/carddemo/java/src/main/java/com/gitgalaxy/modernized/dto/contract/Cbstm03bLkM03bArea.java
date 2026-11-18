@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 /**
  * COBOL record LK-M03B-AREA (app/cbl/CBSTM03B.CBL), 1040 bytes, from GitGalaxy's verified skeleton.
  * USING parameter 1 of Cbstm03b.
- * Record fields field testing: field-tested (6 public / 0 private estates).
+ * Record fields field testing: open (6 public / 0 private estates).
  */
 @Data
 @NoArgsConstructor

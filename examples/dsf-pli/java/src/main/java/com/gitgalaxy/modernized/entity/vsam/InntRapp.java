@@ -27,8 +27,18 @@ public class InntRapp {
 
     // INNT_RAPP: no PIC, offset None, None bytes
     @Id
-    @Column(name = "INNT_RAPP")
+    @Column(name = "INNT_RAPP", columnDefinition = "varchar(255) COLLATE \"C\"")
     private String inntRapp;
+
+    // #3822: INNT_RAPP as cp037 bytes in hex -- browses order by it, as VSAM orders the key
+    @Column(name = "INNT_RAPP_SORT", columnDefinition = "varchar(2) COLLATE \"C\"")
+    private String inntRappSort;
+
+    @PrePersist
+    @PreUpdate
+    void codePageSortKey() {
+        this.inntRappSort = CobolRecords.sortKey(inntRapp, "cp037");
+    }
 
 
     // #3624: no record codec: the record's width is not known.

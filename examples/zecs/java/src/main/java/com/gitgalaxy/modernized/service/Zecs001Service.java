@@ -11,11 +11,19 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.dto.contract.Zecs001Dfhcommarea;
-import com.gitgalaxy.modernized.dto.contract.Zecs001Zecs003CommArea;
+import com.gitgalaxy.modernized.entity.vsam.ZfRecord;
+import com.gitgalaxy.modernized.entity.vsam.ZfRecordKey;
+import com.gitgalaxy.modernized.entity.vsam.ZkRecord;
 import com.gitgalaxy.modernized.exception.*;
 import com.gitgalaxy.modernized.messaging.TransientData;
-import org.springframework.beans.factory.ObjectProvider;
+import com.gitgalaxy.modernized.repository.vsam.ZfRecordRepository;
+import com.gitgalaxy.modernized.repository.vsam.ZkRecordRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Locale;
+import java.util.Optional;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -59,54 +67,131 @@ public class Zecs001Service {
 
     private static final Logger log = LoggerFactory.getLogger(Zecs001Service.class);
 
-    private final ObjectProvider<Zecs003Service> zecs003Service;
+    private final ZfRecordRepository zfRecordRepository;
+    private final ZkRecordRepository zkRecordRepository;
     private final TransientData transientData;
 
     // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
     // TODO: AI AGENT - Implement or mock interface call to: ZuidstckService
 
-    public void executeZecs001(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for ZECS001");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
-    /** A CICS transaction entered the program. TODO: [AI AGENT] implement from the program's business rules. */
+    /** A CICS transaction entered the program (#4343): one task of it in the region (CicsTask.region()),
+     *  ENTER pressed -- `request` its COMMAREA, null when started from a cleared screen -- run through runTask. Returns the COMMAREA its RETURN passes on (null: none). */
     public Zecs001Dfhcommarea handleTransaction(String transid, Zecs001Dfhcommarea request) {
         log.info("Zecs001: handleTransaction");
-        return request;
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.transaction(transid, request);
+        region.run(task, "ZECS001", this::runTask);
+        return task.returned(Zecs001Dfhcommarea.class);
     }
 
-    /** XCTL PROGRAM(ZECS003) at Source/ZECS001.cbl:753: the target is data-driven. Candidates: ZECS003 (value).
-     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchZecs003L753(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ZECS003":
-                return zecs003Service.getObject().handleLink((Zecs001Zecs003CommArea) request);
-            default:
-                throw new IllegalArgumentException("XCTL PROGRAM(ZECS003) at Source/ZECS001.cbl:753: no known target " + program);
-        }
+    /** #4870: handleTransaction with the raw bytes of the previous task's COMMAREA (null: none); the
+     *  bytes this task's RETURN passes on are then answered by lastAnswerBytes(). */
+    public Zecs001Dfhcommarea handleTransaction(String transid, Zecs001Dfhcommarea request, byte[] area) {
+        log.info("Zecs001: handleTransaction (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.transaction(transid, request, area);
+        region.run(task, "ZECS001", this::runTask);
+        lastAnswerBytes = task.returnedBytes();
+        return task.returned(Zecs001Dfhcommarea.class);
     }
 
-    /** LINK PROGRAM(ZECS002) at Source/ZECS001.cbl:795: the target is data-driven. Candidates: ZECS002 (value).
+    // @facade-helper: the bytes the last byte-carrying handleTransaction answered
+    private byte[] lastAnswerBytes;
+
+    /** The bytes the last byte-carrying handleTransaction's RETURN passed on (a copy; null: none).
+     *  @facade-helper */
+    public byte[] lastAnswerBytes() {
+        return lastAnswerBytes == null ? null : java.util.Arrays.copyOf(lastAnswerBytes, lastAnswerBytes.length);
+    }
+
+    /** One pseudo-conversational task of this program (#3754). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("Zecs001: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
+    }
+
+    /** EXEC CICS XCTL PROGRAM(ZECS003) at Source/ZECS001.cbl:753, COMMAREA(ZECS003-COMM-AREA): the target is data-driven (candidates the engine found: ZECS003 (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchZecs002L795(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ZECS002":
-                throw new UnsupportedOperationException("ZECS002 is not in this repository");
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(ZECS002) at Source/ZECS001.cbl:795: no known target " + program);
-        }
+    public String dispatchZecs003L753(CicsTask task, String program, Object commarea) {
+        return task.xctl(program.stripTrailing(), commarea);
+    }
+
+    /** EXEC CICS LINK PROGRAM(ZECS002) at Source/ZECS001.cbl:795, COMMAREA(ZECS002-COMM-AREA): the target is data-driven (candidates the engine found: ZECS002 (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public String dispatchZecs002L795(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
     }
 
     /** CALL ZUIDSTCK at Source/ZECS001.cbl:1244: the target is data-driven. Candidates: ZUIDSTCK (value).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
     public Object dispatchZuidstckL1244(String program, Object... args) {
-        switch (program.trim().toUpperCase()) {
+        switch (program.trim().toUpperCase(Locale.ROOT)) {
             case "ZUIDSTCK":
                 throw new UnsupportedOperationException("ZUIDSTCK is not in this repository");
             default:
                 throw new IllegalArgumentException("CALL ZUIDSTCK at Source/ZECS001.cbl:1244: no known target " + program);
         }
+    }
+
+    /** @ECS_HLQ@.ZC@ID@FILE.@ENVIRONMENT@ as CICS file ZC@ID@FILE at Source/ZECS001.cbl:1011, 1023, 1030, 1137, 1499, 1572, 1631, 1712; VSAM defines field testing: open (3 public / 0 private estates). */
+    public Optional<ZfRecord> readZcIdFile(String vsamInstance, ZfRecordKey key) {
+        key.setVsamInstance(vsamInstance);
+        return zfRecordRepository.findById(key);
+    }
+
+    public ZfRecord writeZcIdFile(String vsamInstance, ZfRecord record) {
+        record.getId().setVsamInstance(vsamInstance);
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<ZfRecord> onFile = zfRecordRepository.findById(record.getId());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file ZC@ID@FILE already holds the key of this record");
+        }
+        return zfRecordRepository.save(record);
+    }
+
+    public ZfRecord rewriteZcIdFile(String vsamInstance, ZfRecord record) {
+        record.getId().setVsamInstance(vsamInstance);
+        return zfRecordRepository.save(record);
+    }
+
+    public void deleteZcIdFile(String vsamInstance, ZfRecordKey key) {
+        key.setVsamInstance(vsamInstance);
+        zfRecordRepository.deleteById(key);
+    }
+
+    /** @ECS_HLQ@.ZC@ID@KEY.@ENVIRONMENT@ as CICS file ZC@ID@KEY at Source/ZECS001.cbl:927, 1265, 1329, 1365, 1529, 1589, 1614; VSAM defines field testing: open (3 public / 0 private estates). */
+    public Optional<ZkRecord> readZcIdKey(String vsamInstance, String key) {
+        return zkRecordRepository.findById(new ZkRecord.InstanceKey(key, vsamInstance));
+    }
+
+    public ZkRecord writeZcIdKey(String vsamInstance, ZkRecord record) {
+        record.setVsamInstance(vsamInstance);
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<ZkRecord> onFile = zkRecordRepository.findById(new ZkRecord.InstanceKey(record.getZkKey(), vsamInstance));
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file ZC@ID@KEY already holds the key of this record");
+        }
+        return zkRecordRepository.save(record);
+    }
+
+    public ZkRecord rewriteZcIdKey(String vsamInstance, ZkRecord record) {
+        record.setVsamInstance(vsamInstance);
+        return zkRecordRepository.save(record);
+    }
+
+    public void deleteZcIdKey(String vsamInstance, String key) {
+        zkRecordRepository.deleteById(new ZkRecord.InstanceKey(key, vsamInstance));
     }
 
     /**

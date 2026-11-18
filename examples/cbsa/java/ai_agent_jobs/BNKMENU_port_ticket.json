@@ -1,0 +1,3659 @@
+{
+  "compiler_options": [
+    {
+      "line": 1,
+      "option": "CICS",
+      "value": null,
+      "written": "CICS"
+    },
+    {
+      "line": 1,
+      "option": "NODYNAM",
+      "value": null,
+      "written": "NODYNAM"
+    },
+    {
+      "line": 1,
+      "option": "NSYMBOL",
+      "value": "NATIONAL",
+      "written": "NSYMBOL(NATIONAL)"
+    },
+    {
+      "line": 1,
+      "option": "TRUNC",
+      "value": "STD",
+      "written": "TRUNC(STD)"
+    },
+    {
+      "line": 2,
+      "option": "CICS",
+      "value": "'SP,EDF'",
+      "written": "CICS('SP,EDF')"
+    }
+  ],
+  "deliverable": {
+    "proof": "The port is laid over the generated project as an overlay and proven by the equivalence harness (tests/tools/equivalence.py in GitGalaxy): the original runs under GnuCOBOL, the port on the same inputs, and every output record is compared field by field; a person approves the port with that report in hand.",
+    "return": "One complete Java file for src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java: the same package, class name and public method signatures, with runTask ported -- what the proof runs -- and helper methods it calls added; every other generated method left as generated (#4255)."
+  },
+  "facts": {
+    "full_skeleton": "cics-banking-sample-application-cbsa_gitgalaxy_clean_TIMESTAMP/06_skeleton/BNKMENU_skeleton.json",
+    "program": {
+      "copy_collisions": [],
+      "copy_edges": {
+        "src/base/cobol_copy/ABNDINFO.cpy": {},
+        "src/base/cobol_src/BNKMENU.cbl": {
+          "src/base/cobol_copy/ABNDINFO.cpy": []
+        }
+      },
+      "copy_gaps": [],
+      "copybooks": [
+        "src/base/cobol_copy/ABNDINFO.cpy"
+      ],
+      "file": "src/base/cobol_src/BNKMENU.cbl",
+      "language": "cobol",
+      "program_id_field_testing": "open",
+      "program_ids": [
+        "BNKMENU"
+      ],
+      "total_loc": 1312
+    },
+    "sections": {
+      "calls": {
+        "facts": [
+          {
+            "commarea": "COMMUNICATION-AREA",
+            "commarea_datalength": null,
+            "commarea_length": "1",
+            "form": "literal",
+            "line": 170,
+            "operand": "OMEN",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "OMEN",
+            "using_args": null,
+            "verb": "RETURN TRANSID"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 225,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 337,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 387,
+            "operand": "ODCS",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "ODCS",
+            "using_args": null,
+            "verb": "RETURN TRANSID"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 441,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 459,
+            "operand": "ODAC",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "ODAC",
+            "using_args": null,
+            "verb": "RETURN TRANSID"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 513,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 532,
+            "operand": "OCCS",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "OCCS",
+            "using_args": null,
+            "verb": "RETURN TRANSID"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 586,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 605,
+            "operand": "OCAC",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "OCAC",
+            "using_args": null,
+            "verb": "RETURN TRANSID"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 659,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 678,
+            "operand": "OUAC",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "OUAC",
+            "using_args": null,
+            "verb": "RETURN TRANSID"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 732,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 751,
+            "operand": "OCRA",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "OCRA",
+            "using_args": null,
+            "verb": "RETURN TRANSID"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 805,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 824,
+            "operand": "OTFN",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "OTFN",
+            "using_args": null,
+            "verb": "RETURN TRANSID"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 878,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 898,
+            "operand": "OCCA",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "OCCA",
+            "using_args": null,
+            "verb": "RETURN TRANSID"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 952,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 1034,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 1109,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 1186,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 1265,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 9
+      },
+      "cics_resources": {
+        "facts": [
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 274,
+            "name": "BNK1ME",
+            "operand": "'BNK1ME'",
+            "qualifier": "BNK1MAI",
+            "qualifier_operand": "'BNK1MAI'",
+            "record": "BNK1MEI",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "write",
+            "attributes": "ERASE",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 979,
+            "name": "BNK1ME",
+            "operand": "'BNK1ME'",
+            "qualifier": "BNK1MAI",
+            "qualifier_operand": "'BNK1MAI'",
+            "record": "BNK1MEO",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 1053,
+            "name": "BNK1ME",
+            "operand": "'BNK1ME'",
+            "qualifier": "BNK1MAI",
+            "qualifier_operand": "'BNK1MAI'",
+            "record": "BNK1MEO",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY ALARM",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 1129,
+            "name": "BNK1ME",
+            "operand": "'BNK1ME'",
+            "qualifier": "BNK1MAI",
+            "qualifier_operand": "'BNK1MAI'",
+            "record": "BNK1MEO",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "SEND"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "commarea_contracts": {
+        "facts": [
+          {
+            "callee": "src/base/cobol_src/BNKMENU.cbl",
+            "callee_record": {
+              "bytes": 1,
+              "copybooks": [],
+              "fields": 1,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNKMENU.cbl",
+            "caller_record": {
+              "bytes": 1,
+              "copybooks": [],
+              "fields": 1,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "COMMUNICATION-AREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "COMMUNICATION-AREA",
+            "commarea_datalength": null,
+            "commarea_length": "1",
+            "declared_length": 1,
+            "line": 170,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "OMEN",
+            "verb": "RETURN TRANSID"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNKMENU.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 225,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNKMENU.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 337,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNKMENU.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 441,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNKMENU.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 513,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNKMENU.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 586,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNKMENU.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 659,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNKMENU.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 732,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNKMENU.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 805,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNKMENU.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 878,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNKMENU.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 952,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNKMENU.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1034,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNKMENU.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1109,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNKMENU.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1186,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNKMENU.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNKMENU.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1265,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "dynamic_call_targets": {
+        "facts": [
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 225,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 337,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 441,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 513,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 586,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 659,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 732,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 805,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 878,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 952,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 1034,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 1109,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 1186,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 1265,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "entry_points": {
+        "facts": [
+          {
+            "entry_name": null,
+            "kind": "PROCEDURE",
+            "line": 107,
+            "params": null
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "entry_transactions": {
+        "facts": [
+          {
+            "defined_in": "etc/install/base/installjcl/BANK.csd",
+            "group": "BANK",
+            "line": 475,
+            "profile": "DFHCICST",
+            "program": "BNKMENU",
+            "resolves_to": "src/base/cobol_src/BNKMENU.cbl",
+            "transid": "OMEN"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 4
+      },
+      "interface": {
+        "facts": {
+          "commarea": {
+            "alternatives": [],
+            "basis": "caller_record",
+            "bytes": 1,
+            "copybooks": [],
+            "extended": false,
+            "fields": "Reference: BnkmenuCommunicationArea (1 fields: name, PIC, usage, offset, bytes, copybook) in src/main/java/com/gitgalaxy/modernized/dto/contract/BnkmenuCommunicationArea.java; level numbers are in the copybook listings",
+            "file": "src/base/cobol_src/BNKMENU.cbl",
+            "record": "COMMUNICATION-AREA",
+            "sources": [
+              {
+                "caller": "src/base/cobol_src/BNKMENU.cbl",
+                "line": 170,
+                "verb": "RETURN TRANSID"
+              }
+            ],
+            "unexpanded": [],
+            "variable": false
+          },
+          "commarea_gap": null,
+          "commarea_unpack": null,
+          "containers": [],
+          "inbound": [
+            {
+              "bytes": 1,
+              "caller": "src/base/cobol_src/BNKMENU.cbl",
+              "line": 170,
+              "passes": "COMMUNICATION-AREA",
+              "verb": "RETURN TRANSID",
+              "via": "static"
+            }
+          ],
+          "parameters": []
+        },
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "navigation": {
+        "facts": [
+          {
+            "from": "src/base/cobol_src/BNK1CAC.cbl",
+            "line": 186,
+            "program": "OMEN",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNKMENU.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1CCA.cbl",
+            "line": 178,
+            "program": "OMEN",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNKMENU.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1CCS.cbl",
+            "line": 208,
+            "program": "OMEN",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNKMENU.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1CRA.cbl",
+            "line": 201,
+            "program": "OMEN",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNKMENU.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 213,
+            "program": "OMEN",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNKMENU.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1DCS.cbl",
+            "line": 233,
+            "program": "OMEN",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNKMENU.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1TFN.cbl",
+            "line": 198,
+            "program": "OMEN",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNKMENU.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1UAC.cbl",
+            "line": 222,
+            "program": "OMEN",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNKMENU.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 170,
+            "program": "OMEN",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNKMENU.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 387,
+            "program": "ODCS",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNK1DCS.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 459,
+            "program": "ODAC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNK1DAC.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 532,
+            "program": "OCCS",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNK1CCS.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 605,
+            "program": "OCAC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNK1CAC.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 678,
+            "program": "OUAC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNK1UAC.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 751,
+            "program": "OCRA",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNK1CRA.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 824,
+            "program": "OTFN",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNK1TFN.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 898,
+            "program": "OCCA",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNK1CCA.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 225,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 337,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 441,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 513,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 586,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 659,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 732,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 805,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 878,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 952,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 1034,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 1109,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 1186,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 1265,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 4
+      },
+      "screen_bindings": {
+        "facts": [
+          {
+            "bms_candidates": [
+              "src/base/bms_src/BNK1MAI.bms"
+            ],
+            "bms_file": "src/base/bms_src/BNK1MAI.bms",
+            "fields": [
+              {
+                "attrb": "PROT,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "BNK1MA ",
+                "kind": "field",
+                "length": 7,
+                "line": 26,
+                "name": null,
+                "occurs": null,
+                "ordinal": 2,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=RED",
+                "initial": "CICS Bank Sample Application - Main Menu.",
+                "kind": "field",
+                "length": 40,
+                "line": 28,
+                "name": "COMPANY",
+                "occurs": null,
+                "ordinal": 3,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Select an option. Then press Enter.",
+                "kind": "field",
+                "length": 36,
+                "line": 31,
+                "name": null,
+                "occurs": null,
+                "ordinal": 4,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 3
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Action . . . .",
+                "kind": "field",
+                "length": 14,
+                "line": 33,
+                "name": null,
+                "occurs": null,
+                "ordinal": 5,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 5
+              },
+              {
+                "attrb": "NORM,UNPROT,IC",
+                "attributes": "COLOR=GREEN,HILIGHT=UNDERLINE",
+                "initial": " ",
+                "kind": "field",
+                "length": 1,
+                "line": 35,
+                "name": "ACTION",
+                "occurs": null,
+                "ordinal": 6,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 16,
+                "pos_line": 5
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "1.  Display/Delete/Update CUSTOMER information",
+                "kind": "field",
+                "length": 46,
+                "line": 37,
+                "name": null,
+                "occurs": null,
+                "ordinal": 7,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 5
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "2.  Display/Delete ACCOUNT information",
+                "kind": "field",
+                "length": 38,
+                "line": 39,
+                "name": null,
+                "occurs": null,
+                "ordinal": 8,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 6
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "3.  Create CUSTOMER",
+                "kind": "field",
+                "length": 19,
+                "line": 41,
+                "name": null,
+                "occurs": null,
+                "ordinal": 9,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 7
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "4.  Create ACCOUNT",
+                "kind": "field",
+                "length": 18,
+                "line": 43,
+                "name": null,
+                "occurs": null,
+                "ordinal": 10,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 8
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "5.  Update ACCOUNT",
+                "kind": "field",
+                "length": 18,
+                "line": 45,
+                "name": null,
+                "occurs": null,
+                "ordinal": 11,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 9
+              },
+              {
+                "attrb": "ASKIP,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "6.  Credit/Debit funds to an ACCOUNT",
+                "kind": "field",
+                "length": 36,
+                "line": 47,
+                "name": null,
+                "occurs": null,
+                "ordinal": 12,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 10
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "7.  Transfer funds",
+                "kind": "field",
+                "length": 42,
+                "line": 49,
+                "name": null,
+                "occurs": null,
+                "ordinal": 13,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 11
+              },
+              {
+                "attrb": "ASKIP,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "A.  Look up Accounts with Customer Number",
+                "kind": "field",
+                "length": 41,
+                "line": 52,
+                "name": null,
+                "occurs": null,
+                "ordinal": 14,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 13
+              },
+              {
+                "attrb": "BRT,PROT,ASKIP",
+                "attributes": "COLOR=YELLOW",
+                "initial": null,
+                "kind": "field",
+                "length": 79,
+                "line": 55,
+                "name": "MESSAGE",
+                "occurs": null,
+                "ordinal": 15,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 23
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP",
+                "attributes": "COLOR=BLUE",
+                "initial": "F3=Exit   F12=Cancel",
+                "kind": "field",
+                "length": 20,
+                "line": 57,
+                "name": null,
+                "occurs": null,
+                "ordinal": 16,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 24
+              },
+              {
+                "attrb": "DRK,PROT,FSET,ASKIP",
+                "attributes": null,
+                "initial": " ",
+                "kind": "field",
+                "length": 1,
+                "line": 60,
+                "name": "DUMMY",
+                "occurs": null,
+                "ordinal": 17,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 79,
+                "pos_line": 24
+              }
+            ],
+            "line": 274,
+            "map": "BNK1ME",
+            "mapset": "BNK1MAI",
+            "program": "src/base/cobol_src/BNKMENU.cbl",
+            "record": "BNK1MEI",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [
+              "src/base/bms_src/BNK1MAI.bms"
+            ],
+            "bms_file": "src/base/bms_src/BNK1MAI.bms",
+            "fields": [
+              {
+                "attrb": "PROT,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "BNK1MA ",
+                "kind": "field",
+                "length": 7,
+                "line": 26,
+                "name": null,
+                "occurs": null,
+                "ordinal": 2,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=RED",
+                "initial": "CICS Bank Sample Application - Main Menu.",
+                "kind": "field",
+                "length": 40,
+                "line": 28,
+                "name": "COMPANY",
+                "occurs": null,
+                "ordinal": 3,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Select an option. Then press Enter.",
+                "kind": "field",
+                "length": 36,
+                "line": 31,
+                "name": null,
+                "occurs": null,
+                "ordinal": 4,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 3
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Action . . . .",
+                "kind": "field",
+                "length": 14,
+                "line": 33,
+                "name": null,
+                "occurs": null,
+                "ordinal": 5,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 5
+              },
+              {
+                "attrb": "NORM,UNPROT,IC",
+                "attributes": "COLOR=GREEN,HILIGHT=UNDERLINE",
+                "initial": " ",
+                "kind": "field",
+                "length": 1,
+                "line": 35,
+                "name": "ACTION",
+                "occurs": null,
+                "ordinal": 6,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 16,
+                "pos_line": 5
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "1.  Display/Delete/Update CUSTOMER information",
+                "kind": "field",
+                "length": 46,
+                "line": 37,
+                "name": null,
+                "occurs": null,
+                "ordinal": 7,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 5
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "2.  Display/Delete ACCOUNT information",
+                "kind": "field",
+                "length": 38,
+                "line": 39,
+                "name": null,
+                "occurs": null,
+                "ordinal": 8,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 6
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "3.  Create CUSTOMER",
+                "kind": "field",
+                "length": 19,
+                "line": 41,
+                "name": null,
+                "occurs": null,
+                "ordinal": 9,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 7
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "4.  Create ACCOUNT",
+                "kind": "field",
+                "length": 18,
+                "line": 43,
+                "name": null,
+                "occurs": null,
+                "ordinal": 10,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 8
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "5.  Update ACCOUNT",
+                "kind": "field",
+                "length": 18,
+                "line": 45,
+                "name": null,
+                "occurs": null,
+                "ordinal": 11,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 9
+              },
+              {
+                "attrb": "ASKIP,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "6.  Credit/Debit funds to an ACCOUNT",
+                "kind": "field",
+                "length": 36,
+                "line": 47,
+                "name": null,
+                "occurs": null,
+                "ordinal": 12,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 10
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "7.  Transfer funds",
+                "kind": "field",
+                "length": 42,
+                "line": 49,
+                "name": null,
+                "occurs": null,
+                "ordinal": 13,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 11
+              },
+              {
+                "attrb": "ASKIP,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "A.  Look up Accounts with Customer Number",
+                "kind": "field",
+                "length": 41,
+                "line": 52,
+                "name": null,
+                "occurs": null,
+                "ordinal": 14,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 13
+              },
+              {
+                "attrb": "BRT,PROT,ASKIP",
+                "attributes": "COLOR=YELLOW",
+                "initial": null,
+                "kind": "field",
+                "length": 79,
+                "line": 55,
+                "name": "MESSAGE",
+                "occurs": null,
+                "ordinal": 15,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 23
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP",
+                "attributes": "COLOR=BLUE",
+                "initial": "F3=Exit   F12=Cancel",
+                "kind": "field",
+                "length": 20,
+                "line": 57,
+                "name": null,
+                "occurs": null,
+                "ordinal": 16,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 24
+              },
+              {
+                "attrb": "DRK,PROT,FSET,ASKIP",
+                "attributes": null,
+                "initial": " ",
+                "kind": "field",
+                "length": 1,
+                "line": 60,
+                "name": "DUMMY",
+                "occurs": null,
+                "ordinal": 17,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 79,
+                "pos_line": 24
+              }
+            ],
+            "line": 979,
+            "map": "BNK1ME",
+            "mapset": "BNK1MAI",
+            "program": "src/base/cobol_src/BNKMENU.cbl",
+            "record": "BNK1MEO",
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [
+              "src/base/bms_src/BNK1MAI.bms"
+            ],
+            "bms_file": "src/base/bms_src/BNK1MAI.bms",
+            "fields": [
+              {
+                "attrb": "PROT,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "BNK1MA ",
+                "kind": "field",
+                "length": 7,
+                "line": 26,
+                "name": null,
+                "occurs": null,
+                "ordinal": 2,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=RED",
+                "initial": "CICS Bank Sample Application - Main Menu.",
+                "kind": "field",
+                "length": 40,
+                "line": 28,
+                "name": "COMPANY",
+                "occurs": null,
+                "ordinal": 3,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Select an option. Then press Enter.",
+                "kind": "field",
+                "length": 36,
+                "line": 31,
+                "name": null,
+                "occurs": null,
+                "ordinal": 4,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 3
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Action . . . .",
+                "kind": "field",
+                "length": 14,
+                "line": 33,
+                "name": null,
+                "occurs": null,
+                "ordinal": 5,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 5
+              },
+              {
+                "attrb": "NORM,UNPROT,IC",
+                "attributes": "COLOR=GREEN,HILIGHT=UNDERLINE",
+                "initial": " ",
+                "kind": "field",
+                "length": 1,
+                "line": 35,
+                "name": "ACTION",
+                "occurs": null,
+                "ordinal": 6,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 16,
+                "pos_line": 5
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "1.  Display/Delete/Update CUSTOMER information",
+                "kind": "field",
+                "length": 46,
+                "line": 37,
+                "name": null,
+                "occurs": null,
+                "ordinal": 7,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 5
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "2.  Display/Delete ACCOUNT information",
+                "kind": "field",
+                "length": 38,
+                "line": 39,
+                "name": null,
+                "occurs": null,
+                "ordinal": 8,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 6
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "3.  Create CUSTOMER",
+                "kind": "field",
+                "length": 19,
+                "line": 41,
+                "name": null,
+                "occurs": null,
+                "ordinal": 9,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 7
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "4.  Create ACCOUNT",
+                "kind": "field",
+                "length": 18,
+                "line": 43,
+                "name": null,
+                "occurs": null,
+                "ordinal": 10,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 8
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "5.  Update ACCOUNT",
+                "kind": "field",
+                "length": 18,
+                "line": 45,
+                "name": null,
+                "occurs": null,
+                "ordinal": 11,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 9
+              },
+              {
+                "attrb": "ASKIP,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "6.  Credit/Debit funds to an ACCOUNT",
+                "kind": "field",
+                "length": 36,
+                "line": 47,
+                "name": null,
+                "occurs": null,
+                "ordinal": 12,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 10
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "7.  Transfer funds",
+                "kind": "field",
+                "length": 42,
+                "line": 49,
+                "name": null,
+                "occurs": null,
+                "ordinal": 13,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 11
+              },
+              {
+                "attrb": "ASKIP,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "A.  Look up Accounts with Customer Number",
+                "kind": "field",
+                "length": 41,
+                "line": 52,
+                "name": null,
+                "occurs": null,
+                "ordinal": 14,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 13
+              },
+              {
+                "attrb": "BRT,PROT,ASKIP",
+                "attributes": "COLOR=YELLOW",
+                "initial": null,
+                "kind": "field",
+                "length": 79,
+                "line": 55,
+                "name": "MESSAGE",
+                "occurs": null,
+                "ordinal": 15,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 23
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP",
+                "attributes": "COLOR=BLUE",
+                "initial": "F3=Exit   F12=Cancel",
+                "kind": "field",
+                "length": 20,
+                "line": 57,
+                "name": null,
+                "occurs": null,
+                "ordinal": 16,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 24
+              },
+              {
+                "attrb": "DRK,PROT,FSET,ASKIP",
+                "attributes": null,
+                "initial": " ",
+                "kind": "field",
+                "length": 1,
+                "line": 60,
+                "name": "DUMMY",
+                "occurs": null,
+                "ordinal": 17,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 79,
+                "pos_line": 24
+              }
+            ],
+            "line": 1053,
+            "map": "BNK1ME",
+            "mapset": "BNK1MAI",
+            "program": "src/base/cobol_src/BNKMENU.cbl",
+            "record": "BNK1MEO",
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [
+              "src/base/bms_src/BNK1MAI.bms"
+            ],
+            "bms_file": "src/base/bms_src/BNK1MAI.bms",
+            "fields": [
+              {
+                "attrb": "PROT,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "BNK1MA ",
+                "kind": "field",
+                "length": 7,
+                "line": 26,
+                "name": null,
+                "occurs": null,
+                "ordinal": 2,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=RED",
+                "initial": "CICS Bank Sample Application - Main Menu.",
+                "kind": "field",
+                "length": 40,
+                "line": 28,
+                "name": "COMPANY",
+                "occurs": null,
+                "ordinal": 3,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Select an option. Then press Enter.",
+                "kind": "field",
+                "length": 36,
+                "line": 31,
+                "name": null,
+                "occurs": null,
+                "ordinal": 4,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 3
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Action . . . .",
+                "kind": "field",
+                "length": 14,
+                "line": 33,
+                "name": null,
+                "occurs": null,
+                "ordinal": 5,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 5
+              },
+              {
+                "attrb": "NORM,UNPROT,IC",
+                "attributes": "COLOR=GREEN,HILIGHT=UNDERLINE",
+                "initial": " ",
+                "kind": "field",
+                "length": 1,
+                "line": 35,
+                "name": "ACTION",
+                "occurs": null,
+                "ordinal": 6,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 16,
+                "pos_line": 5
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "1.  Display/Delete/Update CUSTOMER information",
+                "kind": "field",
+                "length": 46,
+                "line": 37,
+                "name": null,
+                "occurs": null,
+                "ordinal": 7,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 5
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "2.  Display/Delete ACCOUNT information",
+                "kind": "field",
+                "length": 38,
+                "line": 39,
+                "name": null,
+                "occurs": null,
+                "ordinal": 8,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 6
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "3.  Create CUSTOMER",
+                "kind": "field",
+                "length": 19,
+                "line": 41,
+                "name": null,
+                "occurs": null,
+                "ordinal": 9,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 7
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "4.  Create ACCOUNT",
+                "kind": "field",
+                "length": 18,
+                "line": 43,
+                "name": null,
+                "occurs": null,
+                "ordinal": 10,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 8
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "5.  Update ACCOUNT",
+                "kind": "field",
+                "length": 18,
+                "line": 45,
+                "name": null,
+                "occurs": null,
+                "ordinal": 11,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 9
+              },
+              {
+                "attrb": "ASKIP,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "6.  Credit/Debit funds to an ACCOUNT",
+                "kind": "field",
+                "length": 36,
+                "line": 47,
+                "name": null,
+                "occurs": null,
+                "ordinal": 12,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 10
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "7.  Transfer funds",
+                "kind": "field",
+                "length": 42,
+                "line": 49,
+                "name": null,
+                "occurs": null,
+                "ordinal": 13,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 11
+              },
+              {
+                "attrb": "ASKIP,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "A.  Look up Accounts with Customer Number",
+                "kind": "field",
+                "length": 41,
+                "line": 52,
+                "name": null,
+                "occurs": null,
+                "ordinal": 14,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 18,
+                "pos_line": 13
+              },
+              {
+                "attrb": "BRT,PROT,ASKIP",
+                "attributes": "COLOR=YELLOW",
+                "initial": null,
+                "kind": "field",
+                "length": 79,
+                "line": 55,
+                "name": "MESSAGE",
+                "occurs": null,
+                "ordinal": 15,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 23
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP",
+                "attributes": "COLOR=BLUE",
+                "initial": "F3=Exit   F12=Cancel",
+                "kind": "field",
+                "length": 20,
+                "line": 57,
+                "name": null,
+                "occurs": null,
+                "ordinal": 16,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 24
+              },
+              {
+                "attrb": "DRK,PROT,FSET,ASKIP",
+                "attributes": null,
+                "initial": " ",
+                "kind": "field",
+                "length": 1,
+                "line": 60,
+                "name": "DUMMY",
+                "occurs": null,
+                "ordinal": 17,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 79,
+                "pos_line": 24
+              }
+            ],
+            "line": 1129,
+            "map": "BNK1ME",
+            "mapset": "BNK1MAI",
+            "program": "src/base/cobol_src/BNKMENU.cbl",
+            "record": "BNK1MEO",
+            "verb": "SEND"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 3
+      },
+      "uow_handlers": {
+        "facts": [
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 170,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RETURN"
+          },
+          {
+            "attributes": null,
+            "condition": "MAPFAIL,NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 274,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RECEIVE"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 387,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RETURN"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 459,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RETURN"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 532,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RETURN"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 605,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RETURN"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 678,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RETURN"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 751,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RETURN"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 824,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RETURN"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 898,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RETURN"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 979,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SEND"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1053,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SEND"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1129,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SEND"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1210,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SEND"
+          },
+          {
+            "attributes": "NODUMP",
+            "condition": "HBNK",
+            "kind": "ABEND",
+            "line": 1286,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "ABEND"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      }
+    }
+  },
+  "generated": {
+    "imports": [
+      {
+        "class": "com.gitgalaxy.modernized.cics.CicsTask",
+        "file": "src/main/java/com/gitgalaxy/modernized/cics/CicsTask.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.dto.contract.BnkmenuCommunicationArea",
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/BnkmenuCommunicationArea.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.dto.screen.Bnk1meScreen",
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1meScreen.java"
+      }
+    ],
+    "traced_to_this_program": [
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/AbndprocController.java",
+        "symbol": "AbndprocController#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/BnkmenuCommunicationArea.java",
+        "symbol": "BnkmenuCommunicationArea#communicationArea"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService#abendHbnkL1286"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService#dispatchWsAbendPgmL1034"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService#dispatchWsAbendPgmL1109"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService#dispatchWsAbendPgmL1186"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService#dispatchWsAbendPgmL1265"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService#dispatchWsAbendPgmL225"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService#dispatchWsAbendPgmL337"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService#dispatchWsAbendPgmL441"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService#dispatchWsAbendPgmL513"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService#dispatchWsAbendPgmL586"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService#dispatchWsAbendPgmL659"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService#dispatchWsAbendPgmL732"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService#dispatchWsAbendPgmL805"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService#dispatchWsAbendPgmL878"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+        "symbol": "BnkmenuService#dispatchWsAbendPgmL952"
+      }
+    ]
+  },
+  "paragraphs": [
+    {
+      "lines": 1,
+      "name": "PREMIERE",
+      "start_line": 108
+    },
+    {
+      "lines": 127,
+      "name": "A010",
+      "start_line": 109
+    },
+    {
+      "lines": 2,
+      "name": "A999",
+      "start_line": 237
+    },
+    {
+      "lines": 1,
+      "name": "PROCESS-MENU-MAP",
+      "start_line": 241
+    },
+    {
+      "lines": 22,
+      "name": "PMM010",
+      "start_line": 242
+    },
+    {
+      "lines": 2,
+      "name": "PMM999",
+      "start_line": 265
+    },
+    {
+      "lines": 1,
+      "name": "RECEIVE-MENU-MAP",
+      "start_line": 269
+    },
+    {
+      "lines": 80,
+      "name": "RMM010",
+      "start_line": 270
+    },
+    {
+      "lines": 2,
+      "name": "RMM999",
+      "start_line": 351
+    },
+    {
+      "lines": 1,
+      "name": "EDIT-MENU-DATA",
+      "start_line": 355
+    },
+    {
+      "lines": 16,
+      "name": "EMD010",
+      "start_line": 356
+    },
+    {
+      "lines": 2,
+      "name": "EMD999",
+      "start_line": 373
+    },
+    {
+      "lines": 1,
+      "name": "INVOKE-OTHER-TXNS",
+      "start_line": 377
+    },
+    {
+      "lines": 588,
+      "name": "IOT010",
+      "start_line": 378
+    },
+    {
+      "lines": 2,
+      "name": "IOT999",
+      "start_line": 968
+    },
+    {
+      "lines": 1,
+      "name": "SEND-MAP",
+      "start_line": 972
+    },
+    {
+      "lines": 227,
+      "name": "SMM010",
+      "start_line": 973
+    },
+    {
+      "lines": 2,
+      "name": "SMM999",
+      "start_line": 1201
+    },
+    {
+      "lines": 1,
+      "name": "SEND-TERMINATION-MSG",
+      "start_line": 1205
+    },
+    {
+      "lines": 71,
+      "name": "STM010",
+      "start_line": 1206
+    },
+    {
+      "lines": 2,
+      "name": "STM999",
+      "start_line": 1278
+    },
+    {
+      "lines": 1,
+      "name": "ABEND-THIS-TASK",
+      "start_line": 1282
+    },
+    {
+      "lines": 7,
+      "name": "ATT010",
+      "start_line": 1283
+    },
+    {
+      "lines": 2,
+      "name": "ATT999",
+      "start_line": 1291
+    },
+    {
+      "lines": 1,
+      "name": "POPULATE-TIME-DATE",
+      "start_line": 1295
+    },
+    {
+      "lines": 13,
+      "name": "PTD010",
+      "start_line": 1296
+    },
+    {
+      "lines": 2,
+      "name": "PTD999",
+      "start_line": 1310
+    }
+  ],
+  "priority": {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 2,
+    "of": 31,
+    "rank": 25
+  },
+  "program": {
+    "file": "src/base/cobol_src/BNKMENU.cbl",
+    "key": "BNKMENU",
+    "language": "cobol",
+    "lines": 1312,
+    "program_ids": [
+      "BNKMENU"
+    ]
+  },
+  "referenced": [
+    {
+      "bytes_after": 220,
+      "bytes_before": 212,
+      "class": "src/main/java/com/gitgalaxy/modernized/dto/contract/BnkmenuCommunicationArea.java",
+      "fields": 1,
+      "item": "commarea",
+      "section": "facts.interface"
+    }
+  ],
+  "relations": [
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "EIBCALEN",
+      "left_class": "unknown",
+      "line": 116,
+      "op": "=",
+      "ordering": false,
+      "right": "ZERO",
+      "right_class": "zero"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "EIBAID",
+      "left_class": "unknown",
+      "line": 125,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHPA1",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "EIBAID",
+      "left_class": "unknown",
+      "line": 131,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHPF3",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "EIBAID",
+      "left_class": "unknown",
+      "line": 141,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHCLEAR",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "EIBAID",
+      "left_class": "unknown",
+      "line": 152,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHENTER",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 178,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 282,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 284,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(MAPFAIL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 360,
+      "op": "<>",
+      "ordering": false,
+      "right": "'1'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 360,
+      "op": "<>",
+      "ordering": false,
+      "right": "'2'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 361,
+      "op": "<>",
+      "ordering": false,
+      "right": "'3'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 361,
+      "op": "<>",
+      "ordering": false,
+      "right": "'4'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 362,
+      "op": "<>",
+      "ordering": false,
+      "right": "'5'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 362,
+      "op": "<>",
+      "ordering": false,
+      "right": "'6'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 363,
+      "op": "<>",
+      "ordering": false,
+      "right": "'7'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 363,
+      "op": "<>",
+      "ordering": false,
+      "right": "'A'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 386,
+      "op": "=",
+      "ordering": false,
+      "right": "'1'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 394,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 458,
+      "op": "=",
+      "ordering": false,
+      "right": "'2'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 466,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 531,
+      "op": "=",
+      "ordering": false,
+      "right": "'3'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 539,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 604,
+      "op": "=",
+      "ordering": false,
+      "right": "'4'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 612,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 677,
+      "op": "=",
+      "ordering": false,
+      "right": "'5'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 685,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 750,
+      "op": "=",
+      "ordering": false,
+      "right": "'6'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 758,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 823,
+      "op": "=",
+      "ordering": false,
+      "right": "'7'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 831,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACTIONI",
+      "left_class": "unknown",
+      "line": 897,
+      "op": "=",
+      "ordering": false,
+      "right": "'A'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 905,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 987,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1061,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1138,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1218,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    }
+  ],
+  "rounding": [],
+  "rules": [
+    "Deliver the whole port: every paragraph the ported method reaches, every screen field it sets, every file it reads. A partial port or a sketch is not proven: the equivalence harness compares every output.",
+    "Port the PROCEDURE DIVISION into the service's methods, paragraph by paragraph; name the paragraph each block ports in a comment, so the port can be reviewed against the source.",
+    "Keep COBOL's storage semantics: COMPUTE / ADD / SUBTRACT / MULTIPLY / DIVIDE without ROUNDED truncate decimals; a result too long for its PICTURE loses its high-order digits (ON SIZE ERROR aside); MOVE to a numeric field aligns on the decimal point and truncates both ends; MOVE to alphanumeric pads with spaces or truncates on the right. Use BigDecimal with RoundingMode.DOWN, never double, for PIC 9 / COMP-3 data.",
+    "ROUNDED (#3825) rounds half AWAY from zero: setScale(scale, RoundingMode.HALF_UP) -- 2.5 -> 3, -2.5 -> -3. Never HALF_EVEN (banker's rounding) and never Math.round (-2.5 -> -2). ROUNDED MODE maps one to one: NEAREST-EVEN HALF_EVEN, AWAY-FROM-ZERO UP, NEAREST-TOWARD-ZERO HALF_DOWN, TOWARD-GREATER CEILING, TOWARD-LESSER FLOOR, TRUNCATION DOWN. The ticket's `rounding` list names every rounding or SIZE ERROR statement with the RoundingMode of each target. Round the final result only: compute intermediates exactly (IBM's ARITH intermediates carry 18 or 31 digits; the equivalence harness is the oracle when a result differs).",
+    "Keep the program's behaviour, including what looks like a defect (an unreachable branch, a field never reset): the port is proven by comparing its outputs with the original's. Document each such spot with a comment naming the defect and the one-line fix; fixing it is a business decision, not a translation.",
+    "Use the generated code as it is: entities and their fromRecord / toRecord codecs, repositories, DTOs, the batch runtime (DatasetResolver, Dd), the other services. Do not edit generated files other than this service; do not invent calls, files, queues or tables the facts do not name.",
+    "An abend is `throw CobolAbend.user(abcode, why)` (the generated batch runtime; CALL 'CEE3ABD' USING ABCODE: the step ends ABEND Unnnn) -- never another exception; the step's RETURN-CODE is runBatch's return value.",
+    "A DISPLAY is `Sysout.display(...)` (DISPLAY ... WITH NO ADVANCING: `Sysout.displayNoAdvancing`), never a log line: SYSOUT is compared line by line with the COBOL's. Its text is exactly what IBM COBOL writes, the operands concatenated: a literal as written; an alphanumeric or group item as all its bytes, trailing spaces included (a group's numeric fields as stored: zoned digits, the sign overpunched); a numeric item -- DISPLAY, COMP or COMP-3, not edited, no SIGN SEPARATE -- as `Sysout.number(value, digits, scale, signed)`: its PICTURE digits zero-padded, no decimal point, the sign overpunched in the last digit when signed (PIC S9(3) holding -12 is `01K`); an edited item as its edited text.",
+    "Every file I/O statement of a batch program (OPEN, CLOSE, READ, READ NEXT, WRITE, REWRITE, DELETE, START) is ONE call to the generated CobolFiles, per file (its DD name), in the order the program runs them. open(dd) / open(dd, path, input) / close(dd[, action]) / write / rewrite / delete(dd, action) / start(dd, found) return the status String; read(dd, supplier) (\"00\" or \"23\") and readNext(dd, iterator) (\"00\" or \"10\") return a CobolFiles.Read<T> -- status() and record(), null unless found. Take the program's FILE STATUS logic -- IF <status> = '00', AT END, INVALID KEY, its error paragraphs -- from the status returned, exactly as the program does; never skip a statement the program runs (a read-ahead, a CLOSE) or add one it does not. The equivalence harness injects file faults through CobolFiles and through GnuCOBOL at the same statement, and proves the error paths too. A keyed (VSAM KSDS) file keeps its mainframe semantics: WRITE is writeKeyed(dd, () -> repo.existsById(key), () -> repo.save(r)) -- \"22\" when the key is on file, never save() over it -- and REWRITE is rewriteKeyed(dd, exists, save) (\"23\" when it is not). A record the program READs INTO its working storage is the program's own copy: keep Entity.fromRecord(read.toRecord(cs), cs), never the repository's managed entity, so a change that is not REWRITten is never saved; and a READ that fails without INVALID KEY / AT END leaves the previous record in place, as the program's storage does.",
+    "A sequential dataset is fixed-length records (RECFM=FB): write each record's toRecord(...) bytes back to back, with no line separators, to the file DatasetResolver.path(dd) names; read it the same way.",
+    "Decode and encode a numeric field held in record bytes or a text column (zoned with an overpunched sign, COMP-3, COMP) only through the generated CobolRecords (zoned / packed / binary and their put methods) or the entity codecs, never a hand-written decoder.",
+    "Record bytes -- every dataset, file and COMMAREA the program reads or writes -- are in the code page CobolRecords.charset() returns: the migration's declared data.record_charset, a deployment fact. Pass it wherever a record codec, CobolRecords method or String takes a Charset; never Charset.forName, StandardCharsets or a guessed EBCDIC page for record data (#4060).",
+    "Read a number from text (a screen field, FUNCTION NUMVAL, a PARM) only through CobolRecords.numval(text, decimalPoint), with ',' when the program codes DECIMAL-POINT IS COMMA; never Integer.parseInt or new BigDecimal(String), which accept Arabic-Indic, Devanagari and full-width digits that COBOL rejects (#3831).",
+    "Format a numeric-edited field (a display string mapped from a number, often for a screen or print line) only through CobolEdit.format(pic, value, decimalComma, currency), which honours the COBOL picture (Z, 9, ., ,, -, +, CR/DB, $/currency, B, 0, /, and floating $ / + / - strings) as the mainframe does; pass the CURRENCY SIGN string (e.g. 'INR ') as currency, and it replaces the PICTURE SYMBOL (#3933).",
+    "Format and case-map with Locale.ROOT (String.format(Locale.ROOT, ...), toUpperCase(Locale.ROOT)): the default locale prints other digits (Arabic, Devanagari) and maps case differently (Turkish).",
+    "Order and compare VSAM / DB2 keys by the source code page's bytes, as the mainframe does (lower case before upper, letters before digits): browse through the generated sort-key finders, and sort in Java with CobolRecords.sortKey(key, codePage), never by String.compareTo or the database's default collation (#3822).",
+    "Compare alphanumeric operands (PIC X / A items, group items, alphanumeric literals and figurative constants) in IF, EVALUATE, PERFORM UNTIL and SEARCH WHEN only through the generated CobolCompare (compare, eq, gt, ge, lt, le), never String.compareTo or equals: it compares the code page's bytes as the mainframe does -- lower case before upper, letters before digits, so IF CUST-ID > 'A' is true for '1001' -- and pads the shorter operand with spaces ('AB' = 'AB  '). HIGH-VALUES / LOW-VALUES are CobolCompare.highValues(n) / lowValues(n). A numeric comparison stays BigDecimal.compareTo. A program that declares PROGRAM COLLATING SEQUENCE compares by that alphabet instead: flag it in a TODO (#3986).",
+    "A CICS program is ported into runTask(CicsTask task), one task per call (#3754): EIBCALEN = 0 is !task.hasCommarea(), EIBCALEN is task.eibcalen() (#4009: null = the whole record), DFHCOMMAREA is task.commarea(<its DTO>.class), EIBAID is task.aid() (ENTER, CLEAR, PF1-PF24, PA1-PA3), EIBTRMID is task.termid(), EIBTIME / EIBDATE / ASKTIME are task.now() (the task's dispatch time on the region's virtual clock, #3989), RECEIVE MAP is task.receive(map, mapset, <its screen>.class) (empty = MAPFAIL), SEND MAP is task.sendMap(map, mapset, screen, subfields, options...) (#4001: the screen holds each <f>O; CicsTask.MapSubfields each <f>A / <f>C / <f>H as its EBCDIC byte and <f>L = -1 for the cursor), SEND TEXT / SEND is task.sendText(from, length, options...), RETURN TRANSID COMMAREA LENGTH is task.returnTransid(transid, commarea, length), XCTL is task.xctl, LINK is task.link, ABEND is task.abend -- in the order the program does them, and the task ends at RETURN / XCTL / ABEND. A file READ is task.read(file, () -> <the service's generated read method>): its resp() is NORMAL (0), NOTFND (13) when the read finds nothing, or a condition the equivalence harness injects (NOTOPEN, IOERR, DISABLED, ...), and its resp2(); port every arm of the program's RESP handling (EVALUATE WS-RESP-CD ... WHEN OTHER) from it (#4023 follow-up). READ ... UPDATE is task.readForUpdate(file, lookup) (it holds the record for a REWRITE); WRITE FILE RIDFLD FROM is task.write(file, <whether the key is already in the file>, () -> <save the new record>): DUPREC (14) when it is; REWRITE FILE FROM is task.rewrite(file, () -> <save the changed record>): INVREQ (16) without a held record; each returns the RESP, and the injected conditions apply as for a READ. SYNCPOINT is task.syncpoint() and SYNCPOINT ROLLBACK task.rollback(), which undoes the task's file changes: save every change through these calls only -- what each file holds after the task is compared with the COBOL's. DELETE FILE RIDFLD is task.delete(file, <whether the key is there>, () -> <delete it>) (NOTFND 13 when not); DELETE FILE without RIDFLD is task.deleteHeld(file, () -> <delete the held record>). A browse: STARTBR is task.startbr(file, <RIDFLD as text>, <EQUAL given>, () -> <the file's keys, in key order, as a NavigableSet<String>>) (NOTFND 13 when no key qualifies); READNEXT / READPREV are task.readnext(file, <RIDFLD as text>) / task.readprev(file, ...), whose Browsed holds the RESP (ENDFILE 20 past either end) and the key read -- set RIDFLD to it and look the record up by it; ENDBR is task.endbr(file). The task keeps the browse's position and CICS's repositioning rules (a READPREV right after a READNEXT reads the same record again): pass RIDFLD exactly as the program holds it. ASKTIME ABSTIME is task.asktime(); FORMATTIME is CicsTask.formatDate(abstime, \"YYYYMMDD\" (or the form given), <DATESEP>) and CicsTask.formatTime(abstime, <TIMESEP>). ASSIGN APPLID / SYSID are task.assignApplid() / task.assignSysid() (the region's identity: never a literal). WRITEQ TD QUEUE FROM is task.writeqTd(queue, <the record as text, its full LENGTH>), which returns the RESP (QIDERR 44 for a queue the CSD does not define). INQUIRE PROGRAM(p) is task.inquireProgram(p): its RESP (NORMAL 0, PGMIDERR 27). A screen field shows what the symbolic map's O field would hold: text as moved, an edited PICTURE formatted as COBOL formats it. A COMMAREA is the generated DTO of its record; an area no generated DTO describes (a plain PIC X(n) item) is passed as a String of its n characters, or a byte[] of its EBCDIC bytes (#3989).",
+    "CICS condition and abend handling (#3989): HANDLE CONDITION, IGNORE CONDITION, HANDLE AID and RESP are the program's own control flow -- port each transfer to its label as Java control flow. HANDLE ABEND LABEL is task.handleAbend(label) (CANCEL, RESET: handleAbendCancel / handleAbendReset), and PUSH / POP HANDLE are task.pushHandle() / popHandle() besides saving and restoring the program's own handler state. EXEC CICS ABEND is task.abend(abcode) and a condition that takes CICS's default action is task.abendOnCondition(condition): CicsTask searches the active abend exits from this program's level upward, as CICS does, records the ABEND, and returns the label to continue at when this program's own exit took it -- or null, and the program must then return from runTask at once. After task.link(...) returns, task.abendExit() is the label of this program's exit when an abend in a program below reached it (continue there), and task.ended() is true when the task was terminated (stop). Never throw an exception to model a CICS transfer: the services are @Transactional, so an exception out of one marks the whole task rollback-only.",
+    "Dates and times only through java.time -- LocalDate, LocalDateTime, LocalTime and DateTimeFormatter with Locale.ROOT, in the ISO chronology -- never Calendar.getInstance(), new GregorianCalendar(), SimpleDateFormat or WeekFields.of(Locale.getDefault()): a th_TH default locale gives Buddhist-era years (2569), ja_JP_JP the Japanese imperial calendar, and US week fields start on Sunday. FUNCTION DAY-OF-WEEK and ACCEPT ... FROM DAY-OF-WEEK are Monday = 1 ... Sunday = 7, which is DayOfWeek.getValue() (#3833).",
+    "Read the time only from the generated batch runtime's MainframeClock (now() for local, currentDate() for FUNCTION CURRENT-DATE) -- in a CICS task, from task.now() -- never from the system clock directly or ZoneId.systemDefault(): it is how a run is pinned to be compared with the original.",
+    "A DB2 DATE / TIME / TIMESTAMP fetched into, or bound from, a character host variable (a DCLGEN DATE is PIC X(10)) is in the DB2 subsystem's format, the target config's culture.db2_date_format -- eur 26.09.2026 and 14.30.05, usa 09/26/2026 and 02:30 PM, iso 2026-09-26 and 14.30.05, jis 2026-09-26 and 14:30:05 -- and a TIMESTAMP is 2026-09-26-14.30.05.000000: convert only through the generated Db2Dates (date / time / timestamp, parseDate / parseTime / parseTimestamp), never LocalDate.toString() or LocalDate.parse (#3828).",
+    "FUNCTION INTEGER-OF-DATE / INTEGER-OF-DAY count days from day 1 = 1601-01-01 under INTDATE(ANSI), the default, but from day 1 = 1582-10-15 under INTDATE(LILIAN) (the same date is 6653 higher); DATE-OF-INTEGER / DAY-OF-INTEGER invert the same count. Port as ChronoUnit.DAYS.between(dayZero, date) with dayZero 1600-12-31 (ANSI) or 1582-10-14 (LILIAN). The ticket's compiler_options are the program's CBL / PROCESS cards; options given by the compile step's PARM or the installation defaults are not seen there (#3828).",
+    "A fact whose field testing is not 'field-tested' is verified on reference estates but still being field-tested: where the source contradicts it, follow the source and say so in the port's notes.",
+    "The proof calls one method per program: runTask(CicsTask) for a CICS program, handleCall(...) for a CALLed one, runBatch(dds, parm) for a batch one -- the ticket's methods to port. Port all of the program's behaviour into that method and the private helpers it calls. Port nothing into the other generated methods -- execute<Program>, handleTransaction, handleLink, handleChannel, onAbendL<n>, onCondition<C>L<n>, dispatch<X>L<n>, submit<Map> / render<Map>, xctl<P> / link<P>, the generated readqTs / writeqTs / read / browse helpers -- even where their TODO asks: leave each body as generated and keep no second entry point. Code the proof never runs is not proven, and the porting loop lists every method the proof cannot reach that the port changed (#4255)."
+  ],
+  "source": {
+    "copybooks": [
+      {
+        "file": "src/base/cobol_copy/ABNDINFO.cpy",
+        "listing": "sources/src/base/cobol_copy/ABNDINFO.cpy.lst"
+      }
+    ],
+    "program": {
+      "file": "src/base/cobol_src/BNKMENU.cbl",
+      "listing": "sources/src/base/cobol_src/BNKMENU.cbl.lst"
+    }
+  },
+  "status": "open",
+  "target": {
+    "config": {
+      "culture": {
+        "currency": "auto",
+        "db2_date_format": "iso",
+        "decimal_point": "auto",
+        "display_locale": "ROOT",
+        "format_locale": "ROOT",
+        "key_collation": "ebcdic",
+        "overflow": "cobol",
+        "rounding": "cobol",
+        "zone": "UTC"
+      },
+      "data": {
+        "bidi_layout": "auto",
+        "code_page": "cp037",
+        "dbcs_code_page": null,
+        "record_charset": "latin-1"
+      },
+      "database": "postgresql",
+      "integration": {
+        "messaging": "in-memory",
+        "remote_calls": "http"
+      },
+      "java": {
+        "build_tool": "maven",
+        "data_classes": "lombok",
+        "dto_style": "class",
+        "version": 17
+      },
+      "package": "com.gitgalaxy.modernized",
+      "spring_boot": {
+        "version": "3.2.4"
+      },
+      "ui": {
+        "flavour": "none"
+      }
+    },
+    "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+    "left_as_generated": [],
+    "methods": [
+      {
+        "signature": "public BnkmenuCommunicationArea handleTransaction(String transid, BnkmenuCommunicationArea request)",
+        "todo": false
+      },
+      {
+        "signature": "public BnkmenuCommunicationArea handleTransaction(String transid, BnkmenuCommunicationArea request, byte[] area)",
+        "todo": false
+      },
+      {
+        "signature": "public byte[] lastAnswerBytes()",
+        "todo": false
+      },
+      {
+        "signature": "public void runTask(CicsTask task)",
+        "todo": true
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL225(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL337(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL441(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL513(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL586(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL659(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL732(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL805(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL878(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL952(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL1034(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL1109(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL1186(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL1265(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public void abendHbnkL1286()",
+        "todo": false
+      }
+    ],
+    "methods_to_port": [
+      "public void runTask(CicsTask task)"
+    ],
+    "overlay": "port/service/BnkmenuService.java",
+    "proof_entry_points": [
+      "public void runTask(CicsTask task)"
+    ],
+    "service": "BnkmenuService"
+  },
+  "ticket": "PORT-BNKMENU",
+  "version": 1,
+  "worklist": [
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+      "id": "WL-0118",
+      "line": 75,
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java",
+      "id": "WL-0119",
+      "line": 81,
+      "text": "port the PROCEDURE DIVISION into this task"
+    }
+  ]
+}

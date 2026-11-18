@@ -14,6 +14,761 @@
       "program": null,
       "sha256": "1f4efede91c3a5954fcfc1129398fa653ad3ce748901d1f6df173a6e74c39cec"
     },
+    "src/main/java/com/gitgalaxy/modernized/cics/CicsRegion.java": {
+      "calls": [
+        "Lgacdb01Service",
+        "Lgacdb02Service",
+        "Lgacus01Service",
+        "Lgacvs01Service",
+        "Lgapdb01Service",
+        "Lgapol01Service",
+        "Lgapvs01Service",
+        "Lgastat1Service",
+        "Lgdpdb01Service",
+        "Lgdpol01Service",
+        "Lgdpvs01Service",
+        "Lgicdb01Service",
+        "Lgicus01Service",
+        "Lgicvs01Service",
+        "Lgipdb01Service",
+        "Lgipol01Service",
+        "Lgipvs01Service",
+        "LgsetupService",
+        "LgstsqService",
+        "Lgtestc1Service",
+        "Lgtestp1Service",
+        "Lgtestp2Service",
+        "Lgtestp3Service",
+        "Lgtestp4Service",
+        "Lgucdb01Service",
+        "Lgucus01Service",
+        "Lgucvs01Service",
+        "Lgupdb01Service",
+        "Lgupol01Service",
+        "Lgupvs01Service",
+        "Lgwebst5Service"
+      ],
+      "classes": [
+        "CicsRegion"
+      ],
+      "endpoints": [],
+      "fields": [
+        "context"
+      ],
+      "kind": "other",
+      "methods": [
+        "CicsRegion",
+        "defined",
+        "run",
+        "transaction"
+      ],
+      "program": null,
+      "sha256": "dd759d794cf655a779404f767804ef77c20d4c72a45c557af68171b4e0734ac0"
+    },
+    "src/main/java/com/gitgalaxy/modernized/cics/CicsSpec.java": {
+      "calls": [],
+      "classes": [
+        "CicsSpec"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [
+        "CicsSpec",
+        "abcodeFor",
+        "condition",
+        "name",
+        "resp"
+      ],
+      "program": null,
+      "sha256": "fb94eabd64529755e12315673f912cb8d7d279e654e696c9d7a961c07f83d835"
+    },
+    "src/main/java/com/gitgalaxy/modernized/cics/CicsTask.java": {
+      "calls": [],
+      "classes": [
+        "CicsTask",
+        "Programs",
+        "Origin",
+        "DocumentCreated",
+        "DocumentData",
+        "HttpExchange",
+        "HttpPeer",
+        "WebOpened",
+        "WebResponse",
+        "WebSession",
+        "HttpRequest",
+        "WebExtracted",
+        "Tcpip",
+        "TcpipExtracted",
+        "WebReceived",
+        "Block",
+        "WebHeader",
+        "WebParam",
+        "WebNext",
+        "WebParsed",
+        "TdResult",
+        "StartData",
+        "StartRequest",
+        "StartResult",
+        "Child",
+        "FetchResult",
+        "RunResult",
+        "RetrieveResult",
+        "PostResult",
+        "Channel",
+        "Container",
+        "ContainerResult",
+        "SetBlock",
+        "ContainerBrowse",
+        "Received",
+        "Browse",
+        "Browsed",
+        "Esds",
+        "BrowsedRba",
+        "FileRead",
+        "TsResult",
+        "TempStorage",
+        "MapSubfields",
+        "Region",
+        "Joined",
+        "LocalRegion"
+      ],
+      "endpoints": [],
+      "fields": [
+        "abcode",
+        "addressed",
+        "addressedAt",
+        "aid",
+        "applid",
+        "bllTokens",
+        "blocks",
+        "body",
+        "browseTokens",
+        "browses",
+        "byUrimap",
+        "bytesTaken",
+        "callerArea",
+        "channel",
+        "channels",
+        "child",
+        "children",
+        "clientAddr",
+        "clientName",
+        "clientNu",
+        "commarea",
+        "compstatus",
+        "containerBrowses",
+        "counterAtLimit",
+        "counterLimits",
+        "counters",
+        "currentChannel",
+        "cwa",
+        "data",
+        "deferredDupkey",
+        "deferredWhat",
+        "depth",
+        "dispatched",
+        "doctemplates",
+        "doctoken",
+        "documentSeq",
+        "documents",
+        "dplServer",
+        "droppedChannels",
+        "eibcalen",
+        "endOfChain",
+        "ended",
+        "esds",
+        "events",
+        "exactCommarea",
+        "exchanges",
+        "exitActive",
+        "exitLabel",
+        "expires",
+        "facilname",
+        "faciltype",
+        "faultLog",
+        "faultPlan",
+        "faultSeen",
+        "from",
+        "handle",
+        "headers",
+        "held",
+        "host",
+        "httpPeers",
+        "httpRequest",
+        "invoker",
+        "item",
+        "key",
+        "kids",
+        "lastContainerCcsid",
+        "lastResp2",
+        "length",
+        "level",
+        "linkArea",
+        "linkAreaBack",
+        "linkAreaTaken",
+        "linkCommarea",
+        "linkLength",
+        "linkedDto",
+        "loaded",
+        "mediaType",
+        "method",
+        "name",
+        "nameLength",
+        "networkid",
+        "nextBlock",
+        "nextToken",
+        "nonRecoverable",
+        "now",
+        "numItems",
+        "origin",
+        "outsideUnitOfWork",
+        "ownRequests",
+        "ownWithData",
+        "parent",
+        "path",
+        "peer",
+        "port",
+        "postAreas",
+        "postAt",
+        "postBlock",
+        "postReleased",
+        "postReqid",
+        "postSeq",
+        "program",
+        "programs",
+        "pushedExits",
+        "query",
+        "queue",
+        "rba",
+        "rcode",
+        "received",
+        "reclen",
+        "record",
+        "records",
+        "regionFiles",
+        "replies",
+        "reqid",
+        "resources",
+        "resp",
+        "resp2",
+        "result",
+        "retrieveData",
+        "retrieveRefused",
+        "retrieved",
+        "returnedArea",
+        "returnedBytes",
+        "returnedChannel",
+        "returnedLength",
+        "rollbackHook",
+        "rtermid",
+        "rtransid",
+        "runChild",
+        "running",
+        "scheme",
+        "screen",
+        "serverAddr",
+        "serverName",
+        "serverNu",
+        "sesstoken",
+        "snapshot",
+        "ssl",
+        "sslType",
+        "startcode",
+        "status",
+        "statusText",
+        "syncpointed",
+        "sysid",
+        "taskNumber",
+        "tcpip",
+        "tctua",
+        "tdAttrs",
+        "tdPhysical",
+        "tdQueues",
+        "tdTypes",
+        "tdUow",
+        "tempStorage",
+        "termid",
+        "termidStated",
+        "terminalInput",
+        "terminalRead",
+        "terminalRest",
+        "toLength",
+        "transferResp2",
+        "transid",
+        "twa",
+        "uctranst",
+        "uctranstSet",
+        "unexpired",
+        "unwoundTo",
+        "uowParticipants",
+        "updateTokens",
+        "urimap",
+        "urimapBrowse",
+        "urimapNow",
+        "urimaps",
+        "userid",
+        "value",
+        "valueLength",
+        "version",
+        "waited",
+        "webAnswered",
+        "webBrowses",
+        "webDocToken",
+        "webHeld",
+        "webHeldDoc",
+        "webHeldToken",
+        "webIssued",
+        "webReceived",
+        "webRest",
+        "webSendFailed",
+        "webSent",
+        "webSeq",
+        "webSessions",
+        "xctlArea",
+        "xctlChannel",
+        "xctlCommarea",
+        "xctlLength",
+        "xctlOfLinkage",
+        "xctlTarget"
+      ],
+      "kind": "other",
+      "methods": [
+        "CicsTask",
+        "abcode",
+        "abcodeFor",
+        "abend",
+        "abendCancel",
+        "abendExit",
+        "abendMapNotFound",
+        "abendOnCondition",
+        "abendToExit",
+        "acquireReceived",
+        "acquireSet",
+        "add",
+        "addressOf",
+        "aid",
+        "aliasable",
+        "areaOf",
+        "asDplServer",
+        "asktime",
+        "assignApplid",
+        "assignChannel",
+        "assignFacility",
+        "assignScreen",
+        "assignStartcode",
+        "assignSysid",
+        "assignTerminalResp",
+        "assignUserid",
+        "atLimit",
+        "bllPointer",
+        "bllToken",
+        "browseEvent",
+        "cancel",
+        "ccsidCharset",
+        "channelName",
+        "childFaults",
+        "childFired",
+        "commarea",
+        "containerCcsid",
+        "containerKey",
+        "converse",
+        "convertContainer",
+        "copyOf",
+        "counterInRange",
+        "counterKey",
+        "counterNameResp2",
+        "currentChannel",
+        "cwaHandle",
+        "deeditResp",
+        "defineCounter",
+        "defineDcounter",
+        "delay",
+        "delayMillis",
+        "delayOrInvreq",
+        "delayRange",
+        "delete",
+        "deleteChannel",
+        "deleteContainer",
+        "deleteCounter",
+        "deleteEvent",
+        "deleteGeneric",
+        "deleteGenericEvent",
+        "deleteHeld",
+        "deleteHeldEvent",
+        "deleteInvalid",
+        "deleteInvalidEvent",
+        "deleteRecord",
+        "deleteRecorded",
+        "deleteToken",
+        "deleteTokenEvent",
+        "deleteqTd",
+        "deleteqTs",
+        "deploy",
+        "dispatchChildren",
+        "documentCreateData",
+        "documentCreateEmpty",
+        "documentCreateTemplate",
+        "documentRetrieve",
+        "documentedResp2",
+        "done",
+        "dupkeyOr",
+        "eibcalen",
+        "endBrowseContainer",
+        "endbr",
+        "endbrEvent",
+        "ended",
+        "enq",
+        "enqChecked",
+        "esdsOf",
+        "esdsRecords",
+        "event",
+        "events",
+        "exactCommarea",
+        "extractTcpip",
+        "fetch",
+        "fetched",
+        "fileFault",
+        "formatDate",
+        "formatNumber",
+        "formatTime",
+        "formattimeCheck",
+        "freeChild",
+        "freemain",
+        "freemainData",
+        "fullwordGet",
+        "fullwordLengerr",
+        "getContainer",
+        "getContainerAt",
+        "getContainerSet",
+        "getCounter",
+        "getNextContainer",
+        "getmain",
+        "growShared",
+        "handedChannel",
+        "handleAbend",
+        "handleAbendCancel",
+        "handleAbendReset",
+        "hasCommarea",
+        "heldSet",
+        "hhmmss",
+        "highValues",
+        "holdToken",
+        "illegalName",
+        "inScope",
+        "injected",
+        "inputAfterUctranstSet",
+        "inquireAssociation",
+        "inquireProgram",
+        "inquireTdQueue",
+        "inquireUctranst",
+        "inquireUrimap",
+        "inquireUrimapEnd",
+        "inquireUrimapNext",
+        "inquireUrimapStart",
+        "installedUrimaps",
+        "instanceKey",
+        "invalidateSet",
+        "invalidateSetPrefix",
+        "invalidateSyncSet",
+        "invokingProgram",
+        "ipv4Value",
+        "issueStart",
+        "join",
+        "kid",
+        "level",
+        "link",
+        "linkArea",
+        "linkAreaBack",
+        "linkAreaOfCaller",
+        "linkAreaTaken",
+        "linkAreaView",
+        "linkChannel",
+        "loadProgram",
+        "logAbend",
+        "logFault",
+        "lossless",
+        "mapInputAfterUctranstSet",
+        "moveContainer",
+        "newBlock",
+        "newDocument",
+        "now",
+        "offsetAt",
+        "onRollback",
+        "ownedByTaskBlock",
+        "passChannel",
+        "planned",
+        "popHandle",
+        "post",
+        "postArea",
+        "postCancelled",
+        "programStatus",
+        "pushHandle",
+        "putContainer",
+        "putUtf8",
+        "queryChannel",
+        "queryCounter",
+        "queryDcounter",
+        "rba",
+        "rbaBytes",
+        "rbaRead",
+        "rbaReadEvent",
+        "rbaRecord",
+        "rcode",
+        "rcodeOf",
+        "read",
+        "readEvent",
+        "readForUpdate",
+        "readInto",
+        "readInvalid",
+        "readInvalidEvent",
+        "readSearch",
+        "readSearchEvent",
+        "readSetEvent",
+        "readnext",
+        "readnextInto",
+        "readnextRba",
+        "readnextRbaEvent",
+        "readnextSetEvent",
+        "readprev",
+        "readprevInto",
+        "readprevRba",
+        "readprevRbaEvent",
+        "readprevSetEvent",
+        "readqTd",
+        "readqTs",
+        "readqTsNext",
+        "receive",
+        "receiveText",
+        "record",
+        "recordLengths",
+        "refuseCicsDefined",
+        "refuseCicsDefinedPut",
+        "refuseDfhHandedChannel",
+        "refuseInDplServer",
+        "refuseNegativeAbstime",
+        "refused",
+        "region",
+        "releasePost",
+        "releaseProgram",
+        "resource",
+        "resourceEvent",
+        "resourceUowEnd",
+        "resp2",
+        "respName",
+        "retrieve",
+        "returnChannel",
+        "returnImmediate",
+        "returnTransid",
+        "returnTransidResp",
+        "returned",
+        "returnedBytes",
+        "returnedChannel",
+        "rewindCounter",
+        "rewrite",
+        "rewriteFrom",
+        "rewriteToken",
+        "rewriteqTs",
+        "rollback",
+        "root",
+        "run",
+        "runProgram",
+        "runTransid",
+        "samePointer",
+        "sameValue",
+        "scopeChannel",
+        "scopeHanded",
+        "scopeNamed",
+        "sendControl",
+        "sendMap",
+        "sendText",
+        "setTdQueueEnableStatus",
+        "setTdQueueOpenStatus",
+        "setTdQueueTriggerLevel",
+        "setUctranst",
+        "spendToken",
+        "start",
+        "startAt",
+        "startBrowseContainer",
+        "startRequest",
+        "startbr",
+        "startbrEvent",
+        "startbrRba",
+        "startbrRbaEvent",
+        "statedPeers",
+        "statedRequest",
+        "statedTerminal",
+        "storageAt",
+        "storeCounter",
+        "syncpoint",
+        "taskNumber",
+        "tctuaHandle",
+        "tdAttr",
+        "tdDisabled",
+        "tdExtraClosed",
+        "tdExtraState",
+        "tdExtraWriteResp",
+        "tdKind",
+        "tdResolve",
+        "tdTouch",
+        "tdTransid",
+        "tdTriggerLevel",
+        "tdTypeCvda",
+        "tdUowEnd",
+        "termid",
+        "terminalCheck",
+        "terminalInputRead",
+        "tie",
+        "transferResp2",
+        "transid",
+        "trimmedName",
+        "twaHandle",
+        "uctranstCvda",
+        "undefinableFile",
+        "undefinedInRegion",
+        "unlock",
+        "unlockHeld",
+        "unlockToken",
+        "updateCounter",
+        "urimapName",
+        "urimapPath",
+        "urimapTransaction",
+        "validUtf8",
+        "verifyPassword",
+        "waitEvent",
+        "waitExternal",
+        "webClose",
+        "webConverse",
+        "webEndBrowse",
+        "webExtract",
+        "webHeaderLines",
+        "webHex",
+        "webHexAny",
+        "webHexValue",
+        "webOpenHost",
+        "webOpenHostChecked",
+        "webOpenUrimap",
+        "webPairs",
+        "webParse",
+        "webPlain",
+        "webReadHeader",
+        "webReadNext",
+        "webReadParam",
+        "webReceive",
+        "webRetrieve",
+        "webSend",
+        "webSendBody",
+        "webSendContainer",
+        "webSendDocument",
+        "webSession",
+        "webStartBrowse",
+        "webWriteHeader",
+        "withChannel",
+        "withClock",
+        "withCounters",
+        "withCwa",
+        "withDoctemplates",
+        "withEndOfChain",
+        "withEsds",
+        "withExactCommarea",
+        "withFaults",
+        "withHttpPeers",
+        "withHttpRequest",
+        "withLinkArea",
+        "withNonRecoverable",
+        "withOrigin",
+        "withProgram",
+        "withPrograms",
+        "withRegion",
+        "withRegionFiles",
+        "withRequests",
+        "withResource",
+        "withRetrieveData",
+        "withRunChild",
+        "withScreen",
+        "withSnapshot",
+        "withStartData",
+        "withStartcode",
+        "withTaskNumber",
+        "withTcpip",
+        "withTctua",
+        "withTdQueueAttributes",
+        "withTdQueueTypes",
+        "withTdQueues",
+        "withTempStorage",
+        "withTermid",
+        "withTermidIfStated",
+        "withTerminalInput",
+        "withTwaSize",
+        "withUctranst",
+        "withUrimaps",
+        "withUserid",
+        "within",
+        "write",
+        "writeEvent",
+        "writeOperator",
+        "writeqTd",
+        "writeqTs",
+        "xctl",
+        "xctlChannel",
+        "xctlOfLinkage"
+      ],
+      "program": null,
+      "sha256": "9247e9df52842e57c6eccdd8008c8fae414be2ed9867d3ca4eb06ac8c1c40729",
+      "string_fields": [
+        "abcode",
+        "aid",
+        "applid",
+        "body",
+        "channel",
+        "child",
+        "clientAddr",
+        "clientName",
+        "data",
+        "deferredWhat",
+        "doctoken",
+        "exitLabel",
+        "facilname",
+        "host",
+        "invoker",
+        "key",
+        "mediaType",
+        "method",
+        "name",
+        "networkid",
+        "path",
+        "postReqid",
+        "program",
+        "query",
+        "queue",
+        "reqid",
+        "resp",
+        "rtermid",
+        "rtransid",
+        "scheme",
+        "serverAddr",
+        "serverName",
+        "sesstoken",
+        "sslType",
+        "startcode",
+        "statusText",
+        "sysid",
+        "termid",
+        "terminalInput",
+        "terminalRest",
+        "transid",
+        "uctranst",
+        "unwoundTo",
+        "urimap",
+        "userid",
+        "value",
+        "version",
+        "webDocToken",
+        "webHeldToken",
+        "webRest",
+        "xctlTarget"
+      ]
+    },
     "src/main/java/com/gitgalaxy/modernized/client/Aor1RemoteClient.java": {
       "calls": [],
       "classes": [
@@ -36,7 +791,10 @@
         "linkLgupol01"
       ],
       "program": null,
-      "sha256": "c08136644b245cff000ca534d47782606181d23cbdd987e73bb6482719ab775f"
+      "sha256": "53cb322a8c246204398d1ddfc84f4e313bdca65975ab8791db08ae81ed1b22ff",
+      "string_fields": [
+        "baseUrl"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/client/Dor1RemoteClient.java": {
       "calls": [],
@@ -66,7 +824,10 @@
         "linkLgupvs01"
       ],
       "program": null,
-      "sha256": "b5d43dade090d586474a7a94be08b376f3bd81ce36f8ba440f753fb928757b00"
+      "sha256": "22cf677fe58f9f362e2a555a2334730d22ccbb584d4dc2f3de79b76a231693c7",
+      "string_fields": [
+        "baseUrl"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgacdb01Controller.java": {
       "calls": [
@@ -76,19 +837,17 @@
         "Lgacdb01Controller"
       ],
       "endpoints": [
-        "link",
-        "transactionDSCA"
+        "link"
       ],
       "fields": [
         "lgacdb01Service"
       ],
       "kind": "controller",
       "methods": [
-        "link",
-        "transactionDSCA"
+        "link"
       ],
       "program": "base/src/lgacdb01.cbl",
-      "sha256": "74abc5d7b4ce53ef35efedf4426f5df7f8bfa166577a581d523467ca40f368dd"
+      "sha256": "c8ec28027a06bcda664fa2fead5f528d1d42ff24eb282131697c6a177945d394"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgacdb02Controller.java": {
       "calls": [
@@ -98,19 +857,17 @@
         "Lgacdb02Controller"
       ],
       "endpoints": [
-        "link",
-        "transactionDSCA"
+        "link"
       ],
       "fields": [
         "lgacdb02Service"
       ],
       "kind": "controller",
       "methods": [
-        "link",
-        "transactionDSCA"
+        "link"
       ],
       "program": "base/src/lgacdb02.cbl",
-      "sha256": "23fa7897c603fe31c201e86a12872b17d5d6039076ca49e2427cf54eccb4aa01"
+      "sha256": "07df4bdcb94c8bc4f4b67e790a08e477fd8bd89e14c4d0936de9e768aa1b4610"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgacus01Controller.java": {
       "calls": [
@@ -130,7 +887,7 @@
         "link"
       ],
       "program": "base/src/lgacus01.cbl",
-      "sha256": "0242ed13b385fafc630d161ce5b0c7697201ec1112117accd31b026785e58913"
+      "sha256": "42cfb7cdc18a230e0da1a8cf3da7343b38341bdfcb6d3832de8f6b8f260bc944"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgacvs01Controller.java": {
       "calls": [
@@ -140,19 +897,17 @@
         "Lgacvs01Controller"
       ],
       "endpoints": [
-        "link",
-        "transactionVSCA"
+        "link"
       ],
       "fields": [
         "lgacvs01Service"
       ],
       "kind": "controller",
       "methods": [
-        "link",
-        "transactionVSCA"
+        "link"
       ],
       "program": "base/src/lgacvs01.cbl",
-      "sha256": "54f873ec38d8cfae5f8affe616abef9e23739e4d83b8029c82e9eaa3658114b1"
+      "sha256": "9a3c0b5e5cfad51e7a041d530217c23c73738a6494a0e4fba09571c70526f659"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgapdb01Controller.java": {
       "calls": [
@@ -162,19 +917,17 @@
         "Lgapdb01Controller"
       ],
       "endpoints": [
-        "link",
-        "transactionDSPA"
+        "link"
       ],
       "fields": [
         "lgapdb01Service"
       ],
       "kind": "controller",
       "methods": [
-        "link",
-        "transactionDSPA"
+        "link"
       ],
       "program": "base/src/lgapdb01.cbl",
-      "sha256": "c3ebe9255db91b7104145d3bf331061fe39e6c0eb812aacd7d4ba03deeaaa76a"
+      "sha256": "4cd080120bb47d06762ad84bd108333cdec3d67302f8d896b610251f7f9bce64"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgapol01Controller.java": {
       "calls": [
@@ -194,7 +947,7 @@
         "link"
       ],
       "program": "base/src/lgapol01.cbl",
-      "sha256": "e12242ddd6f9f55bb7549cbe4ff1d77af9a26264873761daf2860714199e1640"
+      "sha256": "d281a2fee79c1f2972dfcc1a71a3c10fa8fb7af7e95ae4b6776e4c6a4a8a8886"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgapvs01Controller.java": {
       "calls": [
@@ -204,19 +957,17 @@
         "Lgapvs01Controller"
       ],
       "endpoints": [
-        "link",
-        "transactionVSPA"
+        "link"
       ],
       "fields": [
         "lgapvs01Service"
       ],
       "kind": "controller",
       "methods": [
-        "link",
-        "transactionVSPA"
+        "link"
       ],
       "program": "base/src/lgapvs01.cbl",
-      "sha256": "d84759212ff323730e020f9251a7f0313d0d6254f42002312a4b93ef5fbeee97"
+      "sha256": "791998f22d4b2768ccbecc1f5e930121da1d93d3794079a90966b93a06807cfb"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgastat1Controller.java": {
       "calls": [
@@ -238,7 +989,7 @@
         "transactionLGST"
       ],
       "program": "base/src/lgastat1.cbl",
-      "sha256": "5216d5febebd474884fc5409320c23d0f878fce54fb50c638e036d11c9b3c59a"
+      "sha256": "4d2a04133f35e01d9e3ebe916306687e1350ad95657d5cd2eb6fe5eb0627b160"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgdpdb01Controller.java": {
       "calls": [
@@ -248,19 +999,17 @@
         "Lgdpdb01Controller"
       ],
       "endpoints": [
-        "link",
-        "transactionDSPD"
+        "link"
       ],
       "fields": [
         "lgdpdb01Service"
       ],
       "kind": "controller",
       "methods": [
-        "link",
-        "transactionDSPD"
+        "link"
       ],
       "program": "base/src/lgdpdb01.cbl",
-      "sha256": "43577d83891f4679b3971abf2add29fe0b1297b4285bdb5324008f4cf4539157"
+      "sha256": "05714c772e5d7226d3451aed4486569b456eb6abf4333c13075f5f0b5dd3a3b7"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgdpol01Controller.java": {
       "calls": [
@@ -280,7 +1029,7 @@
         "link"
       ],
       "program": "base/src/lgdpol01.cbl",
-      "sha256": "4eaa508c43db81bbb21b52d7645f88e78acefedee43e32dca90d884fefab9cf5"
+      "sha256": "3292f3683272c6d19e429a89fb6b9ec781494b1402ac08e73b56a4448ac556a4"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgdpvs01Controller.java": {
       "calls": [
@@ -290,19 +1039,17 @@
         "Lgdpvs01Controller"
       ],
       "endpoints": [
-        "link",
-        "transactionVSPD"
+        "link"
       ],
       "fields": [
         "lgdpvs01Service"
       ],
       "kind": "controller",
       "methods": [
-        "link",
-        "transactionVSPD"
+        "link"
       ],
       "program": "base/src/lgdpvs01.cbl",
-      "sha256": "50d9ddb6099df0c5b217047150de57f0542937893d939e1e27f38fec73e2cdc9"
+      "sha256": "8153fc0337320dd9ce938685cdae1d615be96ad053af793e3c5057904e896859"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgicdb01Controller.java": {
       "calls": [
@@ -312,19 +1059,17 @@
         "Lgicdb01Controller"
       ],
       "endpoints": [
-        "link",
-        "transactionDSCI"
+        "link"
       ],
       "fields": [
         "lgicdb01Service"
       ],
       "kind": "controller",
       "methods": [
-        "link",
-        "transactionDSCI"
+        "link"
       ],
       "program": "base/src/lgicdb01.cbl",
-      "sha256": "18015cee9bd1b4f1eedc6ae708a464cff983a45712fff046c2c1f9895a61deeb"
+      "sha256": "351bd9fc6271a986415552d15ae3964f06df3ceae54ef955a8d980d89d0acabd"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgicus01Controller.java": {
       "calls": [
@@ -344,7 +1089,7 @@
         "link"
       ],
       "program": "base/src/lgicus01.cbl",
-      "sha256": "15da4405b2a87d8ad9e80bd116044e0a3296c2c9e672ceef4e9324115480a12e"
+      "sha256": "f106963626cfe08cd26876be6a40a1a8cc792336f6d19cae05ab1ae91b991ce3"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgicvs01Controller.java": {
       "calls": [
@@ -354,19 +1099,17 @@
         "Lgicvs01Controller"
       ],
       "endpoints": [
-        "transactionLGCF",
-        "transactionVSCI"
+        "transactionLGCF"
       ],
       "fields": [
         "lgicvs01Service"
       ],
       "kind": "controller",
       "methods": [
-        "transactionLGCF",
-        "transactionVSCI"
+        "transactionLGCF"
       ],
       "program": "base/src/lgicvs01.cbl",
-      "sha256": "b132d823f771a43d6fa52f97e39633f9cecc367331582314466101da6ed3c5b9"
+      "sha256": "a587af8710c045b2fe7256fb9894e045771111aa98729eb29236b8583cec8a70"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgipdb01Controller.java": {
       "calls": [
@@ -376,19 +1119,17 @@
         "Lgipdb01Controller"
       ],
       "endpoints": [
-        "link",
-        "transactionDSPI"
+        "link"
       ],
       "fields": [
         "lgipdb01Service"
       ],
       "kind": "controller",
       "methods": [
-        "link",
-        "transactionDSPI"
+        "link"
       ],
       "program": "base/src/lgipdb01.cbl",
-      "sha256": "91acc055334997bb827716ee31e61c308a51c55be1b7435d52729607d756b43f"
+      "sha256": "3fc4c6170fff6a3ea1a6591b346092cfdd08b0d96b3089a0da51e5c2a4eb313e"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgipol01Controller.java": {
       "calls": [
@@ -408,7 +1149,7 @@
         "link"
       ],
       "program": "base/src/lgipol01.cbl",
-      "sha256": "4d24e4a5672047098b26939287742cb435b7414b94410dbb05fbc09efd76301e"
+      "sha256": "0c7efd8215d3e78257f06f8262dca1ef05e23dbedcb30f1adf10f85f07a06e8c"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgipvs01Controller.java": {
       "calls": [
@@ -418,19 +1159,17 @@
         "Lgipvs01Controller"
       ],
       "endpoints": [
-        "transactionLGPF",
-        "transactionVSPI"
+        "transactionLGPF"
       ],
       "fields": [
         "lgipvs01Service"
       ],
       "kind": "controller",
       "methods": [
-        "transactionLGPF",
-        "transactionVSPI"
+        "transactionLGPF"
       ],
       "program": "base/src/lgipvs01.cbl",
-      "sha256": "429169b208bb471c75c520fb8e8aecd0ed9339e8e01da5a77b108fed480d8b40"
+      "sha256": "7412fbd7c6f7d3d6b475e7ba0da0228480b5892421694963a6aeef844f2b4132"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/LgsetupController.java": {
       "calls": [
@@ -450,7 +1189,7 @@
         "transactionLGSE"
       ],
       "program": "base/src/lgsetup.cbl",
-      "sha256": "d4137dc0c0b7948d015d8dc8e76e2fd0c4ac1d7557c3cd45868aac7c68a9d05d"
+      "sha256": "d6b006a113b13650d1f4721c5ceb6b479698343c13bce9836588b679eda112fb"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/LgstsqController.java": {
       "calls": [
@@ -470,7 +1209,7 @@
         "link"
       ],
       "program": "base/src/lgstsq.cbl",
-      "sha256": "efd825dfc3684c9a32b1bb55eb8af24579eb93267b9d737f5e4b219b6d0db15c"
+      "sha256": "d576912e005f24b2a6772fdb34717b4d21e5a24cf8812e40f4279ddc1ddfdb97"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgtestc1Controller.java": {
       "calls": [
@@ -490,7 +1229,7 @@
         "transactionSSC1"
       ],
       "program": "base/src/lgtestc1.cbl",
-      "sha256": "cf28badae9d7902331e24c6dcca390c27012239ea9dc7fd69950c67a017144f6"
+      "sha256": "e23ca8aa5de0ebecc87344227ee5603c93b9a6b67cd5c3d73c46dc58a634ca56"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgtestp1Controller.java": {
       "calls": [
@@ -510,7 +1249,7 @@
         "transactionSSP1"
       ],
       "program": "base/src/lgtestp1.cbl",
-      "sha256": "4f04a03900408610d13993f9635cacb16f3b0a20ec989ba008fa5f3db8c6481d"
+      "sha256": "ad718a3552f891b37decc97173746b2eae399a616a6fcb6e891e65f4ef1fe320"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgtestp2Controller.java": {
       "calls": [
@@ -530,7 +1269,7 @@
         "transactionSSP2"
       ],
       "program": "base/src/lgtestp2.cbl",
-      "sha256": "3e96c7c03c7838d9fefecbc07f53c65a34f66c69c3e60fe3ed409ee2b586ca8a"
+      "sha256": "a03a525e7967545d396ee1b81b93c14c26da8c9e0160e342fab3a62917c8bf5f"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgtestp3Controller.java": {
       "calls": [
@@ -550,7 +1289,7 @@
         "transactionSSP3"
       ],
       "program": "base/src/lgtestp3.cbl",
-      "sha256": "3a849cb8e3bd4302c0d90ad21ff52ee671045e6eb41c0cec2cc65353c03e996a"
+      "sha256": "59d651d03a49d2bea61e1dc00559dfc641c5671cc211d5b82ac566cd4fadbf15"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgtestp4Controller.java": {
       "calls": [
@@ -570,7 +1309,7 @@
         "transactionSSP4"
       ],
       "program": "base/src/lgtestp4.cbl",
-      "sha256": "cbc19f9aa5c37dba4496e56085d364ab9e03697d51b494b404cbdeb89268f499"
+      "sha256": "72fee65ddfdee2f323afcc2f3f34a72361f5b9f3765808c32155193417cfaa45"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgucdb01Controller.java": {
       "calls": [
@@ -580,19 +1319,17 @@
         "Lgucdb01Controller"
       ],
       "endpoints": [
-        "link",
-        "transactionDSCI"
+        "link"
       ],
       "fields": [
         "lgucdb01Service"
       ],
       "kind": "controller",
       "methods": [
-        "link",
-        "transactionDSCI"
+        "link"
       ],
       "program": "base/src/lgucdb01.cbl",
-      "sha256": "1b490c50f584be0ae226df99d215b30de3c4833ca00a9e23914ed0c900c276f3"
+      "sha256": "7483b84855485e47566a580ee39e53150c695da6f5622cf256db56f2b208abd5"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgucus01Controller.java": {
       "calls": [
@@ -612,7 +1349,7 @@
         "link"
       ],
       "program": "base/src/lgucus01.cbl",
-      "sha256": "b69491e15273d8edc6dac283f34ea5e6a591fab16c2234af5400e55eb405d11b"
+      "sha256": "64dd50bcea8e74feef8542070c18c3803d8aa78e395751d706087b69e36cd1e4"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgucvs01Controller.java": {
       "calls": [
@@ -622,19 +1359,17 @@
         "Lgucvs01Controller"
       ],
       "endpoints": [
-        "link",
-        "transactionVSC1"
+        "link"
       ],
       "fields": [
         "lgucvs01Service"
       ],
       "kind": "controller",
       "methods": [
-        "link",
-        "transactionVSC1"
+        "link"
       ],
       "program": "base/src/lgucvs01.cbl",
-      "sha256": "d543504d9fbca1d30a3110c6f097f5e7d9cc6de5e573073e6a917b527bc30024"
+      "sha256": "ea353a4d75ba5bb5f482a0aaafac9cd98a1cf3e7276469455f4ec3ecdd57770e"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgupdb01Controller.java": {
       "calls": [
@@ -644,19 +1379,17 @@
         "Lgupdb01Controller"
       ],
       "endpoints": [
-        "link",
-        "transactionDSPI"
+        "link"
       ],
       "fields": [
         "lgupdb01Service"
       ],
       "kind": "controller",
       "methods": [
-        "link",
-        "transactionDSPI"
+        "link"
       ],
       "program": "base/src/lgupdb01.cbl",
-      "sha256": "875486d350a611167877e4f05185c89499d34a77f06211e82291ce4e1d7b792a"
+      "sha256": "0b523304049e1b5f0d1c340993600fc0f43018856aa6f8764e42084ad70a73ae"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgupol01Controller.java": {
       "calls": [
@@ -676,7 +1409,7 @@
         "link"
       ],
       "program": "base/src/lgupol01.cbl",
-      "sha256": "bc5954f7c3c3c726a38f1c413ffff714d5c25160bb9f7c5a48b80895b6f3ae47"
+      "sha256": "7eb7ae5b6b3b3b482dce9af636307cad826cd5efe10bf7cb3e658d43c873d921"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgupvs01Controller.java": {
       "calls": [
@@ -686,19 +1419,17 @@
         "Lgupvs01Controller"
       ],
       "endpoints": [
-        "link",
-        "transactionVSP1"
+        "link"
       ],
       "fields": [
         "lgupvs01Service"
       ],
       "kind": "controller",
       "methods": [
-        "link",
-        "transactionVSP1"
+        "link"
       ],
       "program": "base/src/lgupvs01.cbl",
-      "sha256": "59e526f59e428065c5d4c277e96d36ce736db78e1bf8a17080b7204b4748f409"
+      "sha256": "d6d0bb1784d2939ff7bc40585acd5b93e8ffc04ce0fcea77b517573d1bda8d40"
     },
     "src/main/java/com/gitgalaxy/modernized/controller/Lgwebst5Controller.java": {
       "calls": [
@@ -718,7 +1449,7 @@
         "transactionSSST"
       ],
       "program": "base/src/lgwebst5.cbl",
-      "sha256": "9e4e8f533844140dc098787c3b201ba23f0eccef274bddea2396854f7c015389"
+      "sha256": "c3412dbf312cfb57a7cfbaf8b0ea5017ccaacb18c125039858e0516c8ba46380"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgacdb01DfhcommareaDto.java": {
       "calls": [],
@@ -759,7 +1490,27 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "89e39b67179f4cabd5f9f5a0b7985358957acd699a9c3e21e6c3feb632f7e77f"
+      "sha256": "89e39b67179f4cabd5f9f5a0b7985358957acd699a9c3e21e6c3feb632f7e77f",
+      "string_fields": [
+        "caData",
+        "d2CustsecrCount",
+        "d2CustsecrPass",
+        "d2CustsecrState",
+        "d2RequestId",
+        "emCusnum",
+        "emDate",
+        "emSqlreq",
+        "emTime",
+        "genacount",
+        "genapool",
+        "lgacNcs",
+        "lgacdb02",
+        "lgacvs01",
+        "wsDate",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgacdb02DfhcommareaDto.java": {
       "calls": [],
@@ -793,7 +1544,22 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "0fae50fc2793dc704d746c63ad9d4e7f6c23fd73fbe9671e750f7ad6c0775bcc"
+      "sha256": "0fae50fc2793dc704d746c63ad9d4e7f6c23fd73fbe9671e750f7ad6c0775bcc",
+      "string_fields": [
+        "caData",
+        "d2CustsecrCount",
+        "d2CustsecrPass",
+        "d2CustsecrState",
+        "d2RequestId",
+        "emCusnum",
+        "emDate",
+        "emSqlreq",
+        "emTime",
+        "wsDate",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgacus01DfhcommareaDto.java": {
       "calls": [],
@@ -820,7 +1586,18 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "c80739adc9422c0d236ee5f02dd44b2d75fdd1edf638b47399042d966d6043ce"
+      "sha256": "c80739adc9422c0d236ee5f02dd44b2d75fdd1edf638b47399042d966d6043ce",
+      "string_fields": [
+        "caData",
+        "emDate",
+        "emTime",
+        "emVariable",
+        "lgacdb01",
+        "wsDate",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgacvs01DfhcommareaDto.java": {
       "calls": [],
@@ -846,7 +1623,15 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "ac14f11ff9468a1e5b2db487dbaf0495b39501cf58d561674ce37efcb973285a"
+      "sha256": "ac14f11ff9468a1e5b2db487dbaf0495b39501cf58d561674ce37efcb973285a",
+      "string_fields": [
+        "caData",
+        "emCusnum",
+        "emDate",
+        "emTime",
+        "wsDate",
+        "wsTime"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgapdb01DfhcommareaDto.java": {
       "calls": [],
@@ -900,7 +1685,21 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "249ca1884cd631fdc7272763b59fdd8ab543ba94e3b7b829138c31959f6e31f2"
+      "sha256": "249ca1884cd631fdc7272763b59fdd8ab543ba94e3b7b829138c31959f6e31f2",
+      "string_fields": [
+        "caData",
+        "date1",
+        "emCusnum",
+        "emDate",
+        "emPolnum",
+        "emSqlreq",
+        "emTime",
+        "lgapvs01",
+        "time1",
+        "wsTermid",
+        "wsTransid",
+        "wsVaryChar"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgapol01DfhcommareaDto.java": {
       "calls": [],
@@ -927,7 +1726,18 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "41681b33d11a636c284040d1bf6c3c94a924e32a7c46ec77bd3a6589377cc327"
+      "sha256": "41681b33d11a636c284040d1bf6c3c94a924e32a7c46ec77bd3a6589377cc327",
+      "string_fields": [
+        "caData",
+        "date1",
+        "emDate",
+        "emTime",
+        "emVariable",
+        "lgapdb01",
+        "time1",
+        "wsTermid",
+        "wsTransid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgapvs01DfhcommareaDto.java": {
       "calls": [],
@@ -974,7 +1784,33 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "5963d0ebc841e388c487f0764e070f1347b5592256804f1ee08a196ba28f7047"
+      "sha256": "5963d0ebc841e388c487f0764e070f1347b5592256804f1ee08a196ba28f7047",
+      "string_fields": [
+        "caData",
+        "emCusnum",
+        "emDate",
+        "emPolnum",
+        "emTime",
+        "wfBCustomer",
+        "wfBPostcode",
+        "wfCustomerNum",
+        "wfEEquities",
+        "wfEFundName",
+        "wfELifeAssured",
+        "wfEManagedFund",
+        "wfEWithProfits",
+        "wfHHouseName",
+        "wfHPostcode",
+        "wfHPropertyType",
+        "wfMMake",
+        "wfMModel",
+        "wfMRegnumber",
+        "wfPolicyData",
+        "wfPolicyNum",
+        "wfRequestId",
+        "wsDate",
+        "wsTime"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgastat1DfhcommareaDto.java": {
       "calls": [],
@@ -1006,7 +1842,23 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "10ca94329a4c7634719429bc612122eb51400ba8a2c2d3c3e4b198227bb2df27"
+      "sha256": "10ca94329a4c7634719429bc612122eb51400ba8a2c2d3c3e4b198227bb2df27",
+      "string_fields": [
+        "genacounter",
+        "genapool",
+        "genatype",
+        "wsAreaD",
+        "wsAreaT",
+        "wsChanname1",
+        "wsChanname2",
+        "wsDataRc",
+        "wsDataReq",
+        "wsDate",
+        "wsQname",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgdpdb01DfhcommareaDto.java": {
       "calls": [],
@@ -1037,7 +1889,20 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "47b23a40f7b4866adf6161c4ad81ec754dc03660ed0e237b1752ee176e1fbdef"
+      "sha256": "47b23a40f7b4866adf6161c4ad81ec754dc03660ed0e237b1752ee176e1fbdef",
+      "string_fields": [
+        "caData",
+        "emCusnum",
+        "emDate",
+        "emPolnum",
+        "emSqlreq",
+        "emTime",
+        "lgdpvs01",
+        "wsDate",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgdpol01DfhcommareaDto.java": {
       "calls": [],
@@ -1063,7 +1928,18 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "29fba803f4afdd5bde678c6c11160e14dedead1daa5d2242e5a34e2f424ac69e"
+      "sha256": "29fba803f4afdd5bde678c6c11160e14dedead1daa5d2242e5a34e2f424ac69e",
+      "string_fields": [
+        "caData",
+        "emDate",
+        "emTime",
+        "emVariable",
+        "lgdpdb01",
+        "wsDate",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgdpvs01DfhcommareaDto.java": {
       "calls": [],
@@ -1092,7 +1968,19 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "73b3ccb58e0a1ec1f1c644dda2863ab9cb4a7c6d6085f015ee18f256adee4cfc"
+      "sha256": "73b3ccb58e0a1ec1f1c644dda2863ab9cb4a7c6d6085f015ee18f256adee4cfc",
+      "string_fields": [
+        "caData",
+        "emCusnum",
+        "emDate",
+        "emPolnum",
+        "emTime",
+        "wfCustomerNum",
+        "wfPolicyNum",
+        "wfRequestId",
+        "wsDate",
+        "wsTime"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgicdb01DfhcommareaDto.java": {
       "calls": [],
@@ -1121,7 +2009,18 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "e6e78640dde722eeef4a8908d696329cbfa67c1e463770fcad4b5023f9d2d040"
+      "sha256": "e6e78640dde722eeef4a8908d696329cbfa67c1e463770fcad4b5023f9d2d040",
+      "string_fields": [
+        "caData",
+        "emCusnum",
+        "emDate",
+        "emSqlreq",
+        "emTime",
+        "wsDate",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgicus01DfhcommareaDto.java": {
       "calls": [],
@@ -1148,7 +2047,18 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "fa92b3bbde77e35643d723fe310c5f4b3b9b3f87a2d67fa03db12577d6b149ce"
+      "sha256": "fa92b3bbde77e35643d723fe310c5f4b3b9b3f87a2d67fa03db12577d6b149ce",
+      "string_fields": [
+        "caData",
+        "emDate",
+        "emTime",
+        "emVariable",
+        "lgicdb01",
+        "wsDate",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgicvs01DfhcommareaDto.java": {
       "calls": [],
@@ -1189,7 +2099,26 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "aa48e5192b7ad723f84a296d9e6875fd2e84c979a3b65e151923cb80acf39254"
+      "sha256": "aa48e5192b7ad723f84a296d9e6875fd2e84c979a3b65e151923cb80acf39254",
+      "string_fields": [
+        "caCustomerNum",
+        "commaDataH",
+        "readMsgMsg",
+        "stsqName",
+        "writeMsgE",
+        "writeMsgH",
+        "writeMsgL",
+        "writeMsgLow",
+        "wsCommarea",
+        "wsFlag",
+        "wsFlagTsqe",
+        "wsFlagTsqh",
+        "wsFlagTsql",
+        "wsInvokeprog",
+        "wsRecvData",
+        "wsStartcode",
+        "wsSysid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgipdb01DfhcommareaDto.java": {
       "calls": [],
@@ -1250,7 +2179,21 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "43604a96ee6351a31539a17dfb276cd77f2ccae4060b8f406662b885b024b03f"
+      "sha256": "43604a96ee6351a31539a17dfb276cd77f2ccae4060b8f406662b885b024b03f",
+      "string_fields": [
+        "caData",
+        "date1",
+        "emCusnum",
+        "emDate",
+        "emPolnum",
+        "emSqlreq",
+        "emTime",
+        "icomRecord",
+        "time1",
+        "wsRequestId",
+        "wsTermid",
+        "wsTransid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgipol01DfhcommareaDto.java": {
       "calls": [],
@@ -1275,7 +2218,18 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "95cc094080aad928f08635e3cf52f21ae0fdaf90cb7f7f22671988b143ffa604"
+      "sha256": "95cc094080aad928f08635e3cf52f21ae0fdaf90cb7f7f22671988b143ffa604",
+      "string_fields": [
+        "caData",
+        "date1",
+        "emDate",
+        "emTime",
+        "emVariable",
+        "lgipdb01",
+        "time1",
+        "wsTermid",
+        "wsTransid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgipvs01DfhcommareaDto.java": {
       "calls": [],
@@ -1306,7 +2260,20 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "9bb3bf7dbcc5f79a76b0b520c46c23c7a59f2aeef97ad41c505138f78b1ade92"
+      "sha256": "9bb3bf7dbcc5f79a76b0b520c46c23c7a59f2aeef97ad41c505138f78b1ade92",
+      "string_fields": [
+        "caPolicyType",
+        "commaDataKey",
+        "commaDataText",
+        "partKeyType",
+        "writeMsgText",
+        "wsCommarea",
+        "wsFlag",
+        "wsInvokeprog",
+        "wsRecvData",
+        "wsStartcode",
+        "wsSysid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/LgsetupDfhcommareaDto.java": {
       "calls": [],
@@ -1372,7 +2339,55 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "8e343141de29be70d6ba0be71e055299d8df0834b9110efb4e3d70f8a8005996"
+      "sha256": "8e343141de29be70d6ba0be71e055299d8df0834b9110efb4e3d70f8a8005996",
+      "string_fields": [
+        "genacnt100",
+        "genacnt199",
+        "genacnt200",
+        "genacnt299",
+        "genacnt300",
+        "genacnt399",
+        "genacnt400",
+        "genacnt499",
+        "genacnt500",
+        "genacnt599",
+        "genacnt600",
+        "genacnt699",
+        "genacnt700",
+        "genacnt799",
+        "genacnt800",
+        "genacnt899",
+        "genacnt900",
+        "genacnt999",
+        "genacnta00",
+        "genacnta99",
+        "genacntb00",
+        "genacntb99",
+        "genacntc00",
+        "genacntc99",
+        "genacntd00",
+        "genacntd99",
+        "genacnte00",
+        "genacnte99",
+        "genacntf00",
+        "genacntf99",
+        "genacntg00",
+        "genacntg99",
+        "genacnth00",
+        "genacnth99",
+        "genacnti00",
+        "genacnti99",
+        "genacount",
+        "genapool",
+        "stsqErrs",
+        "stsqName",
+        "stsqStat",
+        "stsqStrt",
+        "writeMsgE",
+        "writeMsgH",
+        "writeMsgL",
+        "wsRecvData"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/LgstsqDfhcommareaDto.java": {
       "calls": [],
@@ -1399,7 +2414,21 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "f3c6e8ddf613d4e0429e19f741a00c2199cbab4bf719544a8f045b0e58053ff7"
+      "sha256": "f3c6e8ddf613d4e0429e19f741a00c2199cbab4bf719544a8f045b0e58053ff7",
+      "string_fields": [
+        "commaData",
+        "fillerX",
+        "stdqName",
+        "stsqExt",
+        "stsqName",
+        "tempo",
+        "writeMsgMsg",
+        "writeMsgRest",
+        "writeMsgSysid",
+        "wsFlag",
+        "wsInvokeprog",
+        "wsRecvData"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgucdb01DfhcommareaDto.java": {
       "calls": [],
@@ -1428,7 +2457,20 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "9deb4c52fa1c6d0d1ac078e9ba2ea10255c6ee4ca62d23eb5bbd399a9c5c7e90"
+      "sha256": "9deb4c52fa1c6d0d1ac078e9ba2ea10255c6ee4ca62d23eb5bbd399a9c5c7e90",
+      "string_fields": [
+        "caData",
+        "emCusnum",
+        "emDate",
+        "emSqlreq",
+        "emTime",
+        "lgucvs01",
+        "wsDate",
+        "wsRetry",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgucus01DfhcommareaDto.java": {
       "calls": [],
@@ -1453,7 +2495,18 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "4ca71810d3b20677e5286d7a193aa73d3284e3252407f3ab5da45f924e2881c7"
+      "sha256": "4ca71810d3b20677e5286d7a193aa73d3284e3252407f3ab5da45f924e2881c7",
+      "string_fields": [
+        "caData",
+        "emDate",
+        "emTime",
+        "emVariable",
+        "lgucdb01",
+        "wsDate",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgucvs01DfhcommareaDto.java": {
       "calls": [],
@@ -1480,7 +2533,16 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "a6ec402b620409841358aacf3d21c102d6cf11592ca3f4efaea233de3d778bb0"
+      "sha256": "a6ec402b620409841358aacf3d21c102d6cf11592ca3f4efaea233de3d778bb0",
+      "string_fields": [
+        "caData",
+        "emCusnum",
+        "emDate",
+        "emTime",
+        "wsCustomerArea",
+        "wsDate",
+        "wsTime"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgupdb01DfhcommareaDto.java": {
       "calls": [],
@@ -1524,7 +2586,21 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "2942fd6c71a3cc35ccc6067892f155702557ab6b7cfdd384c7b9b3a713a5d17c"
+      "sha256": "2942fd6c71a3cc35ccc6067892f155702557ab6b7cfdd384c7b9b3a713a5d17c",
+      "string_fields": [
+        "caData",
+        "emCusnum",
+        "emDate",
+        "emPolnum",
+        "emSqlreq",
+        "emTime",
+        "lgupvs01",
+        "wsDate",
+        "wsRetry",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgupol01DfhcommareaDto.java": {
       "calls": [],
@@ -1554,7 +2630,18 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "ae8442ffd0c47df59a4ed19a304bb962ed9d003aef1c8072f16842e0b6bd6250"
+      "sha256": "ae8442ffd0c47df59a4ed19a304bb962ed9d003aef1c8072f16842e0b6bd6250",
+      "string_fields": [
+        "caData",
+        "emDate",
+        "emTime",
+        "emVariable",
+        "lgupdb01",
+        "wsDate",
+        "wsTermid",
+        "wsTime",
+        "wsTransid"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgupvs01DfhcommareaDto.java": {
       "calls": [],
@@ -1603,7 +2690,34 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "71ccd5595b13a3b38c6f3ff78df2f6b503ea0cee861ce4984be0b21a1925ef93"
+      "sha256": "71ccd5595b13a3b38c6f3ff78df2f6b503ea0cee861ce4984be0b21a1925ef93",
+      "string_fields": [
+        "caData",
+        "emCusnum",
+        "emDate",
+        "emPolnum",
+        "emTime",
+        "wfBCustomer",
+        "wfBPostcode",
+        "wfCustomerNum",
+        "wfEEquities",
+        "wfEFundName",
+        "wfELifeAssured",
+        "wfEManagedFund",
+        "wfEWithProfits",
+        "wfHHouseName",
+        "wfHPostcode",
+        "wfHPropertyType",
+        "wfMMake",
+        "wfMModel",
+        "wfMRegnumber",
+        "wfPolicyData",
+        "wfPolicyNum",
+        "wfRequestId",
+        "wsDate",
+        "wsFilein",
+        "wsTime"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/Lgwebst5DfhcommareaDto.java": {
       "calls": [],
@@ -1764,26 +2878,109 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "74183c8a1452bef5da1ae2858c8bf2c2a56e11a36a7473602143b982b6698b9c"
+      "sha256": "74183c8a1452bef5da1ae2858c8bf2c2a56e11a36a7473602143b982b6698b9c",
+      "string_fields": [
+        "genacnt100",
+        "genacnt199",
+        "genacnt200",
+        "genacnt299",
+        "genacnt300",
+        "genacnt399",
+        "genacnt400",
+        "genacnt499",
+        "genacnt500",
+        "genacnt599",
+        "genacnt600",
+        "genacnt699",
+        "genacnt700",
+        "genacnt799",
+        "genacnt800",
+        "genacnt899",
+        "genacnt900",
+        "genacnt999",
+        "genacnta00",
+        "genacnta99",
+        "genacntb00",
+        "genacntb99",
+        "genacntc00",
+        "genacntc99",
+        "genacntd00",
+        "genacntd99",
+        "genacnte00",
+        "genacnte99",
+        "genacntf00",
+        "genacntf99",
+        "genacntg00",
+        "genacntg99",
+        "genacnth00",
+        "genacnth99",
+        "genacnti99",
+        "genacount",
+        "genapool",
+        "s1",
+        "s11",
+        "s13",
+        "s15",
+        "s17",
+        "s19",
+        "s21",
+        "s23",
+        "s25",
+        "s27",
+        "s29",
+        "s3",
+        "s31",
+        "s33",
+        "s35",
+        "s5",
+        "s7",
+        "s9",
+        "tsqpre",
+        "wsApplid",
+        "wsDate",
+        "wsHh",
+        "wsMm",
+        "wsNewv",
+        "wsOldvhh",
+        "wsOldvmm",
+        "wsOldvss",
+        "wsSs",
+        "wsTermid",
+        "wsTime",
+        "wsTransid",
+        "wsTsqdata",
+        "wsTsqname"
+      ]
     },
-    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01CaErrorMsg.java": {
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Dfhcommarea.java": {
       "calls": [],
       "classes": [
-        "Lgacdb01CaErrorMsg"
+        "Lgacdb01Dfhcommarea"
       ],
       "endpoints": [],
       "fields": [
-        "caData"
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "3eea4ffe0d65ae1731cdcb61ba05faed99e23b3e8cb17ba30079ab33dbde23a0"
+      "sha256": "a74ab5cba06cb71081913107282ad085f00525ddeb80e663ec1bb9b708aa0601",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
-    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Cdb2area.java": {
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb02Dfhcommarea.java": {
       "calls": [],
       "classes": [
-        "Lgacdb01Cdb2area"
+        "Lgacdb02Dfhcommarea"
       ],
       "endpoints": [],
       "fields": [
@@ -1798,7 +2995,14 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "bb630c6cfb03be30f85fa1fd56693d780d02cd2a95b773a2290fe76ffedee668"
+      "sha256": "d6db4aeda9440bf3d90fb958dec55c6ef15afe8ffbf906111aa22f49445d2ce9",
+      "string_fields": [
+        "d2CustsecrCount",
+        "d2CustsecrData",
+        "d2CustsecrPass",
+        "d2CustsecrState",
+        "d2RequestId"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacus01Dfhcommarea.java": {
       "calls": [],
@@ -1813,9 +3017,17 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "7f6f8c09c5ced1ed23de946586ea2c7ea919b427a1cba5c52e6b512cba45cd12"
+      "sha256": "b1686c383d55195a0f9197a46a20fcd7c8b757c202c237dfdffa427e8d6e150d",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacvs01Dfhcommarea.java": {
       "calls": [],
@@ -1830,9 +3042,42 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "ced7415c3faed73929293e691172fc82d56dc76968db24cfd0de8a2116667a4d"
+      "sha256": "62928109f304d48b748a22329f6f11a20a1c5ddd725172afefb4e0f02e796501",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgapdb01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgapdb01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
+      "program": null,
+      "sha256": "bfb3676265d26ca4ce366aa8f00c1a0ced35f264b86582b48e65ca9f0c23c1eb",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgapol01Dfhcommarea.java": {
       "calls": [],
@@ -1847,9 +3092,17 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "ea0a8e3ff2d728bccce8e59c0410856623bf30b65d7f628609fd96521751b93e"
+      "sha256": "e893290355352cf27392a0dc68e2852ae585f14e163bc93021c0a8de2788aeb3",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgapvs01Dfhcommarea.java": {
       "calls": [],
@@ -1864,9 +3117,17 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "3e1601f2431d01b8ca401bbdc2ec3dba70514346e2bc0271d22921bc7f90b075"
+      "sha256": "449a2e28082d36ab21f501cf80f9264929ad25ee86a1c4077768d56b586b3ce1",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgastat1ChannelIn.java": {
       "calls": [],
@@ -1898,7 +3159,11 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "fecc3f5c6098d7526b7629c28d69f195c440a25e536e0eff8d6f31f8c72bf47a"
+      "sha256": "34e4de042c7e3ace531028e0eb8593ee7c5788e3f43cda33dd640074d817a4a2",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgastat1WsDataRc.java": {
       "calls": [],
@@ -1912,7 +3177,10 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "2adfeea936760a86868a9de8fafa9fd65da7bf8b2b1c419b24cd9974ce77db17"
+      "sha256": "8394d599b1aa2bbd0ad16d34591b5d6a60267f0760d2b3134b94555835118bb0",
+      "string_fields": [
+        "wsDataRc"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgastat1WsDataReq.java": {
       "calls": [],
@@ -1926,7 +3194,35 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "b533b05af9e6052d69f451a17d146ebe7c2dcee66ab7f173f02468a8d98c4dac"
+      "sha256": "4b5c576896cace3a4d67d100b6e08c50aafb8dc4c1fce29e7e62a0de3f53367d",
+      "string_fields": [
+        "wsDataReq"
+      ]
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgdpdb01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgdpdb01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
+      "program": null,
+      "sha256": "117c2a8a46823644ded99fcb540ef5b7eccc066a6de0a93ad4d92860f02cfc04",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgdpol01Dfhcommarea.java": {
       "calls": [],
@@ -1941,9 +3237,17 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "b9e323492dd7839b01dfdb232947cc634a0b048cc36b5a5919d0970b955fff9a"
+      "sha256": "2e6e99c0bcb7da71089cad0289b2ca5f311377f2dc762aecb15667cc7b030ab8",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgdpvs01Dfhcommarea.java": {
       "calls": [],
@@ -1958,9 +3262,42 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "97d5332bf5f8f3463847202ae9f98fd6f8c27e3df2f402d05b1607ca819d3927"
+      "sha256": "574bb4d2c77c03a671c2867dada3a085f21525661bedd2739703da613af159ed",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgicdb01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgicdb01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
+      "program": null,
+      "sha256": "bcf51ec36f13ca5f1e1bed71f23cd629fe970d133b9d0f4f5b34542c355dcbf3",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgicus01Dfhcommarea.java": {
       "calls": [],
@@ -1975,9 +3312,17 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "b30de488b9727adc3028f3925c40efe7e6bca068d4d60e907864340c949d5d07"
+      "sha256": "cf6be1b6938f82e2ec37f06bd44aaeea67922f8b4110781c87cd3b474a440f6f",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgicvs01Dfhcommarea.java": {
       "calls": [],
@@ -1992,7 +3337,35 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "71496c63eb2da0655e501905cad7e8bdde6ad0b17299bda26429c3994417c134"
+      "sha256": "4469ef2620b6a3ba20a266194c75007f95236588e58f959733d06b277064ebc4",
+      "string_fields": [
+        "commaDataH"
+      ]
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgipdb01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgipdb01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
+      "program": null,
+      "sha256": "a35366c8587209daed79d14118d7a912c92c0862cb28e3dbf3750f2752c0cbdb",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgipol01Dfhcommarea.java": {
       "calls": [],
@@ -2007,9 +3380,17 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "9f9f4253d3b88205806ee1c75efce6593b6044b23512291118a1b60a7fef0f2e"
+      "sha256": "07072c3366bb693adb0886b06bd1f18f18f6134427fbd858a75b0a7d37179aed",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgipvs01Dfhcommarea.java": {
       "calls": [],
@@ -2024,7 +3405,11 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "ce1176aafab96e66fee1aee54d22f54fc13686b8e039f5c16ee7de4ed65e09c1"
+      "sha256": "2670a8b0eff6b2361194a042bf9b8bfb76301b5edd00b2701ca52f0293443688",
+      "string_fields": [
+        "commaDataKey",
+        "commaDataText"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/LgsetupDfhcommarea.java": {
       "calls": [],
@@ -2039,7 +3424,27 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "c9483cc9bda29ac11b6a606ccf6007ac247f59153b58163aa418768ee915843a"
+      "sha256": "3f3502924b727f6d3283f3fdea65137875c929640ba03e5c4524e80797a29509",
+      "string_fields": [
+        "commaDataH"
+      ]
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/LgstsqDfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "LgstsqDfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caData"
+      ],
+      "kind": "data",
+      "methods": [],
+      "program": null,
+      "sha256": "185e09dbd52be6ac62eb52787ec4eaa191d3041670bd5a47ee17486bee94d555",
+      "string_fields": [
+        "caData"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgtestc1CommArea.java": {
       "calls": [],
@@ -2054,9 +3459,17 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "81dfc308ec2fbdd01fe59d8c89c47e105559487f5190ba34a26ddd6fc4f2cee4"
+      "sha256": "dc8a6c5f9b73c5cafe20e6b3496a4f54dc3cdee61b6556754e1a13e5d4fa094f",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgtestp1CommArea.java": {
       "calls": [],
@@ -2071,9 +3484,17 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "5103551f0a5e82237e65fcb7eab5d678f6847c969366688d89a2e7addebb80b4"
+      "sha256": "3b165472936a2bbe97b6ecfb0260828b8d53529f09591821d2e4fd91e51e8e1a",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgtestp2CommArea.java": {
       "calls": [],
@@ -2088,9 +3509,17 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "6c2a461c4dd3631ca0449576e0d6241417c583062a069fa08cc73d60b7289651"
+      "sha256": "59d4deb61917b9209222b15388e934649341e08e00b5b14fcf8d24a2a64a4d60",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgtestp3CommArea.java": {
       "calls": [],
@@ -2105,9 +3534,17 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "be0fafeee23179a7ab27b02223b3954af62f24b04eafc5b144e7eb81ed7385e0"
+      "sha256": "e68dd3be01941b976660b36b0add3ae66c9e3ac09eda8979663ec5518babd6cf",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgtestp4CommArea.java": {
       "calls": [],
@@ -2122,9 +3559,42 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "3224ba1385648c7efc91a194dc76c3ffa5e5ce171057924b136951e167391346"
+      "sha256": "ca5e1c5bc529bca6157c4780de06bcae152b86fee07393e2d22bc3b65d5cefc8",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgucdb01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgucdb01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
+      "program": null,
+      "sha256": "094ee32b2bb4b7ae270758900d141b1da316513c4cfc42bae63b8302d41da1d0",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgucus01Dfhcommarea.java": {
       "calls": [],
@@ -2139,9 +3609,17 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "143b25e99cd5214d676c9cb9dd7bb7ae38e38cd3245989cc023e581f9df2c6fb"
+      "sha256": "31d87627b81378286c5ae1072e0677e520eff9d54ad5cd055fddb85f056e510b",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgucvs01Dfhcommarea.java": {
       "calls": [],
@@ -2156,9 +3634,42 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "08d5d775170090b5e936f8d13adb6174d3891e8c54c15934152046dcf92fa5b9"
+      "sha256": "34ff333eb6ad2aa62f5541dcb9305014171fb6dd2484eeaaab52a6b3a7658282",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
+    },
+    "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgupdb01Dfhcommarea.java": {
+      "calls": [],
+      "classes": [
+        "Lgupdb01Dfhcommarea"
+      ],
+      "endpoints": [],
+      "fields": [
+        "caCustomerNum",
+        "caRequestId",
+        "caRequestSpecific",
+        "caReturnCode"
+      ],
+      "kind": "data",
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
+      "program": null,
+      "sha256": "58789b56026722bd5fc385e2f441b97212521945bacf73e0cc465178a79497cb",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgupol01Dfhcommarea.java": {
       "calls": [],
@@ -2173,9 +3684,17 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "2a0e1b3e43a7e683f735b6e7d6115776c7c017b4eb7e972dbb5cd90efeac294c"
+      "sha256": "dc207bd2e5096909c83d1c112e65c8b5c01e6f3fcef972f7e9ee5cdf4d2d0f60",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgupvs01Dfhcommarea.java": {
       "calls": [],
@@ -2190,9 +3709,17 @@
         "caReturnCode"
       ],
       "kind": "data",
-      "methods": [],
+      "methods": [
+        "fromCommarea",
+        "toCommarea",
+        "unset"
+      ],
       "program": null,
-      "sha256": "0d78dce58881ba670facfc69a62bfda02d56ff7fc674c23015a844a12cb66938"
+      "sha256": "874c60574e88321d207ed217a3b359ed0f31f4cb1708290c8acf9821ae264faa",
+      "string_fields": [
+        "caRequestId",
+        "caRequestSpecific"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgwebst5Dfhcommarea.java": {
       "calls": [],
@@ -2207,7 +3734,10 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "54cefd2db99182b90456775f1246dcc85fba4173015a5d0085980cc91dd8a8b2"
+      "sha256": "469520b97a8bb7939c3591f55bab96957613404d1884923db89e5c383afb0105",
+      "string_fields": [
+        "commaDataH"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/ScreenCell.java": {
       "calls": [],
@@ -2228,7 +3758,12 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "cc52815f5afec0d00d2e282a2c23eaaa091f9fcd3a03b25e35a667d131d32039"
+      "sha256": "cc52815f5afec0d00d2e282a2c23eaaa091f9fcd3a03b25e35a667d131d32039",
+      "string_fields": [
+        "css",
+        "key",
+        "text"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/ScreenField.java": {
       "calls": [],
@@ -2244,6 +3779,7 @@
         "dark",
         "initial",
         "input",
+        "justify",
         "length",
         "line",
         "name",
@@ -2253,7 +3789,13 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "35924b5ea45c4896c9ac24136d515692d5fb7540894d5cf49ddabfbd9bf9eede"
+      "sha256": "d3de75d6d06db1858d36511cd84c88d01bd09b4286801782621efd4c68b4a25c",
+      "string_fields": [
+        "color",
+        "initial",
+        "justify",
+        "name"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/ScreenModel.java": {
       "calls": [],
@@ -2267,7 +3809,7 @@
         "screenCells"
       ],
       "program": null,
-      "sha256": "ecdcbf6f402177329cb2f77fc7ad19edaac738c09c36f5bbac20c3284c8b9d98"
+      "sha256": "3c97f832703290895ca626ddf1b229fa8fd851125d02acd229a0294ac77a6fc5"
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/Ssmapc1Screen.java": {
       "calls": [],
@@ -2298,7 +3840,21 @@
         "screenValues"
       ],
       "program": null,
-      "sha256": "b92397af8f78803819bf71306cd85b6f0cbcd633690b9230d9492791b92d7ceb"
+      "sha256": "4457aa90ddc28c3df0b57df44ee7d5e2de82f37a642495ed0a4a7a9a5a092715",
+      "string_fields": [
+        "ent1cno",
+        "ent1dob",
+        "ent1fna",
+        "ent1hmo",
+        "ent1hnm",
+        "ent1hno",
+        "ent1hp1",
+        "ent1hp2",
+        "ent1hpc",
+        "ent1lna",
+        "ent1opt",
+        "errfld"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/Ssmapp1Screen.java": {
       "calls": [],
@@ -2332,7 +3888,24 @@
         "screenValues"
       ],
       "program": null,
-      "sha256": "e60fa47d7eda60e1a1c9eaf8a3d004c6deb9a93bdede2c3ef18a92c4978811d5"
+      "sha256": "055ae6deafec6eacd08f08258e7355d789ea958e2094caa94c59258fcb402558",
+      "string_fields": [
+        "enp1acc",
+        "enp1cc",
+        "enp1cmk",
+        "enp1cmo",
+        "enp1cno",
+        "enp1col",
+        "enp1eda",
+        "enp1ida",
+        "enp1man",
+        "enp1opt",
+        "enp1pno",
+        "enp1pre",
+        "enp1reg",
+        "enp1val",
+        "erp1fld"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/Ssmapp2Screen.java": {
       "calls": [],
@@ -2364,7 +3937,22 @@
         "screenValues"
       ],
       "program": null,
-      "sha256": "a527564c4c88b1653037eabfee3d3bf837ca8fa9d5ea6e1f78e2bce1a7f7bfa0"
+      "sha256": "d1ad7fb0cdb5062dcb4d75b4bda40181b4ea952f262d6b377a5cb88b44be3dc6",
+      "string_fields": [
+        "enp2cno",
+        "enp2eda",
+        "enp2equ",
+        "enp2fnm",
+        "enp2ida",
+        "enp2lif",
+        "enp2man",
+        "enp2opt",
+        "enp2pno",
+        "enp2sum",
+        "enp2ter",
+        "enp2wpr",
+        "erp2fld"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/Ssmapp3Screen.java": {
       "calls": [],
@@ -2395,7 +3983,21 @@
         "screenValues"
       ],
       "program": null,
-      "sha256": "9083e45bea5a1a82b8aa2ed3f4dd5431eb6facf2524c3a0847d116f934116c5e"
+      "sha256": "ca788eac5e6565decfc66870c8c4d561cbf1148366ea2078876fd54fd2b2462a",
+      "string_fields": [
+        "enp3bed",
+        "enp3cno",
+        "enp3eda",
+        "enp3hnm",
+        "enp3hno",
+        "enp3hpc",
+        "enp3ida",
+        "enp3opt",
+        "enp3pno",
+        "enp3typ",
+        "enp3val",
+        "erp3fld"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/dto/screen/Ssmapp4Screen.java": {
       "calls": [],
@@ -2436,7 +4038,31 @@
         "screenValues"
       ],
       "program": null,
-      "sha256": "aeb793ccedfa1845bad83b9974ae60c195ee804e5ada254526d48103f67b7973"
+      "sha256": "f05d4c0105c838efb183fc51f9ef1eb9b7c2a3978d8c07a91513cc11e6d226b1",
+      "string_fields": [
+        "enp4add",
+        "enp4cno",
+        "enp4cpe",
+        "enp4cpr",
+        "enp4cus",
+        "enp4eda",
+        "enp4fpe",
+        "enp4fpr",
+        "enp4hpc",
+        "enp4ida",
+        "enp4lat",
+        "enp4lon",
+        "enp4opt",
+        "enp4pno",
+        "enp4pty",
+        "enp4rej",
+        "enp4sta",
+        "enp4wpe",
+        "enp4wpr",
+        "enp4xpe",
+        "enp4xpr",
+        "erp4fld"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/entity/Lgtestc1CommArea.java": {
       "calls": [],
@@ -2462,7 +4088,16 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "ee9ba7b4d7f03a8e520a7a6883d7152dc6444765ac44b16ef3f263936a664276"
+      "sha256": "9f707a8ae67b19a3df919450d91441cfa4de95a43c0675d15eff8ed2163e76fe",
+      "string_fields": [
+        "msgend",
+        "readMsgMsg",
+        "stsqName",
+        "writeMsgE",
+        "writeMsgH",
+        "writeMsgL",
+        "wsFlagTsqh"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/entity/Lgtestp1CommArea.java": {
       "calls": [],
@@ -2477,7 +4112,10 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "8406432f5c3e60e0a6af5065b9f765cf14e57a893ad779083f42a5b7552ee767"
+      "sha256": "59bbf32734758b5d86ac74b5dbb42f716468cbadf0f572f78d47ad83463730a9",
+      "string_fields": [
+        "msgend"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/entity/Lgtestp2CommArea.java": {
       "calls": [],
@@ -2492,7 +4130,10 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "c127b55fdad83f7bc72e785691c03d0568498e26ba5f9e7e0b341a7394ad2dbd"
+      "sha256": "037adbd266a4d999bbdd2eac4dafe936f6c88ef7a78a3513e708bfb43b4290f4",
+      "string_fields": [
+        "msgend"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/entity/Lgtestp3CommArea.java": {
       "calls": [],
@@ -2507,7 +4148,10 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "2c2cf90c7c4af489cbc5f1d592f4fac42f31f346496ee41af31267ddc28ef793"
+      "sha256": "0c9be0ff7f1cefef8154c8c45324389ca66677e36e2454c1836d9b8392ff1686",
+      "string_fields": [
+        "msgend"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/entity/Lgtestp4CommArea.java": {
       "calls": [],
@@ -2522,7 +4166,10 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "1effac95e446bc0456350fc8f87613416b481506ac62a6eb33f4885e123ed696"
+      "sha256": "61175d1424e7d16454047f0e48df016ac577cd7fac76048b6809eb42635d4411",
+      "string_fields": [
+        "msgend"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/entity/vsam/CaCustomerNum.java": {
       "calls": [],
@@ -2531,7 +4178,18 @@
       ],
       "endpoints": [],
       "fields": [
-        "caCustomerNum"
+        "caCustomerNum",
+        "caDob",
+        "caEmailAddress",
+        "caFirstName",
+        "caHouseName",
+        "caHouseNum",
+        "caLastName",
+        "caNumPolicies",
+        "caPhoneHome",
+        "caPhoneMobile",
+        "caPostcode",
+        "vsamRecord"
       ],
       "kind": "data",
       "methods": [
@@ -2539,7 +4197,34 @@
         "toRecord"
       ],
       "program": null,
-      "sha256": "eaec14833133c31c991dbf22d1dba4c910a1aebf3ebdf8c527dd1dc30ca5389e"
+      "sha256": "4fd97a936044581d5cde21445514a109dec3d75f34e4eedccd1f4f17d80c76d0",
+      "string_fields": [
+        "caDob",
+        "caEmailAddress",
+        "caFirstName",
+        "caHouseName",
+        "caHouseNum",
+        "caLastName",
+        "caPhoneHome",
+        "caPhoneMobile",
+        "caPostcode"
+      ]
+    },
+    "src/main/java/com/gitgalaxy/modernized/entity/vsam/CobolEdit.java": {
+      "calls": [],
+      "classes": [
+        "CobolEdit"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "data",
+      "methods": [
+        "CobolEdit",
+        "expand",
+        "format"
+      ],
+      "program": null,
+      "sha256": "26a165000f1e072347bf20925e5c87b0b5e22b26badb1296137fafb6653fc09d"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/vsam/CobolRecords.java": {
       "calls": [],
@@ -2553,19 +4238,35 @@
         "CobolRecords",
         "binary",
         "blank",
+        "charset",
         "decimal",
+        "fit",
+        "isAsciiDigits",
+        "logical",
+        "mirrored",
+        "numval",
         "packed",
         "putBinary",
         "putPacked",
         "putText",
         "putZoned",
+        "putZonedSeparate",
+        "reorder",
+        "reversed",
+        "sortKey",
         "text",
+        "toDouble",
         "toInteger",
         "toLong",
-        "zoned"
+        "toString",
+        "visual",
+        "visualOrder",
+        "width",
+        "zoned",
+        "zonedSeparate"
       ],
       "program": null,
-      "sha256": "37857cebd409c1c2c7e5cbbe1745f5f093a6efbfc38d068a0b541b55ce5712e9"
+      "sha256": "1abb1db62f43349850da2e2f1f52a13b763ea5105e2be7f1f9d36deb3da80654"
     },
     "src/main/java/com/gitgalaxy/modernized/entity/vsam/WfPolicyInfo.java": {
       "calls": [],
@@ -2575,6 +4276,7 @@
       "endpoints": [],
       "fields": [
         "id",
+        "vsamRecord",
         "wfPolicyData"
       ],
       "kind": "data",
@@ -2583,7 +4285,10 @@
         "toRecord"
       ],
       "program": null,
-      "sha256": "cd9b636a4fb13f1166b1e6e1c7b922c7b0074ac097b4a8d371576432401117c5"
+      "sha256": "903c5672b0bd034a29ed9633506f19e5cc5bef4870758928d7d0291904786a26",
+      "string_fields": [
+        "wfPolicyData"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/entity/vsam/WfPolicyInfoKey.java": {
       "calls": [],
@@ -2599,7 +4304,12 @@
       "kind": "data",
       "methods": [],
       "program": null,
-      "sha256": "44967b43b447a6cb9682d2d091dd631688fd0644c681805cdfb20d1cb8981122"
+      "sha256": "1f5887ccc9805e93b5da2ae7d0ee960029de5816df6b63f72cee933778329be6",
+      "string_fields": [
+        "wfCustomerNum",
+        "wfPolicyNum",
+        "wfRequestId"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/exception/CicsAbendException.java": {
       "calls": [],
@@ -2620,7 +4330,12 @@
         "getSite"
       ],
       "program": null,
-      "sha256": "126f9662ac70b228a95d0f90ebc998f8d08db25cb482f89a941f956b3cdeb9f1"
+      "sha256": "126f9662ac70b228a95d0f90ebc998f8d08db25cb482f89a941f956b3cdeb9f1",
+      "string_fields": [
+        "abcode",
+        "program",
+        "site"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/exception/CicsConditionException.java": {
       "calls": [],
@@ -2641,7 +4356,12 @@
         "getSite"
       ],
       "program": null,
-      "sha256": "dec8e70398538814aba34064363078caa32efd4b0a189ede8be477b1879c1707"
+      "sha256": "dec8e70398538814aba34064363078caa32efd4b0a189ede8be477b1879c1707",
+      "string_fields": [
+        "condition",
+        "program",
+        "site"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/exception/UnitOfWorkRollbackException.java": {
       "calls": [],
@@ -2660,7 +4380,11 @@
         "getSite"
       ],
       "program": null,
-      "sha256": "90ab6569dee4e720b2300136a7a86395a93b3080e250a99284e273ab92ae852b"
+      "sha256": "90ab6569dee4e720b2300136a7a86395a93b3080e250a99284e273ab92ae852b",
+      "string_fields": [
+        "program",
+        "site"
+      ]
     },
     "src/main/java/com/gitgalaxy/modernized/messaging/InMemoryTempStorage.java": {
       "calls": [],
@@ -2687,10 +4411,12 @@
     "src/main/java/com/gitgalaxy/modernized/messaging/RoutingTransientData.java": {
       "calls": [],
       "classes": [
-        "RoutingTransientData"
+        "RoutingTransientData",
+        "TdCondition"
       ],
       "endpoints": [],
       "fields": [
+        "cursor",
         "directory"
       ],
       "kind": "other",
@@ -2698,11 +4424,13 @@
         "RoutingTransientData",
         "append",
         "delete",
+        "nextRecord",
         "read",
+        "resolve",
         "write"
       ],
       "program": null,
-      "sha256": "2dee3ca9f4918fec43d0461c2327d2bc6e4fe4d10c4b7a67102514f1cdbc3ea5"
+      "sha256": "a5d5759b2697eff2586117d1897ce7a44b0e02e192aec7f8ec975cb303870a1d"
     },
     "src/main/java/com/gitgalaxy/modernized/messaging/TempStorage.java": {
       "calls": [],
@@ -2785,6 +4513,50 @@
       ],
       "program": null,
       "sha256": "5e2318e77209fadcd249354432d0bdb42c11e441bb526a4696257a545e983ac2"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/db2/Db2Dates.java": {
+      "calls": [],
+      "classes": [
+        "Db2Dates"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "repository",
+      "methods": [
+        "Db2Dates",
+        "date",
+        "digits",
+        "need",
+        "parseDate",
+        "parseTime",
+        "parseTimestamp",
+        "strict",
+        "time",
+        "timestamp",
+        "toDate",
+        "toTime",
+        "toTimestamp"
+      ],
+      "program": null,
+      "sha256": "c7af521b9fbd6df94a487152d34bc4b134dfe39da23cad3c72cc4c34a7c9a0cd"
+    },
+    "src/main/java/com/gitgalaxy/modernized/repository/db2/Db2ValuesRepository.java": {
+      "calls": [],
+      "classes": [
+        "Db2ValuesRepository"
+      ],
+      "endpoints": [],
+      "fields": [
+        "jdbc"
+      ],
+      "kind": "repository",
+      "methods": [
+        "Db2ValuesRepository",
+        "setL280Lgacdb01",
+        "setL308Lgapdb01"
+      ],
+      "program": null,
+      "sha256": "6c95220ae59cb146eb0979a82e78e95de321fe7b779881464892b963fc4a7d94"
     },
     "src/main/java/com/gitgalaxy/modernized/repository/db2/EndowmentRepository.java": {
       "calls": [],
@@ -2871,7 +4643,7 @@
         "updateL318Lgupdb01"
       ],
       "program": null,
-      "sha256": "fe3da1bf5bae94d6ae39ecc7f3c9675bede9237e1025cd9aed314df48d8241c0"
+      "sha256": "f0151262590b6d72553690a14b37a041de5bb3f5e48c0b3c70056d8b05afdfc9"
     },
     "src/main/java/com/gitgalaxy/modernized/repository/vsam/CaCustomerNumRepository.java": {
       "calls": [
@@ -2904,9 +4676,8 @@
     "src/main/java/com/gitgalaxy/modernized/service/Lgacdb01Service.java": {
       "calls": [
         "CustomerRepository",
+        "Db2ValuesRepository",
         "Dor1RemoteClient",
-        "Lgacdb02Service",
-        "Lgacvs01Service",
         "LgstsqService"
       ],
       "classes": [
@@ -2915,9 +4686,9 @@
       "endpoints": [],
       "fields": [
         "customerRepository",
+        "db2ValuesRepository",
         "dor1RemoteClient",
-        "lgacdb02Service",
-        "lgacvs01Service",
+        "lastLinkBytes",
         "lgstsqService"
       ],
       "kind": "service",
@@ -2925,15 +4696,15 @@
         "abendLgcaL152",
         "dispatchLgacdb02L186",
         "dispatchLgacvs01L174",
-        "executeLgacdb01",
         "handleLink",
-        "handleTransaction",
+        "lastLinkBytes",
         "linkLgstsq",
         "remoteLgacdb02L186",
-        "remoteLgacvs01L174"
+        "remoteLgacvs01L174",
+        "runTask"
       ],
       "program": "base/src/lgacdb01.cbl",
-      "sha256": "a3c86bd9d49b3eb6de60bc3c383b55439fc2881c6f3e39e281770ee5bbdbfd2c"
+      "sha256": "d562570cae42613064da031b5d041219419dd687d5a88f22342518d22c699ea9"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgacdb02Service.java": {
       "calls": [
@@ -2946,23 +4717,23 @@
       "endpoints": [],
       "fields": [
         "customerSecureRepository",
+        "lastLinkBytes",
         "lgstsqService"
       ],
       "kind": "service",
       "methods": [
         "abendLgcaL134",
-        "executeLgacdb02",
         "handleLink",
-        "handleTransaction",
-        "linkLgstsq"
+        "lastLinkBytes",
+        "linkLgstsq",
+        "runTask"
       ],
       "program": "base/src/lgacdb02.cbl",
-      "sha256": "6a4755c5dbdcb0cfffef0e3d3945296265a48374661f7a25b34453190a4f5166"
+      "sha256": "38a77ac241d9de815426b806b2ed562fb79a56abdea62b5cfbf7b64a8a0cf63a"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgacus01Service.java": {
       "calls": [
         "Dor1RemoteClient",
-        "Lgacdb01Service",
         "LgstsqService"
       ],
       "classes": [
@@ -2971,20 +4742,21 @@
       "endpoints": [],
       "fields": [
         "dor1RemoteClient",
-        "lgacdb01Service",
+        "lastLinkBytes",
         "lgstsqService"
       ],
       "kind": "service",
       "methods": [
         "abendLgcaL98",
         "dispatchLgacdb01L134",
-        "executeLgacus01",
         "handleLink",
+        "lastLinkBytes",
         "linkLgstsq",
-        "remoteLgacdb01L134"
+        "remoteLgacdb01L134",
+        "runTask"
       ],
       "program": "base/src/lgacus01.cbl",
-      "sha256": "549e314c0c3a1363771b74089546b9cda528cbd26e9f0bf4a0d06dbc528432a3"
+      "sha256": "baf587525999e8eb997eed607b50d85b0313cbe0d5a2c529fd00c10e622fe029"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgacvs01Service.java": {
       "calls": [
@@ -2997,27 +4769,28 @@
       "endpoints": [],
       "fields": [
         "caCustomerNumRepository",
+        "lastLinkBytes",
         "lgstsqService"
       ],
       "kind": "service",
       "methods": [
         "abendLgv0L79",
-        "executeLgacvs01",
         "handleLink",
-        "handleTransaction",
+        "lastLinkBytes",
         "linkLgstsq",
+        "runTask",
         "writeKsdscust"
       ],
       "program": "base/src/lgacvs01.cbl",
-      "sha256": "2aac497a68882d7943ec06ffc9afaeb045b972a81ac8f9a6aa6c46a9d13b1e56"
+      "sha256": "1b361e591b9bf9949b99dcac823b692ebb0b7c0191122ba479ff3f8645b16077"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgapdb01Service.java": {
       "calls": [
         "CommercialRepository",
+        "Db2ValuesRepository",
         "Dor1RemoteClient",
         "EndowmentRepository",
         "HouseRepository",
-        "Lgapvs01Service",
         "LgstsqService",
         "MotorRepository",
         "PolicyRepository"
@@ -3028,10 +4801,11 @@
       "endpoints": [],
       "fields": [
         "commercialRepository",
+        "db2ValuesRepository",
         "dor1RemoteClient",
         "endowmentRepository",
         "houseRepository",
-        "lgapvs01Service",
+        "lastLinkBytes",
         "lgstsqService",
         "motorRepository",
         "policyRepository"
@@ -3044,19 +4818,18 @@
         "abendLgsqL477",
         "abendLgsqL551",
         "dispatchLgapvs01L243",
-        "executeLgapdb01",
         "handleLink",
-        "handleTransaction",
+        "lastLinkBytes",
         "linkLgstsq",
-        "remoteLgapvs01L243"
+        "remoteLgapvs01L243",
+        "runTask"
       ],
       "program": "base/src/lgapdb01.cbl",
-      "sha256": "308c557601cce06d9544a73d6add66b21dcfd6ccd21286a01bbe378b3b4474fa"
+      "sha256": "c77a1d9b6b7d9989f6ca28bf5ab9dea4f3dcdfb00a646da744cb730167db08eb"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgapol01Service.java": {
       "calls": [
         "Dor1RemoteClient",
-        "Lgapdb01Service",
         "LgstsqService"
       ],
       "classes": [
@@ -3065,20 +4838,21 @@
       "endpoints": [],
       "fields": [
         "dor1RemoteClient",
-        "lgapdb01Service",
+        "lastLinkBytes",
         "lgstsqService"
       ],
       "kind": "service",
       "methods": [
         "abendLgcaL101",
         "dispatchLgapdb01L121",
-        "executeLgapol01",
         "handleLink",
+        "lastLinkBytes",
         "linkLgstsq",
-        "remoteLgapdb01L121"
+        "remoteLgapdb01L121",
+        "runTask"
       ],
       "program": "base/src/lgapol01.cbl",
-      "sha256": "21a43e17ca5ba3806491c73f72ce2d42918d6ad1719e60ddef9437594da1c076"
+      "sha256": "58b85b827784862980505dcf7b3b14d785f1aa88ec822331af7a315f22f90bcd"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgapvs01Service.java": {
       "calls": [
@@ -3090,19 +4864,20 @@
       ],
       "endpoints": [],
       "fields": [
+        "lastLinkBytes",
         "lgstsqService",
         "wfPolicyInfoRepository"
       ],
       "kind": "service",
       "methods": [
-        "executeLgapvs01",
         "handleLink",
-        "handleTransaction",
+        "lastLinkBytes",
         "linkLgstsq",
+        "runTask",
         "writeKsdspoly"
       ],
       "program": "base/src/lgapvs01.cbl",
-      "sha256": "ed098d8cbbe888d4b0f996e6e6503b2f448cfff5712f1f500a1505101426ba80"
+      "sha256": "93b76a5af4d8141c98fe4312dd9ff3761392de25701cfaeb179644fa8103bcbf"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgastat1Service.java": {
       "calls": [],
@@ -3111,23 +4886,24 @@
       ],
       "endpoints": [],
       "fields": [
+        "lastAnswerBytes",
         "tempStorage"
       ],
       "kind": "service",
       "methods": [
-        "executeLgastat1",
         "handleChannel",
         "handleTransaction",
+        "lastAnswerBytes",
         "readqTsGenastrtL101",
+        "runTask",
         "writeqTsGenastrtL115"
       ],
       "program": "base/src/lgastat1.cbl",
-      "sha256": "194c202995b8ef0e83dbcf09c0d0e2115c01a49016035dd4931063f21bc5593d"
+      "sha256": "6b61b40b7a29c1c84d6e9e78d9a0ced2e0269821f75b115a25347eedfa61ea19"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgdpdb01Service.java": {
       "calls": [
         "Dor1RemoteClient",
-        "Lgdpvs01Service",
         "LgstsqService",
         "PolicyRepository"
       ],
@@ -3137,7 +4913,7 @@
       "endpoints": [],
       "fields": [
         "dor1RemoteClient",
-        "lgdpvs01Service",
+        "lastLinkBytes",
         "lgstsqService",
         "policyRepository"
       ],
@@ -3145,19 +4921,18 @@
       "methods": [
         "abendLgcaL134",
         "dispatchLgdpvs01L168",
-        "executeLgdpdb01",
         "handleLink",
-        "handleTransaction",
+        "lastLinkBytes",
         "linkLgstsq",
-        "remoteLgdpvs01L168"
+        "remoteLgdpvs01L168",
+        "runTask"
       ],
       "program": "base/src/lgdpdb01.cbl",
-      "sha256": "112f9dfa933128de48585ebeb9b07578385537113c21b0a02cca2a1440ba48bb"
+      "sha256": "7a397ec5ebf94097e21c272b911fce661daf9aef8ffeaa057914b2ccdf6db20c"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgdpol01Service.java": {
       "calls": [
         "Dor1RemoteClient",
-        "Lgdpdb01Service",
         "LgstsqService"
       ],
       "classes": [
@@ -3166,20 +4941,21 @@
       "endpoints": [],
       "fields": [
         "dor1RemoteClient",
-        "lgdpdb01Service",
+        "lastLinkBytes",
         "lgstsqService"
       ],
       "kind": "service",
       "methods": [
         "abendLgcaL98",
         "dispatchLgdpdb01L141",
-        "executeLgdpol01",
         "handleLink",
+        "lastLinkBytes",
         "linkLgstsq",
-        "remoteLgdpdb01L141"
+        "remoteLgdpdb01L141",
+        "runTask"
       ],
       "program": "base/src/lgdpol01.cbl",
-      "sha256": "1c9aabf67856c1d72433bee303780f5505de08f08b19ecad1da8457f6e6ffccc"
+      "sha256": "3c309e8c206a81285e958f507252639b53d32ead310a719e71985172237a9de6"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgdpvs01Service.java": {
       "calls": [
@@ -3191,19 +4967,20 @@
       ],
       "endpoints": [],
       "fields": [
+        "lastLinkBytes",
         "lgstsqService",
         "wfPolicyInfoRepository"
       ],
       "kind": "service",
       "methods": [
         "deleteKsdspoly",
-        "executeLgdpvs01",
         "handleLink",
-        "handleTransaction",
-        "linkLgstsq"
+        "lastLinkBytes",
+        "linkLgstsq",
+        "runTask"
       ],
       "program": "base/src/lgdpvs01.cbl",
-      "sha256": "b65f09c7fedf7a78ac36d378b1eefb20833aa2509c5d4b3988ff05e6ebd4d235"
+      "sha256": "3d774e33ce897a83dffdd626a598a53530e81b1292a1d40e0ad59a46baaff02b"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgicdb01Service.java": {
       "calls": [
@@ -3216,23 +4993,23 @@
       "endpoints": [],
       "fields": [
         "customerRepository",
+        "lastLinkBytes",
         "lgstsqService"
       ],
       "kind": "service",
       "methods": [
         "abendLgcaL122",
-        "executeLgicdb01",
         "handleLink",
-        "handleTransaction",
-        "linkLgstsq"
+        "lastLinkBytes",
+        "linkLgstsq",
+        "runTask"
       ],
       "program": "base/src/lgicdb01.cbl",
-      "sha256": "b8c526301705be78190aef31af24601dcf2ad532c1f8f680d9e1a2be1f1b52c7"
+      "sha256": "6e13307db0c72609266fc99ab21dd6727fffdcb07e2e2a1ee51296db32fcf298"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgicus01Service.java": {
       "calls": [
         "Dor1RemoteClient",
-        "Lgicdb01Service",
         "LgstsqService"
       ],
       "classes": [
@@ -3241,20 +5018,21 @@
       "endpoints": [],
       "fields": [
         "dor1RemoteClient",
-        "lgicdb01Service",
+        "lastLinkBytes",
         "lgstsqService"
       ],
       "kind": "service",
       "methods": [
         "abendLgcaL90",
         "dispatchLgicdb01L122",
-        "executeLgicus01",
         "handleLink",
+        "lastLinkBytes",
         "linkLgstsq",
-        "remoteLgicdb01L122"
+        "remoteLgicdb01L122",
+        "runTask"
       ],
       "program": "base/src/lgicus01.cbl",
-      "sha256": "f695399a43d70da44b856924d0493cbb7cdce73997f6aa647b47ccf61c403df1"
+      "sha256": "e7b6d9738cd357118745c1302c35db81fc7448f7eaebc069d2b9ce854175aafa"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgicvs01Service.java": {
       "calls": [
@@ -3266,21 +5044,23 @@
       "endpoints": [],
       "fields": [
         "caCustomerNumRepository",
+        "lastAnswerBytes",
         "tempStorage"
       ],
       "kind": "service",
       "methods": [
-        "executeLgicvs01",
         "handleTransaction",
+        "lastAnswerBytes",
         "readKsdscust",
         "readqTsGenacntlL132",
         "readqTsGenacntlL140",
+        "runTask",
         "writeqTsGenacntlL163",
         "writeqTsGenacntlL172",
         "writeqTsGenacntlL181"
       ],
       "program": "base/src/lgicvs01.cbl",
-      "sha256": "9e1f6816ce7d03e4e2caee479585be18229ac88d35b74101757060f7d64990c8"
+      "sha256": "28073684148f91805a3eb7f995f13ad53b48cd53a73aad5bc327f45cd9f5a29a"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgipdb01Service.java": {
       "calls": [
@@ -3299,6 +5079,7 @@
         "commercialRepository",
         "endowmentRepository",
         "houseRepository",
+        "lastLinkBytes",
         "lgstsqService",
         "motorRepository",
         "policyRepository"
@@ -3306,18 +5087,17 @@
       "kind": "service",
       "methods": [
         "abendLgcaL254",
-        "executeLgipdb01",
         "handleLink",
-        "handleTransaction",
-        "linkLgstsq"
+        "lastLinkBytes",
+        "linkLgstsq",
+        "runTask"
       ],
       "program": "base/src/lgipdb01.cbl",
-      "sha256": "fe36b04f875972c6db17e6b56f6a51cfe1e3ad0b896c29cc8aed89806128bbee"
+      "sha256": "c2cde028af1026623423d9ae2659ada60583122986b53ceac62591affeafa671"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgipol01Service.java": {
       "calls": [
         "Dor1RemoteClient",
-        "Lgipdb01Service",
         "LgstsqService"
       ],
       "classes": [
@@ -3326,20 +5106,21 @@
       "endpoints": [],
       "fields": [
         "dor1RemoteClient",
-        "lgipdb01Service",
+        "lastLinkBytes",
         "lgstsqService"
       ],
       "kind": "service",
       "methods": [
         "abendLgcaL82",
         "dispatchLgipdb01L91",
-        "executeLgipol01",
         "handleLink",
+        "lastLinkBytes",
         "linkLgstsq",
-        "remoteLgipdb01L91"
+        "remoteLgipdb01L91",
+        "runTask"
       ],
       "program": "base/src/lgipol01.cbl",
-      "sha256": "51d22b3e06f5f81a6f9f489e2b54584c8efa9960de16f26be6e82d2898a8d86c"
+      "sha256": "f69c725949590cfd133a6dacdce23abb7f513b7e1d39c9c58530ac7098f0f5ee"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgipvs01Service.java": {
       "calls": [
@@ -3350,16 +5131,18 @@
       ],
       "endpoints": [],
       "fields": [
+        "lastAnswerBytes",
         "wfPolicyInfoRepository"
       ],
       "kind": "service",
       "methods": [
-        "executeLgipvs01",
         "handleTransaction",
-        "readKsdspoly"
+        "lastAnswerBytes",
+        "readKsdspoly",
+        "runTask"
       ],
       "program": "base/src/lgipvs01.cbl",
-      "sha256": "343f34e6b07a6cf7ef2b8b83ff59bfa2eddefe4312c55e529b1509567540c587"
+      "sha256": "92a760a4831e0d204917e01a7291aa2ffd9a8566fb2f16b10a135849e42493ec"
     },
     "src/main/java/com/gitgalaxy/modernized/service/LgsetupService.java": {
       "calls": [],
@@ -3368,6 +5151,7 @@
       ],
       "endpoints": [],
       "fields": [
+        "lastAnswerBytes",
         "tempStorage"
       ],
       "kind": "service",
@@ -3376,14 +5160,15 @@
         "deleteqTsGenaerrsL138",
         "deleteqTsGenastatL146",
         "deleteqTsGenastrtL142",
-        "executeLgsetup",
         "handleTransaction",
+        "lastAnswerBytes",
+        "runTask",
         "writeqTsGenacntlL157",
         "writeqTsGenacntlL164",
         "writeqTsGenacntlL171"
       ],
       "program": "base/src/lgsetup.cbl",
-      "sha256": "096e7ba9d4d100fc03b91d21d7728a207d04b71f7f7ca907e73a28d4a719bf3a"
+      "sha256": "c58c8cb4f916e9ed1dd4d73152af77f2eb1d8d5586f53c707b8025e6e52a4d7a"
     },
     "src/main/java/com/gitgalaxy/modernized/service/LgstsqService.java": {
       "calls": [],
@@ -3392,18 +5177,20 @@
       ],
       "endpoints": [],
       "fields": [
+        "lastLinkBytes",
         "tempStorage",
         "transientData"
       ],
       "kind": "service",
       "methods": [
-        "executeLgstsq",
         "handleLink",
+        "lastLinkBytes",
+        "runTask",
         "writeqTdCsmtL94",
         "writeqTsGenaerrsL105"
       ],
       "program": "base/src/lgstsq.cbl",
-      "sha256": "019b4354076985eb7d2c938c0ab5ffe628e16f628628119c852ea926178e757b"
+      "sha256": "5130a262fbe7a3f43389318b3cb7d3e35854bfca2b0c29bff5f5e68b4d0df58c"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgtestc1Service.java": {
       "calls": [
@@ -3415,12 +5202,13 @@
       "endpoints": [],
       "fields": [
         "aor1RemoteClient",
+        "lastAnswerBytes",
         "tempStorage"
       ],
       "kind": "service",
       "methods": [
-        "executeLgtestc1",
         "handleTransaction",
+        "lastAnswerBytes",
         "onConditionMapfailL75",
         "readqTsGenacntlL290",
         "readqTsGenacntlL297",
@@ -3428,16 +5216,15 @@
         "remoteLgicus01L151",
         "remoteLgicus01L89",
         "remoteLgucus01L190",
-        "renderSsmapc1",
         "rollbackL133",
-        "submitSsmapc1",
+        "runTask",
         "writeqTsGenacntlL307",
         "writeqTsGenacntlL321",
         "writeqTsGenacntlL329",
         "writeqTsGenacntlL335"
       ],
       "program": "base/src/lgtestc1.cbl",
-      "sha256": "ab478872ff96af5cfab5b1f9eb303345a3239674d5e9f79efd90c63fb8f9f9a3"
+      "sha256": "dd7973cd8d4406e7fd6e3c816de44b10d7e0a130000d62ca844ef6054f6fb480"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgtestp1Service.java": {
       "calls": [
@@ -3448,25 +5235,25 @@
       ],
       "endpoints": [],
       "fields": [
-        "aor1RemoteClient"
+        "aor1RemoteClient",
+        "lastAnswerBytes"
       ],
       "kind": "service",
       "methods": [
-        "executeLgtestp1",
         "handleTransaction",
+        "lastAnswerBytes",
         "onConditionMapfailL57",
         "remoteLgapol01L115",
         "remoteLgdpol01L139",
         "remoteLgipol01L173",
         "remoteLgipol01L72",
         "remoteLgupol01L216",
-        "renderSsmapp1",
         "rollbackL120",
         "rollbackL144",
-        "submitSsmapp1"
+        "runTask"
       ],
       "program": "base/src/lgtestp1.cbl",
-      "sha256": "85d99410859e0541423b1729dd1c8346e90026020b34d5afc5a51eaba5f77d59"
+      "sha256": "5ece09907cfc1e14fba54498240e01eef9aafa5ff1f8a5473972181673280ace"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgtestp2Service.java": {
       "calls": [
@@ -3477,25 +5264,25 @@
       ],
       "endpoints": [],
       "fields": [
-        "aor1RemoteClient"
+        "aor1RemoteClient",
+        "lastAnswerBytes"
       ],
       "kind": "service",
       "methods": [
-        "executeLgtestp2",
         "handleTransaction",
+        "lastAnswerBytes",
         "onConditionMapfailL52",
         "remoteLgapol01L105",
         "remoteLgdpol01L129",
         "remoteLgipol01L159",
         "remoteLgipol01L67",
         "remoteLgupol01L198",
-        "renderSsmapp2",
         "rollbackL110",
         "rollbackL134",
-        "submitSsmapp2"
+        "runTask"
       ],
       "program": "base/src/lgtestp2.cbl",
-      "sha256": "f6d5bda9ae0c03212918b597678beb5b73e64432336651684e83eaa016632d23"
+      "sha256": "c3e6618ff0f79123ff6699ba4d027acf990738f9509cd1517ae831796f2acdbc"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgtestp3Service.java": {
       "calls": [
@@ -3506,25 +5293,25 @@
       ],
       "endpoints": [],
       "fields": [
-        "aor1RemoteClient"
+        "aor1RemoteClient",
+        "lastAnswerBytes"
       ],
       "kind": "service",
       "methods": [
-        "executeLgtestp3",
         "handleTransaction",
+        "lastAnswerBytes",
         "onConditionMapfailL55",
         "remoteLgapol01L106",
         "remoteLgdpol01L129",
         "remoteLgipol01L159",
         "remoteLgipol01L70",
         "remoteLgupol01L196",
-        "renderSsmapp3",
         "rollbackL111",
         "rollbackL134",
-        "submitSsmapp3"
+        "runTask"
       ],
       "program": "base/src/lgtestp3.cbl",
-      "sha256": "a88e4deac245e01fca57960839d563ba20d7442237c0037d1edfd9de489c871b"
+      "sha256": "6229f7a7e8385bb80dffd4ea2b789eef6848dced6c78b06d9d18bdd36b57085d"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgtestp4Service.java": {
       "calls": [
@@ -3535,30 +5322,29 @@
       ],
       "endpoints": [],
       "fields": [
-        "aor1RemoteClient"
+        "aor1RemoteClient",
+        "lastAnswerBytes"
       ],
       "kind": "service",
       "methods": [
-        "executeLgtestp4",
         "handleTransaction",
+        "lastAnswerBytes",
         "onConditionMapfailL62",
         "remoteLgapol01L178",
         "remoteLgdpol01L201",
         "remoteLgipol01L122",
-        "renderSsmapp4",
         "rollbackL183",
         "rollbackL206",
-        "submitSsmapp4"
+        "runTask"
       ],
       "program": "base/src/lgtestp4.cbl",
-      "sha256": "d717343120a32a71bfa6b1d7f0303e4707c360a262829b72ae487dafe7f10b15"
+      "sha256": "5150db65d5943a6c5a4197ab3c4fe6981ec5147c8d89e050b11408e7a8f4b16d"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgucdb01Service.java": {
       "calls": [
         "CustomerRepository",
         "Dor1RemoteClient",
-        "LgstsqService",
-        "Lgucvs01Service"
+        "LgstsqService"
       ],
       "classes": [
         "Lgucdb01Service"
@@ -3567,27 +5353,26 @@
       "fields": [
         "customerRepository",
         "dor1RemoteClient",
-        "lgstsqService",
-        "lgucvs01Service"
+        "lastLinkBytes",
+        "lgstsqService"
       ],
       "kind": "service",
       "methods": [
         "abendLgcaL120",
         "dispatchLgucvs01L136",
-        "executeLgucdb01",
         "handleLink",
-        "handleTransaction",
+        "lastLinkBytes",
         "linkLgstsq",
-        "remoteLgucvs01L136"
+        "remoteLgucvs01L136",
+        "runTask"
       ],
       "program": "base/src/lgucdb01.cbl",
-      "sha256": "3fe758f89958d2f8588d956f2116724d334dcc44f1b7c5fe7b4f6029f19f00d1"
+      "sha256": "e9e041cf54064906ed265b22fc18d060f57111f442646c411fd6fdbbe8d7d94d"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgucus01Service.java": {
       "calls": [
         "Dor1RemoteClient",
-        "LgstsqService",
-        "Lgucdb01Service"
+        "LgstsqService"
       ],
       "classes": [
         "Lgucus01Service"
@@ -3595,20 +5380,21 @@
       "endpoints": [],
       "fields": [
         "dor1RemoteClient",
-        "lgstsqService",
-        "lgucdb01Service"
+        "lastLinkBytes",
+        "lgstsqService"
       ],
       "kind": "service",
       "methods": [
         "abendLgcaL102",
         "dispatchLgucdb01L128",
-        "executeLgucus01",
         "handleLink",
+        "lastLinkBytes",
         "linkLgstsq",
-        "remoteLgucdb01L128"
+        "remoteLgucdb01L128",
+        "runTask"
       ],
       "program": "base/src/lgucus01.cbl",
-      "sha256": "d85d162507716a157166e9a8de18cda4d37528c792870281f01748a47bab6979"
+      "sha256": "f0806b3e7a9329f346776d61538e45cf6b913ba985f092b2bb0e9477726953c1"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgucvs01Service.java": {
       "calls": [
@@ -3621,21 +5407,22 @@
       "endpoints": [],
       "fields": [
         "caCustomerNumRepository",
+        "lastLinkBytes",
         "lgstsqService"
       ],
       "kind": "service",
       "methods": [
         "abendLgv1L81",
         "abendLgv2L94",
-        "executeLgucvs01",
         "handleLink",
-        "handleTransaction",
+        "lastLinkBytes",
         "linkLgstsq",
         "readKsdscust",
-        "rewriteKsdscust"
+        "rewriteKsdscust",
+        "runTask"
       ],
       "program": "base/src/lgucvs01.cbl",
-      "sha256": "fbed1c7d4009237208dbd2358f4c891928d0520e30bb7651a0c91008a73487bc"
+      "sha256": "57afd5fa34229de4f4f6c7a2c5e7b46af0042a4dc5c19f003dc18cab8b1dcc63"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgupdb01Service.java": {
       "calls": [
@@ -3643,7 +5430,6 @@
         "EndowmentRepository",
         "HouseRepository",
         "LgstsqService",
-        "Lgupvs01Service",
         "MotorRepository",
         "PolicyRepository"
       ],
@@ -3655,8 +5441,8 @@
         "dor1RemoteClient",
         "endowmentRepository",
         "houseRepository",
+        "lastLinkBytes",
         "lgstsqService",
-        "lgupvs01Service",
         "motorRepository",
         "policyRepository"
       ],
@@ -3664,21 +5450,20 @@
       "methods": [
         "abendLgcaL186",
         "dispatchLgupvs01L209",
-        "executeLgupdb01",
         "handleLink",
-        "handleTransaction",
+        "lastLinkBytes",
         "linkLgstsq",
         "remoteLgupvs01L209",
-        "rollbackL338"
+        "rollbackL338",
+        "runTask"
       ],
       "program": "base/src/lgupdb01.cbl",
-      "sha256": "3212dbf6728e8c37869142733fde188f08d1b2bc53778a4ec632b1f5aebf2342"
+      "sha256": "712c07225a41a41bc0c680745bd3027a84c47786cff8542ae1b3a8e90434cd3c"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgupol01Service.java": {
       "calls": [
         "Dor1RemoteClient",
-        "LgstsqService",
-        "Lgupdb01Service"
+        "LgstsqService"
       ],
       "classes": [
         "Lgupol01Service"
@@ -3686,20 +5471,21 @@
       "endpoints": [],
       "fields": [
         "dor1RemoteClient",
-        "lgstsqService",
-        "lgupdb01Service"
+        "lastLinkBytes",
+        "lgstsqService"
       ],
       "kind": "service",
       "methods": [
         "abendLgcaL102",
         "dispatchLgupdb01L157",
-        "executeLgupol01",
         "handleLink",
+        "lastLinkBytes",
         "linkLgstsq",
-        "remoteLgupdb01L157"
+        "remoteLgupdb01L157",
+        "runTask"
       ],
       "program": "base/src/lgupol01.cbl",
-      "sha256": "9c36fc8a55d27516e06d6d8c9ad785635a2e1ace1a0e46de613b334118c32332"
+      "sha256": "e5a65028d5ea018c2e0b95c999db077ec70591a4132885fa80ff421a34207e2a"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgupvs01Service.java": {
       "calls": [
@@ -3711,6 +5497,7 @@
       ],
       "endpoints": [],
       "fields": [
+        "lastLinkBytes",
         "lgstsqService",
         "wfPolicyInfoRepository"
       ],
@@ -3718,15 +5505,15 @@
       "methods": [
         "abendLgv3L151",
         "abendLgv4L164",
-        "executeLgupvs01",
         "handleLink",
-        "handleTransaction",
+        "lastLinkBytes",
         "linkLgstsq",
         "readKsdspoly",
-        "rewriteKsdspoly"
+        "rewriteKsdspoly",
+        "runTask"
       ],
       "program": "base/src/lgupvs01.cbl",
-      "sha256": "9ebaeb8c763c45a0be7bef04f60280715c2bc8133c0b169dd3afb51e2f58b7e9"
+      "sha256": "b5c1de3c112d5b917b2305ffd85082851fa6df460d647850584ee9750db5008b"
     },
     "src/main/java/com/gitgalaxy/modernized/service/Lgwebst5Service.java": {
       "calls": [],
@@ -3735,16 +5522,18 @@
       ],
       "endpoints": [],
       "fields": [
+        "lastAnswerBytes",
         "tempStorage"
       ],
       "kind": "service",
       "methods": [
         "deleteqTsL729",
         "deleteqTsL778",
-        "executeLgwebst5",
         "handleTransaction",
+        "lastAnswerBytes",
         "readqTsL720",
         "readqTsL771",
+        "runTask",
         "writeqTsL734",
         "writeqTsL756",
         "writeqTsL783",
@@ -3752,22 +5541,48 @@
         "writeqTsL796"
       ],
       "program": "base/src/lgwebst5.cbl",
-      "sha256": "f099b3c6e5cb0ba788ed746122180b8186d8740e982a4fe63dc4f995804debf0"
+      "sha256": "aecb3777ab7df215bc9eb4a6fc9c43fc9ed8907320ce0f77fead681a1efbb330"
+    },
+    "src/main/java/com/gitgalaxy/modernized/util/CobolCompare.java": {
+      "calls": [],
+      "classes": [
+        "CobolCompare"
+      ],
+      "endpoints": [],
+      "fields": [],
+      "kind": "other",
+      "methods": [
+        "CobolCompare",
+        "bytes",
+        "compare",
+        "eq",
+        "filled",
+        "ge",
+        "gt",
+        "highValues",
+        "le",
+        "lowValues",
+        "lt"
+      ],
+      "program": null,
+      "sha256": "256c708eb74e7b24c057e5ce7a5da07540def4c53542562c098dda100c87af14"
     },
     "src/main/java/com/gitgalaxy/modernized/util/EbcdicDecoderUtil.java": {
       "calls": [],
       "classes": [
-        "EbcdicDecoderUtil"
+        "EbcdicDecoderUtil",
+        "PackedDecimalDataException"
       ],
       "endpoints": [],
       "fields": [],
       "kind": "other",
       "methods": [
         "decodeEbcdicString",
+        "invalid",
         "unpackComp3"
       ],
       "program": null,
-      "sha256": "18027ddebe319eb8dd6e01e42316b3bafe96797395f5517d2efd01d04028d59b"
+      "sha256": "7551f49d4073eb5db231f41d592f228f6e0dbf30a91330225386a0ff9bb9674b"
     },
     "src/main/java/com/gitgalaxy/modernized/web/CicsExceptionAdvice.java": {
       "calls": [],
@@ -3791,6 +5606,7 @@
   },
   "tables": [
     "COMMERCIAL",
+    "COUNTER",
     "CUSTOMER",
     "CUSTOMER_SECURE",
     "ENDOWMENT",

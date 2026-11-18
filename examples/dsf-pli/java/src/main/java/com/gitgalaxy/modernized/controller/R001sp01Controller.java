@@ -12,7 +12,13 @@ import org.springframework.http.ResponseEntity;
 import lombok.RequiredArgsConstructor;
 import com.gitgalaxy.modernized.service.R001sp01Service;
 
-
+/**
+ * CICS program R001SP01 (src/GML/R001SP01.pli), generated from GitGalaxy's
+ * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
+ * TODO: no COMMAREA layout: the main procedure takes no parameter, and no resolved caller passes this program a COMMAREA.
+ * Field testing: entry transactions open (4 public / 0 private estates);
+ * record fields open (6 public / 0 private estates).
+ */
 @RestController
 @RequestMapping("/api/v1/r001sp01")
 @RequiredArgsConstructor
@@ -20,13 +26,11 @@ public class R001sp01Controller {
 
     private final R001sp01Service r001sp01Service;
 
-    @PostMapping("/execute")
-    public ResponseEntity<?> executeR001sp01(
-        /* No external data dependencies detected */
-    ) {
-        // TRANSACTIONAL PARADIGM DETECTED
-        r001sp01Service.executeR001sp01(/* pass DTOs here */);
-
+    /** Program-to-program entry: no CSD transaction enters this program. */
+    @PostMapping("/link")
+    public ResponseEntity<Void> link() {
+        r001sp01Service.handleLink();
         return ResponseEntity.noContent().build();
     }
+
 }

@@ -1,0 +1,1661 @@
+{
+  "compiler_options": [],
+  "deliverable": {
+    "proof": "The port is laid over the generated project as an overlay and proven by the equivalence harness (tests/tools/equivalence.py in GitGalaxy): the original runs under GnuCOBOL, the port on the same inputs, and every output record is compared field by field; a person approves the port with that report in hand.",
+    "return": "One complete Java file for src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java: the same package, class name and public method signatures, with runTask ported -- what the proof runs -- and helper methods it calls added; every other generated method left as generated (#4255)."
+  },
+  "facts": {
+    "full_skeleton": "aws-mainframe-modernization-carddemo_gitgalaxy_clean_TIMESTAMP/06_skeleton/COACCT01_skeleton.json",
+    "program": {
+      "copy_collisions": [],
+      "copy_edges": {
+        "app/app-vsam-mq/cbl/COACCT01.cbl": {
+          "app/cpy/CVACT01Y.cpy": []
+        },
+        "app/cpy/CVACT01Y.cpy": {}
+      },
+      "copy_gaps": [],
+      "copybooks": [
+        "app/cpy/CVACT01Y.cpy"
+      ],
+      "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+      "language": "cobol",
+      "program_id_field_testing": "open",
+      "program_ids": [
+        "COACCT01"
+      ],
+      "total_loc": 621
+    },
+    "sections": {
+      "call_contracts": {
+        "facts": [
+          {
+            "args": [
+              {
+                "argument": "QMGR-HANDLE-CONN",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 1
+              },
+              {
+                "argument": "MQ-OBJECT-DESCRIPTOR",
+                "callee_bytes": null,
+                "caller_bytes": 168,
+                "length_match": null,
+                "parameter": null,
+                "position": 2
+              },
+              {
+                "argument": "MQ-OPTIONS",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 3
+              },
+              {
+                "argument": "MQ-HOBJ",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 4
+              },
+              {
+                "argument": "MQ-CONDITION-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 5
+              },
+              {
+                "argument": "MQ-REASON-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 6
+              }
+            ],
+            "callee": null,
+            "caller": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "entry": null,
+            "line": 233,
+            "status": "callee_unresolved",
+            "target": "MQOPEN"
+          },
+          {
+            "args": [
+              {
+                "argument": "QMGR-HANDLE-CONN",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 1
+              },
+              {
+                "argument": "MQ-OBJECT-DESCRIPTOR",
+                "callee_bytes": null,
+                "caller_bytes": 168,
+                "length_match": null,
+                "parameter": null,
+                "position": 2
+              },
+              {
+                "argument": "MQ-OPTIONS",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 3
+              },
+              {
+                "argument": "MQ-HOBJ",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 4
+              },
+              {
+                "argument": "MQ-CONDITION-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 5
+              },
+              {
+                "argument": "MQ-REASON-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 6
+              }
+            ],
+            "callee": null,
+            "caller": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "entry": null,
+            "line": 267,
+            "status": "callee_unresolved",
+            "target": "MQOPEN"
+          },
+          {
+            "args": [
+              {
+                "argument": "QMGR-HANDLE-CONN",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 1
+              },
+              {
+                "argument": "MQ-OBJECT-DESCRIPTOR",
+                "callee_bytes": null,
+                "caller_bytes": 168,
+                "length_match": null,
+                "parameter": null,
+                "position": 2
+              },
+              {
+                "argument": "MQ-OPTIONS",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 3
+              },
+              {
+                "argument": "MQ-HOBJ",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 4
+              },
+              {
+                "argument": "MQ-CONDITION-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 5
+              },
+              {
+                "argument": "MQ-REASON-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 6
+              }
+            ],
+            "callee": null,
+            "caller": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "entry": null,
+            "line": 302,
+            "status": "callee_unresolved",
+            "target": "MQOPEN"
+          },
+          {
+            "args": [
+              {
+                "argument": "MQ-HCONN",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 1
+              },
+              {
+                "argument": "MQ-HOBJ",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 2
+              },
+              {
+                "argument": "MQ-MESSAGE-DESCRIPTOR",
+                "callee_bytes": null,
+                "caller_bytes": 324,
+                "length_match": null,
+                "parameter": null,
+                "position": 3
+              },
+              {
+                "argument": "MQ-GET-MESSAGE-OPTIONS",
+                "callee_bytes": null,
+                "caller_bytes": 72,
+                "length_match": null,
+                "parameter": null,
+                "position": 4
+              },
+              {
+                "argument": "MQ-BUFFER-LENGTH",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 5
+              },
+              {
+                "argument": "MQ-BUFFER",
+                "callee_bytes": null,
+                "caller_bytes": 1000,
+                "length_match": null,
+                "parameter": null,
+                "position": 6
+              },
+              {
+                "argument": "MQ-DATA-LENGTH",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 7
+              },
+              {
+                "argument": "MQ-CONDITION-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 8
+              },
+              {
+                "argument": "MQ-REASON-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 9
+              }
+            ],
+            "callee": null,
+            "caller": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "entry": null,
+            "line": 352,
+            "status": "callee_unresolved",
+            "target": "MQGET"
+          },
+          {
+            "args": [
+              {
+                "argument": "MQ-HCONN",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 1
+              },
+              {
+                "argument": "OUTPUT-QUEUE-HANDLE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 2
+              },
+              {
+                "argument": "MQ-MESSAGE-DESCRIPTOR",
+                "callee_bytes": null,
+                "caller_bytes": 324,
+                "length_match": null,
+                "parameter": null,
+                "position": 3
+              },
+              {
+                "argument": "MQ-PUT-MESSAGE-OPTIONS",
+                "callee_bytes": null,
+                "caller_bytes": 128,
+                "length_match": null,
+                "parameter": null,
+                "position": 4
+              },
+              {
+                "argument": "MQ-BUFFER-LENGTH",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 5
+              },
+              {
+                "argument": "MQ-BUFFER",
+                "callee_bytes": null,
+                "caller_bytes": 1000,
+                "length_match": null,
+                "parameter": null,
+                "position": 6
+              },
+              {
+                "argument": "MQ-CONDITION-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 7
+              },
+              {
+                "argument": "MQ-REASON-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 8
+              }
+            ],
+            "callee": null,
+            "caller": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "entry": null,
+            "line": 479,
+            "status": "callee_unresolved",
+            "target": "MQPUT"
+          },
+          {
+            "args": [
+              {
+                "argument": "MQ-HCONN",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 1
+              },
+              {
+                "argument": "ERROR-QUEUE-HANDLE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 2
+              },
+              {
+                "argument": "MQ-MESSAGE-DESCRIPTOR",
+                "callee_bytes": null,
+                "caller_bytes": 324,
+                "length_match": null,
+                "parameter": null,
+                "position": 3
+              },
+              {
+                "argument": "MQ-PUT-MESSAGE-OPTIONS",
+                "callee_bytes": null,
+                "caller_bytes": 128,
+                "length_match": null,
+                "parameter": null,
+                "position": 4
+              },
+              {
+                "argument": "MQ-BUFFER-LENGTH",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 5
+              },
+              {
+                "argument": "MQ-BUFFER",
+                "callee_bytes": null,
+                "caller_bytes": 1000,
+                "length_match": null,
+                "parameter": null,
+                "position": 6
+              },
+              {
+                "argument": "MQ-CONDITION-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 7
+              },
+              {
+                "argument": "MQ-REASON-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 8
+              }
+            ],
+            "callee": null,
+            "caller": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "entry": null,
+            "line": 516,
+            "status": "callee_unresolved",
+            "target": "MQPUT"
+          },
+          {
+            "args": [
+              {
+                "argument": "MQ-HCONN",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 1
+              },
+              {
+                "argument": "MQ-HOBJ",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 2
+              },
+              {
+                "argument": "MQ-OPTIONS",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 3
+              },
+              {
+                "argument": "MQ-CONDITION-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 4
+              },
+              {
+                "argument": "MQ-REASON-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 5
+              }
+            ],
+            "callee": null,
+            "caller": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "entry": null,
+            "line": 557,
+            "status": "callee_unresolved",
+            "target": "MQCLOSE"
+          },
+          {
+            "args": [
+              {
+                "argument": "MQ-HCONN",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 1
+              },
+              {
+                "argument": "MQ-HOBJ",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 2
+              },
+              {
+                "argument": "MQ-OPTIONS",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 3
+              },
+              {
+                "argument": "MQ-CONDITION-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 4
+              },
+              {
+                "argument": "MQ-REASON-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 5
+              }
+            ],
+            "callee": null,
+            "caller": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "entry": null,
+            "line": 579,
+            "status": "callee_unresolved",
+            "target": "MQCLOSE"
+          },
+          {
+            "args": [
+              {
+                "argument": "MQ-HCONN",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 1
+              },
+              {
+                "argument": "MQ-HOBJ",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 2
+              },
+              {
+                "argument": "MQ-OPTIONS",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 3
+              },
+              {
+                "argument": "MQ-CONDITION-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 4
+              },
+              {
+                "argument": "MQ-REASON-CODE",
+                "callee_bytes": null,
+                "caller_bytes": 4,
+                "length_match": null,
+                "parameter": null,
+                "position": 5
+              }
+            ],
+            "callee": null,
+            "caller": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "entry": null,
+            "line": 602,
+            "status": "callee_unresolved",
+            "target": "MQCLOSE"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "calls": {
+        "facts": [
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 233,
+            "operand": "MQOPEN",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "MQOPEN",
+            "using_args": "QMGR-HANDLE-CONN,MQ-OBJECT-DESCRIPTOR,MQ-OPTIONS,MQ-HOBJ,MQ-CONDITION-CODE,MQ-REASON-CODE",
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 267,
+            "operand": "MQOPEN",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "MQOPEN",
+            "using_args": "QMGR-HANDLE-CONN,MQ-OBJECT-DESCRIPTOR,MQ-OPTIONS,MQ-HOBJ,MQ-CONDITION-CODE,MQ-REASON-CODE",
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 302,
+            "operand": "MQOPEN",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "MQOPEN",
+            "using_args": "QMGR-HANDLE-CONN,MQ-OBJECT-DESCRIPTOR,MQ-OPTIONS,MQ-HOBJ,MQ-CONDITION-CODE,MQ-REASON-CODE",
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 352,
+            "operand": "MQGET",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "MQGET",
+            "using_args": "MQ-HCONN,MQ-HOBJ,MQ-MESSAGE-DESCRIPTOR,MQ-GET-MESSAGE-OPTIONS,MQ-BUFFER-LENGTH,MQ-BUFFER,MQ-DATA-LENGTH,MQ-CONDITION-CODE,MQ-REASON-CODE",
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 479,
+            "operand": "MQPUT",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "MQPUT",
+            "using_args": "MQ-HCONN,OUTPUT-QUEUE-HANDLE,MQ-MESSAGE-DESCRIPTOR,MQ-PUT-MESSAGE-OPTIONS,MQ-BUFFER-LENGTH,MQ-BUFFER,MQ-CONDITION-CODE,MQ-REASON-CODE",
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 516,
+            "operand": "MQPUT",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "MQPUT",
+            "using_args": "MQ-HCONN,ERROR-QUEUE-HANDLE,MQ-MESSAGE-DESCRIPTOR,MQ-PUT-MESSAGE-OPTIONS,MQ-BUFFER-LENGTH,MQ-BUFFER,MQ-CONDITION-CODE,MQ-REASON-CODE",
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 557,
+            "operand": "MQCLOSE",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "MQCLOSE",
+            "using_args": "MQ-HCONN,MQ-HOBJ,MQ-OPTIONS,MQ-CONDITION-CODE,MQ-REASON-CODE",
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 579,
+            "operand": "MQCLOSE",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "MQCLOSE",
+            "using_args": "MQ-HCONN,MQ-HOBJ,MQ-OPTIONS,MQ-CONDITION-CODE,MQ-REASON-CODE",
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 602,
+            "operand": "MQCLOSE",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "MQCLOSE",
+            "using_args": "MQ-HCONN,MQ-HOBJ,MQ-OPTIONS,MQ-CONDITION-CODE,MQ-REASON-CODE",
+            "verb": "CALL"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 9
+      },
+      "cics_file_lineage": {
+        "facts": [
+          {
+            "accesses": [
+              "read"
+            ],
+            "definitions": [
+              {
+                "batch_programs": [
+                  {
+                    "dd_name": "ACCTFILE",
+                    "job": "app/jcl/READACCT.jcl",
+                    "modes": [
+                      "INPUT"
+                    ],
+                    "program": "app/cbl/CBACT01C.cbl"
+                  },
+                  {
+                    "dd_name": "ACCTFILE",
+                    "job": "app/jcl/INTCALC.jcl",
+                    "modes": [
+                      "I-O"
+                    ],
+                    "program": "app/cbl/CBACT04C.cbl"
+                  },
+                  {
+                    "dd_name": "ACCTFILE",
+                    "job": "app/jcl/CBEXPORT.jcl",
+                    "modes": [
+                      "INPUT"
+                    ],
+                    "program": "app/cbl/CBEXPORT.cbl"
+                  },
+                  {
+                    "dd_name": "ACCTFILE",
+                    "job": "app/jcl/CREASTMT.JCL",
+                    "modes": [
+                      "INPUT"
+                    ],
+                    "program": "app/cbl/CBSTM03B.CBL"
+                  },
+                  {
+                    "dd_name": "ACCTFILE",
+                    "job": "app/jcl/POSTTRAN.jcl",
+                    "modes": [
+                      "I-O"
+                    ],
+                    "program": "app/cbl/CBTRN02C.cbl"
+                  }
+                ],
+                "bindings": [
+                  {
+                    "dd_name": "ACCTVSAM",
+                    "dsn": "AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS",
+                    "dsn_resolved": "AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS",
+                    "job": "app/jcl/ACCTFILE.jcl",
+                    "step": "STEP15"
+                  },
+                  {
+                    "dd_name": "ACCTFILE",
+                    "dsn": "AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS",
+                    "dsn_resolved": "AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS",
+                    "job": "app/jcl/CBEXPORT.jcl",
+                    "step": "STEP02"
+                  },
+                  {
+                    "dd_name": "ACCTFILE",
+                    "dsn": "AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS",
+                    "dsn_resolved": "AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS",
+                    "job": "app/jcl/CREASTMT.JCL",
+                    "step": "STEP040"
+                  },
+                  {
+                    "dd_name": "ACCTFILE",
+                    "dsn": "AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS",
+                    "dsn_resolved": "AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS",
+                    "job": "app/jcl/INTCALC.jcl",
+                    "step": "STEP15"
+                  },
+                  {
+                    "dd_name": "ACCTFILE",
+                    "dsn": "AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS",
+                    "dsn_resolved": "AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS",
+                    "job": "app/jcl/POSTTRAN.jcl",
+                    "step": "STEP15"
+                  },
+                  {
+                    "dd_name": "ACCTFILE",
+                    "dsn": "AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS",
+                    "dsn_resolved": "AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS",
+                    "job": "app/jcl/READACCT.jcl",
+                    "step": "STEP05"
+                  }
+                ],
+                "defined_in": "app/csd/CARDDEMO.CSD",
+                "dsname": "AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS",
+                "file": "ACCTDAT",
+                "group": "CARDDEMO",
+                "key_length": null,
+                "line": 1,
+                "record_format": "V",
+                "record_size": null
+              }
+            ],
+            "lines": [
+              396
+            ],
+            "name": "ACCTDAT",
+            "program": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "verbs": [
+              "READ"
+            ]
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "cics_resources": {
+        "facts": [
+          {
+            "access": "read",
+            "attributes": "RIDFLD(WS-CARD-RID-ACCT-ID-X) KEYLENGTH(LENGTH OF WS-CARD-RID-ACCT-ID-X) LENGTH(LENGTH OF ACCOUNT-RECORD)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 396,
+            "name": "ACCTDAT",
+            "operand": "LIT-ACCTFILENAME",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "ACCOUNT-RECORD",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "value",
+            "verb": "READ"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "cics_tasks": {
+        "facts": [
+          {
+            "attributes": null,
+            "candidates": null,
+            "channel": null,
+            "channel_operand": null,
+            "line": 191,
+            "name": null,
+            "operand": null,
+            "record": "MQTM",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": null,
+            "target_kind": null,
+            "timing": null,
+            "token": null,
+            "verb": "RETRIEVE"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "entry_points": {
+        "facts": [
+          {
+            "entry_name": null,
+            "kind": "PROCEDURE",
+            "line": 176,
+            "params": null
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "entry_transactions": {
+        "facts": [
+          {
+            "defined_in": "app/app-vsam-mq/csd/CRDDEMOM.csd",
+            "group": "CARDDEMO",
+            "line": 17,
+            "profile": "DFHCICST",
+            "program": "COACCT01",
+            "resolves_to": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "transid": "CDRA"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 4
+      },
+      "interface": {
+        "facts": {
+          "commarea": null,
+          "commarea_gap": "no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA",
+          "commarea_unpack": null,
+          "containers": [],
+          "inbound": [],
+          "parameters": []
+        },
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "mq_calls": {
+        "facts": [
+          {
+            "candidates": null,
+            "direction": "get",
+            "handle": "MQ-HOBJ",
+            "line": 233,
+            "open_line": null,
+            "operand": "INPUT-QUEUE-NAME",
+            "options": "MQOO-INPUT-SHARED MQOO-SAVE-ALL-CONTEXT MQOO-FAIL-IF-QUIESCING",
+            "queue": null,
+            "resolution": "trigger",
+            "verb": "MQOPEN"
+          },
+          {
+            "candidates": null,
+            "direction": "put",
+            "handle": "MQ-HOBJ",
+            "line": 267,
+            "open_line": null,
+            "operand": "REPLY-QUEUE-NAME",
+            "options": "MQOO-OUTPUT MQOO-PASS-ALL-CONTEXT MQOO-FAIL-IF-QUIESCING",
+            "queue": "CARD.DEMO.REPLY.ACCT",
+            "resolution": "move",
+            "verb": "MQOPEN"
+          },
+          {
+            "candidates": null,
+            "direction": "put",
+            "handle": "MQ-HOBJ",
+            "line": 302,
+            "open_line": null,
+            "operand": "ERROR-QUEUE-NAME",
+            "options": "MQOO-OUTPUT MQOO-PASS-ALL-CONTEXT MQOO-FAIL-IF-QUIESCING",
+            "queue": "CARD.DEMO.ERROR",
+            "resolution": "move",
+            "verb": "MQOPEN"
+          },
+          {
+            "candidates": null,
+            "direction": "get",
+            "handle": "INPUT-QUEUE-HANDLE",
+            "line": 352,
+            "open_line": 233,
+            "operand": "INPUT-QUEUE-NAME",
+            "options": "MQGMO-SYNCPOINT MQGMO-FAIL-IF-QUIESCING MQGMO-CONVERT MQGMO-WAIT",
+            "queue": null,
+            "resolution": "trigger",
+            "verb": "MQGET"
+          },
+          {
+            "candidates": null,
+            "direction": "put",
+            "handle": "OUTPUT-QUEUE-HANDLE",
+            "line": 479,
+            "open_line": 267,
+            "operand": "REPLY-QUEUE-NAME",
+            "options": "MQPMO-SYNCPOINT MQPMO-DEFAULT-CONTEXT MQPMO-FAIL-IF-QUIESCING",
+            "queue": "CARD.DEMO.REPLY.ACCT",
+            "resolution": "move",
+            "verb": "MQPUT"
+          },
+          {
+            "candidates": null,
+            "direction": "put",
+            "handle": "ERROR-QUEUE-HANDLE",
+            "line": 516,
+            "open_line": 302,
+            "operand": "ERROR-QUEUE-NAME",
+            "options": "MQPMO-SYNCPOINT MQPMO-DEFAULT-CONTEXT MQPMO-FAIL-IF-QUIESCING",
+            "queue": "CARD.DEMO.ERROR",
+            "resolution": "move",
+            "verb": "MQPUT"
+          },
+          {
+            "candidates": null,
+            "direction": null,
+            "handle": "INPUT-QUEUE-HANDLE",
+            "line": 557,
+            "open_line": 233,
+            "operand": "INPUT-QUEUE-NAME",
+            "options": null,
+            "queue": null,
+            "resolution": "trigger",
+            "verb": "MQCLOSE"
+          },
+          {
+            "candidates": null,
+            "direction": null,
+            "handle": "OUTPUT-QUEUE-HANDLE",
+            "line": 579,
+            "open_line": 267,
+            "operand": "REPLY-QUEUE-NAME",
+            "options": null,
+            "queue": "CARD.DEMO.REPLY.ACCT",
+            "resolution": "move",
+            "verb": "MQCLOSE"
+          },
+          {
+            "candidates": null,
+            "direction": null,
+            "handle": "ERROR-QUEUE-HANDLE",
+            "line": 602,
+            "open_line": 302,
+            "operand": "ERROR-QUEUE-NAME",
+            "options": null,
+            "queue": "CARD.DEMO.ERROR",
+            "resolution": "move",
+            "verb": "MQCLOSE"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 1
+      },
+      "mq_queues": {
+        "facts": [
+          {
+            "direction": "get",
+            "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "lines": [
+              352
+            ],
+            "queue": "<trigger>",
+            "resolution": "trigger"
+          },
+          {
+            "direction": "put",
+            "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "lines": [
+              516
+            ],
+            "queue": "CARD.DEMO.ERROR",
+            "resolution": "move"
+          },
+          {
+            "direction": "put",
+            "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "lines": [
+              479
+            ],
+            "queue": "CARD.DEMO.REPLY.ACCT",
+            "resolution": "move"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 1
+      },
+      "units_of_work": {
+        "facts": [
+          {
+            "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "kind": "COMMIT",
+            "line": 326,
+            "source": "CICS",
+            "unit": "4000-MAIN-PROCESS",
+            "verb": "SYNCPOINT"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "unresolved_calls": {
+        "facts": [
+          {
+            "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "form": "literal",
+            "line": 233,
+            "operand": "MQOPEN",
+            "target": "MQOPEN",
+            "verb": "CALL"
+          },
+          {
+            "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "form": "literal",
+            "line": 267,
+            "operand": "MQOPEN",
+            "target": "MQOPEN",
+            "verb": "CALL"
+          },
+          {
+            "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "form": "literal",
+            "line": 302,
+            "operand": "MQOPEN",
+            "target": "MQOPEN",
+            "verb": "CALL"
+          },
+          {
+            "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "form": "literal",
+            "line": 352,
+            "operand": "MQGET",
+            "target": "MQGET",
+            "verb": "CALL"
+          },
+          {
+            "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "form": "literal",
+            "line": 479,
+            "operand": "MQPUT",
+            "target": "MQPUT",
+            "verb": "CALL"
+          },
+          {
+            "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "form": "literal",
+            "line": 516,
+            "operand": "MQPUT",
+            "target": "MQPUT",
+            "verb": "CALL"
+          },
+          {
+            "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "form": "literal",
+            "line": 557,
+            "operand": "MQCLOSE",
+            "target": "MQCLOSE",
+            "verb": "CALL"
+          },
+          {
+            "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "form": "literal",
+            "line": 579,
+            "operand": "MQCLOSE",
+            "target": "MQCLOSE",
+            "verb": "CALL"
+          },
+          {
+            "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+            "form": "literal",
+            "line": 602,
+            "operand": "MQCLOSE",
+            "target": "MQCLOSE",
+            "verb": "CALL"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 9
+      },
+      "uow_handlers": {
+        "facts": [
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 191,
+            "resp_var": "WS-CICS-RESP1-CD",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RETRIEVE"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "COMMIT",
+            "line": 326,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SYNCPOINT"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL,NOTFND",
+            "kind": "RESP_CHECK",
+            "line": 396,
+            "resp_var": "WS-RESP-CD",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "READ"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      }
+    }
+  },
+  "generated": {
+    "imports": [
+      {
+        "class": "com.gitgalaxy.modernized.cics.CicsTask",
+        "file": "src/main/java/com/gitgalaxy/modernized/cics/CicsTask.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.entity.vsam.AccountRecord",
+        "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/AccountRecord.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.messaging.MessageQueue",
+        "file": "src/main/java/com/gitgalaxy/modernized/messaging/MessageQueue.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.repository.vsam.AccountRecordRepository",
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/AccountRecordRepository.java"
+      }
+    ],
+    "traced_to_this_program": [
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
+        "symbol": "Coacct01Service"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
+        "symbol": "Coacct01Service#commitPointL326"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
+        "symbol": "Coacct01Service#handleMqMessage"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
+        "symbol": "Coacct01Service#mqputCardDemoErrorL516"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
+        "symbol": "Coacct01Service#mqputCardDemoReplyAcctL479"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
+        "symbol": "Coacct01Service#readAcctdat"
+      }
+    ]
+  },
+  "paragraphs": [
+    {
+      "lines": 43,
+      "name": "1000-CONTROL",
+      "start_line": 178
+    },
+    {
+      "lines": 32,
+      "name": "2300-OPEN-INPUT-QUEUE",
+      "start_line": 222
+    },
+    {
+      "lines": 33,
+      "name": "2400-OPEN-OUTPUT-QUEUE",
+      "start_line": 255
+    },
+    {
+      "lines": 34,
+      "name": "2100-OPEN-ERROR-QUEUE",
+      "start_line": 289
+    },
+    {
+      "lines": 7,
+      "name": "4000-MAIN-PROCESS",
+      "start_line": 325
+    },
+    {
+      "lines": 55,
+      "name": "3000-GET-REQUEST",
+      "start_line": 334
+    },
+    {
+      "lines": 71,
+      "name": "4000-PROCESS-REQUEST-REPLY",
+      "start_line": 390
+    },
+    {
+      "lines": 38,
+      "name": "4100-PUT-REPLY",
+      "start_line": 462
+    },
+    {
+      "lines": 37,
+      "name": "9000-ERROR",
+      "start_line": 501
+    },
+    {
+      "lines": 13,
+      "name": "8000-TERMINATION",
+      "start_line": 538
+    },
+    {
+      "lines": 22,
+      "name": "5000-CLOSE-INPUT-QUEUE",
+      "start_line": 552
+    },
+    {
+      "lines": 22,
+      "name": "5100-CLOSE-OUTPUT-QUEUE",
+      "start_line": 574
+    },
+    {
+      "lines": 23,
+      "name": "5200-CLOSE-ERROR-QUEUE",
+      "start_line": 597
+    }
+  ],
+  "priority": {
+    "blast_radius": 4.565,
+    "callers": 1,
+    "calls": 1,
+    "of": 44,
+    "rank": 22
+  },
+  "program": {
+    "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+    "key": "COACCT01",
+    "language": "cobol",
+    "lines": 621,
+    "program_ids": [
+      "COACCT01"
+    ]
+  },
+  "relations": [
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP1-CD",
+      "left_class": "numeric",
+      "line": 196,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "MQ-CONDITION-CODE",
+      "left_class": "numeric",
+      "line": 241,
+      "op": "=",
+      "ordering": false,
+      "right": "MQCC-OK",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "MQ-CONDITION-CODE",
+      "left_class": "numeric",
+      "line": 275,
+      "op": "=",
+      "ordering": false,
+      "right": "MQCC-OK",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "MQ-CONDITION-CODE",
+      "left_class": "numeric",
+      "line": 310,
+      "op": "=",
+      "ordering": false,
+      "right": "MQCC-OK",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "MQ-CONDITION-CODE",
+      "left_class": "numeric",
+      "line": 363,
+      "op": "=",
+      "ordering": false,
+      "right": "MQCC-OK",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "MQ-REASON-CODE",
+      "left_class": "numeric",
+      "line": 377,
+      "op": "=",
+      "ordering": false,
+      "right": "MQRC-NO-MSG-AVAILABLE",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WS-FUNC, 'INQA')",
+      "kind": "alphanumeric",
+      "left": "WS-FUNC",
+      "left_class": "alphanumeric",
+      "line": 393,
+      "op": "=",
+      "ordering": false,
+      "right": "'INQA'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "WS-RESP-CD",
+      "left_class": "numeric",
+      "line": 407,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "WS-RESP-CD",
+      "left_class": "numeric",
+      "line": 428,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NOTFND)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "MQ-CONDITION-CODE",
+      "left_class": "numeric",
+      "line": 489,
+      "op": "=",
+      "ordering": false,
+      "right": "MQCC-OK",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "MQ-CONDITION-CODE",
+      "left_class": "numeric",
+      "line": 526,
+      "op": "=",
+      "ordering": false,
+      "right": "MQCC-OK",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "MQ-CONDITION-CODE",
+      "left_class": "numeric",
+      "line": 564,
+      "op": "=",
+      "ordering": false,
+      "right": "MQCC-OK",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "MQ-CONDITION-CODE",
+      "left_class": "numeric",
+      "line": 586,
+      "op": "=",
+      "ordering": false,
+      "right": "MQCC-OK",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "MQ-CONDITION-CODE",
+      "left_class": "numeric",
+      "line": 609,
+      "op": "=",
+      "ordering": false,
+      "right": "MQCC-OK",
+      "right_class": "unknown"
+    }
+  ],
+  "rounding": [],
+  "rules": [
+    "Deliver the whole port: every paragraph the ported method reaches, every screen field it sets, every file it reads. A partial port or a sketch is not proven: the equivalence harness compares every output.",
+    "Port the PROCEDURE DIVISION into the service's methods, paragraph by paragraph; name the paragraph each block ports in a comment, so the port can be reviewed against the source.",
+    "Keep COBOL's storage semantics: COMPUTE / ADD / SUBTRACT / MULTIPLY / DIVIDE without ROUNDED truncate decimals; a result too long for its PICTURE loses its high-order digits (ON SIZE ERROR aside); MOVE to a numeric field aligns on the decimal point and truncates both ends; MOVE to alphanumeric pads with spaces or truncates on the right. Use BigDecimal with RoundingMode.DOWN, never double, for PIC 9 / COMP-3 data.",
+    "ROUNDED (#3825) rounds half AWAY from zero: setScale(scale, RoundingMode.HALF_UP) -- 2.5 -> 3, -2.5 -> -3. Never HALF_EVEN (banker's rounding) and never Math.round (-2.5 -> -2). ROUNDED MODE maps one to one: NEAREST-EVEN HALF_EVEN, AWAY-FROM-ZERO UP, NEAREST-TOWARD-ZERO HALF_DOWN, TOWARD-GREATER CEILING, TOWARD-LESSER FLOOR, TRUNCATION DOWN. The ticket's `rounding` list names every rounding or SIZE ERROR statement with the RoundingMode of each target. Round the final result only: compute intermediates exactly (IBM's ARITH intermediates carry 18 or 31 digits; the equivalence harness is the oracle when a result differs).",
+    "Keep the program's behaviour, including what looks like a defect (an unreachable branch, a field never reset): the port is proven by comparing its outputs with the original's. Document each such spot with a comment naming the defect and the one-line fix; fixing it is a business decision, not a translation.",
+    "Use the generated code as it is: entities and their fromRecord / toRecord codecs, repositories, DTOs, the batch runtime (DatasetResolver, Dd), the other services. Do not edit generated files other than this service; do not invent calls, files, queues or tables the facts do not name.",
+    "An abend is `throw CobolAbend.user(abcode, why)` (the generated batch runtime; CALL 'CEE3ABD' USING ABCODE: the step ends ABEND Unnnn) -- never another exception; the step's RETURN-CODE is runBatch's return value.",
+    "A DISPLAY is `Sysout.display(...)` (DISPLAY ... WITH NO ADVANCING: `Sysout.displayNoAdvancing`), never a log line: SYSOUT is compared line by line with the COBOL's. Its text is exactly what IBM COBOL writes, the operands concatenated: a literal as written; an alphanumeric or group item as all its bytes, trailing spaces included (a group's numeric fields as stored: zoned digits, the sign overpunched); a numeric item -- DISPLAY, COMP or COMP-3, not edited, no SIGN SEPARATE -- as `Sysout.number(value, digits, scale, signed)`: its PICTURE digits zero-padded, no decimal point, the sign overpunched in the last digit when signed (PIC S9(3) holding -12 is `01K`); an edited item as its edited text.",
+    "Every file I/O statement of a batch program (OPEN, CLOSE, READ, READ NEXT, WRITE, REWRITE, DELETE, START) is ONE call to the generated CobolFiles, per file (its DD name), in the order the program runs them. open(dd) / open(dd, path, input) / close(dd[, action]) / write / rewrite / delete(dd, action) / start(dd, found) return the status String; read(dd, supplier) (\"00\" or \"23\") and readNext(dd, iterator) (\"00\" or \"10\") return a CobolFiles.Read<T> -- status() and record(), null unless found. Take the program's FILE STATUS logic -- IF <status> = '00', AT END, INVALID KEY, its error paragraphs -- from the status returned, exactly as the program does; never skip a statement the program runs (a read-ahead, a CLOSE) or add one it does not. The equivalence harness injects file faults through CobolFiles and through GnuCOBOL at the same statement, and proves the error paths too. A keyed (VSAM KSDS) file keeps its mainframe semantics: WRITE is writeKeyed(dd, () -> repo.existsById(key), () -> repo.save(r)) -- \"22\" when the key is on file, never save() over it -- and REWRITE is rewriteKeyed(dd, exists, save) (\"23\" when it is not). A record the program READs INTO its working storage is the program's own copy: keep Entity.fromRecord(read.toRecord(cs), cs), never the repository's managed entity, so a change that is not REWRITten is never saved; and a READ that fails without INVALID KEY / AT END leaves the previous record in place, as the program's storage does.",
+    "A sequential dataset is fixed-length records (RECFM=FB): write each record's toRecord(...) bytes back to back, with no line separators, to the file DatasetResolver.path(dd) names; read it the same way.",
+    "Decode and encode a numeric field held in record bytes or a text column (zoned with an overpunched sign, COMP-3, COMP) only through the generated CobolRecords (zoned / packed / binary and their put methods) or the entity codecs, never a hand-written decoder.",
+    "Record bytes -- every dataset, file and COMMAREA the program reads or writes -- are in the code page CobolRecords.charset() returns: the migration's declared data.record_charset, a deployment fact. Pass it wherever a record codec, CobolRecords method or String takes a Charset; never Charset.forName, StandardCharsets or a guessed EBCDIC page for record data (#4060).",
+    "Read a number from text (a screen field, FUNCTION NUMVAL, a PARM) only through CobolRecords.numval(text, decimalPoint), with ',' when the program codes DECIMAL-POINT IS COMMA; never Integer.parseInt or new BigDecimal(String), which accept Arabic-Indic, Devanagari and full-width digits that COBOL rejects (#3831).",
+    "Format a numeric-edited field (a display string mapped from a number, often for a screen or print line) only through CobolEdit.format(pic, value, decimalComma, currency), which honours the COBOL picture (Z, 9, ., ,, -, +, CR/DB, $/currency, B, 0, /, and floating $ / + / - strings) as the mainframe does; pass the CURRENCY SIGN string (e.g. 'INR ') as currency, and it replaces the PICTURE SYMBOL (#3933).",
+    "Format and case-map with Locale.ROOT (String.format(Locale.ROOT, ...), toUpperCase(Locale.ROOT)): the default locale prints other digits (Arabic, Devanagari) and maps case differently (Turkish).",
+    "Order and compare VSAM / DB2 keys by the source code page's bytes, as the mainframe does (lower case before upper, letters before digits): browse through the generated sort-key finders, and sort in Java with CobolRecords.sortKey(key, codePage), never by String.compareTo or the database's default collation (#3822).",
+    "Compare alphanumeric operands (PIC X / A items, group items, alphanumeric literals and figurative constants) in IF, EVALUATE, PERFORM UNTIL and SEARCH WHEN only through the generated CobolCompare (compare, eq, gt, ge, lt, le), never String.compareTo or equals: it compares the code page's bytes as the mainframe does -- lower case before upper, letters before digits, so IF CUST-ID > 'A' is true for '1001' -- and pads the shorter operand with spaces ('AB' = 'AB  '). HIGH-VALUES / LOW-VALUES are CobolCompare.highValues(n) / lowValues(n). A numeric comparison stays BigDecimal.compareTo. A program that declares PROGRAM COLLATING SEQUENCE compares by that alphabet instead: flag it in a TODO (#3986).",
+    "A CICS program is ported into runTask(CicsTask task), one task per call (#3754): EIBCALEN = 0 is !task.hasCommarea(), EIBCALEN is task.eibcalen() (#4009: null = the whole record), DFHCOMMAREA is task.commarea(<its DTO>.class), EIBAID is task.aid() (ENTER, CLEAR, PF1-PF24, PA1-PA3), EIBTRMID is task.termid(), EIBTIME / EIBDATE / ASKTIME are task.now() (the task's dispatch time on the region's virtual clock, #3989), RECEIVE MAP is task.receive(map, mapset, <its screen>.class) (empty = MAPFAIL), SEND MAP is task.sendMap(map, mapset, screen, subfields, options...) (#4001: the screen holds each <f>O; CicsTask.MapSubfields each <f>A / <f>C / <f>H as its EBCDIC byte and <f>L = -1 for the cursor), SEND TEXT / SEND is task.sendText(from, length, options...), RETURN TRANSID COMMAREA LENGTH is task.returnTransid(transid, commarea, length), XCTL is task.xctl, LINK is task.link, ABEND is task.abend -- in the order the program does them, and the task ends at RETURN / XCTL / ABEND. A file READ is task.read(file, () -> <the service's generated read method>): its resp() is NORMAL (0), NOTFND (13) when the read finds nothing, or a condition the equivalence harness injects (NOTOPEN, IOERR, DISABLED, ...), and its resp2(); port every arm of the program's RESP handling (EVALUATE WS-RESP-CD ... WHEN OTHER) from it (#4023 follow-up). READ ... UPDATE is task.readForUpdate(file, lookup) (it holds the record for a REWRITE); WRITE FILE RIDFLD FROM is task.write(file, <whether the key is already in the file>, () -> <save the new record>): DUPREC (14) when it is; REWRITE FILE FROM is task.rewrite(file, () -> <save the changed record>): INVREQ (16) without a held record; each returns the RESP, and the injected conditions apply as for a READ. SYNCPOINT is task.syncpoint() and SYNCPOINT ROLLBACK task.rollback(), which undoes the task's file changes: save every change through these calls only -- what each file holds after the task is compared with the COBOL's. DELETE FILE RIDFLD is task.delete(file, <whether the key is there>, () -> <delete it>) (NOTFND 13 when not); DELETE FILE without RIDFLD is task.deleteHeld(file, () -> <delete the held record>). A browse: STARTBR is task.startbr(file, <RIDFLD as text>, <EQUAL given>, () -> <the file's keys, in key order, as a NavigableSet<String>>) (NOTFND 13 when no key qualifies); READNEXT / READPREV are task.readnext(file, <RIDFLD as text>) / task.readprev(file, ...), whose Browsed holds the RESP (ENDFILE 20 past either end) and the key read -- set RIDFLD to it and look the record up by it; ENDBR is task.endbr(file). The task keeps the browse's position and CICS's repositioning rules (a READPREV right after a READNEXT reads the same record again): pass RIDFLD exactly as the program holds it. ASKTIME ABSTIME is task.asktime(); FORMATTIME is CicsTask.formatDate(abstime, \"YYYYMMDD\" (or the form given), <DATESEP>) and CicsTask.formatTime(abstime, <TIMESEP>). ASSIGN APPLID / SYSID are task.assignApplid() / task.assignSysid() (the region's identity: never a literal). WRITEQ TD QUEUE FROM is task.writeqTd(queue, <the record as text, its full LENGTH>), which returns the RESP (QIDERR 44 for a queue the CSD does not define). INQUIRE PROGRAM(p) is task.inquireProgram(p): its RESP (NORMAL 0, PGMIDERR 27). A screen field shows what the symbolic map's O field would hold: text as moved, an edited PICTURE formatted as COBOL formats it. A COMMAREA is the generated DTO of its record; an area no generated DTO describes (a plain PIC X(n) item) is passed as a String of its n characters, or a byte[] of its EBCDIC bytes (#3989).",
+    "CICS condition and abend handling (#3989): HANDLE CONDITION, IGNORE CONDITION, HANDLE AID and RESP are the program's own control flow -- port each transfer to its label as Java control flow. HANDLE ABEND LABEL is task.handleAbend(label) (CANCEL, RESET: handleAbendCancel / handleAbendReset), and PUSH / POP HANDLE are task.pushHandle() / popHandle() besides saving and restoring the program's own handler state. EXEC CICS ABEND is task.abend(abcode) and a condition that takes CICS's default action is task.abendOnCondition(condition): CicsTask searches the active abend exits from this program's level upward, as CICS does, records the ABEND, and returns the label to continue at when this program's own exit took it -- or null, and the program must then return from runTask at once. After task.link(...) returns, task.abendExit() is the label of this program's exit when an abend in a program below reached it (continue there), and task.ended() is true when the task was terminated (stop). Never throw an exception to model a CICS transfer: the services are @Transactional, so an exception out of one marks the whole task rollback-only.",
+    "Dates and times only through java.time -- LocalDate, LocalDateTime, LocalTime and DateTimeFormatter with Locale.ROOT, in the ISO chronology -- never Calendar.getInstance(), new GregorianCalendar(), SimpleDateFormat or WeekFields.of(Locale.getDefault()): a th_TH default locale gives Buddhist-era years (2569), ja_JP_JP the Japanese imperial calendar, and US week fields start on Sunday. FUNCTION DAY-OF-WEEK and ACCEPT ... FROM DAY-OF-WEEK are Monday = 1 ... Sunday = 7, which is DayOfWeek.getValue() (#3833).",
+    "Read the time only from the generated batch runtime's MainframeClock (now() for local, currentDate() for FUNCTION CURRENT-DATE) -- in a CICS task, from task.now() -- never from the system clock directly or ZoneId.systemDefault(): it is how a run is pinned to be compared with the original.",
+    "A DB2 DATE / TIME / TIMESTAMP fetched into, or bound from, a character host variable (a DCLGEN DATE is PIC X(10)) is in the DB2 subsystem's format, the target config's culture.db2_date_format -- eur 26.09.2026 and 14.30.05, usa 09/26/2026 and 02:30 PM, iso 2026-09-26 and 14.30.05, jis 2026-09-26 and 14:30:05 -- and a TIMESTAMP is 2026-09-26-14.30.05.000000: convert only through the generated Db2Dates (date / time / timestamp, parseDate / parseTime / parseTimestamp), never LocalDate.toString() or LocalDate.parse (#3828).",
+    "FUNCTION INTEGER-OF-DATE / INTEGER-OF-DAY count days from day 1 = 1601-01-01 under INTDATE(ANSI), the default, but from day 1 = 1582-10-15 under INTDATE(LILIAN) (the same date is 6653 higher); DATE-OF-INTEGER / DAY-OF-INTEGER invert the same count. Port as ChronoUnit.DAYS.between(dayZero, date) with dayZero 1600-12-31 (ANSI) or 1582-10-14 (LILIAN). The ticket's compiler_options are the program's CBL / PROCESS cards; options given by the compile step's PARM or the installation defaults are not seen there (#3828).",
+    "A fact whose field testing is not 'field-tested' is verified on reference estates but still being field-tested: where the source contradicts it, follow the source and say so in the port's notes.",
+    "The proof calls one method per program: runTask(CicsTask) for a CICS program, handleCall(...) for a CALLed one, runBatch(dds, parm) for a batch one -- the ticket's methods to port. Port all of the program's behaviour into that method and the private helpers it calls. Port nothing into the other generated methods -- execute<Program>, handleTransaction, handleLink, handleChannel, onAbendL<n>, onCondition<C>L<n>, dispatch<X>L<n>, submit<Map> / render<Map>, xctl<P> / link<P>, the generated readqTs / writeqTs / read / browse helpers -- even where their TODO asks: leave each body as generated and keep no second entry point. Code the proof never runs is not proven, and the porting loop lists every method the proof cannot reach that the port changed (#4255)."
+  ],
+  "source": {
+    "copybooks": [
+      {
+        "file": "app/cpy/CVACT01Y.cpy",
+        "listing": "sources/app/cpy/CVACT01Y.cpy.lst"
+      }
+    ],
+    "program": {
+      "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+      "listing": "sources/app/app-vsam-mq/cbl/COACCT01.cbl.lst"
+    }
+  },
+  "status": "open",
+  "target": {
+    "config": {
+      "culture": {
+        "currency": "auto",
+        "db2_date_format": "iso",
+        "decimal_point": "auto",
+        "display_locale": "ROOT",
+        "format_locale": "ROOT",
+        "key_collation": "ebcdic",
+        "overflow": "cobol",
+        "rounding": "cobol",
+        "zone": "UTC"
+      },
+      "data": {
+        "bidi_layout": "auto",
+        "code_page": "cp037",
+        "dbcs_code_page": null,
+        "record_charset": "latin-1"
+      },
+      "database": "postgresql",
+      "integration": {
+        "messaging": "in-memory",
+        "remote_calls": "http"
+      },
+      "java": {
+        "build_tool": "maven",
+        "data_classes": "lombok",
+        "dto_style": "class",
+        "version": 17
+      },
+      "package": "com.gitgalaxy.modernized",
+      "spring_boot": {
+        "version": "3.2.4"
+      },
+      "ui": {
+        "flavour": "none"
+      }
+    },
+    "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
+    "left_as_generated": [
+      "public void commitPointL326()"
+    ],
+    "methods": [
+      {
+        "signature": "public void handleTransaction(String transid)",
+        "todo": false
+      },
+      {
+        "signature": "public void handleTransaction(String transid, byte[] area)",
+        "todo": false
+      },
+      {
+        "signature": "public byte[] lastAnswerBytes()",
+        "todo": false
+      },
+      {
+        "signature": "public void runTask(CicsTask task)",
+        "todo": true
+      },
+      {
+        "signature": "public Optional<AccountRecord> readAcctdat(Long key)",
+        "todo": false
+      },
+      {
+        "signature": "public void commitPointL326()",
+        "todo": true
+      },
+      {
+        "signature": "public void handleMqMessage(String request, String replyTo)",
+        "todo": false
+      }
+    ],
+    "methods_to_port": [
+      "public void runTask(CicsTask task)"
+    ],
+    "overlay": "port/service/Coacct01Service.java",
+    "proof_entry_points": [
+      "public void runTask(CicsTask task)"
+    ],
+    "service": "Coacct01Service"
+  },
+  "ticket": "PORT-COACCT01",
+  "version": 1,
+  "worklist": [
+    {
+      "category": "transaction-split",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
+      "id": "WL-0115",
+      "line": 87,
+      "text": "split the transaction here"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
+      "id": "WL-0139",
+      "line": 66,
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
+      "id": "WL-0140",
+      "line": 72,
+      "text": "port the PROCEDURE DIVISION into this task"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
+      "id": "WL-0141",
+      "line": 105,
+      "text": "port the logic that handles the MQ request"
+    }
+  ]
+}

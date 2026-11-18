@@ -11,8 +11,9 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.FeilStruc2;
-import com.gitgalaxy.modernized.dto.contract.FnrReg2;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.SrcR0019906FnrEndrReg;
+import com.gitgalaxy.modernized.dto.contract.SrcR0019921FeilStruc;
 import com.gitgalaxy.modernized.entity.vsam.InntRapp;
 import com.gitgalaxy.modernized.entity.vsam.LikningKommnrRecl;
 import com.gitgalaxy.modernized.entity.vsam.OlbruddKeyRecl;
@@ -56,30 +57,44 @@ public class SrcR001i903Service {
     private final OlbruddKeyReclRepository olbruddKeyReclRepository;
     private final StrykReclRepository strykReclRepository;
 
-    public void executeSrcR001i903(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__R001I903");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcR001i903: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcR001i903: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R001I903", null);
+        region.run(task, "R001I903", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R0019906) at src/R001I903.pli:1335.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public FnrReg2 linkSrcR0019906(FnrReg2 request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcR0019906FnrEndrReg linkSrcR0019906(SrcR0019906FnrEndrReg request) {
         return srcR0019906Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS LINK PROGRAM(R0019921) at src/R001I903.pli:3868.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public FeilStruc2 linkSrcR0019921(FeilStruc2 request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcR0019921FeilStruc linkSrcR0019921(SrcR0019921FeilStruc request) {
         return srcR0019921Service.getObject().handleLink(request);
     }
 
     /** INBRUDD as CICS file INBRUDD at src/R001I903.pli:3790; VSAM defines field testing: open (3 public / 0 private estates). */
     public InntRapp writeInbrudd(InntRapp record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<InntRapp> onFile = inntRappRepository.findById(record.getInntRapp());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file INBRUDD already holds the key of this record");
+        }
         return inntRappRepository.save(record);
     }
 
@@ -90,6 +105,12 @@ public class SrcR001i903Service {
 
     /** OLBRUDD as CICS file OLBRUDD at src/R001I903.pli:3828; VSAM defines field testing: open (3 public / 0 private estates). */
     public OlbruddKeyRecl writeOlbrudd(OlbruddKeyRecl record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<OlbruddKeyRecl> onFile = olbruddKeyReclRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file OLBRUDD already holds the key of this record");
+        }
         return olbruddKeyReclRepository.save(record);
     }
 

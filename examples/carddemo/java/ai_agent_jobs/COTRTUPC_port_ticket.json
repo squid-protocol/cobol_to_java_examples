@@ -1,0 +1,3478 @@
+{
+  "compiler_options": [],
+  "deliverable": {
+    "proof": "The port is laid over the generated project as an overlay and proven by the equivalence harness (tests/tools/equivalence.py in GitGalaxy): the original runs under GnuCOBOL, the port on the same inputs, and every output record is compared field by field; a person approves the port with that report in hand.",
+    "return": "One complete Java file for src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java: the same package, class name and public method signatures, with runTask ported -- what the proof runs -- and helper methods it calls added; every other generated method left as generated (#4255)."
+  },
+  "facts": {
+    "full_skeleton": "aws-mainframe-modernization-carddemo_gitgalaxy_clean_TIMESTAMP/06_skeleton/COTRTUPC_skeleton.json",
+    "program": {
+      "copy_collisions": [],
+      "copy_edges": {
+        "app/app-transaction-type-db2/cbl/COTRTUPC.cbl": {
+          "app/app-transaction-type-db2/cpy-bms/COTRTUP.cpy": [],
+          "app/app-transaction-type-db2/dcl/DCLTRCAT.dcl": [],
+          "app/app-transaction-type-db2/dcl/DCLTRTYP.dcl": [],
+          "app/cpy/COCOM01Y.cpy": [],
+          "app/cpy/COTTL01Y.cpy": [],
+          "app/cpy/CSDAT01Y.cpy": [],
+          "app/cpy/CSMSG01Y.cpy": [],
+          "app/cpy/CSMSG02Y.cpy": [],
+          "app/cpy/CSSETATY.cpy": [],
+          "app/cpy/CSSTRPFY.cpy": [],
+          "app/cpy/CSUSR01Y.cpy": [],
+          "app/cpy/CSUTLDWY.cpy": [],
+          "app/cpy/CVCRD01Y.cpy": []
+        },
+        "app/app-transaction-type-db2/cpy-bms/COTRTUP.cpy": {},
+        "app/app-transaction-type-db2/dcl/DCLTRCAT.dcl": {},
+        "app/app-transaction-type-db2/dcl/DCLTRTYP.dcl": {},
+        "app/cpy/COCOM01Y.cpy": {},
+        "app/cpy/COTTL01Y.cpy": {},
+        "app/cpy/CSDAT01Y.cpy": {},
+        "app/cpy/CSMSG01Y.cpy": {},
+        "app/cpy/CSMSG02Y.cpy": {},
+        "app/cpy/CSSETATY.cpy": {},
+        "app/cpy/CSSTRPFY.cpy": {},
+        "app/cpy/CSUSR01Y.cpy": {},
+        "app/cpy/CSUTLDWY.cpy": {},
+        "app/cpy/CVCRD01Y.cpy": {}
+      },
+      "copy_gaps": [],
+      "copybooks": [
+        "app/app-transaction-type-db2/cpy-bms/COTRTUP.cpy",
+        "app/app-transaction-type-db2/dcl/DCLTRCAT.dcl",
+        "app/app-transaction-type-db2/dcl/DCLTRTYP.dcl",
+        "app/cpy/COCOM01Y.cpy",
+        "app/cpy/COTTL01Y.cpy",
+        "app/cpy/CSDAT01Y.cpy",
+        "app/cpy/CSMSG01Y.cpy",
+        "app/cpy/CSMSG02Y.cpy",
+        "app/cpy/CSSETATY.cpy",
+        "app/cpy/CSSTRPFY.cpy",
+        "app/cpy/CSUSR01Y.cpy",
+        "app/cpy/CSUTLDWY.cpy",
+        "app/cpy/CVCRD01Y.cpy"
+      ],
+      "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "language": "cobol",
+      "program_id_field_testing": "open",
+      "program_ids": [
+        "COTRTUPC"
+      ],
+      "total_loc": 1703
+    },
+    "sections": {
+      "calls": {
+        "facts": [
+          {
+            "commarea": "CARDDEMO-COMMAREA",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 457,
+            "operand": "CDEMO-TO-PROGRAM",
+            "resolves_to": null,
+            "sysid": null,
+            "target": null,
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "WS-COMMAREA",
+            "commarea_datalength": null,
+            "commarea_length": "LENGTH OF WS-COMMAREA",
+            "form": "identifier",
+            "line": 567,
+            "operand": "LIT-THISTRANID",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "CTTU",
+            "using_args": null,
+            "verb": "RETURN TRANSID"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 9
+      },
+      "cics_resources": {
+        "facts": [
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 642,
+            "name": "CTRTUPA",
+            "operand": "LIT-THISMAP",
+            "qualifier": "COTRTUP",
+            "qualifier_operand": "LIT-THISMAPSET",
+            "record": "CTRTUPAI",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "value",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "write",
+            "attributes": "CURSOR ERASE FREEKB",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 1433,
+            "name": "CTRTUPA",
+            "operand": "CCARD-NEXT-MAP",
+            "qualifier": "COTRTUP",
+            "qualifier_operand": "CCARD-NEXT-MAPSET",
+            "record": "CTRTUPAO",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "move",
+            "verb": "SEND"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "commarea_contracts": {
+        "facts": [
+          {
+            "callee": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "callee_record": {
+              "bytes": 32767,
+              "copybooks": [],
+              "fields": 1,
+              "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": true
+            },
+            "caller": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+            "caller_record": {
+              "bytes": 160,
+              "copybooks": [],
+              "fields": 16,
+              "file": "app/cpy/COCOM01Y.cpy",
+              "name": "CARDDEMO-COMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "CARDDEMO-COMMAREA",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 648,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "COTRTUPC",
+            "verb": "XCTL"
+          },
+          {
+            "callee": null,
+            "callee_record": null,
+            "caller": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "caller_record": {
+              "bytes": 160,
+              "copybooks": [],
+              "fields": 16,
+              "file": "app/cpy/COCOM01Y.cpy",
+              "name": "CARDDEMO-COMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "CARDDEMO-COMMAREA",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 457,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "callee_unresolved",
+            "target": null,
+            "verb": "XCTL"
+          },
+          {
+            "callee": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "callee_record": {
+              "bytes": 32767,
+              "copybooks": [],
+              "fields": 1,
+              "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": true
+            },
+            "caller": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "caller_record": {
+              "bytes": 2000,
+              "copybooks": [],
+              "fields": 1,
+              "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+              "name": "WS-COMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "WS-COMMAREA",
+            "commarea_datalength": null,
+            "commarea_length": "LENGTH OF WS-COMMAREA",
+            "declared_length": null,
+            "line": 567,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "CTTU",
+            "verb": "RETURN TRANSID"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "dynamic_call_targets": {
+        "facts": [
+          {
+            "candidates": [
+              {
+                "program": "COADM01C",
+                "resolves_to": "app/cbl/COADM01C.cbl",
+                "via": "moves"
+              }
+            ],
+            "copybook": null,
+            "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "line": 457,
+            "operand": "CDEMO-TO-PROGRAM",
+            "other_sources": [
+              "CDEMO-FROM-PROGRAM"
+            ],
+            "verb": "XCTL"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "entry_points": {
+        "facts": [
+          {
+            "entry_name": null,
+            "kind": "PROCEDURE",
+            "line": 344,
+            "params": null
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "entry_transactions": {
+        "facts": [
+          {
+            "defined_in": "app/app-transaction-type-db2/csd/CRDDEMOD.csd",
+            "group": "CARDDEMO",
+            "line": 35,
+            "profile": "DFHCICST",
+            "program": "COTRTUPC",
+            "resolves_to": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "transid": "CTTU"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 4
+      },
+      "error_handlers": {
+        "facts": [
+          {
+            "condition": null,
+            "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "handler_found": true,
+            "kind": "HANDLE_ABEND",
+            "line": 348,
+            "target": "ABEND-ROUTINE",
+            "target_kind": "LABEL",
+            "unit": "0000-MAIN"
+          },
+          {
+            "condition": null,
+            "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "handler_found": null,
+            "kind": "HANDLE_ABEND",
+            "line": 1691,
+            "target": null,
+            "target_kind": "CANCEL",
+            "unit": "ABEND-ROUTINE"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "interface": {
+        "facts": {
+          "commarea": {
+            "alternatives": [
+              {
+                "bytes": 2000,
+                "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                "record": "WS-COMMAREA",
+                "sources": [
+                  {
+                    "caller": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                    "line": 567,
+                    "verb": "RETURN TRANSID"
+                  }
+                ]
+              },
+              {
+                "bytes": 160,
+                "file": "app/cpy/COCOM01Y.cpy",
+                "record": "CARDDEMO-COMMAREA",
+                "sources": [
+                  {
+                    "caller": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+                    "line": 648,
+                    "verb": "XCTL"
+                  }
+                ]
+              }
+            ],
+            "basis": "unpack",
+            "bytes": 265,
+            "copybooks": [],
+            "extended": false,
+            "fields": [
+              {
+                "bytes": 4,
+                "class": "X",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-FROM-TRANID",
+                "occurs": null,
+                "offset": 0,
+                "pic": "X(04)",
+                "usage": null
+              },
+              {
+                "bytes": 8,
+                "class": "X",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-FROM-PROGRAM",
+                "occurs": null,
+                "offset": 4,
+                "pic": "X(08)",
+                "usage": null
+              },
+              {
+                "bytes": 4,
+                "class": "X",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-TO-TRANID",
+                "occurs": null,
+                "offset": 12,
+                "pic": "X(04)",
+                "usage": null
+              },
+              {
+                "bytes": 8,
+                "class": "X",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-TO-PROGRAM",
+                "occurs": null,
+                "offset": 16,
+                "pic": "X(08)",
+                "usage": null
+              },
+              {
+                "bytes": 8,
+                "class": "X",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-USER-ID",
+                "occurs": null,
+                "offset": 24,
+                "pic": "X(08)",
+                "usage": null
+              },
+              {
+                "bytes": 1,
+                "class": "X",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-USER-TYPE",
+                "occurs": null,
+                "offset": 32,
+                "pic": "X(01)",
+                "usage": null
+              },
+              {
+                "bytes": 1,
+                "class": "9",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-PGM-CONTEXT",
+                "occurs": null,
+                "offset": 33,
+                "pic": "9(01)",
+                "usage": null
+              },
+              {
+                "bytes": 9,
+                "class": "9",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-CUST-ID",
+                "occurs": null,
+                "offset": 34,
+                "pic": "9(09)",
+                "usage": null
+              },
+              {
+                "bytes": 25,
+                "class": "X",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-CUST-FNAME",
+                "occurs": null,
+                "offset": 43,
+                "pic": "X(25)",
+                "usage": null
+              },
+              {
+                "bytes": 25,
+                "class": "X",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-CUST-MNAME",
+                "occurs": null,
+                "offset": 68,
+                "pic": "X(25)",
+                "usage": null
+              },
+              {
+                "bytes": 25,
+                "class": "X",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-CUST-LNAME",
+                "occurs": null,
+                "offset": 93,
+                "pic": "X(25)",
+                "usage": null
+              },
+              {
+                "bytes": 11,
+                "class": "9",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-ACCT-ID",
+                "occurs": null,
+                "offset": 118,
+                "pic": "9(11)",
+                "usage": null
+              },
+              {
+                "bytes": 1,
+                "class": "X",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-ACCT-STATUS",
+                "occurs": null,
+                "offset": 129,
+                "pic": "X(01)",
+                "usage": null
+              },
+              {
+                "bytes": 16,
+                "class": "9",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-CARD-NUM",
+                "occurs": null,
+                "offset": 130,
+                "pic": "9(16)",
+                "usage": null
+              },
+              {
+                "bytes": 7,
+                "class": "X",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-LAST-MAP",
+                "occurs": null,
+                "offset": 146,
+                "pic": "X(7)",
+                "usage": null
+              },
+              {
+                "bytes": 7,
+                "class": "X",
+                "file": "app/cpy/COCOM01Y.cpy",
+                "level": 10,
+                "name": "CDEMO-LAST-MAPSET",
+                "occurs": null,
+                "offset": 153,
+                "pic": "X(7)",
+                "usage": null
+              },
+              {
+                "bytes": 1,
+                "class": "X",
+                "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                "level": 10,
+                "name": "TTUP-CHANGE-ACTION",
+                "occurs": null,
+                "offset": 160,
+                "pic": "X(1)",
+                "usage": null
+              },
+              {
+                "bytes": 2,
+                "class": "X",
+                "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                "level": 15,
+                "name": "TTUP-OLD-TTYP-TYPE",
+                "occurs": null,
+                "offset": 161,
+                "pic": "X(02)",
+                "usage": null
+              },
+              {
+                "bytes": 50,
+                "class": "X",
+                "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                "level": 15,
+                "name": "TTUP-OLD-TTYP-TYPE-DESC",
+                "occurs": null,
+                "offset": 163,
+                "pic": "X(50)",
+                "usage": null
+              },
+              {
+                "bytes": 2,
+                "class": "X",
+                "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                "level": 15,
+                "name": "TTUP-NEW-TTYP-TYPE",
+                "occurs": null,
+                "offset": 213,
+                "pic": "X(02)",
+                "usage": null
+              },
+              {
+                "bytes": 50,
+                "class": "X",
+                "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                "level": 15,
+                "name": "TTUP-NEW-TTYP-TYPE-DESC",
+                "occurs": null,
+                "offset": 215,
+                "pic": "X(50)",
+                "usage": null
+              }
+            ],
+            "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "record": "DFHCOMMAREA",
+            "segments": [
+              {
+                "bytes": 160,
+                "file": "app/cpy/COCOM01Y.cpy",
+                "layout": {
+                  "bytes": 160,
+                  "copybooks": [],
+                  "fields": [
+                    {
+                      "bytes": 4,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-FROM-TRANID",
+                      "occurs": null,
+                      "offset": 0,
+                      "pic": "X(04)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 8,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-FROM-PROGRAM",
+                      "occurs": null,
+                      "offset": 4,
+                      "pic": "X(08)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 4,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-TO-TRANID",
+                      "occurs": null,
+                      "offset": 12,
+                      "pic": "X(04)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 8,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-TO-PROGRAM",
+                      "occurs": null,
+                      "offset": 16,
+                      "pic": "X(08)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 8,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-USER-ID",
+                      "occurs": null,
+                      "offset": 24,
+                      "pic": "X(08)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 1,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-USER-TYPE",
+                      "occurs": null,
+                      "offset": 32,
+                      "pic": "X(01)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 1,
+                      "class": "9",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-PGM-CONTEXT",
+                      "occurs": null,
+                      "offset": 33,
+                      "pic": "9(01)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 9,
+                      "class": "9",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-CUST-ID",
+                      "occurs": null,
+                      "offset": 34,
+                      "pic": "9(09)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 25,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-CUST-FNAME",
+                      "occurs": null,
+                      "offset": 43,
+                      "pic": "X(25)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 25,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-CUST-MNAME",
+                      "occurs": null,
+                      "offset": 68,
+                      "pic": "X(25)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 25,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-CUST-LNAME",
+                      "occurs": null,
+                      "offset": 93,
+                      "pic": "X(25)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 11,
+                      "class": "9",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-ACCT-ID",
+                      "occurs": null,
+                      "offset": 118,
+                      "pic": "9(11)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 1,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-ACCT-STATUS",
+                      "occurs": null,
+                      "offset": 129,
+                      "pic": "X(01)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 16,
+                      "class": "9",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-CARD-NUM",
+                      "occurs": null,
+                      "offset": 130,
+                      "pic": "9(16)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 7,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-LAST-MAP",
+                      "occurs": null,
+                      "offset": 146,
+                      "pic": "X(7)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 7,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-LAST-MAPSET",
+                      "occurs": null,
+                      "offset": 153,
+                      "pic": "X(7)",
+                      "usage": null
+                    }
+                  ],
+                  "unexpanded": [],
+                  "variable": false
+                },
+                "line": 376,
+                "offset": 0,
+                "record": "CARDDEMO-COMMAREA",
+                "refmod": "1:LENGTH OF CARDDEMO-COMMAREA"
+              },
+              {
+                "bytes": 105,
+                "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                "layout": {
+                  "bytes": 105,
+                  "copybooks": [],
+                  "fields": [
+                    {
+                      "bytes": 1,
+                      "class": "X",
+                      "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                      "level": 10,
+                      "name": "TTUP-CHANGE-ACTION",
+                      "occurs": null,
+                      "offset": 0,
+                      "pic": "X(1)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 2,
+                      "class": "X",
+                      "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                      "level": 15,
+                      "name": "TTUP-OLD-TTYP-TYPE",
+                      "occurs": null,
+                      "offset": 1,
+                      "pic": "X(02)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 50,
+                      "class": "X",
+                      "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                      "level": 15,
+                      "name": "TTUP-OLD-TTYP-TYPE-DESC",
+                      "occurs": null,
+                      "offset": 3,
+                      "pic": "X(50)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 2,
+                      "class": "X",
+                      "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                      "level": 15,
+                      "name": "TTUP-NEW-TTYP-TYPE",
+                      "occurs": null,
+                      "offset": 53,
+                      "pic": "X(02)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 50,
+                      "class": "X",
+                      "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                      "level": 15,
+                      "name": "TTUP-NEW-TTYP-TYPE-DESC",
+                      "occurs": null,
+                      "offset": 55,
+                      "pic": "X(50)",
+                      "usage": null
+                    }
+                  ],
+                  "unexpanded": [],
+                  "variable": false
+                },
+                "line": 378,
+                "offset": 160,
+                "record": "WS-THIS-PROGCOMMAREA",
+                "refmod": "LENGTH OF CARDDEMO-COMMAREA + 1:LENGTH OF WS-THIS-PROGCOMMAREA"
+              }
+            ],
+            "sources": [
+              {
+                "caller": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                "line": 567,
+                "verb": "RETURN TRANSID"
+              },
+              {
+                "caller": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+                "line": 648,
+                "verb": "XCTL"
+              }
+            ],
+            "unexpanded": [],
+            "variable": false
+          },
+          "commarea_gap": null,
+          "commarea_unpack": {
+            "bytes": 265,
+            "opaque": true,
+            "segments": [
+              {
+                "bytes": 160,
+                "file": "app/cpy/COCOM01Y.cpy",
+                "layout": {
+                  "bytes": 160,
+                  "copybooks": [],
+                  "fields": [
+                    {
+                      "bytes": 4,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-FROM-TRANID",
+                      "occurs": null,
+                      "offset": 0,
+                      "pic": "X(04)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 8,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-FROM-PROGRAM",
+                      "occurs": null,
+                      "offset": 4,
+                      "pic": "X(08)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 4,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-TO-TRANID",
+                      "occurs": null,
+                      "offset": 12,
+                      "pic": "X(04)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 8,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-TO-PROGRAM",
+                      "occurs": null,
+                      "offset": 16,
+                      "pic": "X(08)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 8,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-USER-ID",
+                      "occurs": null,
+                      "offset": 24,
+                      "pic": "X(08)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 1,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-USER-TYPE",
+                      "occurs": null,
+                      "offset": 32,
+                      "pic": "X(01)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 1,
+                      "class": "9",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-PGM-CONTEXT",
+                      "occurs": null,
+                      "offset": 33,
+                      "pic": "9(01)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 9,
+                      "class": "9",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-CUST-ID",
+                      "occurs": null,
+                      "offset": 34,
+                      "pic": "9(09)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 25,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-CUST-FNAME",
+                      "occurs": null,
+                      "offset": 43,
+                      "pic": "X(25)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 25,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-CUST-MNAME",
+                      "occurs": null,
+                      "offset": 68,
+                      "pic": "X(25)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 25,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-CUST-LNAME",
+                      "occurs": null,
+                      "offset": 93,
+                      "pic": "X(25)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 11,
+                      "class": "9",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-ACCT-ID",
+                      "occurs": null,
+                      "offset": 118,
+                      "pic": "9(11)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 1,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-ACCT-STATUS",
+                      "occurs": null,
+                      "offset": 129,
+                      "pic": "X(01)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 16,
+                      "class": "9",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-CARD-NUM",
+                      "occurs": null,
+                      "offset": 130,
+                      "pic": "9(16)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 7,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-LAST-MAP",
+                      "occurs": null,
+                      "offset": 146,
+                      "pic": "X(7)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 7,
+                      "class": "X",
+                      "file": "app/cpy/COCOM01Y.cpy",
+                      "level": 10,
+                      "name": "CDEMO-LAST-MAPSET",
+                      "occurs": null,
+                      "offset": 153,
+                      "pic": "X(7)",
+                      "usage": null
+                    }
+                  ],
+                  "unexpanded": [],
+                  "variable": false
+                },
+                "line": 376,
+                "offset": 0,
+                "record": "CARDDEMO-COMMAREA",
+                "refmod": "1:LENGTH OF CARDDEMO-COMMAREA"
+              },
+              {
+                "bytes": 105,
+                "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                "layout": {
+                  "bytes": 105,
+                  "copybooks": [],
+                  "fields": [
+                    {
+                      "bytes": 1,
+                      "class": "X",
+                      "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                      "level": 10,
+                      "name": "TTUP-CHANGE-ACTION",
+                      "occurs": null,
+                      "offset": 0,
+                      "pic": "X(1)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 2,
+                      "class": "X",
+                      "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                      "level": 15,
+                      "name": "TTUP-OLD-TTYP-TYPE",
+                      "occurs": null,
+                      "offset": 1,
+                      "pic": "X(02)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 50,
+                      "class": "X",
+                      "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                      "level": 15,
+                      "name": "TTUP-OLD-TTYP-TYPE-DESC",
+                      "occurs": null,
+                      "offset": 3,
+                      "pic": "X(50)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 2,
+                      "class": "X",
+                      "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                      "level": 15,
+                      "name": "TTUP-NEW-TTYP-TYPE",
+                      "occurs": null,
+                      "offset": 53,
+                      "pic": "X(02)",
+                      "usage": null
+                    },
+                    {
+                      "bytes": 50,
+                      "class": "X",
+                      "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+                      "level": 15,
+                      "name": "TTUP-NEW-TTYP-TYPE-DESC",
+                      "occurs": null,
+                      "offset": 55,
+                      "pic": "X(50)",
+                      "usage": null
+                    }
+                  ],
+                  "unexpanded": [],
+                  "variable": false
+                },
+                "line": 378,
+                "offset": 160,
+                "record": "WS-THIS-PROGCOMMAREA",
+                "refmod": "LENGTH OF CARDDEMO-COMMAREA + 1:LENGTH OF WS-THIS-PROGCOMMAREA"
+              }
+            ],
+            "tiled": true
+          },
+          "containers": [],
+          "inbound": [
+            {
+              "bytes": null,
+              "caller": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+              "line": 620,
+              "passes": "CARDDEMO-COMMAREA",
+              "verb": "XCTL",
+              "via": "moves"
+            },
+            {
+              "bytes": 160,
+              "caller": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+              "line": 648,
+              "passes": "CARDDEMO-COMMAREA",
+              "verb": "XCTL",
+              "via": "static"
+            },
+            {
+              "bytes": null,
+              "caller": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+              "line": 648,
+              "passes": "CARDDEMO-COMMAREA",
+              "verb": "XCTL",
+              "via": "value"
+            },
+            {
+              "bytes": 2000,
+              "caller": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+              "line": 567,
+              "passes": "WS-COMMAREA",
+              "verb": "RETURN TRANSID",
+              "via": "static"
+            },
+            {
+              "bytes": null,
+              "caller": "app/cbl/COADM01C.cbl",
+              "line": 145,
+              "passes": "CARDDEMO-COMMAREA",
+              "verb": "XCTL",
+              "via": "table"
+            }
+          ],
+          "parameters": []
+        },
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "navigation": {
+        "facts": [
+          {
+            "from": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "line": 567,
+            "program": "CTTU",
+            "remote_systems": [],
+            "to": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+            "line": 620,
+            "program": "COTRTUPC",
+            "remote_systems": [],
+            "to": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "verb": "XCTL",
+            "via": "moves"
+          },
+          {
+            "from": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+            "line": 648,
+            "program": "COTRTUPC",
+            "remote_systems": [],
+            "to": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "verb": "XCTL",
+            "via": "value"
+          },
+          {
+            "from": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "line": 457,
+            "program": "COADM01C",
+            "remote_systems": [],
+            "to": "app/cbl/COADM01C.cbl",
+            "verb": "XCTL",
+            "via": "moves"
+          },
+          {
+            "from": "app/cbl/COADM01C.cbl",
+            "line": 145,
+            "program": "COTRTUPC",
+            "remote_systems": [],
+            "to": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "verb": "XCTL",
+            "via": "table"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 4
+      },
+      "screen_bindings": {
+        "facts": [
+          {
+            "bms_candidates": [
+              "app/app-transaction-type-db2/bms/COTRTUP.bms"
+            ],
+            "bms_file": "app/app-transaction-type-db2/bms/COTRTUP.bms",
+            "fields": [
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "Tran:",
+                "kind": "field",
+                "length": 5,
+                "line": 29,
+                "name": null,
+                "occurs": null,
+                "ordinal": 2,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 1
+              },
+              {
+                "attrb": "ASKIP,FSET,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": null,
+                "kind": "field",
+                "length": 4,
+                "line": 34,
+                "name": "TRNNAME",
+                "occurs": null,
+                "ordinal": 3,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 7,
+                "pos_line": 1
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=YELLOW",
+                "initial": null,
+                "kind": "field",
+                "length": 40,
+                "line": 38,
+                "name": "TITLE01",
+                "occurs": null,
+                "ordinal": 4,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 21,
+                "pos_line": 1
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "Date:",
+                "kind": "field",
+                "length": 5,
+                "line": 42,
+                "name": null,
+                "occurs": null,
+                "ordinal": 5,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 65,
+                "pos_line": 1
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "mm/dd/yy",
+                "kind": "field",
+                "length": 8,
+                "line": 47,
+                "name": "CURDATE",
+                "occurs": null,
+                "ordinal": 6,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 71,
+                "pos_line": 1
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "Prog:",
+                "kind": "field",
+                "length": 5,
+                "line": 52,
+                "name": null,
+                "occurs": null,
+                "ordinal": 7,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 2
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": null,
+                "kind": "field",
+                "length": 8,
+                "line": 57,
+                "name": "PGMNAME",
+                "occurs": null,
+                "ordinal": 8,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 7,
+                "pos_line": 2
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=YELLOW",
+                "initial": null,
+                "kind": "field",
+                "length": 40,
+                "line": 61,
+                "name": "TITLE02",
+                "occurs": null,
+                "ordinal": 9,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 21,
+                "pos_line": 2
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "Time:",
+                "kind": "field",
+                "length": 5,
+                "line": 65,
+                "name": null,
+                "occurs": null,
+                "ordinal": 10,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 65,
+                "pos_line": 2
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "hh:mm:ss",
+                "kind": "field",
+                "length": 8,
+                "line": 70,
+                "name": "CURTIME",
+                "occurs": null,
+                "ordinal": 11,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 71,
+                "pos_line": 2
+              },
+              {
+                "attrb": null,
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "Maintain Transaction Type",
+                "kind": "field",
+                "length": 25,
+                "line": 75,
+                "name": null,
+                "occurs": null,
+                "ordinal": 12,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 28,
+                "pos_line": 7
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Transaction Type  :",
+                "kind": "field",
+                "length": 19,
+                "line": 79,
+                "name": null,
+                "occurs": null,
+                "ordinal": 13,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 4,
+                "pos_line": 12
+              },
+              {
+                "attrb": "IC,UNPROT",
+                "attributes": "HILIGHT=UNDERLINE",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 84,
+                "name": "TRTYPCD",
+                "occurs": null,
+                "ordinal": 14,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 26,
+                "pos_line": 12
+              },
+              {
+                "attrb": null,
+                "attributes": null,
+                "initial": null,
+                "kind": "field",
+                "length": 0,
+                "line": 88,
+                "name": null,
+                "occurs": null,
+                "ordinal": 15,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 29,
+                "pos_line": 12
+              },
+              {
+                "attrb": null,
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Description       :",
+                "kind": "field",
+                "length": 19,
+                "line": 90,
+                "name": null,
+                "occurs": null,
+                "ordinal": 16,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 4,
+                "pos_line": 14
+              },
+              {
+                "attrb": "UNPROT",
+                "attributes": "HILIGHT=UNDERLINE",
+                "initial": null,
+                "kind": "field",
+                "length": 50,
+                "line": 94,
+                "name": "TRTYDSC",
+                "occurs": null,
+                "ordinal": 17,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 26,
+                "pos_line": 14
+              },
+              {
+                "attrb": null,
+                "attributes": null,
+                "initial": null,
+                "kind": "field",
+                "length": 0,
+                "line": 98,
+                "name": null,
+                "occurs": null,
+                "ordinal": 18,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 77,
+                "pos_line": 14
+              },
+              {
+                "attrb": "ASKIP",
+                "attributes": "COLOR=NEUTRAL,HILIGHT=OFF",
+                "initial": null,
+                "kind": "field",
+                "length": 45,
+                "line": 100,
+                "name": "INFOMSG",
+                "occurs": null,
+                "ordinal": 19,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 22
+              },
+              {
+                "attrb": null,
+                "attributes": null,
+                "initial": null,
+                "kind": "field",
+                "length": 0,
+                "line": 105,
+                "name": null,
+                "occurs": null,
+                "ordinal": 20,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 69,
+                "pos_line": 22
+              },
+              {
+                "attrb": "ASKIP,BRT,FSET",
+                "attributes": "COLOR=RED",
+                "initial": null,
+                "kind": "field",
+                "length": 78,
+                "line": 107,
+                "name": "ERRMSG",
+                "occurs": null,
+                "ordinal": 21,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 23
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=YELLOW",
+                "initial": "ENTER=Process F3=Exit",
+                "kind": "field",
+                "length": 21,
+                "line": 111,
+                "name": "FKEYS",
+                "occurs": null,
+                "ordinal": 22,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 24
+              },
+              {
+                "attrb": "ASKIP,DRK",
+                "attributes": "COLOR=YELLOW",
+                "initial": "F4=Delete",
+                "kind": "field",
+                "length": 9,
+                "line": 116,
+                "name": "FKEY04",
+                "occurs": null,
+                "ordinal": 23,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 24
+              },
+              {
+                "attrb": "ASKIP,DRK",
+                "attributes": "COLOR=YELLOW",
+                "initial": "F5=Save",
+                "kind": "field",
+                "length": 8,
+                "line": 121,
+                "name": "FKEY05",
+                "occurs": null,
+                "ordinal": 24,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 33,
+                "pos_line": 24
+              },
+              {
+                "attrb": "ASKIP,DRK",
+                "attributes": "COLOR=YELLOW",
+                "initial": "F6=Add",
+                "kind": "field",
+                "length": 6,
+                "line": 126,
+                "name": "FKEY06",
+                "occurs": null,
+                "ordinal": 25,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 43,
+                "pos_line": 24
+              },
+              {
+                "attrb": "ASKIP,DRK",
+                "attributes": "COLOR=YELLOW",
+                "initial": "F12=Cancel",
+                "kind": "field",
+                "length": 10,
+                "line": 131,
+                "name": "FKEY12",
+                "occurs": null,
+                "ordinal": 26,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 69,
+                "pos_line": 24
+              }
+            ],
+            "line": 642,
+            "map": "CTRTUPA",
+            "mapset": "COTRTUP",
+            "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "record": "CTRTUPAI",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [
+              "app/app-transaction-type-db2/bms/COTRTUP.bms"
+            ],
+            "bms_file": "app/app-transaction-type-db2/bms/COTRTUP.bms",
+            "fields": [
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "Tran:",
+                "kind": "field",
+                "length": 5,
+                "line": 29,
+                "name": null,
+                "occurs": null,
+                "ordinal": 2,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 1
+              },
+              {
+                "attrb": "ASKIP,FSET,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": null,
+                "kind": "field",
+                "length": 4,
+                "line": 34,
+                "name": "TRNNAME",
+                "occurs": null,
+                "ordinal": 3,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 7,
+                "pos_line": 1
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=YELLOW",
+                "initial": null,
+                "kind": "field",
+                "length": 40,
+                "line": 38,
+                "name": "TITLE01",
+                "occurs": null,
+                "ordinal": 4,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 21,
+                "pos_line": 1
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "Date:",
+                "kind": "field",
+                "length": 5,
+                "line": 42,
+                "name": null,
+                "occurs": null,
+                "ordinal": 5,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 65,
+                "pos_line": 1
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "mm/dd/yy",
+                "kind": "field",
+                "length": 8,
+                "line": 47,
+                "name": "CURDATE",
+                "occurs": null,
+                "ordinal": 6,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 71,
+                "pos_line": 1
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "Prog:",
+                "kind": "field",
+                "length": 5,
+                "line": 52,
+                "name": null,
+                "occurs": null,
+                "ordinal": 7,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 2
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": null,
+                "kind": "field",
+                "length": 8,
+                "line": 57,
+                "name": "PGMNAME",
+                "occurs": null,
+                "ordinal": 8,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 7,
+                "pos_line": 2
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=YELLOW",
+                "initial": null,
+                "kind": "field",
+                "length": 40,
+                "line": 61,
+                "name": "TITLE02",
+                "occurs": null,
+                "ordinal": 9,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 21,
+                "pos_line": 2
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "Time:",
+                "kind": "field",
+                "length": 5,
+                "line": 65,
+                "name": null,
+                "occurs": null,
+                "ordinal": 10,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 65,
+                "pos_line": 2
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "hh:mm:ss",
+                "kind": "field",
+                "length": 8,
+                "line": 70,
+                "name": "CURTIME",
+                "occurs": null,
+                "ordinal": 11,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 71,
+                "pos_line": 2
+              },
+              {
+                "attrb": null,
+                "attributes": "COLOR=NEUTRAL",
+                "initial": "Maintain Transaction Type",
+                "kind": "field",
+                "length": 25,
+                "line": 75,
+                "name": null,
+                "occurs": null,
+                "ordinal": 12,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 28,
+                "pos_line": 7
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Transaction Type  :",
+                "kind": "field",
+                "length": 19,
+                "line": 79,
+                "name": null,
+                "occurs": null,
+                "ordinal": 13,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 4,
+                "pos_line": 12
+              },
+              {
+                "attrb": "IC,UNPROT",
+                "attributes": "HILIGHT=UNDERLINE",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 84,
+                "name": "TRTYPCD",
+                "occurs": null,
+                "ordinal": 14,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 26,
+                "pos_line": 12
+              },
+              {
+                "attrb": null,
+                "attributes": null,
+                "initial": null,
+                "kind": "field",
+                "length": 0,
+                "line": 88,
+                "name": null,
+                "occurs": null,
+                "ordinal": 15,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 29,
+                "pos_line": 12
+              },
+              {
+                "attrb": null,
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Description       :",
+                "kind": "field",
+                "length": 19,
+                "line": 90,
+                "name": null,
+                "occurs": null,
+                "ordinal": 16,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 4,
+                "pos_line": 14
+              },
+              {
+                "attrb": "UNPROT",
+                "attributes": "HILIGHT=UNDERLINE",
+                "initial": null,
+                "kind": "field",
+                "length": 50,
+                "line": 94,
+                "name": "TRTYDSC",
+                "occurs": null,
+                "ordinal": 17,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 26,
+                "pos_line": 14
+              },
+              {
+                "attrb": null,
+                "attributes": null,
+                "initial": null,
+                "kind": "field",
+                "length": 0,
+                "line": 98,
+                "name": null,
+                "occurs": null,
+                "ordinal": 18,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 77,
+                "pos_line": 14
+              },
+              {
+                "attrb": "ASKIP",
+                "attributes": "COLOR=NEUTRAL,HILIGHT=OFF",
+                "initial": null,
+                "kind": "field",
+                "length": 45,
+                "line": 100,
+                "name": "INFOMSG",
+                "occurs": null,
+                "ordinal": 19,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 22
+              },
+              {
+                "attrb": null,
+                "attributes": null,
+                "initial": null,
+                "kind": "field",
+                "length": 0,
+                "line": 105,
+                "name": null,
+                "occurs": null,
+                "ordinal": 20,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 69,
+                "pos_line": 22
+              },
+              {
+                "attrb": "ASKIP,BRT,FSET",
+                "attributes": "COLOR=RED",
+                "initial": null,
+                "kind": "field",
+                "length": 78,
+                "line": 107,
+                "name": "ERRMSG",
+                "occurs": null,
+                "ordinal": 21,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 23
+              },
+              {
+                "attrb": "ASKIP,NORM",
+                "attributes": "COLOR=YELLOW",
+                "initial": "ENTER=Process F3=Exit",
+                "kind": "field",
+                "length": 21,
+                "line": 111,
+                "name": "FKEYS",
+                "occurs": null,
+                "ordinal": 22,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 24
+              },
+              {
+                "attrb": "ASKIP,DRK",
+                "attributes": "COLOR=YELLOW",
+                "initial": "F4=Delete",
+                "kind": "field",
+                "length": 9,
+                "line": 116,
+                "name": "FKEY04",
+                "occurs": null,
+                "ordinal": 23,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 24
+              },
+              {
+                "attrb": "ASKIP,DRK",
+                "attributes": "COLOR=YELLOW",
+                "initial": "F5=Save",
+                "kind": "field",
+                "length": 8,
+                "line": 121,
+                "name": "FKEY05",
+                "occurs": null,
+                "ordinal": 24,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 33,
+                "pos_line": 24
+              },
+              {
+                "attrb": "ASKIP,DRK",
+                "attributes": "COLOR=YELLOW",
+                "initial": "F6=Add",
+                "kind": "field",
+                "length": 6,
+                "line": 126,
+                "name": "FKEY06",
+                "occurs": null,
+                "ordinal": 25,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 43,
+                "pos_line": 24
+              },
+              {
+                "attrb": "ASKIP,DRK",
+                "attributes": "COLOR=YELLOW",
+                "initial": "F12=Cancel",
+                "kind": "field",
+                "length": 10,
+                "line": 131,
+                "name": "FKEY12",
+                "occurs": null,
+                "ordinal": 26,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 69,
+                "pos_line": 24
+              }
+            ],
+            "line": 1433,
+            "map": "CTRTUPA",
+            "mapset": "COTRTUP",
+            "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "record": "CTRTUPAO",
+            "verb": "SEND"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 3
+      },
+      "sql_statements": {
+        "facts": [
+          {
+            "access": "read",
+            "cursor": null,
+            "host_variables": [
+              "DCL-TR-TYPE",
+              "DCL-TR-DESCRIPTION"
+            ],
+            "line": 1475,
+            "ordinal": 1,
+            "statement": "SELECT TR_TYPE ,TR_DESCRIPTION INTO :DCL-TR-TYPE ,:DCL-TR-DESCRIPTION FROM CARDDEMO.TRANSACTION_TYPE WHERE TR_TYPE = :DCL-TR-TYPE",
+            "table": "CARDDEMO.TRANSACTION_TYPE",
+            "verb": "SELECT"
+          },
+          {
+            "access": "update",
+            "cursor": null,
+            "host_variables": [
+              "DCL-TR-DESCRIPTION",
+              "DCL-TR-TYPE"
+            ],
+            "line": 1544,
+            "ordinal": 2,
+            "statement": "UPDATE CARDDEMO.TRANSACTION_TYPE SET TR_DESCRIPTION = :DCL-TR-DESCRIPTION WHERE TR_TYPE = :DCL-TR-TYPE",
+            "table": "CARDDEMO.TRANSACTION_TYPE",
+            "verb": "UPDATE"
+          },
+          {
+            "access": "insert",
+            "cursor": null,
+            "host_variables": [
+              "DCL-TR-TYPE",
+              "DCL-TR-DESCRIPTION"
+            ],
+            "line": 1597,
+            "ordinal": 3,
+            "statement": "INSERT INTO CARDDEMO.TRANSACTION_TYPE (TR_TYPE, TR_DESCRIPTION) VALUES ( :DCL-TR-TYPE ,:DCL-TR-DESCRIPTION)",
+            "table": "CARDDEMO.TRANSACTION_TYPE",
+            "verb": "INSERT"
+          },
+          {
+            "access": "delete",
+            "cursor": null,
+            "host_variables": [
+              "DCL-TR-TYPE"
+            ],
+            "line": 1627,
+            "ordinal": 4,
+            "statement": "DELETE FROM CARDDEMO.TRANSACTION_TYPE WHERE TR_TYPE = :DCL-TR-TYPE",
+            "table": "CARDDEMO.TRANSACTION_TYPE",
+            "verb": "DELETE"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 3
+      },
+      "sql_table_access": {
+        "facts": [
+          {
+            "accesses": [
+              "delete",
+              "insert",
+              "read",
+              "update"
+            ],
+            "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "lines": [
+              1475,
+              1544,
+              1597,
+              1627
+            ],
+            "table": "CARDDEMO.TRANSACTION_TYPE",
+            "via_cursor": []
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 3
+      },
+      "unchecked_responses": {
+        "facts": [
+          {
+            "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "line": 642,
+            "resp_var": "WS-RESP-CD",
+            "unit": "1100-RECEIVE-MAP",
+            "verb": "RECEIVE"
+          },
+          {
+            "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "line": 1433,
+            "resp_var": "WS-RESP-CD",
+            "unit": "3400-SEND-SCREEN",
+            "verb": "SEND"
+          },
+          {
+            "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "line": 1684,
+            "resp_var": "EIBRESP",
+            "unit": "ABEND-ROUTINE",
+            "verb": "SEND"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "units_of_work": {
+        "facts": [
+          {
+            "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "kind": "COMMIT",
+            "line": 453,
+            "source": "CICS",
+            "unit": "0000-MAIN",
+            "verb": "SYNCPOINT"
+          },
+          {
+            "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "kind": "COMMIT",
+            "line": 1557,
+            "source": "CICS",
+            "unit": "9600-WRITE-PROCESSING",
+            "verb": "SYNCPOINT"
+          },
+          {
+            "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "kind": "COMMIT",
+            "line": 1606,
+            "source": "CICS",
+            "unit": "9700-INSERT-RECORD",
+            "verb": "SYNCPOINT"
+          },
+          {
+            "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "kind": "COMMIT",
+            "line": 1637,
+            "source": "CICS",
+            "unit": "9800-DELETE-PROCESSING",
+            "verb": "SYNCPOINT"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "unresolved_calls": {
+        "facts": [
+          {
+            "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+            "form": "identifier",
+            "line": 457,
+            "operand": "CDEMO-TO-PROGRAM",
+            "target": null,
+            "verb": "XCTL"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 9
+      },
+      "uow_handlers": {
+        "facts": [
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "HANDLE_ABEND",
+            "line": 348,
+            "resp_var": null,
+            "source": "CICS",
+            "target": "ABEND-ROUTINE",
+            "target_kind": "LABEL",
+            "verb": "HANDLE ABEND"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "COMMIT",
+            "line": 453,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SYNCPOINT"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 642,
+            "resp_var": "WS-RESP-CD",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RECEIVE"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1433,
+            "resp_var": "WS-RESP-CD",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SEND"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "COMMIT",
+            "line": 1557,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SYNCPOINT"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "COMMIT",
+            "line": 1606,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SYNCPOINT"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "COMMIT",
+            "line": 1637,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SYNCPOINT"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1684,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SEND"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "HANDLE_ABEND",
+            "line": 1691,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": "CANCEL",
+            "verb": "HANDLE ABEND"
+          },
+          {
+            "attributes": null,
+            "condition": "ABEND-CODE",
+            "kind": "ABEND",
+            "line": 1695,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "ABEND"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      }
+    }
+  },
+  "generated": {
+    "imports": [
+      {
+        "class": "com.gitgalaxy.modernized.cics.CicsTask",
+        "file": "src/main/java/com/gitgalaxy/modernized/cics/CicsTask.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.dto.contract.CotrtupcCommarea",
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CotrtupcCommarea.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.dto.screen.CtrtupaScreen",
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/screen/CtrtupaScreen.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.repository.db2.TransactionTypeRepository",
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java"
+      }
+    ],
+    "traced_to_this_program": [
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/Coadm01cController.java",
+        "symbol": "Coadm01cController#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CotrtupcWsThisProgcommarea.java",
+        "symbol": "CotrtupcWsThisProgcommarea#ttupChangeAction"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CotrtupcWsThisProgcommarea.java",
+        "symbol": "CotrtupcWsThisProgcommarea#ttupNewTtypType"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CotrtupcWsThisProgcommarea.java",
+        "symbol": "CotrtupcWsThisProgcommarea#ttupNewTtypTypeDesc"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CotrtupcWsThisProgcommarea.java",
+        "symbol": "CotrtupcWsThisProgcommarea#ttupOldTtypType"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CotrtupcWsThisProgcommarea.java",
+        "symbol": "CotrtupcWsThisProgcommarea#ttupOldTtypTypeDesc"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+        "symbol": "TransactionTypeRepository#deleteL1627Cotrtupc"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+        "symbol": "TransactionTypeRepository#insertL1597Cotrtupc"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+        "symbol": "TransactionTypeRepository#selectL1475Cotrtupc"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
+        "symbol": "TransactionTypeRepository#updateL1544Cotrtupc"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+        "symbol": "CotrtupcService"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+        "symbol": "CotrtupcService#abendAbendcodeL1695"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+        "symbol": "CotrtupcService#commitPointL1557"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+        "symbol": "CotrtupcService#commitPointL1606"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+        "symbol": "CotrtupcService#commitPointL1637"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+        "symbol": "CotrtupcService#commitPointL453"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+        "symbol": "CotrtupcService#dispatchCdemoToProgramL457"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+        "symbol": "CotrtupcService#onAbendL348"
+      }
+    ]
+  },
+  "paragraphs": [
+    {
+      "lines": 213,
+      "name": "0000-MAIN",
+      "start_line": 345
+    },
+    {
+      "lines": 14,
+      "name": "COMMON-RETURN",
+      "start_line": 559
+    },
+    {
+      "lines": 3,
+      "name": "0000-MAIN-EXIT",
+      "start_line": 573
+    },
+    {
+      "lines": 42,
+      "name": "0001-CHECK-PFKEYS",
+      "start_line": 577
+    },
+    {
+      "lines": 3,
+      "name": "0001-CHECK-PFKEYS-EXIT",
+      "start_line": 621
+    },
+    {
+      "lines": 12,
+      "name": "1000-PROCESS-INPUTS",
+      "start_line": 625
+    },
+    {
+      "lines": 3,
+      "name": "1000-PROCESS-INPUTS-EXIT",
+      "start_line": 638
+    },
+    {
+      "lines": 8,
+      "name": "1100-RECEIVE-MAP",
+      "start_line": 641
+    },
+    {
+      "lines": 2,
+      "name": "1100-RECEIVE-MAP-EXIT",
+      "start_line": 649
+    },
+    {
+      "lines": 34,
+      "name": "1150-STORE-MAP-IN-NEW",
+      "start_line": 652
+    },
+    {
+      "lines": 3,
+      "name": "1150-STORE-MAP-IN-NEW-EXIT",
+      "start_line": 686
+    },
+    {
+      "lines": 89,
+      "name": "1200-EDIT-MAP-INPUTS",
+      "start_line": 689
+    },
+    {
+      "lines": 3,
+      "name": "1200-EDIT-MAP-INPUTS-EXIT",
+      "start_line": 779
+    },
+    {
+      "lines": 30,
+      "name": "1205-COMPARE-OLD-NEW",
+      "start_line": 783
+    },
+    {
+      "lines": 3,
+      "name": "1205-COMPARE-OLD-NEW-EXIT",
+      "start_line": 814
+    },
+    {
+      "lines": 24,
+      "name": "1210-EDIT-TRANTYPE",
+      "start_line": 820
+    },
+    {
+      "lines": 3,
+      "name": "1210-EDIT-TRANTYPE-EXIT",
+      "start_line": 845
+    },
+    {
+      "lines": 54,
+      "name": "1230-EDIT-ALPHANUM-REQD",
+      "start_line": 849
+    },
+    {
+      "lines": 3,
+      "name": "1230-EDIT-ALPHANUM-REQD-EXIT",
+      "start_line": 903
+    },
+    {
+      "lines": 67,
+      "name": "1245-EDIT-NUM-REQD",
+      "start_line": 907
+    },
+    {
+      "lines": 3,
+      "name": "1245-EDIT-NUM-REQD-EXIT",
+      "start_line": 974
+    },
+    {
+      "lines": 105,
+      "name": "2000-DECIDE-ACTION",
+      "start_line": 978
+    },
+    {
+      "lines": 3,
+      "name": "2000-DECIDE-ACTION-EXIT",
+      "start_line": 1083
+    },
+    {
+      "lines": 16,
+      "name": "3000-SEND-MAP",
+      "start_line": 1089
+    },
+    {
+      "lines": 3,
+      "name": "3000-SEND-MAP-EXIT",
+      "start_line": 1106
+    },
+    {
+      "lines": 25,
+      "name": "3100-SCREEN-INIT",
+      "start_line": 1110
+    },
+    {
+      "lines": 3,
+      "name": "3100-SCREEN-INIT-EXIT",
+      "start_line": 1136
+    },
+    {
+      "lines": 32,
+      "name": "3200-SETUP-SCREEN-VARS",
+      "start_line": 1140
+    },
+    {
+      "lines": 3,
+      "name": "3200-SETUP-SCREEN-VARS-EXIT",
+      "start_line": 1172
+    },
+    {
+      "lines": 4,
+      "name": "3201-SHOW-INITIAL-VALUES",
+      "start_line": 1176
+    },
+    {
+      "lines": 3,
+      "name": "3201-SHOW-INITIAL-VALUES-EXIT",
+      "start_line": 1181
+    },
+    {
+      "lines": 8,
+      "name": "3202-SHOW-ORIGINAL-VALUES",
+      "start_line": 1185
+    },
+    {
+      "lines": 3,
+      "name": "3202-SHOW-ORIGINAL-VALUES-EXIT",
+      "start_line": 1194
+    },
+    {
+      "lines": 5,
+      "name": "3203-SHOW-UPDATED-VALUES",
+      "start_line": 1197
+    },
+    {
+      "lines": 3,
+      "name": "3203-SHOW-UPDATED-VALUES-EXIT",
+      "start_line": 1203
+    },
+    {
+      "lines": 56,
+      "name": "3250-SETUP-INFOMSG",
+      "start_line": 1210
+    },
+    {
+      "lines": 3,
+      "name": "3250-SETUP-INFOMSG-EXIT",
+      "start_line": 1266
+    },
+    {
+      "lines": 95,
+      "name": "3300-SETUP-SCREEN-ATTRS",
+      "start_line": 1269
+    },
+    {
+      "lines": 3,
+      "name": "3300-SETUP-SCREEN-ATTRS-EXIT",
+      "start_line": 1364
+    },
+    {
+      "lines": 5,
+      "name": "3310-PROTECT-ALL-ATTRS",
+      "start_line": 1368
+    },
+    {
+      "lines": 3,
+      "name": "3310-PROTECT-ALL-ATTRS-EXIT",
+      "start_line": 1373
+    },
+    {
+      "lines": 5,
+      "name": "3320-UNPROTECT-FEW-ATTRS",
+      "start_line": 1377
+    },
+    {
+      "lines": 3,
+      "name": "3320-UNPROTECT-FEW-ATTRS-EXIT",
+      "start_line": 1382
+    },
+    {
+      "lines": 7,
+      "name": "3390-SETUP-INFOMSG-ATTRS",
+      "start_line": 1386
+    },
+    {
+      "lines": 3,
+      "name": "3390-SETUP-INFOMSG-ATTRS-EXIT",
+      "start_line": 1393
+    },
+    {
+      "lines": 27,
+      "name": "3391-SETUP-PFKEY-ATTRS",
+      "start_line": 1397
+    },
+    {
+      "lines": 3,
+      "name": "3391-SETUP-PFKEY-ATTRS-EXIT",
+      "start_line": 1424
+    },
+    {
+      "lines": 14,
+      "name": "3400-SEND-SCREEN",
+      "start_line": 1428
+    },
+    {
+      "lines": 3,
+      "name": "3400-SEND-SCREEN-EXIT",
+      "start_line": 1442
+    },
+    {
+      "lines": 17,
+      "name": "9000-READ-TRANTYPE",
+      "start_line": 1447
+    },
+    {
+      "lines": 3,
+      "name": "9000-READ-TRANTYPE-EXIT",
+      "start_line": 1466
+    },
+    {
+      "lines": 43,
+      "name": "9100-GET-TRANSACTION-TYPE",
+      "start_line": 1469
+    },
+    {
+      "lines": 3,
+      "name": "9100-GET-TRANSACTION-TYPE-EXIT",
+      "start_line": 1512
+    },
+    {
+      "lines": 11,
+      "name": "9500-STORE-FETCHED-DATA",
+      "start_line": 1517
+    },
+    {
+      "lines": 3,
+      "name": "9500-STORE-FETCHED-DATA-EXIT",
+      "start_line": 1528
+    },
+    {
+      "lines": 62,
+      "name": "9600-WRITE-PROCESSING",
+      "start_line": 1531
+    },
+    {
+      "lines": 3,
+      "name": "9600-WRITE-PROCESSING-EXIT",
+      "start_line": 1593
+    },
+    {
+      "lines": 25,
+      "name": "9700-INSERT-RECORD",
+      "start_line": 1596
+    },
+    {
+      "lines": 3,
+      "name": "9700-INSERT-RECORD-EXIT",
+      "start_line": 1621
+    },
+    {
+      "lines": 40,
+      "name": "9800-DELETE-PROCESSING",
+      "start_line": 1624
+    },
+    {
+      "lines": 9,
+      "name": "9800-DELETE-PROCESSING-EXIT",
+      "start_line": 1664
+    },
+    {
+      "lines": 24,
+      "name": "ABEND-ROUTINE",
+      "start_line": 1675
+    },
+    {
+      "lines": 3,
+      "name": "ABEND-ROUTINE-EXIT",
+      "start_line": 1699
+    }
+  ],
+  "priority": {
+    "blast_radius": 4.863,
+    "callers": 2,
+    "calls": 13,
+    "of": 44,
+    "rank": 4
+  },
+  "program": {
+    "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+    "key": "COTRTUPC",
+    "language": "cobol",
+    "lines": 1703,
+    "program_ids": [
+      "COTRTUPC"
+    ]
+  },
+  "relations": [
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBCALEN",
+      "left_class": "unknown",
+      "line": 366,
+      "op": "=",
+      "ordering": false,
+      "right": "0 OR(CDEMO-FROM-PROGRAM=LIT-ADMINPGMANDNOTCDEMO-PGM-REENTER) OR(CDEMO-FROM-PROGRAM=LIT-LISTTPGMANDNOTCDEMO-PGM-REENTER)",
+      "right_class": "numeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "java": "CobolCompare.eq(TTUP-OLD-DETAILS, LOW-VALUES)",
+      "kind": "alphanumeric",
+      "left": "TTUP-OLD-DETAILS",
+      "left_class": "group",
+      "line": 413,
+      "op": "=",
+      "ordering": false,
+      "right": "LOW-VALUES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "java": "CobolCompare.eq(TTUP-OLD-DETAILS, SPACES)",
+      "kind": "alphanumeric",
+      "left": "TTUP-OLD-DETAILS",
+      "left_class": "group",
+      "line": 414,
+      "op": "=",
+      "ordering": false,
+      "right": "SPACES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(CDEMO-FROM-TRANID, LOW-VALUES)",
+      "kind": "alphanumeric",
+      "left": "CDEMO-FROM-TRANID",
+      "left_class": "alphanumeric",
+      "line": 431,
+      "op": "=",
+      "ordering": false,
+      "right": "LOW-VALUES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(CDEMO-FROM-TRANID, SPACES)",
+      "kind": "alphanumeric",
+      "left": "CDEMO-FROM-TRANID",
+      "left_class": "alphanumeric",
+      "line": 432,
+      "op": "=",
+      "ordering": false,
+      "right": "SPACES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(CDEMO-FROM-PROGRAM, LOW-VALUES)",
+      "kind": "alphanumeric",
+      "left": "CDEMO-FROM-PROGRAM",
+      "left_class": "alphanumeric",
+      "line": 438,
+      "op": "=",
+      "ordering": false,
+      "right": "LOW-VALUES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(CDEMO-FROM-PROGRAM, SPACES)",
+      "kind": "alphanumeric",
+      "left": "CDEMO-FROM-PROGRAM",
+      "left_class": "alphanumeric",
+      "line": 439,
+      "op": "=",
+      "ordering": false,
+      "right": "SPACES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "java": "CobolCompare.eq(CDEMO-FROM-PROGRAM, LIT-ADMINPGM)",
+      "kind": "alphanumeric",
+      "left": "CDEMO-FROM-PROGRAM",
+      "left_class": "alphanumeric",
+      "line": 466,
+      "op": "=",
+      "ordering": false,
+      "right": "LIT-ADMINPGM",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "java": "CobolCompare.eq(CDEMO-FROM-PROGRAM, LIT-LISTTPGM)",
+      "kind": "alphanumeric",
+      "left": "CDEMO-FROM-PROGRAM",
+      "left_class": "alphanumeric",
+      "line": 468,
+      "op": "=",
+      "ordering": false,
+      "right": "LIT-LISTTPGM",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(FUNCTION TRIM(TRTYPCDIOFCTRTUPAI), TTUP-NEW-TTYP-TYPE)",
+      "kind": "alphanumeric",
+      "left": "FUNCTION TRIM(TRTYPCDIOFCTRTUPAI)",
+      "left_class": "alphanumeric",
+      "line": 656,
+      "op": "=",
+      "ordering": false,
+      "right": "TTUP-NEW-TTYP-TYPE",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(TRTYPCDI OF CTRTUPAI, '*')",
+      "kind": "alphanumeric",
+      "left": "TRTYPCDI OF CTRTUPAI",
+      "left_class": "alphanumeric",
+      "line": 667,
+      "op": "=",
+      "ordering": false,
+      "right": "'*'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(TRTYPCDI OF CTRTUPAI, SPACES)",
+      "kind": "alphanumeric",
+      "left": "TRTYPCDI OF CTRTUPAI",
+      "left_class": "alphanumeric",
+      "line": 668,
+      "op": "=",
+      "ordering": false,
+      "right": "SPACES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(TRTYDSCI OF CTRTUPAI, '*')",
+      "kind": "alphanumeric",
+      "left": "TRTYDSCI OF CTRTUPAI",
+      "left_class": "alphanumeric",
+      "line": 678,
+      "op": "=",
+      "ordering": false,
+      "right": "'*'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(TRTYDSCI OF CTRTUPAI, SPACES)",
+      "kind": "alphanumeric",
+      "left": "TRTYDSCI OF CTRTUPAI",
+      "left_class": "alphanumeric",
+      "line": 679,
+      "op": "=",
+      "ordering": false,
+      "right": "SPACES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(FUNCTION TRIM(TRTYPCDIOFCTRTUPAI), TTUP-NEW-TTYP-TYPE)",
+      "kind": "alphanumeric",
+      "left": "FUNCTION TRIM(TRTYPCDIOFCTRTUPAI)",
+      "left_class": "alphanumeric",
+      "line": 699,
+      "op": "=",
+      "ordering": false,
+      "right": "TTUP-NEW-TTYP-TYPE",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(FUNCTION UPPER-CASE(TTUP-NEW-TTYP-TYPE), FUNCTION UPPER-CASE(TTUP-OLD-TTYP-TYPE))",
+      "kind": "alphanumeric",
+      "left": "FUNCTION UPPER-CASE(TTUP-NEW-TTYP-TYPE)",
+      "left_class": "alphanumeric",
+      "line": 786,
+      "op": "=",
+      "ordering": false,
+      "right": "FUNCTION UPPER-CASE(TTUP-OLD-TTYP-TYPE)",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(FUNCTION UPPER-CASE(FUNCTIONTRIM(TTUP-NEW-TTYP-TYPE-DESC)), FUNCTION UPPER-CASE(FUNCTIONTRIM(TTUP-OLD-TTYP-TYPE-DESC)))",
+      "kind": "alphanumeric",
+      "left": "FUNCTION UPPER-CASE(FUNCTIONTRIM(TTUP-NEW-TTYP-TYPE-DESC))",
+      "left_class": "alphanumeric",
+      "line": 790,
+      "op": "=",
+      "ordering": false,
+      "right": "FUNCTION UPPER-CASE(FUNCTIONTRIM(TTUP-OLD-TTYP-TYPE-DESC))",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WS-EDIT-ALPHANUM-ONLY(1:WS-EDIT-ALPHANUM-LENGTH), LOW-VALUES)",
+      "kind": "alphanumeric",
+      "left": "WS-EDIT-ALPHANUM-ONLY(1:WS-EDIT-ALPHANUM-LENGTH)",
+      "left_class": "alphanumeric",
+      "line": 854,
+      "op": "=",
+      "ordering": false,
+      "right": "LOW-VALUES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WS-EDIT-ALPHANUM-ONLY(1:WS-EDIT-ALPHANUM-LENGTH), SPACES)",
+      "kind": "alphanumeric",
+      "left": "WS-EDIT-ALPHANUM-ONLY(1:WS-EDIT-ALPHANUM-LENGTH)",
+      "left_class": "alphanumeric",
+      "line": 856,
+      "op": "=",
+      "ordering": false,
+      "right": "SPACES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WS-EDIT-ALPHANUM-ONLY(1:WS-EDIT-ALPHANUM-LENGTH), LOW-VALUES)",
+      "kind": "alphanumeric",
+      "left": "WS-EDIT-ALPHANUM-ONLY(1:WS-EDIT-ALPHANUM-LENGTH)",
+      "left_class": "alphanumeric",
+      "line": 912,
+      "op": "=",
+      "ordering": false,
+      "right": "LOW-VALUES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WS-EDIT-ALPHANUM-ONLY(1:WS-EDIT-ALPHANUM-LENGTH), SPACES)",
+      "kind": "alphanumeric",
+      "left": "WS-EDIT-ALPHANUM-ONLY(1:WS-EDIT-ALPHANUM-LENGTH)",
+      "left_class": "alphanumeric",
+      "line": 914,
+      "op": "=",
+      "ordering": false,
+      "right": "SPACES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "FUNCTION TEST-NUMVAL(WS-EDIT-ALPHANUM-ONLY(1:WS-EDIT-ALPHANUM-LENGTH))",
+      "left_class": "function",
+      "line": 934,
+      "op": "=",
+      "ordering": false,
+      "right": "0",
+      "right_class": "numeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(CDEMO-FROM-TRANID, LOW-VALUES)",
+      "kind": "alphanumeric",
+      "left": "CDEMO-FROM-TRANID",
+      "left_class": "alphanumeric",
+      "line": 1067,
+      "op": "=",
+      "ordering": false,
+      "right": "LOW-VALUES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(CDEMO-FROM-TRANID, SPACES)",
+      "kind": "alphanumeric",
+      "left": "CDEMO-FROM-TRANID",
+      "left_class": "alphanumeric",
+      "line": 1068,
+      "op": "=",
+      "ordering": false,
+      "right": "SPACES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "SQLCODE",
+      "left_class": "unknown",
+      "line": 1487,
+      "op": "=",
+      "ordering": false,
+      "right": "ZERO",
+      "right_class": "zero"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "SQLCODE",
+      "left_class": "unknown",
+      "line": 1489,
+      "op": "=",
+      "ordering": false,
+      "right": "+100",
+      "right_class": "numeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "SQLCODE",
+      "left_class": "unknown",
+      "line": 1495,
+      "op": "<",
+      "ordering": true,
+      "right": "0",
+      "right_class": "numeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "SQLCODE",
+      "left_class": "unknown",
+      "line": 1556,
+      "op": "=",
+      "ordering": false,
+      "right": "ZERO",
+      "right_class": "zero"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "SQLCODE",
+      "left_class": "unknown",
+      "line": 1558,
+      "op": "=",
+      "ordering": false,
+      "right": "+100",
+      "right_class": "numeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "SQLCODE",
+      "left_class": "unknown",
+      "line": 1561,
+      "op": "=",
+      "ordering": false,
+      "right": "-911",
+      "right_class": "numeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "SQLCODE",
+      "left_class": "unknown",
+      "line": 1567,
+      "op": "<",
+      "ordering": true,
+      "right": "0",
+      "right_class": "numeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "SQLCODE",
+      "left_class": "unknown",
+      "line": 1605,
+      "op": "=",
+      "ordering": false,
+      "right": "ZERO",
+      "right_class": "zero"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "SQLCODE",
+      "left_class": "unknown",
+      "line": 1635,
+      "op": "=",
+      "ordering": false,
+      "right": "ZERO",
+      "right_class": "zero"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "SQLCODE",
+      "left_class": "unknown",
+      "line": 1638,
+      "op": "=",
+      "ordering": false,
+      "right": "-532",
+      "right_class": "numeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(ABEND-MSG, LOW-VALUES)",
+      "kind": "alphanumeric",
+      "left": "ABEND-MSG",
+      "left_class": "alphanumeric",
+      "line": 1677,
+      "op": "=",
+      "ordering": false,
+      "right": "LOW-VALUES",
+      "right_class": "figurative"
+    }
+  ],
+  "rounding": [],
+  "rules": [
+    "Deliver the whole port: every paragraph the ported method reaches, every screen field it sets, every file it reads. A partial port or a sketch is not proven: the equivalence harness compares every output.",
+    "Port the PROCEDURE DIVISION into the service's methods, paragraph by paragraph; name the paragraph each block ports in a comment, so the port can be reviewed against the source.",
+    "Keep COBOL's storage semantics: COMPUTE / ADD / SUBTRACT / MULTIPLY / DIVIDE without ROUNDED truncate decimals; a result too long for its PICTURE loses its high-order digits (ON SIZE ERROR aside); MOVE to a numeric field aligns on the decimal point and truncates both ends; MOVE to alphanumeric pads with spaces or truncates on the right. Use BigDecimal with RoundingMode.DOWN, never double, for PIC 9 / COMP-3 data.",
+    "ROUNDED (#3825) rounds half AWAY from zero: setScale(scale, RoundingMode.HALF_UP) -- 2.5 -> 3, -2.5 -> -3. Never HALF_EVEN (banker's rounding) and never Math.round (-2.5 -> -2). ROUNDED MODE maps one to one: NEAREST-EVEN HALF_EVEN, AWAY-FROM-ZERO UP, NEAREST-TOWARD-ZERO HALF_DOWN, TOWARD-GREATER CEILING, TOWARD-LESSER FLOOR, TRUNCATION DOWN. The ticket's `rounding` list names every rounding or SIZE ERROR statement with the RoundingMode of each target. Round the final result only: compute intermediates exactly (IBM's ARITH intermediates carry 18 or 31 digits; the equivalence harness is the oracle when a result differs).",
+    "Keep the program's behaviour, including what looks like a defect (an unreachable branch, a field never reset): the port is proven by comparing its outputs with the original's. Document each such spot with a comment naming the defect and the one-line fix; fixing it is a business decision, not a translation.",
+    "Use the generated code as it is: entities and their fromRecord / toRecord codecs, repositories, DTOs, the batch runtime (DatasetResolver, Dd), the other services. Do not edit generated files other than this service; do not invent calls, files, queues or tables the facts do not name.",
+    "An abend is `throw CobolAbend.user(abcode, why)` (the generated batch runtime; CALL 'CEE3ABD' USING ABCODE: the step ends ABEND Unnnn) -- never another exception; the step's RETURN-CODE is runBatch's return value.",
+    "A DISPLAY is `Sysout.display(...)` (DISPLAY ... WITH NO ADVANCING: `Sysout.displayNoAdvancing`), never a log line: SYSOUT is compared line by line with the COBOL's. Its text is exactly what IBM COBOL writes, the operands concatenated: a literal as written; an alphanumeric or group item as all its bytes, trailing spaces included (a group's numeric fields as stored: zoned digits, the sign overpunched); a numeric item -- DISPLAY, COMP or COMP-3, not edited, no SIGN SEPARATE -- as `Sysout.number(value, digits, scale, signed)`: its PICTURE digits zero-padded, no decimal point, the sign overpunched in the last digit when signed (PIC S9(3) holding -12 is `01K`); an edited item as its edited text.",
+    "Every file I/O statement of a batch program (OPEN, CLOSE, READ, READ NEXT, WRITE, REWRITE, DELETE, START) is ONE call to the generated CobolFiles, per file (its DD name), in the order the program runs them. open(dd) / open(dd, path, input) / close(dd[, action]) / write / rewrite / delete(dd, action) / start(dd, found) return the status String; read(dd, supplier) (\"00\" or \"23\") and readNext(dd, iterator) (\"00\" or \"10\") return a CobolFiles.Read<T> -- status() and record(), null unless found. Take the program's FILE STATUS logic -- IF <status> = '00', AT END, INVALID KEY, its error paragraphs -- from the status returned, exactly as the program does; never skip a statement the program runs (a read-ahead, a CLOSE) or add one it does not. The equivalence harness injects file faults through CobolFiles and through GnuCOBOL at the same statement, and proves the error paths too. A keyed (VSAM KSDS) file keeps its mainframe semantics: WRITE is writeKeyed(dd, () -> repo.existsById(key), () -> repo.save(r)) -- \"22\" when the key is on file, never save() over it -- and REWRITE is rewriteKeyed(dd, exists, save) (\"23\" when it is not). A record the program READs INTO its working storage is the program's own copy: keep Entity.fromRecord(read.toRecord(cs), cs), never the repository's managed entity, so a change that is not REWRITten is never saved; and a READ that fails without INVALID KEY / AT END leaves the previous record in place, as the program's storage does.",
+    "A sequential dataset is fixed-length records (RECFM=FB): write each record's toRecord(...) bytes back to back, with no line separators, to the file DatasetResolver.path(dd) names; read it the same way.",
+    "Decode and encode a numeric field held in record bytes or a text column (zoned with an overpunched sign, COMP-3, COMP) only through the generated CobolRecords (zoned / packed / binary and their put methods) or the entity codecs, never a hand-written decoder.",
+    "Record bytes -- every dataset, file and COMMAREA the program reads or writes -- are in the code page CobolRecords.charset() returns: the migration's declared data.record_charset, a deployment fact. Pass it wherever a record codec, CobolRecords method or String takes a Charset; never Charset.forName, StandardCharsets or a guessed EBCDIC page for record data (#4060).",
+    "Read a number from text (a screen field, FUNCTION NUMVAL, a PARM) only through CobolRecords.numval(text, decimalPoint), with ',' when the program codes DECIMAL-POINT IS COMMA; never Integer.parseInt or new BigDecimal(String), which accept Arabic-Indic, Devanagari and full-width digits that COBOL rejects (#3831).",
+    "Format a numeric-edited field (a display string mapped from a number, often for a screen or print line) only through CobolEdit.format(pic, value, decimalComma, currency), which honours the COBOL picture (Z, 9, ., ,, -, +, CR/DB, $/currency, B, 0, /, and floating $ / + / - strings) as the mainframe does; pass the CURRENCY SIGN string (e.g. 'INR ') as currency, and it replaces the PICTURE SYMBOL (#3933).",
+    "Format and case-map with Locale.ROOT (String.format(Locale.ROOT, ...), toUpperCase(Locale.ROOT)): the default locale prints other digits (Arabic, Devanagari) and maps case differently (Turkish).",
+    "Order and compare VSAM / DB2 keys by the source code page's bytes, as the mainframe does (lower case before upper, letters before digits): browse through the generated sort-key finders, and sort in Java with CobolRecords.sortKey(key, codePage), never by String.compareTo or the database's default collation (#3822).",
+    "Compare alphanumeric operands (PIC X / A items, group items, alphanumeric literals and figurative constants) in IF, EVALUATE, PERFORM UNTIL and SEARCH WHEN only through the generated CobolCompare (compare, eq, gt, ge, lt, le), never String.compareTo or equals: it compares the code page's bytes as the mainframe does -- lower case before upper, letters before digits, so IF CUST-ID > 'A' is true for '1001' -- and pads the shorter operand with spaces ('AB' = 'AB  '). HIGH-VALUES / LOW-VALUES are CobolCompare.highValues(n) / lowValues(n). A numeric comparison stays BigDecimal.compareTo. A program that declares PROGRAM COLLATING SEQUENCE compares by that alphabet instead: flag it in a TODO (#3986).",
+    "A CICS program is ported into runTask(CicsTask task), one task per call (#3754): EIBCALEN = 0 is !task.hasCommarea(), EIBCALEN is task.eibcalen() (#4009: null = the whole record), DFHCOMMAREA is task.commarea(<its DTO>.class), EIBAID is task.aid() (ENTER, CLEAR, PF1-PF24, PA1-PA3), EIBTRMID is task.termid(), EIBTIME / EIBDATE / ASKTIME are task.now() (the task's dispatch time on the region's virtual clock, #3989), RECEIVE MAP is task.receive(map, mapset, <its screen>.class) (empty = MAPFAIL), SEND MAP is task.sendMap(map, mapset, screen, subfields, options...) (#4001: the screen holds each <f>O; CicsTask.MapSubfields each <f>A / <f>C / <f>H as its EBCDIC byte and <f>L = -1 for the cursor), SEND TEXT / SEND is task.sendText(from, length, options...), RETURN TRANSID COMMAREA LENGTH is task.returnTransid(transid, commarea, length), XCTL is task.xctl, LINK is task.link, ABEND is task.abend -- in the order the program does them, and the task ends at RETURN / XCTL / ABEND. A file READ is task.read(file, () -> <the service's generated read method>): its resp() is NORMAL (0), NOTFND (13) when the read finds nothing, or a condition the equivalence harness injects (NOTOPEN, IOERR, DISABLED, ...), and its resp2(); port every arm of the program's RESP handling (EVALUATE WS-RESP-CD ... WHEN OTHER) from it (#4023 follow-up). READ ... UPDATE is task.readForUpdate(file, lookup) (it holds the record for a REWRITE); WRITE FILE RIDFLD FROM is task.write(file, <whether the key is already in the file>, () -> <save the new record>): DUPREC (14) when it is; REWRITE FILE FROM is task.rewrite(file, () -> <save the changed record>): INVREQ (16) without a held record; each returns the RESP, and the injected conditions apply as for a READ. SYNCPOINT is task.syncpoint() and SYNCPOINT ROLLBACK task.rollback(), which undoes the task's file changes: save every change through these calls only -- what each file holds after the task is compared with the COBOL's. DELETE FILE RIDFLD is task.delete(file, <whether the key is there>, () -> <delete it>) (NOTFND 13 when not); DELETE FILE without RIDFLD is task.deleteHeld(file, () -> <delete the held record>). A browse: STARTBR is task.startbr(file, <RIDFLD as text>, <EQUAL given>, () -> <the file's keys, in key order, as a NavigableSet<String>>) (NOTFND 13 when no key qualifies); READNEXT / READPREV are task.readnext(file, <RIDFLD as text>) / task.readprev(file, ...), whose Browsed holds the RESP (ENDFILE 20 past either end) and the key read -- set RIDFLD to it and look the record up by it; ENDBR is task.endbr(file). The task keeps the browse's position and CICS's repositioning rules (a READPREV right after a READNEXT reads the same record again): pass RIDFLD exactly as the program holds it. ASKTIME ABSTIME is task.asktime(); FORMATTIME is CicsTask.formatDate(abstime, \"YYYYMMDD\" (or the form given), <DATESEP>) and CicsTask.formatTime(abstime, <TIMESEP>). ASSIGN APPLID / SYSID are task.assignApplid() / task.assignSysid() (the region's identity: never a literal). WRITEQ TD QUEUE FROM is task.writeqTd(queue, <the record as text, its full LENGTH>), which returns the RESP (QIDERR 44 for a queue the CSD does not define). INQUIRE PROGRAM(p) is task.inquireProgram(p): its RESP (NORMAL 0, PGMIDERR 27). A screen field shows what the symbolic map's O field would hold: text as moved, an edited PICTURE formatted as COBOL formats it. A COMMAREA is the generated DTO of its record; an area no generated DTO describes (a plain PIC X(n) item) is passed as a String of its n characters, or a byte[] of its EBCDIC bytes (#3989).",
+    "CICS condition and abend handling (#3989): HANDLE CONDITION, IGNORE CONDITION, HANDLE AID and RESP are the program's own control flow -- port each transfer to its label as Java control flow. HANDLE ABEND LABEL is task.handleAbend(label) (CANCEL, RESET: handleAbendCancel / handleAbendReset), and PUSH / POP HANDLE are task.pushHandle() / popHandle() besides saving and restoring the program's own handler state. EXEC CICS ABEND is task.abend(abcode) and a condition that takes CICS's default action is task.abendOnCondition(condition): CicsTask searches the active abend exits from this program's level upward, as CICS does, records the ABEND, and returns the label to continue at when this program's own exit took it -- or null, and the program must then return from runTask at once. After task.link(...) returns, task.abendExit() is the label of this program's exit when an abend in a program below reached it (continue there), and task.ended() is true when the task was terminated (stop). Never throw an exception to model a CICS transfer: the services are @Transactional, so an exception out of one marks the whole task rollback-only.",
+    "Dates and times only through java.time -- LocalDate, LocalDateTime, LocalTime and DateTimeFormatter with Locale.ROOT, in the ISO chronology -- never Calendar.getInstance(), new GregorianCalendar(), SimpleDateFormat or WeekFields.of(Locale.getDefault()): a th_TH default locale gives Buddhist-era years (2569), ja_JP_JP the Japanese imperial calendar, and US week fields start on Sunday. FUNCTION DAY-OF-WEEK and ACCEPT ... FROM DAY-OF-WEEK are Monday = 1 ... Sunday = 7, which is DayOfWeek.getValue() (#3833).",
+    "Read the time only from the generated batch runtime's MainframeClock (now() for local, currentDate() for FUNCTION CURRENT-DATE) -- in a CICS task, from task.now() -- never from the system clock directly or ZoneId.systemDefault(): it is how a run is pinned to be compared with the original.",
+    "A DB2 DATE / TIME / TIMESTAMP fetched into, or bound from, a character host variable (a DCLGEN DATE is PIC X(10)) is in the DB2 subsystem's format, the target config's culture.db2_date_format -- eur 26.09.2026 and 14.30.05, usa 09/26/2026 and 02:30 PM, iso 2026-09-26 and 14.30.05, jis 2026-09-26 and 14:30:05 -- and a TIMESTAMP is 2026-09-26-14.30.05.000000: convert only through the generated Db2Dates (date / time / timestamp, parseDate / parseTime / parseTimestamp), never LocalDate.toString() or LocalDate.parse (#3828).",
+    "FUNCTION INTEGER-OF-DATE / INTEGER-OF-DAY count days from day 1 = 1601-01-01 under INTDATE(ANSI), the default, but from day 1 = 1582-10-15 under INTDATE(LILIAN) (the same date is 6653 higher); DATE-OF-INTEGER / DAY-OF-INTEGER invert the same count. Port as ChronoUnit.DAYS.between(dayZero, date) with dayZero 1600-12-31 (ANSI) or 1582-10-14 (LILIAN). The ticket's compiler_options are the program's CBL / PROCESS cards; options given by the compile step's PARM or the installation defaults are not seen there (#3828).",
+    "A fact whose field testing is not 'field-tested' is verified on reference estates but still being field-tested: where the source contradicts it, follow the source and say so in the port's notes.",
+    "The proof calls one method per program: runTask(CicsTask) for a CICS program, handleCall(...) for a CALLed one, runBatch(dds, parm) for a batch one -- the ticket's methods to port. Port all of the program's behaviour into that method and the private helpers it calls. Port nothing into the other generated methods -- execute<Program>, handleTransaction, handleLink, handleChannel, onAbendL<n>, onCondition<C>L<n>, dispatch<X>L<n>, submit<Map> / render<Map>, xctl<P> / link<P>, the generated readqTs / writeqTs / read / browse helpers -- even where their TODO asks: leave each body as generated and keep no second entry point. Code the proof never runs is not proven, and the porting loop lists every method the proof cannot reach that the port changed (#4255)."
+  ],
+  "source": {
+    "copybooks": [
+      {
+        "file": "app/app-transaction-type-db2/cpy-bms/COTRTUP.cpy",
+        "listing": "sources/app/app-transaction-type-db2/cpy-bms/COTRTUP.cpy.lst"
+      },
+      {
+        "file": "app/app-transaction-type-db2/dcl/DCLTRCAT.dcl",
+        "listing": "sources/app/app-transaction-type-db2/dcl/DCLTRCAT.dcl.lst"
+      },
+      {
+        "file": "app/app-transaction-type-db2/dcl/DCLTRTYP.dcl",
+        "listing": "sources/app/app-transaction-type-db2/dcl/DCLTRTYP.dcl.lst"
+      },
+      {
+        "file": "app/cpy/COCOM01Y.cpy",
+        "listing": "sources/app/cpy/COCOM01Y.cpy.lst"
+      },
+      {
+        "file": "app/cpy/COTTL01Y.cpy",
+        "listing": "sources/app/cpy/COTTL01Y.cpy.lst"
+      },
+      {
+        "file": "app/cpy/CSDAT01Y.cpy",
+        "listing": "sources/app/cpy/CSDAT01Y.cpy.lst"
+      },
+      {
+        "file": "app/cpy/CSMSG01Y.cpy",
+        "listing": "sources/app/cpy/CSMSG01Y.cpy.lst"
+      },
+      {
+        "file": "app/cpy/CSMSG02Y.cpy",
+        "listing": "sources/app/cpy/CSMSG02Y.cpy.lst"
+      },
+      {
+        "file": "app/cpy/CSSETATY.cpy",
+        "listing": "sources/app/cpy/CSSETATY.cpy.lst"
+      },
+      {
+        "file": "app/cpy/CSSTRPFY.cpy",
+        "listing": "sources/app/cpy/CSSTRPFY.cpy.lst"
+      },
+      {
+        "file": "app/cpy/CSUSR01Y.cpy",
+        "listing": "sources/app/cpy/CSUSR01Y.cpy.lst"
+      },
+      {
+        "file": "app/cpy/CSUTLDWY.cpy",
+        "listing": "sources/app/cpy/CSUTLDWY.cpy.lst"
+      },
+      {
+        "file": "app/cpy/CVCRD01Y.cpy",
+        "listing": "sources/app/cpy/CVCRD01Y.cpy.lst"
+      }
+    ],
+    "program": {
+      "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "listing": "sources/app/app-transaction-type-db2/cbl/COTRTUPC.cbl.lst"
+    }
+  },
+  "status": "open",
+  "target": {
+    "config": {
+      "culture": {
+        "currency": "auto",
+        "db2_date_format": "iso",
+        "decimal_point": "auto",
+        "display_locale": "ROOT",
+        "format_locale": "ROOT",
+        "key_collation": "ebcdic",
+        "overflow": "cobol",
+        "rounding": "cobol",
+        "zone": "UTC"
+      },
+      "data": {
+        "bidi_layout": "auto",
+        "code_page": "cp037",
+        "dbcs_code_page": null,
+        "record_charset": "latin-1"
+      },
+      "database": "postgresql",
+      "integration": {
+        "messaging": "in-memory",
+        "remote_calls": "http"
+      },
+      "java": {
+        "build_tool": "maven",
+        "data_classes": "lombok",
+        "dto_style": "class",
+        "version": 17
+      },
+      "package": "com.gitgalaxy.modernized",
+      "spring_boot": {
+        "version": "3.2.4"
+      },
+      "ui": {
+        "flavour": "none"
+      }
+    },
+    "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+    "left_as_generated": [
+      "public void commitPointL453()",
+      "public void commitPointL1557()",
+      "public void commitPointL1606()",
+      "public void commitPointL1637()",
+      "public void onAbendL348(CicsAbendException e)"
+    ],
+    "methods": [
+      {
+        "signature": "public Object handleTransaction(String transid, CotrtupcCommarea request)",
+        "todo": false
+      },
+      {
+        "signature": "public Object handleTransaction(String transid, CotrtupcCommarea request, byte[] area)",
+        "todo": false
+      },
+      {
+        "signature": "public byte[] lastAnswerBytes()",
+        "todo": false
+      },
+      {
+        "signature": "public void runTask(CicsTask task)",
+        "todo": true
+      },
+      {
+        "signature": "public CotrtupcCommarea handleLink(CotrtupcCommarea request)",
+        "todo": false
+      },
+      {
+        "signature": "public CotrtupcCommarea handleLink(CotrtupcCommarea request, byte[] area)",
+        "todo": false
+      },
+      {
+        "signature": "public byte[] lastLinkBytes()",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchCdemoToProgramL457(CicsTask task, String program, Object commarea)",
+        "todo": false
+      },
+      {
+        "signature": "public void commitPointL453()",
+        "todo": true
+      },
+      {
+        "signature": "public void commitPointL1557()",
+        "todo": true
+      },
+      {
+        "signature": "public void commitPointL1606()",
+        "todo": true
+      },
+      {
+        "signature": "public void commitPointL1637()",
+        "todo": true
+      },
+      {
+        "signature": "public void onAbendL348(CicsAbendException e)",
+        "todo": true
+      },
+      {
+        "signature": "public void abendAbendcodeL1695()",
+        "todo": false
+      }
+    ],
+    "methods_to_port": [
+      "public void runTask(CicsTask task)"
+    ],
+    "overlay": "port/service/CotrtupcService.java",
+    "proof_entry_points": [
+      "public void runTask(CicsTask task)"
+    ],
+    "service": "CotrtupcService"
+  },
+  "ticket": "PORT-COTRTUPC",
+  "version": 1,
+  "worklist": [
+    {
+      "category": "transaction-split",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0111",
+      "line": 151,
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0112",
+      "line": 161,
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0113",
+      "line": 171,
+      "text": "split the transaction here"
+    },
+    {
+      "category": "transaction-split",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0114",
+      "line": 181,
+      "text": "split the transaction here"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0136",
+      "line": 94,
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0137",
+      "line": 100,
+      "text": "port the PROCEDURE DIVISION into this task"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0138",
+      "line": 190,
+      "text": "port paragraph ABEND-ROUTINE's logic"
+    }
+  ]
+}

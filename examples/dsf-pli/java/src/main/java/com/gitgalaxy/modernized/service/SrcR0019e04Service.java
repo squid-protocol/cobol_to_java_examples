@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.FeilStruc2;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.SrcR0019921FeilStruc;
 import com.gitgalaxy.modernized.entity.vsam.EndrDsr;
 import com.gitgalaxy.modernized.entity.vsam.FnrtilgFnrrec;
 import com.gitgalaxy.modernized.entity.vsam.MeldIo;
@@ -47,59 +48,85 @@ public class SrcR0019e04Service {
     // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
     // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
 
-    public void executeSrcR0019e04(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__R0019E04");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcR0019e04: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcR0019e04: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R0019E04", null);
+        region.run(task, "R0019E04", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R0013101) at src/R0019E04.pli:1389, src/R0019E04.pli:2128, src/R0019E04.pli:2248.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR0013101() {
         srcR0013101Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0014901) at src/R0019E04.pli:1788, src/R0019E04.pli:1947.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR0014901() {
         srcR0014901Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0015401) at src/R0019E04.pli:1884, src/R0019E04.pli:1911, src/R0019E04.pli:2040, src/R0019E04.pli:2364.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR0015401() {
         srcR0015401Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0016001) at src/R0019E04.pli:1860, src/R0019E04.pli:2017, src/R0019E04.pli:2342.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR0016001() {
         srcR0016001Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0019921) at src/R0019E04.pli:4516.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public FeilStruc2 linkSrcR0019921(FeilStruc2 request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcR0019921FeilStruc linkSrcR0019921(SrcR0019921FeilStruc request) {
         return srcR0019921Service.getObject().handleLink(request);
     }
 
     /** ENDRDSR as CICS file ENDRDSR at src/R0019E04.pli:1164; VSAM defines field testing: open (3 public / 0 private estates). */
     public EndrDsr writeEndrdsr(EndrDsr record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<EndrDsr> onFile = endrDsrRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file ENDRDSR already holds the key of this record");
+        }
         return endrDsrRepository.save(record);
     }
 
     /** MELDREC as CICS file MELDREC at src/R0019E04.pli:3233; VSAM defines field testing: open (3 public / 0 private estates). */
     public MeldIo writeMeldrec(MeldIo record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<MeldIo> onFile = meldIoRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file MELDREC already holds the key of this record");
+        }
         return meldIoRepository.save(record);
     }
 
     /** OMRFEIL as CICS file OMRFEIL at src/R0019E04.pli:862, 1148, 4423, 4430; VSAM defines field testing: open (3 public / 0 private estates). */
     // TODO: this program uses OMR_FEIL (78 bytes); the entity follows FEIL_MELD (61 bytes) -- map one onto the other
     public OmrfeilFeilMeld writeOmrfeil(OmrfeilFeilMeld record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<OmrfeilFeilMeld> onFile = omrfeilFeilMeldRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file OMRFEIL already holds the key of this record");
+        }
         return omrfeilFeilMeldRepository.save(record);
     }
 
@@ -138,15 +165,6 @@ public class SrcR0019e04Service {
     public void onConditionNotfndL846(CicsConditionException e) {
         log.info("HANDLE CONDITION NOTFND LABEL L015NOTF at line 846", e);
         // TODO: port paragraph L015NOTF's logic
-    }
-
-    /**
-     * EXEC CICS HANDLE CONDITION at src/R0019E04.pli:4457 (paragraph LESER_TRANHIST_F_GHNP) routes ERROR to None.
-     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
-     */
-    public void onConditionErrorL4457(CicsConditionException e) {
-        log.info("HANDLE CONDITION ERROR LABEL None at line 4457", e);
-        // TODO: port paragraph None's logic
     }
 
     /**

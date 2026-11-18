@@ -1,0 +1,76 @@
+{
+ "format": "porting-loop-provenance/1",
+ "program": "COADM01C",
+ "written_by": "model (the #4023 follow-up porting loop), not a person",
+ "model": "claude-sonnet-5-5",
+ "backend": "claude-code-headless: claude -p, no tools, only the ticket's prompt",
+ "proposed": "2026-10-01T15:08:48+00:00",
+ "attempt": 2,
+ "attempts": [
+  {
+   "n": 1,
+   "verdict": "not proven"
+  },
+  {
+   "n": 2,
+   "verdict": "proven"
+  }
+ ],
+ "ticket_sha256": "089edeb854d30a26a42e0321264ae4674e6d95255e15b0f0b971898677a91e2a",
+ "prompt_tokens": 72394,
+ "proof": "tests/tools/equivalence.py run carddemo-adminmenu",
+ "edited_after": "the deployed entry points (facades) were brought to the generator's by tests/tools/port_surface.py (#4343; see history 'resurfaced'); runTask and the logic it runs are the model's answer",
+ "licence": "derived from CardDemo (Apache-2.0; Copyright Amazon.com, Inc. or its affiliates) -- see LICENSE and NOTICE in this case's directory",
+ "history": [
+  {
+   "at": "2026-10-05T13:03:36+00:00",
+   "event": "resurfaced",
+   "by": "tests/tools/port_surface.py",
+   "generator_commit": "83756783c",
+   "generated_from": "service/Coadm01cService.java",
+   "replaced": [
+    "handleTransaction"
+   ]
+  },
+  {
+   "at": "2026-10-06T04:27:42+00:00",
+   "event": "resurfaced",
+   "by": "tests/tools/port_surface.py",
+   "generator_commit": "3c9c8b7df",
+   "generated_from": "service/Coadm01cService.java",
+   "replaced": [
+    "handleTransaction"
+   ]
+  },
+  {
+   "at": "2026-10-12T07:09:12+00:00",
+   "event": "resurfaced",
+   "by": "tests/tools/port_surface.py",
+   "generator_commit": "681faf12b",
+   "generated_from": "service/Coadm01cService.java",
+   "added": [
+    "lastAnswerBytes (field)",
+    "handleTransaction(String,CarddemoCommarea,byte[])",
+    "lastAnswerBytes()"
+   ]
+  },
+  {
+   "at": "2026-10-16T23:00:00+00:00",
+   "event": "edited",
+   "by": "churn worker for #4648 (Claude Opus 5.5)",
+   "what": "a failed XCTL other than PGMIDERR (the only HANDLE CONDITION) abends the task (NOTAUTH: AEY7) at both XCTL sites, where the port showed the menu"
+  },
+  {
+   "at": "2026-10-17T19:05:36+00:00",
+   "event": "resurfaced",
+   "by": "tests/tools/port_surface.py",
+   "generator_commit": "b3b16bb72",
+   "generated_from": "service/Coadm01cService.java",
+   "added": [
+    "lastLinkBytes (field)",
+    "handleLink(CarddemoCommarea,byte[])",
+    "lastLinkBytes()"
+   ]
+  }
+ ]
+}

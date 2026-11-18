@@ -10,18 +10,18 @@ package com.gitgalaxy.modernized.controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import lombok.RequiredArgsConstructor;
-import com.gitgalaxy.modernized.dto.contract.Lgtestp1CommArea;
+import com.gitgalaxy.modernized.dto.contract.Lgapol01Dfhcommarea;
 import com.gitgalaxy.modernized.service.Lgapol01Service;
 
 /**
  * CICS program LGAPOL01 (base/src/lgapol01.cbl), generated from GitGalaxy's
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
- * COMMAREA: COMM-AREA (base/src/lgtestp1.cbl, 32500 bytes) -> Lgtestp1CommArea.
+ * COMMAREA: COMM-AREA (base/src/lgtestp1.cbl, 32500 bytes) -> Lgapol01Dfhcommarea.
  * TODO: callers also pass COMM-AREA (base/src/lgtestp2.cbl, 32500 bytes) at base/src/lgtestp2.cbl:105.
  * TODO: callers also pass COMM-AREA (base/src/lgtestp3.cbl, 32500 bytes) at base/src/lgtestp3.cbl:106.
  * TODO: callers also pass COMM-AREA (base/src/lgtestp4.cbl, 32500 bytes) at base/src/lgtestp4.cbl:178.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/lgapol01")
@@ -32,7 +32,7 @@ public class Lgapol01Controller {
 
     /** Program-to-program entry: LINK at base/src/lgtestp1.cbl:115, LINK at base/src/lgtestp2.cbl:105, LINK at base/src/lgtestp3.cbl:106, LINK at base/src/lgtestp4.cbl:178. */
     @PostMapping("/link")
-    public ResponseEntity<Lgtestp1CommArea> link(@RequestBody Lgtestp1CommArea request) {
+    public ResponseEntity<Lgapol01Dfhcommarea> link(@RequestBody Lgapol01Dfhcommarea request) {
         return ResponseEntity.ok(lgapol01Service.handleLink(request));
     }
 

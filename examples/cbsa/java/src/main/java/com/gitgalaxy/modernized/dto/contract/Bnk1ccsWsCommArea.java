@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 /**
  * COBOL record WS-COMM-AREA (src/base/cobol_src/BNK1CCS.cbl), 5 bytes, from GitGalaxy's verified skeleton.
  * Bytes 0-4 of the COMMAREA Bnk1ccs reads: MOVE DFHCOMMAREA at src/base/cobol_src/BNK1CCS.cbl:263.
- * Record fields field testing: field-tested (6 public / 0 private estates).
+ * Record fields field testing: open (6 public / 0 private estates).
  */
 @Data
 @NoArgsConstructor

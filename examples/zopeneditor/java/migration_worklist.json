@@ -19,39 +19,12 @@
       "nature": "port",
       "resolution": "Wire the called service (or a mock) in place of the placeholder.",
       "title": "Calls to other services"
-    },
-    "missing-layout": {
-      "nature": "fact-gap",
-      "resolution": "Add the missing copybook / %INCLUDE member or record to the repository and re-run; the DTO then gets its real fields.",
-      "title": "Unresolved layouts"
     }
   },
   "generated_from": {
     "clean_room": "zopeneditor-sample_gitgalaxy_clean_TIMESTAMP"
   },
   "items": [
-    {
-      "category": "missing-layout",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CobolSam2Service.java",
-      "id": "WL-0001",
-      "line": 28,
-      "nature": "fact-gap",
-      "program": "COBOL/SAM2.cbl",
-      "symbols": [],
-      "text": "CUST-REC was not found in the DATA DIVISION; carried as text"
-    },
-    {
-      "category": "missing-layout",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam2Service.java",
-      "id": "WL-0002",
-      "line": 29,
-      "nature": "fact-gap",
-      "program": "multiroot/sam/SAM2.cbl",
-      "symbols": [],
-      "text": "CUST-REC was not found in the DATA DIVISION; carried as text"
-    },
     {
       "category": "batch-utility",
       "facts": [
@@ -64,7 +37,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/batch/ZderunJobConfig.java",
-      "id": "WL-0003",
+      "id": "WL-0001",
       "line": null,
       "nature": "port",
       "program": "JCL/RUN.jcl",
@@ -85,7 +58,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/batch/ZderunJobConfig.java",
-      "id": "WL-0004",
+      "id": "WL-0002",
       "line": null,
       "nature": "port",
       "program": "JCL/RUN.jcl",
@@ -106,7 +79,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/batch/ZderunJobConfig.java",
-      "id": "WL-0005",
+      "id": "WL-0003",
       "line": null,
       "nature": "port",
       "program": "JCL/RUN.jcl",
@@ -127,7 +100,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/batch/ZderunJobConfig.java",
-      "id": "WL-0006",
+      "id": "WL-0004",
       "line": null,
       "nature": "port",
       "program": "JCL/RUN.jcl",
@@ -148,7 +121,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/batch/Zdepsm1JobConfig.java",
-      "id": "WL-0007",
+      "id": "WL-0005",
       "line": null,
       "nature": "port",
       "program": "JCL/RUNPSAM1.jcl",
@@ -169,7 +142,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/batch/Zdepsm1JobConfig.java",
-      "id": "WL-0008",
+      "id": "WL-0006",
       "line": null,
       "nature": "port",
       "program": "JCL/RUNPSAM1.jcl",
@@ -190,7 +163,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/batch/Zdepsm1JobConfig.java",
-      "id": "WL-0009",
+      "id": "WL-0007",
       "line": null,
       "nature": "port",
       "program": "JCL/RUNPSAM1.jcl",
@@ -203,45 +176,37 @@
       "category": "interface-call",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CobolSam1Service.java",
-      "id": "WL-0010",
-      "line": 28,
+      "id": "WL-0008",
+      "line": 31,
       "nature": "port",
       "program": "COBOL/SAM1.cbl",
       "symbols": [],
-      "text": "Implement or mock interface call to: Sam2Service"
+      "text": "Implement or mock interface call to: Sam2Service",
+      "ticket": "ai_agent_jobs/COBOL__SAM1_port_ticket.md"
     },
     {
       "category": "interface-call",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Sam1libService.java",
-      "id": "WL-0011",
-      "line": 26,
+      "id": "WL-0009",
+      "line": 31,
       "nature": "port",
       "program": "COBOL/SAM1LIB.cbl",
       "symbols": [],
-      "text": "Implement or mock interface call to: Sam2Service"
+      "text": "Implement or mock interface call to: Sam2Service",
+      "ticket": "ai_agent_jobs/SAM1LIB_port_ticket.md"
     },
     {
       "category": "interface-call",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam1Service.java",
-      "id": "WL-0012",
-      "line": 27,
+      "id": "WL-0010",
+      "line": 32,
       "nature": "port",
       "program": "multiroot/sam/SAM1.cbl",
       "symbols": [],
-      "text": "Implement or mock interface call to: Sam2Service"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CobolSam1Service.java",
-      "id": "WL-0013",
-      "line": 32,
-      "nature": "port",
-      "program": "COBOL/SAM1.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "Implement or mock interface call to: Sam2Service",
+      "ticket": "ai_agent_jobs/multiroot__sam__SAM1_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -255,69 +220,53 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CobolSam1Service.java",
-      "id": "WL-0014",
-      "line": 54,
+      "id": "WL-0011",
+      "line": 52,
       "nature": "port",
       "program": "COBOL/SAM1.cbl",
       "symbols": [
         "CobolSam1Service#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/COBOL__SAM1_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Sam1libService.java",
-      "id": "WL-0015",
-      "line": 30,
+      "id": "WL-0012",
+      "line": 52,
       "nature": "port",
       "program": "COBOL/SAM1LIB.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "symbols": [
+        "Sam1libService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/SAM1LIB_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CobolSam2Service.java",
-      "id": "WL-0016",
+      "id": "WL-0013",
       "line": 24,
       "nature": "port",
       "program": "COBOL/SAM2.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CobolSam2Service.java",
-      "id": "WL-0017",
-      "line": 27,
-      "nature": "port",
-      "program": "COBOL/SAM2.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "implement from the program's business rules",
+      "ticket": "ai_agent_jobs/COBOL__SAM2_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/MacsampService.java",
-      "id": "WL-0018",
+      "id": "WL-0014",
       "line": 23,
       "nature": "port",
       "program": "PLI/MACSAMP.pli",
       "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Psam1Service.java",
-      "id": "WL-0019",
-      "line": 25,
-      "nature": "port",
-      "program": "PLI/PSAM1.pli",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "Implement extracted business rules here",
+      "ticket": "ai_agent_jobs/MACSAMP_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -331,64 +280,59 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Psam1Service.java",
-      "id": "WL-0020",
-      "line": 31,
+      "id": "WL-0015",
+      "line": 26,
       "nature": "port",
       "program": "PLI/PSAM1.pli",
       "symbols": [
         "Psam1Service#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/PSAM1_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Psam1libService.java",
-      "id": "WL-0021",
+      "id": "WL-0016",
       "line": 23,
       "nature": "port",
       "program": "PLI/PSAM1LIB.pli",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "Implement extracted business rules here",
+      "ticket": "ai_agent_jobs/PSAM1LIB_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam1Service.java",
-      "id": "WL-0022",
-      "line": 31,
+      "id": "WL-0017",
+      "line": 53,
       "nature": "port",
       "program": "multiroot/sam/SAM1.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "symbols": [
+        "MultirootSamSam1Service#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/multiroot__sam__SAM1_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam2Service.java",
-      "id": "WL-0023",
+      "id": "WL-0018",
       "line": 25,
       "nature": "port",
       "program": "multiroot/sam/SAM2.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam2Service.java",
-      "id": "WL-0024",
-      "line": 28,
-      "nature": "port",
-      "program": "multiroot/sam/SAM2.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "implement from the program's business rules",
+      "ticket": "ai_agent_jobs/multiroot__sam__SAM2_port_ticket.md"
     },
     {
       "category": "configuration",
       "facts": [],
       "file": "src/main/resources/application.yml",
-      "id": "WL-0025",
+      "id": "WL-0019",
       "line": 9,
       "nature": "review",
       "program": "(project configuration)",
@@ -396,21 +340,54 @@
       "text": "Update these credentials for your target environment"
     }
   ],
+  "port_order": [
+    {
+      "file": "COBOL/SAM2.cbl",
+      "rank": 1
+    },
+    {
+      "file": "COBOL/SAM1.cbl",
+      "rank": 2
+    },
+    {
+      "file": "PLI/PSAM1.pli",
+      "rank": 3
+    },
+    {
+      "file": "multiroot/sam/SAM1.cbl",
+      "rank": 4
+    },
+    {
+      "file": "multiroot/sam/SAM2.cbl",
+      "rank": 5
+    },
+    {
+      "file": "PLI/MACSAMP.pli",
+      "rank": 6
+    },
+    {
+      "file": "PLI/PSAM1LIB.pli",
+      "rank": 7
+    },
+    {
+      "file": "COBOL/SAM1LIB.cbl",
+      "rank": 8
+    }
+  ],
   "summary": {
     "by_category": {
       "batch-utility": 7,
-      "business-logic": 12,
+      "business-logic": 8,
       "configuration": 1,
-      "interface-call": 3,
-      "missing-layout": 2
+      "interface-call": 3
     },
     "by_nature": {
       "conflict": 0,
-      "fact-gap": 2,
-      "port": 22,
+      "fact-gap": 0,
+      "port": 18,
       "review": 1
     },
-    "items": 25,
+    "items": 19,
     "programs": 10
   },
   "version": 1

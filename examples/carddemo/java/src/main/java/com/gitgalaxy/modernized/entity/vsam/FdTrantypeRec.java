@@ -27,29 +27,61 @@ public class FdTrantypeRec {
 
     // FD-TRAN-TYPE: PIC X(02), offset 0, 2 bytes
     @Id
-    @Column(name = "FD_TRAN_TYPE", length = 2)
+    @Column(name = "FD_TRAN_TYPE", columnDefinition = "varchar(2) COLLATE \"C\"")
     private String fdTranType;
 
     // FD-TRAN-DATA: PIC X(58), offset 2, 58 bytes
     @Column(name = "FD_TRAN_DATA", length = 58)
     private String fdTranData;
 
+    // #3822: FD-TRAN-TYPE as cp037 bytes in hex -- browses order by it, as VSAM orders the key
+    @Column(name = "FD_TRAN_TYPE_SORT", columnDefinition = "varchar(4) COLLATE \"C\"")
+    private String fdTranTypeSort;
+
+    @PrePersist
+    @PreUpdate
+    void codePageSortKey() {
+        this.fdTranTypeSort = CobolRecords.sortKey(fdTranType, "cp037");
+    }
+
+
+    /** #4875: the record bytes this entity was read from, kept beside the typed columns: a field whose
+     *  value is unchanged is written back as these bytes, so a value no column type holds (spaces in a
+     *  PIC 9, a non-preferred sign) and FILLER survive the round trip, as the VSAM record keeps them. */
+    @Column(name = "VSAM_RECORD", length = 60)
+    @lombok.Getter(lombok.AccessLevel.NONE)
+    @lombok.Setter(lombok.AccessLevel.NONE)
+    @lombok.EqualsAndHashCode.Exclude
+    @lombok.ToString.Exclude
+    private byte[] vsamRecord;
 
     /** #3624: this record from its fixed-width VSAM form (60 bytes, as REPRO unloads it), each
      *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
-     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+     *  transfer, IBM037 on z/OS). The bytes themselves are kept in vsamRecord (#4875). */
     public static FdTrantypeRec fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        if (rec.length < 60) {  // a WRITE ... LENGTH(n) short of the record: the rest is spaces
+            byte[] full = CobolRecords.blank(60, text);
+            System.arraycopy(rec, 0, full, 0, rec.length);
+            rec = full;
+        }
         FdTrantypeRec r = new FdTrantypeRec();
         r.fdTranType = CobolRecords.text(rec, 0, 2, text);
         r.fdTranData = CobolRecords.text(rec, 2, 58, text);
+        r.vsamRecord = java.util.Arrays.copyOf(rec, 60);
         return r;
     }
 
-    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    /** #3624: the fixed-width VSAM record of this entity: the bytes it was read from (vsamRecord), each field
+     *  whose value changed since re-encoded; a new entity's FILLER as spaces. */
     public byte[] toRecord(java.nio.charset.Charset text) {
-        byte[] rec = CobolRecords.blank(60, text);
-        CobolRecords.putText(rec, 0, 2, fdTranType, text);
-        CobolRecords.putText(rec, 2, 58, fdTranData, text);
+        byte[] read = vsamRecord != null && vsamRecord.length == 60 ? vsamRecord : null;
+        byte[] rec = read != null ? read.clone() : CobolRecords.blank(60, text);
+        if (read == null || !java.util.Objects.equals(fdTranType, CobolRecords.text(read, 0, 2, text))) {
+            CobolRecords.putText(rec, 0, 2, fdTranType, text);
+        }
+        if (read == null || !java.util.Objects.equals(fdTranData, CobolRecords.text(read, 2, 58, text))) {
+            CobolRecords.putText(rec, 2, 58, fdTranData, text);
+        }
         return rec;
     }
 }

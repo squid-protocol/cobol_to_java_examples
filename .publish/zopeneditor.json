@@ -48,14 +48,14 @@
       "functions": 71,
       "avg_complexity": 3.69,
       "max_complexity": 16,
-      "avg_function_loc": 29.5,
+      "avg_function_loc": 30.3,
       "functions_complexity_over_10": 7,
       "risk_cognitive_load": 24.8,
-      "risk_tech_debt": 6.8,
-      "risk_safety_score": 44.9,
+      "risk_tech_debt": 5.2,
+      "risk_safety_score": 34.9,
       "risk_verification": 12.5,
       "risk_documentation": 56.5,
-      "risk_api_exposure": 1.2,
+      "risk_api_exposure": 0.7,
       "risk_state_flux": 44.9,
       "languages": {
         "cobol": 13,
@@ -71,50 +71,53 @@
       }
     },
     "java": {
-      "files": 30,
-      "total_loc": 1779,
-      "coding_loc": 1069,
-      "functions": 46,
-      "avg_complexity": 1.98,
-      "max_complexity": 9,
-      "avg_function_loc": 8.5,
-      "functions_complexity_over_10": 0,
-      "risk_cognitive_load": 5.3,
-      "risk_tech_debt": 39.4,
-      "risk_safety_score": 28.8,
-      "risk_verification": 7.5,
-      "risk_documentation": 39.0,
-      "risk_api_exposure": 9.2,
-      "risk_state_flux": 10.8,
+      "files": 37,
+      "total_loc": 2991,
+      "coding_loc": 1887,
+      "functions": 128,
+      "avg_complexity": 2.03,
+      "max_complexity": 82,
+      "avg_function_loc": 8.6,
+      "functions_complexity_over_10": 2,
+      "risk_cognitive_load": 7.4,
+      "risk_tech_debt": 41.1,
+      "risk_safety_score": 34.5,
+      "risk_verification": 10.8,
+      "risk_documentation": 33.3,
+      "risk_api_exposure": 7.8,
+      "risk_state_flux": 17.6,
       "languages": {
-        "java": 30,
-        "json": 4,
+        "java": 37,
+        "markdown": 10,
+        "json": 9,
         "yaml": 1,
         "xml": 1,
-        "plaintext": 1,
-        "markdown": 1
+        "plaintext": 1
       }
     }
   },
   "legal": [
     "LICENSE"
   ],
-  "java_files": 30,
+  "reports": {
+    "readiness.json": true,
+    "readiness_redacted.json": true
+  },
+  "java_files": 37,
   "services": 9,
-  "controllers": 3,
-  "entities": 5,
-  "dtos": 3,
+  "controllers": 0,
+  "entities": 7,
+  "dtos": 5,
   "batch_jobs": {
     "utility": 4,
     "build": 2,
     "application": 2
   },
   "worklist": {
-    "missing-layout": 2,
     "batch-utility": 7,
     "interface-call": 3,
-    "business-logic": 12,
+    "business-logic": 8,
     "configuration": 1
   },
-  "traced_artifacts": 35
+  "traced_artifacts": 67
 }

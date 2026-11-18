@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,18 +24,26 @@ public class SrcGmlR0012201Service {
 
     private final ObjectProvider<SrcGmlR0013001Service> srcGmlR0013001Service;
 
-    public void executeSrcGmlR0012201(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__GML__R0012201");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcGmlR0012201: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcGmlR0012201: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R0012201", null);
+        region.run(task, "R0012201", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R0013001) at src/GML/R0012201.pli:284, src/GML/R0012201.pli:319, src/GML/R0012201.pli:335.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcGmlR0013001() {
         srcGmlR0013001Service.getObject().handleLink();
     }

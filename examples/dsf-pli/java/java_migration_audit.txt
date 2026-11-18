@@ -15,9 +15,9 @@
 ----------------------------------------------------------
   • Build & Config Files Scaffolded : 4
   • JPA Entities Generated          : 65
-  • Transient DTOs Generated        : 10
+  • Transient DTOs Generated        : 16
   • REST Controllers Generated      : 431
-  • AI Agent Tickets Generated      : 0
+  • AI Agent Tickets Generated      : 438
 
 [2] VERIFIED SKELETON (engine facts, 06_skeleton)
 ----------------------------------------------------------
@@ -31,16 +31,16 @@
     DL/I calls                            2         1  open (2 / 0)
     IMS access check                      1         1  open (2 / 0)
     JCL resolved DSNs                    22         7  open (5 / 0)
-    call targets                       5286       420  open (6 / 0)
-    data moves                       177596       438  field-tested (6 / 0)
+    call targets                       5286       420  open (9 / 0)
+    data moves                       177596       438  open (6 / 0)
     dynamic call targets                 54        22  open (5 / 0)
     entry transactions                 2468       370  open (4 / 0)
     file control                         22         7  open (4 / 0)
-    record fields                     12921       438  field-tested (6 / 0)
-    units                              2437       438  open (6 / 0)
+    record fields                     12934       438  open (6 / 0)
+    units                              2437       438  open (9 / 0)
     units of work and handlers         2561       224  field-tested (6 / 0)
   'open' = verified on the keyed reference corpora, still being field-tested on fresh estates.
-  • CICS programs (#3615)    : 409 -- 17 with a COMMAREA DTO, 0 transaction endpoints, 10 COMMAREA / channel DTOs
+  • CICS programs (#3615)    : 410 -- 17 with a COMMAREA DTO, 0 transaction endpoints, 16 COMMAREA / channel DTOs
   • Service calls (#3616)    : 447 LINK, 366 XCTL, 0 CALL, 54 data-driven dispatch, 0 remote; 0 remote-region clients
   • VSAM stores (#3617)      : 58 entities + repositories (1 keyed by one field); 14 not generated
       - CICS FILE ALDKONV: no program's record layout for it was resolved
@@ -60,27 +60,27 @@
   • DB2 tables (#3618)       : 0 repositories (0 with DECLAREd row classes), 0 statements as written; 0 positioned (TODO)
   • BMS screens (#3619)      : 0 view models (0 fields) for 0 programs; 0 SEND / 0 RECEIVE sites; 2384 unresolved maps; UI: none
   • Messaging (#3620)        : 20 TS / 0 TD / 0 MQ sites; TD routes: none; 0 MQ-triggered programs; adapter: in-memory
-  • Units of work (#3621)   : 409 @Transactional services, 22 commit points, 131 rollback points, 321 abends, 517 handlers; 9 unchecked responses
-  • Traceability (#3650)    : 3048 artifacts, 5058 facts, 668 TODOs -> traceability.json
+  • Units of work (#3621)   : 409 @Transactional services, 22 commit points, 131 rollback points, 321 abends, 504 handlers; 9 unchecked responses
+  • Traceability (#3650)    : 3060 artifacts, 5063 facts, 669 TODOs -> traceability.json
 
 [3] MIGRATION WORKLIST (migration_worklist.md / .json)
 ----------------------------------------------------------
-  • Open items : 4668 across 438 program sources
-  • By nature  : conflict 183, fact-gap 2930, review 10, port 1545
+  • Open items : 4657 across 438 program sources
+  • By nature  : conflict 183, fact-gap 2931, review 10, port 1533
     COMMAREA layout mismatches                   138  (conflict)
     Programs reading another record layout        45  (conflict)
-    Unresolved layouts                          2776  (fact-gap)
+    Unresolved layouts                          2777  (fact-gap)
     Keys that are not one field                  134  (fact-gap)
     Data-driven queue names                       20  (fact-gap)
     CICS responses the COBOL never tests           9  (review)
     Unit-of-work boundaries to split              22  (port)
     Calls to other services                      159  (port)
-    Business logic to port                      1364  (port)
+    Business logic to port                      1352  (port)
     Target configuration                           1  (review)
 
 [4] AI AGENT GUARDRAIL
 ----------------------------------------------------------
-  • Baseline : 1029 files, 1029 classes, 0 SQL tables -> guardrail_baseline.json
+  • Baseline : 1047 files, 1098 classes, 1 SQL tables -> guardrail_baseline.json
   • Not run  : after agent edits, python -m gitgalaxy.tools.cobol_to_java.cobol_to_java_guardrail <this project>
 
 ==========================================================

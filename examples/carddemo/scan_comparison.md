@@ -4,21 +4,21 @@ Both trees scanned by the same GitGalaxy engine. Source side: the program code (
 
 | metric | source | generated Java |
 |---|---|---|
-| Source files | 109 | 224 |
-| Total lines | 41126 | 19191 |
-| Code lines | 33310 | 11093 |
-| Functions (paragraphs / methods) | 891 | 579 |
-| Mean function complexity | 3.2 | 1.08 |
-| Max function complexity | 97 | 27 |
-| Mean function length (lines) | 23.9 | 6.9 |
-| Functions with complexity > 10 | 63 | 14 |
-| Cognitive-load exposure (mean, 0-100) | 28.8 | 5.3 |
-| Tech-debt exposure | 4.5 | 31.6 |
-| Safety exposure | 40.3 | 27.1 |
-| Verification exposure | 24.4 | 6.2 |
-| Documentation exposure | 42.2 | 19.1 |
-| API-exposure | 1.7 | 15.4 |
-| State-flux exposure | 42.4 | 17.4 |
+| Source files | 109 | 240 |
+| Total lines | 41126 | 22882 |
+| Code lines | 32562 | 13035 |
+| Functions (paragraphs / methods) | 901 | 731 |
+| Mean function complexity | 3.22 | 1.04 |
+| Max function complexity | 97 | 108 |
+| Mean function length (lines) | 24.1 | 7.7 |
+| Functions with complexity > 10 | 63 | 10 |
+| Cognitive-load exposure (mean, 0-100) | 28.9 | 2.9 |
+| Tech-debt exposure | 1.6 | 27.0 |
+| Safety exposure | 31.4 | 33.4 |
+| Verification exposure | 24.4 | 4.3 |
+| Documentation exposure | 43.1 | 19.8 |
+| API-exposure | 1.7 | 15.3 |
+| State-flux exposure | 42.5 | 21.2 |
 
 Source estate by language: cobol 109, jcl 62, bms 21, hlasm 12, plaintext 11, shell 9, markdown 6, db2_sql 6, csd 4.
 

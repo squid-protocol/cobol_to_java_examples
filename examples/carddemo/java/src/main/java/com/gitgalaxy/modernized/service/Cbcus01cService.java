@@ -26,15 +26,11 @@ public class Cbcus01cService {
 
     private final CustomerRecordRepository customerRecordRepository;
 
-    public void executeCbcus01c(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for CBCUS01C");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
     /** AWS.M2.CARDDEMO.CUSTDATA.VSAM.KSDS as BATCH SELECT CUSTFILE-FILE at app/cbl/CBCUS01C.cbl (SELECT CUSTFILE-FILE); VSAM defines field testing: open (3 public / 0 private estates). */
     // TODO: this program uses FD-CUSTFILE-REC (500 bytes); the entity follows CUSTOMER-RECORD (500 bytes) -- map one onto the other
+    // Sequential READ: in key order (CUST-ID, #3945).
     public List<CustomerRecord> readAllCustfileFile() {
-        return customerRecordRepository.findAll();
+        return customerRecordRepository.findAll(org.springframework.data.domain.Sort.by("custId"));
     }
 
     /** The batch entry (#3622): run by job READCUST step STEP05 (app/jcl/READCUST.jcl:21).

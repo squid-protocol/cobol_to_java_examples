@@ -127,20 +127,21 @@ public class PolicyRepository {
     /** EXEC SQL DECLARE CURSOR at base/src/lgupdb01.cbl:128 (LGUPDB01, read access).
      *  The cursor's FETCH at line 230, OPEN at line 255, CLOSE at line 365.
      *  Parameters: db2CustomernumInt = :DB2-CUSTOMERNUM-INT, db2PolicynumInt = :DB2-POLICYNUM-INT.
+     *  Each row also returns GG_RID, its row id, for a positioned UPDATE / DELETE.
      *  DB2 table access field testing: open (3 public / 0 private estates). */
     public List<Map<String, Object>> cursorPolicyCursorL128Lgupdb01(Map<String, ?> params) {
         return jdbc.queryForList("""
-            SELECT ISSUEDATE, EXPIRYDATE, LASTCHANGED, BROKERID, BROKERSREFERENCE FROM POLICY WHERE ( CUSTOMERNUMBER = :db2CustomernumInt AND POLICYNUMBER = :db2PolicynumInt ) FOR UPDATE OF ISSUEDATE, EXPIRYDATE, LASTCHANGED, BROKERID, BROKERSREFERENCE
+            SELECT ISSUEDATE, EXPIRYDATE, LASTCHANGED, BROKERID, BROKERSREFERENCE, RID_BIT(POLICY) AS GG_RID FROM POLICY WHERE ( CUSTOMERNUMBER = :db2CustomernumInt AND POLICYNUMBER = :db2PolicynumInt ) FOR UPDATE OF ISSUEDATE, EXPIRYDATE, LASTCHANGED, BROKERID, BROKERSREFERENCE
             """, params);
     }
 
     /** EXEC SQL UPDATE at base/src/lgupdb01.cbl:318 (LGUPDB01, update access).
-     *  Parameters: caBrokersref = :CA-BROKERSREF, caExpiryDate = :CA-EXPIRY-DATE, caIssueDate = :CA-ISSUE-DATE, db2BrokeridInt = :DB2-BROKERID-INT.
-     *  TODO: a positioned statement (WHERE CURRENT OF): rewrite it to the row's key.
+     *  Parameters: caBrokersref = :CA-BROKERSREF, caExpiryDate = :CA-EXPIRY-DATE, caIssueDate = :CA-ISSUE-DATE, db2BrokeridInt = :DB2-BROKERID-INT, ggRid = :GG-RID.
+     *  Positioned (WHERE CURRENT OF): the cursor's current row, by the GG_RID its FETCH returned.
      *  DB2 table access field testing: open (3 public / 0 private estates). */
     public int updateL318Lgupdb01(Map<String, ?> params) {
         return jdbc.update("""
-            UPDATE POLICY SET ISSUEDATE = :caIssueDate, EXPIRYDATE = :caExpiryDate, LASTCHANGED = CURRENT TIMESTAMP , BROKERID = :db2BrokeridInt, BROKERSREFERENCE = :caBrokersref WHERE CURRENT OF POLICY_CURSOR
+            UPDATE POLICY SET ISSUEDATE = :caIssueDate, EXPIRYDATE = :caExpiryDate, LASTCHANGED = CURRENT TIMESTAMP , BROKERID = :db2BrokeridInt, BROKERSREFERENCE = :caBrokersref WHERE RID_BIT(POLICY) = :ggRid
             """, params);
     }
 

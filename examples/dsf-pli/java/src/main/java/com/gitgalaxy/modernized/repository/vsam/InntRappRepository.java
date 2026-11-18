@@ -22,10 +22,12 @@ import com.gitgalaxy.modernized.entity.vsam.InntRapp;
 @Repository
 public interface InntRappRepository extends JpaRepository<InntRapp, String> {
 
-    /** EXEC CICS STARTBR + READNEXT: records from a key onward, in key order. */
-    List<InntRapp> findByInntRappGreaterThanEqualOrderByInntRappAsc(String inntRapp, Pageable page);
+    /** EXEC CICS STARTBR + READNEXT: records from a key onward, in the key's code-page order
+     *  (#3822: pass CobolRecords.sortKey(key, codePage)). */
+    List<InntRapp> findByInntRappSortGreaterThanEqualOrderByInntRappSortAsc(String inntRappSort, Pageable page);
 
-    /** EXEC CICS READPREV: records from a key backward, in reverse key order. */
-    List<InntRapp> findByInntRappLessThanEqualOrderByInntRappDesc(String inntRapp, Pageable page);
+    /** EXEC CICS READPREV: records from a key backward, in reverse code-page order
+     *  (#3822: pass CobolRecords.sortKey(key, codePage)). */
+    List<InntRapp> findByInntRappSortLessThanEqualOrderByInntRappSortDesc(String inntRappSort, Pageable page);
 
 }

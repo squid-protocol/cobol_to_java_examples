@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.FeilStruc;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.SrcGmlR0019921FeilStruc;
 import com.gitgalaxy.modernized.entity.vsam.Ettepmeld;
 import com.gitgalaxy.modernized.entity.vsam.OmrfeilFeilMeld;
 import com.gitgalaxy.modernized.entity.vsam.OmrloggBmsmapbr;
@@ -63,75 +64,107 @@ public class SrcGmlR0019h01Service {
     // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
     // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
 
-    public void executeSrcGmlR0019h01(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__GML__R0019H01");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcGmlR0019h01: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcGmlR0019h01: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R0019H01", null);
+        region.run(task, "R0019H01", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R0013101) at src/GML/R0019H01.pli:818.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcGmlR0013101() {
         srcGmlR0013101Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0014001) at src/GML/R0019H01.pli:1177.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcGmlR0014001() {
         srcGmlR0014001Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0016001) at src/GML/R0019H01.pli:905.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcGmlR0016001() {
         srcGmlR0016001Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0019921) at src/GML/R0019H01.pli:1063.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public FeilStruc linkSrcGmlR0019921(FeilStruc request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcGmlR0019921FeilStruc linkSrcGmlR0019921(SrcGmlR0019921FeilStruc request) {
         return srcGmlR0019921Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS LINK PROGRAM(R0019H50) at src/GML/R0019H01.pli:923.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcGmlR0019h50() {
         srcGmlR0019h50Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010301) at src/GML/R0019H01.pli:522. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcGmlR0010301() {
         srcGmlR0010301Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010420) at src/GML/R0019H01.pli:529. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcGmlR0010420() {
         srcGmlR0010420Service.getObject().handleLink();
     }
 
     /** OMRFEIL as CICS file OMRFEIL at src/GML/R0019H01.pli:1310; VSAM defines field testing: open (3 public / 0 private estates). */
     public OmrfeilFeilMeld writeOmrfeil(OmrfeilFeilMeld record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<OmrfeilFeilMeld> onFile = omrfeilFeilMeldRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file OMRFEIL already holds the key of this record");
+        }
         return omrfeilFeilMeldRepository.save(record);
     }
 
     /** OMRLOGG as CICS file OMRLOGG at src/GML/R0019H01.pli:416, 419, 634, 765, 974, 1834; VSAM defines field testing: open (3 public / 0 private estates). */
     public OmrloggBmsmapbr writeOmrlogg(OmrloggBmsmapbr record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<OmrloggBmsmapbr> onFile = omrloggBmsmapbrRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file OMRLOGG already holds the key of this record");
+        }
         return omrloggBmsmapbrRepository.save(record);
     }
 
     /** OMRNULL as CICS file OMRNULL at src/GML/R0019H01.pli:1620; VSAM defines field testing: open (3 public / 0 private estates). */
     public Ettepmeld writeOmrnull(Ettepmeld record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<Ettepmeld> onFile = ettepmeldRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file OMRNULL already holds the key of this record");
+        }
         return ettepmeldRepository.save(record);
     }
 
     /** TRKLIST as CICS file TRKLIST at src/GML/R0019H01.pli:1414, 1584; VSAM defines field testing: open (3 public / 0 private estates). */
     public Ptr writeTrklist(Ptr record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<Ptr> onFile = ptrRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file TRKLIST already holds the key of this record");
+        }
         return ptrRepository.save(record);
     }
 

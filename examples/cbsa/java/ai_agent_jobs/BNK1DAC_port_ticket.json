@@ -1,0 +1,4894 @@
+{
+  "compiler_options": [
+    {
+      "line": 1,
+      "option": "CICS",
+      "value": null,
+      "written": "CICS"
+    },
+    {
+      "line": 1,
+      "option": "NODYNAM",
+      "value": null,
+      "written": "NODYNAM"
+    },
+    {
+      "line": 1,
+      "option": "NSYMBOL",
+      "value": "NATIONAL",
+      "written": "NSYMBOL(NATIONAL)"
+    },
+    {
+      "line": 1,
+      "option": "TRUNC",
+      "value": "STD",
+      "written": "TRUNC(STD)"
+    },
+    {
+      "line": 2,
+      "option": "CICS",
+      "value": "'SP,EDF'",
+      "written": "CICS('SP,EDF')"
+    }
+  ],
+  "deliverable": {
+    "proof": "The port is laid over the generated project as an overlay and proven by the equivalence harness (tests/tools/equivalence.py in GitGalaxy): the original runs under GnuCOBOL, the port on the same inputs, and every output record is compared field by field; a person approves the port with that report in hand.",
+    "return": "One complete Java file for src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java: the same package, class name and public method signatures, with runTask ported -- what the proof runs -- and helper methods it calls added; every other generated method left as generated (#4255)."
+  },
+  "facts": {
+    "full_skeleton": "cics-banking-sample-application-cbsa_gitgalaxy_clean_TIMESTAMP/06_skeleton/BNK1DAC_skeleton.json",
+    "program": {
+      "copy_collisions": [],
+      "copy_edges": {
+        "src/base/cobol_copy/ABNDINFO.cpy": {},
+        "src/base/cobol_copy/INQACC.cpy": {},
+        "src/base/cobol_src/BNK1DAC.cbl": {
+          "src/base/cobol_copy/ABNDINFO.cpy": [],
+          "src/base/cobol_copy/INQACC.cpy": []
+        }
+      },
+      "copy_gaps": [],
+      "copybooks": [
+        "src/base/cobol_copy/ABNDINFO.cpy",
+        "src/base/cobol_copy/INQACC.cpy"
+      ],
+      "file": "src/base/cobol_src/BNK1DAC.cbl",
+      "language": "cobol",
+      "program_id_field_testing": "open",
+      "program_ids": [
+        "BNK1DAC"
+      ],
+      "total_loc": 1159
+    },
+    "sections": {
+      "calls": {
+        "facts": [
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 213,
+            "operand": "OMEN",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "OMEN",
+            "using_args": null,
+            "verb": "RETURN TRANSID"
+          },
+          {
+            "commarea": "WS-COMM-AREA",
+            "commarea_datalength": null,
+            "commarea_length": "102",
+            "form": "literal",
+            "line": 295,
+            "operand": "ODAC",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "ODAC",
+            "using_args": null,
+            "verb": "RETURN TRANSID"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 350,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 481,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "INQACC-COMMAREA",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 553,
+            "operand": "INQACC",
+            "resolves_to": "src/base/cobol_src/INQACC.cbl",
+            "sysid": null,
+            "target": "INQACC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 608,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "PARMS-SUBPGM",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 712,
+            "operand": "DELACC",
+            "resolves_to": "src/base/cobol_src/DELACC.cbl",
+            "sysid": null,
+            "target": "DELACC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 882,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 961,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 1036,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 1115,
+            "operand": "WS-ABEND-PGM",
+            "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+            "sysid": null,
+            "target": "ABNDPROC",
+            "using_args": null,
+            "verb": "LINK"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 9
+      },
+      "cics_resources": {
+        "facts": [
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 426,
+            "name": "BNK1DA",
+            "operand": "'BNK1DA'",
+            "qualifier": "BNK1DAM",
+            "qualifier_operand": "'BNK1DAM'",
+            "record": "BNK1DAI",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "write",
+            "attributes": "ERASE",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 827,
+            "name": "BNK1DA",
+            "operand": "'BNK1DA'",
+            "qualifier": "BNK1DAM",
+            "qualifier_operand": "'BNK1DAM'",
+            "record": "BNK1DAO",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 906,
+            "name": "BNK1DA",
+            "operand": "'BNK1DA'",
+            "qualifier": "BNK1DAM",
+            "qualifier_operand": "'BNK1DAM'",
+            "record": "BNK1DAO",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY ALARM",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 980,
+            "name": "BNK1DA",
+            "operand": "'BNK1DA'",
+            "qualifier": "BNK1DAM",
+            "qualifier_operand": "'BNK1DAM'",
+            "record": "BNK1DAO",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "SEND"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "commarea_contracts": {
+        "facts": [
+          {
+            "callee": "src/base/cobol_src/BNK1DAC.cbl",
+            "callee_record": {
+              "bytes": 102,
+              "copybooks": [],
+              "fields": 16,
+              "file": "src/base/cobol_src/BNK1DAC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNK1DAC.cbl",
+            "caller_record": {
+              "bytes": 102,
+              "copybooks": [],
+              "fields": 16,
+              "file": "src/base/cobol_src/BNK1DAC.cbl",
+              "name": "WS-COMM-AREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "WS-COMM-AREA",
+            "commarea_datalength": null,
+            "commarea_length": "102",
+            "declared_length": 102,
+            "line": 295,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ODAC",
+            "verb": "RETURN TRANSID"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNK1DAC.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNK1DAC.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 350,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNK1DAC.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNK1DAC.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 481,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/INQACC.cbl",
+            "callee_record": {
+              "bytes": 103,
+              "copybooks": [],
+              "fields": 14,
+              "file": "src/base/cobol_src/INQACC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNK1DAC.cbl",
+            "caller_record": {
+              "bytes": 103,
+              "copybooks": [],
+              "fields": 14,
+              "file": "src/base/cobol_copy/INQACC.cpy",
+              "name": "INQACC-COMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "INQACC-COMMAREA",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 553,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "INQACC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNK1DAC.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNK1DAC.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 608,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/DELACC.cbl",
+            "callee_record": {
+              "bytes": 122,
+              "copybooks": [],
+              "fields": 20,
+              "file": "src/base/cobol_src/DELACC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNK1DAC.cbl",
+            "caller_record": {
+              "bytes": 122,
+              "copybooks": [],
+              "fields": 20,
+              "file": "src/base/cobol_src/BNK1DAC.cbl",
+              "name": "PARMS-SUBPGM",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "PARMS-SUBPGM",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 712,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "DELACC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNK1DAC.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNK1DAC.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 882,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNK1DAC.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNK1DAC.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 961,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNK1DAC.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNK1DAC.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1036,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/base/cobol_src/ABNDPROC.cbl",
+            "callee_record": {
+              "bytes": 681,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/base/cobol_src/ABNDPROC.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/base/cobol_src/BNK1DAC.cbl",
+            "caller_record": {
+              "bytes": 681,
+              "copybooks": [
+                "src/base/cobol_copy/ABNDINFO.cpy"
+              ],
+              "fields": 12,
+              "file": "src/base/cobol_src/BNK1DAC.cbl",
+              "name": "ABNDINFO-REC",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ABNDINFO-REC",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1115,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ABNDPROC",
+            "verb": "LINK"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "dynamic_call_targets": {
+        "facts": [
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 350,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 481,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 608,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 882,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 961,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 1036,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ABNDPROC",
+                "resolves_to": "src/base/cobol_src/ABNDPROC.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 1115,
+            "operand": "WS-ABEND-PGM",
+            "other_sources": [],
+            "verb": "LINK"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "entry_points": {
+        "facts": [
+          {
+            "entry_name": null,
+            "kind": "PROCEDURE",
+            "line": 187,
+            "params": null
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "entry_transactions": {
+        "facts": [
+          {
+            "defined_in": "etc/install/base/installjcl/BANK.csd",
+            "group": "BANK",
+            "line": 455,
+            "profile": "DFHCICST",
+            "program": "BNK1DAC",
+            "resolves_to": "src/base/cobol_src/BNK1DAC.cbl",
+            "transid": "ODAC"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 4
+      },
+      "interface": {
+        "facts": {
+          "commarea": {
+            "alternatives": [],
+            "basis": "caller_record",
+            "bytes": 102,
+            "copybooks": [],
+            "extended": false,
+            "fields": "Reference: Bnk1dacWsCommArea (16 fields: name, PIC, usage, offset, bytes, copybook) in src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java; level numbers are in the copybook listings",
+            "file": "src/base/cobol_src/BNK1DAC.cbl",
+            "record": "WS-COMM-AREA",
+            "sources": [
+              {
+                "caller": "src/base/cobol_src/BNK1DAC.cbl",
+                "line": 295,
+                "verb": "RETURN TRANSID"
+              }
+            ],
+            "unexpanded": [],
+            "variable": false
+          },
+          "commarea_gap": null,
+          "commarea_unpack": null,
+          "containers": [],
+          "inbound": [
+            {
+              "bytes": 102,
+              "caller": "src/base/cobol_src/BNK1DAC.cbl",
+              "line": 295,
+              "passes": "WS-COMM-AREA",
+              "verb": "RETURN TRANSID",
+              "via": "static"
+            }
+          ],
+          "parameters": []
+        },
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "navigation": {
+        "facts": [
+          {
+            "from": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 213,
+            "program": "OMEN",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNKMENU.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 295,
+            "program": "ODAC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNK1DAC.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 553,
+            "program": "INQACC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/INQACC.cbl",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 712,
+            "program": "DELACC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/DELACC.cbl",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/base/cobol_src/BNKMENU.cbl",
+            "line": 459,
+            "program": "ODAC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/BNK1DAC.cbl",
+            "verb": "RETURN TRANSID",
+            "via": "transaction"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 350,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 481,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 608,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 882,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 961,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 1036,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          },
+          {
+            "from": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 1115,
+            "program": "ABNDPROC",
+            "remote_systems": [],
+            "to": "src/base/cobol_src/ABNDPROC.cbl",
+            "verb": "LINK",
+            "via": "value"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 4
+      },
+      "screen_bindings": {
+        "facts": [
+          {
+            "bms_candidates": [
+              "src/base/bms_src/BNK1DAM.bms"
+            ],
+            "bms_file": "src/base/bms_src/BNK1DAM.bms",
+            "fields": [
+              {
+                "attrb": "PROT,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "BNK1DA ",
+                "kind": "field",
+                "length": 7,
+                "line": 28,
+                "name": null,
+                "occurs": null,
+                "ordinal": 2,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=RED",
+                "initial": "CICS Bank Sample Application - Display Account.",
+                "kind": "field",
+                "length": 52,
+                "line": 30,
+                "name": "COMPANY",
+                "occurs": null,
+                "ordinal": 3,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 16,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Provide an ACCOUNT number. Then press Enter.",
+                "kind": "field",
+                "length": 44,
+                "line": 34,
+                "name": null,
+                "occurs": null,
+                "ordinal": 4,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 3
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "ACCOUNT NUMBER",
+                "kind": "field",
+                "length": 15,
+                "line": 36,
+                "name": null,
+                "occurs": null,
+                "ordinal": 5,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 5
+              },
+              {
+                "attrb": "NORM,NUM,IC",
+                "attributes": "COLOR=GREEN,HILIGHT=UNDERLINE",
+                "initial": null,
+                "kind": "field",
+                "length": 8,
+                "line": 38,
+                "name": "ACCNO",
+                "occurs": null,
+                "ordinal": 6,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 17,
+                "pos_line": 5
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": null,
+                "initial": null,
+                "kind": "field",
+                "length": 1,
+                "line": 40,
+                "name": null,
+                "occurs": null,
+                "ordinal": 7,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 26,
+                "pos_line": 5
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Customer Number:",
+                "kind": "field",
+                "length": 18,
+                "line": 41,
+                "name": null,
+                "occurs": null,
+                "ordinal": 8,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 7
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 10,
+                "line": 43,
+                "name": "CUSTNO",
+                "occurs": null,
+                "ordinal": 9,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 7
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Sort Code      :",
+                "kind": "field",
+                "length": 18,
+                "line": 45,
+                "name": null,
+                "occurs": null,
+                "ordinal": 10,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 8
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 6,
+                "line": 47,
+                "name": "SORTC",
+                "occurs": null,
+                "ordinal": 11,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 8
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Account Number :",
+                "kind": "field",
+                "length": 18,
+                "line": 49,
+                "name": null,
+                "occurs": null,
+                "ordinal": 12,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 9
+              },
+              {
+                "attrb": "PROT,ASKIP,FSET,NORM",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 10,
+                "line": 51,
+                "name": "ACCNO2",
+                "occurs": null,
+                "ordinal": 13,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 9
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Account Type   :",
+                "kind": "field",
+                "length": 18,
+                "line": 53,
+                "name": null,
+                "occurs": null,
+                "ordinal": 14,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 10
+              },
+              {
+                "attrb": "PROT,ASKIP,FSET,NORM",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 8,
+                "line": 55,
+                "name": "ACTYPE",
+                "occurs": null,
+                "ordinal": 15,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 10
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Interest Rate  :",
+                "kind": "field",
+                "length": 18,
+                "line": 57,
+                "name": null,
+                "occurs": null,
+                "ordinal": 16,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 11
+              },
+              {
+                "attrb": "PROT,ASKIP,FSET,NORM",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 7,
+                "line": 59,
+                "name": "INTRT",
+                "occurs": null,
+                "ordinal": 17,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": "9999.99",
+                "pos_column": 20,
+                "pos_line": 11
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Account Opened :",
+                "kind": "field",
+                "length": 18,
+                "line": 62,
+                "name": null,
+                "occurs": null,
+                "ordinal": 18,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP,FSET",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 64,
+                "name": "OPENDD",
+                "occurs": null,
+                "ordinal": 19,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 66,
+                "name": null,
+                "occurs": null,
+                "ordinal": 20,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP,FSET",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 68,
+                "name": "OPENMM",
+                "occurs": null,
+                "ordinal": 21,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 25,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 70,
+                "name": null,
+                "occurs": null,
+                "ordinal": 22,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 28,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 4,
+                "line": 72,
+                "name": "OPENYY",
+                "occurs": null,
+                "ordinal": 23,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 30,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Overdraft limit:",
+                "kind": "field",
+                "length": 18,
+                "line": 74,
+                "name": null,
+                "occurs": null,
+                "ordinal": 24,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 13
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 8,
+                "line": 76,
+                "name": "OVERDR",
+                "occurs": null,
+                "ordinal": 25,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 13
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Last statement :",
+                "kind": "field",
+                "length": 18,
+                "line": 78,
+                "name": null,
+                "occurs": null,
+                "ordinal": 26,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 80,
+                "name": "LSTMTDD",
+                "occurs": null,
+                "ordinal": 27,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 82,
+                "name": null,
+                "occurs": null,
+                "ordinal": 28,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 84,
+                "name": "LSTMTMM",
+                "occurs": null,
+                "ordinal": 29,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 25,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 86,
+                "name": null,
+                "occurs": null,
+                "ordinal": 30,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 28,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 4,
+                "line": 88,
+                "name": "LSTMTYY",
+                "occurs": null,
+                "ordinal": 31,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 30,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Next statement :",
+                "kind": "field",
+                "length": 18,
+                "line": 90,
+                "name": null,
+                "occurs": null,
+                "ordinal": 32,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 92,
+                "name": "NSTMTDD",
+                "occurs": null,
+                "ordinal": 33,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 94,
+                "name": null,
+                "occurs": null,
+                "ordinal": 34,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 96,
+                "name": "NSTMTMM",
+                "occurs": null,
+                "ordinal": 35,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 25,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 98,
+                "name": null,
+                "occurs": null,
+                "ordinal": 36,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 28,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 4,
+                "line": 100,
+                "name": "NSTMTYY",
+                "occurs": null,
+                "ordinal": 37,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 30,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Available Bal  :",
+                "kind": "field",
+                "length": 17,
+                "line": 102,
+                "name": null,
+                "occurs": null,
+                "ordinal": 38,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 16
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 14,
+                "line": 104,
+                "name": "AVBAL",
+                "occurs": null,
+                "ordinal": 39,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 19,
+                "pos_line": 16
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Actual Balance :",
+                "kind": "field",
+                "length": 17,
+                "line": 106,
+                "name": null,
+                "occurs": null,
+                "ordinal": 40,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 17
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 14,
+                "line": 108,
+                "name": "ACTBAL",
+                "occurs": null,
+                "ordinal": 41,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 19,
+                "pos_line": 17
+              },
+              {
+                "attrb": "BRT,PROT,ASKIP",
+                "attributes": "COLOR=YELLOW",
+                "initial": null,
+                "kind": "field",
+                "length": 79,
+                "line": 111,
+                "name": "MESSAGE",
+                "occurs": null,
+                "ordinal": 42,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 23
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP",
+                "attributes": "COLOR=BLUE",
+                "initial": "F3=Exit   F12=Cancel",
+                "kind": "field",
+                "length": 20,
+                "line": 113,
+                "name": null,
+                "occurs": null,
+                "ordinal": 43,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 24
+              },
+              {
+                "attrb": "DRK,PROT,FSET,ASKIP",
+                "attributes": null,
+                "initial": " ",
+                "kind": "field",
+                "length": 1,
+                "line": 115,
+                "name": "DUMMY",
+                "occurs": null,
+                "ordinal": 44,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 79,
+                "pos_line": 24
+              }
+            ],
+            "line": 426,
+            "map": "BNK1DA",
+            "mapset": "BNK1DAM",
+            "program": "src/base/cobol_src/BNK1DAC.cbl",
+            "record": "BNK1DAI",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [
+              "src/base/bms_src/BNK1DAM.bms"
+            ],
+            "bms_file": "src/base/bms_src/BNK1DAM.bms",
+            "fields": [
+              {
+                "attrb": "PROT,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "BNK1DA ",
+                "kind": "field",
+                "length": 7,
+                "line": 28,
+                "name": null,
+                "occurs": null,
+                "ordinal": 2,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=RED",
+                "initial": "CICS Bank Sample Application - Display Account.",
+                "kind": "field",
+                "length": 52,
+                "line": 30,
+                "name": "COMPANY",
+                "occurs": null,
+                "ordinal": 3,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 16,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Provide an ACCOUNT number. Then press Enter.",
+                "kind": "field",
+                "length": 44,
+                "line": 34,
+                "name": null,
+                "occurs": null,
+                "ordinal": 4,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 3
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "ACCOUNT NUMBER",
+                "kind": "field",
+                "length": 15,
+                "line": 36,
+                "name": null,
+                "occurs": null,
+                "ordinal": 5,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 5
+              },
+              {
+                "attrb": "NORM,NUM,IC",
+                "attributes": "COLOR=GREEN,HILIGHT=UNDERLINE",
+                "initial": null,
+                "kind": "field",
+                "length": 8,
+                "line": 38,
+                "name": "ACCNO",
+                "occurs": null,
+                "ordinal": 6,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 17,
+                "pos_line": 5
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": null,
+                "initial": null,
+                "kind": "field",
+                "length": 1,
+                "line": 40,
+                "name": null,
+                "occurs": null,
+                "ordinal": 7,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 26,
+                "pos_line": 5
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Customer Number:",
+                "kind": "field",
+                "length": 18,
+                "line": 41,
+                "name": null,
+                "occurs": null,
+                "ordinal": 8,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 7
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 10,
+                "line": 43,
+                "name": "CUSTNO",
+                "occurs": null,
+                "ordinal": 9,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 7
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Sort Code      :",
+                "kind": "field",
+                "length": 18,
+                "line": 45,
+                "name": null,
+                "occurs": null,
+                "ordinal": 10,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 8
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 6,
+                "line": 47,
+                "name": "SORTC",
+                "occurs": null,
+                "ordinal": 11,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 8
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Account Number :",
+                "kind": "field",
+                "length": 18,
+                "line": 49,
+                "name": null,
+                "occurs": null,
+                "ordinal": 12,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 9
+              },
+              {
+                "attrb": "PROT,ASKIP,FSET,NORM",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 10,
+                "line": 51,
+                "name": "ACCNO2",
+                "occurs": null,
+                "ordinal": 13,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 9
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Account Type   :",
+                "kind": "field",
+                "length": 18,
+                "line": 53,
+                "name": null,
+                "occurs": null,
+                "ordinal": 14,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 10
+              },
+              {
+                "attrb": "PROT,ASKIP,FSET,NORM",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 8,
+                "line": 55,
+                "name": "ACTYPE",
+                "occurs": null,
+                "ordinal": 15,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 10
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Interest Rate  :",
+                "kind": "field",
+                "length": 18,
+                "line": 57,
+                "name": null,
+                "occurs": null,
+                "ordinal": 16,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 11
+              },
+              {
+                "attrb": "PROT,ASKIP,FSET,NORM",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 7,
+                "line": 59,
+                "name": "INTRT",
+                "occurs": null,
+                "ordinal": 17,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": "9999.99",
+                "pos_column": 20,
+                "pos_line": 11
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Account Opened :",
+                "kind": "field",
+                "length": 18,
+                "line": 62,
+                "name": null,
+                "occurs": null,
+                "ordinal": 18,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP,FSET",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 64,
+                "name": "OPENDD",
+                "occurs": null,
+                "ordinal": 19,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 66,
+                "name": null,
+                "occurs": null,
+                "ordinal": 20,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP,FSET",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 68,
+                "name": "OPENMM",
+                "occurs": null,
+                "ordinal": 21,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 25,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 70,
+                "name": null,
+                "occurs": null,
+                "ordinal": 22,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 28,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 4,
+                "line": 72,
+                "name": "OPENYY",
+                "occurs": null,
+                "ordinal": 23,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 30,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Overdraft limit:",
+                "kind": "field",
+                "length": 18,
+                "line": 74,
+                "name": null,
+                "occurs": null,
+                "ordinal": 24,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 13
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 8,
+                "line": 76,
+                "name": "OVERDR",
+                "occurs": null,
+                "ordinal": 25,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 13
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Last statement :",
+                "kind": "field",
+                "length": 18,
+                "line": 78,
+                "name": null,
+                "occurs": null,
+                "ordinal": 26,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 80,
+                "name": "LSTMTDD",
+                "occurs": null,
+                "ordinal": 27,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 82,
+                "name": null,
+                "occurs": null,
+                "ordinal": 28,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 84,
+                "name": "LSTMTMM",
+                "occurs": null,
+                "ordinal": 29,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 25,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 86,
+                "name": null,
+                "occurs": null,
+                "ordinal": 30,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 28,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 4,
+                "line": 88,
+                "name": "LSTMTYY",
+                "occurs": null,
+                "ordinal": 31,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 30,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Next statement :",
+                "kind": "field",
+                "length": 18,
+                "line": 90,
+                "name": null,
+                "occurs": null,
+                "ordinal": 32,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 92,
+                "name": "NSTMTDD",
+                "occurs": null,
+                "ordinal": 33,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 94,
+                "name": null,
+                "occurs": null,
+                "ordinal": 34,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 96,
+                "name": "NSTMTMM",
+                "occurs": null,
+                "ordinal": 35,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 25,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 98,
+                "name": null,
+                "occurs": null,
+                "ordinal": 36,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 28,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 4,
+                "line": 100,
+                "name": "NSTMTYY",
+                "occurs": null,
+                "ordinal": 37,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 30,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Available Bal  :",
+                "kind": "field",
+                "length": 17,
+                "line": 102,
+                "name": null,
+                "occurs": null,
+                "ordinal": 38,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 16
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 14,
+                "line": 104,
+                "name": "AVBAL",
+                "occurs": null,
+                "ordinal": 39,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 19,
+                "pos_line": 16
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Actual Balance :",
+                "kind": "field",
+                "length": 17,
+                "line": 106,
+                "name": null,
+                "occurs": null,
+                "ordinal": 40,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 17
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 14,
+                "line": 108,
+                "name": "ACTBAL",
+                "occurs": null,
+                "ordinal": 41,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 19,
+                "pos_line": 17
+              },
+              {
+                "attrb": "BRT,PROT,ASKIP",
+                "attributes": "COLOR=YELLOW",
+                "initial": null,
+                "kind": "field",
+                "length": 79,
+                "line": 111,
+                "name": "MESSAGE",
+                "occurs": null,
+                "ordinal": 42,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 23
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP",
+                "attributes": "COLOR=BLUE",
+                "initial": "F3=Exit   F12=Cancel",
+                "kind": "field",
+                "length": 20,
+                "line": 113,
+                "name": null,
+                "occurs": null,
+                "ordinal": 43,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 24
+              },
+              {
+                "attrb": "DRK,PROT,FSET,ASKIP",
+                "attributes": null,
+                "initial": " ",
+                "kind": "field",
+                "length": 1,
+                "line": 115,
+                "name": "DUMMY",
+                "occurs": null,
+                "ordinal": 44,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 79,
+                "pos_line": 24
+              }
+            ],
+            "line": 827,
+            "map": "BNK1DA",
+            "mapset": "BNK1DAM",
+            "program": "src/base/cobol_src/BNK1DAC.cbl",
+            "record": "BNK1DAO",
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [
+              "src/base/bms_src/BNK1DAM.bms"
+            ],
+            "bms_file": "src/base/bms_src/BNK1DAM.bms",
+            "fields": [
+              {
+                "attrb": "PROT,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "BNK1DA ",
+                "kind": "field",
+                "length": 7,
+                "line": 28,
+                "name": null,
+                "occurs": null,
+                "ordinal": 2,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=RED",
+                "initial": "CICS Bank Sample Application - Display Account.",
+                "kind": "field",
+                "length": 52,
+                "line": 30,
+                "name": "COMPANY",
+                "occurs": null,
+                "ordinal": 3,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 16,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Provide an ACCOUNT number. Then press Enter.",
+                "kind": "field",
+                "length": 44,
+                "line": 34,
+                "name": null,
+                "occurs": null,
+                "ordinal": 4,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 3
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "ACCOUNT NUMBER",
+                "kind": "field",
+                "length": 15,
+                "line": 36,
+                "name": null,
+                "occurs": null,
+                "ordinal": 5,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 5
+              },
+              {
+                "attrb": "NORM,NUM,IC",
+                "attributes": "COLOR=GREEN,HILIGHT=UNDERLINE",
+                "initial": null,
+                "kind": "field",
+                "length": 8,
+                "line": 38,
+                "name": "ACCNO",
+                "occurs": null,
+                "ordinal": 6,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 17,
+                "pos_line": 5
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": null,
+                "initial": null,
+                "kind": "field",
+                "length": 1,
+                "line": 40,
+                "name": null,
+                "occurs": null,
+                "ordinal": 7,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 26,
+                "pos_line": 5
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Customer Number:",
+                "kind": "field",
+                "length": 18,
+                "line": 41,
+                "name": null,
+                "occurs": null,
+                "ordinal": 8,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 7
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 10,
+                "line": 43,
+                "name": "CUSTNO",
+                "occurs": null,
+                "ordinal": 9,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 7
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Sort Code      :",
+                "kind": "field",
+                "length": 18,
+                "line": 45,
+                "name": null,
+                "occurs": null,
+                "ordinal": 10,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 8
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 6,
+                "line": 47,
+                "name": "SORTC",
+                "occurs": null,
+                "ordinal": 11,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 8
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Account Number :",
+                "kind": "field",
+                "length": 18,
+                "line": 49,
+                "name": null,
+                "occurs": null,
+                "ordinal": 12,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 9
+              },
+              {
+                "attrb": "PROT,ASKIP,FSET,NORM",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 10,
+                "line": 51,
+                "name": "ACCNO2",
+                "occurs": null,
+                "ordinal": 13,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 9
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Account Type   :",
+                "kind": "field",
+                "length": 18,
+                "line": 53,
+                "name": null,
+                "occurs": null,
+                "ordinal": 14,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 10
+              },
+              {
+                "attrb": "PROT,ASKIP,FSET,NORM",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 8,
+                "line": 55,
+                "name": "ACTYPE",
+                "occurs": null,
+                "ordinal": 15,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 10
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Interest Rate  :",
+                "kind": "field",
+                "length": 18,
+                "line": 57,
+                "name": null,
+                "occurs": null,
+                "ordinal": 16,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 11
+              },
+              {
+                "attrb": "PROT,ASKIP,FSET,NORM",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 7,
+                "line": 59,
+                "name": "INTRT",
+                "occurs": null,
+                "ordinal": 17,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": "9999.99",
+                "pos_column": 20,
+                "pos_line": 11
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Account Opened :",
+                "kind": "field",
+                "length": 18,
+                "line": 62,
+                "name": null,
+                "occurs": null,
+                "ordinal": 18,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP,FSET",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 64,
+                "name": "OPENDD",
+                "occurs": null,
+                "ordinal": 19,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 66,
+                "name": null,
+                "occurs": null,
+                "ordinal": 20,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP,FSET",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 68,
+                "name": "OPENMM",
+                "occurs": null,
+                "ordinal": 21,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 25,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 70,
+                "name": null,
+                "occurs": null,
+                "ordinal": 22,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 28,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 4,
+                "line": 72,
+                "name": "OPENYY",
+                "occurs": null,
+                "ordinal": 23,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 30,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Overdraft limit:",
+                "kind": "field",
+                "length": 18,
+                "line": 74,
+                "name": null,
+                "occurs": null,
+                "ordinal": 24,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 13
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 8,
+                "line": 76,
+                "name": "OVERDR",
+                "occurs": null,
+                "ordinal": 25,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 13
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Last statement :",
+                "kind": "field",
+                "length": 18,
+                "line": 78,
+                "name": null,
+                "occurs": null,
+                "ordinal": 26,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 80,
+                "name": "LSTMTDD",
+                "occurs": null,
+                "ordinal": 27,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 82,
+                "name": null,
+                "occurs": null,
+                "ordinal": 28,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 84,
+                "name": "LSTMTMM",
+                "occurs": null,
+                "ordinal": 29,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 25,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 86,
+                "name": null,
+                "occurs": null,
+                "ordinal": 30,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 28,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 4,
+                "line": 88,
+                "name": "LSTMTYY",
+                "occurs": null,
+                "ordinal": 31,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 30,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Next statement :",
+                "kind": "field",
+                "length": 18,
+                "line": 90,
+                "name": null,
+                "occurs": null,
+                "ordinal": 32,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 92,
+                "name": "NSTMTDD",
+                "occurs": null,
+                "ordinal": 33,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 94,
+                "name": null,
+                "occurs": null,
+                "ordinal": 34,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 96,
+                "name": "NSTMTMM",
+                "occurs": null,
+                "ordinal": 35,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 25,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 98,
+                "name": null,
+                "occurs": null,
+                "ordinal": 36,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 28,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 4,
+                "line": 100,
+                "name": "NSTMTYY",
+                "occurs": null,
+                "ordinal": 37,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 30,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Available Bal  :",
+                "kind": "field",
+                "length": 17,
+                "line": 102,
+                "name": null,
+                "occurs": null,
+                "ordinal": 38,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 16
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 14,
+                "line": 104,
+                "name": "AVBAL",
+                "occurs": null,
+                "ordinal": 39,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 19,
+                "pos_line": 16
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Actual Balance :",
+                "kind": "field",
+                "length": 17,
+                "line": 106,
+                "name": null,
+                "occurs": null,
+                "ordinal": 40,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 17
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 14,
+                "line": 108,
+                "name": "ACTBAL",
+                "occurs": null,
+                "ordinal": 41,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 19,
+                "pos_line": 17
+              },
+              {
+                "attrb": "BRT,PROT,ASKIP",
+                "attributes": "COLOR=YELLOW",
+                "initial": null,
+                "kind": "field",
+                "length": 79,
+                "line": 111,
+                "name": "MESSAGE",
+                "occurs": null,
+                "ordinal": 42,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 23
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP",
+                "attributes": "COLOR=BLUE",
+                "initial": "F3=Exit   F12=Cancel",
+                "kind": "field",
+                "length": 20,
+                "line": 113,
+                "name": null,
+                "occurs": null,
+                "ordinal": 43,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 24
+              },
+              {
+                "attrb": "DRK,PROT,FSET,ASKIP",
+                "attributes": null,
+                "initial": " ",
+                "kind": "field",
+                "length": 1,
+                "line": 115,
+                "name": "DUMMY",
+                "occurs": null,
+                "ordinal": 44,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 79,
+                "pos_line": 24
+              }
+            ],
+            "line": 906,
+            "map": "BNK1DA",
+            "mapset": "BNK1DAM",
+            "program": "src/base/cobol_src/BNK1DAC.cbl",
+            "record": "BNK1DAO",
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [
+              "src/base/bms_src/BNK1DAM.bms"
+            ],
+            "bms_file": "src/base/bms_src/BNK1DAM.bms",
+            "fields": [
+              {
+                "attrb": "PROT,NORM",
+                "attributes": "COLOR=BLUE",
+                "initial": "BNK1DA ",
+                "kind": "field",
+                "length": 7,
+                "line": 28,
+                "name": null,
+                "occurs": null,
+                "ordinal": 2,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=RED",
+                "initial": "CICS Bank Sample Application - Display Account.",
+                "kind": "field",
+                "length": 52,
+                "line": 30,
+                "name": "COMPANY",
+                "occurs": null,
+                "ordinal": 3,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 16,
+                "pos_line": 1
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "Provide an ACCOUNT number. Then press Enter.",
+                "kind": "field",
+                "length": 44,
+                "line": 34,
+                "name": null,
+                "occurs": null,
+                "ordinal": 4,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 3
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=TURQUOISE",
+                "initial": "ACCOUNT NUMBER",
+                "kind": "field",
+                "length": 15,
+                "line": 36,
+                "name": null,
+                "occurs": null,
+                "ordinal": 5,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 5
+              },
+              {
+                "attrb": "NORM,NUM,IC",
+                "attributes": "COLOR=GREEN,HILIGHT=UNDERLINE",
+                "initial": null,
+                "kind": "field",
+                "length": 8,
+                "line": 38,
+                "name": "ACCNO",
+                "occurs": null,
+                "ordinal": 6,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 17,
+                "pos_line": 5
+              },
+              {
+                "attrb": "PROT,ASKIP",
+                "attributes": null,
+                "initial": null,
+                "kind": "field",
+                "length": 1,
+                "line": 40,
+                "name": null,
+                "occurs": null,
+                "ordinal": 7,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 26,
+                "pos_line": 5
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Customer Number:",
+                "kind": "field",
+                "length": 18,
+                "line": 41,
+                "name": null,
+                "occurs": null,
+                "ordinal": 8,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 7
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 10,
+                "line": 43,
+                "name": "CUSTNO",
+                "occurs": null,
+                "ordinal": 9,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 7
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Sort Code      :",
+                "kind": "field",
+                "length": 18,
+                "line": 45,
+                "name": null,
+                "occurs": null,
+                "ordinal": 10,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 8
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 6,
+                "line": 47,
+                "name": "SORTC",
+                "occurs": null,
+                "ordinal": 11,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 8
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Account Number :",
+                "kind": "field",
+                "length": 18,
+                "line": 49,
+                "name": null,
+                "occurs": null,
+                "ordinal": 12,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 9
+              },
+              {
+                "attrb": "PROT,ASKIP,FSET,NORM",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 10,
+                "line": 51,
+                "name": "ACCNO2",
+                "occurs": null,
+                "ordinal": 13,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 9
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Account Type   :",
+                "kind": "field",
+                "length": 18,
+                "line": 53,
+                "name": null,
+                "occurs": null,
+                "ordinal": 14,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 10
+              },
+              {
+                "attrb": "PROT,ASKIP,FSET,NORM",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 8,
+                "line": 55,
+                "name": "ACTYPE",
+                "occurs": null,
+                "ordinal": 15,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 10
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Interest Rate  :",
+                "kind": "field",
+                "length": 18,
+                "line": 57,
+                "name": null,
+                "occurs": null,
+                "ordinal": 16,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 11
+              },
+              {
+                "attrb": "PROT,ASKIP,FSET,NORM",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 7,
+                "line": 59,
+                "name": "INTRT",
+                "occurs": null,
+                "ordinal": 17,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": "9999.99",
+                "pos_column": 20,
+                "pos_line": 11
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Account Opened :",
+                "kind": "field",
+                "length": 18,
+                "line": 62,
+                "name": null,
+                "occurs": null,
+                "ordinal": 18,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP,FSET",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 64,
+                "name": "OPENDD",
+                "occurs": null,
+                "ordinal": 19,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 66,
+                "name": null,
+                "occurs": null,
+                "ordinal": 20,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP,FSET",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 68,
+                "name": "OPENMM",
+                "occurs": null,
+                "ordinal": 21,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 25,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 70,
+                "name": null,
+                "occurs": null,
+                "ordinal": 22,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 28,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 4,
+                "line": 72,
+                "name": "OPENYY",
+                "occurs": null,
+                "ordinal": 23,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 30,
+                "pos_line": 12
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Overdraft limit:",
+                "kind": "field",
+                "length": 18,
+                "line": 74,
+                "name": null,
+                "occurs": null,
+                "ordinal": 24,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 13
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 8,
+                "line": 76,
+                "name": "OVERDR",
+                "occurs": null,
+                "ordinal": 25,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 13
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Last statement :",
+                "kind": "field",
+                "length": 18,
+                "line": 78,
+                "name": null,
+                "occurs": null,
+                "ordinal": 26,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 80,
+                "name": "LSTMTDD",
+                "occurs": null,
+                "ordinal": 27,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 82,
+                "name": null,
+                "occurs": null,
+                "ordinal": 28,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 84,
+                "name": "LSTMTMM",
+                "occurs": null,
+                "ordinal": 29,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 25,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 86,
+                "name": null,
+                "occurs": null,
+                "ordinal": 30,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 28,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 4,
+                "line": 88,
+                "name": "LSTMTYY",
+                "occurs": null,
+                "ordinal": 31,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 30,
+                "pos_line": 14
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Next statement :",
+                "kind": "field",
+                "length": 18,
+                "line": 90,
+                "name": null,
+                "occurs": null,
+                "ordinal": 32,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 92,
+                "name": "NSTMTDD",
+                "occurs": null,
+                "ordinal": 33,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 20,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 94,
+                "name": null,
+                "occurs": null,
+                "ordinal": 34,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 23,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 2,
+                "line": 96,
+                "name": "NSTMTMM",
+                "occurs": null,
+                "ordinal": 35,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 25,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=GREEN",
+                "initial": "/",
+                "kind": "field",
+                "length": 1,
+                "line": 98,
+                "name": null,
+                "occurs": null,
+                "ordinal": 36,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 28,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 4,
+                "line": 100,
+                "name": "NSTMTYY",
+                "occurs": null,
+                "ordinal": 37,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 30,
+                "pos_line": 15
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Available Bal  :",
+                "kind": "field",
+                "length": 17,
+                "line": 102,
+                "name": null,
+                "occurs": null,
+                "ordinal": 38,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 16
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 14,
+                "line": 104,
+                "name": "AVBAL",
+                "occurs": null,
+                "ordinal": 39,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 19,
+                "pos_line": 16
+              },
+              {
+                "attrb": "NORM,PROT",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": " Actual Balance :",
+                "kind": "field",
+                "length": 17,
+                "line": 106,
+                "name": null,
+                "occurs": null,
+                "ordinal": 40,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 17
+              },
+              {
+                "attrb": "NORM,PROT,FSET,ASKIP",
+                "attributes": "COLOR=NEUTRAL",
+                "initial": null,
+                "kind": "field",
+                "length": 14,
+                "line": 108,
+                "name": "ACTBAL",
+                "occurs": null,
+                "ordinal": 41,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 19,
+                "pos_line": 17
+              },
+              {
+                "attrb": "BRT,PROT,ASKIP",
+                "attributes": "COLOR=YELLOW",
+                "initial": null,
+                "kind": "field",
+                "length": 79,
+                "line": 111,
+                "name": "MESSAGE",
+                "occurs": null,
+                "ordinal": 42,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 23
+              },
+              {
+                "attrb": "NORM,PROT,ASKIP",
+                "attributes": "COLOR=BLUE",
+                "initial": "F3=Exit   F12=Cancel",
+                "kind": "field",
+                "length": 20,
+                "line": 113,
+                "name": null,
+                "occurs": null,
+                "ordinal": 43,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 1,
+                "pos_line": 24
+              },
+              {
+                "attrb": "DRK,PROT,FSET,ASKIP",
+                "attributes": null,
+                "initial": " ",
+                "kind": "field",
+                "length": 1,
+                "line": 115,
+                "name": "DUMMY",
+                "occurs": null,
+                "ordinal": 44,
+                "parent_ordinal": 1,
+                "picin": null,
+                "picout": null,
+                "pos_column": 79,
+                "pos_line": 24
+              }
+            ],
+            "line": 980,
+            "map": "BNK1DA",
+            "mapset": "BNK1DAM",
+            "program": "src/base/cobol_src/BNK1DAC.cbl",
+            "record": "BNK1DAO",
+            "verb": "SEND"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 3
+      },
+      "unchecked_responses": {
+        "facts": [
+          {
+            "file": "src/base/cobol_src/BNK1DAC.cbl",
+            "line": 213,
+            "resp_var": "WS-CICS-RESP",
+            "unit": "A010",
+            "verb": "RETURN"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "uow_handlers": {
+        "facts": [
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 213,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RETURN"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 295,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RETURN"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 426,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "RECEIVE"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 553,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "LINK"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 712,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "LINK"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 827,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SEND"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 906,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SEND"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 980,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SEND"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1060,
+            "resp_var": "WS-CICS-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SEND"
+          },
+          {
+            "attributes": "NODUMP",
+            "condition": "HBNK",
+            "kind": "ABEND",
+            "line": 1133,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "ABEND"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      }
+    }
+  },
+  "generated": {
+    "imports": [
+      {
+        "class": "com.gitgalaxy.modernized.cics.CicsTask",
+        "file": "src/main/java/com/gitgalaxy/modernized/cics/CicsTask.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.dto.contract.Bnk1dacWsCommArea",
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.dto.contract.DelaccDfhcommarea",
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.dto.contract.InqaccDfhcommarea",
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/InqaccDfhcommarea.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.dto.screen.Bnk1daScreen",
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/screen/Bnk1daScreen.java"
+      }
+    ],
+    "traced_to_this_program": [
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/AbndprocController.java",
+        "symbol": "AbndprocController#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/DelaccController.java",
+        "symbol": "DelaccController#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/InqaccController.java",
+        "symbol": "InqaccController#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommAccType"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommAccno"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommActualBal"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommAvailBal"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommCustno"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommDelFailCd"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommDelSuccess"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommEye"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommFailCd"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommIntRate"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommLastStmtDt"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommNextStmtDt"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommOpened"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommOverdraft"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommScode"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+        "symbol": "Bnk1dacWsCommArea#wsCommSuccess"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmAccType"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmAccno"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmActualBal"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmAvailBal"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmCustno"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmDelApplid"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmDelFailCd"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmDelPcb1"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmDelPcb2"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmDelPcb3"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmDelSuccess"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmEye"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmFailCd"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmIntRate"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmLastStmtDt"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmNextStmtDt"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmOpened"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmOverdraft"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmScode"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/DelaccDfhcommarea.java",
+        "symbol": "DelaccDfhcommarea#parmsSubpgmSuccess"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+        "symbol": "Bnk1dacService"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+        "symbol": "Bnk1dacService#abendHbnkL1133"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+        "symbol": "Bnk1dacService#dispatchWsAbendPgmL1036"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+        "symbol": "Bnk1dacService#dispatchWsAbendPgmL1115"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+        "symbol": "Bnk1dacService#dispatchWsAbendPgmL350"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+        "symbol": "Bnk1dacService#dispatchWsAbendPgmL481"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+        "symbol": "Bnk1dacService#dispatchWsAbendPgmL608"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+        "symbol": "Bnk1dacService#dispatchWsAbendPgmL882"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+        "symbol": "Bnk1dacService#dispatchWsAbendPgmL961"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+        "symbol": "Bnk1dacService#linkDelacc"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+        "symbol": "Bnk1dacService#linkInqacc"
+      }
+    ]
+  },
+  "paragraphs": [
+    {
+      "lines": 1,
+      "name": "PREMIERE",
+      "start_line": 188
+    },
+    {
+      "lines": 172,
+      "name": "A010",
+      "start_line": 189
+    },
+    {
+      "lines": 2,
+      "name": "A999",
+      "start_line": 362
+    },
+    {
+      "lines": 1,
+      "name": "PROCESS-MAP",
+      "start_line": 366
+    },
+    {
+      "lines": 49,
+      "name": "PM010",
+      "start_line": 367
+    },
+    {
+      "lines": 2,
+      "name": "PM999",
+      "start_line": 417
+    },
+    {
+      "lines": 1,
+      "name": "RECEIVE-MAP",
+      "start_line": 421
+    },
+    {
+      "lines": 71,
+      "name": "RM010",
+      "start_line": 422
+    },
+    {
+      "lines": 2,
+      "name": "RM999",
+      "start_line": 494
+    },
+    {
+      "lines": 1,
+      "name": "EDIT-DATA",
+      "start_line": 498
+    },
+    {
+      "lines": 21,
+      "name": "ED010",
+      "start_line": 499
+    },
+    {
+      "lines": 2,
+      "name": "ED999",
+      "start_line": 521
+    },
+    {
+      "lines": 1,
+      "name": "VALIDATE-DATA",
+      "start_line": 525
+    },
+    {
+      "lines": 13,
+      "name": "VD010",
+      "start_line": 526
+    },
+    {
+      "lines": 2,
+      "name": "VD999",
+      "start_line": 540
+    },
+    {
+      "lines": 1,
+      "name": "GET-ACC-DATA",
+      "start_line": 544
+    },
+    {
+      "lines": 152,
+      "name": "GAD010",
+      "start_line": 545
+    },
+    {
+      "lines": 2,
+      "name": "GAD999",
+      "start_line": 697
+    },
+    {
+      "lines": 1,
+      "name": "DEL-ACC-DATA",
+      "start_line": 701
+    },
+    {
+      "lines": 113,
+      "name": "DAD010",
+      "start_line": 702
+    },
+    {
+      "lines": 2,
+      "name": "DAD999",
+      "start_line": 816
+    },
+    {
+      "lines": 1,
+      "name": "SEND-MAP",
+      "start_line": 820
+    },
+    {
+      "lines": 229,
+      "name": "SM010",
+      "start_line": 821
+    },
+    {
+      "lines": 2,
+      "name": "SM999",
+      "start_line": 1051
+    },
+    {
+      "lines": 1,
+      "name": "SEND-TERMINATION-MSG",
+      "start_line": 1055
+    },
+    {
+      "lines": 70,
+      "name": "STM010",
+      "start_line": 1056
+    },
+    {
+      "lines": 2,
+      "name": "STM999",
+      "start_line": 1127
+    },
+    {
+      "lines": 1,
+      "name": "ABEND-THIS-TASK",
+      "start_line": 1131
+    },
+    {
+      "lines": 5,
+      "name": "ATT010",
+      "start_line": 1132
+    },
+    {
+      "lines": 2,
+      "name": "ATT999",
+      "start_line": 1138
+    },
+    {
+      "lines": 1,
+      "name": "POPULATE-TIME-DATE",
+      "start_line": 1142
+    },
+    {
+      "lines": 13,
+      "name": "PTD010",
+      "start_line": 1143
+    },
+    {
+      "lines": 2,
+      "name": "PTD999",
+      "start_line": 1157
+    }
+  ],
+  "priority": {
+    "blast_radius": 1.532,
+    "callers": 0,
+    "calls": 5,
+    "of": 31,
+    "rank": 21
+  },
+  "program": {
+    "file": "src/base/cobol_src/BNK1DAC.cbl",
+    "key": "BNK1DAC",
+    "language": "cobol",
+    "lines": 1159,
+    "program_ids": [
+      "BNK1DAC"
+    ]
+  },
+  "referenced": [
+    {
+      "bytes_after": 207,
+      "bytes_before": 3400,
+      "class": "src/main/java/com/gitgalaxy/modernized/dto/contract/Bnk1dacWsCommArea.java",
+      "fields": 16,
+      "item": "commarea",
+      "section": "facts.interface"
+    }
+  ],
+  "relations": [
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "EIBCALEN",
+      "left_class": "unknown",
+      "line": 196,
+      "op": "=",
+      "ordering": false,
+      "right": "ZERO",
+      "right_class": "zero"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "EIBAID",
+      "left_class": "unknown",
+      "line": 206,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHPA1",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "EIBAID",
+      "left_class": "unknown",
+      "line": 212,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHPF3",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "EIBAID",
+      "left_class": "unknown",
+      "line": 223,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHPF5",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "EIBAID",
+      "left_class": "unknown",
+      "line": 230,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHPF12",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "EIBAID",
+      "left_class": "unknown",
+      "line": 240,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHCLEAR",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "EVALUATE WHEN",
+      "kind": "unknown",
+      "left": "EIBAID",
+      "left_class": "unknown",
+      "line": 252,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHENTER",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBCALEN",
+      "left_class": "unknown",
+      "line": 274,
+      "op": "<>",
+      "ordering": false,
+      "right": "ZERO",
+      "right_class": "zero"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(INQACC-EYE, 'ACCT')",
+      "kind": "alphanumeric",
+      "left": "INQACC-EYE",
+      "left_class": "alphanumeric",
+      "line": 275,
+      "op": "=",
+      "ordering": false,
+      "right": "'ACCT'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 303,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBAID",
+      "left_class": "unknown",
+      "line": 376,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHENTER",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBAID",
+      "left_class": "unknown",
+      "line": 398,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHPF5",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 434,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACCNOI",
+      "left_class": "unknown",
+      "line": 503,
+      "op": "=",
+      "ordering": false,
+      "right": "LOW-VALUES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ACCNOL",
+      "left_class": "unknown",
+      "line": 504,
+      "op": "=",
+      "ordering": false,
+      "right": "0",
+      "right_class": "numeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(COMM-SCODE, ZEROES)",
+      "kind": "alphanumeric",
+      "left": "COMM-SCODE",
+      "left_class": "alphanumeric",
+      "line": 530,
+      "op": "=",
+      "ordering": false,
+      "right": "ZEROES",
+      "right_class": "zero"
+    },
+    {
+      "abbreviated": true,
+      "context": "IF",
+      "java": "CobolCompare.eq(COMM-SCODE, LOW-VALUES)",
+      "kind": "alphanumeric",
+      "left": "COMM-SCODE",
+      "left_class": "alphanumeric",
+      "line": 530,
+      "op": "=",
+      "ordering": false,
+      "right": "LOW-VALUES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": true,
+      "context": "IF",
+      "java": "CobolCompare.eq(COMM-ACCNO, LOW-VALUES)",
+      "kind": "alphanumeric",
+      "left": "COMM-ACCNO",
+      "left_class": "numeric",
+      "line": 531,
+      "op": "=",
+      "ordering": false,
+      "right": "LOW-VALUES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 561,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(INQACC-ACC-TYPE, SPACES)",
+      "kind": "alphanumeric",
+      "left": "INQACC-ACC-TYPE",
+      "left_class": "alphanumeric",
+      "line": 624,
+      "op": "=",
+      "ordering": false,
+      "right": "SPACES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(INQACC-SUCCESS, 'N')",
+      "kind": "alphanumeric",
+      "left": "INQACC-SUCCESS",
+      "left_class": "alphanumeric",
+      "line": 626,
+      "op": "=",
+      "ordering": false,
+      "right": "'N'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 720,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(PARMS-SUBPGM-DEL-SUCCESS, 'N')",
+      "kind": "alphanumeric",
+      "left": "PARMS-SUBPGM-DEL-SUCCESS",
+      "left_class": "alphanumeric",
+      "line": 733,
+      "op": "=",
+      "ordering": false,
+      "right": "'N'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(PARMS-SUBPGM-DEL-FAIL-CD, '1')",
+      "kind": "alphanumeric",
+      "left": "PARMS-SUBPGM-DEL-FAIL-CD",
+      "left_class": "alphanumeric",
+      "line": 734,
+      "op": "=",
+      "ordering": false,
+      "right": "'1'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(PARMS-SUBPGM-DEL-SUCCESS, 'N')",
+      "kind": "alphanumeric",
+      "left": "PARMS-SUBPGM-DEL-SUCCESS",
+      "left_class": "alphanumeric",
+      "line": 745,
+      "op": "=",
+      "ordering": false,
+      "right": "'N'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(PARMS-SUBPGM-DEL-FAIL-CD, '2')",
+      "kind": "alphanumeric",
+      "left": "PARMS-SUBPGM-DEL-FAIL-CD",
+      "left_class": "alphanumeric",
+      "line": 746,
+      "op": "=",
+      "ordering": false,
+      "right": "'2'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(PARMS-SUBPGM-DEL-SUCCESS, 'N')",
+      "kind": "alphanumeric",
+      "left": "PARMS-SUBPGM-DEL-SUCCESS",
+      "left_class": "alphanumeric",
+      "line": 757,
+      "op": "=",
+      "ordering": false,
+      "right": "'N'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(PARMS-SUBPGM-DEL-FAIL-CD, '3')",
+      "kind": "alphanumeric",
+      "left": "PARMS-SUBPGM-DEL-FAIL-CD",
+      "left_class": "alphanumeric",
+      "line": 758,
+      "op": "=",
+      "ordering": false,
+      "right": "'3'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(PARMS-SUBPGM-DEL-SUCCESS, 'N')",
+      "kind": "alphanumeric",
+      "left": "PARMS-SUBPGM-DEL-SUCCESS",
+      "left_class": "alphanumeric",
+      "line": 769,
+      "op": "=",
+      "ordering": false,
+      "right": "'N'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 835,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "MESSAGEO",
+      "left_class": "unknown",
+      "line": 901,
+      "op": "<>",
+      "ordering": false,
+      "right": "SPACES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "MESSAGEO",
+      "left_class": "unknown",
+      "line": 902,
+      "op": "<>",
+      "ordering": false,
+      "right": "LOW-VALUES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 914,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 989,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WS-CICS-RESP",
+      "left_class": "numeric",
+      "line": 1068,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    }
+  ],
+  "rounding": [],
+  "rules": [
+    "Deliver the whole port: every paragraph the ported method reaches, every screen field it sets, every file it reads. A partial port or a sketch is not proven: the equivalence harness compares every output.",
+    "Port the PROCEDURE DIVISION into the service's methods, paragraph by paragraph; name the paragraph each block ports in a comment, so the port can be reviewed against the source.",
+    "Keep COBOL's storage semantics: COMPUTE / ADD / SUBTRACT / MULTIPLY / DIVIDE without ROUNDED truncate decimals; a result too long for its PICTURE loses its high-order digits (ON SIZE ERROR aside); MOVE to a numeric field aligns on the decimal point and truncates both ends; MOVE to alphanumeric pads with spaces or truncates on the right. Use BigDecimal with RoundingMode.DOWN, never double, for PIC 9 / COMP-3 data.",
+    "ROUNDED (#3825) rounds half AWAY from zero: setScale(scale, RoundingMode.HALF_UP) -- 2.5 -> 3, -2.5 -> -3. Never HALF_EVEN (banker's rounding) and never Math.round (-2.5 -> -2). ROUNDED MODE maps one to one: NEAREST-EVEN HALF_EVEN, AWAY-FROM-ZERO UP, NEAREST-TOWARD-ZERO HALF_DOWN, TOWARD-GREATER CEILING, TOWARD-LESSER FLOOR, TRUNCATION DOWN. The ticket's `rounding` list names every rounding or SIZE ERROR statement with the RoundingMode of each target. Round the final result only: compute intermediates exactly (IBM's ARITH intermediates carry 18 or 31 digits; the equivalence harness is the oracle when a result differs).",
+    "Keep the program's behaviour, including what looks like a defect (an unreachable branch, a field never reset): the port is proven by comparing its outputs with the original's. Document each such spot with a comment naming the defect and the one-line fix; fixing it is a business decision, not a translation.",
+    "Use the generated code as it is: entities and their fromRecord / toRecord codecs, repositories, DTOs, the batch runtime (DatasetResolver, Dd), the other services. Do not edit generated files other than this service; do not invent calls, files, queues or tables the facts do not name.",
+    "An abend is `throw CobolAbend.user(abcode, why)` (the generated batch runtime; CALL 'CEE3ABD' USING ABCODE: the step ends ABEND Unnnn) -- never another exception; the step's RETURN-CODE is runBatch's return value.",
+    "A DISPLAY is `Sysout.display(...)` (DISPLAY ... WITH NO ADVANCING: `Sysout.displayNoAdvancing`), never a log line: SYSOUT is compared line by line with the COBOL's. Its text is exactly what IBM COBOL writes, the operands concatenated: a literal as written; an alphanumeric or group item as all its bytes, trailing spaces included (a group's numeric fields as stored: zoned digits, the sign overpunched); a numeric item -- DISPLAY, COMP or COMP-3, not edited, no SIGN SEPARATE -- as `Sysout.number(value, digits, scale, signed)`: its PICTURE digits zero-padded, no decimal point, the sign overpunched in the last digit when signed (PIC S9(3) holding -12 is `01K`); an edited item as its edited text.",
+    "Every file I/O statement of a batch program (OPEN, CLOSE, READ, READ NEXT, WRITE, REWRITE, DELETE, START) is ONE call to the generated CobolFiles, per file (its DD name), in the order the program runs them. open(dd) / open(dd, path, input) / close(dd[, action]) / write / rewrite / delete(dd, action) / start(dd, found) return the status String; read(dd, supplier) (\"00\" or \"23\") and readNext(dd, iterator) (\"00\" or \"10\") return a CobolFiles.Read<T> -- status() and record(), null unless found. Take the program's FILE STATUS logic -- IF <status> = '00', AT END, INVALID KEY, its error paragraphs -- from the status returned, exactly as the program does; never skip a statement the program runs (a read-ahead, a CLOSE) or add one it does not. The equivalence harness injects file faults through CobolFiles and through GnuCOBOL at the same statement, and proves the error paths too. A keyed (VSAM KSDS) file keeps its mainframe semantics: WRITE is writeKeyed(dd, () -> repo.existsById(key), () -> repo.save(r)) -- \"22\" when the key is on file, never save() over it -- and REWRITE is rewriteKeyed(dd, exists, save) (\"23\" when it is not). A record the program READs INTO its working storage is the program's own copy: keep Entity.fromRecord(read.toRecord(cs), cs), never the repository's managed entity, so a change that is not REWRITten is never saved; and a READ that fails without INVALID KEY / AT END leaves the previous record in place, as the program's storage does.",
+    "A sequential dataset is fixed-length records (RECFM=FB): write each record's toRecord(...) bytes back to back, with no line separators, to the file DatasetResolver.path(dd) names; read it the same way.",
+    "Decode and encode a numeric field held in record bytes or a text column (zoned with an overpunched sign, COMP-3, COMP) only through the generated CobolRecords (zoned / packed / binary and their put methods) or the entity codecs, never a hand-written decoder.",
+    "Record bytes -- every dataset, file and COMMAREA the program reads or writes -- are in the code page CobolRecords.charset() returns: the migration's declared data.record_charset, a deployment fact. Pass it wherever a record codec, CobolRecords method or String takes a Charset; never Charset.forName, StandardCharsets or a guessed EBCDIC page for record data (#4060).",
+    "Read a number from text (a screen field, FUNCTION NUMVAL, a PARM) only through CobolRecords.numval(text, decimalPoint), with ',' when the program codes DECIMAL-POINT IS COMMA; never Integer.parseInt or new BigDecimal(String), which accept Arabic-Indic, Devanagari and full-width digits that COBOL rejects (#3831).",
+    "Format a numeric-edited field (a display string mapped from a number, often for a screen or print line) only through CobolEdit.format(pic, value, decimalComma, currency), which honours the COBOL picture (Z, 9, ., ,, -, +, CR/DB, $/currency, B, 0, /, and floating $ / + / - strings) as the mainframe does; pass the CURRENCY SIGN string (e.g. 'INR ') as currency, and it replaces the PICTURE SYMBOL (#3933).",
+    "Format and case-map with Locale.ROOT (String.format(Locale.ROOT, ...), toUpperCase(Locale.ROOT)): the default locale prints other digits (Arabic, Devanagari) and maps case differently (Turkish).",
+    "Order and compare VSAM / DB2 keys by the source code page's bytes, as the mainframe does (lower case before upper, letters before digits): browse through the generated sort-key finders, and sort in Java with CobolRecords.sortKey(key, codePage), never by String.compareTo or the database's default collation (#3822).",
+    "Compare alphanumeric operands (PIC X / A items, group items, alphanumeric literals and figurative constants) in IF, EVALUATE, PERFORM UNTIL and SEARCH WHEN only through the generated CobolCompare (compare, eq, gt, ge, lt, le), never String.compareTo or equals: it compares the code page's bytes as the mainframe does -- lower case before upper, letters before digits, so IF CUST-ID > 'A' is true for '1001' -- and pads the shorter operand with spaces ('AB' = 'AB  '). HIGH-VALUES / LOW-VALUES are CobolCompare.highValues(n) / lowValues(n). A numeric comparison stays BigDecimal.compareTo. A program that declares PROGRAM COLLATING SEQUENCE compares by that alphabet instead: flag it in a TODO (#3986).",
+    "A CICS program is ported into runTask(CicsTask task), one task per call (#3754): EIBCALEN = 0 is !task.hasCommarea(), EIBCALEN is task.eibcalen() (#4009: null = the whole record), DFHCOMMAREA is task.commarea(<its DTO>.class), EIBAID is task.aid() (ENTER, CLEAR, PF1-PF24, PA1-PA3), EIBTRMID is task.termid(), EIBTIME / EIBDATE / ASKTIME are task.now() (the task's dispatch time on the region's virtual clock, #3989), RECEIVE MAP is task.receive(map, mapset, <its screen>.class) (empty = MAPFAIL), SEND MAP is task.sendMap(map, mapset, screen, subfields, options...) (#4001: the screen holds each <f>O; CicsTask.MapSubfields each <f>A / <f>C / <f>H as its EBCDIC byte and <f>L = -1 for the cursor), SEND TEXT / SEND is task.sendText(from, length, options...), RETURN TRANSID COMMAREA LENGTH is task.returnTransid(transid, commarea, length), XCTL is task.xctl, LINK is task.link, ABEND is task.abend -- in the order the program does them, and the task ends at RETURN / XCTL / ABEND. A file READ is task.read(file, () -> <the service's generated read method>): its resp() is NORMAL (0), NOTFND (13) when the read finds nothing, or a condition the equivalence harness injects (NOTOPEN, IOERR, DISABLED, ...), and its resp2(); port every arm of the program's RESP handling (EVALUATE WS-RESP-CD ... WHEN OTHER) from it (#4023 follow-up). READ ... UPDATE is task.readForUpdate(file, lookup) (it holds the record for a REWRITE); WRITE FILE RIDFLD FROM is task.write(file, <whether the key is already in the file>, () -> <save the new record>): DUPREC (14) when it is; REWRITE FILE FROM is task.rewrite(file, () -> <save the changed record>): INVREQ (16) without a held record; each returns the RESP, and the injected conditions apply as for a READ. SYNCPOINT is task.syncpoint() and SYNCPOINT ROLLBACK task.rollback(), which undoes the task's file changes: save every change through these calls only -- what each file holds after the task is compared with the COBOL's. DELETE FILE RIDFLD is task.delete(file, <whether the key is there>, () -> <delete it>) (NOTFND 13 when not); DELETE FILE without RIDFLD is task.deleteHeld(file, () -> <delete the held record>). A browse: STARTBR is task.startbr(file, <RIDFLD as text>, <EQUAL given>, () -> <the file's keys, in key order, as a NavigableSet<String>>) (NOTFND 13 when no key qualifies); READNEXT / READPREV are task.readnext(file, <RIDFLD as text>) / task.readprev(file, ...), whose Browsed holds the RESP (ENDFILE 20 past either end) and the key read -- set RIDFLD to it and look the record up by it; ENDBR is task.endbr(file). The task keeps the browse's position and CICS's repositioning rules (a READPREV right after a READNEXT reads the same record again): pass RIDFLD exactly as the program holds it. ASKTIME ABSTIME is task.asktime(); FORMATTIME is CicsTask.formatDate(abstime, \"YYYYMMDD\" (or the form given), <DATESEP>) and CicsTask.formatTime(abstime, <TIMESEP>). ASSIGN APPLID / SYSID are task.assignApplid() / task.assignSysid() (the region's identity: never a literal). WRITEQ TD QUEUE FROM is task.writeqTd(queue, <the record as text, its full LENGTH>), which returns the RESP (QIDERR 44 for a queue the CSD does not define). INQUIRE PROGRAM(p) is task.inquireProgram(p): its RESP (NORMAL 0, PGMIDERR 27). A screen field shows what the symbolic map's O field would hold: text as moved, an edited PICTURE formatted as COBOL formats it. A COMMAREA is the generated DTO of its record; an area no generated DTO describes (a plain PIC X(n) item) is passed as a String of its n characters, or a byte[] of its EBCDIC bytes (#3989).",
+    "CICS condition and abend handling (#3989): HANDLE CONDITION, IGNORE CONDITION, HANDLE AID and RESP are the program's own control flow -- port each transfer to its label as Java control flow. HANDLE ABEND LABEL is task.handleAbend(label) (CANCEL, RESET: handleAbendCancel / handleAbendReset), and PUSH / POP HANDLE are task.pushHandle() / popHandle() besides saving and restoring the program's own handler state. EXEC CICS ABEND is task.abend(abcode) and a condition that takes CICS's default action is task.abendOnCondition(condition): CicsTask searches the active abend exits from this program's level upward, as CICS does, records the ABEND, and returns the label to continue at when this program's own exit took it -- or null, and the program must then return from runTask at once. After task.link(...) returns, task.abendExit() is the label of this program's exit when an abend in a program below reached it (continue there), and task.ended() is true when the task was terminated (stop). Never throw an exception to model a CICS transfer: the services are @Transactional, so an exception out of one marks the whole task rollback-only.",
+    "Dates and times only through java.time -- LocalDate, LocalDateTime, LocalTime and DateTimeFormatter with Locale.ROOT, in the ISO chronology -- never Calendar.getInstance(), new GregorianCalendar(), SimpleDateFormat or WeekFields.of(Locale.getDefault()): a th_TH default locale gives Buddhist-era years (2569), ja_JP_JP the Japanese imperial calendar, and US week fields start on Sunday. FUNCTION DAY-OF-WEEK and ACCEPT ... FROM DAY-OF-WEEK are Monday = 1 ... Sunday = 7, which is DayOfWeek.getValue() (#3833).",
+    "Read the time only from the generated batch runtime's MainframeClock (now() for local, currentDate() for FUNCTION CURRENT-DATE) -- in a CICS task, from task.now() -- never from the system clock directly or ZoneId.systemDefault(): it is how a run is pinned to be compared with the original.",
+    "A DB2 DATE / TIME / TIMESTAMP fetched into, or bound from, a character host variable (a DCLGEN DATE is PIC X(10)) is in the DB2 subsystem's format, the target config's culture.db2_date_format -- eur 26.09.2026 and 14.30.05, usa 09/26/2026 and 02:30 PM, iso 2026-09-26 and 14.30.05, jis 2026-09-26 and 14:30:05 -- and a TIMESTAMP is 2026-09-26-14.30.05.000000: convert only through the generated Db2Dates (date / time / timestamp, parseDate / parseTime / parseTimestamp), never LocalDate.toString() or LocalDate.parse (#3828).",
+    "FUNCTION INTEGER-OF-DATE / INTEGER-OF-DAY count days from day 1 = 1601-01-01 under INTDATE(ANSI), the default, but from day 1 = 1582-10-15 under INTDATE(LILIAN) (the same date is 6653 higher); DATE-OF-INTEGER / DAY-OF-INTEGER invert the same count. Port as ChronoUnit.DAYS.between(dayZero, date) with dayZero 1600-12-31 (ANSI) or 1582-10-14 (LILIAN). The ticket's compiler_options are the program's CBL / PROCESS cards; options given by the compile step's PARM or the installation defaults are not seen there (#3828).",
+    "A fact whose field testing is not 'field-tested' is verified on reference estates but still being field-tested: where the source contradicts it, follow the source and say so in the port's notes.",
+    "The proof calls one method per program: runTask(CicsTask) for a CICS program, handleCall(...) for a CALLed one, runBatch(dds, parm) for a batch one -- the ticket's methods to port. Port all of the program's behaviour into that method and the private helpers it calls. Port nothing into the other generated methods -- execute<Program>, handleTransaction, handleLink, handleChannel, onAbendL<n>, onCondition<C>L<n>, dispatch<X>L<n>, submit<Map> / render<Map>, xctl<P> / link<P>, the generated readqTs / writeqTs / read / browse helpers -- even where their TODO asks: leave each body as generated and keep no second entry point. Code the proof never runs is not proven, and the porting loop lists every method the proof cannot reach that the port changed (#4255)."
+  ],
+  "source": {
+    "copybooks": [
+      {
+        "file": "src/base/cobol_copy/ABNDINFO.cpy",
+        "listing": "sources/src/base/cobol_copy/ABNDINFO.cpy.lst"
+      },
+      {
+        "file": "src/base/cobol_copy/INQACC.cpy",
+        "listing": "sources/src/base/cobol_copy/INQACC.cpy.lst"
+      }
+    ],
+    "program": {
+      "file": "src/base/cobol_src/BNK1DAC.cbl",
+      "listing": "sources/src/base/cobol_src/BNK1DAC.cbl.lst"
+    }
+  },
+  "status": "open",
+  "target": {
+    "config": {
+      "culture": {
+        "currency": "auto",
+        "db2_date_format": "iso",
+        "decimal_point": "auto",
+        "display_locale": "ROOT",
+        "format_locale": "ROOT",
+        "key_collation": "ebcdic",
+        "overflow": "cobol",
+        "rounding": "cobol",
+        "zone": "UTC"
+      },
+      "data": {
+        "bidi_layout": "auto",
+        "code_page": "cp037",
+        "dbcs_code_page": null,
+        "record_charset": "latin-1"
+      },
+      "database": "postgresql",
+      "integration": {
+        "messaging": "in-memory",
+        "remote_calls": "http"
+      },
+      "java": {
+        "build_tool": "maven",
+        "data_classes": "lombok",
+        "dto_style": "class",
+        "version": 17
+      },
+      "package": "com.gitgalaxy.modernized",
+      "spring_boot": {
+        "version": "3.2.4"
+      },
+      "ui": {
+        "flavour": "none"
+      }
+    },
+    "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+    "left_as_generated": [],
+    "methods": [
+      {
+        "signature": "public Bnk1dacWsCommArea handleTransaction(String transid, Bnk1dacWsCommArea request)",
+        "todo": false
+      },
+      {
+        "signature": "public Bnk1dacWsCommArea handleTransaction(String transid, Bnk1dacWsCommArea request, byte[] area)",
+        "todo": false
+      },
+      {
+        "signature": "public byte[] lastAnswerBytes()",
+        "todo": false
+      },
+      {
+        "signature": "public void runTask(CicsTask task)",
+        "todo": true
+      },
+      {
+        "signature": "public DelaccDfhcommarea linkDelacc(DelaccDfhcommarea request)",
+        "todo": false
+      },
+      {
+        "signature": "public InqaccDfhcommarea linkInqacc(InqaccDfhcommarea request)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL350(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL481(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL608(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL882(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL961(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL1036(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchWsAbendPgmL1115(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public void abendHbnkL1133()",
+        "todo": false
+      }
+    ],
+    "methods_to_port": [
+      "public void runTask(CicsTask task)"
+    ],
+    "overlay": "port/service/Bnk1dacService.java",
+    "proof_entry_points": [
+      "public void runTask(CicsTask task)"
+    ],
+    "service": "Bnk1dacService"
+  },
+  "ticket": "PORT-BNK1DAC",
+  "version": 1,
+  "worklist": [
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+      "id": "WL-0109",
+      "line": 76,
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java",
+      "id": "WL-0110",
+      "line": 82,
+      "text": "port the PROCEDURE DIVISION into this task"
+    }
+  ]
+}

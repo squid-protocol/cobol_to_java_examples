@@ -22,10 +22,12 @@ import com.gitgalaxy.modernized.entity.vsam.SecUserData;
 @Repository
 public interface SecUserDataRepository extends JpaRepository<SecUserData, String> {
 
-    /** EXEC CICS STARTBR + READNEXT: records from a key onward, in key order. */
-    List<SecUserData> findBySecUsrIdGreaterThanEqualOrderBySecUsrIdAsc(String secUsrId, Pageable page);
+    /** EXEC CICS STARTBR + READNEXT: records from a key onward, in the key's code-page order
+     *  (#3822: pass CobolRecords.sortKey(key, codePage)). */
+    List<SecUserData> findBySecUsrIdSortGreaterThanEqualOrderBySecUsrIdSortAsc(String secUsrIdSort, Pageable page);
 
-    /** EXEC CICS READPREV: records from a key backward, in reverse key order. */
-    List<SecUserData> findBySecUsrIdLessThanEqualOrderBySecUsrIdDesc(String secUsrId, Pageable page);
+    /** EXEC CICS READPREV: records from a key backward, in reverse code-page order
+     *  (#3822: pass CobolRecords.sortKey(key, codePage)). */
+    List<SecUserData> findBySecUsrIdSortLessThanEqualOrderBySecUsrIdSortDesc(String secUsrIdSort, Pageable page);
 
 }

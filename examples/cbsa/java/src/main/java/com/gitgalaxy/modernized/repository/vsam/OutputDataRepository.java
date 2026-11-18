@@ -18,7 +18,7 @@ import com.gitgalaxy.modernized.entity.vsam.OutputDataKey;
 
 /**
  * CBSA.CICSBSA.CUSTOMER: READ / WRITE / REWRITE / DELETE are JpaRepository's
- * findById / save / deleteById. Used by src/base/cobol_src/CRECUST.cbl (READ,REWRITE,WRITE); src/base/cobol_src/CUSTCTRL.cbl (READ); src/base/cobol_src/DELCUS.cbl (DELETE,READ); src/base/cobol_src/INQCUST.cbl (ENDBR,READ,READPREV,STARTBR); src/base/cobol_src/UPDCUST.cbl (READ,REWRITE); src/webui/src/main/java/com/ibm/cics/cip/bankliberty/web/vsam/Customer.java (delete,read,readForUpdate,rewrite,startBrowse,write).
+ * findById / save / deleteById. Used by src/base/cobol_src/BANKDATA.cbl (OUTPUT); src/base/cobol_src/CRECUST.cbl (READ,REWRITE,WRITE); src/base/cobol_src/CUSTCTRL.cbl (READ); src/base/cobol_src/DELCUS.cbl (DELETE,READ); src/base/cobol_src/INQCUST.cbl (ENDBR,READ,READPREV,STARTBR); src/base/cobol_src/UPDCUST.cbl (READ,REWRITE); src/webui/src/main/java/com/ibm/cics/cip/bankliberty/web/vsam/Customer.java (delete,read,readForUpdate,rewrite,startBrowse,write).
  */
 @Repository
 public interface OutputDataRepository extends JpaRepository<OutputData, OutputDataKey> {

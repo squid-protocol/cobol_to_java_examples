@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.entity.vsam.CobolRecords;
 import com.gitgalaxy.modernized.entity.vsam.InntRapp;
 import com.gitgalaxy.modernized.exception.*;
 import com.gitgalaxy.modernized.repository.vsam.InntRappRepository;
@@ -43,14 +45,22 @@ public class SrcGmlR001i904Service {
 
     private final InntRappRepository inntRappRepository;
 
-    public void executeSrcGmlR001i904(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__GML__R001I904");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcGmlR001i904: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcGmlR001i904: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R001I904", null);
+        region.run(task, "R001I904", this::runTask);
     }
 
     /** INBRUDD as CICS file INBRUDD at src/GML/R001I904.pli:247, 251, 260, 449, 452, 460, 486, 490, 507, 529, 535, 540, 550, 557, 573, 579, 585, 607, 614, 635, 651, 655, 687, 822, 826, 831, 836, 846, 876, 882, 885, 944, 950, 1003; VSAM defines field testing: open (3 public / 0 private estates). */
@@ -64,11 +74,11 @@ public class SrcGmlR001i904Service {
     }
 
     public List<InntRapp> browseInbrudd(String from, int count) {
-        return inntRappRepository.findByInntRappGreaterThanEqualOrderByInntRappAsc(from, org.springframework.data.domain.PageRequest.of(0, count));
+        return inntRappRepository.findByInntRappSortGreaterThanEqualOrderByInntRappSortAsc(CobolRecords.sortKey(from, "cp037"), org.springframework.data.domain.PageRequest.of(0, count));
     }
 
     public List<InntRapp> browseBackInbrudd(String from, int count) {
-        return inntRappRepository.findByInntRappLessThanEqualOrderByInntRappDesc(from, org.springframework.data.domain.PageRequest.of(0, count));
+        return inntRappRepository.findByInntRappSortLessThanEqualOrderByInntRappSortDesc(CobolRecords.sortKey(from, "cp037"), org.springframework.data.domain.PageRequest.of(0, count));
     }
 
     /**

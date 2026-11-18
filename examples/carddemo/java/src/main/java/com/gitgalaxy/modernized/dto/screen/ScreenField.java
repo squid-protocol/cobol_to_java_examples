@@ -12,8 +12,10 @@ package com.gitgalaxy.modernized.dto.screen;
  * `name` is null for a screen literal (a label, which never reaches the symbolic map); `line` / `column`
  * are POS=(line,column) -- the attribute byte, so the data starts one column after it; `input` is
  * ATTRB=UNPROT, `numeric` ATTRB=NUM, `bright` BRT, `dark` DRK, `cursor` IC; `initial` the INITIAL text;
- * `occurs` the OCCURS count (1 without one).
+ * `occurs` the OCCURS count (1 without one); `justify` the DFHMDF JUSTIFY operand as "RIGHT", "RIGHT,ZERO",
+ * "LEFT,ZERO" ... (null without one): how BMS places the operator's input in the field (#5082).
  */
 public record ScreenField(String name, int line, int column, int length, boolean input, boolean numeric,
-                          boolean bright, boolean dark, boolean cursor, String initial, String color, int occurs) {
+                          boolean bright, boolean dark, boolean cursor, String initial, String color, int occurs,
+                          String justify) {
 }

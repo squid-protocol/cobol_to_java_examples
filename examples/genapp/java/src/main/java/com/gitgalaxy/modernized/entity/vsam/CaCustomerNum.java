@@ -15,8 +15,9 @@ import java.util.List;
 
 /**
  * VSAM INDEXED <USRHLQ>.GENAPP.KSDSCUST (base/cntl/adef121.jcl:15),
- * record CA-CUSTOMER-NUM (base/src/lgcmarea.cpy, 10 bytes).
- * Key: CA-CUSTOMER-NUM (offset 0, 10 bytes, from the programs' RIDFLD / RECORD KEY).
+ * record CA-CUSTOMER-NUM (base/src/lgcmarea.cpy, 225 bytes, RECORDSIZE 225).
+ * The record is the 225 bytes a WRITE / REWRITE FROM CA-CUSTOMER-NUM LENGTH writes, from offset 8 of DFHCOMMAREA, laid out by REDEFINES CA-CUSTOMER-REQUEST.
+ * Key: CA-CUSTOMER-NUM (offset 0, 10 bytes, from IDCAMS KEYS).
  * CICS files: KSDSCUST.
  * Generated from GitGalaxy's verified skeleton; VSAM defines field testing: open (3 public / 0 private estates).
  */
@@ -31,20 +32,120 @@ public class CaCustomerNum {
     @Column(name = "CA_CUSTOMER_NUM")
     private Long caCustomerNum;
 
+    // CA-FIRST-NAME: PIC X(10), offset 10, 10 bytes
+    @Column(name = "CA_FIRST_NAME", length = 10)
+    private String caFirstName;
 
-    /** #3624: this record from its fixed-width VSAM form (10 bytes, as REPRO unloads it), each
+    // CA-LAST-NAME: PIC X(20), offset 20, 20 bytes
+    @Column(name = "CA_LAST_NAME", length = 20)
+    private String caLastName;
+
+    // CA-DOB: PIC X(10), offset 40, 10 bytes
+    @Column(name = "CA_DOB", length = 10)
+    private String caDob;
+
+    // CA-HOUSE-NAME: PIC X(20), offset 50, 20 bytes
+    @Column(name = "CA_HOUSE_NAME", length = 20)
+    private String caHouseName;
+
+    // CA-HOUSE-NUM: PIC X(4), offset 70, 4 bytes
+    @Column(name = "CA_HOUSE_NUM", length = 4)
+    private String caHouseNum;
+
+    // CA-POSTCODE: PIC X(8), offset 74, 8 bytes
+    @Column(name = "CA_POSTCODE", length = 8)
+    private String caPostcode;
+
+    // CA-NUM-POLICIES: PIC 9(3), offset 82, 3 bytes
+    @Column(name = "CA_NUM_POLICIES")
+    private Integer caNumPolicies;
+
+    // CA-PHONE-MOBILE: PIC X(20), offset 85, 20 bytes
+    @Column(name = "CA_PHONE_MOBILE", length = 20)
+    private String caPhoneMobile;
+
+    // CA-PHONE-HOME: PIC X(20), offset 105, 20 bytes
+    @Column(name = "CA_PHONE_HOME", length = 20)
+    private String caPhoneHome;
+
+    // CA-EMAIL-ADDRESS: PIC X(100), offset 125, 100 bytes
+    @Column(name = "CA_EMAIL_ADDRESS", length = 100)
+    private String caEmailAddress;
+
+
+    /** #4875: the record bytes this entity was read from, kept beside the typed columns: a field whose
+     *  value is unchanged is written back as these bytes, so a value no column type holds (spaces in a
+     *  PIC 9, a non-preferred sign) and FILLER survive the round trip, as the VSAM record keeps them. */
+    @Column(name = "VSAM_RECORD", length = 225)
+    @lombok.Getter(lombok.AccessLevel.NONE)
+    @lombok.Setter(lombok.AccessLevel.NONE)
+    @lombok.EqualsAndHashCode.Exclude
+    @lombok.ToString.Exclude
+    private byte[] vsamRecord;
+
+    /** #3624: this record from its fixed-width VSAM form (225 bytes, as REPRO unloads it), each
      *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
-     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+     *  transfer, IBM037 on z/OS). The bytes themselves are kept in vsamRecord (#4875). */
     public static CaCustomerNum fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        if (rec.length < 225) {  // a WRITE ... LENGTH(n) short of the record: the rest is spaces
+            byte[] full = CobolRecords.blank(225, text);
+            System.arraycopy(rec, 0, full, 0, rec.length);
+            rec = full;
+        }
         CaCustomerNum r = new CaCustomerNum();
         r.caCustomerNum = CobolRecords.toLong(CobolRecords.zoned(rec, 0, 10, 0, text));
+        r.caFirstName = CobolRecords.text(rec, 10, 10, text);
+        r.caLastName = CobolRecords.text(rec, 20, 20, text);
+        r.caDob = CobolRecords.text(rec, 40, 10, text);
+        r.caHouseName = CobolRecords.text(rec, 50, 20, text);
+        r.caHouseNum = CobolRecords.text(rec, 70, 4, text);
+        r.caPostcode = CobolRecords.text(rec, 74, 8, text);
+        r.caNumPolicies = CobolRecords.toInteger(CobolRecords.zoned(rec, 82, 3, 0, text));
+        r.caPhoneMobile = CobolRecords.text(rec, 85, 20, text);
+        r.caPhoneHome = CobolRecords.text(rec, 105, 20, text);
+        r.caEmailAddress = CobolRecords.text(rec, 125, 100, text);
+        r.vsamRecord = java.util.Arrays.copyOf(rec, 225);
         return r;
     }
 
-    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    /** #3624: the fixed-width VSAM record of this entity: the bytes it was read from (vsamRecord), each field
+     *  whose value changed since re-encoded; a new entity's FILLER as spaces. */
     public byte[] toRecord(java.nio.charset.Charset text) {
-        byte[] rec = CobolRecords.blank(10, text);
-        CobolRecords.putZoned(rec, 0, 10, 0, false, CobolRecords.decimal(caCustomerNum), text);
+        byte[] read = vsamRecord != null && vsamRecord.length == 225 ? vsamRecord : null;
+        byte[] rec = read != null ? read.clone() : CobolRecords.blank(225, text);
+        if (read == null || !java.util.Objects.equals(caCustomerNum, CobolRecords.toLong(CobolRecords.zoned(read, 0, 10, 0, text)))) {
+            CobolRecords.putZoned(rec, 0, 10, 0, false, CobolRecords.decimal(caCustomerNum), text);
+        }
+        if (read == null || !java.util.Objects.equals(caFirstName, CobolRecords.text(read, 10, 10, text))) {
+            CobolRecords.putText(rec, 10, 10, caFirstName, text);
+        }
+        if (read == null || !java.util.Objects.equals(caLastName, CobolRecords.text(read, 20, 20, text))) {
+            CobolRecords.putText(rec, 20, 20, caLastName, text);
+        }
+        if (read == null || !java.util.Objects.equals(caDob, CobolRecords.text(read, 40, 10, text))) {
+            CobolRecords.putText(rec, 40, 10, caDob, text);
+        }
+        if (read == null || !java.util.Objects.equals(caHouseName, CobolRecords.text(read, 50, 20, text))) {
+            CobolRecords.putText(rec, 50, 20, caHouseName, text);
+        }
+        if (read == null || !java.util.Objects.equals(caHouseNum, CobolRecords.text(read, 70, 4, text))) {
+            CobolRecords.putText(rec, 70, 4, caHouseNum, text);
+        }
+        if (read == null || !java.util.Objects.equals(caPostcode, CobolRecords.text(read, 74, 8, text))) {
+            CobolRecords.putText(rec, 74, 8, caPostcode, text);
+        }
+        if (read == null || !java.util.Objects.equals(caNumPolicies, CobolRecords.toInteger(CobolRecords.zoned(read, 82, 3, 0, text)))) {
+            CobolRecords.putZoned(rec, 82, 3, 0, false, CobolRecords.decimal(caNumPolicies), text);
+        }
+        if (read == null || !java.util.Objects.equals(caPhoneMobile, CobolRecords.text(read, 85, 20, text))) {
+            CobolRecords.putText(rec, 85, 20, caPhoneMobile, text);
+        }
+        if (read == null || !java.util.Objects.equals(caPhoneHome, CobolRecords.text(read, 105, 20, text))) {
+            CobolRecords.putText(rec, 105, 20, caPhoneHome, text);
+        }
+        if (read == null || !java.util.Objects.equals(caEmailAddress, CobolRecords.text(read, 125, 100, text))) {
+            CobolRecords.putText(rec, 125, 100, caEmailAddress, text);
+        }
         return rec;
     }
 }

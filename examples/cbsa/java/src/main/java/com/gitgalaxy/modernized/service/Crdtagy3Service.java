@@ -11,11 +11,10 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.BnkmenuAbndinfoRec;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.dto.contract.Crdtagy3ChannelIn;
 import com.gitgalaxy.modernized.dto.contract.Crdtagy3ChannelOut;
 import com.gitgalaxy.modernized.exception.*;
-import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -31,28 +30,28 @@ public class Crdtagy3Service {
 
     private static final Logger log = LoggerFactory.getLogger(Crdtagy3Service.class);
 
-    private final ObjectProvider<AbndprocService> abndprocService;
-
-    public void executeCrdtagy3(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for CRDTAGY3");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
     /** A CICS transaction entered the program. TODO: [AI AGENT] implement from the program's business rules. */
     public Crdtagy3ChannelOut handleTransaction(String transid, Crdtagy3ChannelIn request) {
         log.info("Crdtagy3: handleTransaction");
         return null; // TODO: build the response
     }
 
-    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/CRDTAGY3.cbl:179: the target is data-driven. Candidates: ABNDPROC (value).
+    /** One pseudo-conversational task of this program (#3754). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("Crdtagy3: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
+    }
+
+    /** EXEC CICS LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/CRDTAGY3.cbl:179, COMMAREA(ABNDINFO-REC): the target is data-driven (candidates the engine found: ABNDPROC (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchWsAbendPgmL179(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ABNDPROC":
-                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/CRDTAGY3.cbl:179: no known target " + program);
-        }
+    public String dispatchWsAbendPgmL179(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
     }
 
     /**

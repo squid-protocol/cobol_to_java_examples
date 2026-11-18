@@ -51,7 +51,8 @@
       "symbols": [
         "Ecs001Controller#link"
       ],
-      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA"
+      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA",
+      "ticket": "ai_agent_jobs/ECS001_port_ticket.md"
     },
     {
       "category": "queue-name",
@@ -66,13 +67,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0002",
-      "line": 123,
+      "line": 186,
       "nature": "fact-gap",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service#writeqTdL780"
       ],
-      "text": "@tdq@ is an installation symbol: set the real queue name"
+      "text": "@tdq@ is an installation symbol: set the real queue name",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "queue-name",
@@ -87,13 +89,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0003",
-      "line": 132,
+      "line": 217,
       "nature": "fact-gap",
       "program": "Source/ZECS001.cbl",
       "symbols": [
         "Zecs001Service#writeqTdL2137"
       ],
-      "text": "@tdq@ is an installation symbol: set the real queue name"
+      "text": "@tdq@ is an installation symbol: set the real queue name",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "queue-name",
@@ -108,13 +111,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java",
       "id": "WL-0004",
-      "line": 49,
+      "line": 78,
       "nature": "fact-gap",
       "program": "Source/ZECSPLT.cbl",
       "symbols": [
         "ZecspltService#writeqTdL135"
       ],
-      "text": "@tdq@ is an installation symbol: set the real queue name"
+      "text": "@tdq@ is an installation symbol: set the real queue name",
+      "ticket": "ai_agent_jobs/ZECSPLT_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -128,13 +132,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java",
       "id": "WL-0005",
-      "line": 23,
+      "line": 24,
       "nature": "review",
       "program": "Source/ECS001.cbl",
       "symbols": [
         "Ecs001Service"
       ],
-      "text": "the RESP of WEB at line 243 (paragraph A4000-EXECUTE-SERVICE) is never tested"
+      "text": "the RESP of WEB at line 243 (paragraph A4000-EXECUTE-SERVICE) is never tested",
+      "ticket": "ai_agent_jobs/ECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -148,13 +153,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java",
       "id": "WL-0006",
-      "line": 24,
+      "line": 25,
       "nature": "review",
       "program": "Source/ECS001.cbl",
       "symbols": [
         "Ecs001Service"
       ],
-      "text": "the RESP of SEND at line 411 (paragraph Z1000-EXIT-PROGRAM) is never tested"
+      "text": "the RESP of SEND at line 411 (paragraph Z1000-EXIT-PROGRAM) is never tested",
+      "ticket": "ai_agent_jobs/ECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -168,13 +174,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0007",
-      "line": 35,
+      "line": 41,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of RETRIEVE at line 257 (paragraph 1000-RETRIEVE) is never tested"
+      "text": "the RESP of RETRIEVE at line 257 (paragraph 1000-RETRIEVE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -188,13 +195,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0008",
-      "line": 36,
+      "line": 42,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of ASKTIME at line 269 (paragraph 1000-RETRIEVE) is never tested"
+      "text": "the RESP of ASKTIME at line 269 (paragraph 1000-RETRIEVE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -208,13 +216,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0009",
-      "line": 37,
+      "line": 43,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of FORMATTIME at line 333 (paragraph 1300-WRITE) is never tested"
+      "text": "the RESP of FORMATTIME at line 333 (paragraph 1300-WRITE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -228,13 +237,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0010",
-      "line": 38,
+      "line": 44,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of FORMATTIME at line 368 (paragraph 1400-UPDATE) is never tested"
+      "text": "the RESP of FORMATTIME at line 368 (paragraph 1400-UPDATE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -248,13 +258,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0011",
-      "line": 39,
+      "line": 45,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of REWRITE at line 389 (paragraph 1400-UPDATE) is never tested"
+      "text": "the RESP of REWRITE at line 389 (paragraph 1400-UPDATE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -268,13 +279,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0012",
-      "line": 40,
+      "line": 46,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of REWRITE at line 498 (paragraph 3110-REWRITE) is never tested"
+      "text": "the RESP of REWRITE at line 498 (paragraph 3110-REWRITE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -288,13 +300,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0013",
-      "line": 41,
+      "line": 47,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of SYNCPOINT at line 504 (paragraph 3110-REWRITE) is never tested"
+      "text": "the RESP of SYNCPOINT at line 504 (paragraph 3110-REWRITE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -308,13 +321,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0014",
-      "line": 42,
+      "line": 48,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of DELETE at line 525 (paragraph 3200-DELETE) is never tested"
+      "text": "the RESP of DELETE at line 525 (paragraph 3200-DELETE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -328,13 +342,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0015",
-      "line": 43,
+      "line": 49,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of DELETE at line 546 (paragraph 3210-DELETE) is never tested"
+      "text": "the RESP of DELETE at line 546 (paragraph 3210-DELETE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -348,13 +363,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0016",
-      "line": 44,
+      "line": 50,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of SYNCPOINT at line 560 (paragraph 3220-SYNCPOINT) is never tested"
+      "text": "the RESP of SYNCPOINT at line 560 (paragraph 3220-SYNCPOINT) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -368,13 +384,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0017",
-      "line": 45,
+      "line": 51,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of DELAY at line 563 (paragraph 3220-SYNCPOINT) is never tested"
+      "text": "the RESP of DELAY at line 563 (paragraph 3220-SYNCPOINT) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -388,13 +405,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0018",
-      "line": 46,
+      "line": 52,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of WEB at line 625 (paragraph 7100-WEB-OPEN) is never tested"
+      "text": "the RESP of WEB at line 625 (paragraph 7100-WEB-OPEN) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -408,13 +426,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0019",
-      "line": 47,
+      "line": 53,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of INQUIRE at line 651 (paragraph 7200-WEB-CONVERSE) is never tested"
+      "text": "the RESP of INQUIRE at line 651 (paragraph 7200-WEB-CONVERSE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -428,13 +447,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0020",
-      "line": 48,
+      "line": 54,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of WEB at line 672 (paragraph 7200-WEB-CONVERSE) is never tested"
+      "text": "the RESP of WEB at line 672 (paragraph 7200-WEB-CONVERSE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -448,13 +468,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0021",
-      "line": 49,
+      "line": 55,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of WEB at line 696 (paragraph 7300-WEB-CLOSE) is never tested"
+      "text": "the RESP of WEB at line 696 (paragraph 7300-WEB-CLOSE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -468,13 +489,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0022",
-      "line": 50,
+      "line": 56,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of START at line 713 (paragraph 8000-RESTART) is never tested"
+      "text": "the RESP of START at line 713 (paragraph 8000-RESTART) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -488,13 +510,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0023",
-      "line": 51,
+      "line": 57,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of START at line 732 (paragraph 8100-RESTART) is never tested"
+      "text": "the RESP of START at line 732 (paragraph 8100-RESTART) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -508,13 +531,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0024",
-      "line": 52,
+      "line": 58,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of FORMATTIME at line 771 (paragraph 9900-WRITE-CSSL) is never tested"
+      "text": "the RESP of FORMATTIME at line 771 (paragraph 9900-WRITE-CSSL) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -528,13 +552,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0025",
-      "line": 53,
+      "line": 59,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of WRITEQ at line 780 (paragraph 9900-WRITE-CSSL) is never tested"
+      "text": "the RESP of WRITEQ at line 780 (paragraph 9900-WRITE-CSSL) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -548,13 +573,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0026",
-      "line": 54,
+      "line": 60,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of ASKTIME at line 793 (paragraph 9950-ABS) is never tested"
+      "text": "the RESP of ASKTIME at line 793 (paragraph 9950-ABS) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -568,13 +594,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0027",
-      "line": 55,
+      "line": 61,
       "nature": "review",
       "program": "Source/ZECS000.cbl",
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of DOCUMENT at line 810 (paragraph 9999-GET-URL) is never tested"
+      "text": "the RESP of DOCUMENT at line 810 (paragraph 9999-GET-URL) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -594,7 +621,8 @@
       "symbols": [
         "Zecs000Service"
       ],
-      "text": "the RESP of WEB at line 827 (paragraph 9999-GET-URL) is never tested"
+      "text": "the RESP of WEB at line 827 (paragraph 9999-GET-URL) is never tested",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -608,13 +636,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0029",
-      "line": 42,
+      "line": 50,
       "nature": "review",
       "program": "Source/ZECS001.cbl",
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 467 (paragraph 1000-ACCESS-PARMS) is never tested"
+      "text": "the RESP of WEB at line 467 (paragraph 1000-ACCESS-PARMS) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -628,13 +657,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0030",
-      "line": 43,
+      "line": 51,
       "nature": "review",
       "program": "Source/ZECS001.cbl",
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 530 (paragraph 1000-ACCESS-PARMS) is never tested"
+      "text": "the RESP of WEB at line 530 (paragraph 1000-ACCESS-PARMS) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -648,13 +678,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0031",
-      "line": 44,
+      "line": 52,
       "nature": "review",
       "program": "Source/ZECS001.cbl",
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of DOCUMENT at line 652 (paragraph 1210-ZCXXSD) is never tested"
+      "text": "the RESP of DOCUMENT at line 652 (paragraph 1210-ZCXXSD) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -668,13 +699,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0032",
-      "line": 45,
+      "line": 53,
       "nature": "review",
       "program": "Source/ZECS001.cbl",
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of INQUIRE at line 731 (paragraph 1312-CHECK-ETTL) is never tested"
+      "text": "the RESP of INQUIRE at line 731 (paragraph 1312-CHECK-ETTL) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -688,13 +720,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0033",
-      "line": 46,
+      "line": 54,
       "nature": "review",
       "program": "Source/ZECS001.cbl",
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of XCTL at line 753 (paragraph 1320-CLEAR) is never tested"
+      "text": "the RESP of XCTL at line 753 (paragraph 1320-CLEAR) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -708,13 +741,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0034",
-      "line": 47,
+      "line": 55,
       "nature": "review",
       "program": "Source/ZECS001.cbl",
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of LINK at line 795 (paragraph 1500-AUTHENTICATE) is never tested"
+      "text": "the RESP of LINK at line 795 (paragraph 1500-AUTHENTICATE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -728,13 +762,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0035",
-      "line": 48,
+      "line": 56,
       "nature": "review",
       "program": "Source/ZECS001.cbl",
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of READ at line 1011 (paragraph 3300-READ-FILE) is never tested"
+      "text": "the RESP of READ at line 1011 (paragraph 3300-READ-FILE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -748,13 +783,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0036",
-      "line": 49,
+      "line": 57,
       "nature": "review",
       "program": "Source/ZECS001.cbl",
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of REWRITE at line 1023 (paragraph 3300-READ-FILE) is never tested"
+      "text": "the RESP of REWRITE at line 1023 (paragraph 3300-READ-FILE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -768,13 +804,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0037",
-      "line": 50,
+      "line": 58,
       "nature": "review",
       "program": "Source/ZECS001.cbl",
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of GETMAIN at line 1104 (paragraph 3400-STAGE) is never tested"
+      "text": "the RESP of GETMAIN at line 1104 (paragraph 3400-STAGE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -788,13 +825,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0038",
-      "line": 51,
+      "line": 59,
       "nature": "review",
       "program": "Source/ZECS001.cbl",
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of FREEMAIN at line 1180 (paragraph 3510-FREEMAIN) is never tested"
+      "text": "the RESP of FREEMAIN at line 1180 (paragraph 3510-FREEMAIN) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -808,13 +846,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0039",
-      "line": 52,
+      "line": 60,
       "nature": "review",
       "program": "Source/ZECS001.cbl",
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 1214 (paragraph 3600-SEND-RESPONSE) is never tested"
+      "text": "the RESP of WEB at line 1214 (paragraph 3600-SEND-RESPONSE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -834,7 +873,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of ASKTIME at line 1730 (paragraph 5600-CHECK-TTL) is never tested"
+      "text": "the RESP of ASKTIME at line 1730 (paragraph 5600-CHECK-TTL) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -854,7 +894,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of ASKTIME at line 2150 (paragraph 9950-ABS) is never tested"
+      "text": "the RESP of ASKTIME at line 2150 (paragraph 9950-ABS) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -874,7 +915,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of DELETE at line 1572 (paragraph 4700-DELETE) is never tested"
+      "text": "the RESP of DELETE at line 1572 (paragraph 4700-DELETE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -894,7 +936,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of DELETE at line 1614 (paragraph 5100-DELETE-KEY) is never tested"
+      "text": "the RESP of DELETE at line 1614 (paragraph 5100-DELETE-KEY) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -914,7 +957,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of DELETE at line 1631 (paragraph 5200-DELETE-FILE) is never tested"
+      "text": "the RESP of DELETE at line 1631 (paragraph 5200-DELETE-FILE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -934,7 +978,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of DOCUMENT at line 2081 (paragraph 9700-STATUS-204) is never tested"
+      "text": "the RESP of DOCUMENT at line 2081 (paragraph 9700-STATUS-204) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -954,7 +999,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of FORMATTIME at line 2128 (paragraph 9900-WRITE-CSSL) is never tested"
+      "text": "the RESP of FORMATTIME at line 2128 (paragraph 9900-WRITE-CSSL) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -974,7 +1020,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of GET at line 1246 (paragraph 4000-GET-COUNTER) is never tested"
+      "text": "the RESP of GET at line 1246 (paragraph 4000-GET-COUNTER) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -994,7 +1041,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of SYNCPOINT at line 1444 (paragraph 4300-SEND-RESPONSE) is never tested"
+      "text": "the RESP of SYNCPOINT at line 1444 (paragraph 4300-SEND-RESPONSE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1014,7 +1062,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of SYNCPOINT at line 2160 (paragraph 9999-ROLLBACK) is never tested"
+      "text": "the RESP of SYNCPOINT at line 2160 (paragraph 9999-ROLLBACK) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1034,7 +1083,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 1225 (paragraph 3600-SEND-RESPONSE) is never tested"
+      "text": "the RESP of WEB at line 1225 (paragraph 3600-SEND-RESPONSE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1054,7 +1104,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 1659 (paragraph 5300-SEND-RESPONSE) is never tested"
+      "text": "the RESP of WEB at line 1659 (paragraph 5300-SEND-RESPONSE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1074,7 +1125,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 1759 (paragraph 5700-SEND-ABS) is never tested"
+      "text": "the RESP of WEB at line 1759 (paragraph 5700-SEND-ABS) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1094,7 +1146,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 1830 (paragraph 8100-WEB-OPEN) is never tested"
+      "text": "the RESP of WEB at line 1830 (paragraph 8100-WEB-OPEN) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1114,7 +1167,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 1861 (paragraph 8200-WEB-CONVERSE) is never tested"
+      "text": "the RESP of WEB at line 1861 (paragraph 8200-WEB-CONVERSE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1134,7 +1188,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 1882 (paragraph 8200-WEB-CONVERSE) is never tested"
+      "text": "the RESP of WEB at line 1882 (paragraph 8200-WEB-CONVERSE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1154,7 +1209,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 1903 (paragraph 8200-WEB-CONVERSE) is never tested"
+      "text": "the RESP of WEB at line 1903 (paragraph 8200-WEB-CONVERSE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1174,7 +1230,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 1927 (paragraph 8300-WEB-CLOSE) is never tested"
+      "text": "the RESP of WEB at line 1927 (paragraph 8300-WEB-CLOSE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1194,7 +1251,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 1951 (paragraph 9001-ACAO) is never tested"
+      "text": "the RESP of WEB at line 1951 (paragraph 9001-ACAO) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1214,7 +1272,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 2017 (paragraph 9400-STATUS-400) is never tested"
+      "text": "the RESP of WEB at line 2017 (paragraph 9400-STATUS-400) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1234,7 +1293,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 2040 (paragraph 9500-STATUS-409) is never tested"
+      "text": "the RESP of WEB at line 2040 (paragraph 9500-STATUS-409) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1254,7 +1314,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 2062 (paragraph 9600-AUTH-ERROR) is never tested"
+      "text": "the RESP of WEB at line 2062 (paragraph 9600-AUTH-ERROR) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1274,7 +1335,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 2087 (paragraph 9700-STATUS-204) is never tested"
+      "text": "the RESP of WEB at line 2087 (paragraph 9700-STATUS-204) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1294,7 +1356,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WEB at line 2108 (paragraph 9800-STATUS-507) is never tested"
+      "text": "the RESP of WEB at line 2108 (paragraph 9800-STATUS-507) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1314,7 +1377,8 @@
       "symbols": [
         "Zecs001Service"
       ],
-      "text": "the RESP of WRITEQ at line 2137 (paragraph 9900-WRITE-CSSL) is never tested"
+      "text": "the RESP of WRITEQ at line 2137 (paragraph 9900-WRITE-CSSL) is never tested",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1328,13 +1392,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
       "id": "WL-0065",
-      "line": 23,
+      "line": 32,
       "nature": "review",
       "program": "Source/ZECS003.cbl",
       "symbols": [
         "Zecs003Service"
       ],
-      "text": "the RESP of ASKTIME at line 196 (paragraph 1000-INITIALIZE) is never tested"
+      "text": "the RESP of ASKTIME at line 196 (paragraph 1000-INITIALIZE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS003_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1348,13 +1413,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
       "id": "WL-0066",
-      "line": 24,
+      "line": 33,
       "nature": "review",
       "program": "Source/ZECS003.cbl",
       "symbols": [
         "Zecs003Service"
       ],
-      "text": "the RESP of DELETE at line 272 (paragraph 3100-DELETE) is never tested"
+      "text": "the RESP of DELETE at line 272 (paragraph 3100-DELETE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS003_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1368,13 +1434,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
       "id": "WL-0067",
-      "line": 25,
+      "line": 34,
       "nature": "review",
       "program": "Source/ZECS003.cbl",
       "symbols": [
         "Zecs003Service"
       ],
-      "text": "the RESP of DELETE at line 279 (paragraph 3100-DELETE) is never tested"
+      "text": "the RESP of DELETE at line 279 (paragraph 3100-DELETE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS003_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1388,13 +1455,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
       "id": "WL-0068",
-      "line": 26,
+      "line": 35,
       "nature": "review",
       "program": "Source/ZECS003.cbl",
       "symbols": [
         "Zecs003Service"
       ],
-      "text": "the RESP of WEB at line 355 (paragraph 7100-WEB-OPEN) is never tested"
+      "text": "the RESP of WEB at line 355 (paragraph 7100-WEB-OPEN) is never tested",
+      "ticket": "ai_agent_jobs/ZECS003_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1408,13 +1476,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
       "id": "WL-0069",
-      "line": 27,
+      "line": 36,
       "nature": "review",
       "program": "Source/ZECS003.cbl",
       "symbols": [
         "Zecs003Service"
       ],
-      "text": "the RESP of INQUIRE at line 378 (paragraph 7200-WEB-CONVERSE) is never tested"
+      "text": "the RESP of INQUIRE at line 378 (paragraph 7200-WEB-CONVERSE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS003_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1428,13 +1497,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
       "id": "WL-0070",
-      "line": 28,
+      "line": 37,
       "nature": "review",
       "program": "Source/ZECS003.cbl",
       "symbols": [
         "Zecs003Service"
       ],
-      "text": "the RESP of WEB at line 400 (paragraph 7200-WEB-CONVERSE) is never tested"
+      "text": "the RESP of WEB at line 400 (paragraph 7200-WEB-CONVERSE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS003_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1448,13 +1518,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
       "id": "WL-0071",
-      "line": 29,
+      "line": 38,
       "nature": "review",
       "program": "Source/ZECS003.cbl",
       "symbols": [
         "Zecs003Service"
       ],
-      "text": "the RESP of WEB at line 426 (paragraph 7300-WEB-CLOSE) is never tested"
+      "text": "the RESP of WEB at line 426 (paragraph 7300-WEB-CLOSE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS003_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1468,13 +1539,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
       "id": "WL-0072",
-      "line": 30,
+      "line": 39,
       "nature": "review",
       "program": "Source/ZECS003.cbl",
       "symbols": [
         "Zecs003Service"
       ],
-      "text": "the RESP of WEB at line 440 (paragraph 8000-SEND-RESPONSE) is never tested"
+      "text": "the RESP of WEB at line 440 (paragraph 8000-SEND-RESPONSE) is never tested",
+      "ticket": "ai_agent_jobs/ZECS003_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1488,13 +1560,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java",
       "id": "WL-0073",
-      "line": 21,
+      "line": 22,
       "nature": "review",
       "program": "Source/ZECSPLT.cbl",
       "symbols": [
         "ZecspltService"
       ],
-      "text": "the RESP of INQUIRE at line 77 (paragraph 1000-INQUIRE-START) is never tested"
+      "text": "the RESP of INQUIRE at line 77 (paragraph 1000-INQUIRE-START) is never tested",
+      "ticket": "ai_agent_jobs/ZECSPLT_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1508,13 +1581,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java",
       "id": "WL-0074",
-      "line": 22,
+      "line": 23,
       "nature": "review",
       "program": "Source/ZECSPLT.cbl",
       "symbols": [
         "ZecspltService"
       ],
-      "text": "the RESP of START at line 126 (paragraph 2200-START) is never tested"
+      "text": "the RESP of START at line 126 (paragraph 2200-START) is never tested",
+      "ticket": "ai_agent_jobs/ZECSPLT_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1528,13 +1602,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java",
       "id": "WL-0075",
-      "line": 23,
+      "line": 24,
       "nature": "review",
       "program": "Source/ZECSPLT.cbl",
       "symbols": [
         "ZecspltService"
       ],
-      "text": "the RESP of WRITEQ at line 135 (paragraph 2200-START) is never tested"
+      "text": "the RESP of WRITEQ at line 135 (paragraph 2200-START) is never tested",
+      "ticket": "ai_agent_jobs/ZECSPLT_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1548,13 +1623,14 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java",
       "id": "WL-0076",
-      "line": 24,
+      "line": 25,
       "nature": "review",
       "program": "Source/ZECSPLT.cbl",
       "symbols": [
         "ZecspltService"
       ],
-      "text": "the RESP of WRITE at line 141 (paragraph 2200-START) is never tested"
+      "text": "the RESP of WRITE at line 141 (paragraph 2200-START) is never tested",
+      "ticket": "ai_agent_jobs/ZECSPLT_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1568,178 +1644,194 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java",
       "id": "WL-0077",
-      "line": 25,
+      "line": 26,
       "nature": "review",
       "program": "Source/ZECSPLT.cbl",
       "symbols": [
         "ZecspltService"
       ],
-      "text": "the RESP of INQUIRE at line 153 (paragraph 3000-INQUIRE-END) is never tested"
+      "text": "the RESP of INQUIRE at line 153 (paragraph 3000-INQUIRE-END) is never tested",
+      "ticket": "ai_agent_jobs/ZECSPLT_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0078",
-      "line": 99,
+      "line": 162,
       "nature": "port",
       "program": "Source/ZECS000.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0079",
-      "line": 109,
+      "line": 172,
       "nature": "port",
       "program": "Source/ZECS000.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0080",
-      "line": 119,
+      "line": 204,
       "nature": "port",
       "program": "Source/ZECS001.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "interface-call",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0081",
-      "line": 66,
+      "line": 75,
       "nature": "port",
       "program": "Source/ZECS001.cbl",
       "symbols": [],
-      "text": "Implement or mock interface call to: ZuidstckService"
+      "text": "Implement or mock interface call to: ZuidstckService",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java",
       "id": "WL-0082",
-      "line": 35,
+      "line": 34,
       "nature": "port",
       "program": "Source/ECS001.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/ECS001_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Ecs001Service.java",
       "id": "WL-0083",
-      "line": 38,
+      "line": 40,
       "nature": "port",
       "program": "Source/ECS001.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/ECS001_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0084",
-      "line": 70,
+      "line": 106,
       "nature": "port",
       "program": "Source/ZECS000.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0085",
-      "line": 73,
+      "line": 112,
       "nature": "port",
       "program": "Source/ZECS000.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs000Service.java",
       "id": "WL-0086",
-      "line": 118,
+      "line": 181,
       "nature": "port",
       "program": "Source/ZECS000.cbl",
       "symbols": [],
-      "text": "port paragraph 9100-ABEND's logic"
+      "text": "port paragraph 9100-ABEND's logic",
+      "ticket": "ai_agent_jobs/ZECS000_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0087",
-      "line": 70,
+      "line": 107,
       "nature": "port",
       "program": "Source/ZECS001.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
       "id": "WL-0088",
-      "line": 73,
+      "line": 113,
       "nature": "port",
       "program": "Source/ZECS001.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/ZECS001_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
       "id": "WL-0089",
-      "line": 41,
+      "line": 51,
       "nature": "port",
       "program": "Source/ZECS003.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/ZECS003_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs003Service.java",
       "id": "WL-0090",
-      "line": 44,
+      "line": 57,
       "nature": "port",
       "program": "Source/ZECS003.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/ZECS003_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java",
       "id": "WL-0091",
-      "line": 38,
+      "line": 67,
       "nature": "port",
       "program": "Source/ZECSPLT.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/ZECSPLT_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/ZecspltService.java",
       "id": "WL-0092",
-      "line": 41,
+      "line": 73,
       "nature": "port",
       "program": "Source/ZECSPLT.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/ZECSPLT_port_ticket.md"
     },
     {
       "category": "configuration",
@@ -1751,6 +1843,28 @@
       "program": "(project configuration)",
       "symbols": [],
       "text": "Update these credentials for your target environment"
+    }
+  ],
+  "port_order": [
+    {
+      "file": "Source/ZECS000.cbl",
+      "rank": 1
+    },
+    {
+      "file": "Source/ZECS003.cbl",
+      "rank": 2
+    },
+    {
+      "file": "Source/ZECS001.cbl",
+      "rank": 3
+    },
+    {
+      "file": "Source/ZECSPLT.cbl",
+      "rank": 4
+    },
+    {
+      "file": "Source/ECS001.cbl",
+      "rank": 5
     }
   ],
   "summary": {

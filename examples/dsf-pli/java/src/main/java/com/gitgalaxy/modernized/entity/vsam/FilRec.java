@@ -27,7 +27,7 @@ public class FilRec {
 
     // TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey
     @Id
-    @Column(name = "VSAM_KEY")
+    @Column(name = "VSAM_KEY", columnDefinition = "varchar(255) COLLATE \"C\"")
     private String vsamKey;
 
     // NR_M_SEQ: PIC '( 4)9', offset 0, 4 bytes
@@ -75,7 +75,7 @@ public class FilRec {
     private String am;
 
     // AS: CHAR(2), offset 72, 2 bytes
-    @Column(name = "AS", length = 2)
+    @Column(name = "\"AS\"", length = 2)
     private String as;
 
     // LP: CHAR(2), offset 74, 2 bytes

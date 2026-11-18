@@ -20,11 +20,6 @@ public class CobswaitService {
 
     private static final Logger log = LoggerFactory.getLogger(CobswaitService.class);
 
-    public void executeCobswait(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for COBSWAIT");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
     /** The batch entry (#3622): run by job WAITSTEP step WAIT (app/jcl/WAITSTEP.jcl:22).
      *  `dds` are the step's DD statements (DatasetResolver maps each to its file); `parm` the
      *  text its EXEC PARM= passes (null without one) -- a PROCEDURE DIVISION USING area's data.

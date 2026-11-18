@@ -10,16 +10,16 @@ package com.gitgalaxy.modernized.controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import lombok.RequiredArgsConstructor;
-import com.gitgalaxy.modernized.dto.contract.CarddemoCommarea4;
+import com.gitgalaxy.modernized.dto.contract.Cotrn00cCarddemoCommarea;
 import com.gitgalaxy.modernized.service.Cotrn00cService;
 
 /**
  * CICS program COTRN00C (app/cbl/COTRN00C.cbl), generated from GitGalaxy's
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
- * COMMAREA: DFHCOMMAREA (app/cbl/COTRN00C.cbl, 218 bytes) -> CarddemoCommarea4.
+ * COMMAREA: DFHCOMMAREA (app/cbl/COTRN00C.cbl, 218 bytes) -> Cotrn00cCarddemoCommarea.
  * TODO: callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 218 bytes) at app/cbl/COTRN00C.cbl:138.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/cotrn00c")
@@ -30,13 +30,13 @@ public class Cotrn00cController {
 
     /** CICS transaction CT00 -> Cotrn00c (CSD app/csd/CARDDEMO.CSD:419 group CARDDEMO). */
     @PostMapping("/transactions/CT00")
-    public ResponseEntity<CarddemoCommarea4> transactionCT00(@RequestBody CarddemoCommarea4 request) {
+    public ResponseEntity<Object> transactionCT00(@RequestBody Cotrn00cCarddemoCommarea request) {
         return ResponseEntity.ok(cotrn00cService.handleTransaction("CT00", request));
     }
 
     /** Program-to-program entry: XCTL at app/cbl/COMEN01C.cbl:156 (data-driven, table), XCTL at app/cbl/COMEN01C.cbl:184 (data-driven, table), XCTL at app/cbl/COTRN01C.cbl:205 (data-driven, moves). */
     @PostMapping("/link")
-    public ResponseEntity<CarddemoCommarea4> link(@RequestBody CarddemoCommarea4 request) {
+    public ResponseEntity<Cotrn00cCarddemoCommarea> link(@RequestBody Cotrn00cCarddemoCommarea request) {
         return ResponseEntity.ok(cotrn00cService.handleLink(request));
     }
 

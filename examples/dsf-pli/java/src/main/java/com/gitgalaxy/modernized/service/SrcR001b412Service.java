@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.exception.*;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,48 +43,56 @@ public class SrcR001b412Service {
     private final ObjectProvider<SrcR00104f7Service> srcR00104f7Service;
     private final ObjectProvider<SrcR00104u2Service> srcR00104u2Service;
 
-    public void executeSrcR001b412(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__R001B412");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcR001b412: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcR001b412: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R001B412", null);
+        region.run(task, "R001B412", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R00104A1) at src/R001B412.pli:172.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR00104a1() {
         srcR00104a1Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R00104B6) at src/R001B412.pli:214.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR00104b6() {
         srcR00104b6Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R00104E3) at src/R001B412.pli:193.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR00104e3() {
         srcR00104e3Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R00104E4) at src/R001B412.pli:206.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR00104e4() {
         srcR00104e4Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R00104F7) at src/R001B412.pli:221.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR00104f7() {
         srcR00104f7Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R00104U2) at src/R001B412.pli:179.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR00104u2() {
         srcR00104u2Service.getObject().handleLink();
     }

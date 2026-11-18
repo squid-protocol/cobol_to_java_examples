@@ -1,0 +1,327 @@
+{
+  "copybook_gaps": [],
+  "eras": {
+    "by_era": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "none": 5
+    },
+    "mixed": 0,
+    "programs": 5,
+    "tells": {}
+  },
+  "features": {
+    "compile_options": {
+      "ARITH: COMPAT": {
+        "count": 5,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "COBOL/SAM2.cbl",
+          "multiroot/sam/SAM1.cbl",
+          "multiroot/sam/SAM2.cbl"
+        ]
+      },
+      "INTDATE: ANSI": {
+        "count": 5,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "COBOL/SAM2.cbl",
+          "multiroot/sam/SAM1.cbl",
+          "multiroot/sam/SAM2.cbl"
+        ]
+      },
+      "NUMPROC: NOPFD": {
+        "count": 5,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "COBOL/SAM2.cbl",
+          "multiroot/sam/SAM1.cbl",
+          "multiroot/sam/SAM2.cbl"
+        ]
+      },
+      "TRUNC: STD": {
+        "count": 5,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "COBOL/SAM2.cbl",
+          "multiroot/sam/SAM1.cbl",
+          "multiroot/sam/SAM2.cbl"
+        ]
+      }
+    },
+    "data_types": {
+      "BINARY": {
+        "count": 5,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "COBOL/SAM2.cbl",
+          "multiroot/sam/SAM1.cbl",
+          "multiroot/sam/SAM2.cbl"
+        ]
+      },
+      "EDITED": {
+        "count": 12,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "multiroot/sam/SAM1.cbl"
+        ]
+      },
+      "PACKED": {
+        "count": 51,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "COBOL/SAM2.cbl",
+          "multiroot/sam/SAM1.cbl",
+          "multiroot/sam/SAM2.cbl"
+        ]
+      }
+    },
+    "statements": {
+      "ACCEPT": {
+        "count": 12,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "multiroot/sam/SAM1.cbl"
+        ]
+      },
+      "ARITH": {
+        "count": 25,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "multiroot/sam/SAM1.cbl"
+        ]
+      },
+      "CALL": {
+        "count": 3,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "multiroot/sam/SAM1.cbl"
+        ]
+      },
+      "CLOSE": {
+        "count": 9,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "multiroot/sam/SAM1.cbl"
+        ]
+      },
+      "COMPUTE": {
+        "count": 36,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "COBOL/SAM2.cbl",
+          "multiroot/sam/SAM1.cbl",
+          "multiroot/sam/SAM2.cbl"
+        ]
+      },
+      "CONTINUE": {
+        "count": 11,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "COBOL/SAM2.cbl",
+          "multiroot/sam/SAM1.cbl",
+          "multiroot/sam/SAM2.cbl"
+        ]
+      },
+      "DISPLAY": {
+        "count": 36,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "multiroot/sam/SAM1.cbl"
+        ]
+      },
+      "EVALUATE": {
+        "count": 24,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "COBOL/SAM2.cbl",
+          "multiroot/sam/SAM1.cbl",
+          "multiroot/sam/SAM2.cbl"
+        ]
+      },
+      "GOBACK": {
+        "count": 5,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "COBOL/SAM2.cbl",
+          "multiroot/sam/SAM1.cbl",
+          "multiroot/sam/SAM2.cbl"
+        ]
+      },
+      "IF": {
+        "count": 70,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "COBOL/SAM2.cbl",
+          "multiroot/sam/SAM1.cbl",
+          "multiroot/sam/SAM2.cbl"
+        ]
+      },
+      "INITIALIZE": {
+        "count": 1,
+        "programs": [
+          "multiroot/sam/SAM1.cbl"
+        ]
+      },
+      "MOVE": {
+        "count": 243,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "COBOL/SAM2.cbl",
+          "multiroot/sam/SAM1.cbl",
+          "multiroot/sam/SAM2.cbl"
+        ]
+      },
+      "OPEN": {
+        "count": 3,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "multiroot/sam/SAM1.cbl"
+        ]
+      },
+      "PERFORM": {
+        "count": 100,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "COBOL/SAM2.cbl",
+          "multiroot/sam/SAM1.cbl",
+          "multiroot/sam/SAM2.cbl"
+        ]
+      },
+      "READ": {
+        "count": 6,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "multiroot/sam/SAM1.cbl"
+        ]
+      },
+      "WRITE": {
+        "count": 32,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "multiroot/sam/SAM1.cbl"
+        ]
+      },
+      "unknown": {
+        "count": 19,
+        "programs": [
+          "COBOL/SAM1.cbl",
+          "COBOL/SAM1LIB.cbl",
+          "multiroot/sam/SAM1.cbl"
+        ]
+      }
+    }
+  },
+  "other": {},
+  "programs": [
+    {
+      "earliest": null,
+      "era": null,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "COBOL/SAM1.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [],
+      "translation": "refused"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "COBOL/SAM1LIB.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [],
+      "translation": "refused"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "COBOL/SAM2.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [],
+      "translation": "refused"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "multiroot/sam/SAM1.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [],
+      "translation": "refused"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "multiroot/sam/SAM2.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [],
+      "translation": "refused"
+    }
+  ],
+  "redacted": false,
+  "rules": {
+    "classes": 1,
+    "ranked": [
+      {
+        "one_away": 0,
+        "only": 5,
+        "only_by_era": {
+          "none": 5
+        },
+        "rule": "refused: CopyAmbiguous",
+        "touched": 5
+      }
+    ]
+  },
+  "schema": "gitgalaxy-assess/1",
+  "tool_version": "2.4.9.dev334+gacd547e89.d20260901",
+  "totals": {
+    "assembler_members": 0,
+    "parsed": 5,
+    "programs": 5,
+    "refused_by_family": 0,
+    "translation": {
+      "holes": 0,
+      "refused": 5,
+      "whole": 0
+    },
+    "unparsed": 0
+  }
+}

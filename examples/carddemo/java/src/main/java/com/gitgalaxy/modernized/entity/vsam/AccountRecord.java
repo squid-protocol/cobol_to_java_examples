@@ -36,15 +36,15 @@ public class AccountRecord {
     private String acctActiveStatus;
 
     // ACCT-CURR-BAL: PIC S9(10)V99, offset 12, 12 bytes
-    @Column(name = "ACCT_CURR_BAL")
+    @Column(name = "ACCT_CURR_BAL", precision = 12, scale = 2)
     private BigDecimal acctCurrBal;
 
     // ACCT-CREDIT-LIMIT: PIC S9(10)V99, offset 24, 12 bytes
-    @Column(name = "ACCT_CREDIT_LIMIT")
+    @Column(name = "ACCT_CREDIT_LIMIT", precision = 12, scale = 2)
     private BigDecimal acctCreditLimit;
 
     // ACCT-CASH-CREDIT-LIMIT: PIC S9(10)V99, offset 36, 12 bytes
-    @Column(name = "ACCT_CASH_CREDIT_LIMIT")
+    @Column(name = "ACCT_CASH_CREDIT_LIMIT", precision = 12, scale = 2)
     private BigDecimal acctCashCreditLimit;
 
     // ACCT-OPEN-DATE: PIC X(10), offset 48, 10 bytes
@@ -60,11 +60,11 @@ public class AccountRecord {
     private String acctReissueDate;
 
     // ACCT-CURR-CYC-CREDIT: PIC S9(10)V99, offset 78, 12 bytes
-    @Column(name = "ACCT_CURR_CYC_CREDIT")
+    @Column(name = "ACCT_CURR_CYC_CREDIT", precision = 12, scale = 2)
     private BigDecimal acctCurrCycCredit;
 
     // ACCT-CURR-CYC-DEBIT: PIC S9(10)V99, offset 90, 12 bytes
-    @Column(name = "ACCT_CURR_CYC_DEBIT")
+    @Column(name = "ACCT_CURR_CYC_DEBIT", precision = 12, scale = 2)
     private BigDecimal acctCurrCycDebit;
 
     // ACCT-ADDR-ZIP: PIC X(10), offset 102, 10 bytes
@@ -76,10 +76,25 @@ public class AccountRecord {
     private String acctGroupId;
 
 
+    /** #4875: the record bytes this entity was read from, kept beside the typed columns: a field whose
+     *  value is unchanged is written back as these bytes, so a value no column type holds (spaces in a
+     *  PIC 9, a non-preferred sign) and FILLER survive the round trip, as the VSAM record keeps them. */
+    @Column(name = "VSAM_RECORD", length = 300)
+    @lombok.Getter(lombok.AccessLevel.NONE)
+    @lombok.Setter(lombok.AccessLevel.NONE)
+    @lombok.EqualsAndHashCode.Exclude
+    @lombok.ToString.Exclude
+    private byte[] vsamRecord;
+
     /** #3624: this record from its fixed-width VSAM form (300 bytes, as REPRO unloads it), each
      *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
-     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+     *  transfer, IBM037 on z/OS). The bytes themselves are kept in vsamRecord (#4875). */
     public static AccountRecord fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        if (rec.length < 300) {  // a WRITE ... LENGTH(n) short of the record: the rest is spaces
+            byte[] full = CobolRecords.blank(300, text);
+            System.arraycopy(rec, 0, full, 0, rec.length);
+            rec = full;
+        }
         AccountRecord r = new AccountRecord();
         r.acctId = CobolRecords.toLong(CobolRecords.zoned(rec, 0, 11, 0, text));
         r.acctActiveStatus = CobolRecords.text(rec, 11, 1, text);
@@ -93,24 +108,51 @@ public class AccountRecord {
         r.acctCurrCycDebit = CobolRecords.zoned(rec, 90, 12, 2, text);
         r.acctAddrZip = CobolRecords.text(rec, 102, 10, text);
         r.acctGroupId = CobolRecords.text(rec, 112, 10, text);
+        r.vsamRecord = java.util.Arrays.copyOf(rec, 300);
         return r;
     }
 
-    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    /** #3624: the fixed-width VSAM record of this entity: the bytes it was read from (vsamRecord), each field
+     *  whose value changed since re-encoded; a new entity's FILLER as spaces. */
     public byte[] toRecord(java.nio.charset.Charset text) {
-        byte[] rec = CobolRecords.blank(300, text);
-        CobolRecords.putZoned(rec, 0, 11, 0, false, CobolRecords.decimal(acctId), text);
-        CobolRecords.putText(rec, 11, 1, acctActiveStatus, text);
-        CobolRecords.putZoned(rec, 12, 12, 2, true, CobolRecords.decimal(acctCurrBal), text);
-        CobolRecords.putZoned(rec, 24, 12, 2, true, CobolRecords.decimal(acctCreditLimit), text);
-        CobolRecords.putZoned(rec, 36, 12, 2, true, CobolRecords.decimal(acctCashCreditLimit), text);
-        CobolRecords.putText(rec, 48, 10, acctOpenDate, text);
-        CobolRecords.putText(rec, 58, 10, acctExpiraionDate, text);
-        CobolRecords.putText(rec, 68, 10, acctReissueDate, text);
-        CobolRecords.putZoned(rec, 78, 12, 2, true, CobolRecords.decimal(acctCurrCycCredit), text);
-        CobolRecords.putZoned(rec, 90, 12, 2, true, CobolRecords.decimal(acctCurrCycDebit), text);
-        CobolRecords.putText(rec, 102, 10, acctAddrZip, text);
-        CobolRecords.putText(rec, 112, 10, acctGroupId, text);
+        byte[] read = vsamRecord != null && vsamRecord.length == 300 ? vsamRecord : null;
+        byte[] rec = read != null ? read.clone() : CobolRecords.blank(300, text);
+        if (read == null || !java.util.Objects.equals(acctId, CobolRecords.toLong(CobolRecords.zoned(read, 0, 11, 0, text)))) {
+            CobolRecords.putZoned(rec, 0, 11, 0, false, CobolRecords.decimal(acctId), text);
+        }
+        if (read == null || !java.util.Objects.equals(acctActiveStatus, CobolRecords.text(read, 11, 1, text))) {
+            CobolRecords.putText(rec, 11, 1, acctActiveStatus, text);
+        }
+        if (read == null || !java.util.Objects.equals(acctCurrBal, CobolRecords.zoned(read, 12, 12, 2, text))) {
+            CobolRecords.putZoned(rec, 12, 12, 2, true, CobolRecords.decimal(acctCurrBal), text);
+        }
+        if (read == null || !java.util.Objects.equals(acctCreditLimit, CobolRecords.zoned(read, 24, 12, 2, text))) {
+            CobolRecords.putZoned(rec, 24, 12, 2, true, CobolRecords.decimal(acctCreditLimit), text);
+        }
+        if (read == null || !java.util.Objects.equals(acctCashCreditLimit, CobolRecords.zoned(read, 36, 12, 2, text))) {
+            CobolRecords.putZoned(rec, 36, 12, 2, true, CobolRecords.decimal(acctCashCreditLimit), text);
+        }
+        if (read == null || !java.util.Objects.equals(acctOpenDate, CobolRecords.text(read, 48, 10, text))) {
+            CobolRecords.putText(rec, 48, 10, acctOpenDate, text);
+        }
+        if (read == null || !java.util.Objects.equals(acctExpiraionDate, CobolRecords.text(read, 58, 10, text))) {
+            CobolRecords.putText(rec, 58, 10, acctExpiraionDate, text);
+        }
+        if (read == null || !java.util.Objects.equals(acctReissueDate, CobolRecords.text(read, 68, 10, text))) {
+            CobolRecords.putText(rec, 68, 10, acctReissueDate, text);
+        }
+        if (read == null || !java.util.Objects.equals(acctCurrCycCredit, CobolRecords.zoned(read, 78, 12, 2, text))) {
+            CobolRecords.putZoned(rec, 78, 12, 2, true, CobolRecords.decimal(acctCurrCycCredit), text);
+        }
+        if (read == null || !java.util.Objects.equals(acctCurrCycDebit, CobolRecords.zoned(read, 90, 12, 2, text))) {
+            CobolRecords.putZoned(rec, 90, 12, 2, true, CobolRecords.decimal(acctCurrCycDebit), text);
+        }
+        if (read == null || !java.util.Objects.equals(acctAddrZip, CobolRecords.text(read, 102, 10, text))) {
+            CobolRecords.putText(rec, 102, 10, acctAddrZip, text);
+        }
+        if (read == null || !java.util.Objects.equals(acctGroupId, CobolRecords.text(read, 112, 10, text))) {
+            CobolRecords.putText(rec, 112, 10, acctGroupId, text);
+        }
         return rec;
     }
 }

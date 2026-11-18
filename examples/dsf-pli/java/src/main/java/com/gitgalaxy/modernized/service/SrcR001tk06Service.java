@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.exception.*;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -44,41 +45,49 @@ public class SrcR001tk06Service {
     // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
     // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
 
-    public void executeSrcR001tk06(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__R001TK06");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcR001tk06: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcR001tk06: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R001TK06", null);
+        region.run(task, "R001TK06", this::runTask);
     }
 
-    /** XCTL PROGRAM(PROGRAM_ID) at src/R001TK06.pli:420: the target is data-driven. Candidates: none found.
+    /** EXEC CICS XCTL PROGRAM(PROGRAM_ID) at src/R001TK06.pli:420, COMMAREA(KOM_OMR): the target is data-driven (candidates the engine found: none found).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchProgramIdL420(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            default:
-                throw new IllegalArgumentException("XCTL PROGRAM(PROGRAM_ID) at src/R001TK06.pli:420: no known target " + program);
-        }
+    public String dispatchProgramIdL420(CicsTask task, String program, Object commarea) {
+        return task.xctl(program.stripTrailing(), commarea);
     }
 
-    /** XCTL PROGRAM(PROGRAM_ID) at src/R001TK06.pli:467: the target is data-driven. Candidates: none found.
+    /** EXEC CICS XCTL PROGRAM(PROGRAM_ID) at src/R001TK06.pli:467, COMMAREA(KOM_OMR): the target is data-driven (candidates the engine found: none found).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchProgramIdL467(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            default:
-                throw new IllegalArgumentException("XCTL PROGRAM(PROGRAM_ID) at src/R001TK06.pli:467: no known target " + program);
-        }
+    public String dispatchProgramIdL467(CicsTask task, String program, Object commarea) {
+        return task.xctl(program.stripTrailing(), commarea);
     }
 
-    /** XCTL PROGRAM(PROGRAM_ID) at src/R001TK06.pli:506: the target is data-driven. Candidates: none found.
+    /** EXEC CICS XCTL PROGRAM(PROGRAM_ID) at src/R001TK06.pli:506, COMMAREA(KOM_OMR): the target is data-driven (candidates the engine found: none found).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchProgramIdL506(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            default:
-                throw new IllegalArgumentException("XCTL PROGRAM(PROGRAM_ID) at src/R001TK06.pli:506: no known target " + program);
-        }
+    public String dispatchProgramIdL506(CicsTask task, String program, Object commarea) {
+        return task.xctl(program.stripTrailing(), commarea);
     }
 
     /**

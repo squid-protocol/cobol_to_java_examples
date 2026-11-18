@@ -32,7 +32,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 @Configuration
 public class TranreptJobConfig {
 
-    static final List<Dd> DDS_STEP05R_PRC001 = List.of(new Dd("FILEIN", "NULLFILE", "SHR", null, null), new Dd("FILEOUT", "NULLFILE", "SHR", null, null), new Dd("SYSIN", "&CNTLLIB(REPROCT)", "SHR", null, null));
+    static final List<Dd> DDS_STEP05R_PRC001 = List.of(new Dd("SYSIN", "&CNTLLIB(REPROCT)", "SHR", null, null));
     static final List<Dd> DDS_STEP05R = List.of(new Dd("SORTIN", "AWS.M2.CARDDEMO.TRANSACT.BKUP", "SHR", null, "+1"), new Dd("SORTOUT", "AWS.M2.CARDDEMO.TRANSACT.DALY", "NEW", "CATLG", "+1"));
     static final List<Dd> DDS_STEP10R = List.of(new Dd("STEPLIB", "AWS.M2.CARDDEMO.LOADLIB", "SHR", null, null), new Dd("TRANFILE", "AWS.M2.CARDDEMO.TRANSACT.DALY", "SHR", null, "+1"), new Dd("CARDXREF", "AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS", "SHR", null, null), new Dd("TRANTYPE", "AWS.M2.CARDDEMO.TRANTYPE.VSAM.KSDS", "SHR", null, null), new Dd("TRANCATG", "AWS.M2.CARDDEMO.TRANCATG.VSAM.KSDS", "SHR", null, null), new Dd("DATEPARM", "AWS.M2.CARDDEMO.DATEPARM", "SHR", null, null), new Dd("TRANREPT", "AWS.M2.CARDDEMO.TRANREPT", "NEW", "CATLG", "+1"));
 
@@ -40,9 +40,9 @@ public class TranreptJobConfig {
     public Job tranreptJob(JobRepository jobRepository, PlatformTransactionManager tx, JclSteps steps, Cbtrn03cService cbtrn03cService) {
         return new JobBuilder("TRANREPT", jobRepository)
                 .start(new StepBuilder("STEP05R.PRC001", jobRepository)
-                        .tasklet(steps.utility("STEP05R.PRC001", "STEP05R.PRC001", null, null, null, "IDCAMS", "STEP05R.PRC001 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port"), tx).build())
+                        .tasklet(steps.utility("STEP05R.PRC001", "STEP05R.PRC001", null, null, null, "IDCAMS", "STEP05R.PRC001 runs IDCAMS, which its SYSIN is a dataset of control statements (not read) -- not run as a record copy: a utility step to port"), tx).build())
                 .next(new StepBuilder("STEP05R", jobRepository)
-                        .tasklet(steps.utility("STEP05R", "STEP05R", null, null, null, "SORT", "STEP05R runs the utility SORT (its control statements are in SYSIN) -- a utility step to port"), tx).build())
+                        .tasklet(steps.utility("STEP05R", "STEP05R", null, null, null, "SORT", "STEP05R runs SORT, which is a DFSORT SORT the model lowers, but the job facts carry no record length (LRECL) to lower it -- not run: a utility step to port"), tx).build())
                 .next(new StepBuilder("STEP10R", jobRepository)
                         .tasklet(steps.program("STEP10R", "STEP10R", null, null, null, () -> cbtrn03cService.runBatch(DDS_STEP10R, null)), tx).build())
                 .build();

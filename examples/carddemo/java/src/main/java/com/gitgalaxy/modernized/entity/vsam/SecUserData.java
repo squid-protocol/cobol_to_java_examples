@@ -28,7 +28,7 @@ public class SecUserData {
 
     // SEC-USR-ID: PIC X(08), offset 0, 8 bytes
     @Id
-    @Column(name = "SEC_USR_ID", length = 8)
+    @Column(name = "SEC_USR_ID", columnDefinition = "varchar(8) COLLATE \"C\"")
     private String secUsrId;
 
     // SEC-USR-FNAME: PIC X(20), offset 8, 20 bytes
@@ -51,11 +51,36 @@ public class SecUserData {
     @Column(name = "SEC_USR_FILLER", length = 23)
     private String secUsrFiller;
 
+    // #3822: SEC-USR-ID as cp037 bytes in hex -- browses order by it, as VSAM orders the key
+    @Column(name = "SEC_USR_ID_SORT", columnDefinition = "varchar(16) COLLATE \"C\"")
+    private String secUsrIdSort;
+
+    @PrePersist
+    @PreUpdate
+    void codePageSortKey() {
+        this.secUsrIdSort = CobolRecords.sortKey(secUsrId, "cp037");
+    }
+
+
+    /** #4875: the record bytes this entity was read from, kept beside the typed columns: a field whose
+     *  value is unchanged is written back as these bytes, so a value no column type holds (spaces in a
+     *  PIC 9, a non-preferred sign) and FILLER survive the round trip, as the VSAM record keeps them. */
+    @Column(name = "VSAM_RECORD", length = 80)
+    @lombok.Getter(lombok.AccessLevel.NONE)
+    @lombok.Setter(lombok.AccessLevel.NONE)
+    @lombok.EqualsAndHashCode.Exclude
+    @lombok.ToString.Exclude
+    private byte[] vsamRecord;
 
     /** #3624: this record from its fixed-width VSAM form (80 bytes, as REPRO unloads it), each
      *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
-     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+     *  transfer, IBM037 on z/OS). The bytes themselves are kept in vsamRecord (#4875). */
     public static SecUserData fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        if (rec.length < 80) {  // a WRITE ... LENGTH(n) short of the record: the rest is spaces
+            byte[] full = CobolRecords.blank(80, text);
+            System.arraycopy(rec, 0, full, 0, rec.length);
+            rec = full;
+        }
         SecUserData r = new SecUserData();
         r.secUsrId = CobolRecords.text(rec, 0, 8, text);
         r.secUsrFname = CobolRecords.text(rec, 8, 20, text);
@@ -63,18 +88,33 @@ public class SecUserData {
         r.secUsrPwd = CobolRecords.text(rec, 48, 8, text);
         r.secUsrType = CobolRecords.text(rec, 56, 1, text);
         r.secUsrFiller = CobolRecords.text(rec, 57, 23, text);
+        r.vsamRecord = java.util.Arrays.copyOf(rec, 80);
         return r;
     }
 
-    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    /** #3624: the fixed-width VSAM record of this entity: the bytes it was read from (vsamRecord), each field
+     *  whose value changed since re-encoded; a new entity's FILLER as spaces. */
     public byte[] toRecord(java.nio.charset.Charset text) {
-        byte[] rec = CobolRecords.blank(80, text);
-        CobolRecords.putText(rec, 0, 8, secUsrId, text);
-        CobolRecords.putText(rec, 8, 20, secUsrFname, text);
-        CobolRecords.putText(rec, 28, 20, secUsrLname, text);
-        CobolRecords.putText(rec, 48, 8, secUsrPwd, text);
-        CobolRecords.putText(rec, 56, 1, secUsrType, text);
-        CobolRecords.putText(rec, 57, 23, secUsrFiller, text);
+        byte[] read = vsamRecord != null && vsamRecord.length == 80 ? vsamRecord : null;
+        byte[] rec = read != null ? read.clone() : CobolRecords.blank(80, text);
+        if (read == null || !java.util.Objects.equals(secUsrId, CobolRecords.text(read, 0, 8, text))) {
+            CobolRecords.putText(rec, 0, 8, secUsrId, text);
+        }
+        if (read == null || !java.util.Objects.equals(secUsrFname, CobolRecords.text(read, 8, 20, text))) {
+            CobolRecords.putText(rec, 8, 20, secUsrFname, text);
+        }
+        if (read == null || !java.util.Objects.equals(secUsrLname, CobolRecords.text(read, 28, 20, text))) {
+            CobolRecords.putText(rec, 28, 20, secUsrLname, text);
+        }
+        if (read == null || !java.util.Objects.equals(secUsrPwd, CobolRecords.text(read, 48, 8, text))) {
+            CobolRecords.putText(rec, 48, 8, secUsrPwd, text);
+        }
+        if (read == null || !java.util.Objects.equals(secUsrType, CobolRecords.text(read, 56, 1, text))) {
+            CobolRecords.putText(rec, 56, 1, secUsrType, text);
+        }
+        if (read == null || !java.util.Objects.equals(secUsrFiller, CobolRecords.text(read, 57, 23, text))) {
+            CobolRecords.putText(rec, 57, 23, secUsrFiller, text);
+        }
         return rec;
     }
 }

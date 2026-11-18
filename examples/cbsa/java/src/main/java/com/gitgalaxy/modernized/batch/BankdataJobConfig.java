@@ -31,11 +31,11 @@ public class BankdataJobConfig {
     public Job bankdataJob(JobRepository jobRepository, PlatformTransactionManager tx, JclSteps steps, BankdataService bankdataService) {
         return new JobBuilder("BANKDATA", jobRepository)
                 .start(new StepBuilder("BANKDAT0", jobRepository)
-                        .tasklet(steps.utility("BANKDAT0", "BANKDAT0", null, null, null, "IDCAMS", "BANKDAT0 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port"), tx).build())
+                        .tasklet(steps.utility("BANKDAT0", "BANKDAT0", null, null, null, "IDCAMS", "BANKDAT0 runs IDCAMS, which uses more than one IDCAMS command, which the IDCAMS model refuses -- not run as a record copy: a utility step to port"), tx).build())
                 .next(new StepBuilder("BANKDAT1", jobRepository)
-                        .tasklet(steps.utility("BANKDAT1", "BANKDAT1", null, null, null, "IDCAMS", "BANKDAT1 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port"), tx).build())
+                        .tasklet(steps.utility("BANKDAT1", "BANKDAT1", null, null, null, "IDCAMS", "BANKDAT1 runs IDCAMS, which uses more than one IDCAMS command, which the IDCAMS model refuses -- not run as a record copy: a utility step to port"), tx).build())
                 .next(new StepBuilder("BANKDAT5", jobRepository)
-                        .tasklet(steps.program("BANKDAT5", "BANKDAT5", null, null, null, () -> bankdataService.runBatch(DDS_BANKDAT5, null)), tx).build())
+                        .tasklet(steps.utility("BANKDAT5", "BANKDAT5", null, null, null, "BANKDATA", "BANKDAT5 runs BANKDATA through IKJEFT01, which uses the DSN operand 'SYSTEM(@DB2_SUBSYSTE' (a TSO / DSN subcommand the oracle has no model of), which the IKJEFT01 model refuses -- not run: a utility step to port"), tx).build())
                 .build();
     }
 }

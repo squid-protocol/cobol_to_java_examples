@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.dto.contract.SrcR001i501KomOmr;
 import com.gitgalaxy.modernized.exception.*;
 import org.springframework.beans.factory.ObjectProvider;
@@ -49,162 +50,170 @@ public class SrcR0013520Service {
     private final ObjectProvider<SrcR001ue20Service> srcR001ue20Service;
     private final ObjectProvider<SrcR001uj20Service> srcR001uj20Service;
 
-    public void executeSrcR0013520(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__R0013520");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcR0013520: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcR0013520: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R0013520", null);
+        region.run(task, "R0013520", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R0013301) at src/R0013520.pli:466.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public SrcR001i501KomOmr linkSrcR0013301(SrcR001i501KomOmr request) {
         return srcR0013301Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010920) at src/R0013520.pli:121. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlR0010920() {
         r0010920Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010401) at src/R0013520.pli:470. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0010401() {
         srcR0010401Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010520) at src/R0013520.pli:66. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0010520() {
         srcR0010520Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010620) at src/R0013520.pli:96. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0010620() {
         srcR0010620Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010820) at src/R0013520.pli:113. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0010820() {
         srcR0010820Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0011020) at src/R0013520.pli:129. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0011020() {
         srcR0011020Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0011120) at src/R0013520.pli:136. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0011120() {
         srcR0011120Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0011220) at src/R0013520.pli:150. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0011220() {
         srcR0011220Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0011420) at src/R0013520.pli:171. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0011420() {
         srcR0011420Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0011620) at src/R0013520.pli:181. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0011620() {
         srcR0011620Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0011720) at src/R0013520.pli:187. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0011720() {
         srcR0011720Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0011840) at src/R0013520.pli:119. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0011840() {
         srcR0011840Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0011920) at src/R0013520.pli:80. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0011920() {
         srcR0011920Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R001N520) at src/R0013520.pli:73. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR001n520() {
         srcR001n520Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R001N620) at src/R0013520.pli:103. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR001n620() {
         srcR001n620Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R001N820) at src/R0013520.pli:115. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR001n820() {
         srcR001n820Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R001N920) at src/R0013520.pli:123. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR001n920() {
         srcR001n920Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R001NB20) at src/R0013520.pli:143. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR001nb20() {
         srcR001nb20Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R001NC20) at src/R0013520.pli:157. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR001nc20() {
         srcR001nc20Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R001U620) at src/R0013520.pli:110. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR001u620() {
         srcR001u620Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R001U820) at src/R0013520.pli:117. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR001u820() {
         srcR001u820Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R001UC20) at src/R0013520.pli:164. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR001uc20() {
         srcR001uc20Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R001UE20) at src/R0013520.pli:178. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR001ue20() {
         srcR001ue20Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R001UJ20) at src/R0013520.pli:88. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR001uj20() {
         srcR001uj20Service.getObject().handleLink();
     }

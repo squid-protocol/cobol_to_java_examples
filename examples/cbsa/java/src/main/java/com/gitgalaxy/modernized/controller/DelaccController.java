@@ -10,16 +10,16 @@ package com.gitgalaxy.modernized.controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import lombok.RequiredArgsConstructor;
-import com.gitgalaxy.modernized.dto.contract.Bnk1dacParmsSubpgm;
+import com.gitgalaxy.modernized.dto.contract.DelaccDfhcommarea;
 import com.gitgalaxy.modernized.service.DelaccService;
 
 /**
  * CICS program DELACC (src/base/cobol_src/DELACC.cbl), generated from GitGalaxy's
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
- * COMMAREA: PARMS-SUBPGM (src/base/cobol_src/BNK1DAC.cbl, 122 bytes) -> Bnk1dacParmsSubpgm.
+ * COMMAREA: PARMS-SUBPGM (src/base/cobol_src/BNK1DAC.cbl, 122 bytes) -> DelaccDfhcommarea.
  * TODO: callers also pass DELACC-COMMAREA (src/base/cobol_src/DELCUS.cbl, 118 bytes) at src/base/cobol_src/DELCUS.cbl:312.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/delacc")
@@ -30,7 +30,7 @@ public class DelaccController {
 
     /** Program-to-program entry: LINK at src/base/cobol_src/BNK1DAC.cbl:712, LINK at src/base/cobol_src/DELCUS.cbl:312. */
     @PostMapping("/link")
-    public ResponseEntity<Bnk1dacParmsSubpgm> link(@RequestBody Bnk1dacParmsSubpgm request) {
+    public ResponseEntity<DelaccDfhcommarea> link(@RequestBody DelaccDfhcommarea request) {
         return ResponseEntity.ok(delaccService.handleLink(request));
     }
 

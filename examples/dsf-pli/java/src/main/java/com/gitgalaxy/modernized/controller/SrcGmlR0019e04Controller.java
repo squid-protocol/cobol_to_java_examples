@@ -17,7 +17,7 @@ import com.gitgalaxy.modernized.service.SrcGmlR0019e04Service;
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
  * TODO: no COMMAREA layout: no structure parameter, or structure BASED on the main procedure's parameter COMMAREA_PEKER, is declared in the program or its %INCLUDE members; %INCLUDE members not in the repository: P0010601, P0012002, P0012003, P0014009, P0019014, P0019906, P0019908, P0019910, P0019911, P0019912, P0019921, P0019924, P0019925, P0019940, P0019941, P0019942, P0019943, P0019944, P0019945, P0019946, P0019947, P0019948, P0019949, P0019950, P0019951, P0019952, P0019960, P0019N41, P0019N42, P0019N44, P0019N45, P0019N46, P0019N47, P0019N48; no resolved caller passes a COMMAREA.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/src-gml-r0019e04")

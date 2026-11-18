@@ -10,16 +10,16 @@ package com.gitgalaxy.modernized.controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import lombok.RequiredArgsConstructor;
-import com.gitgalaxy.modernized.dto.contract.CarddemoCommarea;
+import com.gitgalaxy.modernized.dto.contract.Cotrn02cCarddemoCommarea;
 import com.gitgalaxy.modernized.service.Cotrn02cService;
 
 /**
  * CICS program COTRN02C (app/cbl/COTRN02C.cbl), generated from GitGalaxy's
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
- * COMMAREA: DFHCOMMAREA (app/cbl/COTRN02C.cbl, 160 bytes) -> CarddemoCommarea.
- * TODO: callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COTRN02C.cbl:156, app/cbl/COTRN02C.cbl:530.
+ * COMMAREA: DFHCOMMAREA (app/cbl/COTRN02C.cbl, 218 bytes) -> Cotrn02cCarddemoCommarea.
+ * TODO: callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 218 bytes) at app/cbl/COTRN02C.cbl:156, app/cbl/COTRN02C.cbl:530.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/cotrn02c")
@@ -30,13 +30,13 @@ public class Cotrn02cController {
 
     /** CICS transaction CT02 -> Cotrn02c (CSD app/csd/CARDDEMO.CSD:439 group CARDDEMO). */
     @PostMapping("/transactions/CT02")
-    public ResponseEntity<CarddemoCommarea> transactionCT02(@RequestBody CarddemoCommarea request) {
+    public ResponseEntity<Object> transactionCT02(@RequestBody Cotrn02cCarddemoCommarea request) {
         return ResponseEntity.ok(cotrn02cService.handleTransaction("CT02", request));
     }
 
     /** Program-to-program entry: XCTL at app/cbl/COMEN01C.cbl:156 (data-driven, table), XCTL at app/cbl/COMEN01C.cbl:184 (data-driven, table). */
     @PostMapping("/link")
-    public ResponseEntity<CarddemoCommarea> link(@RequestBody CarddemoCommarea request) {
+    public ResponseEntity<Cotrn02cCarddemoCommarea> link(@RequestBody Cotrn02cCarddemoCommarea request) {
         return ResponseEntity.ok(cotrn02cService.handleLink(request));
     }
 

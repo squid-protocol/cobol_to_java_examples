@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 /**
  * COBOL record DFHCOMMAREA (src/base/cobol_src/GETCOMPY.cbl), 40 bytes, from GitGalaxy's verified skeleton.
  * The DFHCOMMAREA Getcompy declares in its LINKAGE SECTION.
- * Record fields field testing: field-tested (6 public / 0 private estates).
+ * Record fields field testing: open (6 public / 0 private estates).
  */
 @Data
 @NoArgsConstructor

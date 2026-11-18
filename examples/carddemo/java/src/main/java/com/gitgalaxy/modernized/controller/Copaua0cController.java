@@ -18,7 +18,7 @@ import com.gitgalaxy.modernized.service.Copaua0cService;
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
  * COMMAREA: DFHCOMMAREA (app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl, 4096 bytes) -> Copaua0cDfhcommarea.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/copaua0c")
@@ -27,7 +27,7 @@ public class Copaua0cController {
 
     private final Copaua0cService copaua0cService;
 
-    /** CICS transaction CP00 -> Copaua0c (CSD app/app-authorization-ims-db2-mq/csd/CRDDEMO2.csd:11 group CARDDEMO; app/app-authorization-ims-db2-mq/csd/CRDDEMO2.csd:59 group CARDDEMO). */
+    /** CICS transaction CP00 -> Copaua0c (CSD app/app-authorization-ims-db2-mq/csd/CRDDEMO2.csd:59 group CARDDEMO). */
     @PostMapping("/transactions/CP00")
     public ResponseEntity<Copaua0cDfhcommarea> transactionCP00(@RequestBody Copaua0cDfhcommarea request) {
         return ResponseEntity.ok(copaua0cService.handleTransaction("CP00", request));

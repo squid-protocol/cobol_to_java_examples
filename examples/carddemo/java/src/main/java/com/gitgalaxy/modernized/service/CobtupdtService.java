@@ -23,11 +23,6 @@ public class CobtupdtService {
 
     private final TransactionTypeRepository transactionTypeRepository;
 
-    public void executeCobtupdt(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for COBTUPDT");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
     /** The batch entry (#3622): run by job MNTTRDB2 step STEP1 (app/app-transaction-type-db2/jcl/MNTTRDB2.jcl:21) through IKJEFT01 (RUN PROGRAM).
      *  `dds` are the step's DD statements (DatasetResolver maps each to its file); `parm` the
      *  text its EXEC PARM= passes (null without one) -- a PROCEDURE DIVISION USING area's data.

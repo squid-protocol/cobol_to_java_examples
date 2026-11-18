@@ -19,7 +19,7 @@ import com.gitgalaxy.modernized.service.CoactupcService;
  * COMMAREA: DFHCOMMAREA (app/cbl/COACTUPC.cbl, 1033 bytes) -> CoactupcCommarea.
  * TODO: callers also pass WS-COMMAREA (app/cbl/COACTUPC.cbl, 2000 bytes) at app/cbl/COACTUPC.cbl:1015.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/coactupc")
@@ -30,7 +30,7 @@ public class CoactupcController {
 
     /** CICS transaction CAUP -> Coactupc (CSD app/csd/CARDDEMO.CSD:306 group CARDDEMO). */
     @PostMapping("/transactions/CAUP")
-    public ResponseEntity<CoactupcCommarea> transactionCAUP(@RequestBody CoactupcCommarea request) {
+    public ResponseEntity<Object> transactionCAUP(@RequestBody CoactupcCommarea request) {
         return ResponseEntity.ok(coactupcService.handleTransaction("CAUP", request));
     }
 

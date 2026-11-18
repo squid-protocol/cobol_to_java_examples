@@ -97,12 +97,6 @@
           "field_testing": "open (4 public / 0 private estates)",
           "ledger_field": "entry transactions",
           "section": "entry_transactions",
-          "source": "app/app-authorization-ims-db2-mq/csd/CRDDEMO2.csd:18"
-        },
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
           "source": "app/app-authorization-ims-db2-mq/csd/CRDDEMO2.csd:49"
         }
       ],
@@ -115,7 +109,42 @@
         "Copaus0cController#link",
         "Copaus0cController#transactionCPVS"
       ],
-      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:254"
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 380 bytes) at app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:254",
+      "ticket": "ai_agent_jobs/COPAUS0C_port_ticket.md"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:322"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:674"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/app-authorization-ims-db2-mq/csd/CRDDEMO2.csd:39"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/Copaus1cController.java",
+      "id": "WL-0002",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+      "symbols": [
+        "Copaus1cController#link",
+        "Copaus1cController#transactionCPVD"
+      ],
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 480 bytes) at app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl:202",
+      "ticket": "ai_agent_jobs/COPAUS1C_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -125,12 +154,6 @@
           "ledger_field": "CICS resources",
           "section": "commarea_contracts",
           "source": "app/cbl/COADM01C.cbl:145"
-        },
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "app/app-transaction-type-db2/csd/CRDDEMOD.csd:11"
         },
         {
           "field_testing": "open (4 public / 0 private estates)",
@@ -140,7 +163,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/CotrtlicController.java",
-      "id": "WL-0002",
+      "id": "WL-0003",
       "line": 20,
       "nature": "conflict",
       "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
@@ -148,7 +171,8 @@
         "CotrtlicController#link",
         "CotrtlicController#transactionCTLI"
       ],
-      "text": "callers also pass WS-COMMAREA (app/app-transaction-type-db2/cbl/COTRTLIC.cbl, 2000 bytes) at app/app-transaction-type-db2/cbl/COTRTLIC.cbl:910"
+      "text": "callers also pass WS-COMMAREA (app/app-transaction-type-db2/cbl/COTRTLIC.cbl, 2000 bytes) at app/app-transaction-type-db2/cbl/COTRTLIC.cbl:910",
+      "ticket": "ai_agent_jobs/COTRTLIC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -170,57 +194,6 @@
           "ledger_field": "CICS resources",
           "section": "commarea_contracts",
           "source": "app/cbl/COADM01C.cbl:145"
-        },
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "app/app-transaction-type-db2/csd/CRDDEMOD.csd:18"
-        },
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "app/app-transaction-type-db2/csd/CRDDEMOD.csd:35"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/CotrtupcController.java",
-      "id": "WL-0003",
-      "line": 20,
-      "nature": "conflict",
-      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
-      "symbols": [
-        "CotrtupcController#link",
-        "CotrtupcController#transactionCTTU"
-      ],
-      "text": "callers also pass WS-COMMAREA (app/app-transaction-type-db2/cbl/COTRTUPC.cbl, 2000 bytes) at app/app-transaction-type-db2/cbl/COTRTUPC.cbl:567"
-    },
-    {
-      "category": "commarea-mismatch",
-      "facts": [
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:620"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:648"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/cbl/COADM01C.cbl:145"
-        },
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "app/app-transaction-type-db2/csd/CRDDEMOD.csd:18"
         },
         {
           "field_testing": "open (4 public / 0 private estates)",
@@ -231,6 +204,46 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/CotrtupcController.java",
       "id": "WL-0004",
+      "line": 20,
+      "nature": "conflict",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [
+        "CotrtupcController#link",
+        "CotrtupcController#transactionCTTU"
+      ],
+      "text": "callers also pass WS-COMMAREA (app/app-transaction-type-db2/cbl/COTRTUPC.cbl, 2000 bytes) at app/app-transaction-type-db2/cbl/COTRTUPC.cbl:567",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
+    },
+    {
+      "category": "commarea-mismatch",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:620"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:648"
+        },
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "ledger_field": "CICS resources",
+          "section": "commarea_contracts",
+          "source": "app/cbl/COADM01C.cbl:145"
+        },
+        {
+          "field_testing": "open (4 public / 0 private estates)",
+          "ledger_field": "entry transactions",
+          "section": "entry_transactions",
+          "source": "app/app-transaction-type-db2/csd/CRDDEMOD.csd:35"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/controller/CotrtupcController.java",
+      "id": "WL-0005",
       "line": 21,
       "nature": "conflict",
       "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
@@ -238,7 +251,8 @@
         "CotrtupcController#link",
         "CotrtupcController#transactionCTTU"
       ],
-      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/app-transaction-type-db2/cbl/COTRTLIC.cbl:648"
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/app-transaction-type-db2/cbl/COTRTLIC.cbl:648",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -263,7 +277,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/CoactupcController.java",
-      "id": "WL-0005",
+      "id": "WL-0006",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/COACTUPC.cbl",
@@ -271,7 +285,8 @@
         "CoactupcController#link",
         "CoactupcController#transactionCAUP"
       ],
-      "text": "callers also pass WS-COMMAREA (app/cbl/COACTUPC.cbl, 2000 bytes) at app/cbl/COACTUPC.cbl:1015"
+      "text": "callers also pass WS-COMMAREA (app/cbl/COACTUPC.cbl, 2000 bytes) at app/cbl/COACTUPC.cbl:1015",
+      "ticket": "ai_agent_jobs/COACTUPC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -292,17 +307,11 @@
           "field_testing": "open (4 public / 0 private estates)",
           "ledger_field": "entry transactions",
           "section": "entry_transactions",
-          "source": "app/csd/CARDDEMO.CSD:181"
-        },
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
           "source": "app/csd/CARDDEMO.CSD:317"
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/CoactvwcController.java",
-      "id": "WL-0006",
+      "id": "WL-0007",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/COACTVWC.cbl",
@@ -310,7 +319,8 @@
         "CoactvwcController#link",
         "CoactvwcController#transactionCAVW"
       ],
-      "text": "callers also pass WS-COMMAREA (app/cbl/COACTVWC.cbl, 2000 bytes) at app/cbl/COACTVWC.cbl:402"
+      "text": "callers also pass WS-COMMAREA (app/cbl/COACTVWC.cbl, 2000 bytes) at app/cbl/COACTVWC.cbl:402",
+      "ticket": "ai_agent_jobs/COACTVWC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -377,7 +387,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Coadm01cController.java",
-      "id": "WL-0007",
+      "id": "WL-0008",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/COADM01C.cbl",
@@ -385,7 +395,8 @@
         "Coadm01cController#link",
         "Coadm01cController#transactionCA00"
       ],
-      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COADM01C.cbl:111, app/cbl/COADM01C.cbl:280, app/cbl/COSGN00C.cbl:231"
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COADM01C.cbl:111, app/cbl/COADM01C.cbl:280, app/cbl/COSGN00C.cbl:231",
+      "ticket": "ai_agent_jobs/COADM01C_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -410,7 +421,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Cobil00cController.java",
-      "id": "WL-0008",
+      "id": "WL-0009",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/COBIL00C.cbl",
@@ -418,7 +429,8 @@
         "Cobil00cController#link",
         "Cobil00cController#transactionCB00"
       ],
-      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 218 bytes) at app/cbl/COBIL00C.cbl:146"
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 218 bytes) at app/cbl/COBIL00C.cbl:146",
+      "ticket": "ai_agent_jobs/COBIL00C_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -446,12 +458,6 @@
           "ledger_field": "CICS resources",
           "section": "commarea_contracts",
           "source": "app/cbl/COMEN01C.cbl:184"
-        },
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "app/csd/CARDDEMO.CSD:203"
         },
         {
           "field_testing": "open (4 public / 0 private estates)",
@@ -461,16 +467,16 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/CocrdlicController.java",
-      "id": "WL-0009",
+      "id": "WL-0010",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/COCRDLIC.cbl",
       "symbols": [
         "CocrdlicController#link",
-        "CocrdlicController#transactionCC00",
         "CocrdlicController#transactionCCLI"
       ],
-      "text": "callers also pass WS-COMMAREA (app/cbl/COCRDLIC.cbl, 2000 bytes) at app/cbl/COCRDLIC.cbl:615"
+      "text": "callers also pass WS-COMMAREA (app/cbl/COCRDLIC.cbl, 2000 bytes) at app/cbl/COCRDLIC.cbl:615",
+      "ticket": "ai_agent_jobs/COCRDLIC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -503,17 +509,11 @@
           "field_testing": "open (4 public / 0 private estates)",
           "ledger_field": "entry transactions",
           "section": "entry_transactions",
-          "source": "app/csd/CARDDEMO.CSD:219"
-        },
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
           "source": "app/csd/CARDDEMO.CSD:347"
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/CocrdslcController.java",
-      "id": "WL-0010",
+      "id": "WL-0011",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/COCRDSLC.cbl",
@@ -521,7 +521,8 @@
         "CocrdslcController#link",
         "CocrdslcController#transactionCCDL"
       ],
-      "text": "callers also pass WS-COMMAREA (app/cbl/COCRDSLC.cbl, 2000 bytes) at app/cbl/COCRDSLC.cbl:402"
+      "text": "callers also pass WS-COMMAREA (app/cbl/COCRDSLC.cbl, 2000 bytes) at app/cbl/COCRDSLC.cbl:402",
+      "ticket": "ai_agent_jobs/COCRDSLC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -558,7 +559,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/CocrdupcController.java",
-      "id": "WL-0011",
+      "id": "WL-0012",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/COCRDUPC.cbl",
@@ -566,7 +567,8 @@
         "CocrdupcController#link",
         "CocrdupcController#transactionCCUP"
       ],
-      "text": "callers also pass WS-COMMAREA (app/cbl/COCRDUPC.cbl, 2000 bytes) at app/cbl/COCRDUPC.cbl:554"
+      "text": "callers also pass WS-COMMAREA (app/cbl/COCRDUPC.cbl, 2000 bytes) at app/cbl/COCRDUPC.cbl:554",
+      "ticket": "ai_agent_jobs/COCRDUPC_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -663,7 +665,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Comen01cController.java",
-      "id": "WL-0012",
+      "id": "WL-0013",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/COMEN01C.cbl",
@@ -671,7 +673,8 @@
         "Comen01cController#link",
         "Comen01cController#transactionCM00"
       ],
-      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COCRDLIC.cbl:402, app/cbl/COMEN01C.cbl:107, app/cbl/COSGN00C.cbl:236"
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COCRDLIC.cbl:402, app/cbl/COMEN01C.cbl:107, app/cbl/COSGN00C.cbl:236",
+      "ticket": "ai_agent_jobs/COMEN01C_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -696,7 +699,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Corpt00cController.java",
-      "id": "WL-0013",
+      "id": "WL-0014",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/CORPT00C.cbl",
@@ -704,7 +707,8 @@
         "Corpt00cController#link",
         "Corpt00cController#transactionCR00"
       ],
-      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/CORPT00C.cbl:199, app/cbl/CORPT00C.cbl:587"
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/CORPT00C.cbl:199, app/cbl/CORPT00C.cbl:587",
+      "ticket": "ai_agent_jobs/CORPT00C_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -735,7 +739,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Cotrn00cController.java",
-      "id": "WL-0014",
+      "id": "WL-0015",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/COTRN00C.cbl",
@@ -743,7 +747,8 @@
         "Cotrn00cController#link",
         "Cotrn00cController#transactionCT00"
       ],
-      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 218 bytes) at app/cbl/COTRN00C.cbl:138"
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 218 bytes) at app/cbl/COTRN00C.cbl:138",
+      "ticket": "ai_agent_jobs/COTRN00C_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -780,7 +785,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Cotrn01cController.java",
-      "id": "WL-0015",
+      "id": "WL-0016",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/COTRN01C.cbl",
@@ -788,7 +793,8 @@
         "Cotrn01cController#link",
         "Cotrn01cController#transactionCT01"
       ],
-      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 218 bytes) at app/cbl/COTRN01C.cbl:136"
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 218 bytes) at app/cbl/COTRN01C.cbl:136",
+      "ticket": "ai_agent_jobs/COTRN01C_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -813,7 +819,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Cotrn02cController.java",
-      "id": "WL-0016",
+      "id": "WL-0017",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/COTRN02C.cbl",
@@ -821,7 +827,8 @@
         "Cotrn02cController#link",
         "Cotrn02cController#transactionCT02"
       ],
-      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COTRN02C.cbl:156, app/cbl/COTRN02C.cbl:530"
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 218 bytes) at app/cbl/COTRN02C.cbl:156, app/cbl/COTRN02C.cbl:530",
+      "ticket": "ai_agent_jobs/COTRN02C_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -840,7 +847,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Cousr00cController.java",
-      "id": "WL-0017",
+      "id": "WL-0018",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/COUSR00C.cbl",
@@ -848,7 +855,8 @@
         "Cousr00cController#link",
         "Cousr00cController#transactionCU00"
       ],
-      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 194 bytes) at app/cbl/COUSR00C.cbl:141"
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 194 bytes) at app/cbl/COUSR00C.cbl:141",
+      "ticket": "ai_agent_jobs/COUSR00C_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -867,7 +875,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Cousr01cController.java",
-      "id": "WL-0018",
+      "id": "WL-0019",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/COUSR01C.cbl",
@@ -875,7 +883,8 @@
         "Cousr01cController#link",
         "Cousr01cController#transactionCU01"
       ],
-      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COUSR01C.cbl:107"
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COUSR01C.cbl:107",
+      "ticket": "ai_agent_jobs/COUSR01C_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -912,7 +921,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Cousr02cController.java",
-      "id": "WL-0019",
+      "id": "WL-0020",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/COUSR02C.cbl",
@@ -920,7 +929,8 @@
         "Cousr02cController#link",
         "Cousr02cController#transactionCU02"
       ],
-      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COUSR02C.cbl:135"
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 194 bytes) at app/cbl/COUSR02C.cbl:135",
+      "ticket": "ai_agent_jobs/COUSR02C_port_ticket.md"
     },
     {
       "category": "commarea-mismatch",
@@ -957,7 +967,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Cousr03cController.java",
-      "id": "WL-0020",
+      "id": "WL-0021",
       "line": 20,
       "nature": "conflict",
       "program": "app/cbl/COUSR03C.cbl",
@@ -965,7 +975,8 @@
         "Cousr03cController#link",
         "Cousr03cController#transactionCU03"
       ],
-      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COUSR03C.cbl:134"
+      "text": "callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 194 bytes) at app/cbl/COUSR03C.cbl:134",
+      "ticket": "ai_agent_jobs/COUSR03C_port_ticket.md"
     },
     {
       "category": "record-variant",
@@ -978,14 +989,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact01cService.java",
-      "id": "WL-0021",
-      "line": 35,
+      "id": "WL-0022",
+      "line": 30,
       "nature": "conflict",
       "program": "app/cbl/CBACT01C.cbl",
       "symbols": [
         "Cbact01cService#readAllAcctfileFile"
       ],
-      "text": "this program uses FD-ACCTFILE-REC (300 bytes); the entity follows ACCOUNT-RECORD (300 bytes) -- map one onto the other"
+      "text": "this program uses FD-ACCTFILE-REC (300 bytes); the entity follows ACCOUNT-RECORD (300 bytes) -- map one onto the other",
+      "ticket": "ai_agent_jobs/CBACT01C_port_ticket.md"
     },
     {
       "category": "record-variant",
@@ -998,14 +1010,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact02cService.java",
-      "id": "WL-0022",
-      "line": 35,
+      "id": "WL-0023",
+      "line": 30,
       "nature": "conflict",
       "program": "app/cbl/CBACT02C.cbl",
       "symbols": [
         "Cbact02cService#readAllCardfileFile"
       ],
-      "text": "this program uses FD-CARDFILE-REC (150 bytes); the entity follows CARD-RECORD (150 bytes) -- map one onto the other"
+      "text": "this program uses FD-CARDFILE-REC (150 bytes); the entity follows CARD-RECORD (150 bytes) -- map one onto the other",
+      "ticket": "ai_agent_jobs/CBACT02C_port_ticket.md"
     },
     {
       "category": "record-variant",
@@ -1018,35 +1031,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact03cService.java",
-      "id": "WL-0023",
-      "line": 35,
+      "id": "WL-0024",
+      "line": 30,
       "nature": "conflict",
       "program": "app/cbl/CBACT03C.cbl",
       "symbols": [
         "Cbact03cService#readAllXreffileFile"
       ],
-      "text": "this program uses FD-XREFFILE-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other"
-    },
-    {
-      "category": "record-variant",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "VSAM defines",
-          "section": "vsam_stores",
-          "source": "app/cbl/CBACT04C.cbl"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact04cService.java",
-      "id": "WL-0024",
-      "line": 46,
-      "nature": "conflict",
-      "program": "app/cbl/CBACT04C.cbl",
-      "symbols": [
-        "Cbact04cService#readAccountFile",
-        "Cbact04cService#rewriteAccountFile"
-      ],
-      "text": "this program uses FD-ACCTFILE-REC (300 bytes); the entity follows ACCOUNT-RECORD (300 bytes) -- map one onto the other"
+      "text": "this program uses FD-XREFFILE-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other",
+      "ticket": "ai_agent_jobs/CBACT03C_port_ticket.md"
     },
     {
       "category": "record-variant",
@@ -1060,13 +1053,36 @@
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact04cService.java",
       "id": "WL-0025",
-      "line": 56,
+      "line": 41,
+      "nature": "conflict",
+      "program": "app/cbl/CBACT04C.cbl",
+      "symbols": [
+        "Cbact04cService#readAccountFile",
+        "Cbact04cService#rewriteAccountFile"
+      ],
+      "text": "this program uses FD-ACCTFILE-REC (300 bytes); the entity follows ACCOUNT-RECORD (300 bytes) -- map one onto the other",
+      "ticket": "ai_agent_jobs/CBACT04C_port_ticket.md"
+    },
+    {
+      "category": "record-variant",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/cbl/CBACT04C.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact04cService.java",
+      "id": "WL-0026",
+      "line": 51,
       "nature": "conflict",
       "program": "app/cbl/CBACT04C.cbl",
       "symbols": [
         "Cbact04cService#readXrefFile"
       ],
-      "text": "this program uses FD-XREFFILE-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other"
+      "text": "this program uses FD-XREFFILE-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other",
+      "ticket": "ai_agent_jobs/CBACT04C_port_ticket.md"
     },
     {
       "category": "record-variant",
@@ -1079,14 +1095,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbcus01cService.java",
-      "id": "WL-0026",
-      "line": 35,
+      "id": "WL-0027",
+      "line": 30,
       "nature": "conflict",
       "program": "app/cbl/CBCUS01C.cbl",
       "symbols": [
         "Cbcus01cService#readAllCustfileFile"
       ],
-      "text": "this program uses FD-CUSTFILE-REC (500 bytes); the entity follows CUSTOMER-RECORD (500 bytes) -- map one onto the other"
+      "text": "this program uses FD-CUSTFILE-REC (500 bytes); the entity follows CUSTOMER-RECORD (500 bytes) -- map one onto the other",
+      "ticket": "ai_agent_jobs/CBCUS01C_port_ticket.md"
     },
     {
       "category": "record-variant",
@@ -1099,14 +1116,78 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CbexportService.java",
-      "id": "WL-0027",
-      "line": 70,
+      "id": "WL-0028",
+      "line": 69,
       "nature": "conflict",
       "program": "app/cbl/CBEXPORT.cbl",
       "symbols": [
         "CbexportService#writeExportOutput"
       ],
-      "text": "this program uses EXPORT-OUTPUT-RECORD (500 bytes); the entity follows EXPORT-INPUT-RECORD (500 bytes) -- map one onto the other"
+      "text": "this program uses EXPORT-OUTPUT-RECORD (500 bytes); the entity follows EXPORT-INPUT-RECORD (500 bytes) -- map one onto the other",
+      "ticket": "ai_agent_jobs/CBEXPORT_port_ticket.md"
+    },
+    {
+      "category": "record-variant",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/cbl/CBSTM03B.CBL"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbstm03bService.java",
+      "id": "WL-0029",
+      "line": 46,
+      "nature": "conflict",
+      "program": "app/cbl/CBSTM03B.CBL",
+      "symbols": [
+        "Cbstm03bService#readAcctFile"
+      ],
+      "text": "this program uses FD-ACCTFILE-REC (300 bytes); the entity follows ACCOUNT-RECORD (300 bytes) -- map one onto the other",
+      "ticket": "ai_agent_jobs/CBSTM03B_port_ticket.md"
+    },
+    {
+      "category": "record-variant",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/cbl/CBSTM03B.CBL"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbstm03bService.java",
+      "id": "WL-0030",
+      "line": 52,
+      "nature": "conflict",
+      "program": "app/cbl/CBSTM03B.CBL",
+      "symbols": [
+        "Cbstm03bService#readAllXrefFile"
+      ],
+      "text": "this program uses FD-XREFFILE-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other",
+      "ticket": "ai_agent_jobs/CBSTM03B_port_ticket.md"
+    },
+    {
+      "category": "record-variant",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "VSAM defines",
+          "section": "vsam_stores",
+          "source": "app/cbl/CBSTM03B.CBL"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbstm03bService.java",
+      "id": "WL-0031",
+      "line": 59,
+      "nature": "conflict",
+      "program": "app/cbl/CBSTM03B.CBL",
+      "symbols": [
+        "Cbstm03bService#readCustFile"
+      ],
+      "text": "this program uses FD-CUSTFILE-REC (500 bytes); the entity follows CUSTOMER-RECORD (500 bytes) -- map one onto the other",
+      "ticket": "ai_agent_jobs/CBSTM03B_port_ticket.md"
     },
     {
       "category": "record-variant",
@@ -1119,15 +1200,16 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn02cService.java",
-      "id": "WL-0028",
-      "line": 45,
+      "id": "WL-0032",
+      "line": 40,
       "nature": "conflict",
       "program": "app/cbl/CBTRN02C.cbl",
       "symbols": [
         "Cbtrn02cService#readAccountFile",
         "Cbtrn02cService#rewriteAccountFile"
       ],
-      "text": "this program uses FD-ACCTFILE-REC (300 bytes); the entity follows ACCOUNT-RECORD (300 bytes) -- map one onto the other"
+      "text": "this program uses FD-ACCTFILE-REC (300 bytes); the entity follows ACCOUNT-RECORD (300 bytes) -- map one onto the other",
+      "ticket": "ai_agent_jobs/CBTRN02C_port_ticket.md"
     },
     {
       "category": "record-variant",
@@ -1140,14 +1222,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn02cService.java",
-      "id": "WL-0029",
-      "line": 55,
+      "id": "WL-0033",
+      "line": 50,
       "nature": "conflict",
       "program": "app/cbl/CBTRN02C.cbl",
       "symbols": [
         "Cbtrn02cService#readXrefFile"
       ],
-      "text": "this program uses FD-XREFFILE-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other"
+      "text": "this program uses FD-XREFFILE-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other",
+      "ticket": "ai_agent_jobs/CBTRN02C_port_ticket.md"
     },
     {
       "category": "record-variant",
@@ -1160,14 +1243,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn02cService.java",
-      "id": "WL-0030",
-      "line": 70,
+      "id": "WL-0034",
+      "line": 65,
       "nature": "conflict",
       "program": "app/cbl/CBTRN02C.cbl",
       "symbols": [
         "Cbtrn02cService#writeTransactFile"
       ],
-      "text": "this program uses FD-TRANFILE-REC (350 bytes); the entity follows TRAN-RECORD (350 bytes) -- map one onto the other"
+      "text": "this program uses FD-TRANFILE-REC (350 bytes); the entity follows TRAN-RECORD (350 bytes) -- map one onto the other",
+      "ticket": "ai_agent_jobs/CBTRN02C_port_ticket.md"
     },
     {
       "category": "record-variant",
@@ -1180,24 +1264,19 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn03cService.java",
-      "id": "WL-0031",
-      "line": 42,
+      "id": "WL-0035",
+      "line": 37,
       "nature": "conflict",
       "program": "app/cbl/CBTRN03C.cbl",
       "symbols": [
         "Cbtrn03cService#readXrefFile"
       ],
-      "text": "this program uses FD-CARDXREF-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other"
+      "text": "this program uses FD-CARDXREF-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other",
+      "ticket": "ai_agent_jobs/CBTRN03C_port_ticket.md"
     },
     {
       "category": "missing-layout",
       "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "app/app-vsam-mq/csd/CRDDEMOM.csd:1"
-        },
         {
           "field_testing": "open (4 public / 0 private estates)",
           "ledger_field": "entry transactions",
@@ -1206,24 +1285,19 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Coacct01Controller.java",
-      "id": "WL-0032",
+      "id": "WL-0036",
       "line": 18,
       "nature": "fact-gap",
       "program": "app/app-vsam-mq/cbl/COACCT01.cbl",
       "symbols": [
         "Coacct01Controller#transactionCDRA"
       ],
-      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA"
+      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA",
+      "ticket": "ai_agent_jobs/COACCT01_port_ticket.md"
     },
     {
       "category": "missing-layout",
       "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "app/app-vsam-mq/csd/CRDDEMOM.csd:9"
-        },
         {
           "field_testing": "open (4 public / 0 private estates)",
           "ledger_field": "entry transactions",
@@ -1232,143 +1306,51 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Codate01Controller.java",
-      "id": "WL-0033",
+      "id": "WL-0037",
       "line": 18,
       "nature": "fact-gap",
       "program": "app/app-vsam-mq/cbl/CODATE01.cbl",
       "symbols": [
         "Codate01Controller#transactionCDRD"
       ],
-      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA"
+      "text": "no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA",
+      "ticket": "ai_agent_jobs/CODATE01_port_ticket.md"
     },
     {
-      "category": "missing-layout",
-      "facts": [
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:322"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:674"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/cbl/COADM01C.cbl:168"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/cbl/COBIL00C.cbl:281"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/cbl/COMEN01C.cbl:201"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/cbl/CORPT00C.cbl:548"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/cbl/COTRN00C.cbl:192"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/cbl/COTRN00C.cbl:518"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/cbl/COTRN01C.cbl:205"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/cbl/COTRN02C.cbl:508"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/cbl/COUSR00C.cbl:196"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/cbl/COUSR00C.cbl:206"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/cbl/COUSR00C.cbl:514"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/cbl/COUSR01C.cbl:175"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/cbl/COUSR02C.cbl:258"
-        },
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "ledger_field": "CICS resources",
-          "section": "commarea_contracts",
-          "source": "app/cbl/COUSR03C.cbl:205"
-        },
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "app/csd/CARDDEMO.CSD:249"
-        },
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "app/csd/CARDDEMO.CSD:378"
-        },
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "app/jcl/CBADMCDJ.jcl:98"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Cosgn00cController.java",
-      "id": "WL-0034",
-      "line": 18,
+      "category": "vsam-key",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact04cService.java",
+      "id": "WL-0038",
+      "line": 62,
       "nature": "fact-gap",
-      "program": "app/cbl/COSGN00C.cbl",
-      "symbols": [
-        "Cosgn00cController#link",
-        "Cosgn00cController#transactionCC00"
-      ],
-      "text": "no COMMAREA layout: DFHCOMMAREA is variable-length or of unknown width, and no resolved LINK / XCTL / RETURN TRANSID passes this program a record"
+      "program": "app/cbl/CBACT04C.cbl",
+      "symbols": [],
+      "text": "its text parts order by the database's collation, not the code page's bytes",
+      "ticket": "ai_agent_jobs/CBACT04C_port_ticket.md"
+    },
+    {
+      "category": "vsam-key",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CbimportService.java",
+      "id": "WL-0039",
+      "line": 30,
+      "nature": "fact-gap",
+      "program": "app/cbl/CBIMPORT.cbl",
+      "symbols": [],
+      "text": "the key is not one field, so it orders by its text, not the code page's bytes",
+      "ticket": "ai_agent_jobs/CBIMPORT_port_ticket.md"
+    },
+    {
+      "category": "vsam-key",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbstm03bService.java",
+      "id": "WL-0040",
+      "line": 65,
+      "nature": "fact-gap",
+      "program": "app/cbl/CBSTM03B.CBL",
+      "symbols": [],
+      "text": "its text parts order by the database's collation, not the code page's bytes",
+      "ticket": "ai_agent_jobs/CBSTM03B_port_ticket.md"
     },
     {
       "category": "vsam-key",
@@ -1381,7 +1363,7 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/ExportInputRecord.java",
-      "id": "WL-0035",
+      "id": "WL-0041",
       "line": 19,
       "nature": "fact-gap",
       "program": "app/jcl/CBEXPORT.jcl",
@@ -1394,12 +1376,54 @@
       "category": "vsam-key",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/ExportInputRecord.java",
-      "id": "WL-0036",
+      "id": "WL-0042",
       "line": 28,
       "nature": "fact-gap",
       "program": "app/jcl/CBEXPORT.jcl",
       "symbols": [],
       "text": "the key (offset 28, 4 bytes, from IDCAMS KEYS) is not one field of EXPORT-INPUT-RECORD: carried as the String vsamKey -- keep it in step with the record"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "STEP01 EXEC DBUNLDGS",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/app-authorization-ims-db2-mq/jcl/UNLDGSAM.JCL:26"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/UnldgsamJobConfig.java",
+      "id": "WL-0043",
+      "line": null,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/jcl/UNLDGSAM.JCL",
+      "symbols": [
+        "UnldgsamJobConfig#STEP01"
+      ],
+      "text": "STEP01 runs DBUNLDGS through DFSRRC00, which uses the DFSRRC00 PARM position 14 ('N'), an IMS region option the oracle has no model of, which the DFSRRC00 model refuses -- not run: a utility step to port"
+    },
+    {
+      "category": "batch-utility",
+      "facts": [
+        {
+          "field_testing": "open (5 public / 0 private estates)",
+          "item": "STEP01 EXEC PAUDBUNL",
+          "ledger_field": "JCL job flow",
+          "section": "job_steps",
+          "source": "app/app-authorization-ims-db2-mq/jcl/UNLDPADB.JCL:38"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/batch/UnldpadbJobConfig.java",
+      "id": "WL-0044",
+      "line": null,
+      "nature": "port",
+      "program": "app/app-authorization-ims-db2-mq/jcl/UNLDPADB.JCL",
+      "symbols": [
+        "UnldpadbJobConfig#STEP01"
+      ],
+      "text": "STEP01 runs PAUDBUNL through DFSRRC00, which uses the DFSRRC00 PARM position 14 ('N'), an IMS region option the oracle has no model of, which the DFSRRC00 model refuses -- not run: a utility step to port"
     },
     {
       "category": "batch-utility",
@@ -1413,14 +1437,14 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/batch/CbexportJobConfig.java",
-      "id": "WL-0037",
+      "id": "WL-0045",
       "line": null,
       "nature": "port",
       "program": "app/jcl/CBEXPORT.jcl",
       "symbols": [
         "CbexportJobConfig#STEP01"
       ],
-      "text": "STEP01 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port"
+      "text": "STEP01 runs IDCAMS, which uses more than one IDCAMS command, which the IDCAMS model refuses -- not run as a record copy: a utility step to port"
     },
     {
       "category": "batch-utility",
@@ -1434,14 +1458,14 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/batch/CreastmtJobConfig.java",
-      "id": "WL-0038",
+      "id": "WL-0046",
       "line": null,
       "nature": "port",
       "program": "app/jcl/CREASTMT.JCL",
       "symbols": [
         "CreastmtJobConfig#DELDEF01"
       ],
-      "text": "DELDEF01 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port"
+      "text": "DELDEF01 runs IDCAMS, which uses more than one IDCAMS command, which the IDCAMS model refuses -- not run as a record copy: a utility step to port"
     },
     {
       "category": "batch-utility",
@@ -1455,35 +1479,14 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/batch/CreastmtJobConfig.java",
-      "id": "WL-0039",
+      "id": "WL-0047",
       "line": null,
       "nature": "port",
       "program": "app/jcl/CREASTMT.JCL",
       "symbols": [
         "CreastmtJobConfig#STEP010"
       ],
-      "text": "STEP010 runs the utility SORT (its control statements are in SYSIN) -- a utility step to port"
-    },
-    {
-      "category": "batch-utility",
-      "facts": [
-        {
-          "field_testing": "open (5 public / 0 private estates)",
-          "item": "STEP020 EXEC IDCAMS",
-          "ledger_field": "JCL job flow",
-          "section": "job_steps",
-          "source": "app/jcl/CREASTMT.JCL:56"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/batch/CreastmtJobConfig.java",
-      "id": "WL-0040",
-      "line": null,
-      "nature": "port",
-      "program": "app/jcl/CREASTMT.JCL",
-      "symbols": [
-        "CreastmtJobConfig#STEP020"
-      ],
-      "text": "STEP020 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port"
+      "text": "STEP010 runs SORT, which is a DFSORT SORT the model lowers, but the job facts carry no record length (LRECL) to lower it -- not run: a utility step to port"
     },
     {
       "category": "batch-utility",
@@ -1497,14 +1500,14 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/batch/TranreptJobConfig.java",
-      "id": "WL-0041",
+      "id": "WL-0048",
       "line": null,
       "nature": "port",
       "program": "app/jcl/TRANREPT.jcl",
       "symbols": [
         "TranreptJobConfig#STEP05R"
       ],
-      "text": "STEP05R runs the utility SORT (its control statements are in SYSIN) -- a utility step to port"
+      "text": "STEP05R runs SORT, which is a DFSORT SORT the model lowers, but the job facts carry no record length (LRECL) to lower it -- not run: a utility step to port"
     },
     {
       "category": "batch-utility",
@@ -1518,14 +1521,14 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/batch/TranreptJobConfig.java",
-      "id": "WL-0042",
+      "id": "WL-0049",
       "line": null,
       "nature": "port",
       "program": "app/jcl/TRANREPT.jcl",
       "symbols": [
         "TranreptJobConfig#STEP05R.PRC001"
       ],
-      "text": "STEP05R.PRC001 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port"
+      "text": "STEP05R.PRC001 runs IDCAMS, which its SYSIN is a dataset of control statements (not read) -- not run as a record copy: a utility step to port"
     },
     {
       "category": "unchecked-resp",
@@ -1538,14 +1541,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaua0cService.java",
-      "id": "WL-0043",
-      "line": 34,
+      "id": "WL-0050",
+      "line": 35,
       "nature": "review",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
       "symbols": [
         "Copaua0cService"
       ],
-      "text": "the RESP of ASKTIME at line 857 (paragraph 8500-INSERT-AUTH) is never tested"
+      "text": "the RESP of ASKTIME at line 857 (paragraph 8500-INSERT-AUTH) is never tested",
+      "ticket": "ai_agent_jobs/COPAUA0C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1558,14 +1562,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaua0cService.java",
-      "id": "WL-0044",
-      "line": 35,
+      "id": "WL-0051",
+      "line": 36,
       "nature": "review",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
       "symbols": [
         "Copaua0cService"
       ],
-      "text": "the RESP of ASKTIME at line 986 (paragraph 9500-LOG-ERROR) is never tested"
+      "text": "the RESP of ASKTIME at line 986 (paragraph 9500-LOG-ERROR) is never tested",
+      "ticket": "ai_agent_jobs/COPAUA0C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1578,14 +1583,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaua0cService.java",
-      "id": "WL-0045",
-      "line": 36,
+      "id": "WL-0052",
+      "line": 37,
       "nature": "review",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
       "symbols": [
         "Copaua0cService"
       ],
-      "text": "the RESP of WRITEQ at line 1001 (paragraph 9500-LOG-ERROR) is never tested"
+      "text": "the RESP of WRITEQ at line 1001 (paragraph 9500-LOG-ERROR) is never tested",
+      "ticket": "ai_agent_jobs/COPAUA0C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1598,14 +1604,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus0cService.java",
-      "id": "WL-0046",
-      "line": 35,
+      "id": "WL-0053",
+      "line": 33,
       "nature": "review",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
       "symbols": [
         "Copaus0cService"
       ],
-      "text": "the RESP of RECEIVE at line 715 (paragraph RECEIVE-PAULST-SCREEN) is never tested"
+      "text": "the RESP of RECEIVE at line 715 (paragraph RECEIVE-PAULST-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COPAUS0C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1618,14 +1625,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus1cService.java",
-      "id": "WL-0047",
-      "line": 26,
+      "id": "WL-0054",
+      "line": 23,
       "nature": "review",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
       "symbols": [
         "Copaus1cService"
       ],
-      "text": "the RESP of RECEIVE at line 400 (paragraph RECEIVE-AUTHVIEW-SCREEN) is never tested"
+      "text": "the RESP of RECEIVE at line 400 (paragraph RECEIVE-AUTHVIEW-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COPAUS1C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1638,14 +1646,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus2cService.java",
-      "id": "WL-0048",
-      "line": 20,
+      "id": "WL-0055",
+      "line": 21,
       "nature": "review",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
       "symbols": [
         "Copaus2cService"
       ],
-      "text": "the RESP of ASKTIME at line 91 (paragraph MAIN-PARA) is never tested"
+      "text": "the RESP of ASKTIME at line 91 (paragraph MAIN-PARA) is never tested",
+      "ticket": "ai_agent_jobs/COPAUS2C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1658,14 +1667,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus2cService.java",
-      "id": "WL-0049",
-      "line": 21,
+      "id": "WL-0056",
+      "line": 22,
       "nature": "review",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
       "symbols": [
         "Copaus2cService"
       ],
-      "text": "the RESP of FORMATTIME at line 95 (paragraph MAIN-PARA) is never tested"
+      "text": "the RESP of FORMATTIME at line 95 (paragraph MAIN-PARA) is never tested",
+      "ticket": "ai_agent_jobs/COPAUS2C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1678,14 +1688,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
-      "id": "WL-0050",
-      "line": 25,
+      "id": "WL-0057",
+      "line": 24,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
       "symbols": [
         "CotrtlicService"
       ],
-      "text": "the RESP of RECEIVE at line 931 (paragraph 1100-RECEIVE-SCREEN) is never tested"
+      "text": "the RESP of RECEIVE at line 931 (paragraph 1100-RECEIVE-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COTRTLIC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1698,14 +1709,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
-      "id": "WL-0051",
-      "line": 26,
+      "id": "WL-0058",
+      "line": 25,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
       "symbols": [
         "CotrtlicService"
       ],
-      "text": "the RESP of SEND at line 1588 (paragraph 2600-SEND-SCREEN) is never tested"
+      "text": "the RESP of SEND at line 1588 (paragraph 2600-SEND-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COTRTLIC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1718,14 +1730,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
-      "id": "WL-0052",
-      "line": 25,
+      "id": "WL-0059",
+      "line": 23,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
       "symbols": [
         "CotrtupcService"
       ],
-      "text": "the RESP of RECEIVE at line 642 (paragraph 1100-RECEIVE-MAP) is never tested"
+      "text": "the RESP of RECEIVE at line 642 (paragraph 1100-RECEIVE-MAP) is never tested",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1738,14 +1751,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
-      "id": "WL-0053",
-      "line": 26,
+      "id": "WL-0060",
+      "line": 24,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
       "symbols": [
         "CotrtupcService"
       ],
-      "text": "the RESP of SEND at line 1433 (paragraph 3400-SEND-SCREEN) is never tested"
+      "text": "the RESP of SEND at line 1433 (paragraph 3400-SEND-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1758,14 +1772,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
-      "id": "WL-0054",
-      "line": 27,
+      "id": "WL-0061",
+      "line": 25,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
       "symbols": [
         "CotrtupcService"
       ],
-      "text": "the RESP of SEND at line 1684 (paragraph ABEND-ROUTINE) is never tested"
+      "text": "the RESP of SEND at line 1684 (paragraph ABEND-ROUTINE) is never tested",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1778,14 +1793,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
-      "id": "WL-0055",
-      "line": 40,
+      "id": "WL-0062",
+      "line": 38,
       "nature": "review",
       "program": "app/cbl/COACTUPC.cbl",
       "symbols": [
         "CoactupcService"
       ],
-      "text": "the RESP of RECEIVE at line 1040 (paragraph 1100-RECEIVE-MAP) is never tested"
+      "text": "the RESP of RECEIVE at line 1040 (paragraph 1100-RECEIVE-MAP) is never tested",
+      "ticket": "ai_agent_jobs/COACTUPC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1798,14 +1814,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
-      "id": "WL-0056",
-      "line": 41,
+      "id": "WL-0063",
+      "line": 39,
       "nature": "review",
       "program": "app/cbl/COACTUPC.cbl",
       "symbols": [
         "CoactupcService"
       ],
-      "text": "the RESP of SEND at line 3594 (paragraph 3400-SEND-SCREEN) is never tested"
+      "text": "the RESP of SEND at line 3594 (paragraph 3400-SEND-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COACTUPC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1818,14 +1835,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
-      "id": "WL-0057",
-      "line": 42,
+      "id": "WL-0064",
+      "line": 40,
       "nature": "review",
       "program": "app/cbl/COACTUPC.cbl",
       "symbols": [
         "CoactupcService"
       ],
-      "text": "the RESP of SEND at line 4211 (paragraph ABEND-ROUTINE) is never tested"
+      "text": "the RESP of SEND at line 4211 (paragraph ABEND-ROUTINE) is never tested",
+      "ticket": "ai_agent_jobs/COACTUPC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1838,14 +1856,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
-      "id": "WL-0058",
-      "line": 36,
+      "id": "WL-0065",
+      "line": 34,
       "nature": "review",
       "program": "app/cbl/COACTVWC.cbl",
       "symbols": [
         "CoactvwcService"
       ],
-      "text": "the RESP of SEND at line 583 (paragraph 1400-SEND-SCREEN) is never tested"
+      "text": "the RESP of SEND at line 583 (paragraph 1400-SEND-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COACTVWC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1858,14 +1877,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
-      "id": "WL-0059",
-      "line": 37,
+      "id": "WL-0066",
+      "line": 35,
       "nature": "review",
       "program": "app/cbl/COACTVWC.cbl",
       "symbols": [
         "CoactvwcService"
       ],
-      "text": "the RESP of RECEIVE at line 611 (paragraph 2100-RECEIVE-MAP) is never tested"
+      "text": "the RESP of RECEIVE at line 611 (paragraph 2100-RECEIVE-MAP) is never tested",
+      "ticket": "ai_agent_jobs/COACTVWC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1878,14 +1898,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
-      "id": "WL-0060",
-      "line": 38,
+      "id": "WL-0067",
+      "line": 36,
       "nature": "review",
       "program": "app/cbl/COACTVWC.cbl",
       "symbols": [
         "CoactvwcService"
       ],
-      "text": "the RESP of SEND at line 924 (paragraph ABEND-ROUTINE) is never tested"
+      "text": "the RESP of SEND at line 924 (paragraph ABEND-ROUTINE) is never tested",
+      "ticket": "ai_agent_jobs/COACTVWC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1898,14 +1919,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Coadm01cService.java",
-      "id": "WL-0061",
-      "line": 26,
+      "id": "WL-0068",
+      "line": 22,
       "nature": "review",
       "program": "app/cbl/COADM01C.cbl",
       "symbols": [
         "Coadm01cService"
       ],
-      "text": "the RESP of RECEIVE at line 194 (paragraph RECEIVE-MENU-SCREEN) is never tested"
+      "text": "the RESP of RECEIVE at line 194 (paragraph RECEIVE-MENU-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COADM01C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1918,14 +1940,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cobil00cService.java",
-      "id": "WL-0062",
-      "line": 38,
+      "id": "WL-0069",
+      "line": 37,
       "nature": "review",
       "program": "app/cbl/COBIL00C.cbl",
       "symbols": [
         "Cobil00cService"
       ],
-      "text": "the RESP of RECEIVE at line 308 (paragraph RECEIVE-BILLPAY-SCREEN) is never tested"
+      "text": "the RESP of RECEIVE at line 308 (paragraph RECEIVE-BILLPAY-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COBIL00C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1938,14 +1961,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
-      "id": "WL-0063",
-      "line": 34,
+      "id": "WL-0070",
+      "line": 31,
       "nature": "review",
       "program": "app/cbl/COCRDLIC.cbl",
       "symbols": [
         "CocrdlicService"
       ],
-      "text": "the RESP of SEND at line 939 (paragraph 1500-SEND-SCREEN) is never tested"
+      "text": "the RESP of SEND at line 939 (paragraph 1500-SEND-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COCRDLIC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1958,14 +1982,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
-      "id": "WL-0064",
-      "line": 35,
+      "id": "WL-0071",
+      "line": 32,
       "nature": "review",
       "program": "app/cbl/COCRDLIC.cbl",
       "symbols": [
         "CocrdlicService"
       ],
-      "text": "the RESP of RECEIVE at line 963 (paragraph 2100-RECEIVE-SCREEN) is never tested"
+      "text": "the RESP of RECEIVE at line 963 (paragraph 2100-RECEIVE-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COCRDLIC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1978,14 +2003,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
-      "id": "WL-0065",
-      "line": 36,
+      "id": "WL-0072",
+      "line": 33,
       "nature": "review",
       "program": "app/cbl/COCRDLIC.cbl",
       "symbols": [
         "CocrdlicService"
       ],
-      "text": "the RESP of STARTBR at line 1129 (paragraph 9000-READ-FORWARD) is never tested"
+      "text": "the RESP of STARTBR at line 1129 (paragraph 9000-READ-FORWARD) is never tested",
+      "ticket": "ai_agent_jobs/COCRDLIC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -1998,14 +2024,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
-      "id": "WL-0066",
-      "line": 37,
+      "id": "WL-0073",
+      "line": 34,
       "nature": "review",
       "program": "app/cbl/COCRDLIC.cbl",
       "symbols": [
         "CocrdlicService"
       ],
-      "text": "the RESP of STARTBR at line 1273 (paragraph 9100-READ-BACKWARDS) is never tested"
+      "text": "the RESP of STARTBR at line 1273 (paragraph 9100-READ-BACKWARDS) is never tested",
+      "ticket": "ai_agent_jobs/COCRDLIC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2018,14 +2045,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
-      "id": "WL-0067",
-      "line": 31,
+      "id": "WL-0074",
+      "line": 29,
       "nature": "review",
       "program": "app/cbl/COCRDSLC.cbl",
       "symbols": [
         "CocrdslcService"
       ],
-      "text": "the RESP of SEND at line 569 (paragraph 1400-SEND-SCREEN) is never tested"
+      "text": "the RESP of SEND at line 569 (paragraph 1400-SEND-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COCRDSLC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2038,14 +2066,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
-      "id": "WL-0068",
-      "line": 32,
+      "id": "WL-0075",
+      "line": 30,
       "nature": "review",
       "program": "app/cbl/COCRDSLC.cbl",
       "symbols": [
         "CocrdslcService"
       ],
-      "text": "the RESP of RECEIVE at line 597 (paragraph 2100-RECEIVE-MAP) is never tested"
+      "text": "the RESP of RECEIVE at line 597 (paragraph 2100-RECEIVE-MAP) is never tested",
+      "ticket": "ai_agent_jobs/COCRDSLC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2058,14 +2087,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
-      "id": "WL-0069",
-      "line": 33,
+      "id": "WL-0076",
+      "line": 31,
       "nature": "review",
       "program": "app/cbl/COCRDSLC.cbl",
       "symbols": [
         "CocrdslcService"
       ],
-      "text": "the RESP of SEND at line 865 (paragraph ABEND-ROUTINE) is never tested"
+      "text": "the RESP of SEND at line 865 (paragraph ABEND-ROUTINE) is never tested",
+      "ticket": "ai_agent_jobs/COCRDSLC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2078,14 +2108,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
-      "id": "WL-0070",
-      "line": 32,
+      "id": "WL-0077",
+      "line": 30,
       "nature": "review",
       "program": "app/cbl/COCRDUPC.cbl",
       "symbols": [
         "CocrdupcService"
       ],
-      "text": "the RESP of RECEIVE at line 579 (paragraph 1100-RECEIVE-MAP) is never tested"
+      "text": "the RESP of RECEIVE at line 579 (paragraph 1100-RECEIVE-MAP) is never tested",
+      "ticket": "ai_agent_jobs/COCRDUPC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2098,14 +2129,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
-      "id": "WL-0071",
-      "line": 33,
+      "id": "WL-0078",
+      "line": 31,
       "nature": "review",
       "program": "app/cbl/COCRDUPC.cbl",
       "symbols": [
         "CocrdupcService"
       ],
-      "text": "the RESP of SEND at line 1329 (paragraph 3400-SEND-SCREEN) is never tested"
+      "text": "the RESP of SEND at line 1329 (paragraph 3400-SEND-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COCRDUPC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2118,14 +2150,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
-      "id": "WL-0072",
-      "line": 34,
+      "id": "WL-0079",
+      "line": 32,
       "nature": "review",
       "program": "app/cbl/COCRDUPC.cbl",
       "symbols": [
         "CocrdupcService"
       ],
-      "text": "the RESP of SEND at line 1539 (paragraph ABEND-ROUTINE) is never tested"
+      "text": "the RESP of SEND at line 1539 (paragraph ABEND-ROUTINE) is never tested",
+      "ticket": "ai_agent_jobs/COCRDUPC_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2138,14 +2171,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Comen01cService.java",
-      "id": "WL-0073",
-      "line": 31,
+      "id": "WL-0080",
+      "line": 22,
       "nature": "review",
       "program": "app/cbl/COMEN01C.cbl",
       "symbols": [
         "Comen01cService"
       ],
-      "text": "the RESP of RECEIVE at line 227 (paragraph RECEIVE-MENU-SCREEN) is never tested"
+      "text": "the RESP of RECEIVE at line 227 (paragraph RECEIVE-MENU-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COMEN01C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2158,14 +2192,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
-      "id": "WL-0074",
-      "line": 24,
+      "id": "WL-0081",
+      "line": 25,
       "nature": "review",
       "program": "app/cbl/CORPT00C.cbl",
       "symbols": [
         "Corpt00cService"
       ],
-      "text": "the RESP of RECEIVE at line 598 (paragraph RECEIVE-TRNRPT-SCREEN) is never tested"
+      "text": "the RESP of RECEIVE at line 598 (paragraph RECEIVE-TRNRPT-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/CORPT00C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2178,14 +2213,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cosgn00cService.java",
-      "id": "WL-0075",
+      "id": "WL-0082",
       "line": 28,
       "nature": "review",
       "program": "app/cbl/COSGN00C.cbl",
       "symbols": [
         "Cosgn00cService"
       ],
-      "text": "the RESP of RECEIVE at line 110 (paragraph PROCESS-ENTER-KEY) is never tested"
+      "text": "the RESP of RECEIVE at line 110 (paragraph PROCESS-ENTER-KEY) is never tested",
+      "ticket": "ai_agent_jobs/COSGN00C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2198,14 +2234,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn00cService.java",
-      "id": "WL-0076",
-      "line": 32,
+      "id": "WL-0083",
+      "line": 30,
       "nature": "review",
       "program": "app/cbl/COTRN00C.cbl",
       "symbols": [
         "Cotrn00cService"
       ],
-      "text": "the RESP of RECEIVE at line 556 (paragraph RECEIVE-TRNLST-SCREEN) is never tested"
+      "text": "the RESP of RECEIVE at line 556 (paragraph RECEIVE-TRNLST-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COTRN00C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2218,14 +2255,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn01cService.java",
-      "id": "WL-0077",
-      "line": 30,
+      "id": "WL-0084",
+      "line": 27,
       "nature": "review",
       "program": "app/cbl/COTRN01C.cbl",
       "symbols": [
         "Cotrn01cService"
       ],
-      "text": "the RESP of RECEIVE at line 232 (paragraph RECEIVE-TRNVIEW-SCREEN) is never tested"
+      "text": "the RESP of RECEIVE at line 232 (paragraph RECEIVE-TRNVIEW-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COTRN01C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2238,14 +2276,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn02cService.java",
-      "id": "WL-0078",
-      "line": 34,
+      "id": "WL-0085",
+      "line": 36,
       "nature": "review",
       "program": "app/cbl/COTRN02C.cbl",
       "symbols": [
         "Cotrn02cService"
       ],
-      "text": "the RESP of RECEIVE at line 541 (paragraph RECEIVE-TRNADD-SCREEN) is never tested"
+      "text": "the RESP of RECEIVE at line 541 (paragraph RECEIVE-TRNADD-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COTRN02C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2258,14 +2297,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr00cService.java",
-      "id": "WL-0079",
-      "line": 31,
+      "id": "WL-0086",
+      "line": 30,
       "nature": "review",
       "program": "app/cbl/COUSR00C.cbl",
       "symbols": [
         "Cousr00cService"
       ],
-      "text": "the RESP of RECEIVE at line 551 (paragraph RECEIVE-USRLST-SCREEN) is never tested"
+      "text": "the RESP of RECEIVE at line 551 (paragraph RECEIVE-USRLST-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COUSR00C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2278,14 +2318,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr01cService.java",
-      "id": "WL-0080",
-      "line": 28,
+      "id": "WL-0087",
+      "line": 27,
       "nature": "review",
       "program": "app/cbl/COUSR01C.cbl",
       "symbols": [
         "Cousr01cService"
       ],
-      "text": "the RESP of RECEIVE at line 203 (paragraph RECEIVE-USRADD-SCREEN) is never tested"
+      "text": "the RESP of RECEIVE at line 203 (paragraph RECEIVE-USRADD-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COUSR01C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2298,14 +2339,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr02cService.java",
-      "id": "WL-0081",
-      "line": 29,
+      "id": "WL-0088",
+      "line": 28,
       "nature": "review",
       "program": "app/cbl/COUSR02C.cbl",
       "symbols": [
         "Cousr02cService"
       ],
-      "text": "the RESP of RECEIVE at line 285 (paragraph RECEIVE-USRUPD-SCREEN) is never tested"
+      "text": "the RESP of RECEIVE at line 285 (paragraph RECEIVE-USRUPD-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COUSR02C_port_ticket.md"
     },
     {
       "category": "unchecked-resp",
@@ -2318,14 +2360,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr03cService.java",
-      "id": "WL-0082",
-      "line": 29,
+      "id": "WL-0089",
+      "line": 28,
       "nature": "review",
       "program": "app/cbl/COUSR03C.cbl",
       "symbols": [
         "Cousr03cService"
       ],
-      "text": "the RESP of RECEIVE at line 232 (paragraph RECEIVE-USRDEL-SCREEN) is never tested"
+      "text": "the RESP of RECEIVE at line 232 (paragraph RECEIVE-USRDEL-SCREEN) is never tested",
+      "ticket": "ai_agent_jobs/COUSR03C_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -2339,14 +2382,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AuthfrdsRepository.java",
-      "id": "WL-0083",
+      "id": "WL-0090",
       "line": null,
       "nature": "review",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
       "symbols": [
         "AuthfrdsRepository#insertL141Copaus2c"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/COPAUS2C_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -2360,14 +2404,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/AuthfrdsRepository.java",
-      "id": "WL-0084",
+      "id": "WL-0091",
       "line": null,
       "nature": "review",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
       "symbols": [
         "AuthfrdsRepository#updateL222Copaus2c"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/COPAUS2C_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -2381,14 +2426,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
-      "id": "WL-0085",
+      "id": "WL-0092",
       "line": null,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
       "symbols": [
         "TransactionTypeRepository#deleteL201Cobtupdt"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/COBTUPDT_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -2402,14 +2448,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
-      "id": "WL-0086",
+      "id": "WL-0093",
       "line": null,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
       "symbols": [
         "TransactionTypeRepository#insertL137Cobtupdt"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/COBTUPDT_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -2423,14 +2470,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
-      "id": "WL-0087",
+      "id": "WL-0094",
       "line": null,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
       "symbols": [
         "TransactionTypeRepository#updateL171Cobtupdt"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/COBTUPDT_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -2444,14 +2492,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
-      "id": "WL-0088",
+      "id": "WL-0095",
       "line": null,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
       "symbols": [
         "TransactionTypeRepository#cursorCTrTypeBackwardL354Cotrtlic"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/COTRTLIC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -2465,14 +2514,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
-      "id": "WL-0089",
+      "id": "WL-0096",
       "line": null,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
       "symbols": [
         "TransactionTypeRepository#cursorCTrTypeForwardL338Cotrtlic"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/COTRTLIC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -2486,14 +2536,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
-      "id": "WL-0090",
+      "id": "WL-0097",
       "line": null,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
       "symbols": [
         "TransactionTypeRepository#deleteL1900Cotrtlic"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/COTRTLIC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -2507,14 +2558,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
-      "id": "WL-0091",
+      "id": "WL-0098",
       "line": null,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
       "symbols": [
         "TransactionTypeRepository#selectL1803Cotrtlic"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/COTRTLIC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -2528,14 +2580,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
-      "id": "WL-0092",
+      "id": "WL-0099",
       "line": null,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
       "symbols": [
         "TransactionTypeRepository#updateL1846Cotrtlic"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/COTRTLIC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -2549,14 +2602,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
-      "id": "WL-0093",
+      "id": "WL-0100",
       "line": null,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
       "symbols": [
         "TransactionTypeRepository#deleteL1627Cotrtupc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -2570,14 +2624,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
-      "id": "WL-0094",
+      "id": "WL-0101",
       "line": null,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
       "symbols": [
         "TransactionTypeRepository#insertL1597Cotrtupc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -2591,14 +2646,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
-      "id": "WL-0095",
+      "id": "WL-0102",
       "line": null,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
       "symbols": [
         "TransactionTypeRepository#selectL1475Cotrtupc"
       ],
-      "text": "DB2 SQL on postgresql -- review the statement"
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
     },
     {
       "category": "db2-dialect",
@@ -2612,12 +2668,34 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/TransactionTypeRepository.java",
-      "id": "WL-0096",
+      "id": "WL-0103",
       "line": null,
       "nature": "review",
       "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
       "symbols": [
         "TransactionTypeRepository#updateL1544Cotrtupc"
+      ],
+      "text": "DB2 SQL on postgresql -- review the statement",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
+    },
+    {
+      "category": "db2-dialect",
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "app/app-transaction-type-db2/cpy/CSDB2RPY.cpy:23",
+          "verb": "SELECT"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/Sysdummy1Repository.java",
+      "id": "WL-0104",
+      "line": null,
+      "nature": "review",
+      "program": "app/app-transaction-type-db2/cpy/CSDB2RPY.cpy",
+      "symbols": [
+        "Sysdummy1Repository#selectL23Cotrtlic"
       ],
       "text": "DB2 SQL on postgresql -- review the statement"
     },
@@ -2625,177 +2703,181 @@
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaua0cService.java",
-      "id": "WL-0097",
-      "line": 84,
+      "id": "WL-0105",
+      "line": 113,
       "nature": "port",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/COPAUA0C_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus0cService.java",
-      "id": "WL-0098",
-      "line": 127,
+      "id": "WL-0106",
+      "line": 184,
       "nature": "port",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/COPAUS0C_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus1cService.java",
-      "id": "WL-0099",
-      "line": 85,
+      "id": "WL-0107",
+      "line": 155,
       "nature": "port",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/COPAUS1C_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
-      "id": "WL-0100",
-      "line": 100,
+      "id": "WL-0108",
+      "line": 172,
       "nature": "port",
       "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/COTRTLIC_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
-      "id": "WL-0101",
-      "line": 110,
+      "id": "WL-0109",
+      "line": 182,
       "nature": "port",
       "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/COTRTLIC_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
-      "id": "WL-0102",
-      "line": 120,
+      "id": "WL-0110",
+      "line": 192,
       "nature": "port",
       "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/COTRTLIC_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
-      "id": "WL-0103",
-      "line": 76,
+      "id": "WL-0111",
+      "line": 151,
       "nature": "port",
       "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
-      "id": "WL-0104",
-      "line": 86,
+      "id": "WL-0112",
+      "line": 161,
       "nature": "port",
       "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
-      "id": "WL-0105",
-      "line": 96,
+      "id": "WL-0113",
+      "line": 171,
       "nature": "port",
       "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
-      "id": "WL-0106",
-      "line": 106,
+      "id": "WL-0114",
+      "line": 181,
       "nature": "port",
       "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
-      "id": "WL-0107",
-      "line": 59,
+      "id": "WL-0115",
+      "line": 87,
       "nature": "port",
       "program": "app/app-vsam-mq/cbl/COACCT01.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/COACCT01_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Codate01Service.java",
-      "id": "WL-0108",
-      "line": 48,
+      "id": "WL-0116",
+      "line": 76,
       "nature": "port",
       "program": "app/app-vsam-mq/cbl/CODATE01.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/CODATE01_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
-      "id": "WL-0109",
-      "line": 116,
+      "id": "WL-0117",
+      "line": 191,
       "nature": "port",
       "program": "app/cbl/COACTUPC.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/COACTUPC_port_ticket.md"
     },
     {
       "category": "transaction-split",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
-      "id": "WL-0110",
-      "line": 92,
+      "id": "WL-0118",
+      "line": 167,
       "nature": "port",
       "program": "app/cbl/COCRDUPC.cbl",
       "symbols": [],
-      "text": "split the transaction here"
+      "text": "split the transaction here",
+      "ticket": "ai_agent_jobs/COCRDUPC_port_ticket.md"
     },
     {
       "category": "interface-call",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
-      "id": "WL-0111",
-      "line": 99,
+      "id": "WL-0119",
+      "line": 152,
       "nature": "port",
       "program": "app/cbl/CORPT00C.cbl",
       "symbols": [],
-      "text": "this program submits job TRNRPT00 through the internal reader, which runs PROC TRANREPT (app/proc/TRANREPT.prc): no generated job matches -- launch its steps"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbpaup0cService.java",
-      "id": "WL-0112",
-      "line": 25,
-      "nature": "port",
-      "program": "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "this program submits job TRNRPT00 through the internal reader, which runs PROC TRANREPT (app/proc/TRANREPT.prc): no generated job matches -- launch its steps",
+      "ticket": "ai_agent_jobs/CORPT00C_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -2809,36 +2891,39 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbpaup0cService.java",
-      "id": "WL-0113",
-      "line": 31,
+      "id": "WL-0120",
+      "line": 26,
       "nature": "port",
       "program": "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
       "symbols": [
         "Cbpaup0cService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/CBPAUP0C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaua0cService.java",
-      "id": "WL-0114",
-      "line": 53,
+      "id": "WL-0121",
+      "line": 82,
       "nature": "port",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COPAUA0C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaua0cService.java",
-      "id": "WL-0115",
-      "line": 56,
+      "id": "WL-0122",
+      "line": 88,
       "nature": "port",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COPAUA0C_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -2851,216 +2936,87 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaua0cService.java",
-      "id": "WL-0116",
-      "line": 103,
+      "id": "WL-0123",
+      "line": 132,
       "nature": "port",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
       "symbols": [
         "Copaua0cService#handleMqMessage"
       ],
-      "text": "port the logic that handles the MQ request"
+      "text": "port the logic that handles the MQ request",
+      "ticket": "ai_agent_jobs/COPAUA0C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus0cService.java",
-      "id": "WL-0117",
-      "line": 54,
-      "nature": "port",
-      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus0cService.java",
-      "id": "WL-0118",
-      "line": 57,
-      "nature": "port",
-      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus0cService.java",
-      "id": "WL-0119",
-      "line": 63,
-      "nature": "port",
-      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:695"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:703"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus0cService.java",
-      "id": "WL-0120",
-      "line": 131,
-      "nature": "port",
-      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
-      "symbols": [
-        "Copaus0cService#renderCopau0a"
-      ],
-      "text": "port the logic that fills COPAU0AO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:715"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus0cService.java",
-      "id": "WL-0121",
-      "line": 139,
-      "nature": "port",
-      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
-      "symbols": [
-        "Copaus0cService#submitCopau0a"
-      ],
-      "text": "port the logic that reads COPAU0AI after the RECEIVE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus1cService.java",
-      "id": "WL-0122",
-      "line": 41,
-      "nature": "port",
-      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus1cService.java",
-      "id": "WL-0123",
-      "line": 44,
-      "nature": "port",
-      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus1cService.java",
       "id": "WL-0124",
-      "line": 50,
+      "line": 104,
       "nature": "port",
-      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COPAUS0C_port_ticket.md"
     },
     {
       "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl:381"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl:389"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus1cService.java",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus0cService.java",
       "id": "WL-0125",
-      "line": 97,
+      "line": 110,
       "nature": "port",
-      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
-      "symbols": [
-        "Copaus1cService#renderCopau1a"
-      ],
-      "text": "port the logic that fills COPAU1AO before the SEND"
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COPAUS0C_port_ticket.md"
     },
     {
       "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl:400"
-        }
-      ],
+      "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus1cService.java",
       "id": "WL-0126",
-      "line": 105,
+      "line": 90,
       "nature": "port",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
-      "symbols": [
-        "Copaus1cService#submitCopau1a"
-      ],
-      "text": "port the logic that reads COPAU1AI after the RECEIVE"
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COPAUS1C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus2cService.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus1cService.java",
       "id": "WL-0127",
-      "line": 34,
+      "line": 96,
       "nature": "port",
-      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+      "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COPAUS1C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus2cService.java",
       "id": "WL-0128",
-      "line": 37,
+      "line": 33,
       "nature": "port",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COPAUS2C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Copaus2cService.java",
       "id": "WL-0129",
-      "line": 43,
+      "line": 39,
       "nature": "port",
       "program": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/DbunldgsService.java",
-      "id": "WL-0130",
-      "line": 25,
-      "nature": "port",
-      "program": "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COPAUS2C_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3074,25 +3030,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/DbunldgsService.java",
-      "id": "WL-0131",
-      "line": 31,
+      "id": "WL-0130",
+      "line": 26,
       "nature": "port",
       "program": "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
       "symbols": [
         "DbunldgsService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/PaudblodService.java",
-      "id": "WL-0132",
-      "line": 25,
-      "nature": "port",
-      "program": "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/DBUNLDGS_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3106,25 +3052,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/PaudblodService.java",
-      "id": "WL-0133",
-      "line": 33,
+      "id": "WL-0131",
+      "line": 28,
       "nature": "port",
       "program": "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
       "symbols": [
         "PaudblodService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/PaudbunlService.java",
-      "id": "WL-0134",
-      "line": 25,
-      "nature": "port",
-      "program": "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/PAUDBLOD_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3138,25 +3074,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/PaudbunlService.java",
-      "id": "WL-0135",
-      "line": 33,
+      "id": "WL-0132",
+      "line": 28,
       "nature": "port",
       "program": "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
       "symbols": [
         "PaudbunlService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CobtupdtService.java",
-      "id": "WL-0136",
-      "line": 28,
-      "nature": "port",
-      "program": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/PAUDBUNL_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3170,204 +3096,99 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CobtupdtService.java",
-      "id": "WL-0137",
-      "line": 35,
+      "id": "WL-0133",
+      "line": 30,
       "nature": "port",
       "program": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
       "symbols": [
         "CobtupdtService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/COBTUPDT_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
+      "id": "WL-0134",
+      "line": 95,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COTRTLIC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
+      "id": "WL-0135",
+      "line": 101,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COTRTLIC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0136",
+      "line": 94,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
+      "id": "WL-0137",
+      "line": 100,
+      "nature": "port",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
       "id": "WL-0138",
-      "line": 42,
+      "line": 190,
       "nature": "port",
-      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port paragraph ABEND-ROUTINE's logic",
+      "ticket": "ai_agent_jobs/COTRTUPC_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
       "id": "WL-0139",
-      "line": 45,
+      "line": 66,
       "nature": "port",
-      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "program": "app/app-vsam-mq/cbl/COACCT01.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COACCT01_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
       "id": "WL-0140",
-      "line": 51,
-      "nature": "port",
-      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:1588"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
-      "id": "WL-0141",
-      "line": 124,
-      "nature": "port",
-      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
-      "symbols": [
-        "CotrtlicService#renderCtrtlia"
-      ],
-      "text": "port the logic that fills CTRTLIAO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl:931"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtlicService.java",
-      "id": "WL-0142",
-      "line": 132,
-      "nature": "port",
-      "program": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
-      "symbols": [
-        "CotrtlicService#submitCtrtlia"
-      ],
-      "text": "port the logic that reads CTRTLIAI after the RECEIVE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
-      "id": "WL-0143",
-      "line": 42,
-      "nature": "port",
-      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
-      "id": "WL-0144",
-      "line": 45,
-      "nature": "port",
-      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
-      "id": "WL-0145",
-      "line": 51,
-      "nature": "port",
-      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
-      "id": "WL-0146",
-      "line": 115,
-      "nature": "port",
-      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
-      "symbols": [],
-      "text": "port paragraph ABEND-ROUTINE's logic"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
-      "id": "WL-0147",
-      "line": 124,
-      "nature": "port",
-      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
-      "symbols": [],
-      "text": "port paragraph None's logic"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl:1433"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
-      "id": "WL-0148",
-      "line": 137,
-      "nature": "port",
-      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
-      "symbols": [
-        "CotrtupcService#renderCtrtupa"
-      ],
-      "text": "port the logic that fills CTRTUPAO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl:642"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CotrtupcService.java",
-      "id": "WL-0149",
-      "line": 145,
-      "nature": "port",
-      "program": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
-      "symbols": [
-        "CotrtupcService#submitCtrtupa"
-      ],
-      "text": "port the logic that reads CTRTUPAI after the RECEIVE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
-      "id": "WL-0150",
-      "line": 39,
+      "line": 72,
       "nature": "port",
       "program": "app/app-vsam-mq/cbl/COACCT01.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
-      "id": "WL-0151",
-      "line": 42,
-      "nature": "port",
-      "program": "app/app-vsam-mq/cbl/COACCT01.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COACCT01_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3380,36 +3201,39 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Coacct01Service.java",
-      "id": "WL-0152",
-      "line": 77,
+      "id": "WL-0141",
+      "line": 105,
       "nature": "port",
       "program": "app/app-vsam-mq/cbl/COACCT01.cbl",
       "symbols": [
         "Coacct01Service#handleMqMessage"
       ],
-      "text": "port the logic that handles the MQ request"
+      "text": "port the logic that handles the MQ request",
+      "ticket": "ai_agent_jobs/COACCT01_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Codate01Service.java",
-      "id": "WL-0153",
-      "line": 33,
+      "id": "WL-0142",
+      "line": 60,
       "nature": "port",
       "program": "app/app-vsam-mq/cbl/CODATE01.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/CODATE01_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Codate01Service.java",
-      "id": "WL-0154",
-      "line": 36,
+      "id": "WL-0143",
+      "line": 66,
       "nature": "port",
       "program": "app/app-vsam-mq/cbl/CODATE01.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/CODATE01_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3422,25 +3246,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Codate01Service.java",
-      "id": "WL-0155",
-      "line": 66,
+      "id": "WL-0144",
+      "line": 94,
       "nature": "port",
       "program": "app/app-vsam-mq/cbl/CODATE01.cbl",
       "symbols": [
         "Codate01Service#handleMqMessage"
       ],
-      "text": "port the logic that handles the MQ request"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact01cService.java",
-      "id": "WL-0156",
-      "line": 31,
-      "nature": "port",
-      "program": "app/cbl/CBACT01C.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the logic that handles the MQ request",
+      "ticket": "ai_agent_jobs/CODATE01_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3454,25 +3268,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact01cService.java",
-      "id": "WL-0157",
-      "line": 47,
+      "id": "WL-0145",
+      "line": 43,
       "nature": "port",
       "program": "app/cbl/CBACT01C.cbl",
       "symbols": [
         "Cbact01cService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact02cService.java",
-      "id": "WL-0158",
-      "line": 31,
-      "nature": "port",
-      "program": "app/cbl/CBACT02C.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/CBACT01C_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3486,25 +3290,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact02cService.java",
-      "id": "WL-0159",
-      "line": 44,
+      "id": "WL-0146",
+      "line": 40,
       "nature": "port",
       "program": "app/cbl/CBACT02C.cbl",
       "symbols": [
         "Cbact02cService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact03cService.java",
-      "id": "WL-0160",
-      "line": 31,
-      "nature": "port",
-      "program": "app/cbl/CBACT03C.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/CBACT02C_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3518,25 +3312,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact03cService.java",
-      "id": "WL-0161",
-      "line": 44,
+      "id": "WL-0147",
+      "line": 40,
       "nature": "port",
       "program": "app/cbl/CBACT03C.cbl",
       "symbols": [
         "Cbact03cService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact04cService.java",
-      "id": "WL-0162",
-      "line": 42,
-      "nature": "port",
-      "program": "app/cbl/CBACT04C.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/CBACT03C_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3550,25 +3334,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbact04cService.java",
-      "id": "WL-0163",
-      "line": 79,
+      "id": "WL-0148",
+      "line": 75,
       "nature": "port",
       "program": "app/cbl/CBACT04C.cbl",
       "symbols": [
         "Cbact04cService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbcus01cService.java",
-      "id": "WL-0164",
-      "line": 31,
-      "nature": "port",
-      "program": "app/cbl/CBCUS01C.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/CBACT04C_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3582,25 +3356,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbcus01cService.java",
-      "id": "WL-0165",
-      "line": 44,
+      "id": "WL-0149",
+      "line": 40,
       "nature": "port",
       "program": "app/cbl/CBCUS01C.cbl",
       "symbols": [
         "Cbcus01cService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CbexportService.java",
-      "id": "WL-0166",
-      "line": 46,
-      "nature": "port",
-      "program": "app/cbl/CBEXPORT.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/CBCUS01C_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3614,25 +3378,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CbexportService.java",
-      "id": "WL-0167",
+      "id": "WL-0150",
       "line": 89,
       "nature": "port",
       "program": "app/cbl/CBEXPORT.cbl",
       "symbols": [
         "CbexportService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CbimportService.java",
-      "id": "WL-0168",
-      "line": 31,
-      "nature": "port",
-      "program": "app/cbl/CBIMPORT.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/CBEXPORT_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3646,25 +3400,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CbimportService.java",
-      "id": "WL-0169",
-      "line": 49,
+      "id": "WL-0151",
+      "line": 45,
       "nature": "port",
       "program": "app/cbl/CBIMPORT.cbl",
       "symbols": [
         "CbimportService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbstm03aService.java",
-      "id": "WL-0170",
-      "line": 29,
-      "nature": "port",
-      "program": "app/cbl/CBSTM03A.CBL",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/CBIMPORT_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3678,58 +3422,41 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbstm03aService.java",
-      "id": "WL-0171",
-      "line": 43,
+      "id": "WL-0152",
+      "line": 38,
       "nature": "port",
       "program": "app/cbl/CBSTM03A.CBL",
       "symbols": [
         "Cbstm03aService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/CBSTM03A_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbstm03bService.java",
-      "id": "WL-0172",
-      "line": 24,
+      "id": "WL-0153",
+      "line": 39,
       "nature": "port",
       "program": "app/cbl/CBSTM03B.CBL",
       "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbstm03bService.java",
-      "id": "WL-0173",
-      "line": 27,
-      "nature": "port",
-      "program": "app/cbl/CBSTM03B.CBL",
-      "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "implement from the program's business rules",
+      "ticket": "ai_agent_jobs/CBSTM03B_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn01cService.java",
-      "id": "WL-0174",
-      "line": 23,
+      "id": "WL-0154",
+      "line": 32,
       "nature": "port",
       "program": "app/cbl/CBTRN01C.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn02cService.java",
-      "id": "WL-0175",
-      "line": 41,
-      "nature": "port",
-      "program": "app/cbl/CBTRN02C.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "symbols": [
+        "Cbtrn01cService#runBatch"
+      ],
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/CBTRN01C_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3743,25 +3470,15 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn02cService.java",
-      "id": "WL-0176",
-      "line": 84,
+      "id": "WL-0155",
+      "line": 79,
       "nature": "port",
       "program": "app/cbl/CBTRN02C.cbl",
       "symbols": [
         "Cbtrn02cService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn03cService.java",
-      "id": "WL-0177",
-      "line": 38,
-      "nature": "port",
-      "program": "app/cbl/CBTRN03C.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/CBTRN02C_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -3775,372 +3492,147 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cbtrn03cService.java",
-      "id": "WL-0178",
-      "line": 66,
+      "id": "WL-0156",
+      "line": 61,
       "nature": "port",
       "program": "app/cbl/CBTRN03C.cbl",
       "symbols": [
         "Cbtrn03cService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/CBTRN03C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
-      "id": "WL-0179",
-      "line": 59,
+      "id": "WL-0157",
+      "line": 111,
       "nature": "port",
       "program": "app/cbl/COACTUPC.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COACTUPC_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
-      "id": "WL-0180",
-      "line": 62,
+      "id": "WL-0158",
+      "line": 117,
       "nature": "port",
       "program": "app/cbl/COACTUPC.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COACTUPC_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
-      "id": "WL-0181",
-      "line": 68,
+      "id": "WL-0159",
+      "line": 208,
       "nature": "port",
       "program": "app/cbl/COACTUPC.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
-      "id": "WL-0182",
-      "line": 133,
-      "nature": "port",
-      "program": "app/cbl/COACTUPC.cbl",
-      "symbols": [],
-      "text": "port paragraph ABEND-ROUTINE's logic"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
-      "id": "WL-0183",
-      "line": 142,
-      "nature": "port",
-      "program": "app/cbl/COACTUPC.cbl",
-      "symbols": [],
-      "text": "port paragraph None's logic"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COACTUPC.cbl:3594"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
-      "id": "WL-0184",
-      "line": 155,
-      "nature": "port",
-      "program": "app/cbl/COACTUPC.cbl",
-      "symbols": [
-        "CoactupcService#renderCactupa"
-      ],
-      "text": "port the logic that fills CACTUPAO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COACTUPC.cbl:1040"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactupcService.java",
-      "id": "WL-0185",
-      "line": 163,
-      "nature": "port",
-      "program": "app/cbl/COACTUPC.cbl",
-      "symbols": [
-        "CoactupcService#submitCactupa"
-      ],
-      "text": "port the logic that reads CACTUPAI after the RECEIVE"
+      "text": "port paragraph ABEND-ROUTINE's logic",
+      "ticket": "ai_agent_jobs/COACTUPC_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
-      "id": "WL-0186",
-      "line": 55,
+      "id": "WL-0160",
+      "line": 107,
       "nature": "port",
       "program": "app/cbl/COACTVWC.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COACTVWC_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
-      "id": "WL-0187",
-      "line": 58,
+      "id": "WL-0161",
+      "line": 113,
       "nature": "port",
       "program": "app/cbl/COACTVWC.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COACTVWC_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
-      "id": "WL-0188",
-      "line": 64,
+      "id": "WL-0162",
+      "line": 178,
       "nature": "port",
       "program": "app/cbl/COACTVWC.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
-      "id": "WL-0189",
-      "line": 103,
-      "nature": "port",
-      "program": "app/cbl/COACTVWC.cbl",
-      "symbols": [],
-      "text": "port paragraph ABEND-ROUTINE's logic"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
-      "id": "WL-0190",
-      "line": 112,
-      "nature": "port",
-      "program": "app/cbl/COACTVWC.cbl",
-      "symbols": [],
-      "text": "port paragraph None's logic"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COACTVWC.cbl:583"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
-      "id": "WL-0191",
-      "line": 125,
-      "nature": "port",
-      "program": "app/cbl/COACTVWC.cbl",
-      "symbols": [
-        "CoactvwcService#renderCactvwa"
-      ],
-      "text": "port the logic that fills CACTVWAO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COACTVWC.cbl:611"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CoactvwcService.java",
-      "id": "WL-0192",
-      "line": 133,
-      "nature": "port",
-      "program": "app/cbl/COACTVWC.cbl",
-      "symbols": [
-        "CoactvwcService#submitCactvwa"
-      ],
-      "text": "port the logic that reads CACTVWAI after the RECEIVE"
+      "text": "port paragraph ABEND-ROUTINE's logic",
+      "ticket": "ai_agent_jobs/COACTVWC_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Coadm01cService.java",
-      "id": "WL-0193",
-      "line": 46,
+      "id": "WL-0163",
+      "line": 83,
       "nature": "port",
       "program": "app/cbl/COADM01C.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COADM01C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Coadm01cService.java",
-      "id": "WL-0194",
-      "line": 49,
+      "id": "WL-0164",
+      "line": 89,
       "nature": "port",
       "program": "app/cbl/COADM01C.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COADM01C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Coadm01cService.java",
-      "id": "WL-0195",
-      "line": 55,
+      "id": "WL-0165",
+      "line": 147,
       "nature": "port",
       "program": "app/cbl/COADM01C.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Coadm01cService.java",
-      "id": "WL-0196",
-      "line": 100,
-      "nature": "port",
-      "program": "app/cbl/COADM01C.cbl",
-      "symbols": [],
-      "text": "port paragraph PGMIDERR-ERR-PARA's logic"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COADM01C.cbl:182"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Coadm01cService.java",
-      "id": "WL-0197",
-      "line": 104,
-      "nature": "port",
-      "program": "app/cbl/COADM01C.cbl",
-      "symbols": [
-        "Coadm01cService#renderCoadm1a"
-      ],
-      "text": "port the logic that fills COADM1AO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COADM01C.cbl:194"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Coadm01cService.java",
-      "id": "WL-0198",
-      "line": 112,
-      "nature": "port",
-      "program": "app/cbl/COADM01C.cbl",
-      "symbols": [
-        "Coadm01cService#submitCoadm1a"
-      ],
-      "text": "port the logic that reads COADM1AI after the RECEIVE"
+      "text": "port paragraph PGMIDERR-ERR-PARA's logic",
+      "ticket": "ai_agent_jobs/COADM01C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cobil00cService.java",
-      "id": "WL-0199",
-      "line": 56,
+      "id": "WL-0166",
+      "line": 108,
       "nature": "port",
       "program": "app/cbl/COBIL00C.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COBIL00C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cobil00cService.java",
-      "id": "WL-0200",
-      "line": 59,
-      "nature": "port",
-      "program": "app/cbl/COBIL00C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cobil00cService.java",
-      "id": "WL-0201",
-      "line": 65,
-      "nature": "port",
-      "program": "app/cbl/COBIL00C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COBIL00C.cbl:295"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cobil00cService.java",
-      "id": "WL-0202",
+      "id": "WL-0167",
       "line": 114,
       "nature": "port",
       "program": "app/cbl/COBIL00C.cbl",
-      "symbols": [
-        "Cobil00cService#renderCobil0a"
-      ],
-      "text": "port the logic that fills COBIL0AO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COBIL00C.cbl:308"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cobil00cService.java",
-      "id": "WL-0203",
-      "line": 122,
-      "nature": "port",
-      "program": "app/cbl/COBIL00C.cbl",
-      "symbols": [
-        "Cobil00cService#submitCobil0a"
-      ],
-      "text": "port the logic that reads COBIL0AI after the RECEIVE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CobswaitService.java",
-      "id": "WL-0204",
-      "line": 25,
-      "nature": "port",
-      "program": "app/cbl/COBSWAIT.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COBIL00C_port_ticket.md"
     },
     {
       "category": "business-logic",
@@ -4154,1053 +3646,369 @@
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CobswaitService.java",
-      "id": "WL-0205",
-      "line": 31,
+      "id": "WL-0168",
+      "line": 26,
       "nature": "port",
       "program": "app/cbl/COBSWAIT.cbl",
       "symbols": [
         "CobswaitService#runBatch"
       ],
-      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+      "text": "port the PROCEDURE DIVISION main line; return its RETURN-CODE",
+      "ticket": "ai_agent_jobs/COBSWAIT_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
-      "id": "WL-0206",
-      "line": 54,
+      "id": "WL-0169",
+      "line": 103,
       "nature": "port",
       "program": "app/cbl/COCRDLIC.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COCRDLIC_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
-      "id": "WL-0207",
-      "line": 57,
+      "id": "WL-0170",
+      "line": 109,
       "nature": "port",
       "program": "app/cbl/COCRDLIC.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
-      "id": "WL-0208",
-      "line": 63,
-      "nature": "port",
-      "program": "app/cbl/COCRDLIC.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COCRDLIC.cbl:939"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
-      "id": "WL-0209",
-      "line": 120,
-      "nature": "port",
-      "program": "app/cbl/COCRDLIC.cbl",
-      "symbols": [
-        "CocrdlicService#renderCcrdlia"
-      ],
-      "text": "port the logic that fills CCRDLIAO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COCRDLIC.cbl:963"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdlicService.java",
-      "id": "WL-0210",
-      "line": 128,
-      "nature": "port",
-      "program": "app/cbl/COCRDLIC.cbl",
-      "symbols": [
-        "CocrdlicService#submitCcrdlia"
-      ],
-      "text": "port the logic that reads CCRDLIAI after the RECEIVE"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COCRDLIC_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
-      "id": "WL-0211",
-      "line": 48,
-      "nature": "port",
-      "program": "app/cbl/COCRDSLC.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
-      "id": "WL-0212",
-      "line": 51,
-      "nature": "port",
-      "program": "app/cbl/COCRDSLC.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
-      "id": "WL-0213",
-      "line": 57,
-      "nature": "port",
-      "program": "app/cbl/COCRDSLC.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
-      "id": "WL-0214",
-      "line": 91,
-      "nature": "port",
-      "program": "app/cbl/COCRDSLC.cbl",
-      "symbols": [],
-      "text": "port paragraph ABEND-ROUTINE's logic"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
-      "id": "WL-0215",
+      "id": "WL-0171",
       "line": 100,
       "nature": "port",
       "program": "app/cbl/COCRDSLC.cbl",
       "symbols": [],
-      "text": "port paragraph None's logic"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COCRDSLC_port_ticket.md"
     },
     {
       "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COCRDSLC.cbl:569"
-        }
-      ],
+      "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
-      "id": "WL-0216",
-      "line": 113,
+      "id": "WL-0172",
+      "line": 106,
       "nature": "port",
       "program": "app/cbl/COCRDSLC.cbl",
-      "symbols": [
-        "CocrdslcService#renderCcrdsla"
-      ],
-      "text": "port the logic that fills CCRDSLAO before the SEND"
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COCRDSLC_port_ticket.md"
     },
     {
       "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COCRDSLC.cbl:597"
-        }
-      ],
+      "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdslcService.java",
-      "id": "WL-0217",
-      "line": 121,
+      "id": "WL-0173",
+      "line": 166,
       "nature": "port",
       "program": "app/cbl/COCRDSLC.cbl",
-      "symbols": [
-        "CocrdslcService#submitCcrdsla"
-      ],
-      "text": "port the logic that reads CCRDSLAI after the RECEIVE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
-      "id": "WL-0218",
-      "line": 49,
-      "nature": "port",
-      "program": "app/cbl/COCRDUPC.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port paragraph ABEND-ROUTINE's logic",
+      "ticket": "ai_agent_jobs/COCRDSLC_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
-      "id": "WL-0219",
-      "line": 52,
-      "nature": "port",
-      "program": "app/cbl/COCRDUPC.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
-      "id": "WL-0220",
-      "line": 58,
-      "nature": "port",
-      "program": "app/cbl/COCRDUPC.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
-      "id": "WL-0221",
+      "id": "WL-0174",
       "line": 101,
       "nature": "port",
       "program": "app/cbl/COCRDUPC.cbl",
       "symbols": [],
-      "text": "port paragraph ABEND-ROUTINE's logic"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COCRDUPC_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
-      "id": "WL-0222",
-      "line": 110,
+      "id": "WL-0175",
+      "line": 107,
       "nature": "port",
       "program": "app/cbl/COCRDUPC.cbl",
       "symbols": [],
-      "text": "port paragraph None's logic"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COCRDUPC_port_ticket.md"
     },
     {
       "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COCRDUPC.cbl:1329"
-        }
-      ],
+      "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
-      "id": "WL-0223",
-      "line": 123,
+      "id": "WL-0176",
+      "line": 176,
       "nature": "port",
       "program": "app/cbl/COCRDUPC.cbl",
-      "symbols": [
-        "CocrdupcService#renderCcrdupa"
-      ],
-      "text": "port the logic that fills CCRDUPAO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COCRDUPC.cbl:579"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CocrdupcService.java",
-      "id": "WL-0224",
-      "line": 131,
-      "nature": "port",
-      "program": "app/cbl/COCRDUPC.cbl",
-      "symbols": [
-        "CocrdupcService#submitCcrdupa"
-      ],
-      "text": "port the logic that reads CCRDUPAI after the RECEIVE"
+      "symbols": [],
+      "text": "port paragraph ABEND-ROUTINE's logic",
+      "ticket": "ai_agent_jobs/COCRDUPC_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Comen01cService.java",
-      "id": "WL-0225",
-      "line": 56,
-      "nature": "port",
-      "program": "app/cbl/COMEN01C.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Comen01cService.java",
-      "id": "WL-0226",
-      "line": 59,
-      "nature": "port",
-      "program": "app/cbl/COMEN01C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Comen01cService.java",
-      "id": "WL-0227",
-      "line": 65,
-      "nature": "port",
-      "program": "app/cbl/COMEN01C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COMEN01C.cbl:215"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Comen01cService.java",
-      "id": "WL-0228",
-      "line": 146,
-      "nature": "port",
-      "program": "app/cbl/COMEN01C.cbl",
-      "symbols": [
-        "Comen01cService#renderComen1a"
-      ],
-      "text": "port the logic that fills COMEN1AO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COMEN01C.cbl:227"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Comen01cService.java",
-      "id": "WL-0229",
-      "line": 154,
-      "nature": "port",
-      "program": "app/cbl/COMEN01C.cbl",
-      "symbols": [
-        "Comen01cService#submitComen1a"
-      ],
-      "text": "port the logic that reads COMEN1AI after the RECEIVE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
-      "id": "WL-0230",
-      "line": 41,
-      "nature": "port",
-      "program": "app/cbl/CORPT00C.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
-      "id": "WL-0231",
-      "line": 44,
-      "nature": "port",
-      "program": "app/cbl/CORPT00C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
-      "id": "WL-0232",
-      "line": 50,
-      "nature": "port",
-      "program": "app/cbl/CORPT00C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/CORPT00C.cbl:563"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/CORPT00C.cbl:571"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
-      "id": "WL-0233",
-      "line": 77,
-      "nature": "port",
-      "program": "app/cbl/CORPT00C.cbl",
-      "symbols": [
-        "Corpt00cService#renderCorpt0a"
-      ],
-      "text": "port the logic that fills CORPT0AO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/CORPT00C.cbl:598"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
-      "id": "WL-0234",
-      "line": 85,
-      "nature": "port",
-      "program": "app/cbl/CORPT00C.cbl",
-      "symbols": [
-        "Corpt00cService#submitCorpt0a"
-      ],
-      "text": "port the logic that reads CORPT0AI after the RECEIVE"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cosgn00cService.java",
-      "id": "WL-0235",
-      "line": 44,
-      "nature": "port",
-      "program": "app/cbl/COSGN00C.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cosgn00cService.java",
-      "id": "WL-0236",
-      "line": 47,
-      "nature": "port",
-      "program": "app/cbl/COSGN00C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cosgn00cService.java",
-      "id": "WL-0237",
-      "line": 52,
-      "nature": "port",
-      "program": "app/cbl/COSGN00C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COSGN00C.cbl:151"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cosgn00cService.java",
-      "id": "WL-0238",
-      "line": 75,
-      "nature": "port",
-      "program": "app/cbl/COSGN00C.cbl",
-      "symbols": [
-        "Cosgn00cService#renderCosgn0a"
-      ],
-      "text": "port the logic that fills COSGN0AO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COSGN00C.cbl:110"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cosgn00cService.java",
-      "id": "WL-0239",
+      "id": "WL-0177",
       "line": 83,
       "nature": "port",
-      "program": "app/cbl/COSGN00C.cbl",
-      "symbols": [
-        "Cosgn00cService#submitCosgn0a"
-      ],
-      "text": "port the logic that reads COSGN0AI (the default) after the RECEIVE"
+      "program": "app/cbl/COMEN01C.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COMEN01C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn00cService.java",
-      "id": "WL-0240",
-      "line": 49,
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Comen01cService.java",
+      "id": "WL-0178",
+      "line": 89,
       "nature": "port",
-      "program": "app/cbl/COTRN00C.cbl",
+      "program": "app/cbl/COMEN01C.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COMEN01C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn00cService.java",
-      "id": "WL-0241",
-      "line": 52,
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
+      "id": "WL-0179",
+      "line": 89,
       "nature": "port",
-      "program": "app/cbl/COTRN00C.cbl",
+      "program": "app/cbl/CORPT00C.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/CORPT00C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn00cService.java",
-      "id": "WL-0242",
-      "line": 58,
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Corpt00cService.java",
+      "id": "WL-0180",
+      "line": 95,
       "nature": "port",
-      "program": "app/cbl/COTRN00C.cbl",
+      "program": "app/cbl/CORPT00C.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COTRN00C.cbl:534"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COTRN00C.cbl:542"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn00cService.java",
-      "id": "WL-0243",
-      "line": 106,
-      "nature": "port",
-      "program": "app/cbl/COTRN00C.cbl",
-      "symbols": [
-        "Cotrn00cService#renderCotrn0a"
-      ],
-      "text": "port the logic that fills COTRN0AO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COTRN00C.cbl:556"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn00cService.java",
-      "id": "WL-0244",
-      "line": 114,
-      "nature": "port",
-      "program": "app/cbl/COTRN00C.cbl",
-      "symbols": [
-        "Cotrn00cService#submitCotrn0a"
-      ],
-      "text": "port the logic that reads COTRN0AI after the RECEIVE"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/CORPT00C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn01cService.java",
-      "id": "WL-0245",
-      "line": 47,
-      "nature": "port",
-      "program": "app/cbl/COTRN01C.cbl",
-      "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn01cService.java",
-      "id": "WL-0246",
-      "line": 50,
-      "nature": "port",
-      "program": "app/cbl/COTRN01C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn01cService.java",
-      "id": "WL-0247",
-      "line": 56,
-      "nature": "port",
-      "program": "app/cbl/COTRN01C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COTRN01C.cbl:219"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn01cService.java",
-      "id": "WL-0248",
-      "line": 85,
-      "nature": "port",
-      "program": "app/cbl/COTRN01C.cbl",
-      "symbols": [
-        "Cotrn01cService#renderCotrn1a"
-      ],
-      "text": "port the logic that fills COTRN1AO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COTRN01C.cbl:232"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn01cService.java",
-      "id": "WL-0249",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cosgn00cService.java",
+      "id": "WL-0181",
       "line": 93,
       "nature": "port",
+      "program": "app/cbl/COSGN00C.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COSGN00C_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cosgn00cService.java",
+      "id": "WL-0182",
+      "line": 99,
+      "nature": "port",
+      "program": "app/cbl/COSGN00C.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COSGN00C_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn00cService.java",
+      "id": "WL-0183",
+      "line": 99,
+      "nature": "port",
+      "program": "app/cbl/COTRN00C.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COTRN00C_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn00cService.java",
+      "id": "WL-0184",
+      "line": 105,
+      "nature": "port",
+      "program": "app/cbl/COTRN00C.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COTRN00C_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn01cService.java",
+      "id": "WL-0185",
+      "line": 96,
+      "nature": "port",
       "program": "app/cbl/COTRN01C.cbl",
-      "symbols": [
-        "Cotrn01cService#submitCotrn1a"
-      ],
-      "text": "port the logic that reads COTRN1AI after the RECEIVE"
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COTRN01C_port_ticket.md"
+    },
+    {
+      "category": "business-logic",
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn01cService.java",
+      "id": "WL-0186",
+      "line": 102,
+      "nature": "port",
+      "program": "app/cbl/COTRN01C.cbl",
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COTRN01C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn02cService.java",
-      "id": "WL-0250",
-      "line": 52,
+      "id": "WL-0187",
+      "line": 106,
       "nature": "port",
       "program": "app/cbl/COTRN02C.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COTRN02C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn02cService.java",
-      "id": "WL-0251",
-      "line": 55,
-      "nature": "port",
-      "program": "app/cbl/COTRN02C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn02cService.java",
-      "id": "WL-0252",
-      "line": 61,
-      "nature": "port",
-      "program": "app/cbl/COTRN02C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COTRN02C.cbl:522"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn02cService.java",
-      "id": "WL-0253",
+      "id": "WL-0188",
       "line": 112,
       "nature": "port",
       "program": "app/cbl/COTRN02C.cbl",
-      "symbols": [
-        "Cotrn02cService#renderCotrn2a"
-      ],
-      "text": "port the logic that fills COTRN2AO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COTRN02C.cbl:541"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cotrn02cService.java",
-      "id": "WL-0254",
-      "line": 120,
-      "nature": "port",
-      "program": "app/cbl/COTRN02C.cbl",
-      "symbols": [
-        "Cotrn02cService#submitCotrn2a"
-      ],
-      "text": "port the logic that reads COTRN2AI after the RECEIVE"
+      "symbols": [],
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COTRN02C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr00cService.java",
-      "id": "WL-0255",
-      "line": 49,
+      "id": "WL-0189",
+      "line": 99,
       "nature": "port",
       "program": "app/cbl/COUSR00C.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COUSR00C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr00cService.java",
-      "id": "WL-0256",
-      "line": 52,
+      "id": "WL-0190",
+      "line": 105,
       "nature": "port",
       "program": "app/cbl/COUSR00C.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr00cService.java",
-      "id": "WL-0257",
-      "line": 58,
-      "nature": "port",
-      "program": "app/cbl/COUSR00C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COUSR00C.cbl:529"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COUSR00C.cbl:537"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr00cService.java",
-      "id": "WL-0258",
-      "line": 128,
-      "nature": "port",
-      "program": "app/cbl/COUSR00C.cbl",
-      "symbols": [
-        "Cousr00cService#renderCousr0a"
-      ],
-      "text": "port the logic that fills COUSR0AO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COUSR00C.cbl:551"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr00cService.java",
-      "id": "WL-0259",
-      "line": 136,
-      "nature": "port",
-      "program": "app/cbl/COUSR00C.cbl",
-      "symbols": [
-        "Cousr00cService#submitCousr0a"
-      ],
-      "text": "port the logic that reads COUSR0AI after the RECEIVE"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COUSR00C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr01cService.java",
-      "id": "WL-0260",
-      "line": 44,
+      "id": "WL-0191",
+      "line": 90,
       "nature": "port",
       "program": "app/cbl/COUSR01C.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COUSR01C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr01cService.java",
-      "id": "WL-0261",
-      "line": 47,
+      "id": "WL-0192",
+      "line": 96,
       "nature": "port",
       "program": "app/cbl/COUSR01C.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr01cService.java",
-      "id": "WL-0262",
-      "line": 53,
-      "nature": "port",
-      "program": "app/cbl/COUSR01C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COUSR01C.cbl:190"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr01cService.java",
-      "id": "WL-0263",
-      "line": 79,
-      "nature": "port",
-      "program": "app/cbl/COUSR01C.cbl",
-      "symbols": [
-        "Cousr01cService#renderCousr1a"
-      ],
-      "text": "port the logic that fills COUSR1AO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COUSR01C.cbl:203"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr01cService.java",
-      "id": "WL-0264",
-      "line": 87,
-      "nature": "port",
-      "program": "app/cbl/COUSR01C.cbl",
-      "symbols": [
-        "Cousr01cService#submitCousr1a"
-      ],
-      "text": "port the logic that reads COUSR1AI after the RECEIVE"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COUSR01C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr02cService.java",
-      "id": "WL-0265",
-      "line": 45,
+      "id": "WL-0193",
+      "line": 97,
       "nature": "port",
       "program": "app/cbl/COUSR02C.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COUSR02C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr02cService.java",
-      "id": "WL-0266",
-      "line": 48,
+      "id": "WL-0194",
+      "line": 103,
       "nature": "port",
       "program": "app/cbl/COUSR02C.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr02cService.java",
-      "id": "WL-0267",
-      "line": 54,
-      "nature": "port",
-      "program": "app/cbl/COUSR02C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COUSR02C.cbl:272"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr02cService.java",
-      "id": "WL-0268",
-      "line": 85,
-      "nature": "port",
-      "program": "app/cbl/COUSR02C.cbl",
-      "symbols": [
-        "Cousr02cService#renderCousr2a"
-      ],
-      "text": "port the logic that fills COUSR2AO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COUSR02C.cbl:285"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr02cService.java",
-      "id": "WL-0269",
-      "line": 93,
-      "nature": "port",
-      "program": "app/cbl/COUSR02C.cbl",
-      "symbols": [
-        "Cousr02cService#submitCousr2a"
-      ],
-      "text": "port the logic that reads COUSR2AI after the RECEIVE"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COUSR02C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr03cService.java",
-      "id": "WL-0270",
-      "line": 45,
+      "id": "WL-0195",
+      "line": 97,
       "nature": "port",
       "program": "app/cbl/COUSR03C.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it",
+      "ticket": "ai_agent_jobs/COUSR03C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr03cService.java",
-      "id": "WL-0271",
-      "line": 48,
+      "id": "WL-0196",
+      "line": 103,
       "nature": "port",
       "program": "app/cbl/COUSR03C.cbl",
       "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr03cService.java",
-      "id": "WL-0272",
-      "line": 54,
-      "nature": "port",
-      "program": "app/cbl/COUSR03C.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COUSR03C.cbl:219"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr03cService.java",
-      "id": "WL-0273",
-      "line": 85,
-      "nature": "port",
-      "program": "app/cbl/COUSR03C.cbl",
-      "symbols": [
-        "Cousr03cService#renderCousr3a"
-      ],
-      "text": "port the logic that fills COUSR3AO before the SEND"
-    },
-    {
-      "category": "business-logic",
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "app/cbl/COUSR03C.cbl:232"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Cousr03cService.java",
-      "id": "WL-0274",
-      "line": 93,
-      "nature": "port",
-      "program": "app/cbl/COUSR03C.cbl",
-      "symbols": [
-        "Cousr03cService#submitCousr3a"
-      ],
-      "text": "port the logic that reads COUSR3AI after the RECEIVE"
+      "text": "port the PROCEDURE DIVISION into this task",
+      "ticket": "ai_agent_jobs/COUSR03C_port_ticket.md"
     },
     {
       "category": "business-logic",
       "facts": [],
       "file": "src/main/java/com/gitgalaxy/modernized/service/CsutldtcService.java",
-      "id": "WL-0275",
-      "line": 23,
+      "id": "WL-0197",
+      "line": 22,
       "nature": "port",
       "program": "app/cbl/CSUTLDTC.cbl",
       "symbols": [],
-      "text": "Implement extracted business rules here"
-    },
-    {
-      "category": "business-logic",
-      "facts": [],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/CsutldtcService.java",
-      "id": "WL-0276",
-      "line": 26,
-      "nature": "port",
-      "program": "app/cbl/CSUTLDTC.cbl",
-      "symbols": [],
-      "text": "implement from the program's business rules"
+      "text": "implement from the program's business rules",
+      "ticket": "ai_agent_jobs/CSUTLDTC_port_ticket.md"
     },
     {
       "category": "configuration",
       "facts": [],
       "file": "src/main/resources/application.yml",
-      "id": "WL-0277",
+      "id": "WL-0198",
       "line": 9,
       "nature": "review",
       "program": "(project configuration)",
@@ -5208,28 +4016,206 @@
       "text": "Update these credentials for your target environment"
     }
   ],
+  "port_order": [
+    {
+      "file": "app/cbl/CSUTLDTC.cbl",
+      "rank": 1
+    },
+    {
+      "file": "app/cbl/COMEN01C.cbl",
+      "rank": 2
+    },
+    {
+      "file": "app/cbl/CBTRN03C.cbl",
+      "rank": 3
+    },
+    {
+      "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "rank": 4
+    },
+    {
+      "file": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+      "rank": 5
+    },
+    {
+      "file": "app/cbl/COADM01C.cbl",
+      "rank": 6
+    },
+    {
+      "file": "app/cbl/CBACT01C.cbl",
+      "rank": 7
+    },
+    {
+      "file": "app/cbl/CBACT02C.cbl",
+      "rank": 8
+    },
+    {
+      "file": "app/cbl/CBACT03C.cbl",
+      "rank": 9
+    },
+    {
+      "file": "app/cbl/CBACT04C.cbl",
+      "rank": 10
+    },
+    {
+      "file": "app/cbl/CBCUS01C.cbl",
+      "rank": 11
+    },
+    {
+      "file": "app/cbl/CBEXPORT.cbl",
+      "rank": 12
+    },
+    {
+      "file": "app/cbl/CBIMPORT.cbl",
+      "rank": 13
+    },
+    {
+      "file": "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+      "rank": 14
+    },
+    {
+      "file": "app/cbl/CBSTM03A.CBL",
+      "rank": 15
+    },
+    {
+      "file": "app/cbl/CBTRN02C.cbl",
+      "rank": 16
+    },
+    {
+      "file": "app/cbl/COBSWAIT.cbl",
+      "rank": 17
+    },
+    {
+      "file": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+      "rank": 18
+    },
+    {
+      "file": "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+      "rank": 19
+    },
+    {
+      "file": "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+      "rank": 20
+    },
+    {
+      "file": "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+      "rank": 21
+    },
+    {
+      "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+      "rank": 22
+    },
+    {
+      "file": "app/app-vsam-mq/cbl/CODATE01.cbl",
+      "rank": 23
+    },
+    {
+      "file": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "rank": 24
+    },
+    {
+      "file": "app/cbl/CBSTM03B.CBL",
+      "rank": 25
+    },
+    {
+      "file": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+      "rank": 26
+    },
+    {
+      "file": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+      "rank": 27
+    },
+    {
+      "file": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+      "rank": 28
+    },
+    {
+      "file": "app/cbl/COACTUPC.cbl",
+      "rank": 29
+    },
+    {
+      "file": "app/cbl/COACTVWC.cbl",
+      "rank": 30
+    },
+    {
+      "file": "app/cbl/COBIL00C.cbl",
+      "rank": 31
+    },
+    {
+      "file": "app/cbl/COCRDLIC.cbl",
+      "rank": 32
+    },
+    {
+      "file": "app/cbl/COCRDSLC.cbl",
+      "rank": 33
+    },
+    {
+      "file": "app/cbl/COCRDUPC.cbl",
+      "rank": 34
+    },
+    {
+      "file": "app/cbl/CORPT00C.cbl",
+      "rank": 35
+    },
+    {
+      "file": "app/cbl/COSGN00C.cbl",
+      "rank": 36
+    },
+    {
+      "file": "app/cbl/COTRN00C.cbl",
+      "rank": 37
+    },
+    {
+      "file": "app/cbl/COTRN01C.cbl",
+      "rank": 38
+    },
+    {
+      "file": "app/cbl/COTRN02C.cbl",
+      "rank": 39
+    },
+    {
+      "file": "app/cbl/COUSR00C.cbl",
+      "rank": 40
+    },
+    {
+      "file": "app/cbl/COUSR01C.cbl",
+      "rank": 41
+    },
+    {
+      "file": "app/cbl/COUSR02C.cbl",
+      "rank": 42
+    },
+    {
+      "file": "app/cbl/COUSR03C.cbl",
+      "rank": 43
+    },
+    {
+      "file": "app/cbl/CBTRN01C.cbl",
+      "rank": 44
+    }
+  ],
   "summary": {
     "by_category": {
-      "batch-utility": 6,
-      "business-logic": 165,
-      "commarea-mismatch": 20,
+      "batch-utility": 7,
+      "business-logic": 78,
+      "commarea-mismatch": 21,
       "configuration": 1,
-      "db2-dialect": 14,
+      "db2-dialect": 15,
       "interface-call": 1,
-      "missing-layout": 3,
-      "record-variant": 11,
+      "missing-layout": 2,
+      "record-variant": 14,
       "transaction-split": 14,
       "unchecked-resp": 40,
-      "vsam-key": 2
+      "vsam-key": 5
     },
     "by_nature": {
-      "conflict": 31,
-      "fact-gap": 5,
-      "port": 186,
-      "review": 55
+      "conflict": 35,
+      "fact-gap": 7,
+      "port": 100,
+      "review": 56
     },
-    "items": 277,
-    "programs": 47
+    "items": 198,
+    "programs": 50
   },
   "version": 1
 }

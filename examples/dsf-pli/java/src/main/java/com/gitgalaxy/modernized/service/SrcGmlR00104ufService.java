@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
@@ -20,14 +21,22 @@ public class SrcGmlR00104ufService {
 
     private static final Logger log = LoggerFactory.getLogger(SrcGmlR00104ufService.class);
 
-    public void executeSrcGmlR00104uf(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__GML__R00104UF");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcGmlR00104uf: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcGmlR00104uf: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R00104UF", null);
+        region.run(task, "R00104UF", this::runTask);
     }
 
 }

@@ -29,7 +29,7 @@ public class Cbpaup0jJobConfig {
     public Job cbpaup0jJob(JobRepository jobRepository, PlatformTransactionManager tx, JclSteps steps, Cbpaup0cService cbpaup0cService) {
         return new JobBuilder("CBPAUP0J", jobRepository)
                 .start(new StepBuilder("STEP01", jobRepository)
-                        .tasklet(steps.program("STEP01", "STEP01", null, null, null, () -> cbpaup0cService.runBatch(DDS_STEP01, "BMP,CBPAUP0C,PSBPAUTB")), tx).build())
+                        .tasklet(steps.program("STEP01", "STEP01", null, null, null, () -> cbpaup0cService.runBatch(DDS_STEP01, null)), tx).build())
                 .build();
     }
 }

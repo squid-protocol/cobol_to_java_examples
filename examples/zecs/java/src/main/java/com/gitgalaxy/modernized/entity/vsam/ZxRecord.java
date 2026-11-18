@@ -14,9 +14,9 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * VSAM file @ECS_HLQ@.ZCEXPIRE.@ENVIRONMENT@ (no IDCAMS DEFINE in the repository),
- * record ZX-RECORD (Source/ZECS000.cbl, 70 bytes).
- * Key: ZX-KEY (offset 0, 4 bytes, from the programs' RIDFLD / RECORD KEY).
+ * VSAM INDEXED @ECS_HLQ@.ZCEXPIRE.@ENVIRONMENT@ (Source/ZCEXPIRE.idcams:4),
+ * record ZX-RECORD (Source/ZECS000.cbl, 70 bytes, RECORDSIZE 2048).
+ * Key: ZX-KEY (offset 0, 4 bytes, from IDCAMS KEYS).
  * CICS files: ZCEXPIRE.
  * Generated from GitGalaxy's verified skeleton; VSAM defines field testing: open (3 public / 0 private estates).
  */
@@ -28,18 +28,18 @@ public class ZxRecord {
 
     // ZX-KEY: PIC X(04), offset 0, 4 bytes
     @Id
-    @Column(name = "ZX_KEY", length = 4)
+    @Column(name = "ZX_KEY", columnDefinition = "varchar(4) COLLATE \"C\"")
     private String zxKey;
 
-    // ZX-ABSTIME: PIC S9(15), offset 4, 8 bytes
+    // ZX-ABSTIME: PIC S9(15) COMP-3, offset 4, 8 bytes
     @Column(name = "ZX_ABSTIME")
     private Long zxAbstime;
 
-    // ZX-INTERVAL: PIC S9(07), offset 12, 4 bytes
+    // ZX-INTERVAL: PIC S9(07) COMP-3, offset 12, 4 bytes
     @Column(name = "ZX_INTERVAL")
     private Integer zxInterval;
 
-    // ZX-RESTART: PIC S9(07), offset 16, 4 bytes
+    // ZX-RESTART: PIC S9(07) COMP-3, offset 16, 4 bytes
     @Column(name = "ZX_RESTART")
     private Integer zxRestart;
 
@@ -59,11 +59,36 @@ public class ZxRecord {
     @Column(name = "ZX_TASKID")
     private Integer zxTaskid;
 
+    // #3822: ZX-KEY as cp037 bytes in hex -- browses order by it, as VSAM orders the key
+    @Column(name = "ZX_KEY_SORT", columnDefinition = "varchar(8) COLLATE \"C\"")
+    private String zxKeySort;
+
+    @PrePersist
+    @PreUpdate
+    void codePageSortKey() {
+        this.zxKeySort = CobolRecords.sortKey(zxKey, "cp037");
+    }
+
+
+    /** #4875: the record bytes this entity was read from, kept beside the typed columns: a field whose
+     *  value is unchanged is written back as these bytes, so a value no column type holds (spaces in a
+     *  PIC 9, a non-preferred sign) and FILLER survive the round trip, as the VSAM record keeps them. */
+    @Column(name = "VSAM_RECORD", length = 70)
+    @lombok.Getter(lombok.AccessLevel.NONE)
+    @lombok.Setter(lombok.AccessLevel.NONE)
+    @lombok.EqualsAndHashCode.Exclude
+    @lombok.ToString.Exclude
+    private byte[] vsamRecord;
 
     /** #3624: this record from its fixed-width VSAM form (70 bytes, as REPRO unloads it), each
      *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
-     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+     *  transfer, IBM037 on z/OS). The bytes themselves are kept in vsamRecord (#4875). */
     public static ZxRecord fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        if (rec.length < 70) {  // a WRITE ... LENGTH(n) short of the record: the rest is spaces
+            byte[] full = CobolRecords.blank(70, text);
+            System.arraycopy(rec, 0, full, 0, rec.length);
+            rec = full;
+        }
         ZxRecord r = new ZxRecord();
         r.zxKey = CobolRecords.text(rec, 0, 4, text);
         r.zxAbstime = CobolRecords.toLong(CobolRecords.packed(rec, 4, 8, 0));
@@ -73,20 +98,39 @@ public class ZxRecord {
         r.zxTime = CobolRecords.text(rec, 31, 8, text);
         r.zxApplid = CobolRecords.text(rec, 40, 8, text);
         r.zxTaskid = CobolRecords.toInteger(CobolRecords.zoned(rec, 49, 6, 0, text));
+        r.vsamRecord = java.util.Arrays.copyOf(rec, 70);
         return r;
     }
 
-    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    /** #3624: the fixed-width VSAM record of this entity: the bytes it was read from (vsamRecord), each field
+     *  whose value changed since re-encoded; a new entity's FILLER as spaces. */
     public byte[] toRecord(java.nio.charset.Charset text) {
-        byte[] rec = CobolRecords.blank(70, text);
-        CobolRecords.putText(rec, 0, 4, zxKey, text);
-        CobolRecords.putPacked(rec, 4, 8, 0, true, CobolRecords.decimal(zxAbstime));
-        CobolRecords.putPacked(rec, 12, 4, 0, true, CobolRecords.decimal(zxInterval));
-        CobolRecords.putPacked(rec, 16, 4, 0, true, CobolRecords.decimal(zxRestart));
-        CobolRecords.putText(rec, 20, 10, zxDate, text);
-        CobolRecords.putText(rec, 31, 8, zxTime, text);
-        CobolRecords.putText(rec, 40, 8, zxApplid, text);
-        CobolRecords.putZoned(rec, 49, 6, 0, false, CobolRecords.decimal(zxTaskid), text);
+        byte[] read = vsamRecord != null && vsamRecord.length == 70 ? vsamRecord : null;
+        byte[] rec = read != null ? read.clone() : CobolRecords.blank(70, text);
+        if (read == null || !java.util.Objects.equals(zxKey, CobolRecords.text(read, 0, 4, text))) {
+            CobolRecords.putText(rec, 0, 4, zxKey, text);
+        }
+        if (read == null || !java.util.Objects.equals(zxAbstime, CobolRecords.toLong(CobolRecords.packed(read, 4, 8, 0)))) {
+            CobolRecords.putPacked(rec, 4, 8, 0, true, CobolRecords.decimal(zxAbstime));
+        }
+        if (read == null || !java.util.Objects.equals(zxInterval, CobolRecords.toInteger(CobolRecords.packed(read, 12, 4, 0)))) {
+            CobolRecords.putPacked(rec, 12, 4, 0, true, CobolRecords.decimal(zxInterval));
+        }
+        if (read == null || !java.util.Objects.equals(zxRestart, CobolRecords.toInteger(CobolRecords.packed(read, 16, 4, 0)))) {
+            CobolRecords.putPacked(rec, 16, 4, 0, true, CobolRecords.decimal(zxRestart));
+        }
+        if (read == null || !java.util.Objects.equals(zxDate, CobolRecords.text(read, 20, 10, text))) {
+            CobolRecords.putText(rec, 20, 10, zxDate, text);
+        }
+        if (read == null || !java.util.Objects.equals(zxTime, CobolRecords.text(read, 31, 8, text))) {
+            CobolRecords.putText(rec, 31, 8, zxTime, text);
+        }
+        if (read == null || !java.util.Objects.equals(zxApplid, CobolRecords.text(read, 40, 8, text))) {
+            CobolRecords.putText(rec, 40, 8, zxApplid, text);
+        }
+        if (read == null || !java.util.Objects.equals(zxTaskid, CobolRecords.toInteger(CobolRecords.zoned(read, 49, 6, 0, text)))) {
+            CobolRecords.putZoned(rec, 49, 6, 0, false, CobolRecords.decimal(zxTaskid), text);
+        }
         return rec;
     }
 }

@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 /**
  * COBOL record WS-COMM-AREA (src/base/cobol_src/BNK1CAC.cbl), 32 bytes, from GitGalaxy's verified skeleton.
  * The COMMAREA Bnk1cac receives, as passed by RETURN TRANSID at src/base/cobol_src/BNK1CAC.cbl:248.
- * Record fields field testing: field-tested (6 public / 0 private estates).
+ * Record fields field testing: open (6 public / 0 private estates).
  */
 @Data
 @NoArgsConstructor

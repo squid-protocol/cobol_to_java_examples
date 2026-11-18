@@ -11,7 +11,10 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.nio.charset.Charset;
+import java.text.Bidi;
 import java.util.Arrays;
+import java.util.Locale;
+import java.util.Set;
 
 /**
  * #3624: COBOL storage for the entities' record codecs (fromRecord / toRecord) -- DISPLAY text, zoned
@@ -20,13 +23,35 @@ import java.util.Arrays;
  * COMP-3 packed decimal and COMP binary (big-endian). Storing follows COBOL MOVE: a value too long for
  * the field loses its high-order digits, decimals beyond the scale are truncated, an unsigned field
  * keeps the magnitude. Invalid data (a space in a numeric field) is an error, not a zero.
+ *
+ * #3831: a digit is `0`-`9` and nothing else. Java's own parsers take any Unicode decimal digit --
+ * BigInteger, BigDecimal and Integer.parseInt read Arabic-Indic, Devanagari and full-width digits as
+ * numbers -- where COBOL's NUMERIC test and NUMVAL reject them, so every parse here checks the
+ * characters itself before handing them to BigInteger / BigDecimal.
+ *
+ * #3987: a 3270 had no BiDi engine, so Arabic and Hebrew records hold their text in visual order (left to
+ * right, as the screen showed it). Under such a page text() returns logical (reading-order) Unicode, which
+ * a browser lays out itself, and putText() stores the visual order back.
  */
 public final class CobolRecords {
 
     private static final String POSITIVE = "{ABCDEFGHI";
     private static final String NEGATIVE = "}JKLMNOPQR";
+    private static final String RECORD_CHARSET = "ISO-8859-1";
+    private static final String BIDI_LAYOUT = "auto";
+    private static final boolean RTL_SCREEN = "visual_rtl".equals(BIDI_LAYOUT);
+    private static final Set<String> VISUAL_BIDI_PAGES = Set.of("IBM420", "IBM424", "IBM864", "IBM862");
 
     private CobolRecords() {
+    }
+
+    /**
+     * #4060: the code page the migrated system's record bytes are in -- every dataset, file and COMMAREA a
+     * port reads or writes. The target config's data.record_charset (here ISO-8859-1), unless the
+     * system property gitgalaxy.data.charset names another. A port never picks a charset itself.
+     */
+    public static Charset charset() {
+        return Charset.forName(System.getProperty("gitgalaxy.data.charset", RECORD_CHARSET));
     }
 
     public static byte[] blank(int length, Charset text) {
@@ -35,20 +60,129 @@ public final class CobolRecords {
         return rec;
     }
 
+    /** #3987: a visual page's field comes back in logical order (logical(...)). */
     public static String text(byte[] rec, int offset, int length, Charset text) {
-        return new String(rec, offset, length, text);
+        String s = new String(rec, offset, length, text);
+        return visualOrder(text) ? logical(s) : s;
     }
 
+    /** #3985: stores `value` in `length` bytes as fit(...) sizes it: under a mixed DBCS page (IBM930 / 939)
+     *  a value too wide loses whole characters, so the record never ends inside a Shift-Out run or half a
+     *  double-byte character. */
     public static void putText(byte[] rec, int offset, int length, String value, Charset text) {
-        byte[] v = (value == null ? "" : value).getBytes(text);
+        String fitted = fit(value, length, text);
+        byte[] v = (visualOrder(text) ? visual(fitted) : fitted).getBytes(text);  // #3987: a permutation, same width
         byte space = " ".getBytes(text)[0];
         for (int i = 0; i < length; i++) {
             rec[offset + i] = i < v.length ? v[i] : space;
         }
     }
 
+    /** #3985: the bytes `value` takes in the record -- a PIC X field's width, which String.length() is not
+     *  under a multi-byte page: `AB\u65e5\u672cC` is 5 characters and, in IBM939, 9 bytes (Shift-Out and Shift-In
+     *  count). */
+    public static int width(String value, Charset text) {
+        return value == null ? 0 : value.getBytes(text).length;
+    }
+
+    /** #3985: `value` cut and space-padded to exactly `width` bytes. A value too wide loses whole characters
+     *  from the right, so a double-byte character is never split and the encoder closes the Shift-Out run
+     *  (a deliberate deviation: COBOL's MOVE truncates at the byte). On a single-byte page it is the MOVE. */
+    public static String fit(String value, int width, Charset text) {
+        String v = value == null ? "" : value;
+        int bytes = width(v, text);
+        if (bytes > width) {
+            int end = Math.min(v.length(), Math.max(width, 0));  // a character is at least one byte
+            if (end > 0 && Character.isHighSurrogate(v.charAt(end - 1))) {
+                end--;  // never half a surrogate pair
+            }
+            while (end > 0 && width(v.substring(0, end), text) > width) {
+                end -= end > 1 && Character.isLowSurrogate(v.charAt(end - 1)) ? 2 : 1;
+            }
+            v = v.substring(0, end);
+            bytes = width(v, text);
+        }
+        StringBuilder out = new StringBuilder(v);
+        for (int i = bytes; i < width; i++) {
+            out.append(' ');
+        }
+        return out.toString();
+    }
+
+    /** #3987: whether `text` keeps right-to-left text in visual order -- the target config's data.bidi_layout
+     *  (here auto): visual_ltr / visual_rtl, logical, or auto: visual_ltr under IBM420 / IBM424
+     *  (EBCDIC Arabic / Hebrew) and IBM864 / IBM862 (PC Arabic / Hebrew), as IBM's CDRA defines them. */
+    public static boolean visualOrder(Charset text) {
+        if (!"auto".equals(BIDI_LAYOUT)) {
+            return BIDI_LAYOUT.startsWith("visual_");
+        }
+        return text != null && VISUAL_BIDI_PAGES.contains(text.name());
+    }
+
+    /** #3987: visual-order text (as a 3270 showed it) in logical order: each right-to-left run reversed, a
+     *  number in it kept left to right, its mirrored characters (brackets) swapped. The Unicode Bidirectional
+     *  Algorithm in the screen's direction -- visual_ltr: the first byte at the left; visual_rtl (a
+     *  screen-reverse terminal): at the right, so Arabic or Hebrew is stored in reading order and a number
+     *  or Latin word reversed. On such a line it is its own inverse: `visual(logical(s))` is `s` for words
+     *  and numbers; a punctuation-only cluster between a right-to-left letter and a digit can come back
+     *  reordered. A string with no right-to-left character is returned as it is. Shaped (presentation)
+     *  forms are kept, so the record bytes round-trip. */
+    public static String logical(String visual) {
+        if (RTL_SCREEN) {
+            return reorder(reversed(visual), Bidi.DIRECTION_RIGHT_TO_LEFT);
+        }
+        return reorder(visual, Bidi.DIRECTION_LEFT_TO_RIGHT);
+    }
+
+    /** #3987: logical text in the order a visual record holds it -- the 3270 screen's characters, from the
+     *  first byte's side (left for visual_ltr, right for visual_rtl). */
+    public static String visual(String logical) {
+        if (RTL_SCREEN) {
+            return reversed(reorder(logical, Bidi.DIRECTION_RIGHT_TO_LEFT));
+        }
+        return reorder(logical, Bidi.DIRECTION_LEFT_TO_RIGHT);
+    }
+
+    private static String reversed(String s) {
+        if (s == null || !Bidi.requiresBidi(s.toCharArray(), 0, s.length())) {
+            return s;
+        }
+        return new StringBuilder(s).reverse().toString();
+    }
+
+    /** The screen's characters, left to right, for `s` laid out in a paragraph of direction `flags`. */
+    private static String reorder(String s, int flags) {
+        if (s == null || s.isEmpty() || !Bidi.requiresBidi(s.toCharArray(), 0, s.length())) {
+            return s;
+        }
+        Bidi bidi = new Bidi(s, flags);
+        int n = s.length();
+        byte[] levels = new byte[n];
+        Integer[] order = new Integer[n];
+        for (int i = 0; i < n; i++) {
+            levels[i] = (byte) bidi.getLevelAt(i);
+            order[i] = i;
+        }
+        Bidi.reorderVisually(levels, 0, order, 0, n);
+        StringBuilder out = new StringBuilder(n);
+        for (int i : order) {
+            char c = s.charAt(i);
+            out.append(levels[i] % 2 == 1 ? mirrored(c) : c);
+        }
+        return out.toString();
+    }
+
+    private static char mirrored(char c) {
+        String pairs = "()[]{}<>\u00ab\u00bb";
+        int i = pairs.indexOf(c);
+        return i < 0 ? c : pairs.charAt(i ^ 1);
+    }
+
     public static BigDecimal zoned(byte[] rec, int offset, int length, int scale, Charset text) {
         String s = new String(rec, offset, length, text);
+        if (s.length() != length) {  // #3831: a multi-byte character is no zoned digit
+            return null;
+        }
         char last = s.charAt(length - 1);
         boolean negative = false;
         int digit;
@@ -60,14 +194,43 @@ public final class CobolRecords {
             digit = NEGATIVE.indexOf(last);
             negative = true;
         } else {
-            throw new NumberFormatException("invalid zoned sign '" + last + "' at offset " + (offset + length - 1));
+            return null;
         }
         String digits = s.substring(0, length - 1) + digit;
-        if (!digits.chars().allMatch(Character::isDigit)) {
-            throw new NumberFormatException("invalid zoned digits '" + s + "' at offset " + offset);
+        if (!isAsciiDigits(digits)) {
+            return null;
         }
         BigDecimal v = new BigDecimal(new BigInteger(digits), scale);
         return negative ? v.negate() : v;
+    }
+
+    /** #3694: a SIGN ... SEPARATE item: its digits and a '+' / '-' byte before them (`leading`) or after; any
+     *  other sign byte, or a non-digit, is no number (null, as zoned). */
+    public static BigDecimal zonedSeparate(byte[] rec, int offset, int length, int scale, boolean leading,
+                                           Charset text) {
+        String s = new String(rec, offset, length, text);
+        if (s.length() != length || length < 2) {
+            return null;
+        }
+        char sign = leading ? s.charAt(0) : s.charAt(length - 1);
+        String digits = leading ? s.substring(1) : s.substring(0, length - 1);
+        if ((sign != '+' && sign != '-') || !isAsciiDigits(digits)) {
+            return null;
+        }
+        BigDecimal v = new BigDecimal(new BigInteger(digits), scale);
+        return sign == '-' ? v.negate() : v;
+    }
+
+    /** #3694: as putZoned, for a SIGN ... SEPARATE item (`digits` digits and the sign byte: '-' for a negative
+     *  value, else '+'). */
+    public static void putZonedSeparate(byte[] rec, int offset, int digits, int scale, boolean leading,
+                                        BigDecimal value, Charset text) {
+        BigInteger unscaled = value.setScale(scale, RoundingMode.DOWN).unscaledValue();
+        String s = unscaled.abs().toString();
+        s = s.length() > digits ? s.substring(s.length() - digits) : "0".repeat(digits - s.length()) + s;
+        String sign = unscaled.signum() < 0 ? "-" : "+";
+        byte[] b = (leading ? sign + s : s + sign).getBytes(text);
+        System.arraycopy(b, 0, rec, offset, digits + 1);
     }
 
     public static void putZoned(byte[] rec, int offset, int digits, int scale, boolean signed, BigDecimal value,
@@ -84,13 +247,20 @@ public final class CobolRecords {
         System.arraycopy(b, 0, rec, offset, digits);
     }
 
+    /** #3949: a digit nibble above 9, or a sign nibble below A, is invalid packed data -- on the mainframe a
+     *  data exception (S0C7), never a number: a NumberFormatException naming the byte, as zoned does. */
     public static BigDecimal packed(byte[] rec, int offset, int length, int scale) {
         StringBuilder digits = new StringBuilder();
         for (int i = 0; i < length; i++) {
             int b = rec[offset + i] & 0xFF;
+            int lo = b & 0x0F;
+            boolean badDigit = b >> 4 > 9 || (i < length - 1 && lo > 9);
+            if (badDigit || (i == length - 1 && lo < 0x0A)) {
+                return null;
+            }
             digits.append(b >> 4);
             if (i < length - 1) {
-                digits.append(b & 0x0F);
+                digits.append(lo);
             }
         }
         int sign = rec[offset + length - 1] & 0x0F;
@@ -131,6 +301,11 @@ public final class CobolRecords {
     }
 
     public static BigDecimal decimal(Object value) {
+        return decimal(value, '.');
+    }
+
+    /** A value as a decimal; text is read as NUMVAL reads it, with the program's DECIMAL-POINT. */
+    public static BigDecimal decimal(Object value, char decimalPoint) {
         if (value == null) {
             return BigDecimal.ZERO;
         }
@@ -140,14 +315,93 @@ public final class CobolRecords {
         if (value instanceof Number n) {
             return new BigDecimal(n.toString());
         }
-        return new BigDecimal(value.toString().trim());
+        return numval(value.toString(), decimalPoint);
+    }
+
+    public static BigDecimal numval(String text) {
+        return numval(text, '.');
+    }
+
+    /**
+     * #3831: COBOL's FUNCTION NUMVAL. Leading and trailing spaces; one sign, either leading (`+` / `-`)
+     * or trailing (`+` / `-` / `CR` / `DB`), spaces allowed between it and the number; ASCII digits with
+     * at most one decimal point -- `decimalPoint`, which is `,` in a program that codes DECIMAL-POINT IS
+     * COMMA (so `1,5` is one and a half there, and `1.5` is invalid). Anything else is invalid data: a
+     * NumberFormatException, never a best guess.
+     */
+    public static BigDecimal numval(String text, char decimalPoint) {
+        if (text == null) {
+            throw new NumberFormatException("invalid numeric: null");
+        }
+        String s = text.strip();
+        boolean negative = false;
+        String upper = s.toUpperCase(Locale.ROOT);
+        if (upper.endsWith("CR") || upper.endsWith("DB")) {
+            negative = true;
+            s = s.substring(0, s.length() - 2).stripTrailing();
+        } else if (s.endsWith("-") || s.endsWith("+")) {
+            negative = s.endsWith("-");
+            s = s.substring(0, s.length() - 1).stripTrailing();
+        } else if (s.startsWith("-") || s.startsWith("+")) {
+            negative = s.startsWith("-");
+            s = s.substring(1).stripLeading();
+        }
+        int point = s.indexOf(decimalPoint);
+        String whole = point < 0 ? s : s.substring(0, point);
+        String frac = point < 0 ? "" : s.substring(point + 1);
+        boolean valid = !(whole.isEmpty() && frac.isEmpty())
+                && (whole.isEmpty() || isAsciiDigits(whole))
+                && (frac.isEmpty() || isAsciiDigits(frac));
+        if (!valid) {
+            throw new NumberFormatException("invalid numeric '" + text + "'");
+        }
+        BigDecimal v = new BigDecimal(new BigInteger((whole.isEmpty() ? "0" : whole) + frac), frac.length());
+        return negative ? v.negate() : v;
+    }
+
+    private static boolean isAsciiDigits(String s) {
+        if (s.isEmpty()) {
+            return false;
+        }
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c < '0' || c > '9') {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /** #3822: a key as its code page's bytes in upper-case hex (`A001` in IBM037 -> `C1F0F0F1`), so a
+     *  database orders and compares it exactly as VSAM orders the EBCDIC key: lower case before upper,
+     *  letters before digits. Two hex characters per byte keep the byte order under any collation. */
+    public static String sortKey(String key, String codePage) {
+        if (key == null) {
+            return null;
+        }
+        Charset page = Charset.forName(codePage);
+        byte[] bytes = (visualOrder(page) ? visual(key) : key).getBytes(page);  // #3987: the bytes VSAM holds
+        StringBuilder hex = new StringBuilder(bytes.length * 2);
+        for (byte b : bytes) {
+            hex.append(Character.toUpperCase(Character.forDigit((b >> 4) & 0xF, 16)))
+               .append(Character.toUpperCase(Character.forDigit(b & 0xF, 16)));
+        }
+        return hex.toString();
     }
 
     public static Integer toInteger(BigDecimal v) {
-        return v.intValue();
+        return v == null ? null : v.intValue();
     }
 
     public static Long toLong(BigDecimal v) {
-        return v.longValue();
+        return v == null ? null : v.longValue();
+    }
+
+    public static Double toDouble(BigDecimal v) {
+        return v == null ? null : v.doubleValue();
+    }
+
+    public static String toString(BigDecimal v) {
+        return v == null ? null : v.toPlainString();
     }
 }

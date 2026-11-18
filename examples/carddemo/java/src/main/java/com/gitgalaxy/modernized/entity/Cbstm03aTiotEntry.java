@@ -23,10 +23,10 @@ public class Cbstm03aTiotEntry {
     @Column(name = "sys_id")
     private Long sysId;
 
-    @Column(name = "FD_STMTFILE_REC")
+    @Column(name = "FD_STMTFILE_REC", length = 80)
     private String fdStmtfileRec;
 
-    @Column(name = "FD_HTMLFILE_REC")
+    @Column(name = "FD_HTMLFILE_REC", length = 100)
     private String fdHtmlfileRec;
 
     @Column(name = "CR_CNT")
@@ -41,94 +41,94 @@ public class Cbstm03aTiotEntry {
     @Column(name = "TR_JMP")
     private Integer trJmp;
 
-    @Column(name = "WS_TOTAL_AMT")
+    @Column(name = "WS_TOTAL_AMT", precision = 11, scale = 2)
     private BigDecimal wsTotalAmt;
 
-    @Column(name = "WS_FL_DD")
+    @Column(name = "WS_FL_DD", length = 8)
     private String wsFlDd;
 
-    @Column(name = "WS_TRN_AMT")
+    @Column(name = "WS_TRN_AMT", precision = 11, scale = 2)
     private BigDecimal wsTrnAmt;
 
-    @Column(name = "WS_SAVE_CARD")
+    @Column(name = "WS_SAVE_CARD", length = 16)
     private String wsSaveCard;
 
-    @Column(name = "END_OF_FILE")
+    @Column(name = "END_OF_FILE", length = 1)
     private String endOfFile;
 
-    @Column(name = "WS_M03B_DD")
+    @Column(name = "WS_M03B_DD", length = 8)
     private String wsM03BDd;
 
-    @Column(name = "WS_M03B_RC")
+    @Column(name = "WS_M03B_RC", length = 2)
     private String wsM03BRc;
 
-    @Column(name = "WS_M03B_KEY")
+    @Column(name = "WS_M03B_KEY", length = 25)
     private String wsM03BKey;
 
     @Column(name = "WS_M03B_KEY_LN")
     private Integer wsM03BKeyLn;
 
-    @Column(name = "WS_M03B_FLDT")
+    @Column(name = "WS_M03B_FLDT", length = 1000)
     private String wsM03BFldt;
 
-    @Column(name = "ST_NAME")
+    @Column(name = "ST_NAME", length = 75)
     private String stName;
 
-    @Column(name = "ST_ADD1")
+    @Column(name = "ST_ADD1", length = 50)
     private String stAdd1;
 
-    @Column(name = "ST_ADD2")
+    @Column(name = "ST_ADD2", length = 50)
     private String stAdd2;
 
-    @Column(name = "ST_ADD3")
+    @Column(name = "ST_ADD3", length = 80)
     private String stAdd3;
 
-    @Column(name = "ST_ACCT_ID")
+    @Column(name = "ST_ACCT_ID", length = 20)
     private String stAcctId;
 
-    @Column(name = "ST_CURR_BAL")
+    @Column(name = "ST_CURR_BAL", precision = 11, scale = 2)
     private BigDecimal stCurrBal;
 
-    @Column(name = "ST_FICO_SCORE")
+    @Column(name = "ST_FICO_SCORE", length = 20)
     private String stFicoScore;
 
-    @Column(name = "ST_TRANID")
+    @Column(name = "ST_TRANID", length = 16)
     private String stTranid;
 
-    @Column(name = "ST_TRANDT")
+    @Column(name = "ST_TRANDT", length = 49)
     private String stTrandt;
 
-    @Column(name = "ST_TRANAMT")
+    @Column(name = "ST_TRANAMT", precision = 11, scale = 2)
     private BigDecimal stTranamt;
 
-    @Column(name = "ST_TOTAL_TRAMT")
+    @Column(name = "ST_TOTAL_TRAMT", precision = 11, scale = 2)
     private BigDecimal stTotalTramt;
 
-    @Column(name = "HTML_FIXED_LN")
+    @Column(name = "HTML_FIXED_LN", length = 100)
     private String htmlFixedLn;
 
-    @Column(name = "L11_ACCT")
+    @Column(name = "L11_ACCT", length = 20)
     private String l11Acct;
 
-    @Column(name = "L23_NAME")
+    @Column(name = "L23_NAME", length = 50)
     private String l23Name;
 
-    @Column(name = "HTML_ADDR_LN")
+    @Column(name = "HTML_ADDR_LN", length = 100)
     private String htmlAddrLn;
 
-    @Column(name = "HTML_BSIC_LN")
+    @Column(name = "HTML_BSIC_LN", length = 100)
     private String htmlBsicLn;
 
-    @Column(name = "HTML_TRAN_LN")
+    @Column(name = "HTML_TRAN_LN", length = 100)
     private String htmlTranLn;
 
-    @Column(name = "WS_CARD_NUM")
+    @Column(name = "WS_CARD_NUM", length = 16)
     private String wsCardNum;
 
-    @Column(name = "WS_TRAN_NUM")
+    @Column(name = "WS_TRAN_NUM", length = 16)
     private String wsTranNum;
 
-    @Column(name = "WS_TRAN_REST")
+    @Column(name = "WS_TRAN_REST", length = 318)
     private String wsTranRest;
 
     @Column(name = "WS_TRCT")
@@ -137,19 +137,19 @@ public class Cbstm03aTiotEntry {
     @Column(name = "BUMP_TIOT")
     private Integer bumpTiot;
 
-    @Column(name = "TIOTNJOB")
+    @Column(name = "TIOTNJOB", length = 8)
     private String tiotnjob;
 
-    @Column(name = "TIOTJSTP")
+    @Column(name = "TIOTJSTP", length = 8)
     private String tiotjstp;
 
-    @Column(name = "TIO_LEN")
+    @Column(name = "TIO_LEN", length = 1)
     private String tioLen;
 
-    @Column(name = "TIOCDDNM")
+    @Column(name = "TIOCDDNM", length = 8)
     private String tiocddnm;
 
-    @Column(name = "UCB_ADDR")
+    @Column(name = "UCB_ADDR", length = 3)
     private String ucbAddr;
 
 }

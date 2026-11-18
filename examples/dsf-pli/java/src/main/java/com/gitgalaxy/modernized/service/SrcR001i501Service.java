@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.FeilStruc2;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.SrcR0019921FeilStruc;
 import com.gitgalaxy.modernized.dto.contract.SrcR001i501KomOmr;
 import com.gitgalaxy.modernized.entity.vsam.FfuRec;
 import com.gitgalaxy.modernized.entity.vsam.KeyRecl;
@@ -84,48 +85,74 @@ public class SrcR001i501Service {
     // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
     // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
 
-    public void executeSrcR001i501(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__R001I501");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcR001i501: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcR001i501: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R001I501", null);
+        region.run(task, "R001I501", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R0013301) at src/R001I501.pli:2052.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public SrcR001i501KomOmr linkSrcR0013301(SrcR001i501KomOmr request) {
         return srcR0013301Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS LINK PROGRAM(R0019921) at src/R001I501.pli:1942.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public FeilStruc2 linkSrcR0019921(FeilStruc2 request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcR0019921FeilStruc linkSrcR0019921(SrcR0019921FeilStruc request) {
         return srcR0019921Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS LINK PROGRAM(R001I601) at src/R001I501.pli:364.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public SrcR001i501KomOmr linkSrcR001i601(SrcR001i501KomOmr request) {
         return srcR001i601Service.getObject().handleLink(request);
     }
 
     /** FFUDATA as CICS file FFUDATA at src/R001I501.pli:2117; VSAM defines field testing: open (3 public / 0 private estates). */
     public FfuRec writeFfudata(FfuRec record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<FfuRec> onFile = ffuRecRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file FFUDATA already holds the key of this record");
+        }
         return ffuRecRepository.save(record);
     }
 
     /** KEYFIL as CICS file KEYFIL at src/R001I501.pli:1638; VSAM defines field testing: open (3 public / 0 private estates). */
     // TODO: this program uses KEYFIL_RECL (24 bytes); the entity follows KEYFIL_RECL (21 bytes) -- map one onto the other
     public KeyfilRecl writeKeyfil(KeyfilRecl record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<KeyfilRecl> onFile = keyfilReclRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file KEYFIL already holds the key of this record");
+        }
         return keyfilReclRepository.save(record);
     }
 
     /** KOMP as CICS file KOMP at src/R001I501.pli:1732; VSAM defines field testing: open (3 public / 0 private estates). */
     // TODO: this program uses KOMP_REC (67 bytes); the entity follows KEY_RECL (61 bytes) -- map one onto the other
     public KeyRecl writeKomp(KeyRecl record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<KeyRecl> onFile = keyReclRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file KOMP already holds the key of this record");
+        }
         return keyReclRepository.save(record);
     }
 
@@ -136,6 +163,12 @@ public class SrcR001i501Service {
 
     /** OLINNTE as CICS file OLINNTE at src/R001I501.pli:3545; VSAM defines field testing: open (3 public / 0 private estates). */
     public OliRec writeOlinnte(OliRec record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<OliRec> onFile = oliRecRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file OLINNTE already holds the key of this record");
+        }
         return oliRecRepository.save(record);
     }
 

@@ -34,26 +34,52 @@ public class FdDiscgrpRec {
     private String fdDiscgrpData;
 
 
+    /** #4875: the record bytes this entity was read from, kept beside the typed columns: a field whose
+     *  value is unchanged is written back as these bytes, so a value no column type holds (spaces in a
+     *  PIC 9, a non-preferred sign) and FILLER survive the round trip, as the VSAM record keeps them. */
+    @Column(name = "VSAM_RECORD", length = 50)
+    @lombok.Getter(lombok.AccessLevel.NONE)
+    @lombok.Setter(lombok.AccessLevel.NONE)
+    @lombok.EqualsAndHashCode.Exclude
+    @lombok.ToString.Exclude
+    private byte[] vsamRecord;
+
     /** #3624: this record from its fixed-width VSAM form (50 bytes, as REPRO unloads it), each
      *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
-     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+     *  transfer, IBM037 on z/OS). The bytes themselves are kept in vsamRecord (#4875). */
     public static FdDiscgrpRec fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        if (rec.length < 50) {  // a WRITE ... LENGTH(n) short of the record: the rest is spaces
+            byte[] full = CobolRecords.blank(50, text);
+            System.arraycopy(rec, 0, full, 0, rec.length);
+            rec = full;
+        }
         FdDiscgrpRec r = new FdDiscgrpRec();
         r.id = new FdDiscgrpRecKey();
         r.id.setFdDisAcctGroupId(CobolRecords.text(rec, 0, 10, text));
         r.id.setFdDisTranTypeCd(CobolRecords.text(rec, 10, 2, text));
         r.id.setFdDisTranCatCd(CobolRecords.toInteger(CobolRecords.zoned(rec, 12, 4, 0, text)));
         r.fdDiscgrpData = CobolRecords.text(rec, 16, 34, text);
+        r.vsamRecord = java.util.Arrays.copyOf(rec, 50);
         return r;
     }
 
-    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    /** #3624: the fixed-width VSAM record of this entity: the bytes it was read from (vsamRecord), each field
+     *  whose value changed since re-encoded; a new entity's FILLER as spaces. */
     public byte[] toRecord(java.nio.charset.Charset text) {
-        byte[] rec = CobolRecords.blank(50, text);
-        CobolRecords.putText(rec, 0, 10, id.getFdDisAcctGroupId(), text);
-        CobolRecords.putText(rec, 10, 2, id.getFdDisTranTypeCd(), text);
-        CobolRecords.putZoned(rec, 12, 4, 0, false, CobolRecords.decimal(id.getFdDisTranCatCd()), text);
-        CobolRecords.putText(rec, 16, 34, fdDiscgrpData, text);
+        byte[] read = vsamRecord != null && vsamRecord.length == 50 ? vsamRecord : null;
+        byte[] rec = read != null ? read.clone() : CobolRecords.blank(50, text);
+        if (read == null || !java.util.Objects.equals(id.getFdDisAcctGroupId(), CobolRecords.text(read, 0, 10, text))) {
+            CobolRecords.putText(rec, 0, 10, id.getFdDisAcctGroupId(), text);
+        }
+        if (read == null || !java.util.Objects.equals(id.getFdDisTranTypeCd(), CobolRecords.text(read, 10, 2, text))) {
+            CobolRecords.putText(rec, 10, 2, id.getFdDisTranTypeCd(), text);
+        }
+        if (read == null || !java.util.Objects.equals(id.getFdDisTranCatCd(), CobolRecords.toInteger(CobolRecords.zoned(read, 12, 4, 0, text)))) {
+            CobolRecords.putZoned(rec, 12, 4, 0, false, CobolRecords.decimal(id.getFdDisTranCatCd()), text);
+        }
+        if (read == null || !java.util.Objects.equals(fdDiscgrpData, CobolRecords.text(read, 16, 34, text))) {
+            CobolRecords.putText(rec, 16, 34, fdDiscgrpData, text);
+        }
         return rec;
     }
 }

@@ -23,7 +23,7 @@ public class Cbpaup0cPendingAuthDetails {
     @Column(name = "sys_id")
     private Long sysId;
 
-    @Column(name = "CURRENT_DATE")
+    @Column(name = "\"CURRENT_DATE\"")
     private Integer currentDate;
 
     @Column(name = "CURRENT_YYDDD")
@@ -68,19 +68,19 @@ public class Cbpaup0cPendingAuthDetails {
     @Column(name = "P_EXPIRY_DAYS")
     private Integer pExpiryDays;
 
-    @Column(name = "P_CHKP_FREQ")
+    @Column(name = "P_CHKP_FREQ", length = 5)
     private String pChkpFreq;
 
-    @Column(name = "P_CHKP_DIS_FREQ")
+    @Column(name = "P_CHKP_DIS_FREQ", length = 5)
     private String pChkpDisFreq;
 
-    @Column(name = "P_DEBUG_FLAG")
+    @Column(name = "P_DEBUG_FLAG", length = 1)
     private String pDebugFlag = "N/A";
 
-    @Column(name = "IO_PCB_MASK")
+    @Column(name = "IO_PCB_MASK", length = 1)
     private String ioPcbMask;
 
-    @Column(name = "PGM_PCB_MASK")
+    @Column(name = "PGM_PCB_MASK", length = 1)
     private String pgmPcbMask;
 
 }

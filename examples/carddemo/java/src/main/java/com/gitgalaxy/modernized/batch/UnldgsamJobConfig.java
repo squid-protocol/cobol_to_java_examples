@@ -29,7 +29,7 @@ public class UnldgsamJobConfig {
     public Job unldgsamJob(JobRepository jobRepository, PlatformTransactionManager tx, JclSteps steps, DbunldgsService dbunldgsService) {
         return new JobBuilder("UNLDGSAM", jobRepository)
                 .start(new StepBuilder("STEP01", jobRepository)
-                        .tasklet(steps.program("STEP01", "STEP01", null, null, null, () -> dbunldgsService.runBatch(DDS_STEP01, "DLI,DBUNLDGS,DLIGSAMP,,,,,,,,,,,N")), tx).build())
+                        .tasklet(steps.utility("STEP01", "STEP01", null, null, null, "DBUNLDGS", "STEP01 runs DBUNLDGS through DFSRRC00, which uses the DFSRRC00 PARM position 14 ('N'), an IMS region option the oracle has no model of, which the DFSRRC00 model refuses -- not run: a utility step to port"), tx).build())
                 .build();
     }
 }

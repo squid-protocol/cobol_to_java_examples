@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.FnrReg;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.SrcGmlR0019906FnrEndrReg;
 import com.gitgalaxy.modernized.exception.*;
 import com.gitgalaxy.modernized.messaging.TempStorage;
 import java.util.Optional;
@@ -73,48 +74,56 @@ public class SrcGmlR0010410Service {
     // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
     // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
 
-    public void executeSrcGmlR0010410(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__GML__R0010410");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcGmlR0010410: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcGmlR0010410: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R0010410", null);
+        region.run(task, "R0010410", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R0010411) at src/GML/R0010410.pli:3611.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcGmlR0010411() {
         srcGmlR0010411Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0013110) at src/GML/R0010410.pli:3748, src/GML/R0010410.pli:3771.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcGmlR0013110() {
         srcGmlR0013110Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0015201) at src/GML/R0010410.pli:3543, src/GML/R0010410.pli:3616.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcGmlR0015201() {
         srcGmlR0015201Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0019906) at src/GML/R0010410.pli:3312.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public FnrReg linkSrcGmlR0019906(FnrReg request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcGmlR0019906FnrEndrReg linkSrcGmlR0019906(SrcGmlR0019906FnrEndrReg request) {
         return srcGmlR0019906Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010301) at src/GML/R0010410.pli:3288. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcGmlR0010301() {
         srcGmlR0010301Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010412) at src/GML/R0010410.pli:3650. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcGmlR0010412() {
         srcGmlR0010412Service.getObject().handleLink();
     }

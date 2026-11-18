@@ -31,7 +31,7 @@ public class LoadpadbJobConfig {
     public Job loadpadbJob(JobRepository jobRepository, PlatformTransactionManager tx, JclSteps steps, PaudblodService paudblodService) {
         return new JobBuilder("LOADPADB", jobRepository)
                 .start(new StepBuilder("STEP01", jobRepository)
-                        .tasklet(steps.program("STEP01", "STEP01", null, null, null, () -> paudblodService.runBatch(DDS_STEP01, "BMP,PAUDBLOD,PSBPAUTB")), tx).build())
+                        .tasklet(steps.program("STEP01", "STEP01", null, null, null, () -> paudblodService.runBatch(DDS_STEP01, null)), tx).build())
                 .build();
     }
 }

@@ -12,6 +12,18 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.gitgalaxy.modernized.dto.contract.Cbstm03bLkM03bArea;
+import com.gitgalaxy.modernized.entity.vsam.AccountRecord;
+import com.gitgalaxy.modernized.entity.vsam.CardXrefRecord;
+import com.gitgalaxy.modernized.entity.vsam.CustomerRecord;
+import com.gitgalaxy.modernized.entity.vsam.FdTrnxfileRec;
+import com.gitgalaxy.modernized.entity.vsam.FdTrnxfileRecKey;
+import com.gitgalaxy.modernized.repository.vsam.AccountRecordRepository;
+import com.gitgalaxy.modernized.repository.vsam.CardXrefRecordRepository;
+import com.gitgalaxy.modernized.repository.vsam.CustomerRecordRepository;
+import com.gitgalaxy.modernized.repository.vsam.FdTrnxfileRecRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -19,14 +31,40 @@ public class Cbstm03bService {
 
     private static final Logger log = LoggerFactory.getLogger(Cbstm03bService.class);
 
-    public void executeCbstm03b(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for CBSTM03B");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    private final AccountRecordRepository accountRecordRepository;
+    private final CardXrefRecordRepository cardXrefRecordRepository;
+    private final CustomerRecordRepository customerRecordRepository;
+    private final FdTrnxfileRecRepository fdTrnxfileRecRepository;
+
+    /** CALLed by another program USING LK-M03B-AREA; returns its RETURN-CODE. A BY REFERENCE item is a CobolRef: set() it where the program changes it -- the caller sees the change. TODO: [AI AGENT] implement from the program's business rules. */
+    public int handleCall(Cbstm03bLkM03bArea lkM03bArea) {
+        log.info("Cbstm03b: handleCall");
+        return 0;
     }
 
-    /** CALLed by another program USING LK-M03B-AREA. TODO: [AI AGENT] implement from the program's business rules. */
-    public void handleCall(Cbstm03bLkM03bArea lkM03bArea) {
-        log.info("Cbstm03b: handleCall");
+    /** AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS as BATCH SELECT ACCT-FILE at app/cbl/CBSTM03B.CBL (SELECT ACCT-FILE); VSAM defines field testing: open (3 public / 0 private estates). */
+    // TODO: this program uses FD-ACCTFILE-REC (300 bytes); the entity follows ACCOUNT-RECORD (300 bytes) -- map one onto the other
+    public Optional<AccountRecord> readAcctFile(Long key) {
+        return accountRecordRepository.findById(key);
+    }
+
+    /** AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS as BATCH SELECT XREF-FILE at app/cbl/CBSTM03B.CBL (SELECT XREF-FILE); VSAM defines field testing: open (3 public / 0 private estates). */
+    // TODO: this program uses FD-XREFFILE-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other
+    // Sequential READ: in key order, XREF-CARD-NUM as cp037 bytes (#3945, #3822).
+    public List<CardXrefRecord> readAllXrefFile() {
+        return cardXrefRecordRepository.findAll(org.springframework.data.domain.Sort.by("xrefCardNumSort"));
+    }
+
+    /** AWS.M2.CARDDEMO.CUSTDATA.VSAM.KSDS as BATCH SELECT CUST-FILE at app/cbl/CBSTM03B.CBL (SELECT CUST-FILE); VSAM defines field testing: open (3 public / 0 private estates). */
+    // TODO: this program uses FD-CUSTFILE-REC (500 bytes); the entity follows CUSTOMER-RECORD (500 bytes) -- map one onto the other
+    public Optional<CustomerRecord> readCustFile(Integer key) {
+        return customerRecordRepository.findById(key);
+    }
+
+    /** AWS.M2.CARDDEMO.TRXFL.VSAM.KSDS as BATCH SELECT TRNX-FILE at app/cbl/CBSTM03B.CBL (SELECT TRNX-FILE); VSAM defines field testing: open (3 public / 0 private estates). */
+    // Sequential READ: in key order (FD-TRNX-CARD, FD-TRNX-ID, #3945). TODO: its text parts order by the database's collation, not the code page's bytes.
+    public List<FdTrnxfileRec> readAllTrnxFile() {
+        return fdTrnxfileRecRepository.findAll(org.springframework.data.domain.Sort.by("id.fdTrnxCard", "id.fdTrnxId"));
     }
 
 }
