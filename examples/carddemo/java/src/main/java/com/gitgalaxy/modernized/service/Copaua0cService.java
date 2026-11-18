@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.dto.contract.Copaua0cDfhcommarea;
 import com.gitgalaxy.modernized.entity.vsam.AccountRecord;
 import com.gitgalaxy.modernized.entity.vsam.CardXrefRecord;
@@ -48,15 +49,43 @@ public class Copaua0cService {
     private final TransientData transientData;
     private final MessageQueue messageQueue;
 
-    public void executeCopaua0c(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for COPAUA0C");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
-    /** A CICS transaction entered the program. TODO: [AI AGENT] implement from the program's business rules. */
+    /** A CICS transaction entered the program (#4343): one task of it in the region (CicsTask.region()),
+     *  ENTER pressed -- `request` its COMMAREA, null when started from a cleared screen -- run through runTask. Returns the COMMAREA its RETURN passes on (null: none). */
     public Copaua0cDfhcommarea handleTransaction(String transid, Copaua0cDfhcommarea request) {
         log.info("Copaua0c: handleTransaction");
-        return request;
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.transaction(transid, request);
+        region.run(task, "COPAUA0C", this::runTask);
+        return task.returned(Copaua0cDfhcommarea.class);
+    }
+
+    /** #4870: handleTransaction with the raw bytes of the previous task's COMMAREA (null: none); the
+     *  bytes this task's RETURN passes on are then answered by lastAnswerBytes(). */
+    public Copaua0cDfhcommarea handleTransaction(String transid, Copaua0cDfhcommarea request, byte[] area) {
+        log.info("Copaua0c: handleTransaction (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.transaction(transid, request, area);
+        region.run(task, "COPAUA0C", this::runTask);
+        lastAnswerBytes = task.returnedBytes();
+        return task.returned(Copaua0cDfhcommarea.class);
+    }
+
+    // @facade-helper: the bytes the last byte-carrying handleTransaction answered
+    private byte[] lastAnswerBytes;
+
+    /** The bytes the last byte-carrying handleTransaction's RETURN passed on (a copy; null: none).
+     *  @facade-helper */
+    public byte[] lastAnswerBytes() {
+        return lastAnswerBytes == null ? null : java.util.Arrays.copyOf(lastAnswerBytes, lastAnswerBytes.length);
+    }
+
+    /** One pseudo-conversational task of this program (#3754). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("Copaua0c: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
     /** AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS as CICS file ACCTDAT at app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl:525; VSAM defines field testing: open (3 public / 0 private estates). */

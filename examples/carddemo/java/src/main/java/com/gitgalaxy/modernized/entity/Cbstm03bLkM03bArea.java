@@ -23,31 +23,31 @@ public class Cbstm03bLkM03bArea {
     @Column(name = "sys_id")
     private Long sysId;
 
-    @Column(name = "FD_TRNX_CARD")
+    @Column(name = "FD_TRNX_CARD", length = 16)
     private String fdTrnxCard;
 
-    @Column(name = "FD_TRNX_ID")
+    @Column(name = "FD_TRNX_ID", length = 16)
     private String fdTrnxId;
 
-    @Column(name = "FD_CUST_ID")
+    @Column(name = "FD_CUST_ID", length = 9)
     private String fdCustId;
 
     @Column(name = "FD_ACCT_ID")
     private Integer fdAcctId;
 
-    @Column(name = "LK_M03B_DD")
+    @Column(name = "LK_M03B_DD", length = 8)
     private String lkM03BDd;
 
-    @Column(name = "LK_M03B_RC")
+    @Column(name = "LK_M03B_RC", length = 2)
     private String lkM03BRc;
 
-    @Column(name = "LK_M03B_KEY")
+    @Column(name = "LK_M03B_KEY", length = 25)
     private String lkM03BKey;
 
     @Column(name = "LK_M03B_KEY_LN")
     private Integer lkM03BKeyLn;
 
-    @Column(name = "LK_M03B_FLDT")
+    @Column(name = "LK_M03B_FLDT", length = 1000)
     private String lkM03BFldt;
 
 }

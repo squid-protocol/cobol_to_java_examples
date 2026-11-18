@@ -1,0 +1,327 @@
+{
+  "copybook_gaps": [],
+  "eras": {
+    "by_era": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "none": 5
+    },
+    "mixed": 0,
+    "programs": 5,
+    "tells": {}
+  },
+  "features": {
+    "compile_options": {
+      "ARITH: COMPAT": {
+        "count": 5,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-4d8b02d17cf4",
+          "P-755838cb057e",
+          "P-f6dd847bf789"
+        ]
+      },
+      "INTDATE: ANSI": {
+        "count": 5,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-4d8b02d17cf4",
+          "P-755838cb057e",
+          "P-f6dd847bf789"
+        ]
+      },
+      "NUMPROC: NOPFD": {
+        "count": 5,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-4d8b02d17cf4",
+          "P-755838cb057e",
+          "P-f6dd847bf789"
+        ]
+      },
+      "TRUNC: STD": {
+        "count": 5,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-4d8b02d17cf4",
+          "P-755838cb057e",
+          "P-f6dd847bf789"
+        ]
+      }
+    },
+    "data_types": {
+      "BINARY": {
+        "count": 5,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-4d8b02d17cf4",
+          "P-755838cb057e",
+          "P-f6dd847bf789"
+        ]
+      },
+      "EDITED": {
+        "count": 12,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-755838cb057e"
+        ]
+      },
+      "PACKED": {
+        "count": 51,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-4d8b02d17cf4",
+          "P-755838cb057e",
+          "P-f6dd847bf789"
+        ]
+      }
+    },
+    "statements": {
+      "ACCEPT": {
+        "count": 12,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-755838cb057e"
+        ]
+      },
+      "ARITH": {
+        "count": 25,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-755838cb057e"
+        ]
+      },
+      "CALL": {
+        "count": 3,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-755838cb057e"
+        ]
+      },
+      "CLOSE": {
+        "count": 9,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-755838cb057e"
+        ]
+      },
+      "COMPUTE": {
+        "count": 36,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-4d8b02d17cf4",
+          "P-755838cb057e",
+          "P-f6dd847bf789"
+        ]
+      },
+      "CONTINUE": {
+        "count": 11,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-4d8b02d17cf4",
+          "P-755838cb057e",
+          "P-f6dd847bf789"
+        ]
+      },
+      "DISPLAY": {
+        "count": 36,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-755838cb057e"
+        ]
+      },
+      "EVALUATE": {
+        "count": 24,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-4d8b02d17cf4",
+          "P-755838cb057e",
+          "P-f6dd847bf789"
+        ]
+      },
+      "GOBACK": {
+        "count": 5,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-4d8b02d17cf4",
+          "P-755838cb057e",
+          "P-f6dd847bf789"
+        ]
+      },
+      "IF": {
+        "count": 70,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-4d8b02d17cf4",
+          "P-755838cb057e",
+          "P-f6dd847bf789"
+        ]
+      },
+      "INITIALIZE": {
+        "count": 1,
+        "programs": [
+          "P-755838cb057e"
+        ]
+      },
+      "MOVE": {
+        "count": 243,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-4d8b02d17cf4",
+          "P-755838cb057e",
+          "P-f6dd847bf789"
+        ]
+      },
+      "OPEN": {
+        "count": 3,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-755838cb057e"
+        ]
+      },
+      "PERFORM": {
+        "count": 100,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-4d8b02d17cf4",
+          "P-755838cb057e",
+          "P-f6dd847bf789"
+        ]
+      },
+      "READ": {
+        "count": 6,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-755838cb057e"
+        ]
+      },
+      "WRITE": {
+        "count": 32,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-755838cb057e"
+        ]
+      },
+      "unknown": {
+        "count": 19,
+        "programs": [
+          "P-3951e7198794",
+          "P-43f37dd7080a",
+          "P-755838cb057e"
+        ]
+      }
+    }
+  },
+  "other": {},
+  "programs": [
+    {
+      "earliest": null,
+      "era": null,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-3951e7198794",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [],
+      "translation": "refused"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-43f37dd7080a",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [],
+      "translation": "refused"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-4d8b02d17cf4",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [],
+      "translation": "refused"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-755838cb057e",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [],
+      "translation": "refused"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-f6dd847bf789",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [],
+      "translation": "refused"
+    }
+  ],
+  "redacted": true,
+  "rules": {
+    "classes": 1,
+    "ranked": [
+      {
+        "one_away": 0,
+        "only": 5,
+        "only_by_era": {
+          "none": 5
+        },
+        "rule": "refused: CopyAmbiguous",
+        "touched": 5
+      }
+    ]
+  },
+  "schema": "gitgalaxy-assess/1",
+  "tool_version": "2.4.9.dev334+gacd547e89.d20260901",
+  "totals": {
+    "assembler_members": 0,
+    "parsed": 5,
+    "programs": 5,
+    "refused_by_family": 0,
+    "translation": {
+      "holes": 0,
+      "refused": 5,
+      "whole": 0
+    },
+    "unparsed": 0
+  }
+}

@@ -941,20 +941,6 @@
     {
       "facts": [
         {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:138"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgacdb01Controller.java",
-      "kind": "controller-endpoint",
-      "symbol": "Lgacdb01Controller#transactionDSCA",
-      "todos": []
-    },
-    {
-      "facts": [
-        {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
           "section": "commarea_contracts",
@@ -964,20 +950,6 @@
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgacdb02Controller.java",
       "kind": "controller-endpoint",
       "symbol": "Lgacdb02Controller#link",
-      "todos": []
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:141"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgacdb02Controller.java",
-      "kind": "controller-endpoint",
-      "symbol": "Lgacdb02Controller#transactionDSCA",
       "todos": []
     },
     {
@@ -1006,25 +978,7 @@
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgacvs01Controller.java",
       "kind": "controller-endpoint",
       "symbol": "Lgacvs01Controller#link",
-      "todos": [
-        "TODO: DFHCOMMAREA (base/src/lgacdb01.cbl), passed at base/src/lgacdb01.cbl:174, has no known width; this program's declared DFHCOMMAREA (32500 bytes) is used -- confirm the callers pass it."
-      ]
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:162"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgacvs01Controller.java",
-      "kind": "controller-endpoint",
-      "symbol": "Lgacvs01Controller#transactionVSCA",
-      "todos": [
-        "TODO: DFHCOMMAREA (base/src/lgacdb01.cbl), passed at base/src/lgacdb01.cbl:174, has no known width; this program's declared DFHCOMMAREA (32500 bytes) is used -- confirm the callers pass it."
-      ]
+      "todos": []
     },
     {
       "facts": [
@@ -1038,20 +992,6 @@
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgapdb01Controller.java",
       "kind": "controller-endpoint",
       "symbol": "Lgapdb01Controller#link",
-      "todos": []
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:144"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgapdb01Controller.java",
-      "kind": "controller-endpoint",
-      "symbol": "Lgapdb01Controller#transactionDSPA",
       "todos": []
     },
     {
@@ -1102,25 +1042,7 @@
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgapvs01Controller.java",
       "kind": "controller-endpoint",
       "symbol": "Lgapvs01Controller#link",
-      "todos": [
-        "TODO: DFHCOMMAREA (base/src/lgapdb01.cbl), passed at base/src/lgapdb01.cbl:243, has no known width; this program's declared DFHCOMMAREA (32500 bytes) is used -- confirm the callers pass it."
-      ]
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:165"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgapvs01Controller.java",
-      "kind": "controller-endpoint",
-      "symbol": "Lgapvs01Controller#transactionVSPA",
-      "todos": [
-        "TODO: DFHCOMMAREA (base/src/lgapdb01.cbl), passed at base/src/lgapdb01.cbl:243, has no known width; this program's declared DFHCOMMAREA (32500 bytes) is used -- confirm the callers pass it."
-      ]
+      "todos": []
     },
     {
       "facts": [],
@@ -1155,20 +1077,6 @@
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgdpdb01Controller.java",
       "kind": "controller-endpoint",
       "symbol": "Lgdpdb01Controller#link",
-      "todos": []
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:147"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgdpdb01Controller.java",
-      "kind": "controller-endpoint",
-      "symbol": "Lgdpdb01Controller#transactionDSPD",
       "todos": []
     },
     {
@@ -1219,25 +1127,7 @@
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgdpvs01Controller.java",
       "kind": "controller-endpoint",
       "symbol": "Lgdpvs01Controller#link",
-      "todos": [
-        "TODO: DFHCOMMAREA (base/src/lgdpdb01.cbl), passed at base/src/lgdpdb01.cbl:168, has no known width; this program's declared DFHCOMMAREA (32500 bytes) is used -- confirm the callers pass it."
-      ]
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:168"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgdpvs01Controller.java",
-      "kind": "controller-endpoint",
-      "symbol": "Lgdpvs01Controller#transactionVSPD",
-      "todos": [
-        "TODO: DFHCOMMAREA (base/src/lgdpdb01.cbl), passed at base/src/lgdpdb01.cbl:168, has no known width; this program's declared DFHCOMMAREA (32500 bytes) is used -- confirm the callers pass it."
-      ]
+      "todos": []
     },
     {
       "facts": [
@@ -1251,20 +1141,6 @@
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgicdb01Controller.java",
       "kind": "controller-endpoint",
       "symbol": "Lgicdb01Controller#link",
-      "todos": []
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:150"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgicdb01Controller.java",
-      "kind": "controller-endpoint",
-      "symbol": "Lgicdb01Controller#transactionDSCI",
       "todos": []
     },
     {
@@ -1316,26 +1192,6 @@
     {
       "facts": [
         {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:61"
-        },
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:171"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgicvs01Controller.java",
-      "kind": "controller-endpoint",
-      "symbol": "Lgicvs01Controller#transactionVSCI",
-      "todos": []
-    },
-    {
-      "facts": [
-        {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
           "section": "commarea_contracts",
@@ -1345,20 +1201,6 @@
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgipdb01Controller.java",
       "kind": "controller-endpoint",
       "symbol": "Lgipdb01Controller#link",
-      "todos": []
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:153"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgipdb01Controller.java",
-      "kind": "controller-endpoint",
-      "symbol": "Lgipdb01Controller#transactionDSPI",
       "todos": []
     },
     {
@@ -1439,26 +1281,6 @@
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgipvs01Controller.java",
       "kind": "controller-endpoint",
       "symbol": "Lgipvs01Controller#transactionLGPF",
-      "todos": []
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:64"
-        },
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:174"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgipvs01Controller.java",
-      "kind": "controller-endpoint",
-      "symbol": "Lgipvs01Controller#transactionVSPI",
       "todos": []
     },
     {
@@ -2042,20 +1864,6 @@
     {
       "facts": [
         {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:156"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgucdb01Controller.java",
-      "kind": "controller-endpoint",
-      "symbol": "Lgucdb01Controller#transactionDSCI",
-      "todos": []
-    },
-    {
-      "facts": [
-        {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
           "section": "commarea_contracts",
@@ -2079,25 +1887,7 @@
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgucvs01Controller.java",
       "kind": "controller-endpoint",
       "symbol": "Lgucvs01Controller#link",
-      "todos": [
-        "TODO: DFHCOMMAREA (base/src/lgucdb01.cbl), passed at base/src/lgucdb01.cbl:136, has no known width; this program's declared DFHCOMMAREA (32500 bytes) is used -- confirm the callers pass it."
-      ]
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:177"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgucvs01Controller.java",
-      "kind": "controller-endpoint",
-      "symbol": "Lgucvs01Controller#transactionVSC1",
-      "todos": [
-        "TODO: DFHCOMMAREA (base/src/lgucdb01.cbl), passed at base/src/lgucdb01.cbl:136, has no known width; this program's declared DFHCOMMAREA (32500 bytes) is used -- confirm the callers pass it."
-      ]
+      "todos": []
     },
     {
       "facts": [
@@ -2111,20 +1901,6 @@
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgupdb01Controller.java",
       "kind": "controller-endpoint",
       "symbol": "Lgupdb01Controller#link",
-      "todos": []
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:159"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgupdb01Controller.java",
-      "kind": "controller-endpoint",
-      "symbol": "Lgupdb01Controller#transactionDSPI",
       "todos": []
     },
     {
@@ -2168,25 +1944,7 @@
       "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgupvs01Controller.java",
       "kind": "controller-endpoint",
       "symbol": "Lgupvs01Controller#link",
-      "todos": [
-        "TODO: DFHCOMMAREA (base/src/lgupdb01.cbl), passed at base/src/lgupdb01.cbl:209, has no known width; this program's declared DFHCOMMAREA (32500 bytes) is used -- confirm the callers pass it."
-      ]
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/cntl/cdef123.jcl:180"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/controller/Lgupvs01Controller.java",
-      "kind": "controller-endpoint",
-      "symbol": "Lgupvs01Controller#transactionVSP1",
-      "todos": [
-        "TODO: DFHCOMMAREA (base/src/lgupdb01.cbl), passed at base/src/lgupdb01.cbl:209, has no known width; this program's declared DFHCOMMAREA (32500 bytes) is used -- confirm the callers pass it."
-      ]
+      "todos": []
     },
     {
       "facts": [
@@ -2205,158 +1963,203 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
-          "source": "The COMMAREA Lgstsq receives, as passed by LINK at base/src/lgacdb01.cbl:316, LINK at base/src/lgacdb01.cbl:322."
+          "source": "The COMMAREA Lgacdb01 receives, as passed by LINK at base/src/lgacus01.cbl:134."
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01CaErrorMsg.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Dfhcommarea.java",
       "kind": "commarea-dto",
-      "symbol": "Lgacdb01CaErrorMsg",
+      "symbol": "Lgacdb01Dfhcommarea",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
-          "item": "CA-DATA @9+90",
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
-          "source": "base/src/lgacdb01.cbl"
+          "source": "base/src/lgcmarea.cpy"
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01CaErrorMsg.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Dfhcommarea.java",
       "kind": "dto-field",
-      "symbol": "Lgacdb01CaErrorMsg#caData",
+      "symbol": "Lgacdb01Dfhcommarea#caCustomerNum",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-REQUEST-ID @0+6",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgacdb01Dfhcommarea#caRequestId",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-REQUEST-SPECIFIC @18+32482",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgacdb01Dfhcommarea#caRequestSpecific",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-RETURN-CODE @6+2",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgacdb01Dfhcommarea#caReturnCode",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The COMMAREA Lgacdb02 receives, as passed by LINK at base/src/lgacdb01.cbl:186."
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Cdb2area.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb02Dfhcommarea.java",
       "kind": "commarea-dto",
-      "symbol": "Lgacdb01Cdb2area",
+      "symbol": "Lgacdb02Dfhcommarea",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "D2-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "base/src/lgacdb01.cbl"
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Cdb2area.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb02Dfhcommarea.java",
       "kind": "dto-field",
-      "symbol": "Lgacdb01Cdb2area#d2CustomerNum",
+      "symbol": "Lgacdb02Dfhcommarea#d2CustomerNum",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "D2-CUSTSECR-COUNT @50+4",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "base/src/lgacdb01.cbl"
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Cdb2area.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb02Dfhcommarea.java",
       "kind": "dto-field",
-      "symbol": "Lgacdb01Cdb2area#d2CustsecrCount",
+      "symbol": "Lgacdb02Dfhcommarea#d2CustsecrCount",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "D2-CUSTSECR-DATA @55+32445",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "base/src/lgacdb01.cbl"
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Cdb2area.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb02Dfhcommarea.java",
       "kind": "dto-field",
-      "symbol": "Lgacdb01Cdb2area#d2CustsecrData",
+      "symbol": "Lgacdb02Dfhcommarea#d2CustsecrData",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "D2-CUSTSECR-PASS @18+32",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "base/src/lgacdb01.cbl"
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Cdb2area.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb02Dfhcommarea.java",
       "kind": "dto-field",
-      "symbol": "Lgacdb01Cdb2area#d2CustsecrPass",
+      "symbol": "Lgacdb02Dfhcommarea#d2CustsecrPass",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "D2-CUSTSECR-STATE @54+1",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "base/src/lgacdb01.cbl"
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Cdb2area.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb02Dfhcommarea.java",
       "kind": "dto-field",
-      "symbol": "Lgacdb01Cdb2area#d2CustsecrState",
+      "symbol": "Lgacdb02Dfhcommarea#d2CustsecrState",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "D2-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "base/src/lgacdb01.cbl"
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Cdb2area.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb02Dfhcommarea.java",
       "kind": "dto-field",
-      "symbol": "Lgacdb01Cdb2area#d2RequestId",
+      "symbol": "Lgacdb02Dfhcommarea#d2RequestId",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "D2-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "base/src/lgacdb01.cbl"
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb01Cdb2area.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacdb02Dfhcommarea.java",
       "kind": "dto-field",
-      "symbol": "Lgacdb01Cdb2area#d2ReturnCode",
+      "symbol": "Lgacdb02Dfhcommarea#d2ReturnCode",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
-          "source": "The COMMAREA Lgacdb01 receives, as passed by LINK at base/src/lgacus01.cbl:134."
+          "source": "The COMMAREA Lgacus01 receives, as passed by LINK at base/src/lgtestc1.cbl:128."
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacus01Dfhcommarea.java",
@@ -2367,7 +2170,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2382,7 +2185,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2397,7 +2200,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2412,7 +2215,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2427,10 +2230,10 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
-          "source": "The DFHCOMMAREA Lgacvs01 declares in its LINKAGE SECTION."
+          "source": "The COMMAREA Lgacvs01 receives, as passed by LINK at base/src/lgacdb01.cbl:174."
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgacvs01Dfhcommarea.java",
@@ -2441,7 +2244,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2456,7 +2259,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2471,7 +2274,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2486,7 +2289,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2501,10 +2304,84 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The COMMAREA Lgapdb01 receives, as passed by LINK at base/src/lgapol01.cbl:121."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgapdb01Dfhcommarea.java",
+      "kind": "commarea-dto",
+      "symbol": "Lgapdb01Dfhcommarea",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-CUSTOMER-NUM @8+10",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgapdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgapdb01Dfhcommarea#caCustomerNum",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-REQUEST-ID @0+6",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgapdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgapdb01Dfhcommarea#caRequestId",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-REQUEST-SPECIFIC @18+32482",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgapdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgapdb01Dfhcommarea#caRequestSpecific",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-RETURN-CODE @6+2",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgapdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgapdb01Dfhcommarea#caReturnCode",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "The COMMAREA Lgapol01 receives, as passed by LINK at base/src/lgtestp1.cbl:115."
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgapol01Dfhcommarea.java",
@@ -2515,7 +2392,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2530,7 +2407,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2545,7 +2422,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2560,7 +2437,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2575,10 +2452,10 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
-          "source": "The DFHCOMMAREA Lgapvs01 declares in its LINKAGE SECTION."
+          "source": "The COMMAREA Lgapvs01 receives, as passed by LINK at base/src/lgapdb01.cbl:243."
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgapvs01Dfhcommarea.java",
@@ -2589,7 +2466,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2604,7 +2481,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2619,7 +2496,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2634,7 +2511,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2656,7 +2533,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The DFHCOMMAREA Lgastat1 declares in its LINKAGE SECTION."
@@ -2670,7 +2547,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2685,7 +2562,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2700,7 +2577,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2715,7 +2592,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2737,7 +2614,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "WS-DATA-RC @0+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2759,7 +2636,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "WS-DATA-REQ @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2774,10 +2651,84 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The COMMAREA Lgdpdb01 receives, as passed by LINK at base/src/lgdpol01.cbl:141."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgdpdb01Dfhcommarea.java",
+      "kind": "commarea-dto",
+      "symbol": "Lgdpdb01Dfhcommarea",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-CUSTOMER-NUM @8+10",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgdpdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgdpdb01Dfhcommarea#caCustomerNum",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-REQUEST-ID @0+6",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgdpdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgdpdb01Dfhcommarea#caRequestId",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-REQUEST-SPECIFIC @18+32482",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgdpdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgdpdb01Dfhcommarea#caRequestSpecific",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-RETURN-CODE @6+2",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgdpdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgdpdb01Dfhcommarea#caReturnCode",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "The COMMAREA Lgdpol01 receives, as passed by LINK at base/src/lgtestp1.cbl:139."
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgdpol01Dfhcommarea.java",
@@ -2788,7 +2739,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2803,7 +2754,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2818,7 +2769,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2833,7 +2784,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2848,10 +2799,10 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
-          "source": "The DFHCOMMAREA Lgdpvs01 declares in its LINKAGE SECTION."
+          "source": "The COMMAREA Lgdpvs01 receives, as passed by LINK at base/src/lgdpdb01.cbl:168."
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgdpvs01Dfhcommarea.java",
@@ -2862,7 +2813,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2877,7 +2828,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2892,7 +2843,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2907,7 +2858,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2922,10 +2873,84 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The COMMAREA Lgicdb01 receives, as passed by LINK at base/src/lgicus01.cbl:122."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgicdb01Dfhcommarea.java",
+      "kind": "commarea-dto",
+      "symbol": "Lgicdb01Dfhcommarea",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-CUSTOMER-NUM @8+10",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgicdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgicdb01Dfhcommarea#caCustomerNum",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-REQUEST-ID @0+6",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgicdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgicdb01Dfhcommarea#caRequestId",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-REQUEST-SPECIFIC @18+32482",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgicdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgicdb01Dfhcommarea#caRequestSpecific",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-RETURN-CODE @6+2",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgicdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgicdb01Dfhcommarea#caReturnCode",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "The COMMAREA Lgicus01 receives, as passed by LINK at base/src/lgtestc1.cbl:89, LINK at base/src/lgtestc1.cbl:151."
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgicus01Dfhcommarea.java",
@@ -2936,7 +2961,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2951,7 +2976,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2966,7 +2991,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2981,7 +3006,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -2996,7 +3021,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The DFHCOMMAREA Lgicvs01 declares in its LINKAGE SECTION."
@@ -3010,7 +3035,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "COMMA-DATA-H @0+14",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3025,7 +3050,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "COMMA-DATA-HIGH @14+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3040,10 +3065,84 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The COMMAREA Lgipdb01 receives, as passed by LINK at base/src/lgipol01.cbl:91."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgipdb01Dfhcommarea.java",
+      "kind": "commarea-dto",
+      "symbol": "Lgipdb01Dfhcommarea",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-CUSTOMER-NUM @8+10",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgipdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgipdb01Dfhcommarea#caCustomerNum",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-REQUEST-ID @0+6",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgipdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgipdb01Dfhcommarea#caRequestId",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-REQUEST-SPECIFIC @18+32482",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgipdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgipdb01Dfhcommarea#caRequestSpecific",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-RETURN-CODE @6+2",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgipdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgipdb01Dfhcommarea#caReturnCode",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "The COMMAREA Lgipol01 receives, as passed by LINK at base/src/lgtestp1.cbl:72, LINK at base/src/lgtestp1.cbl:173."
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgipol01Dfhcommarea.java",
@@ -3054,7 +3153,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3069,7 +3168,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3084,7 +3183,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3099,7 +3198,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3114,7 +3213,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The DFHCOMMAREA Lgipvs01 declares in its LINKAGE SECTION."
@@ -3128,7 +3227,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "COMMA-DATA-KEY @11+21",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3143,7 +3242,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "COMMA-DATA-TEXT @0+11",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3158,7 +3257,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The DFHCOMMAREA Lgsetup declares in its LINKAGE SECTION."
@@ -3172,7 +3271,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "COMMA-DATA-H @0+14",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3187,7 +3286,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "COMMA-DATA-HIGH @14+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3202,28 +3301,39 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
-          "source": "The COMMAREA Lgacus01 receives, as passed by LINK at base/src/lgtestc1.cbl:128."
-        },
+          "source": "The COMMAREA Lgstsq receives, as passed by LINK at base/src/lgacdb01.cbl:316, LINK at base/src/lgacdb01.cbl:322."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/LgstsqDfhcommarea.java",
+      "kind": "commarea-dto",
+      "symbol": "LgstsqDfhcommarea",
+      "todos": []
+    },
+    {
+      "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-DATA @9+90",
           "ledger_field": "record fields",
           "section": "interface",
-          "source": "The COMMAREA Lgicus01 receives, as passed by LINK at base/src/lgtestc1.cbl:89, LINK at base/src/lgtestc1.cbl:151."
-        },
+          "source": "base/src/lgacdb01.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/LgstsqDfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "LgstsqDfhcommarea#caData",
+      "todos": []
+    },
+    {
+      "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The COMMAREA Lgtestc1 receives, as passed by RETURN TRANSID at base/src/lgtestc1.cbl:231, RETURN TRANSID at base/src/lgtestc1.cbl:254."
-        },
-        {
-          "field_testing": "field-tested (6 public / 0 private estates)",
-          "ledger_field": "record fields",
-          "section": "interface",
-          "source": "The COMMAREA Lgucus01 receives, as passed by LINK at base/src/lgtestc1.cbl:190."
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgtestc1CommArea.java",
@@ -3234,7 +3344,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3249,7 +3359,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3264,7 +3374,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3279,7 +3389,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3294,34 +3404,10 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
-          "ledger_field": "record fields",
-          "section": "interface",
-          "source": "The COMMAREA Lgapol01 receives, as passed by LINK at base/src/lgtestp1.cbl:115."
-        },
-        {
-          "field_testing": "field-tested (6 public / 0 private estates)",
-          "ledger_field": "record fields",
-          "section": "interface",
-          "source": "The COMMAREA Lgdpol01 receives, as passed by LINK at base/src/lgtestp1.cbl:139."
-        },
-        {
-          "field_testing": "field-tested (6 public / 0 private estates)",
-          "ledger_field": "record fields",
-          "section": "interface",
-          "source": "The COMMAREA Lgipol01 receives, as passed by LINK at base/src/lgtestp1.cbl:72, LINK at base/src/lgtestp1.cbl:173."
-        },
-        {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The COMMAREA Lgtestp1 receives, as passed by RETURN TRANSID at base/src/lgtestp1.cbl:258, RETURN TRANSID at base/src/lgtestp1.cbl:281."
-        },
-        {
-          "field_testing": "field-tested (6 public / 0 private estates)",
-          "ledger_field": "record fields",
-          "section": "interface",
-          "source": "The COMMAREA Lgupol01 receives, as passed by LINK at base/src/lgtestp1.cbl:216."
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgtestp1CommArea.java",
@@ -3332,7 +3418,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3347,7 +3433,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3362,7 +3448,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3377,7 +3463,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3392,7 +3478,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The COMMAREA Lgtestp2 receives, as passed by RETURN TRANSID at base/src/lgtestp2.cbl:240, RETURN TRANSID at base/src/lgtestp2.cbl:263."
@@ -3406,7 +3492,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3421,7 +3507,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3436,7 +3522,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3451,7 +3537,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3466,7 +3552,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The COMMAREA Lgtestp3 receives, as passed by RETURN TRANSID at base/src/lgtestp3.cbl:239, RETURN TRANSID at base/src/lgtestp3.cbl:262."
@@ -3480,7 +3566,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3495,7 +3581,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3510,7 +3596,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3525,7 +3611,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3540,7 +3626,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The COMMAREA Lgtestp4 receives, as passed by RETURN TRANSID at base/src/lgtestp4.cbl:258, RETURN TRANSID at base/src/lgtestp4.cbl:281."
@@ -3554,7 +3640,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3569,7 +3655,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3584,7 +3670,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3599,7 +3685,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3614,10 +3700,84 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The COMMAREA Lgucdb01 receives, as passed by LINK at base/src/lgucus01.cbl:128."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgucdb01Dfhcommarea.java",
+      "kind": "commarea-dto",
+      "symbol": "Lgucdb01Dfhcommarea",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-CUSTOMER-NUM @8+10",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgucdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgucdb01Dfhcommarea#caCustomerNum",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-REQUEST-ID @0+6",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgucdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgucdb01Dfhcommarea#caRequestId",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-REQUEST-SPECIFIC @18+32482",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgucdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgucdb01Dfhcommarea#caRequestSpecific",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-RETURN-CODE @6+2",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgucdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgucdb01Dfhcommarea#caReturnCode",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "The COMMAREA Lgucus01 receives, as passed by LINK at base/src/lgtestc1.cbl:190."
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgucus01Dfhcommarea.java",
@@ -3628,7 +3788,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3643,7 +3803,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3658,7 +3818,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3673,7 +3833,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3688,10 +3848,10 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
-          "source": "The DFHCOMMAREA Lgucvs01 declares in its LINKAGE SECTION."
+          "source": "The COMMAREA Lgucvs01 receives, as passed by LINK at base/src/lgucdb01.cbl:136."
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgucvs01Dfhcommarea.java",
@@ -3702,7 +3862,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3717,7 +3877,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3732,7 +3892,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3747,7 +3907,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3762,10 +3922,84 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The COMMAREA Lgupdb01 receives, as passed by LINK at base/src/lgupol01.cbl:157."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgupdb01Dfhcommarea.java",
+      "kind": "commarea-dto",
+      "symbol": "Lgupdb01Dfhcommarea",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-CUSTOMER-NUM @8+10",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgupdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgupdb01Dfhcommarea#caCustomerNum",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-REQUEST-ID @0+6",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgupdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgupdb01Dfhcommarea#caRequestId",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-REQUEST-SPECIFIC @18+32482",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgupdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgupdb01Dfhcommarea#caRequestSpecific",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CA-RETURN-CODE @6+2",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "base/src/lgcmarea.cpy"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgupdb01Dfhcommarea.java",
+      "kind": "dto-field",
+      "symbol": "Lgupdb01Dfhcommarea#caReturnCode",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "The COMMAREA Lgupol01 receives, as passed by LINK at base/src/lgtestp1.cbl:216."
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgupol01Dfhcommarea.java",
@@ -3776,7 +4010,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3791,7 +4025,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3806,7 +4040,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3821,7 +4055,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3836,10 +4070,10 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
-          "source": "The DFHCOMMAREA Lgupvs01 declares in its LINKAGE SECTION."
+          "source": "The COMMAREA Lgupvs01 receives, as passed by LINK at base/src/lgupdb01.cbl:209."
         }
       ],
       "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Lgupvs01Dfhcommarea.java",
@@ -3850,7 +4084,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-CUSTOMER-NUM @8+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3865,7 +4099,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-ID @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3880,7 +4114,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-REQUEST-SPECIFIC @18+32482",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3895,7 +4129,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CA-RETURN-CODE @6+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3910,7 +4144,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "The DFHCOMMAREA Lgwebst5 declares in its LINKAGE SECTION."
@@ -3924,7 +4158,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "COMMA-DATA-H @0+14",
           "ledger_field": "record fields",
           "section": "interface",
@@ -3939,7 +4173,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "COMMA-DATA-HIGH @14+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -5354,6 +5588,40 @@
           "field_testing": "open (3 public / 0 private estates)",
           "ledger_field": "DB2 table access",
           "section": "db2_tables",
+          "source": "base/src/lgacdb01.cbl:280",
+          "verb": "SET"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/Db2ValuesRepository.java",
+      "kind": "db2-statement",
+      "symbol": "Db2ValuesRepository#setL280Lgacdb01",
+      "todos": [
+        "TODO: DB2 SQL on postgresql -- review the statement"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
+          "source": "base/src/lgapdb01.cbl:308",
+          "verb": "SET"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/repository/db2/Db2ValuesRepository.java",
+      "kind": "db2-statement",
+      "symbol": "Db2ValuesRepository#setL308Lgapdb01",
+      "todos": [
+        "TODO: DB2 SQL on postgresql -- review the statement"
+      ]
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (3 public / 0 private estates)",
+          "ledger_field": "DB2 table access",
+          "section": "db2_tables",
           "source": "base/src/lgapdb01.cbl:346",
           "verb": "INSERT"
         }
@@ -5736,7 +6004,6 @@
       "kind": "db2-statement",
       "symbol": "PolicyRepository#updateL318Lgupdb01",
       "todos": [
-        "TODO: a positioned statement (WHERE CURRENT OF): rewrite it to the row's key",
         "TODO: DB2 SQL on postgresql -- review the statement"
       ]
     },
@@ -5770,12 +6037,6 @@
     },
     {
       "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/src/lgacdb01.cbl"
-        },
         {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
@@ -5833,19 +6094,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgacdb01.cbl:308"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgacdb01.cbl:316"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgacdb01.cbl:322"
@@ -5889,12 +6150,6 @@
     {
       "facts": [
         {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/src/lgacdb02.cbl"
-        },
-        {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
           "section": "commarea_contracts",
@@ -5923,19 +6178,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgacdb02.cbl:205"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgacdb02.cbl:213"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgacdb02.cbl:219"
@@ -5993,19 +6248,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgacus01.cbl:159"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgacus01.cbl:167"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgacus01.cbl:173"
@@ -6034,12 +6289,6 @@
     },
     {
       "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/src/lgacvs01.cbl"
-        },
         {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
@@ -6075,19 +6324,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgacvs01.cbl:102"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgacvs01.cbl:109"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgacvs01.cbl:115"
@@ -6116,12 +6365,6 @@
     },
     {
       "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/src/lgapdb01.cbl"
-        },
         {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
@@ -6221,19 +6464,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgapdb01.cbl:575"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgapdb01.cbl:583"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgapdb01.cbl:589"
@@ -6305,19 +6548,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgapol01.cbl:149"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgapol01.cbl:157"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgapol01.cbl:163"
@@ -6347,12 +6590,6 @@
     {
       "facts": [
         {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/src/lgapvs01.cbl"
-        },
-        {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
           "section": "cics_resources",
@@ -6373,19 +6610,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgapvs01.cbl:169"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgapvs01.cbl:176"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgapvs01.cbl:182"
@@ -6513,12 +6750,6 @@
     {
       "facts": [
         {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/src/lgdpdb01.cbl"
-        },
-        {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
           "section": "commarea_contracts",
@@ -6561,19 +6792,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgdpdb01.cbl:225"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgdpdb01.cbl:233"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgdpdb01.cbl:239"
@@ -6645,19 +6876,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgdpol01.cbl:166"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgdpol01.cbl:174"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgdpol01.cbl:180"
@@ -6686,12 +6917,6 @@
     },
     {
       "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/src/lgdpvs01.cbl"
-        },
         {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
@@ -6727,19 +6952,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgdpvs01.cbl:113"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgdpvs01.cbl:120"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgdpvs01.cbl:126"
@@ -6754,12 +6979,6 @@
     },
     {
       "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/src/lgicdb01.cbl"
-        },
         {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
@@ -6789,19 +7008,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgicdb01.cbl:225"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgicdb01.cbl:233"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgicdb01.cbl:239"
@@ -6859,19 +7078,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgicus01.cbl:146"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgicus01.cbl:154"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgicus01.cbl:160"
@@ -7043,7 +7262,7 @@
       "kind": "service-file-op",
       "symbol": "Lgicvs01Service#readKsdscust",
       "todos": [
-        "TODO: this program uses CA-AREA (225 bytes); the entity follows CA-CUSTOMER-NUM (10 bytes) -- map one onto the other"
+        "TODO: this program uses CA-AREA (225 bytes); the entity follows CA-CUSTOMER-NUM (225 bytes) -- map one onto the other"
       ]
     },
     {
@@ -7124,12 +7343,6 @@
     {
       "facts": [
         {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/src/lgipdb01.cbl"
-        },
-        {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
           "section": "commarea_contracts",
@@ -7158,19 +7371,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgipdb01.cbl:1010"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgipdb01.cbl:1018"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgipdb01.cbl:1024"
@@ -7228,19 +7441,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgipol01.cbl:119"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgipol01.cbl:127"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgipol01.cbl:133"
@@ -9127,64 +9340,6 @@
     {
       "facts": [
         {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestc1.cbl:64"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestc1.cbl:107"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestc1.cbl:142"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestc1.cbl:168"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestc1.cbl:203"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestc1.cbl:215"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestc1.cbl:249"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestc1.cbl:272"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Lgtestc1Service.java",
-      "kind": "screen-send",
-      "symbol": "Lgtestc1Service#renderSsmapc1",
-      "todos": [
-        "TODO: port the logic that fills SSMAPC1O before the SEND"
-      ]
-    },
-    {
-      "facts": [
-        {
           "field_testing": "field-tested (6 public / 0 private estates)",
           "ledger_field": "units of work and handlers",
           "section": "units_of_work",
@@ -9195,28 +9350,6 @@
       "kind": "rollback",
       "symbol": "Lgtestc1Service#rollbackL133",
       "todos": []
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestc1.cbl:79"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestc1.cbl:172"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Lgtestc1Service.java",
-      "kind": "screen-receive",
-      "symbol": "Lgtestc1Service#submitSsmapc1",
-      "todos": [
-        "TODO: port the logic that reads SSMAPC1I after the RECEIVE"
-      ]
     },
     {
       "facts": [
@@ -9391,76 +9524,6 @@
     {
       "facts": [
         {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp1.cbl:47"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp1.cbl:91"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp1.cbl:129"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp1.cbl:159"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp1.cbl:163"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp1.cbl:192"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp1.cbl:229"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp1.cbl:242"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp1.cbl:276"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp1.cbl:309"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Lgtestp1Service.java",
-      "kind": "screen-send",
-      "symbol": "Lgtestp1Service#renderSsmapp1",
-      "todos": [
-        "TODO: port the logic that fills SSMAPP1O before the SEND"
-      ]
-    },
-    {
-      "facts": [
-        {
           "field_testing": "field-tested (6 public / 0 private estates)",
           "ledger_field": "units of work and handlers",
           "section": "units_of_work",
@@ -9485,28 +9548,6 @@
       "kind": "rollback",
       "symbol": "Lgtestp1Service#rollbackL144",
       "todos": []
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp1.cbl:61"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp1.cbl:196"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Lgtestp1Service.java",
-      "kind": "screen-receive",
-      "symbol": "Lgtestp1Service#submitSsmapp1",
-      "todos": [
-        "TODO: port the logic that reads SSMAPP1I after the RECEIVE"
-      ]
     },
     {
       "facts": [
@@ -9621,70 +9662,6 @@
     {
       "facts": [
         {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp2.cbl:42"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp2.cbl:84"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp2.cbl:119"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp2.cbl:149"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp2.cbl:176"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp2.cbl:211"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp2.cbl:224"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp2.cbl:258"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp2.cbl:291"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Lgtestp2Service.java",
-      "kind": "screen-send",
-      "symbol": "Lgtestp2Service#renderSsmapp2",
-      "todos": [
-        "TODO: port the logic that fills SSMAPP2O before the SEND"
-      ]
-    },
-    {
-      "facts": [
-        {
           "field_testing": "field-tested (6 public / 0 private estates)",
           "ledger_field": "units of work and handlers",
           "section": "units_of_work",
@@ -9709,28 +9686,6 @@
       "kind": "rollback",
       "symbol": "Lgtestp2Service#rollbackL134",
       "todos": []
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp2.cbl:56"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp2.cbl:180"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Lgtestp2Service.java",
-      "kind": "screen-receive",
-      "symbol": "Lgtestp2Service#submitSsmapp2",
-      "todos": [
-        "TODO: port the logic that reads SSMAPP2I after the RECEIVE"
-      ]
     },
     {
       "facts": [
@@ -9845,70 +9800,6 @@
     {
       "facts": [
         {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp3.cbl:45"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp3.cbl:86"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp3.cbl:119"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp3.cbl:149"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp3.cbl:175"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp3.cbl:209"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp3.cbl:223"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp3.cbl:257"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp3.cbl:290"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Lgtestp3Service.java",
-      "kind": "screen-send",
-      "symbol": "Lgtestp3Service#renderSsmapp3",
-      "todos": [
-        "TODO: port the logic that fills SSMAPP3O before the SEND"
-      ]
-    },
-    {
-      "facts": [
-        {
           "field_testing": "field-tested (6 public / 0 private estates)",
           "ledger_field": "units of work and handlers",
           "section": "units_of_work",
@@ -9933,28 +9824,6 @@
       "kind": "rollback",
       "symbol": "Lgtestp3Service#rollbackL134",
       "todos": []
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp3.cbl:59"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp3.cbl:179"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Lgtestp3Service.java",
-      "kind": "screen-receive",
-      "symbol": "Lgtestp3Service#submitSsmapp3",
-      "todos": [
-        "TODO: port the logic that reads SSMAPP3I after the RECEIVE"
-      ]
     },
     {
       "facts": [
@@ -10041,58 +9910,6 @@
     {
       "facts": [
         {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp4.cbl:52"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp4.cbl:150"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp4.cbl:191"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp4.cbl:230"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp4.cbl:242"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp4.cbl:276"
-        },
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp4.cbl:309"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Lgtestp4Service.java",
-      "kind": "screen-send",
-      "symbol": "Lgtestp4Service#renderSsmapp4",
-      "todos": [
-        "TODO: port the logic that fills SSMAPP4O before the SEND"
-      ]
-    },
-    {
-      "facts": [
-        {
           "field_testing": "field-tested (6 public / 0 private estates)",
           "ledger_field": "units of work and handlers",
           "section": "units_of_work",
@@ -10120,28 +9937,6 @@
     },
     {
       "facts": [
-        {
-          "field_testing": "open (3 public / 0 private estates)",
-          "ledger_field": "BMS screen fields",
-          "section": "screen_bindings",
-          "source": "base/src/lgtestp4.cbl:66"
-        }
-      ],
-      "file": "src/main/java/com/gitgalaxy/modernized/service/Lgtestp4Service.java",
-      "kind": "screen-receive",
-      "symbol": "Lgtestp4Service#submitSsmapp4",
-      "todos": [
-        "TODO: port the logic that reads SSMAPP4I after the RECEIVE"
-      ]
-    },
-    {
-      "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/src/lgucdb01.cbl"
-        },
         {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
@@ -10185,19 +9980,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgucdb01.cbl:202"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgucdb01.cbl:210"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgucdb01.cbl:216"
@@ -10269,19 +10064,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgucus01.cbl:152"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgucus01.cbl:160"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgucus01.cbl:166"
@@ -10310,12 +10105,6 @@
     },
     {
       "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/src/lgucvs01.cbl"
-        },
         {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
@@ -10365,19 +10154,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgucvs01.cbl:117"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgucvs01.cbl:124"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgucvs01.cbl:130"
@@ -10433,12 +10222,6 @@
     {
       "facts": [
         {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/src/lgupdb01.cbl"
-        },
-        {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
           "section": "commarea_contracts",
@@ -10481,19 +10264,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgupdb01.cbl:515"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgupdb01.cbl:523"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgupdb01.cbl:529"
@@ -10579,19 +10362,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgupol01.cbl:181"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgupol01.cbl:189"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgupol01.cbl:195"
@@ -10620,12 +10403,6 @@
     },
     {
       "facts": [
-        {
-          "field_testing": "open (4 public / 0 private estates)",
-          "ledger_field": "entry transactions",
-          "section": "entry_transactions",
-          "source": "base/src/lgupvs01.cbl"
-        },
         {
           "field_testing": "open (5 public / 0 private estates)",
           "ledger_field": "CICS resources",
@@ -10675,19 +10452,19 @@
     {
       "facts": [
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgupvs01.cbl:187"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgupvs01.cbl:194"
         },
         {
-          "field_testing": "open (6 public / 0 private estates)",
+          "field_testing": "open (9 public / 0 private estates)",
           "ledger_field": "call targets",
           "section": "calls",
           "source": "base/src/lgupvs01.cbl:200"
@@ -11639,22 +11416,20 @@
     "skeleton_version": 1
   },
   "summary": {
-    "artifacts": 685,
+    "artifacts": 697,
     "by_kind": {
       "abend": 24,
-      "commarea-dto": 27,
+      "commarea-dto": 34,
       "condition-handler": 5,
-      "controller-endpoint": 47,
-      "db2-statement": 33,
+      "controller-endpoint": 32,
+      "db2-statement": 35,
       "dispatch": 13,
-      "dto-field": 90,
+      "dto-field": 118,
       "queue-op": 31,
       "remote": 35,
       "remote-client": 66,
       "rollback": 10,
       "screen-field": 74,
-      "screen-receive": 5,
-      "screen-send": 5,
       "screen-view-model": 5,
       "service-file-op": 9,
       "service-link": 20,
@@ -11664,8 +11439,8 @@
       "vsam-key": 1,
       "vsam-repository": 2
     },
-    "facts": 900,
-    "todos": 285
+    "facts": 848,
+    "todos": 266
   },
   "version": 1
 }

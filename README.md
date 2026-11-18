@@ -32,17 +32,20 @@ per-program work, and the equivalence harness below is how it is proven.
 
 | example | estate | Java files | services | entities | DTOs | batch jobs generated / JCL jobs | worklist items | GitGalaxy |
 |---|---|---|---|---|---|---|---|---|
-| [carddemo](examples/carddemo) | AWS CardDemo: CICS online (BMS screens, COMMAREA), VSAM, DB2, IMS, MQ and a JCL batch cycle | 237 | 44 | 36 | 72 | 16 / 55 | 277 | [scan](examples/carddemo/scan_comparison.md) |
-| [cbsa](examples/cbsa) | IBM CICS Bank Sample Application: CICS / DB2 online banking and its DB2 install JCL | 167 | 31 | 14 | 74 | 1 / 46 | 187 | [scan](examples/cbsa/scan_comparison.md) |
-| [genapp](examples/genapp) | IBM CICS GenApp: the general insurance application (CICS, DB2, VSAM) | 153 | 31 | 9 | 61 | 0 / 29 | 362 | [scan](examples/genapp/scan_comparison.md) |
-| [zecs](examples/zecs) | Walmart zECS: an assembler + COBOL CICS key/value service | 33 | 6 | 6 | 5 | 0 / 10 | 93 | [scan](examples/zecs/scan_comparison.md) |
-| [zopeneditor](examples/zopeneditor) | IBM Z Open Editor sample: batch COBOL and PL/I with JCL | 30 | 9 | 5 | 3 | 2 / 8 | 25 | [scan](examples/zopeneditor/scan_comparison.md) |
-| [dsf-pli](examples/dsf-pli) | NAV DSF: the Norwegian pension system, 431 PL/I programs under CICS / IMS | 1029 | 456 | 66 | 10 | 0 / 0 | 4668 | [scan](examples/dsf-pli/scan_comparison.md) |
+| [carddemo](examples/carddemo) | AWS CardDemo: CICS online (BMS screens, COMMAREA), VSAM, DB2, IMS, MQ and a JCL batch cycle | 241 | 44 | 39 | 76 | 16 / 55 | 198 | [scan](examples/carddemo/scan_comparison.md) |
+| [cbsa](examples/cbsa) | IBM CICS Bank Sample Application: CICS / DB2 online banking and its DB2 install JCL | 178 | 31 | 15 | 75 | 1 / 46 | 173 | [scan](examples/cbsa/scan_comparison.md) |
+| [genapp](examples/genapp) | IBM CICS GenApp: the general insurance application (CICS, DB2, VSAM) | 167 | 31 | 10 | 68 | 0 / 29 | 335 | [scan](examples/genapp/scan_comparison.md) |
+| [zecs](examples/zecs) | Walmart zECS: an assembler + COBOL CICS key/value service | 43 | 6 | 10 | 5 | 0 / 10 | 93 | [scan](examples/zecs/scan_comparison.md) |
+| [zopeneditor](examples/zopeneditor) | IBM Z Open Editor sample: batch COBOL and PL/I with JCL | 37 | 9 | 7 | 5 | 2 / 8 | 19 | [scan](examples/zopeneditor/scan_comparison.md) |
+| [dsf-pli](examples/dsf-pli) | NAV DSF: the Norwegian pension system, 431 PL/I programs under CICS / IMS | 1047 | 456 | 67 | 16 | 0 / 0 | 4657 | [scan](examples/dsf-pli/scan_comparison.md) |
 
 Each `examples/<name>/` has:
 - `java/`: the Spring project, as generated;
+- `reports/`: offline readiness & redacted blocker reports (`readiness.json`, `readiness_redacted.json`), plus `translation_fidelity.{json, md}` structural checks;
 - `PROVENANCE.md`: source commit, licence, generator commit, commands;
 - `scan_comparison.md`: the source estate and the Java, scanned by the same engine.
+
+For an offline readiness & blocker-report walkthrough on your own estate (zero source leakage via `gitgalaxy assess --redact`), reach out to `joe@gitgalaxy.io`. First blind estate validation (`example-health-apis`, 28 programs, deterministic `det` only): **23/28 (82%)** proven first try (`28/28` post-fix).
 
 ## Behavioural equivalence
 
@@ -52,7 +55,14 @@ field, decimals exact.
 
 | program | estate | as generated | generated + port |
 |---|---|---|---|
-| [CBACT04C](equivalence/carddemo-intcalc) | aws-mainframe-modernization-carddemo | 4 / 100 | **100 / 100** |
+| [COACTVWC](equivalence/carddemo-acctview) | aws-mainframe-modernization-carddemo | 0 / 97 | **97 / 97** |
+| [COADM01C](equivalence/carddemo-adminmenu) | aws-mainframe-modernization-carddemo | 0 / 88 | **88 / 88** |
+| [COBIL00C](equivalence/carddemo-billpay) | aws-mainframe-modernization-carddemo | 0 / 119 | **119 / 119** |
+| [COCRDLIC](equivalence/carddemo-cardlist) | aws-mainframe-modernization-carddemo | 0 / 126 | **126 / 126** |
+| [COCRDSLC](equivalence/carddemo-cardview) | aws-mainframe-modernization-carddemo | 0 / 65 | **65 / 65** |
+| [CBPAUP0C](equivalence/carddemo-cbpaup0c) | aws-mainframe-modernization-carddemo | 0 / 183 | **183 / 183** |
+| [CBSTM03A](equivalence/carddemo-cbstm03a) | aws-mainframe-modernization-carddemo | 0 / 4186 | **4186 / 4186** |
+| [CBACT04C](equivalence/carddemo-intcalc) | aws-mainframe-modernization-carddemo | 5 / 105 | **105 / 105** |
 
 CardDemo's CBACT04C (the interest calculator) matches on every record. The harness also found a defect
 in the original: the last account's interest is never added to its balance, because the loop's
@@ -68,5 +78,5 @@ Apache-2.0 ([LICENSE](LICENSE)).
 
 IBM, CICS, DB2, IMS and z/OS are trademarks of International Business Machines Corporation; AWS and Amazon Web Services are trademarks of Amazon.com, Inc. or its affiliates; Walmart is a trademark of Walmart Apps, LLC; NAV is the Norwegian Labour and Welfare Administration. Their names are used only to identify the source code these examples are derived from. This repository is not affiliated with, sponsored or endorsed by any of them.
 
-Generated by GitGalaxy commit [`0c2e00183aeb`](https://github.com/squid-protocol/gitgalaxy/commit/0c2e00183aebfc87b66a1f75296920e474abf5c5) with
+Generated by GitGalaxy commit [`93847302510e`](https://github.com/squid-protocol/gitgalaxy/commit/93847302510ebc9ab3f03c756de0c0ee1578e361) with
 `tests/tools/publish_examples.py`.

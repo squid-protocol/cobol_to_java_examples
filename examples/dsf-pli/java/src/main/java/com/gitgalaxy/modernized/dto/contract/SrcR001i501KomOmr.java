@@ -15,7 +15,7 @@ import java.math.BigDecimal;
  * PL/I structure KOM_OMR (src/R001I501.pli), 67 bytes, from GitGalaxy's verified skeleton.
  * The COMMAREA SrcR0013301 receives, as passed by LINK at src/R001I501.pli:2052.
  * The COMMAREA SrcR001i601 receives, as passed by LINK at src/R001I501.pli:364.
- * Record fields field testing: field-tested (6 public / 0 private estates).
+ * Record fields field testing: open (6 public / 0 private estates).
  */
 @Data
 @NoArgsConstructor

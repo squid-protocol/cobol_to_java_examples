@@ -27,18 +27,18 @@ public class Bnk1accScreen implements ScreenModel {
     public static final String MAPSET = "BNK1ACC";
     public static final String MAP = "BNK1ACC";
     public static final List<ScreenField> LAYOUT = List.of(
-            new ScreenField(null, 1, 1, 7, false, false, false, false, false, "BNK1ACC", "BLUE", 1),
-            new ScreenField("COMPANY", 1, 14, 60, false, false, false, false, false, "CICS Bank Sample Application - Accounts for Customers.", "RED", 1),
-            new ScreenField(null, 3, 1, 44, false, false, false, false, false, "Provide a Customer number. Then press Enter.", "TURQUOISE", 1),
-            new ScreenField(null, 5, 1, 15, false, false, false, false, false, "CUSTOMER NUMBER", "TURQUOISE", 1),
-            new ScreenField("CUSTNO", 5, 17, 10, false, true, false, false, true, null, "GREEN", 1),
-            new ScreenField(null, 5, 28, 1, false, false, false, false, false, null, null, 1),
-            new ScreenField(null, 8, 1, 41, false, false, false, false, false, "SORT CODE   ACCOUNT NUMBER   ACCOUNT TYPE", "NEUTRAL", 1),
-            new ScreenField(null, 8, 43, 33, false, false, false, false, false, "   AVAIL BALANCE   ACTUAL BALANCE", "NEUTRAL", 1),
-            new ScreenField("ACCOUNT", 9, 1, 79, false, false, false, false, false, null, "NEUTRAL", 10),
-            new ScreenField("MESSAGE", 23, 1, 79, false, false, true, false, false, null, "YELLOW", 1),
-            new ScreenField(null, 24, 1, 20, false, false, false, false, false, "F3=Exit   F12=Cancel", "BLUE", 1),
-            new ScreenField("DUMMY", 24, 79, 1, false, false, false, true, false, " ", null, 1));
+            new ScreenField(null, 1, 1, 7, false, false, false, false, false, "BNK1ACC", "BLUE", 1, null),
+            new ScreenField("COMPANY", 1, 14, 60, false, false, false, false, false, "CICS Bank Sample Application - Accounts for Customers.", "RED", 1, null),
+            new ScreenField(null, 3, 1, 44, false, false, false, false, false, "Provide a Customer number. Then press Enter.", "TURQUOISE", 1, null),
+            new ScreenField(null, 5, 1, 15, false, false, false, false, false, "CUSTOMER NUMBER", "TURQUOISE", 1, null),
+            new ScreenField("CUSTNO", 5, 17, 10, false, true, false, false, true, null, "GREEN", 1, "RIGHT,ZERO"),
+            new ScreenField(null, 5, 28, 1, false, false, false, false, false, null, null, 1, null),
+            new ScreenField(null, 8, 1, 41, false, false, false, false, false, "SORT CODE   ACCOUNT NUMBER   ACCOUNT TYPE", "NEUTRAL", 1, null),
+            new ScreenField(null, 8, 43, 33, false, false, false, false, false, "   AVAIL BALANCE   ACTUAL BALANCE", "NEUTRAL", 1, null),
+            new ScreenField("ACCOUNT", 9, 1, 79, false, false, false, false, false, null, "NEUTRAL", 10, null),
+            new ScreenField("MESSAGE", 23, 1, 79, false, false, true, false, false, null, "YELLOW", 1, null),
+            new ScreenField(null, 24, 1, 20, false, false, false, false, false, "F3=Exit   F12=Cancel", "BLUE", 1, null),
+            new ScreenField("DUMMY", 24, 79, 1, false, false, false, true, false, " ", null, 1, null));
 
     /** COMPANY: (1,14), 60 bytes, ATTRB=NORM,PROT -- src/base/bms_src/BNK1ACC.bms:30. Symbolic map COMPANYI, COMPANYO. */
     private String company;

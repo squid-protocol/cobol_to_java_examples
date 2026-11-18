@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.entity.vsam.AutoRec;
 import com.gitgalaxy.modernized.entity.vsam.OmrfeilFeilMeld;
 import com.gitgalaxy.modernized.exception.*;
@@ -49,30 +50,38 @@ public class SrcGmlR0011801Service {
     private final AutoRecRepository autoRecRepository;
     private final OmrfeilFeilMeldRepository omrfeilFeilMeldRepository;
 
-    public void executeSrcGmlR0011801(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__GML__R0011801");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcGmlR0011801: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcGmlR0011801: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R0011801", null);
+        region.run(task, "R0011801", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R0012002) at src/GML/R0011801.pli:363.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcGmlR0012002() {
         srcGmlR0012002Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010301) at src/GML/R0011801.pli:109. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcGmlR0010301() {
         srcGmlR0010301Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010401) at src/GML/R0011801.pli:116, src/GML/R0011801.pli:192. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcGmlR0010401() {
         srcGmlR0010401Service.getObject().handleLink();
     }
@@ -85,6 +94,12 @@ public class SrcGmlR0011801Service {
     /** OMRFEIL as CICS file OMRFEIL at src/GML/R0011801.pli:202, 208, 212, 216, 227, 233, 239, 247, 319, 347, 355, 369, 387; VSAM defines field testing: open (3 public / 0 private estates). */
     // TODO: this program uses FEIL_MELD (61 bytes); the entity follows FEIL_MELD (61 bytes) -- map one onto the other
     public OmrfeilFeilMeld writeOmrfeil(OmrfeilFeilMeld record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<OmrfeilFeilMeld> onFile = omrfeilFeilMeldRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file OMRFEIL already holds the key of this record");
+        }
         return omrfeilFeilMeldRepository.save(record);
     }
 

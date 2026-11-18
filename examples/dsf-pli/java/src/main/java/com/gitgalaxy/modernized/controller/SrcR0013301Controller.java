@@ -18,7 +18,7 @@ import com.gitgalaxy.modernized.service.SrcR0013301Service;
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
  * COMMAREA: KOM_OMR (src/R001I501.pli, 67 bytes) -> SrcR001i501KomOmr.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/src-r0013301")

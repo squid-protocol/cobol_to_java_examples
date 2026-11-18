@@ -11,10 +11,11 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.client.Dor1RemoteClient;
-import com.gitgalaxy.modernized.dto.contract.Lgacdb01CaErrorMsg;
+import com.gitgalaxy.modernized.dto.contract.Lgacdb01Dfhcommarea;
 import com.gitgalaxy.modernized.dto.contract.Lgacus01Dfhcommarea;
-import com.gitgalaxy.modernized.dto.contract.Lgtestc1CommArea;
+import com.gitgalaxy.modernized.dto.contract.LgstsqDfhcommarea;
 import com.gitgalaxy.modernized.exception.*;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,41 +29,67 @@ public class Lgacus01Service {
 
     private final Dor1RemoteClient dor1RemoteClient;
     private final ObjectProvider<LgstsqService> lgstsqService;
-    private final ObjectProvider<Lgacdb01Service> lgacdb01Service;
 
-    public void executeLgacus01(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for lgacus01");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("Lgacus01: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
-    public Lgtestc1CommArea handleLink(Lgtestc1CommArea request) {
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on `request`, passed by reference -- what it changes, the caller sees. */
+    public Lgacus01Dfhcommarea handleLink(Lgacus01Dfhcommarea request) {
         log.info("Lgacus01: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("LGACUS01", request);
+        region.run(task, "LGACUS01", this::runTask);
         return request;
+    }
+
+    /** #5053: handleLink with the raw bytes of the LINK's COMMAREA (passed by address: what the program
+     *  leaves there the caller sees); lastLinkBytes() then answers the bytes it left. */
+    public Lgacus01Dfhcommarea handleLink(Lgacus01Dfhcommarea request, byte[] area) {
+        log.info("Lgacus01: handleLink (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("LGACUS01", request, area);
+        region.run(task, "LGACUS01", this::runTask);
+        byte[] left = task.linkAreaView();
+        lastLinkBytes = task.linkAreaTaken() && left != null ? java.util.Arrays.copyOf(left, left.length) : null;
+        return request;
+    }
+
+    // @facade-helper: the bytes the last byte-carrying handleLink's program left in the COMMAREA
+    private byte[] lastLinkBytes;
+
+    /** The bytes the last byte-carrying handleLink's program left in the LINK COMMAREA (a copy; null: it took
+     *  none -- its DTO is the COMMAREA). @facade-helper */
+    public byte[] lastLinkBytes() {
+        return lastLinkBytes == null ? null : java.util.Arrays.copyOf(lastLinkBytes, lastLinkBytes.length);
     }
 
     /** EXEC CICS LINK PROGRAM(LGACDB01) at 134: the CSD routes it to region DOR1 (distributed program link).
      *  Remote calls field testing: open (5 public / 0 private estates). */
-    public Lgacus01Dfhcommarea remoteLgacdb01L134(Lgacus01Dfhcommarea request) {
+    public Lgacdb01Dfhcommarea remoteLgacdb01L134(Lgacdb01Dfhcommarea request) {
         return dor1RemoteClient.linkLgacdb01(request);
     }
 
     /** EXEC CICS LINK PROGRAM(LGSTSQ) at base/src/lgacus01.cbl:159, base/src/lgacus01.cbl:167, base/src/lgacus01.cbl:173.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     // TODO: this site passes ERROR-MSG; LGSTSQ receives CA-ERROR-MSG (base/src/lgacdb01.cbl) -- map one layout onto the other
-    public Lgacdb01CaErrorMsg linkLgstsq(Lgacdb01CaErrorMsg request) {
+    public LgstsqDfhcommarea linkLgstsq(LgstsqDfhcommarea request) {
         return lgstsqService.getObject().handleLink(request);
     }
 
-    /** LINK PROGRAM(LGACDB01) at base/src/lgacus01.cbl:134: the target is data-driven. Candidates: LGACDB01 (value).
+    /** EXEC CICS LINK PROGRAM(LGACDB01) at base/src/lgacus01.cbl:134, COMMAREA(DFHCOMMAREA) LENGTH(32500): the target is data-driven (candidates the engine found: LGACDB01 (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchLgacdb01L134(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "LGACDB01":
-                return lgacdb01Service.getObject().handleLink((Lgacus01Dfhcommarea) request);
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(LGACDB01) at base/src/lgacus01.cbl:134: no known target " + program);
-        }
+    public String dispatchLgacdb01L134(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
     }
 
     /**

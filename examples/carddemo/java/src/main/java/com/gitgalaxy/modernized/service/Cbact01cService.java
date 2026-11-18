@@ -26,15 +26,11 @@ public class Cbact01cService {
 
     private final AccountRecordRepository accountRecordRepository;
 
-    public void executeCbact01c(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for CBACT01C");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
     /** AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS as BATCH SELECT ACCTFILE-FILE at app/cbl/CBACT01C.cbl (SELECT ACCTFILE-FILE); VSAM defines field testing: open (3 public / 0 private estates). */
     // TODO: this program uses FD-ACCTFILE-REC (300 bytes); the entity follows ACCOUNT-RECORD (300 bytes) -- map one onto the other
+    // Sequential READ: in key order (ACCT-ID, #3945).
     public List<AccountRecord> readAllAcctfileFile() {
-        return accountRecordRepository.findAll();
+        return accountRecordRepository.findAll(org.springframework.data.domain.Sort.by("acctId"));
     }
 
     /** The batch entry (#3622): run by job READACCT step STEP05 (app/jcl/READACCT.jcl:32).

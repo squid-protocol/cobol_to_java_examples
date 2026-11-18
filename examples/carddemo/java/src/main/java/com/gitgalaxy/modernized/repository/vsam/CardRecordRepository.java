@@ -22,11 +22,13 @@ import com.gitgalaxy.modernized.entity.vsam.CardRecord;
 @Repository
 public interface CardRecordRepository extends JpaRepository<CardRecord, String> {
 
-    /** EXEC CICS STARTBR + READNEXT: records from a key onward, in key order. */
-    List<CardRecord> findByCardNumGreaterThanEqualOrderByCardNumAsc(String cardNum, Pageable page);
+    /** EXEC CICS STARTBR + READNEXT: records from a key onward, in the key's code-page order
+     *  (#3822: pass CobolRecords.sortKey(key, codePage)). */
+    List<CardRecord> findByCardNumSortGreaterThanEqualOrderByCardNumSortAsc(String cardNumSort, Pageable page);
 
-    /** EXEC CICS READPREV: records from a key backward, in reverse key order. */
-    List<CardRecord> findByCardNumLessThanEqualOrderByCardNumDesc(String cardNum, Pageable page);
+    /** EXEC CICS READPREV: records from a key backward, in reverse code-page order
+     *  (#3822: pass CobolRecords.sortKey(key, codePage)). */
+    List<CardRecord> findByCardNumSortLessThanEqualOrderByCardNumSortDesc(String cardNumSort, Pageable page);
 
     /** Alternate index AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX (path AWS.M2.CARDDEMO.CARDDATA.VSAM.AIX.PATH) on CARD-ACCT-ID, non-unique. */
     List<CardRecord> findByCardAcctId(Long cardAcctId);

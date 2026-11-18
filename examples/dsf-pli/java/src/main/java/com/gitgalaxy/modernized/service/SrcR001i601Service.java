@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.dto.contract.SrcR001i501KomOmr;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,31 +27,60 @@ public class SrcR001i601Service {
     private final ObjectProvider<SrcR0013110Service> srcR0013110Service;
     private final ObjectProvider<SrcR0015101Service> srcR0015101Service;
 
-    public void executeSrcR001i601(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__R001I601");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcR001i601: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on `request`, passed by reference -- what it changes, the caller sees. */
     public SrcR001i501KomOmr handleLink(SrcR001i501KomOmr request) {
         log.info("SrcR001i601: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R001I601", request);
+        region.run(task, "R001I601", this::runTask);
         return request;
     }
 
+    /** #5053: handleLink with the raw bytes of the LINK's COMMAREA (passed by address: what the program
+     *  leaves there the caller sees); lastLinkBytes() then answers the bytes it left. */
+    public SrcR001i501KomOmr handleLink(SrcR001i501KomOmr request, byte[] area) {
+        log.info("SrcR001i601: handleLink (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R001I601", request, area);
+        region.run(task, "R001I601", this::runTask);
+        byte[] left = task.linkAreaView();
+        lastLinkBytes = task.linkAreaTaken() && left != null ? java.util.Arrays.copyOf(left, left.length) : null;
+        return request;
+    }
+
+    // @facade-helper: the bytes the last byte-carrying handleLink's program left in the COMMAREA
+    private byte[] lastLinkBytes;
+
+    /** The bytes the last byte-carrying handleLink's program left in the LINK COMMAREA (a copy; null: it took
+     *  none -- its DTO is the COMMAREA). @facade-helper */
+    public byte[] lastLinkBytes() {
+        return lastLinkBytes == null ? null : java.util.Arrays.copyOf(lastLinkBytes, lastLinkBytes.length);
+    }
+
     /** EXEC CICS LINK PROGRAM(R0013101) at src/R001I601.pli:363, src/R001I601.pli:407.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR0013101() {
         srcR0013101Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0013110) at src/R001I601.pli:293.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR0013110() {
         srcR0013110Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0015101) at src/R001I601.pli:307.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR0015101() {
         srcR0015101Service.getObject().handleLink();
     }

@@ -18,7 +18,7 @@ import com.gitgalaxy.modernized.service.Bnk1ccaService;
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
  * COMMAREA: WS-COMM-AREA (src/base/cobol_src/BNK1CCA.cbl, 248 bytes) -> Bnk1ccaWsCommArea.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/bnk1cca")

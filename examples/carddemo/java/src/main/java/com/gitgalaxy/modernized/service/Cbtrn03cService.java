@@ -33,11 +33,6 @@ public class Cbtrn03cService {
     private final FdTranCatRecordRepository fdTranCatRecordRepository;
     private final FdTrantypeRecRepository fdTrantypeRecRepository;
 
-    public void executeCbtrn03c(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for CBTRN03C");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
     /** AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS as BATCH SELECT XREF-FILE at app/cbl/CBTRN03C.cbl (SELECT XREF-FILE); VSAM defines field testing: open (3 public / 0 private estates). */
     // TODO: this program uses FD-CARDXREF-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other
     public Optional<CardXrefRecord> readXrefFile(String key) {

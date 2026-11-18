@@ -11,8 +11,9 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.FeilStruc;
-import com.gitgalaxy.modernized.dto.contract.FnrReg;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.SrcGmlR0019906FnrEndrReg;
+import com.gitgalaxy.modernized.dto.contract.SrcGmlR0019921FeilStruc;
 import com.gitgalaxy.modernized.entity.vsam.BrukerinfoRec;
 import com.gitgalaxy.modernized.exception.*;
 import com.gitgalaxy.modernized.repository.vsam.BrukerinfoRecRepository;
@@ -46,42 +47,56 @@ public class SrcGmlR0010450Service {
     // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
     // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
 
-    public void executeSrcGmlR0010450(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__GML__R0010450");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcGmlR0010450: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcGmlR0010450: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R0010450", null);
+        region.run(task, "R0010450", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R0010490) at src/GML/R0010450.pli:524, src/GML/R0010450.pli:609.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcGmlR0010490() {
         srcGmlR0010490Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0019906) at src/GML/R0010450.pli:415.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public FnrReg linkSrcGmlR0019906(FnrReg request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcGmlR0019906FnrEndrReg linkSrcGmlR0019906(SrcGmlR0019906FnrEndrReg request) {
         return srcGmlR0019906Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS LINK PROGRAM(R0019921) at src/GML/R0010450.pli:660.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public FeilStruc linkSrcGmlR0019921(FeilStruc request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcGmlR0019921FeilStruc linkSrcGmlR0019921(SrcGmlR0019921FeilStruc request) {
         return srcGmlR0019921Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010301) at src/GML/R0010450.pli:359. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcGmlR0010301() {
         srcGmlR0010301Service.getObject().handleLink();
     }
 
     /** BRUKINFO as CICS file BRUKINFO at src/GML/R0010450.pli:817; VSAM defines field testing: open (3 public / 0 private estates). */
     public BrukerinfoRec writeBrukinfo(BrukerinfoRec record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<BrukerinfoRec> onFile = brukerinfoRecRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file BRUKINFO already holds the key of this record");
+        }
         return brukerinfoRecRepository.save(record);
     }
 

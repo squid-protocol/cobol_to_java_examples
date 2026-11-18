@@ -1,0 +1,74 @@
+[
+  {
+    "blast_radius": 23.247,
+    "callers": 2,
+    "calls": 2,
+    "file": "COBOL/SAM2.cbl",
+    "key": "COBOL__SAM2",
+    "rank": 1,
+    "ticket": "COBOL__SAM2_port_ticket.md"
+  },
+  {
+    "blast_radius": 25.386,
+    "callers": 1,
+    "calls": 3,
+    "file": "COBOL/SAM1.cbl",
+    "key": "COBOL__SAM1",
+    "rank": 2,
+    "ticket": "COBOL__SAM1_port_ticket.md"
+  },
+  {
+    "blast_radius": 25.386,
+    "callers": 1,
+    "calls": 1,
+    "file": "PLI/PSAM1.pli",
+    "key": "PSAM1",
+    "rank": 3,
+    "ticket": "PSAM1_port_ticket.md"
+  },
+  {
+    "blast_radius": 24.511,
+    "callers": 1,
+    "calls": 4,
+    "file": "multiroot/sam/SAM1.cbl",
+    "key": "multiroot__sam__SAM1",
+    "rank": 4,
+    "ticket": "multiroot__sam__SAM1_port_ticket.md"
+  },
+  {
+    "blast_radius": 18.931,
+    "callers": 1,
+    "calls": 3,
+    "file": "multiroot/sam/SAM2.cbl",
+    "key": "multiroot__sam__SAM2",
+    "rank": 5,
+    "ticket": "multiroot__sam__SAM2_port_ticket.md"
+  },
+  {
+    "blast_radius": 13.722,
+    "callers": 0,
+    "calls": 0,
+    "file": "PLI/MACSAMP.pli",
+    "key": "MACSAMP",
+    "rank": 6,
+    "ticket": "MACSAMP_port_ticket.md"
+  },
+  {
+    "blast_radius": 13.722,
+    "callers": 0,
+    "calls": 1,
+    "file": "PLI/PSAM1LIB.pli",
+    "key": "PSAM1LIB",
+    "rank": 7,
+    "ticket": "PSAM1LIB_port_ticket.md"
+  },
+  {
+    "blast_radius": 13.722,
+    "callers": 0,
+    "calls": 5,
+    "file": "COBOL/SAM1LIB.cbl",
+    "key": "SAM1LIB",
+    "rank": 8,
+    "ticket": "SAM1LIB_port_ticket.md"
+  }
+]

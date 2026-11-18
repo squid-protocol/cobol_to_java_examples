@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Locale;
 import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -38,7 +39,7 @@ public class DatasetResolver {
         }
         int current = latest(base);
         int g = current + Integer.parseInt(dd.generation().replace("+", ""));
-        return base.resolve(String.format("G%04dV00", Math.max(g, 1)));
+        return base.resolve(String.format(Locale.ROOT, "G%04dV00", Math.max(g, 1)));
     }
 
     private int latest(Path gdg) {

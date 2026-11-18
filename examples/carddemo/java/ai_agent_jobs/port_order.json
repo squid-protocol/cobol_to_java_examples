@@ -1,0 +1,398 @@
+[
+  {
+    "blast_radius": 6.804,
+    "callers": 3,
+    "calls": 0,
+    "file": "app/cbl/CSUTLDTC.cbl",
+    "key": "CSUTLDTC",
+    "rank": 1,
+    "ticket": "CSUTLDTC_port_ticket.md"
+  },
+  {
+    "blast_radius": 4.007,
+    "callers": 3,
+    "calls": 7,
+    "file": "app/cbl/COMEN01C.cbl",
+    "key": "COMEN01C",
+    "rank": 2,
+    "ticket": "COMEN01C_port_ticket.md"
+  },
+  {
+    "blast_radius": 8.649,
+    "callers": 2,
+    "calls": 5,
+    "file": "app/cbl/CBTRN03C.cbl",
+    "key": "CBTRN03C",
+    "rank": 3,
+    "ticket": "CBTRN03C_port_ticket.md"
+  },
+  {
+    "blast_radius": 4.863,
+    "callers": 2,
+    "calls": 13,
+    "file": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+    "key": "COTRTUPC",
+    "rank": 4,
+    "ticket": "COTRTUPC_port_ticket.md"
+  },
+  {
+    "blast_radius": 4.251,
+    "callers": 2,
+    "calls": 2,
+    "file": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+    "key": "COPAUS2C",
+    "rank": 5,
+    "ticket": "COPAUS2C_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.721,
+    "callers": 2,
+    "calls": 7,
+    "file": "app/cbl/COADM01C.cbl",
+    "key": "COADM01C",
+    "rank": 6,
+    "ticket": "COADM01C_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.926,
+    "callers": 1,
+    "calls": 3,
+    "file": "app/cbl/CBACT01C.cbl",
+    "key": "CBACT01C",
+    "rank": 7,
+    "ticket": "CBACT01C_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.926,
+    "callers": 1,
+    "calls": 1,
+    "file": "app/cbl/CBACT02C.cbl",
+    "key": "CBACT02C",
+    "rank": 8,
+    "ticket": "CBACT02C_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.926,
+    "callers": 1,
+    "calls": 1,
+    "file": "app/cbl/CBACT03C.cbl",
+    "key": "CBACT03C",
+    "rank": 9,
+    "ticket": "CBACT03C_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.926,
+    "callers": 1,
+    "calls": 5,
+    "file": "app/cbl/CBACT04C.cbl",
+    "key": "CBACT04C",
+    "rank": 10,
+    "ticket": "CBACT04C_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.926,
+    "callers": 1,
+    "calls": 1,
+    "file": "app/cbl/CBCUS01C.cbl",
+    "key": "CBCUS01C",
+    "rank": 11,
+    "ticket": "CBCUS01C_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.926,
+    "callers": 1,
+    "calls": 6,
+    "file": "app/cbl/CBEXPORT.cbl",
+    "key": "CBEXPORT",
+    "rank": 12,
+    "ticket": "CBEXPORT_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.926,
+    "callers": 1,
+    "calls": 6,
+    "file": "app/cbl/CBIMPORT.cbl",
+    "key": "CBIMPORT",
+    "rank": 13,
+    "ticket": "CBIMPORT_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.926,
+    "callers": 1,
+    "calls": 2,
+    "file": "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+    "key": "CBPAUP0C",
+    "rank": 14,
+    "ticket": "CBPAUP0C_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.926,
+    "callers": 1,
+    "calls": 5,
+    "file": "app/cbl/CBSTM03A.CBL",
+    "key": "CBSTM03A",
+    "rank": 15,
+    "ticket": "CBSTM03A_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.926,
+    "callers": 1,
+    "calls": 5,
+    "file": "app/cbl/CBTRN02C.cbl",
+    "key": "CBTRN02C",
+    "rank": 16,
+    "ticket": "CBTRN02C_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.926,
+    "callers": 1,
+    "calls": 1,
+    "file": "app/cbl/COBSWAIT.cbl",
+    "key": "COBSWAIT",
+    "rank": 17,
+    "ticket": "COBSWAIT_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.926,
+    "callers": 1,
+    "calls": 1,
+    "file": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+    "key": "COBTUPDT",
+    "rank": 18,
+    "ticket": "COBTUPDT_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.926,
+    "callers": 1,
+    "calls": 6,
+    "file": "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+    "key": "DBUNLDGS",
+    "rank": 19,
+    "ticket": "DBUNLDGS_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.926,
+    "callers": 1,
+    "calls": 4,
+    "file": "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+    "key": "PAUDBLOD",
+    "rank": 20,
+    "ticket": "PAUDBLOD_port_ticket.md"
+  },
+  {
+    "blast_radius": 5.926,
+    "callers": 1,
+    "calls": 4,
+    "file": "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+    "key": "PAUDBUNL",
+    "rank": 21,
+    "ticket": "PAUDBUNL_port_ticket.md"
+  },
+  {
+    "blast_radius": 4.565,
+    "callers": 1,
+    "calls": 1,
+    "file": "app/app-vsam-mq/cbl/COACCT01.cbl",
+    "key": "COACCT01",
+    "rank": 22,
+    "ticket": "COACCT01_port_ticket.md"
+  },
+  {
+    "blast_radius": 4.565,
+    "callers": 1,
+    "calls": 0,
+    "file": "app/app-vsam-mq/cbl/CODATE01.cbl",
+    "key": "CODATE01",
+    "rank": 23,
+    "ticket": "CODATE01_port_ticket.md"
+  },
+  {
+    "blast_radius": 4.565,
+    "callers": 1,
+    "calls": 13,
+    "file": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+    "key": "COTRTLIC",
+    "rank": 24,
+    "ticket": "COTRTLIC_port_ticket.md"
+  },
+  {
+    "blast_radius": 4.211,
+    "callers": 1,
+    "calls": 0,
+    "file": "app/cbl/CBSTM03B.CBL",
+    "key": "CBSTM03B",
+    "rank": 25,
+    "ticket": "CBSTM03B_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.884,
+    "callers": 1,
+    "calls": 8,
+    "file": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+    "key": "COPAUA0C",
+    "rank": 26,
+    "ticket": "COPAUA0C_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.884,
+    "callers": 1,
+    "calls": 12,
+    "file": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+    "key": "COPAUS0C",
+    "rank": 27,
+    "ticket": "COPAUS0C_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.884,
+    "callers": 1,
+    "calls": 9,
+    "file": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+    "key": "COPAUS1C",
+    "rank": 28,
+    "ticket": "COPAUS1C_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.363,
+    "callers": 1,
+    "calls": 16,
+    "file": "app/cbl/COACTUPC.cbl",
+    "key": "COACTUPC",
+    "rank": 29,
+    "ticket": "COACTUPC_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.363,
+    "callers": 1,
+    "calls": 13,
+    "file": "app/cbl/COACTVWC.cbl",
+    "key": "COACTVWC",
+    "rank": 30,
+    "ticket": "COACTVWC_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.363,
+    "callers": 1,
+    "calls": 8,
+    "file": "app/cbl/COBIL00C.cbl",
+    "key": "COBIL00C",
+    "rank": 31,
+    "ticket": "COBIL00C_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.363,
+    "callers": 1,
+    "calls": 10,
+    "file": "app/cbl/COCRDLIC.cbl",
+    "key": "COCRDLIC",
+    "rank": 32,
+    "ticket": "COCRDLIC_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.363,
+    "callers": 1,
+    "calls": 11,
+    "file": "app/cbl/COCRDSLC.cbl",
+    "key": "COCRDSLC",
+    "rank": 33,
+    "ticket": "COCRDSLC_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.363,
+    "callers": 1,
+    "calls": 11,
+    "file": "app/cbl/COCRDUPC.cbl",
+    "key": "COCRDUPC",
+    "rank": 34,
+    "ticket": "COCRDUPC_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.363,
+    "callers": 1,
+    "calls": 7,
+    "file": "app/cbl/CORPT00C.cbl",
+    "key": "CORPT00C",
+    "rank": 35,
+    "ticket": "CORPT00C_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.363,
+    "callers": 1,
+    "calls": 8,
+    "file": "app/cbl/COSGN00C.cbl",
+    "key": "COSGN00C",
+    "rank": 36,
+    "ticket": "COSGN00C_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.363,
+    "callers": 1,
+    "calls": 6,
+    "file": "app/cbl/COTRN00C.cbl",
+    "key": "COTRN00C",
+    "rank": 37,
+    "ticket": "COTRN00C_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.363,
+    "callers": 1,
+    "calls": 6,
+    "file": "app/cbl/COTRN01C.cbl",
+    "key": "COTRN01C",
+    "rank": 38,
+    "ticket": "COTRN01C_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.363,
+    "callers": 1,
+    "calls": 9,
+    "file": "app/cbl/COTRN02C.cbl",
+    "key": "COTRN02C",
+    "rank": 39,
+    "ticket": "COTRN02C_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.363,
+    "callers": 1,
+    "calls": 6,
+    "file": "app/cbl/COUSR00C.cbl",
+    "key": "COUSR00C",
+    "rank": 40,
+    "ticket": "COUSR00C_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.363,
+    "callers": 1,
+    "calls": 6,
+    "file": "app/cbl/COUSR01C.cbl",
+    "key": "COUSR01C",
+    "rank": 41,
+    "ticket": "COUSR01C_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.363,
+    "callers": 1,
+    "calls": 6,
+    "file": "app/cbl/COUSR02C.cbl",
+    "key": "COUSR02C",
+    "rank": 42,
+    "ticket": "COUSR02C_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.363,
+    "callers": 1,
+    "calls": 6,
+    "file": "app/cbl/COUSR03C.cbl",
+    "key": "COUSR03C",
+    "rank": 43,
+    "ticket": "COUSR03C_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.203,
+    "callers": 0,
+    "calls": 6,
+    "file": "app/cbl/CBTRN01C.cbl",
+    "key": "CBTRN01C",
+    "rank": 44,
+    "ticket": "CBTRN01C_port_ticket.md"
+  }
+]

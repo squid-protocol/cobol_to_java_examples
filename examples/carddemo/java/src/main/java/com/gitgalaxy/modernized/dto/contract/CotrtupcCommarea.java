@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 
 /**
  * The COMMAREA Cotrtupc reads, as app/app-transaction-type-db2/cbl/COTRTUPC.cbl unpacks DFHCOMMAREA at lines 376, 378: CARDDEMO-COMMAREA + WS-THIS-PROGCOMMAREA = 265 bytes.
- * Record fields field testing: field-tested (6 public / 0 private estates).
+ * Record fields field testing: open (6 public / 0 private estates).
  */
 @Data
 @NoArgsConstructor

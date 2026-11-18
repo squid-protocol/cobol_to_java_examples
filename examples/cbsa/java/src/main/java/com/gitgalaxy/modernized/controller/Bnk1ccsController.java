@@ -19,7 +19,7 @@ import com.gitgalaxy.modernized.service.Bnk1ccsService;
  * COMMAREA: DFHCOMMAREA (src/base/cobol_src/BNK1CCS.cbl, 5 bytes) -> Bnk1ccsWsCommArea.
  * TODO: callers also pass WS-COMM-AREA (src/base/cobol_src/BNK1CCS.cbl, 5 bytes) at src/base/cobol_src/BNK1CCS.cbl:249, src/base/cobol_src/BNK1CCS.cbl:276.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/bnk1ccs")

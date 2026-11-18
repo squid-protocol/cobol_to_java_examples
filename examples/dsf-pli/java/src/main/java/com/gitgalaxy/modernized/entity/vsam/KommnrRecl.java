@@ -27,7 +27,7 @@ public class KommnrRecl {
 
     // TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey
     @Id
-    @Column(name = "VSAM_KEY")
+    @Column(name = "VSAM_KEY", columnDefinition = "varchar(255) COLLATE \"C\"")
     private String vsamKey;
 
     // KOMMNR_RECL: CHAR(100), offset 0, 100 bytes

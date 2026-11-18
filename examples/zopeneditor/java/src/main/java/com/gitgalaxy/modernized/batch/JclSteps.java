@@ -74,11 +74,17 @@ public class JclSteps {
 
     /** IEBGENER / ICEGENER: copies SYSUT1 to SYSUT2. */
     public Tasklet copy(String name, String jcl, String jobCond, String cond, String ifCond, List<Dd> dds) {
+        return copy(name, jcl, jobCond, cond, ifCond, dds, "SYSUT1", "SYSUT2");
+    }
+
+    /** IDCAMS REPRO INFILE(inDd) OUTFILE(outDd): copies the input data set's records to the output. */
+    public Tasklet copy(String name, String jcl, String jobCond, String cond, String ifCond, List<Dd> dds,
+            String inDd, String outDd) {
         return guarded(jcl, jobCond, cond, ifCond, () -> {
-            Path in = dds.stream().filter(d -> d.name().equals("SYSUT1")).map(datasets::path).findFirst().orElse(null);
-            Path out = dds.stream().filter(d -> d.name().equals("SYSUT2")).map(datasets::path).findFirst().orElse(null);
+            Path in = dds.stream().filter(d -> d.name().equals(inDd)).map(datasets::path).findFirst().orElse(null);
+            Path out = dds.stream().filter(d -> d.name().equals(outDd)).map(datasets::path).findFirst().orElse(null);
             if (in == null || out == null) {
-                LOG.warn("{}: SYSUT1 / SYSUT2 is not a dataset (in-stream, SYSOUT or DUMMY): nothing copied", jcl);
+                LOG.warn("{}: {} / {} is not a dataset (in-stream, SYSOUT or DUMMY): nothing copied", jcl, inDd, outDd);
                 return 0;
             }
             try {

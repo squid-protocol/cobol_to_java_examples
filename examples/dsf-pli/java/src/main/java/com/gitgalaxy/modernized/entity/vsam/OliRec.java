@@ -27,7 +27,7 @@ public class OliRec {
 
     // TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey
     @Id
-    @Column(name = "VSAM_KEY")
+    @Column(name = "VSAM_KEY", columnDefinition = "varchar(255) COLLATE \"C\"")
     private String vsamKey;
 
     // OLI_REC: CHAR(103), offset 0, 103 bytes

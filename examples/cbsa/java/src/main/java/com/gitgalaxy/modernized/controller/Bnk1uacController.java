@@ -19,7 +19,7 @@ import com.gitgalaxy.modernized.service.Bnk1uacService;
  * COMMAREA: DFHCOMMAREA (src/base/cobol_src/BNK1UAC.cbl, 103 bytes) -> Bnk1uacDfhcommarea.
  * TODO: WS-COMM-AREA (src/base/cobol_src/BNK1UAC.cbl, 99 bytes), passed at src/base/cobol_src/BNK1UAC.cbl:295, disagrees with this program's declared DFHCOMMAREA (103 bytes: 99 vs 103 bytes; fields first differ at None / COMM-PCB1-POINTER) -- confirm which layout the program reads.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/bnk1uac")

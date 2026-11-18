@@ -1,0 +1,1918 @@
+{
+  "compiler_options": [],
+  "deliverable": {
+    "proof": "The port is laid over the generated project as an overlay and proven by the equivalence harness (tests/tools/equivalence.py in GitGalaxy): the original runs under GnuCOBOL, the port on the same inputs, and every output record is compared field by field; a person approves the port with that report in hand.",
+    "return": "One complete Java file for src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java: the same package, class name and public method signatures, with runTask ported -- what the proof runs -- and helper methods it calls added; every other generated method left as generated (#4255)."
+  },
+  "facts": {
+    "full_skeleton": "dsf_gitgalaxy_clean_TIMESTAMP/06_skeleton/src__R0013301_skeleton.json",
+    "program": {
+      "copy_collisions": [],
+      "copy_edges": {
+        "src/R0013301.pli": {}
+      },
+      "copy_gaps": [],
+      "copybooks": [],
+      "file": "src/R0013301.pli",
+      "language": "pli",
+      "program_id_field_testing": "open",
+      "program_ids": [
+        "R0013301"
+      ],
+      "total_loc": 92
+    },
+    "sections": {
+      "calls": {
+        "facts": [
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 34,
+            "operand": "R0010501",
+            "resolves_to": "src/R0010501.pli",
+            "sysid": null,
+            "target": "R0010501",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 36,
+            "operand": "R001N501",
+            "resolves_to": "src/R001N501.pli",
+            "sysid": null,
+            "target": "R001N501",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 38,
+            "operand": "R0011901",
+            "resolves_to": "src/R0011901.pli",
+            "sysid": null,
+            "target": "R0011901",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 40,
+            "operand": "R001UJ01",
+            "resolves_to": "src/R001UJ01.pli",
+            "sysid": null,
+            "target": "R001UJ01",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 42,
+            "operand": "R0011831",
+            "resolves_to": "src/R0011831.pli",
+            "sysid": null,
+            "target": "R0011831",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 44,
+            "operand": "R0010601",
+            "resolves_to": "src/R0010601.pli",
+            "sysid": null,
+            "target": "R0010601",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 46,
+            "operand": "R001N601",
+            "resolves_to": "src/R001N601.pli",
+            "sysid": null,
+            "target": "R001N601",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 48,
+            "operand": "R001U601",
+            "resolves_to": "src/R001U601.pli",
+            "sysid": null,
+            "target": "R001U601",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 50,
+            "operand": "R0010701",
+            "resolves_to": "src/GML/R0010701.pli",
+            "sysid": null,
+            "target": "R0010701",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 52,
+            "operand": "R0010801",
+            "resolves_to": "src/R0010801.pli",
+            "sysid": null,
+            "target": "R0010801",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 54,
+            "operand": "R001N801",
+            "resolves_to": "src/R001N801.pli",
+            "sysid": null,
+            "target": "R001N801",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 56,
+            "operand": "R001U801",
+            "resolves_to": "src/R001U801.pli",
+            "sysid": null,
+            "target": "R001U801",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 58,
+            "operand": "R0010901",
+            "resolves_to": "src/GML/R0010901.pli",
+            "sysid": null,
+            "target": "R0010901",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 60,
+            "operand": "R001N901",
+            "resolves_to": "src/R001N901.pli",
+            "sysid": null,
+            "target": "R001N901",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 62,
+            "operand": "R0011001",
+            "resolves_to": "src/R0011001.pli",
+            "sysid": null,
+            "target": "R0011001",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 64,
+            "operand": "R0011101",
+            "resolves_to": "src/R0011101.pli",
+            "sysid": null,
+            "target": "R0011101",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 66,
+            "operand": "R001NB01",
+            "resolves_to": "src/R001NB01.pli",
+            "sysid": null,
+            "target": "R001NB01",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 68,
+            "operand": "R0011201",
+            "resolves_to": "src/R0011201.pli",
+            "sysid": null,
+            "target": "R0011201",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 70,
+            "operand": "R001NC01",
+            "resolves_to": "src/R001NC01.pli",
+            "sysid": null,
+            "target": "R001NC01",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 72,
+            "operand": "R001UC01",
+            "resolves_to": "src/R001UC01.pli",
+            "sysid": null,
+            "target": "R001UC01",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 75,
+            "operand": "R0011301",
+            "resolves_to": "src/R0011301.pli",
+            "sysid": null,
+            "target": "R0011301",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 77,
+            "operand": "R0011401",
+            "resolves_to": "src/R0011401.pli",
+            "sysid": null,
+            "target": "R0011401",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 79,
+            "operand": "R001UE01",
+            "resolves_to": "src/R001UE01.pli",
+            "sysid": null,
+            "target": "R001UE01",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 81,
+            "operand": "R0011501",
+            "resolves_to": "src/R0011501.pli",
+            "sysid": null,
+            "target": "R0011501",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 83,
+            "operand": "R0011601",
+            "resolves_to": "src/R0011601.pli",
+            "sysid": null,
+            "target": "R0011601",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 85,
+            "operand": "R0011701",
+            "resolves_to": "src/R0011701.pli",
+            "sysid": null,
+            "target": "R0011701",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 87,
+            "operand": "R001I401",
+            "resolves_to": "src/R001I401.pli",
+            "sysid": null,
+            "target": "R001I401",
+            "using_args": null,
+            "verb": "XCTL"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 9
+      },
+      "commarea_contracts": {
+        "facts": [
+          {
+            "callee": "src/R0013301.pli",
+            "callee_record": null,
+            "caller": "src/R0010480.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 3189,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0013301",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0013301.pli",
+            "callee_record": null,
+            "caller": "src/R0011520.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 719,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0013301",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0013301.pli",
+            "callee_record": null,
+            "caller": "src/R0013001.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 215,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0013301",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0013301.pli",
+            "callee_record": null,
+            "caller": "src/R0013001.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 866,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0013301",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0010501.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 34,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0010501",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R001N501.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 36,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R001N501",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0011901.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 38,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0011901",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R001UJ01.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 40,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R001UJ01",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0011831.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 42,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0011831",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0010601.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 44,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0010601",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R001N601.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 46,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R001N601",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R001U601.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 48,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R001U601",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/GML/R0010701.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 50,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0010701",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0010801.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 52,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0010801",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R001N801.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 54,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R001N801",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R001U801.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 56,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R001U801",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/GML/R0010901.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 58,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0010901",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R001N901.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 60,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R001N901",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0011001.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 62,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0011001",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0011101.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 64,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0011101",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R001NB01.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 66,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R001NB01",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0011201.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 68,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0011201",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R001NC01.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 70,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R001NC01",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R001UC01.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 72,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R001UC01",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0011301.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 75,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0011301",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0011401.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 77,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0011401",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R001UE01.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 79,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R001UE01",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0011501.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 81,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0011501",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0011601.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 83,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0011601",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0011701.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 85,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0011701",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R001I401.pli",
+            "callee_record": null,
+            "caller": "src/R0013301.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 87,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R001I401",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0013301.pli",
+            "callee_record": null,
+            "caller": "src/R0013501.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 89,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0013301",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0013301.pli",
+            "callee_record": null,
+            "caller": "src/R0013520.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 466,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0013301",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0013301.pli",
+            "callee_record": null,
+            "caller": "src/R0013601.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 73,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0013301",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0013301.pli",
+            "callee_record": null,
+            "caller": "src/R001I501.pli",
+            "caller_record": {
+              "bytes": 67,
+              "copybooks": [],
+              "fields": 12,
+              "file": "src/R001I501.pli",
+              "name": "KOM_OMR",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 2052,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "callee_no_dfhcommarea",
+            "target": "R0013301",
+            "verb": "LINK"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "entry_points": {
+        "facts": [
+          {
+            "entry_name": "R001330",
+            "kind": "PROCEDURE",
+            "line": 16,
+            "params": "COMMAREA_PEKER"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "interface": {
+        "facts": {
+          "commarea": {
+            "alternatives": [],
+            "basis": "caller_record",
+            "bytes": 67,
+            "copybooks": [],
+            "dialect": "pli",
+            "extended": false,
+            "fields": "Reference: SrcR001i501KomOmr (12 fields: name, PIC, usage, offset, bytes, copybook) in src/main/java/com/gitgalaxy/modernized/dto/contract/SrcR001i501KomOmr.java; level numbers are in the copybook listings",
+            "file": "src/R001I501.pli",
+            "record": "KOM_OMR",
+            "sources": [
+              {
+                "caller": "src/R001I501.pli",
+                "line": 2052,
+                "verb": "LINK"
+              }
+            ],
+            "unexpanded": [],
+            "variable": false
+          },
+          "commarea_gap": null,
+          "commarea_unpack": null,
+          "containers": [],
+          "inbound": [
+            {
+              "bytes": null,
+              "caller": "src/R0010480.pli",
+              "line": 3189,
+              "passes": null,
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": null,
+              "caller": "src/R0011520.pli",
+              "line": 719,
+              "passes": null,
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": null,
+              "caller": "src/R0013001.pli",
+              "line": 215,
+              "passes": null,
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": null,
+              "caller": "src/R0013001.pli",
+              "line": 866,
+              "passes": null,
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": null,
+              "caller": "src/R0013501.pli",
+              "line": 89,
+              "passes": null,
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": null,
+              "caller": "src/R0013520.pli",
+              "line": 466,
+              "passes": null,
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": null,
+              "caller": "src/R0013601.pli",
+              "line": 73,
+              "passes": null,
+              "verb": "LINK",
+              "via": "static"
+            },
+            {
+              "bytes": 67,
+              "caller": "src/R001I501.pli",
+              "line": 2052,
+              "passes": "KOM_OMR",
+              "verb": "LINK",
+              "via": "static"
+            }
+          ],
+          "parameters": [
+            {
+              "file": "src/R0013301.pli",
+              "layout": {
+                "bytes": 4,
+                "copybooks": [],
+                "dialect": "pli",
+                "extended": false,
+                "fields": [
+                  {
+                    "bytes": 4,
+                    "class": "A",
+                    "dialect": "pli",
+                    "file": "src/R0013301.pli",
+                    "level": 1,
+                    "name": "COMMAREA_PEKER",
+                    "occurs": null,
+                    "offset": 0,
+                    "pic": null,
+                    "usage": "POINTER"
+                  }
+                ],
+                "unexpanded": [],
+                "variable": false
+              },
+              "mode": "REFERENCE",
+              "name": "COMMAREA_PEKER",
+              "position": 1,
+              "record": "COMMAREA_PEKER"
+            }
+          ]
+        },
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "navigation": {
+        "facts": [
+          {
+            "from": "src/R0010480.pli",
+            "line": 3189,
+            "program": "R0013301",
+            "remote_systems": [],
+            "to": "src/R0013301.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0011520.pli",
+            "line": 719,
+            "program": "R0013301",
+            "remote_systems": [],
+            "to": "src/R0013301.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013001.pli",
+            "line": 215,
+            "program": "R0013301",
+            "remote_systems": [],
+            "to": "src/R0013301.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013001.pli",
+            "line": 866,
+            "program": "R0013301",
+            "remote_systems": [],
+            "to": "src/R0013301.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 34,
+            "program": "R0010501",
+            "remote_systems": [],
+            "to": "src/R0010501.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 36,
+            "program": "R001N501",
+            "remote_systems": [],
+            "to": "src/R001N501.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 38,
+            "program": "R0011901",
+            "remote_systems": [],
+            "to": "src/R0011901.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 40,
+            "program": "R001UJ01",
+            "remote_systems": [],
+            "to": "src/R001UJ01.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 42,
+            "program": "R0011831",
+            "remote_systems": [],
+            "to": "src/R0011831.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 44,
+            "program": "R0010601",
+            "remote_systems": [],
+            "to": "src/R0010601.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 46,
+            "program": "R001N601",
+            "remote_systems": [],
+            "to": "src/R001N601.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 48,
+            "program": "R001U601",
+            "remote_systems": [],
+            "to": "src/R001U601.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 50,
+            "program": "R0010701",
+            "remote_systems": [],
+            "to": "src/GML/R0010701.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 52,
+            "program": "R0010801",
+            "remote_systems": [],
+            "to": "src/R0010801.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 54,
+            "program": "R001N801",
+            "remote_systems": [],
+            "to": "src/R001N801.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 56,
+            "program": "R001U801",
+            "remote_systems": [],
+            "to": "src/R001U801.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 58,
+            "program": "R0010901",
+            "remote_systems": [],
+            "to": "src/GML/R0010901.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 60,
+            "program": "R001N901",
+            "remote_systems": [],
+            "to": "src/R001N901.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 62,
+            "program": "R0011001",
+            "remote_systems": [],
+            "to": "src/R0011001.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 64,
+            "program": "R0011101",
+            "remote_systems": [],
+            "to": "src/R0011101.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 66,
+            "program": "R001NB01",
+            "remote_systems": [],
+            "to": "src/R001NB01.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 68,
+            "program": "R0011201",
+            "remote_systems": [],
+            "to": "src/R0011201.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 70,
+            "program": "R001NC01",
+            "remote_systems": [],
+            "to": "src/R001NC01.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 72,
+            "program": "R001UC01",
+            "remote_systems": [],
+            "to": "src/R001UC01.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 75,
+            "program": "R0011301",
+            "remote_systems": [],
+            "to": "src/R0011301.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 77,
+            "program": "R0011401",
+            "remote_systems": [],
+            "to": "src/R0011401.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 79,
+            "program": "R001UE01",
+            "remote_systems": [],
+            "to": "src/R001UE01.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 81,
+            "program": "R0011501",
+            "remote_systems": [],
+            "to": "src/R0011501.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 83,
+            "program": "R0011601",
+            "remote_systems": [],
+            "to": "src/R0011601.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 85,
+            "program": "R0011701",
+            "remote_systems": [],
+            "to": "src/R0011701.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013301.pli",
+            "line": 87,
+            "program": "R001I401",
+            "remote_systems": [],
+            "to": "src/R001I401.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013501.pli",
+            "line": 89,
+            "program": "R0013301",
+            "remote_systems": [],
+            "to": "src/R0013301.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013520.pli",
+            "line": 466,
+            "program": "R0013301",
+            "remote_systems": [],
+            "to": "src/R0013301.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0013601.pli",
+            "line": 73,
+            "program": "R0013301",
+            "remote_systems": [],
+            "to": "src/R0013301.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R001I501.pli",
+            "line": 2052,
+            "program": "R0013301",
+            "remote_systems": [],
+            "to": "src/R0013301.pli",
+            "verb": "LINK",
+            "via": "static"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 4
+      }
+    }
+  },
+  "generated": {
+    "imports": [
+      {
+        "class": "com.gitgalaxy.modernized.cics.CicsTask",
+        "file": "src/main/java/com/gitgalaxy/modernized/cics/CicsTask.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.dto.contract.SrcR001i501KomOmr",
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/SrcR001i501KomOmr.java"
+      }
+    ],
+    "traced_to_this_program": [
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/R0010701Controller.java",
+        "symbol": "R0010701Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/R0010901Controller.java",
+        "symbol": "R0010901Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0010501Controller.java",
+        "symbol": "SrcR0010501Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0010601Controller.java",
+        "symbol": "SrcR0010601Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0010801Controller.java",
+        "symbol": "SrcR0010801Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0011001Controller.java",
+        "symbol": "SrcR0011001Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0011101Controller.java",
+        "symbol": "SrcR0011101Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0011201Controller.java",
+        "symbol": "SrcR0011201Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0011301Controller.java",
+        "symbol": "SrcR0011301Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0011401Controller.java",
+        "symbol": "SrcR0011401Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0011501Controller.java",
+        "symbol": "SrcR0011501Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0011601Controller.java",
+        "symbol": "SrcR0011601Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0011701Controller.java",
+        "symbol": "SrcR0011701Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0011831Controller.java",
+        "symbol": "SrcR0011831Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0011901Controller.java",
+        "symbol": "SrcR0011901Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR001i401Controller.java",
+        "symbol": "SrcR001i401Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR001n501Controller.java",
+        "symbol": "SrcR001n501Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR001n601Controller.java",
+        "symbol": "SrcR001n601Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR001n801Controller.java",
+        "symbol": "SrcR001n801Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR001n901Controller.java",
+        "symbol": "SrcR001n901Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR001nb01Controller.java",
+        "symbol": "SrcR001nb01Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR001nc01Controller.java",
+        "symbol": "SrcR001nc01Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR001u601Controller.java",
+        "symbol": "SrcR001u601Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR001u801Controller.java",
+        "symbol": "SrcR001u801Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR001uc01Controller.java",
+        "symbol": "SrcR001uc01Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR001ue01Controller.java",
+        "symbol": "SrcR001ue01Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR001uj01Controller.java",
+        "symbol": "SrcR001uj01Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlR0010701"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlR0010901"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR0010501"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR0010601"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR0010801"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR0011001"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR0011101"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR0011201"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR0011301"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR0011401"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR0011501"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR0011601"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR0011701"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR0011831"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR0011901"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR001i401"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR001n501"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR001n601"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR001n801"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR001n901"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR001nb01"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR001nc01"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR001u601"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR001u801"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR001uc01"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR001ue01"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+        "symbol": "SrcR0013301Service#xctlSrcR001uj01"
+      }
+    ]
+  },
+  "paragraphs": [
+    {
+      "lines": 76,
+      "name": "R001330",
+      "start_line": 16
+    }
+  ],
+  "priority": {
+    "blast_radius": 1.021,
+    "callers": 7,
+    "calls": 27,
+    "of": 438,
+    "rank": 28
+  },
+  "program": {
+    "file": "src/R0013301.pli",
+    "key": "src__R0013301",
+    "language": "pli",
+    "lines": 92,
+    "program_ids": [
+      "R0013301"
+    ]
+  },
+  "referenced": [
+    {
+      "bytes_after": 207,
+      "bytes_before": 2590,
+      "class": "src/main/java/com/gitgalaxy/modernized/dto/contract/SrcR001i501KomOmr.java",
+      "fields": 12,
+      "item": "commarea",
+      "section": "facts.interface"
+    }
+  ],
+  "rounding": [],
+  "rules": [
+    "Deliver the whole port: every paragraph the ported method reaches, every screen field it sets, every file it reads. A partial port or a sketch is not proven: the equivalence harness compares every output.",
+    "Port the PROCEDURE DIVISION into the service's methods, paragraph by paragraph; name the paragraph each block ports in a comment, so the port can be reviewed against the source.",
+    "Keep COBOL's storage semantics: COMPUTE / ADD / SUBTRACT / MULTIPLY / DIVIDE without ROUNDED truncate decimals; a result too long for its PICTURE loses its high-order digits (ON SIZE ERROR aside); MOVE to a numeric field aligns on the decimal point and truncates both ends; MOVE to alphanumeric pads with spaces or truncates on the right. Use BigDecimal with RoundingMode.DOWN, never double, for PIC 9 / COMP-3 data.",
+    "ROUNDED (#3825) rounds half AWAY from zero: setScale(scale, RoundingMode.HALF_UP) -- 2.5 -> 3, -2.5 -> -3. Never HALF_EVEN (banker's rounding) and never Math.round (-2.5 -> -2). ROUNDED MODE maps one to one: NEAREST-EVEN HALF_EVEN, AWAY-FROM-ZERO UP, NEAREST-TOWARD-ZERO HALF_DOWN, TOWARD-GREATER CEILING, TOWARD-LESSER FLOOR, TRUNCATION DOWN. The ticket's `rounding` list names every rounding or SIZE ERROR statement with the RoundingMode of each target. Round the final result only: compute intermediates exactly (IBM's ARITH intermediates carry 18 or 31 digits; the equivalence harness is the oracle when a result differs).",
+    "Keep the program's behaviour, including what looks like a defect (an unreachable branch, a field never reset): the port is proven by comparing its outputs with the original's. Document each such spot with a comment naming the defect and the one-line fix; fixing it is a business decision, not a translation.",
+    "Use the generated code as it is: entities and their fromRecord / toRecord codecs, repositories, DTOs, the batch runtime (DatasetResolver, Dd), the other services. Do not edit generated files other than this service; do not invent calls, files, queues or tables the facts do not name.",
+    "An abend is `throw CobolAbend.user(abcode, why)` (the generated batch runtime; CALL 'CEE3ABD' USING ABCODE: the step ends ABEND Unnnn) -- never another exception; the step's RETURN-CODE is runBatch's return value.",
+    "A DISPLAY is `Sysout.display(...)` (DISPLAY ... WITH NO ADVANCING: `Sysout.displayNoAdvancing`), never a log line: SYSOUT is compared line by line with the COBOL's. Its text is exactly what IBM COBOL writes, the operands concatenated: a literal as written; an alphanumeric or group item as all its bytes, trailing spaces included (a group's numeric fields as stored: zoned digits, the sign overpunched); a numeric item -- DISPLAY, COMP or COMP-3, not edited, no SIGN SEPARATE -- as `Sysout.number(value, digits, scale, signed)`: its PICTURE digits zero-padded, no decimal point, the sign overpunched in the last digit when signed (PIC S9(3) holding -12 is `01K`); an edited item as its edited text.",
+    "Every file I/O statement of a batch program (OPEN, CLOSE, READ, READ NEXT, WRITE, REWRITE, DELETE, START) is ONE call to the generated CobolFiles, per file (its DD name), in the order the program runs them. open(dd) / open(dd, path, input) / close(dd[, action]) / write / rewrite / delete(dd, action) / start(dd, found) return the status String; read(dd, supplier) (\"00\" or \"23\") and readNext(dd, iterator) (\"00\" or \"10\") return a CobolFiles.Read<T> -- status() and record(), null unless found. Take the program's FILE STATUS logic -- IF <status> = '00', AT END, INVALID KEY, its error paragraphs -- from the status returned, exactly as the program does; never skip a statement the program runs (a read-ahead, a CLOSE) or add one it does not. The equivalence harness injects file faults through CobolFiles and through GnuCOBOL at the same statement, and proves the error paths too. A keyed (VSAM KSDS) file keeps its mainframe semantics: WRITE is writeKeyed(dd, () -> repo.existsById(key), () -> repo.save(r)) -- \"22\" when the key is on file, never save() over it -- and REWRITE is rewriteKeyed(dd, exists, save) (\"23\" when it is not). A record the program READs INTO its working storage is the program's own copy: keep Entity.fromRecord(read.toRecord(cs), cs), never the repository's managed entity, so a change that is not REWRITten is never saved; and a READ that fails without INVALID KEY / AT END leaves the previous record in place, as the program's storage does.",
+    "A sequential dataset is fixed-length records (RECFM=FB): write each record's toRecord(...) bytes back to back, with no line separators, to the file DatasetResolver.path(dd) names; read it the same way.",
+    "Decode and encode a numeric field held in record bytes or a text column (zoned with an overpunched sign, COMP-3, COMP) only through the generated CobolRecords (zoned / packed / binary and their put methods) or the entity codecs, never a hand-written decoder.",
+    "Record bytes -- every dataset, file and COMMAREA the program reads or writes -- are in the code page CobolRecords.charset() returns: the migration's declared data.record_charset, a deployment fact. Pass it wherever a record codec, CobolRecords method or String takes a Charset; never Charset.forName, StandardCharsets or a guessed EBCDIC page for record data (#4060).",
+    "Read a number from text (a screen field, FUNCTION NUMVAL, a PARM) only through CobolRecords.numval(text, decimalPoint), with ',' when the program codes DECIMAL-POINT IS COMMA; never Integer.parseInt or new BigDecimal(String), which accept Arabic-Indic, Devanagari and full-width digits that COBOL rejects (#3831).",
+    "Format a numeric-edited field (a display string mapped from a number, often for a screen or print line) only through CobolEdit.format(pic, value, decimalComma, currency), which honours the COBOL picture (Z, 9, ., ,, -, +, CR/DB, $/currency, B, 0, /, and floating $ / + / - strings) as the mainframe does; pass the CURRENCY SIGN string (e.g. 'INR ') as currency, and it replaces the PICTURE SYMBOL (#3933).",
+    "Format and case-map with Locale.ROOT (String.format(Locale.ROOT, ...), toUpperCase(Locale.ROOT)): the default locale prints other digits (Arabic, Devanagari) and maps case differently (Turkish).",
+    "Order and compare VSAM / DB2 keys by the source code page's bytes, as the mainframe does (lower case before upper, letters before digits): browse through the generated sort-key finders, and sort in Java with CobolRecords.sortKey(key, codePage), never by String.compareTo or the database's default collation (#3822).",
+    "Compare alphanumeric operands (PIC X / A items, group items, alphanumeric literals and figurative constants) in IF, EVALUATE, PERFORM UNTIL and SEARCH WHEN only through the generated CobolCompare (compare, eq, gt, ge, lt, le), never String.compareTo or equals: it compares the code page's bytes as the mainframe does -- lower case before upper, letters before digits, so IF CUST-ID > 'A' is true for '1001' -- and pads the shorter operand with spaces ('AB' = 'AB  '). HIGH-VALUES / LOW-VALUES are CobolCompare.highValues(n) / lowValues(n). A numeric comparison stays BigDecimal.compareTo. A program that declares PROGRAM COLLATING SEQUENCE compares by that alphabet instead: flag it in a TODO (#3986).",
+    "A CICS program is ported into runTask(CicsTask task), one task per call (#3754): EIBCALEN = 0 is !task.hasCommarea(), EIBCALEN is task.eibcalen() (#4009: null = the whole record), DFHCOMMAREA is task.commarea(<its DTO>.class), EIBAID is task.aid() (ENTER, CLEAR, PF1-PF24, PA1-PA3), EIBTRMID is task.termid(), EIBTIME / EIBDATE / ASKTIME are task.now() (the task's dispatch time on the region's virtual clock, #3989), RECEIVE MAP is task.receive(map, mapset, <its screen>.class) (empty = MAPFAIL), SEND MAP is task.sendMap(map, mapset, screen, subfields, options...) (#4001: the screen holds each <f>O; CicsTask.MapSubfields each <f>A / <f>C / <f>H as its EBCDIC byte and <f>L = -1 for the cursor), SEND TEXT / SEND is task.sendText(from, length, options...), RETURN TRANSID COMMAREA LENGTH is task.returnTransid(transid, commarea, length), XCTL is task.xctl, LINK is task.link, ABEND is task.abend -- in the order the program does them, and the task ends at RETURN / XCTL / ABEND. A file READ is task.read(file, () -> <the service's generated read method>): its resp() is NORMAL (0), NOTFND (13) when the read finds nothing, or a condition the equivalence harness injects (NOTOPEN, IOERR, DISABLED, ...), and its resp2(); port every arm of the program's RESP handling (EVALUATE WS-RESP-CD ... WHEN OTHER) from it (#4023 follow-up). READ ... UPDATE is task.readForUpdate(file, lookup) (it holds the record for a REWRITE); WRITE FILE RIDFLD FROM is task.write(file, <whether the key is already in the file>, () -> <save the new record>): DUPREC (14) when it is; REWRITE FILE FROM is task.rewrite(file, () -> <save the changed record>): INVREQ (16) without a held record; each returns the RESP, and the injected conditions apply as for a READ. SYNCPOINT is task.syncpoint() and SYNCPOINT ROLLBACK task.rollback(), which undoes the task's file changes: save every change through these calls only -- what each file holds after the task is compared with the COBOL's. DELETE FILE RIDFLD is task.delete(file, <whether the key is there>, () -> <delete it>) (NOTFND 13 when not); DELETE FILE without RIDFLD is task.deleteHeld(file, () -> <delete the held record>). A browse: STARTBR is task.startbr(file, <RIDFLD as text>, <EQUAL given>, () -> <the file's keys, in key order, as a NavigableSet<String>>) (NOTFND 13 when no key qualifies); READNEXT / READPREV are task.readnext(file, <RIDFLD as text>) / task.readprev(file, ...), whose Browsed holds the RESP (ENDFILE 20 past either end) and the key read -- set RIDFLD to it and look the record up by it; ENDBR is task.endbr(file). The task keeps the browse's position and CICS's repositioning rules (a READPREV right after a READNEXT reads the same record again): pass RIDFLD exactly as the program holds it. ASKTIME ABSTIME is task.asktime(); FORMATTIME is CicsTask.formatDate(abstime, \"YYYYMMDD\" (or the form given), <DATESEP>) and CicsTask.formatTime(abstime, <TIMESEP>). ASSIGN APPLID / SYSID are task.assignApplid() / task.assignSysid() (the region's identity: never a literal). WRITEQ TD QUEUE FROM is task.writeqTd(queue, <the record as text, its full LENGTH>), which returns the RESP (QIDERR 44 for a queue the CSD does not define). INQUIRE PROGRAM(p) is task.inquireProgram(p): its RESP (NORMAL 0, PGMIDERR 27). A screen field shows what the symbolic map's O field would hold: text as moved, an edited PICTURE formatted as COBOL formats it. A COMMAREA is the generated DTO of its record; an area no generated DTO describes (a plain PIC X(n) item) is passed as a String of its n characters, or a byte[] of its EBCDIC bytes (#3989).",
+    "CICS condition and abend handling (#3989): HANDLE CONDITION, IGNORE CONDITION, HANDLE AID and RESP are the program's own control flow -- port each transfer to its label as Java control flow. HANDLE ABEND LABEL is task.handleAbend(label) (CANCEL, RESET: handleAbendCancel / handleAbendReset), and PUSH / POP HANDLE are task.pushHandle() / popHandle() besides saving and restoring the program's own handler state. EXEC CICS ABEND is task.abend(abcode) and a condition that takes CICS's default action is task.abendOnCondition(condition): CicsTask searches the active abend exits from this program's level upward, as CICS does, records the ABEND, and returns the label to continue at when this program's own exit took it -- or null, and the program must then return from runTask at once. After task.link(...) returns, task.abendExit() is the label of this program's exit when an abend in a program below reached it (continue there), and task.ended() is true when the task was terminated (stop). Never throw an exception to model a CICS transfer: the services are @Transactional, so an exception out of one marks the whole task rollback-only.",
+    "Dates and times only through java.time -- LocalDate, LocalDateTime, LocalTime and DateTimeFormatter with Locale.ROOT, in the ISO chronology -- never Calendar.getInstance(), new GregorianCalendar(), SimpleDateFormat or WeekFields.of(Locale.getDefault()): a th_TH default locale gives Buddhist-era years (2569), ja_JP_JP the Japanese imperial calendar, and US week fields start on Sunday. FUNCTION DAY-OF-WEEK and ACCEPT ... FROM DAY-OF-WEEK are Monday = 1 ... Sunday = 7, which is DayOfWeek.getValue() (#3833).",
+    "Read the time only from the generated batch runtime's MainframeClock (now() for local, currentDate() for FUNCTION CURRENT-DATE) -- in a CICS task, from task.now() -- never from the system clock directly or ZoneId.systemDefault(): it is how a run is pinned to be compared with the original.",
+    "A DB2 DATE / TIME / TIMESTAMP fetched into, or bound from, a character host variable (a DCLGEN DATE is PIC X(10)) is in the DB2 subsystem's format, the target config's culture.db2_date_format -- eur 26.09.2026 and 14.30.05, usa 09/26/2026 and 02:30 PM, iso 2026-09-26 and 14.30.05, jis 2026-09-26 and 14:30:05 -- and a TIMESTAMP is 2026-09-26-14.30.05.000000: convert only through the generated Db2Dates (date / time / timestamp, parseDate / parseTime / parseTimestamp), never LocalDate.toString() or LocalDate.parse (#3828).",
+    "FUNCTION INTEGER-OF-DATE / INTEGER-OF-DAY count days from day 1 = 1601-01-01 under INTDATE(ANSI), the default, but from day 1 = 1582-10-15 under INTDATE(LILIAN) (the same date is 6653 higher); DATE-OF-INTEGER / DAY-OF-INTEGER invert the same count. Port as ChronoUnit.DAYS.between(dayZero, date) with dayZero 1600-12-31 (ANSI) or 1582-10-14 (LILIAN). The ticket's compiler_options are the program's CBL / PROCESS cards; options given by the compile step's PARM or the installation defaults are not seen there (#3828).",
+    "A fact whose field testing is not 'field-tested' is verified on reference estates but still being field-tested: where the source contradicts it, follow the source and say so in the port's notes.",
+    "The proof calls one method per program: runTask(CicsTask) for a CICS program, handleCall(...) for a CALLed one, runBatch(dds, parm) for a batch one -- the ticket's methods to port. Port all of the program's behaviour into that method and the private helpers it calls. Port nothing into the other generated methods -- execute<Program>, handleTransaction, handleLink, handleChannel, onAbendL<n>, onCondition<C>L<n>, dispatch<X>L<n>, submit<Map> / render<Map>, xctl<P> / link<P>, the generated readqTs / writeqTs / read / browse helpers -- even where their TODO asks: leave each body as generated and keep no second entry point. Code the proof never runs is not proven, and the porting loop lists every method the proof cannot reach that the port changed (#4255)."
+  ],
+  "source": {
+    "copybooks": [],
+    "program": {
+      "file": "src/R0013301.pli",
+      "listing": "sources/src/R0013301.pli.lst"
+    }
+  },
+  "status": "open",
+  "target": {
+    "config": {
+      "culture": {
+        "currency": "auto",
+        "db2_date_format": "iso",
+        "decimal_point": "auto",
+        "display_locale": "ROOT",
+        "format_locale": "ROOT",
+        "key_collation": "ebcdic",
+        "overflow": "cobol",
+        "rounding": "cobol",
+        "zone": "UTC"
+      },
+      "data": {
+        "bidi_layout": "auto",
+        "code_page": "cp037",
+        "dbcs_code_page": null,
+        "record_charset": "latin-1"
+      },
+      "database": "postgresql",
+      "integration": {
+        "messaging": "in-memory",
+        "remote_calls": "http"
+      },
+      "java": {
+        "build_tool": "maven",
+        "data_classes": "lombok",
+        "dto_style": "class",
+        "version": 17
+      },
+      "package": "com.gitgalaxy.modernized",
+      "spring_boot": {
+        "version": "3.2.4"
+      },
+      "ui": {
+        "flavour": "none"
+      }
+    },
+    "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+    "left_as_generated": [],
+    "methods": [
+      {
+        "signature": "public void runTask(CicsTask task)",
+        "todo": true
+      },
+      {
+        "signature": "public SrcR001i501KomOmr handleLink(SrcR001i501KomOmr request)",
+        "todo": false
+      },
+      {
+        "signature": "public SrcR001i501KomOmr handleLink(SrcR001i501KomOmr request, byte[] area)",
+        "todo": false
+      },
+      {
+        "signature": "public byte[] lastLinkBytes()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlR0010701()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlR0010901()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0010501()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0010601()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0010801()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0011001()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0011101()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0011201()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0011301()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0011401()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0011501()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0011601()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0011701()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0011831()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0011901()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR001i401()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR001n501()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR001n601()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR001n801()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR001n901()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR001nb01()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR001nc01()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR001u601()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR001u801()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR001uc01()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR001ue01()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR001uj01()",
+        "todo": false
+      }
+    ],
+    "methods_to_port": [
+      "public void runTask(CicsTask task)"
+    ],
+    "overlay": "port/service/SrcR0013301Service.java",
+    "proof_entry_points": [
+      "public void runTask(CicsTask task)"
+    ],
+    "service": "SrcR0013301Service"
+  },
+  "ticket": "PORT-src__R0013301",
+  "version": 1,
+  "worklist": [
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+      "id": "WL-4214",
+      "line": 54,
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR0013301Service.java",
+      "id": "WL-4215",
+      "line": 60,
+      "text": "port the PROCEDURE DIVISION into this task"
+    }
+  ]
+}

@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 /**
  * COBOL record TRANSACTION-RECORD (COPYBOOK/TRANREC.cpy), 80 bytes, from GitGalaxy's verified skeleton.
  * USING parameter 2 of CobolSam2.
- * Record fields field testing: field-tested (6 public / 0 private estates).
+ * Record fields field testing: open (6 public / 0 private estates).
  */
 @Data
 @NoArgsConstructor

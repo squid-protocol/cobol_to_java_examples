@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 /**
  * PL/I structure INTERN_KOM_OMR (src/GML/R001O301.pli), 26 bytes, from GitGalaxy's verified skeleton.
  * The COMMAREA R001o301 receives as its main procedure's parameter (INTERN_KOM_OMR).
- * Record fields field testing: field-tested (6 public / 0 private estates).
+ * Record fields field testing: open (6 public / 0 private estates).
  */
 @Data
 @NoArgsConstructor

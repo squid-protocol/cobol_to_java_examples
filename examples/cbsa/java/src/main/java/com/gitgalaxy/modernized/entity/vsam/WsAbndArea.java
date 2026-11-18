@@ -72,10 +72,25 @@ public class WsAbndArea {
     private String abndFreeform;
 
 
+    /** #4875: the record bytes this entity was read from, kept beside the typed columns: a field whose
+     *  value is unchanged is written back as these bytes, so a value no column type holds (spaces in a
+     *  PIC 9, a non-preferred sign) and FILLER survive the round trip, as the VSAM record keeps them. */
+    @Column(name = "VSAM_RECORD", length = 681)
+    @lombok.Getter(lombok.AccessLevel.NONE)
+    @lombok.Setter(lombok.AccessLevel.NONE)
+    @lombok.EqualsAndHashCode.Exclude
+    @lombok.ToString.Exclude
+    private byte[] vsamRecord;
+
     /** #3624: this record from its fixed-width VSAM form (681 bytes, as REPRO unloads it), each
      *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
-     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+     *  transfer, IBM037 on z/OS). The bytes themselves are kept in vsamRecord (#4875). */
     public static WsAbndArea fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        if (rec.length < 681) {  // a WRITE ... LENGTH(n) short of the record: the rest is spaces
+            byte[] full = CobolRecords.blank(681, text);
+            System.arraycopy(rec, 0, full, 0, rec.length);
+            rec = full;
+        }
         WsAbndArea r = new WsAbndArea();
         r.id = new WsAbndAreaKey();
         r.id.setAbndUtimeKey(CobolRecords.toLong(CobolRecords.packed(rec, 0, 8, 0)));
@@ -86,28 +101,55 @@ public class WsAbndArea {
         r.abndTime = CobolRecords.text(rec, 34, 8, text);
         r.abndCode = CobolRecords.text(rec, 42, 4, text);
         r.abndProgram = CobolRecords.text(rec, 46, 8, text);
-        r.abndRespcode = CobolRecords.toInteger(CobolRecords.zoned(rec, 54, 9, 0, text));
-        r.abndResp2Code = CobolRecords.toInteger(CobolRecords.zoned(rec, 63, 9, 0, text));
-        r.abndSqlcode = CobolRecords.toInteger(CobolRecords.zoned(rec, 72, 9, 0, text));
+        r.abndRespcode = CobolRecords.toInteger(CobolRecords.zonedSeparate(rec, 54, 9, 0, true, text));
+        r.abndResp2Code = CobolRecords.toInteger(CobolRecords.zonedSeparate(rec, 63, 9, 0, true, text));
+        r.abndSqlcode = CobolRecords.toInteger(CobolRecords.zonedSeparate(rec, 72, 9, 0, true, text));
         r.abndFreeform = CobolRecords.text(rec, 81, 600, text);
+        r.vsamRecord = java.util.Arrays.copyOf(rec, 681);
         return r;
     }
 
-    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    /** #3624: the fixed-width VSAM record of this entity: the bytes it was read from (vsamRecord), each field
+     *  whose value changed since re-encoded; a new entity's FILLER as spaces. */
     public byte[] toRecord(java.nio.charset.Charset text) {
-        byte[] rec = CobolRecords.blank(681, text);
-        CobolRecords.putPacked(rec, 0, 8, 0, true, CobolRecords.decimal(id.getAbndUtimeKey()));
-        CobolRecords.putZoned(rec, 8, 4, 0, false, CobolRecords.decimal(id.getAbndTasknoKey()), text);
-        CobolRecords.putText(rec, 12, 8, abndApplid, text);
-        CobolRecords.putText(rec, 20, 4, abndTranid, text);
-        CobolRecords.putText(rec, 24, 10, abndDate, text);
-        CobolRecords.putText(rec, 34, 8, abndTime, text);
-        CobolRecords.putText(rec, 42, 4, abndCode, text);
-        CobolRecords.putText(rec, 46, 8, abndProgram, text);
-        CobolRecords.putZoned(rec, 54, 8, 0, true, CobolRecords.decimal(abndRespcode), text);
-        CobolRecords.putZoned(rec, 63, 8, 0, true, CobolRecords.decimal(abndResp2Code), text);
-        CobolRecords.putZoned(rec, 72, 8, 0, true, CobolRecords.decimal(abndSqlcode), text);
-        CobolRecords.putText(rec, 81, 600, abndFreeform, text);
+        byte[] read = vsamRecord != null && vsamRecord.length == 681 ? vsamRecord : null;
+        byte[] rec = read != null ? read.clone() : CobolRecords.blank(681, text);
+        if (read == null || !java.util.Objects.equals(id.getAbndUtimeKey(), CobolRecords.toLong(CobolRecords.packed(read, 0, 8, 0)))) {
+            CobolRecords.putPacked(rec, 0, 8, 0, true, CobolRecords.decimal(id.getAbndUtimeKey()));
+        }
+        if (read == null || !java.util.Objects.equals(id.getAbndTasknoKey(), CobolRecords.toInteger(CobolRecords.zoned(read, 8, 4, 0, text)))) {
+            CobolRecords.putZoned(rec, 8, 4, 0, false, CobolRecords.decimal(id.getAbndTasknoKey()), text);
+        }
+        if (read == null || !java.util.Objects.equals(abndApplid, CobolRecords.text(read, 12, 8, text))) {
+            CobolRecords.putText(rec, 12, 8, abndApplid, text);
+        }
+        if (read == null || !java.util.Objects.equals(abndTranid, CobolRecords.text(read, 20, 4, text))) {
+            CobolRecords.putText(rec, 20, 4, abndTranid, text);
+        }
+        if (read == null || !java.util.Objects.equals(abndDate, CobolRecords.text(read, 24, 10, text))) {
+            CobolRecords.putText(rec, 24, 10, abndDate, text);
+        }
+        if (read == null || !java.util.Objects.equals(abndTime, CobolRecords.text(read, 34, 8, text))) {
+            CobolRecords.putText(rec, 34, 8, abndTime, text);
+        }
+        if (read == null || !java.util.Objects.equals(abndCode, CobolRecords.text(read, 42, 4, text))) {
+            CobolRecords.putText(rec, 42, 4, abndCode, text);
+        }
+        if (read == null || !java.util.Objects.equals(abndProgram, CobolRecords.text(read, 46, 8, text))) {
+            CobolRecords.putText(rec, 46, 8, abndProgram, text);
+        }
+        if (read == null || !java.util.Objects.equals(abndRespcode, CobolRecords.toInteger(CobolRecords.zonedSeparate(read, 54, 9, 0, true, text)))) {
+            CobolRecords.putZonedSeparate(rec, 54, 8, 0, true, CobolRecords.decimal(abndRespcode), text);
+        }
+        if (read == null || !java.util.Objects.equals(abndResp2Code, CobolRecords.toInteger(CobolRecords.zonedSeparate(read, 63, 9, 0, true, text)))) {
+            CobolRecords.putZonedSeparate(rec, 63, 8, 0, true, CobolRecords.decimal(abndResp2Code), text);
+        }
+        if (read == null || !java.util.Objects.equals(abndSqlcode, CobolRecords.toInteger(CobolRecords.zonedSeparate(read, 72, 9, 0, true, text)))) {
+            CobolRecords.putZonedSeparate(rec, 72, 8, 0, true, CobolRecords.decimal(abndSqlcode), text);
+        }
+        if (read == null || !java.util.Objects.equals(abndFreeform, CobolRecords.text(read, 81, 600, text))) {
+            CobolRecords.putText(rec, 81, 600, abndFreeform, text);
+        }
         return rec;
     }
 }

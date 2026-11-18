@@ -26,15 +26,11 @@ public class Cbact02cService {
 
     private final CardRecordRepository cardRecordRepository;
 
-    public void executeCbact02c(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for CBACT02C");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
     /** AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS as BATCH SELECT CARDFILE-FILE at app/cbl/CBACT02C.cbl (SELECT CARDFILE-FILE); VSAM defines field testing: open (3 public / 0 private estates). */
     // TODO: this program uses FD-CARDFILE-REC (150 bytes); the entity follows CARD-RECORD (150 bytes) -- map one onto the other
+    // Sequential READ: in key order, CARD-NUM as cp037 bytes (#3945, #3822).
     public List<CardRecord> readAllCardfileFile() {
-        return cardRecordRepository.findAll();
+        return cardRecordRepository.findAll(org.springframework.data.domain.Sort.by("cardNumSort"));
     }
 
     /** The batch entry (#3622): run by job READCARD step STEP05 (app/jcl/READCARD.jcl:22).

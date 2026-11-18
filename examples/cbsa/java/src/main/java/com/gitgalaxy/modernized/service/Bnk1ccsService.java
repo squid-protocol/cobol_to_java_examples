@@ -11,11 +11,10 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.Bnk1ccsSubpgmParms;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.dto.contract.Bnk1ccsWsCommArea;
-import com.gitgalaxy.modernized.dto.contract.BnkmenuAbndinfoRec;
+import com.gitgalaxy.modernized.dto.contract.CrecustDfhcommarea;
 import com.gitgalaxy.modernized.dto.screen.Bnk1ccScreen;
-import com.gitgalaxy.modernized.dto.screen.ScreenModel;
 import com.gitgalaxy.modernized.exception.*;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,133 +46,140 @@ public class Bnk1ccsService {
     private static final Logger log = LoggerFactory.getLogger(Bnk1ccsService.class);
 
     private final ObjectProvider<CrecustService> crecustService;
-    private final ObjectProvider<AbndprocService> abndprocService;
 
-    public void executeBnk1ccs(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for BNK1CCS");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
-    /** A CICS transaction entered the program. TODO: [AI AGENT] implement from the program's business rules. */
+    /** A CICS transaction entered the program (#4343): one task of it in the region (CicsTask.region()),
+     *  ENTER pressed -- `request` its COMMAREA, null when started from a cleared screen -- run through runTask. Returns the COMMAREA its RETURN passes on (null: none). */
     public Bnk1ccsWsCommArea handleTransaction(String transid, Bnk1ccsWsCommArea request) {
         log.info("Bnk1ccs: handleTransaction");
-        return request;
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.transaction(transid, request);
+        region.run(task, "BNK1CCS", this::runTask);
+        return task.returned(Bnk1ccsWsCommArea.class);
+    }
+
+    /** #4870: handleTransaction with the raw bytes of the previous task's COMMAREA (null: none); the
+     *  bytes this task's RETURN passes on are then answered by lastAnswerBytes(). */
+    public Bnk1ccsWsCommArea handleTransaction(String transid, Bnk1ccsWsCommArea request, byte[] area) {
+        log.info("Bnk1ccs: handleTransaction (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.transaction(transid, request, area);
+        region.run(task, "BNK1CCS", this::runTask);
+        lastAnswerBytes = task.returnedBytes();
+        return task.returned(Bnk1ccsWsCommArea.class);
+    }
+
+    // @facade-helper: the bytes the last byte-carrying handleTransaction answered
+    private byte[] lastAnswerBytes;
+
+    /** The bytes the last byte-carrying handleTransaction's RETURN passed on (a copy; null: none).
+     *  @facade-helper */
+    public byte[] lastAnswerBytes() {
+        return lastAnswerBytes == null ? null : java.util.Arrays.copyOf(lastAnswerBytes, lastAnswerBytes.length);
+    }
+
+    /** One pseudo-conversational task of this program (#3754). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("Bnk1ccs: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
     /** EXEC CICS LINK PROGRAM(CRECUST) at src/base/cobol_src/BNK1CCS.cbl:976.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public Bnk1ccsSubpgmParms linkCrecust(Bnk1ccsSubpgmParms request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public CrecustDfhcommarea linkCrecust(CrecustDfhcommarea request) {
         return crecustService.getObject().handleLink(request);
     }
 
-    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:331: the target is data-driven. Candidates: ABNDPROC (value).
+    /** EXEC CICS LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:331, COMMAREA(ABNDINFO-REC): the target is data-driven (candidates the engine found: ABNDPROC (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchWsAbendPgmL331(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ABNDPROC":
-                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:331: no known target " + program);
-        }
+    public String dispatchWsAbendPgmL331(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
     }
 
-    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:462: the target is data-driven. Candidates: ABNDPROC (value).
+    /** EXEC CICS LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:462, COMMAREA(ABNDINFO-REC): the target is data-driven (candidates the engine found: ABNDPROC (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchWsAbendPgmL462(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ABNDPROC":
-                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:462: no known target " + program);
-        }
+    public String dispatchWsAbendPgmL462(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
     }
 
-    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:557: the target is data-driven. Candidates: ABNDPROC (value).
+    /** EXEC CICS LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:557, COMMAREA(ABNDINFO-REC): the target is data-driven (candidates the engine found: ABNDPROC (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchWsAbendPgmL557(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ABNDPROC":
-                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:557: no known target " + program);
-        }
+    public String dispatchWsAbendPgmL557(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
     }
 
-    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1031: the target is data-driven. Candidates: ABNDPROC (value).
+    /** EXEC CICS LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1031, COMMAREA(ABNDINFO-REC): the target is data-driven (candidates the engine found: ABNDPROC (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchWsAbendPgmL1031(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ABNDPROC":
-                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1031: no known target " + program);
-        }
+    public String dispatchWsAbendPgmL1031(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
     }
 
-    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1181: the target is data-driven. Candidates: ABNDPROC (value).
+    /** EXEC CICS LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1181, COMMAREA(ABNDINFO-REC): the target is data-driven (candidates the engine found: ABNDPROC (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchWsAbendPgmL1181(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ABNDPROC":
-                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1181: no known target " + program);
-        }
+    public String dispatchWsAbendPgmL1181(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
     }
 
-    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1264: the target is data-driven. Candidates: ABNDPROC (value).
+    /** EXEC CICS LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1264, COMMAREA(ABNDINFO-REC): the target is data-driven (candidates the engine found: ABNDPROC (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchWsAbendPgmL1264(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ABNDPROC":
-                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1264: no known target " + program);
-        }
+    public String dispatchWsAbendPgmL1264(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
     }
 
-    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1342: the target is data-driven. Candidates: ABNDPROC (value).
+    /** EXEC CICS LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1342, COMMAREA(ABNDINFO-REC): the target is data-driven (candidates the engine found: ABNDPROC (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchWsAbendPgmL1342(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ABNDPROC":
-                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1342: no known target " + program);
-        }
+    public String dispatchWsAbendPgmL1342(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
     }
 
-    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1420: the target is data-driven. Candidates: ABNDPROC (value).
+    /** EXEC CICS LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1420, COMMAREA(ABNDINFO-REC): the target is data-driven (candidates the engine found: ABNDPROC (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchWsAbendPgmL1420(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ABNDPROC":
-                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1420: no known target " + program);
-        }
+    public String dispatchWsAbendPgmL1420(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
     }
 
-    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1498: the target is data-driven. Candidates: ABNDPROC (value).
+    /** EXEC CICS LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1498, COMMAREA(ABNDINFO-REC): the target is data-driven (candidates the engine found: ABNDPROC (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchWsAbendPgmL1498(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ABNDPROC":
-                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1498: no known target " + program);
-        }
+    public String dispatchWsAbendPgmL1498(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
     }
 
-    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1578: the target is data-driven. Candidates: ABNDPROC (value).
+    /** EXEC CICS LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1578, COMMAREA(ABNDINFO-REC): the target is data-driven (candidates the engine found: ABNDPROC (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchWsAbendPgmL1578(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ABNDPROC":
-                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/BNK1CCS.cbl:1578: no known target " + program);
-        }
+    public String dispatchWsAbendPgmL1578(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
     }
 
     /**
@@ -195,36 +201,12 @@ public class Bnk1ccsService {
     }
 
     /**
-     * EXEC CICS HANDLE ABEND at src/base/cobol_src/BNK1CCS.cbl:1649 (paragraph HA010) routes abends to None.
-     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
-     */
-    public void onAbendL1649(CicsAbendException e) {
-        log.info("HANDLE ABEND LABEL None at line 1649", e);
-        // TODO: port paragraph None's logic
-    }
-
-    /**
      * EXEC CICS ABEND ABCODE(WS-ABCODE) at src/base/cobol_src/BNK1CCS.cbl:1652 (paragraph paragraph).
      * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
      * Note: resolved at run time if an identifier.
      */
     public void abendWsabcodeL1652() {
         throw new CicsAbendException("WS-ABCODE", "BNK1CCS", "src/base/cobol_src/BNK1CCS.cbl:1652");
-    }
-
-    /** SEND MAP(BNK1CC) MAPSET(BNK1CCM) FROM(BNK1CCO) at src/base/cobol_src/BNK1CCS.cbl:1286, src/base/cobol_src/BNK1CCS.cbl:1364, src/base/cobol_src/BNK1CCS.cbl:1441 (#3619).
-     *  TODO: port the logic that fills BNK1CCO before the SEND.
-     *  BMS screen fields field testing: open (3 public / 0 private estates). */
-    public Bnk1ccScreen renderBnk1cc(Bnk1ccScreen screen) {
-        return screen;
-    }
-
-    /** RECEIVE MAP(BNK1CC) MAPSET(BNK1CCM) INTO(BNK1CCI) at src/base/cobol_src/BNK1CCS.cbl:500 (#3619).
-     *  `aid` is the key the user pressed (EIBAID): ENTER, PF1-PF24, CLEAR, PA1-PA3.
-     *  TODO: port the logic that reads BNK1CCI after the RECEIVE, and return the screen to show next.
-     *  BMS screen fields field testing: open (3 public / 0 private estates). */
-    public ScreenModel submitBnk1cc(Bnk1ccScreen input, String aid) {
-        return renderBnk1cc(input);
     }
 
 }

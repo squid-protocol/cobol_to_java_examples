@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 public class FdTranCatRecordKey implements Serializable {
 
     // FD-TRAN-TYPE-CD: PIC X(02), offset 0, 2 bytes
-    @Column(name = "FD_TRAN_TYPE_CD", length = 2)
+    @Column(name = "FD_TRAN_TYPE_CD", columnDefinition = "varchar(2) COLLATE \"C\"")
     private String fdTranTypeCd;
 
     // FD-TRAN-CAT-CD: PIC 9(04), offset 2, 4 bytes

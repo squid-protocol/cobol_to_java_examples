@@ -11,9 +11,12 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.client.Aor1RemoteClient;
+import com.gitgalaxy.modernized.dto.contract.Lgacus01Dfhcommarea;
+import com.gitgalaxy.modernized.dto.contract.Lgicus01Dfhcommarea;
 import com.gitgalaxy.modernized.dto.contract.Lgtestc1CommArea;
-import com.gitgalaxy.modernized.dto.screen.ScreenModel;
+import com.gitgalaxy.modernized.dto.contract.Lgucus01Dfhcommarea;
 import com.gitgalaxy.modernized.dto.screen.Ssmapc1Screen;
 import com.gitgalaxy.modernized.exception.*;
 import com.gitgalaxy.modernized.messaging.TempStorage;
@@ -44,38 +47,66 @@ public class Lgtestc1Service {
     private final Aor1RemoteClient aor1RemoteClient;
     private final TempStorage tempStorage;
 
-    public void executeLgtestc1(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for lgtestc1");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
-    /** A CICS transaction entered the program. TODO: [AI AGENT] implement from the program's business rules. */
+    /** A CICS transaction entered the program (#4343): one task of it in the region (CicsTask.region()),
+     *  ENTER pressed -- `request` its COMMAREA, null when started from a cleared screen -- run through runTask. Returns the COMMAREA its RETURN passes on (null: none). */
     public Lgtestc1CommArea handleTransaction(String transid, Lgtestc1CommArea request) {
         log.info("Lgtestc1: handleTransaction");
-        return request;
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.transaction(transid, request);
+        region.run(task, "LGTESTC1", this::runTask);
+        return task.returned(Lgtestc1CommArea.class);
+    }
+
+    /** #4870: handleTransaction with the raw bytes of the previous task's COMMAREA (null: none); the
+     *  bytes this task's RETURN passes on are then answered by lastAnswerBytes(). */
+    public Lgtestc1CommArea handleTransaction(String transid, Lgtestc1CommArea request, byte[] area) {
+        log.info("Lgtestc1: handleTransaction (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.transaction(transid, request, area);
+        region.run(task, "LGTESTC1", this::runTask);
+        lastAnswerBytes = task.returnedBytes();
+        return task.returned(Lgtestc1CommArea.class);
+    }
+
+    // @facade-helper: the bytes the last byte-carrying handleTransaction answered
+    private byte[] lastAnswerBytes;
+
+    /** The bytes the last byte-carrying handleTransaction's RETURN passed on (a copy; null: none).
+     *  @facade-helper */
+    public byte[] lastAnswerBytes() {
+        return lastAnswerBytes == null ? null : java.util.Arrays.copyOf(lastAnswerBytes, lastAnswerBytes.length);
+    }
+
+    /** One pseudo-conversational task of this program (#3754). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("Lgtestc1: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
     /** EXEC CICS LINK PROGRAM(LGICUS01) at 89: the CSD routes it to region AOR1 (distributed program link).
      *  Remote calls field testing: open (5 public / 0 private estates). */
-    public Lgtestc1CommArea remoteLgicus01L89(Lgtestc1CommArea request) {
+    public Lgicus01Dfhcommarea remoteLgicus01L89(Lgicus01Dfhcommarea request) {
         return aor1RemoteClient.linkLgicus01(request);
     }
 
     /** EXEC CICS LINK PROGRAM(LGACUS01) at 128: the CSD routes it to region AOR1 (distributed program link).
      *  Remote calls field testing: open (5 public / 0 private estates). */
-    public Lgtestc1CommArea remoteLgacus01L128(Lgtestc1CommArea request) {
+    public Lgacus01Dfhcommarea remoteLgacus01L128(Lgacus01Dfhcommarea request) {
         return aor1RemoteClient.linkLgacus01(request);
     }
 
     /** EXEC CICS LINK PROGRAM(LGICUS01) at 151: the CSD routes it to region AOR1 (distributed program link).
      *  Remote calls field testing: open (5 public / 0 private estates). */
-    public Lgtestc1CommArea remoteLgicus01L151(Lgtestc1CommArea request) {
+    public Lgicus01Dfhcommarea remoteLgicus01L151(Lgicus01Dfhcommarea request) {
         return aor1RemoteClient.linkLgicus01(request);
     }
 
     /** EXEC CICS LINK PROGRAM(LGUCUS01) at 190: the CSD routes it to region AOR1 (distributed program link).
      *  Remote calls field testing: open (5 public / 0 private estates). */
-    public Lgtestc1CommArea remoteLgucus01L190(Lgtestc1CommArea request) {
+    public Lgucus01Dfhcommarea remoteLgucus01L190(Lgucus01Dfhcommarea request) {
         return aor1RemoteClient.linkLgucus01(request);
     }
 
@@ -94,21 +125,6 @@ public class Lgtestc1Service {
     public void onConditionMapfailL75(CicsConditionException e) {
         log.info("HANDLE CONDITION MAPFAIL LABEL ENDIT at line 75", e);
         // TODO: port paragraph ENDIT's logic
-    }
-
-    /** SEND MAP(SSMAPC1) MAPSET(SSMAP) FROM(SSMAPC1O) at base/src/lgtestc1.cbl:64, base/src/lgtestc1.cbl:107, base/src/lgtestc1.cbl:142, base/src/lgtestc1.cbl:168, base/src/lgtestc1.cbl:203, base/src/lgtestc1.cbl:215, base/src/lgtestc1.cbl:249, base/src/lgtestc1.cbl:272 (#3619).
-     *  TODO: port the logic that fills SSMAPC1O before the SEND.
-     *  BMS screen fields field testing: open (3 public / 0 private estates). */
-    public Ssmapc1Screen renderSsmapc1(Ssmapc1Screen screen) {
-        return screen;
-    }
-
-    /** RECEIVE MAP(SSMAPC1) MAPSET(SSMAP) INTO(SSMAPC1I) at base/src/lgtestc1.cbl:79, base/src/lgtestc1.cbl:172 (#3619).
-     *  `aid` is the key the user pressed (EIBAID): ENTER, PF1-PF24, CLEAR, PA1-PA3.
-     *  TODO: port the logic that reads SSMAPC1I after the RECEIVE, and return the screen to show next.
-     *  BMS screen fields field testing: open (3 public / 0 private estates). */
-    public ScreenModel submitSsmapc1(Ssmapc1Screen input, String aid) {
-        return renderSsmapc1(input);
     }
 
     /** EXEC CICS READQ TS QUEUE(STSQ-NAME) INTO(READ-MSG) ITEM(1) at base/src/lgtestc1.cbl:290 (#3620). Shared through TS GENACNTL: written by base/src/lgicvs01.cbl, base/src/lgsetup.cbl; read by base/src/lgicvs01.cbl.

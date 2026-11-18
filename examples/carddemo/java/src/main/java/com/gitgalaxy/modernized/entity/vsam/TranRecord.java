@@ -28,7 +28,7 @@ public class TranRecord {
 
     // TRAN-ID: PIC X(16), offset 0, 16 bytes
     @Id
-    @Column(name = "TRAN_ID", length = 16)
+    @Column(name = "TRAN_ID", columnDefinition = "varchar(16) COLLATE \"C\"")
     private String tranId;
 
     // TRAN-TYPE-CD: PIC X(02), offset 16, 2 bytes
@@ -48,7 +48,7 @@ public class TranRecord {
     private String tranDesc;
 
     // TRAN-AMT: PIC S9(09)V99, offset 132, 11 bytes
-    @Column(name = "TRAN_AMT")
+    @Column(name = "TRAN_AMT", precision = 11, scale = 2)
     private BigDecimal tranAmt;
 
     // TRAN-MERCHANT-ID: PIC 9(09), offset 143, 9 bytes
@@ -79,11 +79,36 @@ public class TranRecord {
     @Column(name = "TRAN_PROC_TS", length = 26)
     private String tranProcTs;
 
+    // #3822: TRAN-ID as cp037 bytes in hex -- browses order by it, as VSAM orders the key
+    @Column(name = "TRAN_ID_SORT", columnDefinition = "varchar(32) COLLATE \"C\"")
+    private String tranIdSort;
+
+    @PrePersist
+    @PreUpdate
+    void codePageSortKey() {
+        this.tranIdSort = CobolRecords.sortKey(tranId, "cp037");
+    }
+
+
+    /** #4875: the record bytes this entity was read from, kept beside the typed columns: a field whose
+     *  value is unchanged is written back as these bytes, so a value no column type holds (spaces in a
+     *  PIC 9, a non-preferred sign) and FILLER survive the round trip, as the VSAM record keeps them. */
+    @Column(name = "VSAM_RECORD", length = 350)
+    @lombok.Getter(lombok.AccessLevel.NONE)
+    @lombok.Setter(lombok.AccessLevel.NONE)
+    @lombok.EqualsAndHashCode.Exclude
+    @lombok.ToString.Exclude
+    private byte[] vsamRecord;
 
     /** #3624: this record from its fixed-width VSAM form (350 bytes, as REPRO unloads it), each
      *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
-     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+     *  transfer, IBM037 on z/OS). The bytes themselves are kept in vsamRecord (#4875). */
     public static TranRecord fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        if (rec.length < 350) {  // a WRITE ... LENGTH(n) short of the record: the rest is spaces
+            byte[] full = CobolRecords.blank(350, text);
+            System.arraycopy(rec, 0, full, 0, rec.length);
+            rec = full;
+        }
         TranRecord r = new TranRecord();
         r.tranId = CobolRecords.text(rec, 0, 16, text);
         r.tranTypeCd = CobolRecords.text(rec, 16, 2, text);
@@ -98,25 +123,54 @@ public class TranRecord {
         r.tranCardNum = CobolRecords.text(rec, 262, 16, text);
         r.tranOrigTs = CobolRecords.text(rec, 278, 26, text);
         r.tranProcTs = CobolRecords.text(rec, 304, 26, text);
+        r.vsamRecord = java.util.Arrays.copyOf(rec, 350);
         return r;
     }
 
-    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    /** #3624: the fixed-width VSAM record of this entity: the bytes it was read from (vsamRecord), each field
+     *  whose value changed since re-encoded; a new entity's FILLER as spaces. */
     public byte[] toRecord(java.nio.charset.Charset text) {
-        byte[] rec = CobolRecords.blank(350, text);
-        CobolRecords.putText(rec, 0, 16, tranId, text);
-        CobolRecords.putText(rec, 16, 2, tranTypeCd, text);
-        CobolRecords.putZoned(rec, 18, 4, 0, false, CobolRecords.decimal(tranCatCd), text);
-        CobolRecords.putText(rec, 22, 10, tranSource, text);
-        CobolRecords.putText(rec, 32, 100, tranDesc, text);
-        CobolRecords.putZoned(rec, 132, 11, 2, true, CobolRecords.decimal(tranAmt), text);
-        CobolRecords.putZoned(rec, 143, 9, 0, false, CobolRecords.decimal(tranMerchantId), text);
-        CobolRecords.putText(rec, 152, 50, tranMerchantName, text);
-        CobolRecords.putText(rec, 202, 50, tranMerchantCity, text);
-        CobolRecords.putText(rec, 252, 10, tranMerchantZip, text);
-        CobolRecords.putText(rec, 262, 16, tranCardNum, text);
-        CobolRecords.putText(rec, 278, 26, tranOrigTs, text);
-        CobolRecords.putText(rec, 304, 26, tranProcTs, text);
+        byte[] read = vsamRecord != null && vsamRecord.length == 350 ? vsamRecord : null;
+        byte[] rec = read != null ? read.clone() : CobolRecords.blank(350, text);
+        if (read == null || !java.util.Objects.equals(tranId, CobolRecords.text(read, 0, 16, text))) {
+            CobolRecords.putText(rec, 0, 16, tranId, text);
+        }
+        if (read == null || !java.util.Objects.equals(tranTypeCd, CobolRecords.text(read, 16, 2, text))) {
+            CobolRecords.putText(rec, 16, 2, tranTypeCd, text);
+        }
+        if (read == null || !java.util.Objects.equals(tranCatCd, CobolRecords.toInteger(CobolRecords.zoned(read, 18, 4, 0, text)))) {
+            CobolRecords.putZoned(rec, 18, 4, 0, false, CobolRecords.decimal(tranCatCd), text);
+        }
+        if (read == null || !java.util.Objects.equals(tranSource, CobolRecords.text(read, 22, 10, text))) {
+            CobolRecords.putText(rec, 22, 10, tranSource, text);
+        }
+        if (read == null || !java.util.Objects.equals(tranDesc, CobolRecords.text(read, 32, 100, text))) {
+            CobolRecords.putText(rec, 32, 100, tranDesc, text);
+        }
+        if (read == null || !java.util.Objects.equals(tranAmt, CobolRecords.zoned(read, 132, 11, 2, text))) {
+            CobolRecords.putZoned(rec, 132, 11, 2, true, CobolRecords.decimal(tranAmt), text);
+        }
+        if (read == null || !java.util.Objects.equals(tranMerchantId, CobolRecords.toInteger(CobolRecords.zoned(read, 143, 9, 0, text)))) {
+            CobolRecords.putZoned(rec, 143, 9, 0, false, CobolRecords.decimal(tranMerchantId), text);
+        }
+        if (read == null || !java.util.Objects.equals(tranMerchantName, CobolRecords.text(read, 152, 50, text))) {
+            CobolRecords.putText(rec, 152, 50, tranMerchantName, text);
+        }
+        if (read == null || !java.util.Objects.equals(tranMerchantCity, CobolRecords.text(read, 202, 50, text))) {
+            CobolRecords.putText(rec, 202, 50, tranMerchantCity, text);
+        }
+        if (read == null || !java.util.Objects.equals(tranMerchantZip, CobolRecords.text(read, 252, 10, text))) {
+            CobolRecords.putText(rec, 252, 10, tranMerchantZip, text);
+        }
+        if (read == null || !java.util.Objects.equals(tranCardNum, CobolRecords.text(read, 262, 16, text))) {
+            CobolRecords.putText(rec, 262, 16, tranCardNum, text);
+        }
+        if (read == null || !java.util.Objects.equals(tranOrigTs, CobolRecords.text(read, 278, 26, text))) {
+            CobolRecords.putText(rec, 278, 26, tranOrigTs, text);
+        }
+        if (read == null || !java.util.Objects.equals(tranProcTs, CobolRecords.text(read, 304, 26, text))) {
+            CobolRecords.putText(rec, 304, 26, tranProcTs, text);
+        }
         return rec;
     }
 }

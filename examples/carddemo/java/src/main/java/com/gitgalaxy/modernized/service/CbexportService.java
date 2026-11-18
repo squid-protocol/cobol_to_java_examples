@@ -41,29 +41,28 @@ public class CbexportService {
     private final ExportInputRecordRepository exportInputRecordRepository;
     private final TranRecordRepository tranRecordRepository;
 
-    public void executeCbexport(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for CBEXPORT");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
     /** AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS as BATCH SELECT ACCOUNT-INPUT at app/cbl/CBEXPORT.cbl (SELECT ACCOUNT-INPUT); VSAM defines field testing: open (3 public / 0 private estates). */
+    // Sequential READ: in key order (ACCT-ID, #3945).
     public List<AccountRecord> readAllAccountInput() {
-        return accountRecordRepository.findAll();
+        return accountRecordRepository.findAll(org.springframework.data.domain.Sort.by("acctId"));
     }
 
     /** AWS.M2.CARDDEMO.CARDDATA.VSAM.KSDS as BATCH SELECT CARD-INPUT at app/cbl/CBEXPORT.cbl (SELECT CARD-INPUT); VSAM defines field testing: open (3 public / 0 private estates). */
+    // Sequential READ: in key order, CARD-NUM as cp037 bytes (#3945, #3822).
     public List<CardRecord> readAllCardInput() {
-        return cardRecordRepository.findAll();
+        return cardRecordRepository.findAll(org.springframework.data.domain.Sort.by("cardNumSort"));
     }
 
     /** AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS as BATCH SELECT XREF-INPUT at app/cbl/CBEXPORT.cbl (SELECT XREF-INPUT); VSAM defines field testing: open (3 public / 0 private estates). */
+    // Sequential READ: in key order, XREF-CARD-NUM as cp037 bytes (#3945, #3822).
     public List<CardXrefRecord> readAllXrefInput() {
-        return cardXrefRecordRepository.findAll();
+        return cardXrefRecordRepository.findAll(org.springframework.data.domain.Sort.by("xrefCardNumSort"));
     }
 
     /** AWS.M2.CARDDEMO.CUSTDATA.VSAM.KSDS as BATCH SELECT CUSTOMER-INPUT at app/cbl/CBEXPORT.cbl (SELECT CUSTOMER-INPUT); VSAM defines field testing: open (3 public / 0 private estates). */
+    // Sequential READ: in key order (CUST-ID, #3945).
     public List<CustomerRecord> readAllCustomerInput() {
-        return customerRecordRepository.findAll();
+        return customerRecordRepository.findAll(org.springframework.data.domain.Sort.by("custId"));
     }
 
     /** AWS.M2.CARDDEMO.EXPORT.DATA as BATCH SELECT EXPORT-OUTPUT at app/cbl/CBEXPORT.cbl (SELECT EXPORT-OUTPUT); VSAM defines field testing: open (3 public / 0 private estates). */
@@ -73,8 +72,9 @@ public class CbexportService {
     }
 
     /** AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS as BATCH SELECT TRANSACTION-INPUT at app/cbl/CBEXPORT.cbl (SELECT TRANSACTION-INPUT); VSAM defines field testing: open (3 public / 0 private estates). */
+    // Sequential READ: in key order, TRAN-ID as cp037 bytes (#3945, #3822).
     public List<TranRecord> readAllTransactionInput() {
-        return tranRecordRepository.findAll();
+        return tranRecordRepository.findAll(org.springframework.data.domain.Sort.by("tranIdSort"));
     }
 
     /** The batch entry (#3622): run by job CBEXPORT step STEP02 (app/jcl/CBEXPORT.jcl:43).

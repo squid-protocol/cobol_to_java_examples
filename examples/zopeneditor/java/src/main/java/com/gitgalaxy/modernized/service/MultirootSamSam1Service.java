@@ -11,8 +11,13 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.Sam2Parms;
+import com.gitgalaxy.modernized.batch.Dd;
+import com.gitgalaxy.modernized.call.CobolRef;
+import com.gitgalaxy.modernized.dto.contract.MultirootSamSam2CustRec;
+import com.gitgalaxy.modernized.dto.contract.MultirootSamSam2Sam2Parms;
 import com.gitgalaxy.modernized.dto.contract.TransactionRecord2;
+import java.util.List;
+import java.util.Locale;
 import org.springframework.beans.factory.ObjectProvider;
 
 @Service
@@ -26,21 +31,29 @@ public class MultirootSamSam1Service {
     // ⚠️ UNRESOLVED EXTERNAL DEPENDENCIES (FROM DAG)
     // TODO: AI AGENT - Implement or mock interface call to: Sam2Service
 
-    public void executeMultirootSamSam1(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for multiroot__sam__SAM1");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
     /** CALL SAM2 at multiroot/sam/SAM1.cbl:338: the target is data-driven. Candidates: SAM2 (value).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
     public Object dispatchSam2L338(String program, Object... args) {
-        switch (program.trim().toUpperCase()) {
+        switch (program.trim().toUpperCase(Locale.ROOT)) {
             case "SAM2":
-                multirootSamSam2Service.getObject().handleCall((String) args[0], (TransactionRecord2) args[1], (String) args[2], (String) args[3], (Sam2Parms) args[4]);
+                multirootSamSam2Service.getObject().handleCall((MultirootSamSam2CustRec) args[0], (TransactionRecord2) args[1], (CobolRef<String>) args[2], (CobolRef<String>) args[3], (MultirootSamSam2Sam2Parms) args[4]);
                 return null;
             default:
                 throw new IllegalArgumentException("CALL SAM2 at multiroot/sam/SAM1.cbl:338: no known target " + program);
         }
+    }
+
+    /** The batch entry (#3622): run by no JCL step in this estate (a main program with files of its own: its JCL is elsewhere).
+     *  `dds` are the step's DD statements (DatasetResolver maps each to its file); `parm` the
+     *  text its EXEC PARM= passes (null without one) -- a PROCEDURE DIVISION USING area's data.
+     *  DD CUSTFILE (INPUT) -> ?.
+     *  DD CUSTOUT (OUTPUT) -> ?.
+     *  DD CUSTRPT (OUTPUT) -> ?.
+     *  DD TRANFILE (INPUT) -> ?.
+     *  TODO: port the PROCEDURE DIVISION main line; return its RETURN-CODE.
+     *  JCL job flow field testing: open (5 public / 0 private estates). */
+    public int runBatch(List<Dd> dds, String parm) {
+        return 0;
     }
 
 }

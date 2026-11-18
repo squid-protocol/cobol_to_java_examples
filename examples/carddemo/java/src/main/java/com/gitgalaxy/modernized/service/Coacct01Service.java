@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.entity.vsam.AccountRecord;
 import com.gitgalaxy.modernized.messaging.MessageQueue;
 import com.gitgalaxy.modernized.repository.vsam.AccountRecordRepository;
@@ -34,14 +35,41 @@ public class Coacct01Service {
     private final AccountRecordRepository accountRecordRepository;
     private final MessageQueue messageQueue;
 
-    public void executeCoacct01(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for COACCT01");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
-    /** A CICS transaction entered the program. TODO: [AI AGENT] implement from the program's business rules. */
+    /** A CICS transaction entered the program (#4343): one task of it in the region (CicsTask.region()),
+     *  ENTER pressed, started from a cleared screen, run through runTask. */
     public void handleTransaction(String transid) {
         log.info("Coacct01: handleTransaction");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.transaction(transid, null);
+        region.run(task, "COACCT01", this::runTask);
+    }
+
+    /** #4870: handleTransaction with the raw bytes of the previous task's COMMAREA (null: none); the
+     *  bytes this task's RETURN passes on are then answered by lastAnswerBytes(). */
+    public void handleTransaction(String transid, byte[] area) {
+        log.info("Coacct01: handleTransaction (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.transaction(transid, null, area);
+        region.run(task, "COACCT01", this::runTask);
+        lastAnswerBytes = task.returnedBytes();
+    }
+
+    // @facade-helper: the bytes the last byte-carrying handleTransaction answered
+    private byte[] lastAnswerBytes;
+
+    /** The bytes the last byte-carrying handleTransaction's RETURN passed on (a copy; null: none).
+     *  @facade-helper */
+    public byte[] lastAnswerBytes() {
+        return lastAnswerBytes == null ? null : java.util.Arrays.copyOf(lastAnswerBytes, lastAnswerBytes.length);
+    }
+
+    /** One pseudo-conversational task of this program (#3754). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("Coacct01: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
     /** AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS as CICS file ACCTDAT at app/app-vsam-mq/cbl/COACCT01.cbl:396; VSAM defines field testing: open (3 public / 0 private estates). */

@@ -27,22 +27,22 @@ public class Bnk1meScreen implements ScreenModel {
     public static final String MAPSET = "BNK1MAI";
     public static final String MAP = "BNK1ME";
     public static final List<ScreenField> LAYOUT = List.of(
-            new ScreenField(null, 1, 1, 7, false, false, false, false, false, "BNK1MA ", "BLUE", 1),
-            new ScreenField("COMPANY", 1, 20, 40, false, false, false, false, false, "CICS Bank Sample Application - Main Menu.", "RED", 1),
-            new ScreenField(null, 3, 1, 36, false, false, false, false, false, "Select an option. Then press Enter.", "TURQUOISE", 1),
-            new ScreenField(null, 5, 1, 14, false, false, false, false, false, "Action . . . .", "TURQUOISE", 1),
-            new ScreenField("ACTION", 5, 16, 1, true, false, false, false, true, " ", "GREEN", 1),
-            new ScreenField(null, 5, 18, 46, false, false, false, false, false, "1.  Display/Delete/Update CUSTOMER information", "NEUTRAL", 1),
-            new ScreenField(null, 6, 18, 38, false, false, false, false, false, "2.  Display/Delete ACCOUNT information", "NEUTRAL", 1),
-            new ScreenField(null, 7, 18, 19, false, false, false, false, false, "3.  Create CUSTOMER", "NEUTRAL", 1),
-            new ScreenField(null, 8, 18, 18, false, false, false, false, false, "4.  Create ACCOUNT", "NEUTRAL", 1),
-            new ScreenField(null, 9, 18, 18, false, false, false, false, false, "5.  Update ACCOUNT", "NEUTRAL", 1),
-            new ScreenField(null, 10, 18, 36, false, false, false, false, false, "6.  Credit/Debit funds to an ACCOUNT", "NEUTRAL", 1),
-            new ScreenField(null, 11, 18, 42, false, false, false, false, false, "7.  Transfer funds", "NEUTRAL", 1),
-            new ScreenField(null, 13, 18, 41, false, false, false, false, false, "A.  Look up Accounts with Customer Number", "NEUTRAL", 1),
-            new ScreenField("MESSAGE", 23, 1, 79, false, false, true, false, false, null, "YELLOW", 1),
-            new ScreenField(null, 24, 1, 20, false, false, false, false, false, "F3=Exit   F12=Cancel", "BLUE", 1),
-            new ScreenField("DUMMY", 24, 79, 1, false, false, false, true, false, " ", null, 1));
+            new ScreenField(null, 1, 1, 7, false, false, false, false, false, "BNK1MA ", "BLUE", 1, null),
+            new ScreenField("COMPANY", 1, 20, 40, false, false, false, false, false, "CICS Bank Sample Application - Main Menu.", "RED", 1, null),
+            new ScreenField(null, 3, 1, 36, false, false, false, false, false, "Select an option. Then press Enter.", "TURQUOISE", 1, null),
+            new ScreenField(null, 5, 1, 14, false, false, false, false, false, "Action . . . .", "TURQUOISE", 1, null),
+            new ScreenField("ACTION", 5, 16, 1, true, false, false, false, true, " ", "GREEN", 1, null),
+            new ScreenField(null, 5, 18, 46, false, false, false, false, false, "1.  Display/Delete/Update CUSTOMER information", "NEUTRAL", 1, null),
+            new ScreenField(null, 6, 18, 38, false, false, false, false, false, "2.  Display/Delete ACCOUNT information", "NEUTRAL", 1, null),
+            new ScreenField(null, 7, 18, 19, false, false, false, false, false, "3.  Create CUSTOMER", "NEUTRAL", 1, null),
+            new ScreenField(null, 8, 18, 18, false, false, false, false, false, "4.  Create ACCOUNT", "NEUTRAL", 1, null),
+            new ScreenField(null, 9, 18, 18, false, false, false, false, false, "5.  Update ACCOUNT", "NEUTRAL", 1, null),
+            new ScreenField(null, 10, 18, 36, false, false, false, false, false, "6.  Credit/Debit funds to an ACCOUNT", "NEUTRAL", 1, null),
+            new ScreenField(null, 11, 18, 42, false, false, false, false, false, "7.  Transfer funds", "NEUTRAL", 1, null),
+            new ScreenField(null, 13, 18, 41, false, false, false, false, false, "A.  Look up Accounts with Customer Number", "NEUTRAL", 1, null),
+            new ScreenField("MESSAGE", 23, 1, 79, false, false, true, false, false, null, "YELLOW", 1, null),
+            new ScreenField(null, 24, 1, 20, false, false, false, false, false, "F3=Exit   F12=Cancel", "BLUE", 1, null),
+            new ScreenField("DUMMY", 24, 79, 1, false, false, false, true, false, " ", null, 1, null));
 
     /** COMPANY: (1,20), 40 bytes, ATTRB=NORM,PROT -- src/base/bms_src/BNK1MAI.bms:28. Symbolic map COMPANYI, COMPANYO. */
     private String company;

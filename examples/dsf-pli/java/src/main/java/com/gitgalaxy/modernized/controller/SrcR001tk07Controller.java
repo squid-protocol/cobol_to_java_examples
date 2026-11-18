@@ -17,7 +17,7 @@ import com.gitgalaxy.modernized.service.SrcR001tk07Service;
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
  * TODO: no COMMAREA layout: no structure parameter, or structure BASED on the main procedure's parameter COMMAREA_PEKER, is declared in the program or its %INCLUDE members; %INCLUDE members not in the repository: P0012003, P001TK02, P001TK03, P001TK05, P001TK06, P001TK07, P001TK51, P001TK55, P001TK56, P001TK57, S001T4; no resolved caller passes a COMMAREA.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/src-r001tk07")

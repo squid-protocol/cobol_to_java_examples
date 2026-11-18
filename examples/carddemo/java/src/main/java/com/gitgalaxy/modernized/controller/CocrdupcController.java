@@ -19,7 +19,7 @@ import com.gitgalaxy.modernized.service.CocrdupcService;
  * COMMAREA: DFHCOMMAREA (app/cbl/COCRDUPC.cbl, 489 bytes) -> CocrdupcCommarea.
  * TODO: callers also pass WS-COMMAREA (app/cbl/COCRDUPC.cbl, 2000 bytes) at app/cbl/COCRDUPC.cbl:554.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/cocrdupc")
@@ -30,7 +30,7 @@ public class CocrdupcController {
 
     /** CICS transaction CCUP -> Cocrdupc (CSD app/csd/CARDDEMO.CSD:367 group CARDDEMO). */
     @PostMapping("/transactions/CCUP")
-    public ResponseEntity<CocrdupcCommarea> transactionCCUP(@RequestBody CocrdupcCommarea request) {
+    public ResponseEntity<Object> transactionCCUP(@RequestBody CocrdupcCommarea request) {
         return ResponseEntity.ok(cocrdupcService.handleTransaction("CCUP", request));
     }
 

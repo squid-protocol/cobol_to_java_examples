@@ -34,14 +34,14 @@
       "files": 46,
       "total_loc": 9657,
       "coding_loc": 6967,
-      "functions": 157,
-      "avg_complexity": 2.24,
+      "functions": 162,
+      "avg_complexity": 2.17,
       "max_complexity": 16,
-      "avg_function_loc": 36.9,
+      "avg_function_loc": 35.8,
       "functions_complexity_over_10": 7,
       "risk_cognitive_load": 58.7,
-      "risk_tech_debt": 23.8,
-      "risk_safety_score": 62.1,
+      "risk_tech_debt": 10.3,
+      "risk_safety_score": 47.0,
       "risk_verification": 5.5,
       "risk_documentation": 33.7,
       "risk_api_exposure": 1.5,
@@ -50,46 +50,50 @@
         "cobol": 44,
         "plaintext": 41,
         "jcl": 29,
-        "markdown": 13,
+        "markdown": 14,
         "rexx": 2,
         "shell": 1,
         "bms": 1
       }
     },
     "java": {
-      "files": 151,
-      "total_loc": 9342,
-      "coding_loc": 4828,
-      "functions": 418,
-      "avg_complexity": 1.08,
-      "max_complexity": 24,
-      "avg_function_loc": 4.4,
-      "functions_complexity_over_10": 5,
-      "risk_cognitive_load": 3.3,
-      "risk_tech_debt": 38.8,
-      "risk_safety_score": 15.9,
-      "risk_verification": 4.4,
-      "risk_documentation": 11.5,
-      "risk_api_exposure": 17.1,
-      "risk_state_flux": 8.5,
+      "files": 166,
+      "total_loc": 12765,
+      "coding_loc": 7127,
+      "functions": 584,
+      "avg_complexity": 1.3,
+      "max_complexity": 108,
+      "avg_function_loc": 6.6,
+      "functions_complexity_over_10": 8,
+      "risk_cognitive_load": 6.9,
+      "risk_tech_debt": 25.9,
+      "risk_safety_score": 33.8,
+      "risk_verification": 4.3,
+      "risk_documentation": 8.7,
+      "risk_api_exposure": 18.1,
+      "risk_state_flux": 24.6,
       "languages": {
-        "java": 151,
+        "java": 166,
+        "markdown": 33,
+        "json": 19,
         "yaml": 1,
         "xml": 1,
-        "plaintext": 1,
-        "markdown": 1,
-        "json": 1
+        "plaintext": 1
       }
     }
   },
   "legal": [
     "LICENSE"
   ],
-  "java_files": 153,
+  "reports": {
+    "readiness.json": true,
+    "readiness_redacted.json": true
+  },
+  "java_files": 167,
   "services": 31,
   "controllers": 31,
-  "entities": 9,
-  "dtos": 61,
+  "entities": 10,
+  "dtos": 68,
   "batch_jobs": {
     "utility": 8,
     "build": 21
@@ -97,13 +101,11 @@
   "worklist": {
     "commarea-mismatch": 70,
     "record-variant": 2,
-    "missing-layout": 5,
     "queue-name": 9,
     "unchecked-resp": 150,
-    "db2-positioned": 1,
-    "db2-dialect": 33,
-    "business-logic": 91,
+    "db2-dialect": 35,
+    "business-logic": 68,
     "configuration": 1
   },
-  "traced_artifacts": 685
+  "traced_artifacts": 697
 }

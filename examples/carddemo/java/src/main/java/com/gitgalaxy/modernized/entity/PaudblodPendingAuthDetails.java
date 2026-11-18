@@ -23,31 +23,31 @@ public class PaudblodPendingAuthDetails {
     @Column(name = "sys_id")
     private Long sysId;
 
-    @Column(name = "INFIL1_REC")
+    @Column(name = "INFIL1_REC", length = 100)
     private String infil1Rec;
 
     @Column(name = "ROOT_SEG_KEY")
     private Integer rootSegKey;
 
-    @Column(name = "CHILD_SEG_REC")
+    @Column(name = "CHILD_SEG_REC", length = 200)
     private String childSegRec;
 
-    @Column(name = "CURRENT_DATE")
+    @Column(name = "\"CURRENT_DATE\"")
     private Integer currentDate;
 
     @Column(name = "CURRENT_YYDDD")
     private Integer currentYyddd;
 
-    @Column(name = "WS_INFIL1_STATUS")
+    @Column(name = "WS_INFIL1_STATUS", length = 2)
     private String wsInfil1Status;
 
-    @Column(name = "WS_INFIL2_STATUS")
+    @Column(name = "WS_INFIL2_STATUS", length = 2)
     private String wsInfil2Status;
 
-    @Column(name = "END_ROOT_SEG_FILE")
+    @Column(name = "END_ROOT_SEG_FILE", length = 1)
     private String endRootSegFile;
 
-    @Column(name = "END_CHILD_SEG_FILE")
+    @Column(name = "END_CHILD_SEG_FILE", length = 1)
     private String endChildSegFile;
 
     @Column(name = "WK_CHKPT_ID_CTR")
@@ -56,7 +56,7 @@ public class PaudblodPendingAuthDetails {
     @Column(name = "QUAL_SSA_KEY_VALUE")
     private Integer qualSsaKeyValue;
 
-    @Column(name = "IO_PCB_MASK")
+    @Column(name = "IO_PCB_MASK", length = 1)
     private String ioPcbMask;
 
 }

@@ -11,7 +11,16 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.Zecs001Zecs003CommArea;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.Zecs003Dfhcommarea;
+import com.gitgalaxy.modernized.entity.vsam.ZfRecord;
+import com.gitgalaxy.modernized.entity.vsam.ZfRecordKey;
+import com.gitgalaxy.modernized.entity.vsam.ZkRecord;
+import com.gitgalaxy.modernized.repository.vsam.ZfRecordRepository;
+import com.gitgalaxy.modernized.repository.vsam.ZkRecordRepository;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -36,15 +45,63 @@ public class Zecs003Service {
 
     private static final Logger log = LoggerFactory.getLogger(Zecs003Service.class);
 
-    public void executeZecs003(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for ZECS003");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    private final ZfRecordRepository zfRecordRepository;
+    private final ZkRecordRepository zkRecordRepository;
+
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("Zecs003: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
-    public Zecs001Zecs003CommArea handleLink(Zecs001Zecs003CommArea request) {
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on `request`, passed by reference -- what it changes, the caller sees. */
+    public Zecs003Dfhcommarea handleLink(Zecs003Dfhcommarea request) {
         log.info("Zecs003: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("ZECS003", request);
+        region.run(task, "ZECS003", this::runTask);
         return request;
+    }
+
+    /** #5053: handleLink with the raw bytes of the LINK's COMMAREA (passed by address: what the program
+     *  leaves there the caller sees); lastLinkBytes() then answers the bytes it left. */
+    public Zecs003Dfhcommarea handleLink(Zecs003Dfhcommarea request, byte[] area) {
+        log.info("Zecs003: handleLink (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("ZECS003", request, area);
+        region.run(task, "ZECS003", this::runTask);
+        byte[] left = task.linkAreaView();
+        lastLinkBytes = task.linkAreaTaken() && left != null ? java.util.Arrays.copyOf(left, left.length) : null;
+        return request;
+    }
+
+    // @facade-helper: the bytes the last byte-carrying handleLink's program left in the COMMAREA
+    private byte[] lastLinkBytes;
+
+    /** The bytes the last byte-carrying handleLink's program left in the LINK COMMAREA (a copy; null: it took
+     *  none -- its DTO is the COMMAREA). @facade-helper */
+    public byte[] lastLinkBytes() {
+        return lastLinkBytes == null ? null : java.util.Arrays.copyOf(lastLinkBytes, lastLinkBytes.length);
+    }
+
+    /** @ECS_HLQ@.ZC@ID@FILE.@ENVIRONMENT@ as CICS file ZC@ID@FILE at Source/ZECS003.cbl:249, 272; VSAM defines field testing: open (3 public / 0 private estates). */
+    public Optional<ZfRecord> readZcIdFile(String vsamInstance, ZfRecordKey key) {
+        key.setVsamInstance(vsamInstance);
+        return zfRecordRepository.findById(key);
+    }
+
+    public void deleteZcIdFile(String vsamInstance, ZfRecordKey key) {
+        key.setVsamInstance(vsamInstance);
+        zfRecordRepository.deleteById(key);
+    }
+
+    /** @ECS_HLQ@.ZC@ID@KEY.@ENVIRONMENT@ as CICS file ZC@ID@KEY at Source/ZECS003.cbl:279; VSAM defines field testing: open (3 public / 0 private estates). */
+    public void deleteZcIdKey(String vsamInstance, String key) {
+        zkRecordRepository.deleteById(new ZkRecord.InstanceKey(key, vsamInstance));
     }
 
 }

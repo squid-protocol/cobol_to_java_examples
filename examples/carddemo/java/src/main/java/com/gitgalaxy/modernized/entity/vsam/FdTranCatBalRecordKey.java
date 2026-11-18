@@ -27,7 +27,7 @@ public class FdTranCatBalRecordKey implements Serializable {
     private Long fdTrancatAcctId;
 
     // FD-TRANCAT-TYPE-CD: PIC X(02), offset 11, 2 bytes
-    @Column(name = "FD_TRANCAT_TYPE_CD", length = 2)
+    @Column(name = "FD_TRANCAT_TYPE_CD", columnDefinition = "varchar(2) COLLATE \"C\"")
     private String fdTrancatTypeCd;
 
     // FD-TRANCAT-CD: PIC 9(04), offset 13, 4 bytes

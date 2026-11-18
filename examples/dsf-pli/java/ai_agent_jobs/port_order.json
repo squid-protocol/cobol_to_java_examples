@@ -1,0 +1,3944 @@
+[
+  {
+    "blast_radius": 3.4,
+    "callers": 59,
+    "calls": 6,
+    "file": "src/R0010301.pli",
+    "key": "src__R0010301",
+    "rank": 1,
+    "ticket": "src__R0010301_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.344,
+    "callers": 52,
+    "calls": 3,
+    "file": "src/GML/R0010301.pli",
+    "key": "src__GML__R0010301",
+    "rank": 2,
+    "ticket": "src__GML__R0010301_port_ticket.md"
+  },
+  {
+    "blast_radius": 11.329,
+    "callers": 47,
+    "calls": 0,
+    "file": "src/R0019906.pli",
+    "key": "src__R0019906",
+    "rank": 3,
+    "ticket": "src__R0019906_port_ticket.md"
+  },
+  {
+    "blast_radius": 17.733,
+    "callers": 46,
+    "calls": 0,
+    "file": "src/GML/R0019906.pli",
+    "key": "src__GML__R0019906",
+    "rank": 4,
+    "ticket": "src__GML__R0019906_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.65,
+    "callers": 33,
+    "calls": 5,
+    "file": "src/GML/R0010401.pli",
+    "key": "src__GML__R0010401",
+    "rank": 5,
+    "ticket": "src__GML__R0010401_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.12,
+    "callers": 28,
+    "calls": 5,
+    "file": "src/R0010401.pli",
+    "key": "src__R0010401",
+    "rank": 6,
+    "ticket": "src__R0010401_port_ticket.md"
+  },
+  {
+    "blast_radius": 15.931,
+    "callers": 25,
+    "calls": 0,
+    "file": "src/R0019921.pli",
+    "key": "src__R0019921",
+    "rank": 7,
+    "ticket": "src__R0019921_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.92,
+    "callers": 25,
+    "calls": 25,
+    "file": "src/GML/R0010490.pli",
+    "key": "src__GML__R0010490",
+    "rank": 8,
+    "ticket": "src__GML__R0010490_port_ticket.md"
+  },
+  {
+    "blast_radius": 16.748,
+    "callers": 23,
+    "calls": 0,
+    "file": "src/GML/R0019921.pli",
+    "key": "src__GML__R0019921",
+    "rank": 9,
+    "ticket": "src__GML__R0019921_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.747,
+    "callers": 22,
+    "calls": 25,
+    "file": "src/R0010490.pli",
+    "key": "src__R0010490",
+    "rank": 10,
+    "ticket": "src__R0010490_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.231,
+    "callers": 18,
+    "calls": 5,
+    "file": "src/GML/R0019928.pli",
+    "key": "src__GML__R0019928",
+    "rank": 11,
+    "ticket": "src__GML__R0019928_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.211,
+    "callers": 18,
+    "calls": 4,
+    "file": "src/R0019928.pli",
+    "key": "src__R0019928",
+    "rank": 12,
+    "ticket": "src__R0019928_port_ticket.md"
+  },
+  {
+    "blast_radius": 3.04,
+    "callers": 15,
+    "calls": 8,
+    "file": "src/GML/R0010420.pli",
+    "key": "src__GML__R0010420",
+    "rank": 13,
+    "ticket": "src__GML__R0010420_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.958,
+    "callers": 14,
+    "calls": 4,
+    "file": "src/R0013101.pli",
+    "key": "src__R0013101",
+    "rank": 14,
+    "ticket": "src__R0013101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.868,
+    "callers": 11,
+    "calls": 25,
+    "file": "src/R0014001.pli",
+    "key": "src__R0014001",
+    "rank": 15,
+    "ticket": "src__R0014001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.85,
+    "callers": 11,
+    "calls": 2,
+    "file": "src/GML/R0015401.pli",
+    "key": "src__GML__R0015401",
+    "rank": 16,
+    "ticket": "src__GML__R0015401_port_ticket.md"
+  },
+  {
+    "blast_radius": 2.388,
+    "callers": 10,
+    "calls": 7,
+    "file": "src/R0010420.pli",
+    "key": "src__R0010420",
+    "rank": 17,
+    "ticket": "src__R0010420_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.896,
+    "callers": 9,
+    "calls": 21,
+    "file": "src/R0014141.pli",
+    "key": "src__R0014141",
+    "rank": 18,
+    "ticket": "src__R0014141_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.816,
+    "callers": 9,
+    "calls": 3,
+    "file": "src/R0015401.pli",
+    "key": "src__R0015401",
+    "rank": 19,
+    "ticket": "src__R0015401_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.754,
+    "callers": 9,
+    "calls": 12,
+    "file": "src/GML/R0014901.pli",
+    "key": "src__GML__R0014901",
+    "rank": 20,
+    "ticket": "src__GML__R0014901_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.62,
+    "callers": 8,
+    "calls": 19,
+    "file": "src/GML/R0014141.pli",
+    "key": "src__GML__R0014141",
+    "rank": 21,
+    "ticket": "src__GML__R0014141_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.776,
+    "callers": 8,
+    "calls": 18,
+    "file": "src/GML/R0014001.pli",
+    "key": "src__GML__R0014001",
+    "rank": 22,
+    "ticket": "src__GML__R0014001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.755,
+    "callers": 8,
+    "calls": 5,
+    "file": "src/GML/R0013101.pli",
+    "key": "src__GML__R0013101",
+    "rank": 23,
+    "ticket": "src__GML__R0013101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.72,
+    "callers": 8,
+    "calls": 0,
+    "file": "src/GML/R0017101.pli",
+    "key": "src__GML__R0017101",
+    "rank": 24,
+    "ticket": "src__GML__R0017101_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.491,
+    "callers": 7,
+    "calls": 1,
+    "file": "src/R0013110.pli",
+    "key": "src__R0013110",
+    "rank": 25,
+    "ticket": "src__R0013110_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.467,
+    "callers": 7,
+    "calls": 1,
+    "file": "src/GML/R0013110.pli",
+    "key": "src__GML__R0013110",
+    "rank": 26,
+    "ticket": "src__GML__R0013110_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.042,
+    "callers": 7,
+    "calls": 27,
+    "file": "src/GML/R0013301.pli",
+    "key": "src__GML__R0013301",
+    "rank": 27,
+    "ticket": "src__GML__R0013301_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.021,
+    "callers": 7,
+    "calls": 27,
+    "file": "src/R0013301.pli",
+    "key": "src__R0013301",
+    "rank": 28,
+    "ticket": "src__R0013301_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.744,
+    "callers": 7,
+    "calls": 15,
+    "file": "src/GML/R0016001.pli",
+    "key": "src__GML__R0016001",
+    "rank": 29,
+    "ticket": "src__GML__R0016001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.734,
+    "callers": 7,
+    "calls": 14,
+    "file": "src/R0016001.pli",
+    "key": "src__R0016001",
+    "rank": 30,
+    "ticket": "src__R0016001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.713,
+    "callers": 7,
+    "calls": 14,
+    "file": "src/R0014901.pli",
+    "key": "src__R0014901",
+    "rank": 31,
+    "ticket": "src__R0014901_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.673,
+    "callers": 7,
+    "calls": 0,
+    "file": "src/GML/R0016401.pli",
+    "key": "src__GML__R0016401",
+    "rank": 32,
+    "ticket": "src__GML__R0016401_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.706,
+    "callers": 6,
+    "calls": 27,
+    "file": "src/GML/R0017001.pli",
+    "key": "src__GML__R0017001",
+    "rank": 33,
+    "ticket": "src__GML__R0017001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.758,
+    "callers": 5,
+    "calls": 0,
+    "file": "src/R0015501.pli",
+    "key": "src__R0015501",
+    "rank": 34,
+    "ticket": "src__R0015501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.724,
+    "callers": 5,
+    "calls": 0,
+    "file": "src/GML/R0015501.pli",
+    "key": "src__GML__R0015501",
+    "rank": 35,
+    "ticket": "src__GML__R0015501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.699,
+    "callers": 5,
+    "calls": 15,
+    "file": "src/R0012001.pli",
+    "key": "src__R0012001",
+    "rank": 36,
+    "ticket": "src__R0012001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.669,
+    "callers": 5,
+    "calls": 28,
+    "file": "src/R0017001.pli",
+    "key": "src__R0017001",
+    "rank": 37,
+    "ticket": "src__R0017001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.653,
+    "callers": 5,
+    "calls": 1,
+    "file": "src/R0017101.pli",
+    "key": "src__R0017101",
+    "rank": 38,
+    "ticket": "src__R0017101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.651,
+    "callers": 4,
+    "calls": 12,
+    "file": "src/GML/R001I101.pli",
+    "key": "src__GML__R001I101",
+    "rank": 39,
+    "ticket": "src__GML__R001I101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.636,
+    "callers": 4,
+    "calls": 10,
+    "file": "src/GML/R001I601.pli",
+    "key": "src__GML__R001I601",
+    "rank": 40,
+    "ticket": "src__GML__R001I601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.599,
+    "callers": 4,
+    "calls": 0,
+    "file": "src/R0016401.pli",
+    "key": "src__R0016401",
+    "rank": 41,
+    "ticket": "src__R0016401_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.579,
+    "callers": 4,
+    "calls": 0,
+    "file": "src/R0010411.pli",
+    "key": "src__R0010411",
+    "rank": 42,
+    "ticket": "src__R0010411_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.235,
+    "callers": 3,
+    "calls": 25,
+    "file": "src/R0015201.pli",
+    "key": "src__R0015201",
+    "rank": 43,
+    "ticket": "src__R0015201_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.136,
+    "callers": 3,
+    "calls": 26,
+    "file": "src/GML/R0015201.pli",
+    "key": "src__GML__R0015201",
+    "rank": 44,
+    "ticket": "src__GML__R0015201_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.971,
+    "callers": 3,
+    "calls": 10,
+    "file": "src/R0010426.pli",
+    "key": "src__R0010426",
+    "rank": 45,
+    "ticket": "src__R0010426_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.873,
+    "callers": 3,
+    "calls": 16,
+    "file": "src/R0013001.pli",
+    "key": "src__R0013001",
+    "rank": 46,
+    "ticket": "src__R0013001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.696,
+    "callers": 3,
+    "calls": 18,
+    "file": "src/GML/R0013001.pli",
+    "key": "src__GML__R0013001",
+    "rank": 47,
+    "ticket": "src__GML__R0013001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.682,
+    "callers": 3,
+    "calls": 11,
+    "file": "src/GML/R0011820.pli",
+    "key": "src__GML__R0011820",
+    "rank": 48,
+    "ticket": "src__GML__R0011820_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.58,
+    "callers": 3,
+    "calls": 11,
+    "file": "src/R001I101.pli",
+    "key": "src__R001I101",
+    "rank": 49,
+    "ticket": "src__R001I101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.549,
+    "callers": 3,
+    "calls": 10,
+    "file": "src/R001I601.pli",
+    "key": "src__R001I601",
+    "rank": 50,
+    "ticket": "src__R001I601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.527,
+    "callers": 3,
+    "calls": 1,
+    "file": "src/GML/R0010411.pli",
+    "key": "src__GML__R0010411",
+    "rank": 51,
+    "ticket": "src__GML__R0010411_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.527,
+    "callers": 3,
+    "calls": 3,
+    "file": "src/GML/R0010412.pli",
+    "key": "src__GML__R0010412",
+    "rank": 52,
+    "ticket": "src__GML__R0010412_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.524,
+    "callers": 3,
+    "calls": 3,
+    "file": "src/R0010412.pli",
+    "key": "src__R0010412",
+    "rank": 53,
+    "ticket": "src__R0010412_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.921,
+    "callers": 2,
+    "calls": 0,
+    "file": "src/GML/R0015602.pli",
+    "key": "src__GML__R0015602",
+    "rank": 54,
+    "ticket": "src__GML__R0015602_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.735,
+    "callers": 2,
+    "calls": 2,
+    "file": "src/R0015601.pli",
+    "key": "src__R0015601",
+    "rank": 55,
+    "ticket": "src__R0015601_port_ticket.md"
+  },
+  {
+    "blast_radius": 1.705,
+    "callers": 2,
+    "calls": 1,
+    "file": "src/GML/R0015601.pli",
+    "key": "src__GML__R0015601",
+    "rank": 56,
+    "ticket": "src__GML__R0015601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.757,
+    "callers": 2,
+    "calls": 25,
+    "file": "src/R0013520.pli",
+    "key": "src__R0013520",
+    "rank": 57,
+    "ticket": "src__R0013520_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.715,
+    "callers": 2,
+    "calls": 11,
+    "file": "src/GML/R0012001.pli",
+    "key": "src__GML__R0012001",
+    "rank": 58,
+    "ticket": "src__GML__R0012001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.715,
+    "callers": 2,
+    "calls": 25,
+    "file": "src/GML/R0013520.pli",
+    "key": "src__GML__R0013520",
+    "rank": 59,
+    "ticket": "src__GML__R0013520_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.69,
+    "callers": 2,
+    "calls": 12,
+    "file": "src/R0011820.pli",
+    "key": "src__R0011820",
+    "rank": 60,
+    "ticket": "src__R0011820_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.616,
+    "callers": 2,
+    "calls": 7,
+    "file": "src/R00104EE.pli",
+    "key": "src__R00104EE",
+    "rank": 61,
+    "ticket": "src__R00104EE_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.616,
+    "callers": 2,
+    "calls": 5,
+    "file": "src/R00104EN.pli",
+    "key": "src__R00104EN",
+    "rank": 62,
+    "ticket": "src__R00104EN_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.616,
+    "callers": 2,
+    "calls": 7,
+    "file": "src/R00104FO.pli",
+    "key": "src__R00104FO",
+    "rank": 63,
+    "ticket": "src__R00104FO_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.616,
+    "callers": 2,
+    "calls": 5,
+    "file": "src/R00104KF.pli",
+    "key": "src__R00104KF",
+    "rank": 64,
+    "ticket": "src__R00104KF_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.616,
+    "callers": 2,
+    "calls": 6,
+    "file": "src/R00104U3.pli",
+    "key": "src__R00104U3",
+    "rank": 65,
+    "ticket": "src__R00104U3_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.584,
+    "callers": 2,
+    "calls": 5,
+    "file": "src/R00104A1.pli",
+    "key": "src__R00104A1",
+    "rank": 66,
+    "ticket": "src__R00104A1_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.584,
+    "callers": 2,
+    "calls": 5,
+    "file": "src/R00104B6.pli",
+    "key": "src__R00104B6",
+    "rank": 67,
+    "ticket": "src__R00104B6_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.584,
+    "callers": 2,
+    "calls": 7,
+    "file": "src/R00104E3.pli",
+    "key": "src__R00104E3",
+    "rank": 68,
+    "ticket": "src__R00104E3_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.584,
+    "callers": 2,
+    "calls": 6,
+    "file": "src/R00104E4.pli",
+    "key": "src__R00104E4",
+    "rank": 69,
+    "ticket": "src__R00104E4_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.584,
+    "callers": 2,
+    "calls": 7,
+    "file": "src/R00104F7.pli",
+    "key": "src__R00104F7",
+    "rank": 70,
+    "ticket": "src__R00104F7_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.584,
+    "callers": 2,
+    "calls": 5,
+    "file": "src/R00104U2.pli",
+    "key": "src__R00104U2",
+    "rank": 71,
+    "ticket": "src__R00104U2_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.578,
+    "callers": 2,
+    "calls": 8,
+    "file": "src/R0019D70.pli",
+    "key": "src__R0019D70",
+    "rank": 72,
+    "ticket": "src__R0019D70_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.578,
+    "callers": 2,
+    "calls": 18,
+    "file": "src/R0019F01.pli",
+    "key": "src__R0019F01",
+    "rank": 73,
+    "ticket": "src__R0019F01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.578,
+    "callers": 2,
+    "calls": 14,
+    "file": "src/R0019H01.pli",
+    "key": "src__R0019H01",
+    "rank": 74,
+    "ticket": "src__R0019H01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.574,
+    "callers": 2,
+    "calls": 9,
+    "file": "src/GML/R0019D70.pli",
+    "key": "src__GML__R0019D70",
+    "rank": 75,
+    "ticket": "src__GML__R0019D70_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.574,
+    "callers": 2,
+    "calls": 15,
+    "file": "src/GML/R0019F01.pli",
+    "key": "src__GML__R0019F01",
+    "rank": 76,
+    "ticket": "src__GML__R0019F01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.574,
+    "callers": 2,
+    "calls": 13,
+    "file": "src/GML/R0019H01.pli",
+    "key": "src__GML__R0019H01",
+    "rank": 77,
+    "ticket": "src__GML__R0019H01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.549,
+    "callers": 2,
+    "calls": 24,
+    "file": "src/R0015301.pli",
+    "key": "src__R0015301",
+    "rank": 78,
+    "ticket": "src__R0015301_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.543,
+    "callers": 2,
+    "calls": 0,
+    "file": "src/GML/R0016601.pli",
+    "key": "src__GML__R0016601",
+    "rank": 79,
+    "ticket": "src__GML__R0016601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.543,
+    "callers": 2,
+    "calls": 0,
+    "file": "src/R0016601.pli",
+    "key": "src__R0016601",
+    "rank": 80,
+    "ticket": "src__R0016601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.538,
+    "callers": 2,
+    "calls": 25,
+    "file": "src/GML/R0015301.pli",
+    "key": "src__GML__R0015301",
+    "rank": 81,
+    "ticket": "src__GML__R0015301_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.532,
+    "callers": 2,
+    "calls": 2,
+    "file": "src/R0012002.pli",
+    "key": "src__R0012002",
+    "rank": 82,
+    "ticket": "src__R0012002_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.51,
+    "callers": 2,
+    "calls": 8,
+    "file": "src/GML/R001I301.pli",
+    "key": "src__GML__R001I301",
+    "rank": 83,
+    "ticket": "src__GML__R001I301_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.493,
+    "callers": 2,
+    "calls": 5,
+    "file": "src/R00104AF.pli",
+    "key": "src__R00104AF",
+    "rank": 84,
+    "ticket": "src__R00104AF_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.493,
+    "callers": 2,
+    "calls": 6,
+    "file": "src/R00104AP.pli",
+    "key": "src__R00104AP",
+    "rank": 85,
+    "ticket": "src__R00104AP_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.493,
+    "callers": 2,
+    "calls": 5,
+    "file": "src/R00104BP.pli",
+    "key": "src__R00104BP",
+    "rank": 86,
+    "ticket": "src__R00104BP_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.493,
+    "callers": 2,
+    "calls": 4,
+    "file": "src/R00104E1.pli",
+    "key": "src__R00104E1",
+    "rank": 87,
+    "ticket": "src__R00104E1_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.493,
+    "callers": 2,
+    "calls": 5,
+    "file": "src/R00104EF.pli",
+    "key": "src__R00104EF",
+    "rank": 88,
+    "ticket": "src__R00104EF_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.493,
+    "callers": 2,
+    "calls": 6,
+    "file": "src/R00104EP.pli",
+    "key": "src__R00104EP",
+    "rank": 89,
+    "ticket": "src__R00104EP_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.493,
+    "callers": 2,
+    "calls": 5,
+    "file": "src/R00104FB.pli",
+    "key": "src__R00104FB",
+    "rank": 90,
+    "ticket": "src__R00104FB_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.493,
+    "callers": 2,
+    "calls": 7,
+    "file": "src/R00104FT.pli",
+    "key": "src__R00104FT",
+    "rank": 91,
+    "ticket": "src__R00104FT_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.493,
+    "callers": 2,
+    "calls": 5,
+    "file": "src/R00104O1.pli",
+    "key": "src__R00104O1",
+    "rank": 92,
+    "ticket": "src__R00104O1_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.493,
+    "callers": 2,
+    "calls": 5,
+    "file": "src/R00104O2.pli",
+    "key": "src__R00104O2",
+    "rank": 93,
+    "ticket": "src__R00104O2_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.493,
+    "callers": 2,
+    "calls": 5,
+    "file": "src/R00104UF.pli",
+    "key": "src__R00104UF",
+    "rank": 94,
+    "ticket": "src__R00104UF_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.493,
+    "callers": 2,
+    "calls": 7,
+    "file": "src/R00104UP.pli",
+    "key": "src__R00104UP",
+    "rank": 95,
+    "ticket": "src__R00104UP_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.493,
+    "callers": 2,
+    "calls": 5,
+    "file": "src/R00104US.pli",
+    "key": "src__R00104US",
+    "rank": 96,
+    "ticket": "src__R00104US_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.489,
+    "callers": 2,
+    "calls": 16,
+    "file": "src/GML/R0010701.pli",
+    "key": "R0010701",
+    "rank": 97,
+    "ticket": "R0010701_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.489,
+    "callers": 2,
+    "calls": 23,
+    "file": "src/GML/R0010901.pli",
+    "key": "R0010901",
+    "rank": 98,
+    "ticket": "R0010901_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.488,
+    "callers": 2,
+    "calls": 2,
+    "file": "src/GML/R0011520.pli",
+    "key": "src__GML__R0011520",
+    "rank": 99,
+    "ticket": "src__GML__R0011520_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.488,
+    "callers": 2,
+    "calls": 2,
+    "file": "src/GML/R0012201.pli",
+    "key": "src__GML__R0012201",
+    "rank": 100,
+    "ticket": "src__GML__R0012201_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.488,
+    "callers": 2,
+    "calls": 3,
+    "file": "src/GML/R0016501.pli",
+    "key": "src__GML__R0016501",
+    "rank": 101,
+    "ticket": "src__GML__R0016501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.479,
+    "callers": 2,
+    "calls": 3,
+    "file": "src/R0010470.pli",
+    "key": "src__R0010470",
+    "rank": 102,
+    "ticket": "src__R0010470_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.474,
+    "callers": 2,
+    "calls": 5,
+    "file": "src/GML/R0010920.pli",
+    "key": "R0010920",
+    "rank": 103,
+    "ticket": "R0010920_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.472,
+    "callers": 2,
+    "calls": 0,
+    "file": "src/R0012010.pli",
+    "key": "R0012010",
+    "rank": 104,
+    "ticket": "R0012010_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.472,
+    "callers": 2,
+    "calls": 3,
+    "file": "src/R0011520.pli",
+    "key": "src__R0011520",
+    "rank": 105,
+    "ticket": "src__R0011520_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.472,
+    "callers": 2,
+    "calls": 1,
+    "file": "src/R0012201.pli",
+    "key": "src__R0012201",
+    "rank": 106,
+    "ticket": "src__R0012201_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.472,
+    "callers": 2,
+    "calls": 3,
+    "file": "src/R0016501.pli",
+    "key": "src__R0016501",
+    "rank": 107,
+    "ticket": "src__R0016501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.468,
+    "callers": 2,
+    "calls": 3,
+    "file": "src/GML/R0010470.pli",
+    "key": "src__GML__R0010470",
+    "rank": 108,
+    "ticket": "src__GML__R0010470_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.903,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/R0010101.pli",
+    "key": "src__R0010101",
+    "rank": 109,
+    "ticket": "src__R0010101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.742,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R0010422.pli",
+    "key": "src__GML__R0010422",
+    "rank": 110,
+    "ticket": "src__GML__R0010422_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.742,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R0010423.pli",
+    "key": "src__GML__R0010423",
+    "rank": 111,
+    "ticket": "src__GML__R0010423_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.742,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R0010424.pli",
+    "key": "src__GML__R0010424",
+    "rank": 112,
+    "ticket": "src__GML__R0010424_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.742,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R0010425.pli",
+    "key": "src__GML__R0010425",
+    "rank": 113,
+    "ticket": "src__GML__R0010425_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.742,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/GML/R0010426.pli",
+    "key": "src__GML__R0010426",
+    "rank": 114,
+    "ticket": "src__GML__R0010426_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.742,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/GML/R0010427.pli",
+    "key": "src__GML__R0010427",
+    "rank": 115,
+    "ticket": "src__GML__R0010427_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.742,
+    "callers": 1,
+    "calls": 7,
+    "file": "src/GML/R0010430.pli",
+    "key": "src__GML__R0010430",
+    "rank": 116,
+    "ticket": "src__GML__R0010430_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.711,
+    "callers": 1,
+    "calls": 11,
+    "file": "src/R0018010.pli",
+    "key": "R0018010",
+    "rank": 117,
+    "ticket": "R0018010_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.711,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/R0010422.pli",
+    "key": "src__R0010422",
+    "rank": 118,
+    "ticket": "src__R0010422_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.711,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/R0010423.pli",
+    "key": "src__R0010423",
+    "rank": 119,
+    "ticket": "src__R0010423_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.711,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/R0010424.pli",
+    "key": "src__R0010424",
+    "rank": 120,
+    "ticket": "src__R0010424_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.711,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/R0010425.pli",
+    "key": "src__R0010425",
+    "rank": 121,
+    "ticket": "src__R0010425_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.711,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/R0010427.pli",
+    "key": "src__R0010427",
+    "rank": 122,
+    "ticket": "src__R0010427_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.711,
+    "callers": 1,
+    "calls": 9,
+    "file": "src/R0010430.pli",
+    "key": "src__R0010430",
+    "rank": 123,
+    "ticket": "src__R0010430_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.704,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/GML/R001A401.pli",
+    "key": "src__GML__R001A401",
+    "rank": 124,
+    "ticket": "src__GML__R001A401_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.704,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/GML/R001B401.pli",
+    "key": "src__GML__R001B401",
+    "rank": 125,
+    "ticket": "src__GML__R001B401_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.704,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/GML/R001C401.pli",
+    "key": "src__GML__R001C401",
+    "rank": 126,
+    "ticket": "src__GML__R001C401_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.614,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/R001A401.pli",
+    "key": "src__R001A401",
+    "rank": 127,
+    "ticket": "src__R001A401_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.614,
+    "callers": 1,
+    "calls": 1,
+    "file": "src/R001B401.pli",
+    "key": "src__R001B401",
+    "rank": 128,
+    "ticket": "src__R001B401_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.614,
+    "callers": 1,
+    "calls": 1,
+    "file": "src/R001C401.pli",
+    "key": "src__R001C401",
+    "rank": 129,
+    "ticket": "src__R001C401_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.573,
+    "callers": 1,
+    "calls": 15,
+    "file": "src/GML/R001A412.pli",
+    "key": "src__GML__R001A412",
+    "rank": 130,
+    "ticket": "src__GML__R001A412_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.573,
+    "callers": 1,
+    "calls": 6,
+    "file": "src/GML/R001B412.pli",
+    "key": "src__GML__R001B412",
+    "rank": 131,
+    "ticket": "src__GML__R001B412_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.573,
+    "callers": 1,
+    "calls": 5,
+    "file": "src/GML/R001C412.pli",
+    "key": "src__GML__R001C412",
+    "rank": 132,
+    "ticket": "src__GML__R001C412_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.572,
+    "callers": 1,
+    "calls": 14,
+    "file": "src/R001A412.pli",
+    "key": "src__R001A412",
+    "rank": 133,
+    "ticket": "src__R001A412_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.572,
+    "callers": 1,
+    "calls": 6,
+    "file": "src/R001B412.pli",
+    "key": "src__R001B412",
+    "rank": 134,
+    "ticket": "src__R001B412_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.572,
+    "callers": 1,
+    "calls": 5,
+    "file": "src/R001C412.pli",
+    "key": "src__R001C412",
+    "rank": 135,
+    "ticket": "src__R001C412_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.56,
+    "callers": 1,
+    "calls": 22,
+    "file": "src/R001A470.pli",
+    "key": "src__R001A470",
+    "rank": 136,
+    "ticket": "src__R001A470_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.56,
+    "callers": 1,
+    "calls": 21,
+    "file": "src/R001B470.pli",
+    "key": "src__R001B470",
+    "rank": 137,
+    "ticket": "src__R001B470_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.56,
+    "callers": 1,
+    "calls": 17,
+    "file": "src/R001C470.pli",
+    "key": "src__R001C470",
+    "rank": 138,
+    "ticket": "src__R001C470_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.559,
+    "callers": 1,
+    "calls": 14,
+    "file": "src/R0018A12.pli",
+    "key": "R0018A12",
+    "rank": 139,
+    "ticket": "R0018A12_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.559,
+    "callers": 1,
+    "calls": 6,
+    "file": "src/R0018B12.pli",
+    "key": "R0018B12",
+    "rank": 140,
+    "ticket": "R0018B12_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.559,
+    "callers": 1,
+    "calls": 5,
+    "file": "src/R0018C12.pli",
+    "key": "R0018C12",
+    "rank": 141,
+    "ticket": "R0018C12_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.556,
+    "callers": 1,
+    "calls": 21,
+    "file": "src/GML/R001A470.pli",
+    "key": "src__GML__R001A470",
+    "rank": 142,
+    "ticket": "src__GML__R001A470_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.556,
+    "callers": 1,
+    "calls": 15,
+    "file": "src/GML/R001B470.pli",
+    "key": "src__GML__R001B470",
+    "rank": 143,
+    "ticket": "src__GML__R001B470_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.556,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/GML/R001C470.pli",
+    "key": "src__GML__R001C470",
+    "rank": 144,
+    "ticket": "src__GML__R001C470_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.521,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R00104EE.pli",
+    "key": "src__GML__R00104EE",
+    "rank": 145,
+    "ticket": "src__GML__R00104EE_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.521,
+    "callers": 1,
+    "calls": 3,
+    "file": "src/GML/R00104EN.pli",
+    "key": "src__GML__R00104EN",
+    "rank": 146,
+    "ticket": "src__GML__R00104EN_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.521,
+    "callers": 1,
+    "calls": 4,
+    "file": "src/GML/R00104FO.pli",
+    "key": "src__GML__R00104FO",
+    "rank": 147,
+    "ticket": "src__GML__R00104FO_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.521,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R00104KF.pli",
+    "key": "src__GML__R00104KF",
+    "rank": 148,
+    "ticket": "src__GML__R00104KF_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.521,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R00104U3.pli",
+    "key": "src__GML__R00104U3",
+    "rank": 149,
+    "ticket": "src__GML__R00104U3_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.514,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R001I904.pli",
+    "key": "src__GML__R001I904",
+    "rank": 150,
+    "ticket": "src__GML__R001I904_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.514,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/R001I904.pli",
+    "key": "src__R001I904",
+    "rank": 151,
+    "ticket": "src__R001I904_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.506,
+    "callers": 1,
+    "calls": 13,
+    "file": "src/R0019A01.pli",
+    "key": "R0019A01",
+    "rank": 152,
+    "ticket": "R0019A01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.506,
+    "callers": 1,
+    "calls": 11,
+    "file": "src/R0019E01.pli",
+    "key": "R0019E01",
+    "rank": 153,
+    "ticket": "R0019E01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.506,
+    "callers": 1,
+    "calls": 12,
+    "file": "src/R0019H21.pli",
+    "key": "R0019H21",
+    "rank": 154,
+    "ticket": "R0019H21_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.506,
+    "callers": 1,
+    "calls": 12,
+    "file": "src/R0019H31.pli",
+    "key": "R0019H31",
+    "rank": 155,
+    "ticket": "R0019H31_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.506,
+    "callers": 1,
+    "calls": 11,
+    "file": "src/R0019H41.pli",
+    "key": "R0019H41",
+    "rank": 156,
+    "ticket": "R0019H41_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.506,
+    "callers": 1,
+    "calls": 53,
+    "file": "src/R001NO10.pli",
+    "key": "src__R001NO10",
+    "rank": 157,
+    "ticket": "src__R001NO10_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.505,
+    "callers": 1,
+    "calls": 3,
+    "file": "src/GML/R00104A1.pli",
+    "key": "src__GML__R00104A1",
+    "rank": 158,
+    "ticket": "src__GML__R00104A1_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.505,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R00104B6.pli",
+    "key": "src__GML__R00104B6",
+    "rank": 159,
+    "ticket": "src__GML__R00104B6_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.505,
+    "callers": 1,
+    "calls": 4,
+    "file": "src/GML/R00104E3.pli",
+    "key": "src__GML__R00104E3",
+    "rank": 160,
+    "ticket": "src__GML__R00104E3_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.505,
+    "callers": 1,
+    "calls": 4,
+    "file": "src/GML/R00104E4.pli",
+    "key": "src__GML__R00104E4",
+    "rank": 161,
+    "ticket": "src__GML__R00104E4_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.505,
+    "callers": 1,
+    "calls": 4,
+    "file": "src/GML/R00104F7.pli",
+    "key": "src__GML__R00104F7",
+    "rank": 162,
+    "ticket": "src__GML__R00104F7_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.505,
+    "callers": 1,
+    "calls": 3,
+    "file": "src/GML/R00104U2.pli",
+    "key": "src__GML__R00104U2",
+    "rank": 163,
+    "ticket": "src__GML__R00104U2_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.502,
+    "callers": 1,
+    "calls": 15,
+    "file": "src/GML/R0019F02.pli",
+    "key": "R0019F02",
+    "rank": 164,
+    "ticket": "R0019F02_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.502,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/GML/R0019E04.pli",
+    "key": "src__GML__R0019E04",
+    "rank": 165,
+    "ticket": "src__GML__R0019E04_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.502,
+    "callers": 1,
+    "calls": 46,
+    "file": "src/GML/R001NO10.pli",
+    "key": "src__GML__R001NO10",
+    "rank": 166,
+    "ticket": "src__GML__R001NO10_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.479,
+    "callers": 1,
+    "calls": 37,
+    "file": "src/GML/R0010480.pli",
+    "key": "src__GML__R0010480",
+    "rank": 167,
+    "ticket": "src__GML__R0010480_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.479,
+    "callers": 1,
+    "calls": 5,
+    "file": "src/GML/R0016101.pli",
+    "key": "src__GML__R0016101",
+    "rank": 168,
+    "ticket": "src__GML__R0016101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.479,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/GML/R001I501.pli",
+    "key": "src__GML__R001I501",
+    "rank": 169,
+    "ticket": "src__GML__R001I501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.478,
+    "callers": 1,
+    "calls": 3,
+    "file": "src/R0018012.pli",
+    "key": "R0018012",
+    "rank": 170,
+    "ticket": "R0018012_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.478,
+    "callers": 1,
+    "calls": 24,
+    "file": "src/R0018021.pli",
+    "key": "R0018021",
+    "rank": 171,
+    "ticket": "R0018021_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.478,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/GML/R0015101.pli",
+    "key": "src__GML__R0015101",
+    "rank": 172,
+    "ticket": "src__GML__R0015101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.471,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/R0015101.pli",
+    "key": "src__R0015101",
+    "rank": 173,
+    "ticket": "src__R0015101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.47,
+    "callers": 1,
+    "calls": 6,
+    "file": "src/GML/R001I201.pli",
+    "key": "src__GML__R001I201",
+    "rank": 174,
+    "ticket": "src__GML__R001I201_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.47,
+    "callers": 1,
+    "calls": 6,
+    "file": "src/GML/R001I701.pli",
+    "key": "src__GML__R001I701",
+    "rank": 175,
+    "ticket": "src__GML__R001I701_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.47,
+    "callers": 1,
+    "calls": 6,
+    "file": "src/GML/R001I801.pli",
+    "key": "src__GML__R001I801",
+    "rank": 176,
+    "ticket": "src__GML__R001I801_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.47,
+    "callers": 1,
+    "calls": 12,
+    "file": "src/GML/R001IA01.pli",
+    "key": "src__GML__R001IA01",
+    "rank": 177,
+    "ticket": "src__GML__R001IA01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.47,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/R0010460.pli",
+    "key": "src__R0010460",
+    "rank": 178,
+    "ticket": "src__R0010460_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.47,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/R0013501.pli",
+    "key": "src__R0013501",
+    "rank": 179,
+    "ticket": "src__R0013501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.47,
+    "callers": 1,
+    "calls": 3,
+    "file": "src/R0013601.pli",
+    "key": "src__R0013601",
+    "rank": 180,
+    "ticket": "src__R0013601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.47,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/R0015411.pli",
+    "key": "src__R0015411",
+    "rank": 181,
+    "ticket": "src__R0015411_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.469,
+    "callers": 1,
+    "calls": 11,
+    "file": "src/R001I201.pli",
+    "key": "src__R001I201",
+    "rank": 182,
+    "ticket": "src__R001I201_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.469,
+    "callers": 1,
+    "calls": 10,
+    "file": "src/R001I301.pli",
+    "key": "src__R001I301",
+    "rank": 183,
+    "ticket": "src__R001I301_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.469,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/R001I701.pli",
+    "key": "src__R001I701",
+    "rank": 184,
+    "ticket": "src__R001I701_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.469,
+    "callers": 1,
+    "calls": 6,
+    "file": "src/R001I801.pli",
+    "key": "src__R001I801",
+    "rank": 185,
+    "ticket": "src__R001I801_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.469,
+    "callers": 1,
+    "calls": 16,
+    "file": "src/R001IA01.pli",
+    "key": "src__R001IA01",
+    "rank": 186,
+    "ticket": "src__R001IA01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.467,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/R0016301.pli",
+    "key": "src__R0016301",
+    "rank": 187,
+    "ticket": "src__R0016301_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.466,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/R0015502.pli",
+    "key": "src__R0015502",
+    "rank": 188,
+    "ticket": "src__R0015502_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.466,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/R0016201.pli",
+    "key": "src__R0016201",
+    "rank": 189,
+    "ticket": "src__R0016201_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.463,
+    "callers": 1,
+    "calls": 1,
+    "file": "src/GML/R0016301.pli",
+    "key": "src__GML__R0016301",
+    "rank": 190,
+    "ticket": "src__GML__R0016301_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.463,
+    "callers": 1,
+    "calls": 44,
+    "file": "src/R0010480.pli",
+    "key": "src__R0010480",
+    "rank": 191,
+    "ticket": "src__R0010480_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.463,
+    "callers": 1,
+    "calls": 5,
+    "file": "src/R0016101.pli",
+    "key": "src__R0016101",
+    "rank": 192,
+    "ticket": "src__R0016101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.463,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/R001I501.pli",
+    "key": "src__R001I501",
+    "rank": 193,
+    "ticket": "src__R001I501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.462,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/GML/R0015502.pli",
+    "key": "src__GML__R0015502",
+    "rank": 194,
+    "ticket": "src__GML__R0015502_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.462,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/GML/R0016201.pli",
+    "key": "src__GML__R0016201",
+    "rank": 195,
+    "ticket": "src__GML__R0016201_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.461,
+    "callers": 1,
+    "calls": 40,
+    "file": "src/GML/R0014101.pli",
+    "key": "src__GML__R0014101",
+    "rank": 196,
+    "ticket": "src__GML__R0014101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.461,
+    "callers": 1,
+    "calls": 37,
+    "file": "src/GML/R0014201.pli",
+    "key": "src__GML__R0014201",
+    "rank": 197,
+    "ticket": "src__GML__R0014201_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.461,
+    "callers": 1,
+    "calls": 24,
+    "file": "src/GML/R0014251.pli",
+    "key": "src__GML__R0014251",
+    "rank": 198,
+    "ticket": "src__GML__R0014251_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.461,
+    "callers": 1,
+    "calls": 17,
+    "file": "src/GML/R0014301.pli",
+    "key": "src__GML__R0014301",
+    "rank": 199,
+    "ticket": "src__GML__R0014301_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.461,
+    "callers": 1,
+    "calls": 3,
+    "file": "src/GML/R0014370.pli",
+    "key": "src__GML__R0014370",
+    "rank": 200,
+    "ticket": "src__GML__R0014370_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.461,
+    "callers": 1,
+    "calls": 19,
+    "file": "src/GML/R0014401.pli",
+    "key": "src__GML__R0014401",
+    "rank": 201,
+    "ticket": "src__GML__R0014401_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.461,
+    "callers": 1,
+    "calls": 6,
+    "file": "src/GML/R0014470.pli",
+    "key": "src__GML__R0014470",
+    "rank": 202,
+    "ticket": "src__GML__R0014470_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.461,
+    "callers": 1,
+    "calls": 25,
+    "file": "src/GML/R0014501.pli",
+    "key": "src__GML__R0014501",
+    "rank": 203,
+    "ticket": "src__GML__R0014501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.461,
+    "callers": 1,
+    "calls": 5,
+    "file": "src/GML/R0014601.pli",
+    "key": "src__GML__R0014601",
+    "rank": 204,
+    "ticket": "src__GML__R0014601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.461,
+    "callers": 1,
+    "calls": 12,
+    "file": "src/GML/R0014701.pli",
+    "key": "src__GML__R0014701",
+    "rank": 205,
+    "ticket": "src__GML__R0014701_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.461,
+    "callers": 1,
+    "calls": 3,
+    "file": "src/GML/R0014801.pli",
+    "key": "src__GML__R0014801",
+    "rank": 206,
+    "ticket": "src__GML__R0014801_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.461,
+    "callers": 1,
+    "calls": 1,
+    "file": "src/GML/R0019H50.pli",
+    "key": "src__GML__R0019H50",
+    "rank": 207,
+    "ticket": "src__GML__R0019H50_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.459,
+    "callers": 1,
+    "calls": 1,
+    "file": "src/R0019H50.pli",
+    "key": "src__R0019H50",
+    "rank": 208,
+    "ticket": "src__R0019H50_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 1,
+    "file": "src/GML/R0010460.pli",
+    "key": "src__GML__R0010460",
+    "rank": 209,
+    "ticket": "src__GML__R0010460_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 25,
+    "file": "src/GML/R0010501.pli",
+    "key": "src__GML__R0010501",
+    "rank": 210,
+    "ticket": "src__GML__R0010501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 28,
+    "file": "src/GML/R0010601.pli",
+    "key": "src__GML__R0010601",
+    "rank": 211,
+    "ticket": "src__GML__R0010601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 24,
+    "file": "src/GML/R0010801.pli",
+    "key": "src__GML__R0010801",
+    "rank": 212,
+    "ticket": "src__GML__R0010801_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 22,
+    "file": "src/GML/R0011001.pli",
+    "key": "src__GML__R0011001",
+    "rank": 213,
+    "ticket": "src__GML__R0011001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 16,
+    "file": "src/GML/R0011101.pli",
+    "key": "src__GML__R0011101",
+    "rank": 214,
+    "ticket": "src__GML__R0011101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 26,
+    "file": "src/GML/R0011201.pli",
+    "key": "src__GML__R0011201",
+    "rank": 215,
+    "ticket": "src__GML__R0011201_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 11,
+    "file": "src/GML/R0011301.pli",
+    "key": "src__GML__R0011301",
+    "rank": 216,
+    "ticket": "src__GML__R0011301_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 19,
+    "file": "src/GML/R0011401.pli",
+    "key": "src__GML__R0011401",
+    "rank": 217,
+    "ticket": "src__GML__R0011401_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 14,
+    "file": "src/GML/R0011501.pli",
+    "key": "src__GML__R0011501",
+    "rank": 218,
+    "ticket": "src__GML__R0011501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 14,
+    "file": "src/GML/R0011601.pli",
+    "key": "src__GML__R0011601",
+    "rank": 219,
+    "ticket": "src__GML__R0011601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 14,
+    "file": "src/GML/R0011701.pli",
+    "key": "src__GML__R0011701",
+    "rank": 220,
+    "ticket": "src__GML__R0011701_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 11,
+    "file": "src/GML/R0011831.pli",
+    "key": "src__GML__R0011831",
+    "rank": 221,
+    "ticket": "src__GML__R0011831_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 20,
+    "file": "src/GML/R0011901.pli",
+    "key": "src__GML__R0011901",
+    "rank": 222,
+    "ticket": "src__GML__R0011901_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R0012002.pli",
+    "key": "src__GML__R0012002",
+    "rank": 223,
+    "ticket": "src__GML__R0012002_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R0013501.pli",
+    "key": "src__GML__R0013501",
+    "rank": 224,
+    "ticket": "src__GML__R0013501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 4,
+    "file": "src/GML/R0013601.pli",
+    "key": "src__GML__R0013601",
+    "rank": 225,
+    "ticket": "src__GML__R0013601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/GML/R0015411.pli",
+    "key": "src__GML__R0015411",
+    "rank": 226,
+    "ticket": "src__GML__R0015411_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 17,
+    "file": "src/GML/R001I401.pli",
+    "key": "src__GML__R001I401",
+    "rank": 227,
+    "ticket": "src__GML__R001I401_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 22,
+    "file": "src/GML/R001N501.pli",
+    "key": "src__GML__R001N501",
+    "rank": 228,
+    "ticket": "src__GML__R001N501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 26,
+    "file": "src/GML/R001N601.pli",
+    "key": "src__GML__R001N601",
+    "rank": 229,
+    "ticket": "src__GML__R001N601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 25,
+    "file": "src/GML/R001N801.pli",
+    "key": "src__GML__R001N801",
+    "rank": 230,
+    "ticket": "src__GML__R001N801_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 23,
+    "file": "src/GML/R001N901.pli",
+    "key": "src__GML__R001N901",
+    "rank": 231,
+    "ticket": "src__GML__R001N901_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 17,
+    "file": "src/GML/R001NB01.pli",
+    "key": "src__GML__R001NB01",
+    "rank": 232,
+    "ticket": "src__GML__R001NB01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 23,
+    "file": "src/GML/R001NC01.pli",
+    "key": "src__GML__R001NC01",
+    "rank": 233,
+    "ticket": "src__GML__R001NC01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 24,
+    "file": "src/GML/R001U601.pli",
+    "key": "src__GML__R001U601",
+    "rank": 234,
+    "ticket": "src__GML__R001U601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 25,
+    "file": "src/GML/R001U801.pli",
+    "key": "src__GML__R001U801",
+    "rank": 235,
+    "ticket": "src__GML__R001U801_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 24,
+    "file": "src/GML/R001UC01.pli",
+    "key": "src__GML__R001UC01",
+    "rank": 236,
+    "ticket": "src__GML__R001UC01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 19,
+    "file": "src/GML/R001UE01.pli",
+    "key": "src__GML__R001UE01",
+    "rank": 237,
+    "ticket": "src__GML__R001UE01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.457,
+    "callers": 1,
+    "calls": 19,
+    "file": "src/GML/R001UJ01.pli",
+    "key": "src__GML__R001UJ01",
+    "rank": 238,
+    "ticket": "src__GML__R001UJ01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R00104AF.pli",
+    "key": "src__GML__R00104AF",
+    "rank": 239,
+    "ticket": "src__GML__R00104AF_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 4,
+    "file": "src/GML/R00104AP.pli",
+    "key": "src__GML__R00104AP",
+    "rank": 240,
+    "ticket": "src__GML__R00104AP_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R00104BP.pli",
+    "key": "src__GML__R00104BP",
+    "rank": 241,
+    "ticket": "src__GML__R00104BP_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R00104E1.pli",
+    "key": "src__GML__R00104E1",
+    "rank": 242,
+    "ticket": "src__GML__R00104E1_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R00104E2.pli",
+    "key": "src__GML__R00104E2",
+    "rank": 243,
+    "ticket": "src__GML__R00104E2_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 4,
+    "file": "src/GML/R00104EF.pli",
+    "key": "src__GML__R00104EF",
+    "rank": 244,
+    "ticket": "src__GML__R00104EF_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 3,
+    "file": "src/GML/R00104EP.pli",
+    "key": "src__GML__R00104EP",
+    "rank": 245,
+    "ticket": "src__GML__R00104EP_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R00104FB.pli",
+    "key": "src__GML__R00104FB",
+    "rank": 246,
+    "ticket": "src__GML__R00104FB_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 4,
+    "file": "src/GML/R00104FT.pli",
+    "key": "src__GML__R00104FT",
+    "rank": 247,
+    "ticket": "src__GML__R00104FT_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R00104O1.pli",
+    "key": "src__GML__R00104O1",
+    "rank": 248,
+    "ticket": "src__GML__R00104O1_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R00104O2.pli",
+    "key": "src__GML__R00104O2",
+    "rank": 249,
+    "ticket": "src__GML__R00104O2_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R00104UF.pli",
+    "key": "src__GML__R00104UF",
+    "rank": 250,
+    "ticket": "src__GML__R00104UF_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 5,
+    "file": "src/GML/R00104UP.pli",
+    "key": "src__GML__R00104UP",
+    "rank": 251,
+    "ticket": "src__GML__R00104UP_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 2,
+    "file": "src/GML/R00104US.pli",
+    "key": "src__GML__R00104US",
+    "rank": 252,
+    "ticket": "src__GML__R00104US_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 30,
+    "file": "src/R0010501.pli",
+    "key": "src__R0010501",
+    "rank": 253,
+    "ticket": "src__R0010501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 34,
+    "file": "src/R0010601.pli",
+    "key": "src__R0010601",
+    "rank": 254,
+    "ticket": "src__R0010601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 32,
+    "file": "src/R0010801.pli",
+    "key": "src__R0010801",
+    "rank": 255,
+    "ticket": "src__R0010801_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 30,
+    "file": "src/R0011001.pli",
+    "key": "src__R0011001",
+    "rank": 256,
+    "ticket": "src__R0011001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 25,
+    "file": "src/R0011101.pli",
+    "key": "src__R0011101",
+    "rank": 257,
+    "ticket": "src__R0011101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 31,
+    "file": "src/R0011201.pli",
+    "key": "src__R0011201",
+    "rank": 258,
+    "ticket": "src__R0011201_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 13,
+    "file": "src/R0011301.pli",
+    "key": "src__R0011301",
+    "rank": 259,
+    "ticket": "src__R0011301_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 25,
+    "file": "src/R0011401.pli",
+    "key": "src__R0011401",
+    "rank": 260,
+    "ticket": "src__R0011401_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 15,
+    "file": "src/R0011501.pli",
+    "key": "src__R0011501",
+    "rank": 261,
+    "ticket": "src__R0011501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 21,
+    "file": "src/R0011601.pli",
+    "key": "src__R0011601",
+    "rank": 262,
+    "ticket": "src__R0011601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 20,
+    "file": "src/R0011701.pli",
+    "key": "src__R0011701",
+    "rank": 263,
+    "ticket": "src__R0011701_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 15,
+    "file": "src/R0011831.pli",
+    "key": "src__R0011831",
+    "rank": 264,
+    "ticket": "src__R0011831_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 27,
+    "file": "src/R0011901.pli",
+    "key": "src__R0011901",
+    "rank": 265,
+    "ticket": "src__R0011901_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 20,
+    "file": "src/R001I401.pli",
+    "key": "src__R001I401",
+    "rank": 266,
+    "ticket": "src__R001I401_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 27,
+    "file": "src/R001N501.pli",
+    "key": "src__R001N501",
+    "rank": 267,
+    "ticket": "src__R001N501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 31,
+    "file": "src/R001N601.pli",
+    "key": "src__R001N601",
+    "rank": 268,
+    "ticket": "src__R001N601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 34,
+    "file": "src/R001N801.pli",
+    "key": "src__R001N801",
+    "rank": 269,
+    "ticket": "src__R001N801_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 29,
+    "file": "src/R001N901.pli",
+    "key": "src__R001N901",
+    "rank": 270,
+    "ticket": "src__R001N901_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 27,
+    "file": "src/R001NB01.pli",
+    "key": "src__R001NB01",
+    "rank": 271,
+    "ticket": "src__R001NB01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 28,
+    "file": "src/R001NC01.pli",
+    "key": "src__R001NC01",
+    "rank": 272,
+    "ticket": "src__R001NC01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 30,
+    "file": "src/R001U601.pli",
+    "key": "src__R001U601",
+    "rank": 273,
+    "ticket": "src__R001U601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 29,
+    "file": "src/R001U801.pli",
+    "key": "src__R001U801",
+    "rank": 274,
+    "ticket": "src__R001U801_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 29,
+    "file": "src/R001UC01.pli",
+    "key": "src__R001UC01",
+    "rank": 275,
+    "ticket": "src__R001UC01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 26,
+    "file": "src/R001UE01.pli",
+    "key": "src__R001UE01",
+    "rank": 276,
+    "ticket": "src__R001UE01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.456,
+    "callers": 1,
+    "calls": 25,
+    "file": "src/R001UJ01.pli",
+    "key": "src__R001UJ01",
+    "rank": 277,
+    "ticket": "src__R001UJ01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.453,
+    "callers": 1,
+    "calls": 15,
+    "file": "src/R0014270.pli",
+    "key": "R0014270",
+    "rank": 278,
+    "ticket": "R0014270_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.453,
+    "callers": 1,
+    "calls": 41,
+    "file": "src/R0014101.pli",
+    "key": "src__R0014101",
+    "rank": 279,
+    "ticket": "src__R0014101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.453,
+    "callers": 1,
+    "calls": 36,
+    "file": "src/R0014201.pli",
+    "key": "src__R0014201",
+    "rank": 280,
+    "ticket": "src__R0014201_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.453,
+    "callers": 1,
+    "calls": 23,
+    "file": "src/R0014251.pli",
+    "key": "src__R0014251",
+    "rank": 281,
+    "ticket": "src__R0014251_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.453,
+    "callers": 1,
+    "calls": 17,
+    "file": "src/R0014301.pli",
+    "key": "src__R0014301",
+    "rank": 282,
+    "ticket": "src__R0014301_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.453,
+    "callers": 1,
+    "calls": 6,
+    "file": "src/R0014370.pli",
+    "key": "src__R0014370",
+    "rank": 283,
+    "ticket": "src__R0014370_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.453,
+    "callers": 1,
+    "calls": 21,
+    "file": "src/R0014401.pli",
+    "key": "src__R0014401",
+    "rank": 284,
+    "ticket": "src__R0014401_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.453,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/R0014470.pli",
+    "key": "src__R0014470",
+    "rank": 285,
+    "ticket": "src__R0014470_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.453,
+    "callers": 1,
+    "calls": 27,
+    "file": "src/R0014501.pli",
+    "key": "src__R0014501",
+    "rank": 286,
+    "ticket": "src__R0014501_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.453,
+    "callers": 1,
+    "calls": 4,
+    "file": "src/R0014601.pli",
+    "key": "src__R0014601",
+    "rank": 287,
+    "ticket": "src__R0014601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.453,
+    "callers": 1,
+    "calls": 11,
+    "file": "src/R0014701.pli",
+    "key": "src__R0014701",
+    "rank": 288,
+    "ticket": "src__R0014701_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.453,
+    "callers": 1,
+    "calls": 3,
+    "file": "src/R0014801.pli",
+    "key": "src__R0014801",
+    "rank": 289,
+    "ticket": "src__R0014801_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.452,
+    "callers": 1,
+    "calls": 25,
+    "file": "src/R0018090.pli",
+    "key": "R0018090",
+    "rank": 290,
+    "ticket": "R0018090_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 12,
+    "file": "src/R0010520.pli",
+    "key": "src__R0010520",
+    "rank": 291,
+    "ticket": "src__R0010520_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 12,
+    "file": "src/R0010620.pli",
+    "key": "src__R0010620",
+    "rank": 292,
+    "ticket": "src__R0010620_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 13,
+    "file": "src/R0010820.pli",
+    "key": "src__R0010820",
+    "rank": 293,
+    "ticket": "src__R0010820_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 12,
+    "file": "src/R0011020.pli",
+    "key": "src__R0011020",
+    "rank": 294,
+    "ticket": "src__R0011020_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/R0011120.pli",
+    "key": "src__R0011120",
+    "rank": 295,
+    "ticket": "src__R0011120_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/R0011220.pli",
+    "key": "src__R0011220",
+    "rank": 296,
+    "ticket": "src__R0011220_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 13,
+    "file": "src/R0011420.pli",
+    "key": "src__R0011420",
+    "rank": 297,
+    "ticket": "src__R0011420_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 10,
+    "file": "src/R0011620.pli",
+    "key": "src__R0011620",
+    "rank": 298,
+    "ticket": "src__R0011620_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 12,
+    "file": "src/R0011720.pli",
+    "key": "src__R0011720",
+    "rank": 299,
+    "ticket": "src__R0011720_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 3,
+    "file": "src/R0011840.pli",
+    "key": "src__R0011840",
+    "rank": 300,
+    "ticket": "src__R0011840_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 12,
+    "file": "src/R0011920.pli",
+    "key": "src__R0011920",
+    "rank": 301,
+    "ticket": "src__R0011920_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 12,
+    "file": "src/R001N520.pli",
+    "key": "src__R001N520",
+    "rank": 302,
+    "ticket": "src__R001N520_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 16,
+    "file": "src/R001N620.pli",
+    "key": "src__R001N620",
+    "rank": 303,
+    "ticket": "src__R001N620_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 14,
+    "file": "src/R001N820.pli",
+    "key": "src__R001N820",
+    "rank": 304,
+    "ticket": "src__R001N820_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 6,
+    "file": "src/R001N920.pli",
+    "key": "src__R001N920",
+    "rank": 305,
+    "ticket": "src__R001N920_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/R001NB20.pli",
+    "key": "src__R001NB20",
+    "rank": 306,
+    "ticket": "src__R001NB20_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/R001NC20.pli",
+    "key": "src__R001NC20",
+    "rank": 307,
+    "ticket": "src__R001NC20_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 14,
+    "file": "src/R001U620.pli",
+    "key": "src__R001U620",
+    "rank": 308,
+    "ticket": "src__R001U620_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 14,
+    "file": "src/R001U820.pli",
+    "key": "src__R001U820",
+    "rank": 309,
+    "ticket": "src__R001U820_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/R001UC20.pli",
+    "key": "src__R001UC20",
+    "rank": 310,
+    "ticket": "src__R001UC20_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 14,
+    "file": "src/R001UE20.pli",
+    "key": "src__R001UE20",
+    "rank": 311,
+    "ticket": "src__R001UE20_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.45,
+    "callers": 1,
+    "calls": 16,
+    "file": "src/R001UJ20.pli",
+    "key": "src__R001UJ20",
+    "rank": 312,
+    "ticket": "src__R001UJ20_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 12,
+    "file": "src/GML/R0010520.pli",
+    "key": "src__GML__R0010520",
+    "rank": 313,
+    "ticket": "src__GML__R0010520_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 13,
+    "file": "src/GML/R0010620.pli",
+    "key": "src__GML__R0010620",
+    "rank": 314,
+    "ticket": "src__GML__R0010620_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 11,
+    "file": "src/GML/R0010820.pli",
+    "key": "src__GML__R0010820",
+    "rank": 315,
+    "ticket": "src__GML__R0010820_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 10,
+    "file": "src/GML/R0011020.pli",
+    "key": "src__GML__R0011020",
+    "rank": 316,
+    "ticket": "src__GML__R0011020_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/GML/R0011120.pli",
+    "key": "src__GML__R0011120",
+    "rank": 317,
+    "ticket": "src__GML__R0011120_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/GML/R0011220.pli",
+    "key": "src__GML__R0011220",
+    "rank": 318,
+    "ticket": "src__GML__R0011220_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 14,
+    "file": "src/GML/R0011420.pli",
+    "key": "src__GML__R0011420",
+    "rank": 319,
+    "ticket": "src__GML__R0011420_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/GML/R0011620.pli",
+    "key": "src__GML__R0011620",
+    "rank": 320,
+    "ticket": "src__GML__R0011620_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 13,
+    "file": "src/GML/R0011720.pli",
+    "key": "src__GML__R0011720",
+    "rank": 321,
+    "ticket": "src__GML__R0011720_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 4,
+    "file": "src/GML/R0011840.pli",
+    "key": "src__GML__R0011840",
+    "rank": 322,
+    "ticket": "src__GML__R0011840_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 12,
+    "file": "src/GML/R0011920.pli",
+    "key": "src__GML__R0011920",
+    "rank": 323,
+    "ticket": "src__GML__R0011920_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 12,
+    "file": "src/GML/R001N520.pli",
+    "key": "src__GML__R001N520",
+    "rank": 324,
+    "ticket": "src__GML__R001N520_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 16,
+    "file": "src/GML/R001N620.pli",
+    "key": "src__GML__R001N620",
+    "rank": 325,
+    "ticket": "src__GML__R001N620_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 12,
+    "file": "src/GML/R001N820.pli",
+    "key": "src__GML__R001N820",
+    "rank": 326,
+    "ticket": "src__GML__R001N820_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 6,
+    "file": "src/GML/R001N920.pli",
+    "key": "src__GML__R001N920",
+    "rank": 327,
+    "ticket": "src__GML__R001N920_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/GML/R001NB20.pli",
+    "key": "src__GML__R001NB20",
+    "rank": 328,
+    "ticket": "src__GML__R001NB20_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/GML/R001NC20.pli",
+    "key": "src__GML__R001NC20",
+    "rank": 329,
+    "ticket": "src__GML__R001NC20_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 18,
+    "file": "src/GML/R001U620.pli",
+    "key": "src__GML__R001U620",
+    "rank": 330,
+    "ticket": "src__GML__R001U620_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 11,
+    "file": "src/GML/R001U820.pli",
+    "key": "src__GML__R001U820",
+    "rank": 331,
+    "ticket": "src__GML__R001U820_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 8,
+    "file": "src/GML/R001UC20.pli",
+    "key": "src__GML__R001UC20",
+    "rank": 332,
+    "ticket": "src__GML__R001UC20_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 15,
+    "file": "src/GML/R001UE20.pli",
+    "key": "src__GML__R001UE20",
+    "rank": 333,
+    "ticket": "src__GML__R001UE20_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.448,
+    "callers": 1,
+    "calls": 12,
+    "file": "src/GML/R001UJ20.pli",
+    "key": "src__GML__R001UJ20",
+    "rank": 334,
+    "ticket": "src__GML__R001UJ20_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.446,
+    "callers": 1,
+    "calls": 0,
+    "file": "src/GML/R0017102.pli",
+    "key": "R0017102",
+    "rank": 335,
+    "ticket": "R0017102_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 6,
+    "file": "src/A0010301.pli",
+    "key": "A0010301",
+    "rank": 336,
+    "ticket": "A0010301_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/FO04D1X1.cobol",
+    "key": "FO04D1X1",
+    "rank": 337,
+    "ticket": "FO04D1X1_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 2,
+    "file": "src/GML/FO04F1X1.cobol",
+    "key": "FO04F1X1",
+    "rank": 338,
+    "ticket": "FO04F1X1_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/FRMERK.cobol",
+    "key": "FRMERK",
+    "rank": 339,
+    "ticket": "FRMERK_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/FRREDIG.cobol",
+    "key": "FRREDIG",
+    "rank": 340,
+    "ticket": "FRREDIG_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/PLUKKFR.cobol",
+    "key": "PLUKKFR",
+    "rank": 341,
+    "ticket": "PLUKKFR_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/PLUKKFRN.cobol",
+    "key": "PLUKKFRN",
+    "rank": 342,
+    "ticket": "PLUKKFRN_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 9,
+    "file": "src/R0012101.pli",
+    "key": "R0012101",
+    "rank": 343,
+    "ticket": "R0012101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 12,
+    "file": "src/R0012301.pli",
+    "key": "R0012301",
+    "rank": 344,
+    "ticket": "R0012301_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 9,
+    "file": "src/GML/R00149X1.pli",
+    "key": "R00149X1",
+    "rank": 345,
+    "ticket": "R00149X1_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R0017202.pli",
+    "key": "R0017202",
+    "rank": 346,
+    "ticket": "R0017202_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R0017203.pli",
+    "key": "R0017203",
+    "rank": 347,
+    "ticket": "R0017203_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R0017601.pli",
+    "key": "R0017601",
+    "rank": 348,
+    "ticket": "R0017601_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 37,
+    "file": "src/GML/R0019003.pli",
+    "key": "R0019003",
+    "rank": 349,
+    "ticket": "R0019003_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 15,
+    "file": "src/GML/R0019F03.pli",
+    "key": "R0019F03",
+    "rank": 350,
+    "ticket": "R0019F03_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 16,
+    "file": "src/GML/R0019F05.pli",
+    "key": "R0019F05",
+    "rank": 351,
+    "ticket": "R0019F05_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R0019H04.pli",
+    "key": "R0019H04",
+    "rank": 352,
+    "ticket": "R0019H04_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 12,
+    "file": "src/R0019H3A.pli",
+    "key": "R0019H3A",
+    "rank": 353,
+    "ticket": "R0019H3A_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R0019H80.pli",
+    "key": "R0019H80",
+    "rank": 354,
+    "ticket": "R0019H80_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001B03A.pli",
+    "key": "R001B03A",
+    "rank": 355,
+    "ticket": "R001B03A_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001BYDL.cobol",
+    "key": "R001BYDL",
+    "rank": 356,
+    "ticket": "R001BYDL_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 12,
+    "file": "src/R001HL21.pli",
+    "key": "R001HL21",
+    "rank": 357,
+    "ticket": "R001HL21_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001NAPL.pli",
+    "key": "R001NAPL",
+    "rank": 358,
+    "ticket": "R001NAPL_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 1,
+    "file": "src/GML/R001NO20.pli",
+    "key": "R001NO20",
+    "rank": 359,
+    "ticket": "R001NO20_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001NO30.pli",
+    "key": "R001NO30",
+    "rank": 360,
+    "ticket": "R001NO30_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 1,
+    "file": "src/GML/R001NO40.pli",
+    "key": "R001NO40",
+    "rank": 361,
+    "ticket": "R001NO40_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001NO50.pli",
+    "key": "R001NO50",
+    "rank": 362,
+    "ticket": "R001NO50_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001NRPL.pli",
+    "key": "R001NRPL",
+    "rank": 363,
+    "ticket": "R001NRPL_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 9,
+    "file": "src/GML/R001O301.pli",
+    "key": "R001O301",
+    "rank": 364,
+    "ticket": "R001O301_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R001S100.pli",
+    "key": "R001S100",
+    "rank": 365,
+    "ticket": "R001S100_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001SP01.pli",
+    "key": "R001SP01",
+    "rank": 366,
+    "ticket": "R001SP01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TE01.pli",
+    "key": "R001TE01",
+    "rank": 367,
+    "ticket": "R001TE01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TE02.pli",
+    "key": "R001TE02",
+    "rank": 368,
+    "ticket": "R001TE02_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TK50.pli",
+    "key": "R001TK50",
+    "rank": 369,
+    "ticket": "R001TK50_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TK92.pli",
+    "key": "R001TK92",
+    "rank": 370,
+    "ticket": "R001TK92_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TKAA.pli",
+    "key": "R001TKAA",
+    "rank": 371,
+    "ticket": "R001TKAA_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TKOI.pli",
+    "key": "R001TKOI",
+    "rank": 372,
+    "ticket": "R001TKOI_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TRAN.pli",
+    "key": "R001TRAN",
+    "rank": 373,
+    "ticket": "R001TRAN_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 2,
+    "file": "src/R001XXXX.pli",
+    "key": "R001XXXX",
+    "rank": 374,
+    "ticket": "R001XXXX_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R0010101.pli",
+    "key": "src__GML__R0010101",
+    "rank": 375,
+    "ticket": "src__GML__R0010101_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 5,
+    "file": "src/GML/R0010201.pli",
+    "key": "src__GML__R0010201",
+    "rank": 376,
+    "ticket": "src__GML__R0010201_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 14,
+    "file": "src/GML/R0010410.pli",
+    "key": "src__GML__R0010410",
+    "rank": 377,
+    "ticket": "src__GML__R0010410_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 5,
+    "file": "src/GML/R0010421.pli",
+    "key": "src__GML__R0010421",
+    "rank": 378,
+    "ticket": "src__GML__R0010421_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 3,
+    "file": "src/GML/R0010440.pli",
+    "key": "src__GML__R0010440",
+    "rank": 379,
+    "ticket": "src__GML__R0010440_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 11,
+    "file": "src/GML/R0010450.pli",
+    "key": "src__GML__R0010450",
+    "rank": 380,
+    "ticket": "src__GML__R0010450_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 2,
+    "file": "src/GML/R0011304.pli",
+    "key": "src__GML__R0011304",
+    "rank": 381,
+    "ticket": "src__GML__R0011304_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 11,
+    "file": "src/GML/R0011801.pli",
+    "key": "src__GML__R0011801",
+    "rank": 382,
+    "ticket": "src__GML__R0011801_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 11,
+    "file": "src/GML/R0019H60.pli",
+    "key": "src__GML__R0019H60",
+    "rank": 383,
+    "ticket": "src__GML__R0019H60_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 6,
+    "file": "src/GML/R001B001.pli",
+    "key": "src__GML__R001B001",
+    "rank": 384,
+    "ticket": "src__GML__R001B001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001I901.pli",
+    "key": "src__GML__R001I901",
+    "rank": 385,
+    "ticket": "src__GML__R001I901_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 4,
+    "file": "src/GML/R001I902.pli",
+    "key": "src__GML__R001I902",
+    "rank": 386,
+    "ticket": "src__GML__R001I902_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 13,
+    "file": "src/GML/R001I903.pli",
+    "key": "src__GML__R001I903",
+    "rank": 387,
+    "ticket": "src__GML__R001I903_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 8,
+    "file": "src/GML/R001S001.pli",
+    "key": "src__GML__R001S001",
+    "rank": 388,
+    "ticket": "src__GML__R001S001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 7,
+    "file": "src/GML/R001S003.pli",
+    "key": "src__GML__R001S003",
+    "rank": 389,
+    "ticket": "src__GML__R001S003_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TK01.pli",
+    "key": "src__GML__R001TK01",
+    "rank": 390,
+    "ticket": "src__GML__R001TK01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TK02.pli",
+    "key": "src__GML__R001TK02",
+    "rank": 391,
+    "ticket": "src__GML__R001TK02_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TK03.pli",
+    "key": "src__GML__R001TK03",
+    "rank": 392,
+    "ticket": "src__GML__R001TK03_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TK04.pli",
+    "key": "src__GML__R001TK04",
+    "rank": 393,
+    "ticket": "src__GML__R001TK04_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 6,
+    "file": "src/GML/R001TK06.pli",
+    "key": "src__GML__R001TK06",
+    "rank": 394,
+    "ticket": "src__GML__R001TK06_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 9,
+    "file": "src/GML/R001TK07.pli",
+    "key": "src__GML__R001TK07",
+    "rank": 395,
+    "ticket": "src__GML__R001TK07_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TK08.pli",
+    "key": "src__GML__R001TK08",
+    "rank": 396,
+    "ticket": "src__GML__R001TK08_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TK09.pli",
+    "key": "src__GML__R001TK09",
+    "rank": 397,
+    "ticket": "src__GML__R001TK09_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 2,
+    "file": "src/GML/R001TK60.pli",
+    "key": "src__GML__R001TK60",
+    "rank": 398,
+    "ticket": "src__GML__R001TK60_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TK61.pli",
+    "key": "src__GML__R001TK61",
+    "rank": 399,
+    "ticket": "src__GML__R001TK61_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TK62.pli",
+    "key": "src__GML__R001TK62",
+    "rank": 400,
+    "ticket": "src__GML__R001TK62_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TK70.pli",
+    "key": "src__GML__R001TK70",
+    "rank": 401,
+    "ticket": "src__GML__R001TK70_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TK80.pli",
+    "key": "src__GML__R001TK80",
+    "rank": 402,
+    "ticket": "src__GML__R001TK80_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TK81.pli",
+    "key": "src__GML__R001TK81",
+    "rank": 403,
+    "ticket": "src__GML__R001TK81_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TK82.pli",
+    "key": "src__GML__R001TK82",
+    "rank": 404,
+    "ticket": "src__GML__R001TK82_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/GML/R001TK83.pli",
+    "key": "src__GML__R001TK83",
+    "rank": 405,
+    "ticket": "src__GML__R001TK83_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 5,
+    "file": "src/R0010201.pli",
+    "key": "src__R0010201",
+    "rank": 406,
+    "ticket": "src__R0010201_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 23,
+    "file": "src/R0010410.pli",
+    "key": "src__R0010410",
+    "rank": 407,
+    "ticket": "src__R0010410_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 5,
+    "file": "src/R0010421.pli",
+    "key": "src__R0010421",
+    "rank": 408,
+    "ticket": "src__R0010421_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 3,
+    "file": "src/R0010440.pli",
+    "key": "src__R0010440",
+    "rank": 409,
+    "ticket": "src__R0010440_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 13,
+    "file": "src/R0010450.pli",
+    "key": "src__R0010450",
+    "rank": 410,
+    "ticket": "src__R0010450_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 4,
+    "file": "src/R00104E2.pli",
+    "key": "src__R00104E2",
+    "rank": 411,
+    "ticket": "src__R00104E2_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 2,
+    "file": "src/R0011304.pli",
+    "key": "src__R0011304",
+    "rank": 412,
+    "ticket": "src__R0011304_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 12,
+    "file": "src/R0011801.pli",
+    "key": "src__R0011801",
+    "rank": 413,
+    "ticket": "src__R0011801_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R0015602.pli",
+    "key": "src__R0015602",
+    "rank": 414,
+    "ticket": "src__R0015602_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 9,
+    "file": "src/R0019E04.pli",
+    "key": "src__R0019E04",
+    "rank": 415,
+    "ticket": "src__R0019E04_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 11,
+    "file": "src/R0019H60.pli",
+    "key": "src__R0019H60",
+    "rank": 416,
+    "ticket": "src__R0019H60_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 6,
+    "file": "src/R001B001.pli",
+    "key": "src__R001B001",
+    "rank": 417,
+    "ticket": "src__R001B001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R001I901.pli",
+    "key": "src__R001I901",
+    "rank": 418,
+    "ticket": "src__R001I901_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 4,
+    "file": "src/R001I902.pli",
+    "key": "src__R001I902",
+    "rank": 419,
+    "ticket": "src__R001I902_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 14,
+    "file": "src/R001I903.pli",
+    "key": "src__R001I903",
+    "rank": 420,
+    "ticket": "src__R001I903_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 12,
+    "file": "src/R001S001.pli",
+    "key": "src__R001S001",
+    "rank": 421,
+    "ticket": "src__R001S001_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 8,
+    "file": "src/R001S003.pli",
+    "key": "src__R001S003",
+    "rank": 422,
+    "ticket": "src__R001S003_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R001TK01.pli",
+    "key": "src__R001TK01",
+    "rank": 423,
+    "ticket": "src__R001TK01_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R001TK02.pli",
+    "key": "src__R001TK02",
+    "rank": 424,
+    "ticket": "src__R001TK02_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R001TK03.pli",
+    "key": "src__R001TK03",
+    "rank": 425,
+    "ticket": "src__R001TK03_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R001TK04.pli",
+    "key": "src__R001TK04",
+    "rank": 426,
+    "ticket": "src__R001TK04_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 6,
+    "file": "src/R001TK06.pli",
+    "key": "src__R001TK06",
+    "rank": 427,
+    "ticket": "src__R001TK06_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 9,
+    "file": "src/R001TK07.pli",
+    "key": "src__R001TK07",
+    "rank": 428,
+    "ticket": "src__R001TK07_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R001TK08.pli",
+    "key": "src__R001TK08",
+    "rank": 429,
+    "ticket": "src__R001TK08_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R001TK09.pli",
+    "key": "src__R001TK09",
+    "rank": 430,
+    "ticket": "src__R001TK09_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 2,
+    "file": "src/R001TK60.pli",
+    "key": "src__R001TK60",
+    "rank": 431,
+    "ticket": "src__R001TK60_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R001TK61.pli",
+    "key": "src__R001TK61",
+    "rank": 432,
+    "ticket": "src__R001TK61_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R001TK62.pli",
+    "key": "src__R001TK62",
+    "rank": 433,
+    "ticket": "src__R001TK62_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R001TK70.pli",
+    "key": "src__R001TK70",
+    "rank": 434,
+    "ticket": "src__R001TK70_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R001TK80.pli",
+    "key": "src__R001TK80",
+    "rank": 435,
+    "ticket": "src__R001TK80_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R001TK81.pli",
+    "key": "src__R001TK81",
+    "rank": 436,
+    "ticket": "src__R001TK81_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R001TK82.pli",
+    "key": "src__R001TK82",
+    "rank": 437,
+    "ticket": "src__R001TK82_port_ticket.md"
+  },
+  {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 0,
+    "file": "src/R001TK83.pli",
+    "key": "src__R001TK83",
+    "rank": 438,
+    "ticket": "src__R001TK83_port_ticket.md"
+  }
+]

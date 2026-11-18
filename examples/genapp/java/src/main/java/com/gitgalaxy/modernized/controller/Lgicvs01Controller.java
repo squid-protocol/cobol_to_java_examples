@@ -18,7 +18,7 @@ import com.gitgalaxy.modernized.service.Lgicvs01Service;
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
  * COMMAREA: DFHCOMMAREA (base/src/lgicvs01.cbl, 84 bytes) -> Lgicvs01Dfhcommarea.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/lgicvs01")
@@ -31,12 +31,6 @@ public class Lgicvs01Controller {
     @PostMapping("/transactions/LGCF")
     public ResponseEntity<Lgicvs01Dfhcommarea> transactionLGCF(@RequestBody Lgicvs01Dfhcommarea request) {
         return ResponseEntity.ok(lgicvs01Service.handleTransaction("LGCF", request));
-    }
-
-    /** CICS transaction VSCI -> Lgicvs01 (CSD base/cntl/cdef123.jcl:61 group GENATORP; base/cntl/cdef123.jcl:171 group GENAAORP). */
-    @PostMapping("/transactions/VSCI")
-    public ResponseEntity<Lgicvs01Dfhcommarea> transactionVSCI(@RequestBody Lgicvs01Dfhcommarea request) {
-        return ResponseEntity.ok(lgicvs01Service.handleTransaction("VSCI", request));
     }
 
 }

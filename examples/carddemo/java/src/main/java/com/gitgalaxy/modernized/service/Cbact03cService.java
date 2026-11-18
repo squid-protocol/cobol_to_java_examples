@@ -26,15 +26,11 @@ public class Cbact03cService {
 
     private final CardXrefRecordRepository cardXrefRecordRepository;
 
-    public void executeCbact03c(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for CBACT03C");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
     /** AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS as BATCH SELECT XREFFILE-FILE at app/cbl/CBACT03C.cbl (SELECT XREFFILE-FILE); VSAM defines field testing: open (3 public / 0 private estates). */
     // TODO: this program uses FD-XREFFILE-REC (50 bytes); the entity follows CARD-XREF-RECORD (50 bytes) -- map one onto the other
+    // Sequential READ: in key order, XREF-CARD-NUM as cp037 bytes (#3945, #3822).
     public List<CardXrefRecord> readAllXreffileFile() {
-        return cardXrefRecordRepository.findAll();
+        return cardXrefRecordRepository.findAll(org.springframework.data.domain.Sort.by("xrefCardNumSort"));
     }
 
     /** The batch entry (#3622): run by job READXREF step STEP05 (app/jcl/READXREF.jcl:22).

@@ -27,7 +27,7 @@ public class CmstkFilRec {
 
     // TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey
     @Id
-    @Column(name = "VSAM_KEY")
+    @Column(name = "VSAM_KEY", columnDefinition = "varchar(255) COLLATE \"C\"")
     private String vsamKey;
 
     // TKNR: PIC '( 5)9', offset 0, 5 bytes
@@ -43,7 +43,7 @@ public class CmstkFilRec {
     private String adr2;
 
     // IN: CHAR(2), offset 66, 2 bytes
-    @Column(name = "IN", length = 2)
+    @Column(name = "\"IN\"", length = 2)
     private String in;
 
     // PH: CHAR(2), offset 68, 2 bytes

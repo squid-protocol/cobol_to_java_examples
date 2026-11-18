@@ -2,14 +2,14 @@
 
 Every TODO the generators left in this project: where a fact was missing or two facts disagreed, the Java says so instead of guessing. Each item names the fact it rests on (from `traceability.json`) and a suggested resolution.
 
-**187 items** across 32 program sources (COBOL, PL/I).
+**173 items** across 32 program sources (COBOL, PL/I).
 
 | nature | items | what it takes |
 |---|---:|---|
 | conflict | 36 | two facts disagree: a person decides which one the Java follows |
 | fact-gap | 7 | a fact is missing: supply it and re-run |
 | review | 46 | the Java runs as generated: check it on the target |
-| port | 98 | business logic to write |
+| port | 84 | business logic to write |
 
 ## By category
 
@@ -19,49 +19,51 @@ Every TODO the generators left in this project: where a fact was missing or two 
 | [Programs reading another record layout](#record-variant) | conflict | 1 | Map the program's record onto the entity's fields (or split the entity); the two layouts' sizes are in the TODO. |
 | [Unresolved layouts](#missing-layout) | fact-gap | 6 | Add the missing copybook / %INCLUDE member or record to the repository and re-run; the DTO then gets its real fields. |
 | [Keys that are not one field](#vsam-key) | fact-gap | 1 | Name the key: split the record so the key is one field, or keep the String vsamKey in step with the record; for a browse, add a range query over the key. |
-| [Utility job steps to port](#batch-utility) | port | 2 | Replace the utility with its Spring Batch equivalent (SORT -> a sorting step, IDCAMS REPRO -> a copy, a TSO / IMS runner -> the program's runBatch), reading its control statements in SYSIN. |
+| [Utility job steps to port](#batch-utility) | port | 3 | Replace the utility with its Spring Batch equivalent (SORT -> a sorting step, IDCAMS REPRO -> a copy, a TSO / IMS runner -> the program's runBatch), reading its control statements in SYSIN. |
 | [CICS responses the COBOL never tests](#unchecked-resp) | review | 14 | Decide what a failed call does: the COBOL ignores it, so the Java throws; catch it where the old behaviour (carry on) is really wanted. |
 | [DB2 SQL on another database](#db2-dialect) | review | 31 | Run each statement on the target database; DB2-only syntax (FETCH FIRST, WITH UR, special registers) needs its equivalent. |
 | [Unit-of-work boundaries to split](#transaction-split) | port | 3 | End the transaction at the SYNCPOINT the comment cites: a nested REQUIRES_NEW call, or two service methods. |
-| [Business logic to port](#business-logic) | port | 93 | Port the cited paragraphs; the skeleton names the COBOL lines and the facts they touch. |
+| [Business logic to port](#business-logic) | port | 78 | Port the cited paragraphs; the skeleton names the COBOL lines and the facts they touch. |
 | [Target configuration](#configuration) | review | 1 | Point the datasource at the target database; the password comes from SPRING_DATASOURCE_PASSWORD at run time, never from a file. |
 
 ## By program source
 
+Listed in port order: the programs the most other code depends on first ([ai_agent_jobs/port_order.md](ai_agent_jobs/port_order.md)).
+
 | source | conflict | fact-gap | review | port | total |
 |---|---:|---:|---:|---:|---:|
-| `src/base/cobol_src/ABNDPROC.cbl` | 22 |  |  | 2 | 24 |
-| `src/base/cobol_src/BNK1CCS.cbl` | 1 | 1 | 4 | 6 | 12 |
-| `src/base/cobol_src/BANKDATA.cbl` |  |  | 6 | 5 | 11 |
-| `src/base/cobol_src/BNK1DCS.cbl` |  |  | 3 | 6 | 9 |
-| `src/base/cobol_src/CREACC.cbl` |  |  | 7 | 2 | 9 |
-| `src/base/cobol_src/BNK1UAC.cbl` | 3 |  | 1 | 4 | 8 |
-| `src/base/cobol_src/XFRFUN.cbl` |  |  | 5 | 3 | 8 |
-| `src/base/cobol_src/DBCRFUN.cbl` |  |  | 3 | 3 | 6 |
-| `src/base/cobol_src/DELACC.cbl` | 1 |  | 3 | 2 | 6 |
-| `src/base/cobol_src/INQACC.cbl` | 1 |  | 2 | 3 | 6 |
-| `src/base/cobol_src/INQACCCU.cbl` | 2 |  | 1 | 3 | 6 |
-| `src/base/cobol_src/INQCUST.cbl` | 3 |  |  | 3 | 6 |
-| `src/base/cobol_src/BNK1CAC.cbl` |  |  | 1 | 4 | 5 |
-| `src/base/cobol_src/BNK1CCA.cbl` |  |  | 1 | 4 | 5 |
-| `src/base/cobol_src/BNK1CRA.cbl` |  |  | 1 | 4 | 5 |
-| `src/base/cobol_src/BNK1DAC.cbl` |  |  | 1 | 4 | 5 |
-| `src/base/cobol_src/BNK1TFN.cbl` |  |  | 1 | 4 | 5 |
-| `src/base/cobol_src/UPDACC.cbl` | 1 |  | 2 | 2 | 5 |
-| `src/base/cobol_src/BNKMENU.cbl` |  |  |  | 4 | 4 |
-| `src/base/cobol_src/CRDTAGY1.cbl` |  | 1 |  | 3 | 4 |
-| `src/base/cobol_src/CRDTAGY2.cbl` |  | 1 |  | 3 | 4 |
-| `src/base/cobol_src/CRDTAGY3.cbl` |  | 1 |  | 3 | 4 |
-| `src/base/cobol_src/CRDTAGY4.cbl` |  | 1 |  | 3 | 4 |
-| `src/base/cobol_src/CRDTAGY5.cbl` |  | 1 |  | 3 | 4 |
-| `src/base/cobol_src/DELCUS.cbl` | 1 |  | 1 | 2 | 4 |
-| `etc/install/base/installjcl/BANKDATA.jcl` |  | 1 |  | 2 | 3 |
-| `src/base/cobol_src/CRECUST.cbl` |  |  | 1 | 2 | 3 |
-| `src/base/cobol_src/CUSTCTRL.cbl` | 1 |  |  | 2 | 3 |
-| `src/base/cobol_src/ACCTCTRL.cbl` |  |  | 1 | 1 | 2 |
-| `src/base/cobol_src/GETCOMPY.cbl` |  |  |  | 2 | 2 |
-| `src/base/cobol_src/GETSCODE.cbl` |  |  |  | 2 | 2 |
-| `src/base/cobol_src/UPDCUST.cbl` |  |  |  | 2 | 2 |
+| 1. `src/base/cobol_src/ABNDPROC.cbl` | 22 |  |  | 2 | 24 |
+| 2. `src/base/cobol_src/INQCUST.cbl` | 3 |  |  | 3 | 6 |
+| 3. `src/base/cobol_src/INQACCCU.cbl` | 2 |  | 1 | 3 | 6 |
+| 4. `src/base/cobol_src/INQACC.cbl` | 1 |  | 2 | 3 | 6 |
+| 5. `src/base/cobol_src/DELACC.cbl` | 1 |  | 3 | 2 | 6 |
+| 6. `src/base/cobol_src/GETSCODE.cbl` |  |  |  | 2 | 2 |
+| 7. `src/base/cobol_src/BANKDATA.cbl` |  |  | 6 | 4 | 10 |
+| 8. `src/base/cobol_src/GETCOMPY.cbl` |  |  |  | 2 | 2 |
+| 9. `src/base/cobol_src/CREACC.cbl` |  |  | 7 | 2 | 9 |
+| 10. `src/base/cobol_src/CRECUST.cbl` |  |  | 1 | 2 | 3 |
+| 11. `src/base/cobol_src/DBCRFUN.cbl` |  |  | 3 | 3 | 6 |
+| 12. `src/base/cobol_src/XFRFUN.cbl` |  |  | 5 | 3 | 8 |
+| 13. `src/base/cobol_src/UPDACC.cbl` | 1 |  | 2 | 2 | 5 |
+| 14. `src/base/cobol_src/DELCUS.cbl` | 1 |  | 1 | 2 | 4 |
+| 15. `src/base/cobol_src/UPDCUST.cbl` |  |  |  | 2 | 2 |
+| 16. `src/base/cobol_src/ACCTCTRL.cbl` |  |  | 1 | 2 | 3 |
+| 17. `src/base/cobol_src/BNK1CAC.cbl` |  |  | 1 | 2 | 3 |
+| 18. `src/base/cobol_src/BNK1CCA.cbl` |  |  | 1 | 2 | 3 |
+| 19. `src/base/cobol_src/BNK1CCS.cbl` | 1 | 1 | 4 | 3 | 9 |
+| 20. `src/base/cobol_src/BNK1CRA.cbl` |  |  | 1 | 2 | 3 |
+| 21. `src/base/cobol_src/BNK1DAC.cbl` |  |  | 1 | 2 | 3 |
+| 22. `src/base/cobol_src/BNK1DCS.cbl` |  |  | 3 | 3 | 6 |
+| 23. `src/base/cobol_src/BNK1TFN.cbl` |  |  | 1 | 2 | 3 |
+| 24. `src/base/cobol_src/BNK1UAC.cbl` | 3 |  | 1 | 2 | 6 |
+| 25. `src/base/cobol_src/BNKMENU.cbl` |  |  |  | 2 | 2 |
+| 26. `src/base/cobol_src/CRDTAGY1.cbl` |  | 1 |  | 4 | 5 |
+| 27. `src/base/cobol_src/CRDTAGY2.cbl` |  | 1 |  | 4 | 5 |
+| 28. `src/base/cobol_src/CRDTAGY3.cbl` |  | 1 |  | 4 | 5 |
+| 29. `src/base/cobol_src/CRDTAGY4.cbl` |  | 1 |  | 4 | 5 |
+| 30. `src/base/cobol_src/CRDTAGY5.cbl` |  | 1 |  | 4 | 5 |
+| 31. `src/base/cobol_src/CUSTCTRL.cbl` | 1 |  |  | 2 | 3 |
+| `etc/install/base/installjcl/BANKDATA.jcl` |  | 1 |  | 3 | 4 |
 | `(project configuration)` |  |  | 1 |  | 1 |
 
 <a id="commarea-mismatch"></a>
@@ -69,7 +71,7 @@ Every TODO the generators left in this project: where a fact was missing or two 
 
 _Resolution:_ For each caller, confirm which layout the callee reads (the COBOL MOVEs into DFHCOMMAREA say); map that caller's record onto the DTO, or give the callee one DTO per entry.
 
-**`src/base/cobol_src/ABNDPROC.cbl`**
+**`src/base/cobol_src/ABNDPROC.cbl`** -- porting ticket [`ai_agent_jobs/ABNDPROC_port_ticket.md`](ai_agent_jobs/ABNDPROC_port_ticket.md)
 
 - [ ] **WL-0001** `src/main/java/com/gitgalaxy/modernized/controller/AbndprocController.java:20` (`AbndprocController#link`): callers also pass ABNDINFO-REC (src/base/cobol_src/XFRFUN.cbl, 681 bytes) at src/base/cobol_src/XFRFUN.cbl:364, src/base/cobol_src/XFRFUN.cbl:463, src/base/cobol_src/XFRFUN.cbl:573, src/base/cobol_src/XFRFUN.cbl:664, src/base/cobol_src/XFRFUN.cbl:737, src/base/cobol_src/XFRFUN.cbl:813, src/base/cobol_src/XFRFUN.cbl:881, src/base/cobol_src/XFRFUN.cbl:1165, src/base/cobol_src/XFRFUN.cbl:1262, src/base/cobol_src/XFRFUN.cbl:1341, src/base/cobol_src/XFRFUN.cbl:1459, src/base/cobol_src/XFRFUN.cbl:1541, src/base/cobol_src/XFRFUN.cbl:1701, src/base/cobol_src/XFRFUN.cbl:1873
   - fact: `src/base/cobol_src/BNK1CAC.cbl:309`, CICS resources (open (5 public / 0 private estates))
@@ -160,38 +162,38 @@ _Resolution:_ For each caller, confirm which layout the callee reads (the COBOL 
   - fact: `src/base/cobol_src/BNK1CAC.cbl:416`, CICS resources (open (5 public / 0 private estates))
   - fact: `src/base/cobol_src/BNK1CAC.cbl:834`, CICS resources (open (5 public / 0 private estates))
 
-**`src/base/cobol_src/BNK1CCS.cbl`**
+**`src/base/cobol_src/BNK1CCS.cbl`** -- porting ticket [`ai_agent_jobs/BNK1CCS_port_ticket.md`](ai_agent_jobs/BNK1CCS_port_ticket.md)
 
 - [ ] **WL-0023** `src/main/java/com/gitgalaxy/modernized/controller/Bnk1ccsController.java:20` (`Bnk1ccsController#transactionOCCS`): callers also pass WS-COMM-AREA (src/base/cobol_src/BNK1CCS.cbl, 5 bytes) at src/base/cobol_src/BNK1CCS.cbl:249, src/base/cobol_src/BNK1CCS.cbl:276
   - fact: `etc/install/base/installjcl/BANK.csd:435`, entry transactions (open (4 public / 0 private estates))
 
-**`src/base/cobol_src/BNK1UAC.cbl`**
+**`src/base/cobol_src/BNK1UAC.cbl`** -- porting ticket [`ai_agent_jobs/BNK1UAC_port_ticket.md`](ai_agent_jobs/BNK1UAC_port_ticket.md)
 
 - [ ] **WL-0024** `src/main/java/com/gitgalaxy/modernized/controller/Bnk1uacController.java:20` (`Bnk1uacController#transactionOUAC`): WS-COMM-AREA (src/base/cobol_src/BNK1UAC.cbl, 99 bytes), passed at src/base/cobol_src/BNK1UAC.cbl:295, disagrees with this program's declared DFHCOMMAREA (103 bytes: 99 vs 103 bytes; fields first differ at None / COMM-PCB1-POINTER) -- confirm which layout the program reads
   - fact: `etc/install/base/installjcl/BANK.csd:495`, entry transactions (open (4 public / 0 private estates))
-- [ ] **WL-0025** `src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java:61` (`Bnk1uacService#linkInqacc`): this site passes DFHCOMMAREA; INQACC receives INQACC-COMMAREA (src/base/cobol_copy/INQACC.cpy) -- map one layout onto the other
-  - fact: `src/base/cobol_src/BNK1UAC.cbl:767`, call targets (open (6 public / 0 private estates))
-- [ ] **WL-0026** `src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java:68` (`Bnk1uacService#linkUpdacc`): this site passes DFHCOMMAREA (103 bytes); UPDACC declares DFHCOMMAREA (src/base/cobol_src/UPDACC.cbl, 99 bytes) -- map one layout onto the other
-  - fact: `src/base/cobol_src/BNK1UAC.cbl:954`, call targets (open (6 public / 0 private estates))
+- [ ] **WL-0025** `src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java:87` (`Bnk1uacService#linkInqacc`): this site passes DFHCOMMAREA; INQACC receives INQACC-COMMAREA (src/base/cobol_copy/INQACC.cpy) -- map one layout onto the other
+  - fact: `src/base/cobol_src/BNK1UAC.cbl:767`, call targets (open (9 public / 0 private estates))
+- [ ] **WL-0026** `src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java:94` (`Bnk1uacService#linkUpdacc`): this site passes DFHCOMMAREA (103 bytes); UPDACC declares DFHCOMMAREA (src/base/cobol_src/UPDACC.cbl, 99 bytes) -- map one layout onto the other
+  - fact: `src/base/cobol_src/BNK1UAC.cbl:954`, call targets (open (9 public / 0 private estates))
 
-**`src/base/cobol_src/DELACC.cbl`**
+**`src/base/cobol_src/DELACC.cbl`** -- porting ticket [`ai_agent_jobs/DELACC_port_ticket.md`](ai_agent_jobs/DELACC_port_ticket.md)
 
 - [ ] **WL-0027** `src/main/java/com/gitgalaxy/modernized/controller/DelaccController.java:20` (`DelaccController#link`): callers also pass DELACC-COMMAREA (src/base/cobol_src/DELCUS.cbl, 118 bytes) at src/base/cobol_src/DELCUS.cbl:312
   - fact: `src/base/cobol_src/BNK1DAC.cbl:712`, CICS resources (open (5 public / 0 private estates))
   - fact: `src/base/cobol_src/DELCUS.cbl:312`, CICS resources (open (5 public / 0 private estates))
 
-**`src/base/cobol_src/DELCUS.cbl`**
+**`src/base/cobol_src/DELCUS.cbl`** -- porting ticket [`ai_agent_jobs/DELCUS_port_ticket.md`](ai_agent_jobs/DELCUS_port_ticket.md)
 
-- [ ] **WL-0028** `src/main/java/com/gitgalaxy/modernized/service/DelcusService.java:64` (`DelcusService#linkDelacc`): this site passes DELACC-COMMAREA; DELACC receives PARMS-SUBPGM (src/base/cobol_src/BNK1DAC.cbl) -- map one layout onto the other
-  - fact: `src/base/cobol_src/DELCUS.cbl:312`, call targets (open (6 public / 0 private estates))
+- [ ] **WL-0028** `src/main/java/com/gitgalaxy/modernized/service/DelcusService.java:90` (`DelcusService#linkDelacc`): this site passes DELACC-COMMAREA; DELACC receives PARMS-SUBPGM (src/base/cobol_src/BNK1DAC.cbl) -- map one layout onto the other
+  - fact: `src/base/cobol_src/DELCUS.cbl:312`, call targets (open (9 public / 0 private estates))
 
-**`src/base/cobol_src/INQACC.cbl`**
+**`src/base/cobol_src/INQACC.cbl`** -- porting ticket [`ai_agent_jobs/INQACC_port_ticket.md`](ai_agent_jobs/INQACC_port_ticket.md)
 
 - [ ] **WL-0029** `src/main/java/com/gitgalaxy/modernized/controller/InqaccController.java:20` (`InqaccController#link`): callers also pass DFHCOMMAREA (src/base/cobol_src/BNK1UAC.cbl, 103 bytes) at src/base/cobol_src/BNK1UAC.cbl:767
   - fact: `src/base/cobol_src/BNK1DAC.cbl:553`, CICS resources (open (5 public / 0 private estates))
   - fact: `src/base/cobol_src/BNK1UAC.cbl:767`, CICS resources (open (5 public / 0 private estates))
 
-**`src/base/cobol_src/INQACCCU.cbl`**
+**`src/base/cobol_src/INQACCCU.cbl`** -- porting ticket [`ai_agent_jobs/INQACCCU_port_ticket.md`](ai_agent_jobs/INQACCCU_port_ticket.md)
 
 - [ ] **WL-0030** `src/main/java/com/gitgalaxy/modernized/controller/InqacccuController.java:20` (`InqacccuController#link`): callers also pass INQACCCU-COMMAREA (src/base/cobol_src/CREACC.cbl, 1981 bytes) at src/base/cobol_src/CREACC.cbl:1088
   - fact: `src/base/cobol_src/BNK1CCA.cbl:435`, CICS resources (open (5 public / 0 private estates))
@@ -202,7 +204,7 @@ _Resolution:_ For each caller, confirm which layout the callee reads (the COBOL 
   - fact: `src/base/cobol_src/CREACC.cbl:1088`, CICS resources (open (5 public / 0 private estates))
   - fact: `src/base/cobol_src/DELCUS.cbl:334`, CICS resources (open (5 public / 0 private estates))
 
-**`src/base/cobol_src/INQCUST.cbl`**
+**`src/base/cobol_src/INQCUST.cbl`** -- porting ticket [`ai_agent_jobs/INQCUST_port_ticket.md`](ai_agent_jobs/INQCUST_port_ticket.md)
 
 - [ ] **WL-0032** `src/main/java/com/gitgalaxy/modernized/controller/InqcustController.java:20` (`InqcustController#link`): callers also pass INQCUST-COMMAREA (src/base/cobol_src/CREACC.cbl, 265 bytes) at src/base/cobol_src/CREACC.cbl:304
   - fact: `src/base/cobol_src/BNK1DCS.cbl:833`, CICS resources (open (5 public / 0 private estates))
@@ -217,7 +219,7 @@ _Resolution:_ For each caller, confirm which layout the callee reads (the COBOL 
   - fact: `src/base/cobol_src/CREACC.cbl:304`, CICS resources (open (5 public / 0 private estates))
   - fact: `src/base/cobol_src/DELCUS.cbl:260`, CICS resources (open (5 public / 0 private estates))
 
-**`src/base/cobol_src/UPDACC.cbl`**
+**`src/base/cobol_src/UPDACC.cbl`** -- porting ticket [`ai_agent_jobs/UPDACC_port_ticket.md`](ai_agent_jobs/UPDACC_port_ticket.md)
 
 - [ ] **WL-0035** `src/main/java/com/gitgalaxy/modernized/controller/UpdaccController.java:20` (`UpdaccController#link`): DFHCOMMAREA (src/base/cobol_src/BNK1UAC.cbl, 103 bytes), passed at src/base/cobol_src/BNK1UAC.cbl:954, disagrees with this program's declared DFHCOMMAREA (99 bytes: 103 vs 99 bytes; fields first differ at COMM-PCB1-POINTER / None) -- confirm which layout the program reads
   - fact: `src/base/cobol_src/BNK1UAC.cbl:954`, CICS resources (open (5 public / 0 private estates))
@@ -227,9 +229,9 @@ _Resolution:_ For each caller, confirm which layout the callee reads (the COBOL 
 
 _Resolution:_ Map the program's record onto the entity's fields (or split the entity); the two layouts' sizes are in the TODO.
 
-**`src/base/cobol_src/CUSTCTRL.cbl`**
+**`src/base/cobol_src/CUSTCTRL.cbl`** -- porting ticket [`ai_agent_jobs/CUSTCTRL_port_ticket.md`](ai_agent_jobs/CUSTCTRL_port_ticket.md)
 
-- [ ] **WL-0036** `src/main/java/com/gitgalaxy/modernized/service/CustctrlService.java:49` (`CustctrlService#readCustomer`): this program uses DFHCOMMAREA (259 bytes); the entity follows OUTPUT-DATA (259 bytes) -- map one onto the other
+- [ ] **WL-0036** `src/main/java/com/gitgalaxy/modernized/service/CustctrlService.java:79` (`CustctrlService#readCustomer`): this program uses DFHCOMMAREA (259 bytes); the entity follows OUTPUT-DATA (259 bytes) -- map one onto the other
   - fact: `src/base/cobol_src/CUSTCTRL.cbl:162`, VSAM defines (open (3 public / 0 private estates))
   - fact: `src/base/cobol_src/CUSTCTRL.cbl:178`, VSAM defines (open (3 public / 0 private estates))
 
@@ -238,31 +240,31 @@ _Resolution:_ Map the program's record onto the entity's fields (or split the en
 
 _Resolution:_ Add the missing copybook / %INCLUDE member or record to the repository and re-run; the DTO then gets its real fields.
 
-**`src/base/cobol_src/BNK1CCS.cbl`**
+**`src/base/cobol_src/BNK1CCS.cbl`** -- porting ticket [`ai_agent_jobs/BNK1CCS_port_ticket.md`](ai_agent_jobs/BNK1CCS_port_ticket.md)
 
-- [ ] **WL-0037** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:40`: SEND MAP BNK1CCM (mapset BNK1CCM) at src/base/cobol_src/BNK1CCS.cbl:236: no single BMS source defines it (candidates: none in the repository); mapset BNK1CCM defines BNK1CC
+- [ ] **WL-0037** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:39`: SEND MAP BNK1CCM (mapset BNK1CCM) at src/base/cobol_src/BNK1CCS.cbl:236: no single BMS source defines it (candidates: none in the repository); mapset BNK1CCM defines BNK1CC
 
-**`src/base/cobol_src/CRDTAGY1.cbl`**
+**`src/base/cobol_src/CRDTAGY1.cbl`** -- porting ticket [`ai_agent_jobs/CRDTAGY1_port_ticket.md`](ai_agent_jobs/CRDTAGY1_port_ticket.md)
 
 - [ ] **WL-0038** `src/main/java/com/gitgalaxy/modernized/controller/Crdtagy1Controller.java` (`Crdtagy1Controller#transactionOCR1`): no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA
   - fact: `etc/install/base/installjcl/BANK.csd:345`, entry transactions (open (4 public / 0 private estates))
 
-**`src/base/cobol_src/CRDTAGY2.cbl`**
+**`src/base/cobol_src/CRDTAGY2.cbl`** -- porting ticket [`ai_agent_jobs/CRDTAGY2_port_ticket.md`](ai_agent_jobs/CRDTAGY2_port_ticket.md)
 
 - [ ] **WL-0039** `src/main/java/com/gitgalaxy/modernized/controller/Crdtagy2Controller.java` (`Crdtagy2Controller#transactionOCR2`): no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA
   - fact: `etc/install/base/installjcl/BANK.csd:355`, entry transactions (open (4 public / 0 private estates))
 
-**`src/base/cobol_src/CRDTAGY3.cbl`**
+**`src/base/cobol_src/CRDTAGY3.cbl`** -- porting ticket [`ai_agent_jobs/CRDTAGY3_port_ticket.md`](ai_agent_jobs/CRDTAGY3_port_ticket.md)
 
 - [ ] **WL-0040** `src/main/java/com/gitgalaxy/modernized/controller/Crdtagy3Controller.java` (`Crdtagy3Controller#transactionOCR3`): no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA
   - fact: `etc/install/base/installjcl/BANK.csd:365`, entry transactions (open (4 public / 0 private estates))
 
-**`src/base/cobol_src/CRDTAGY4.cbl`**
+**`src/base/cobol_src/CRDTAGY4.cbl`** -- porting ticket [`ai_agent_jobs/CRDTAGY4_port_ticket.md`](ai_agent_jobs/CRDTAGY4_port_ticket.md)
 
 - [ ] **WL-0041** `src/main/java/com/gitgalaxy/modernized/controller/Crdtagy4Controller.java` (`Crdtagy4Controller#transactionOCR4`): no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA
   - fact: `etc/install/base/installjcl/BANK.csd:375`, entry transactions (open (4 public / 0 private estates))
 
-**`src/base/cobol_src/CRDTAGY5.cbl`**
+**`src/base/cobol_src/CRDTAGY5.cbl`** -- porting ticket [`ai_agent_jobs/CRDTAGY5_port_ticket.md`](ai_agent_jobs/CRDTAGY5_port_ticket.md)
 
 - [ ] **WL-0042** `src/main/java/com/gitgalaxy/modernized/controller/Crdtagy5Controller.java` (`Crdtagy5Controller#transactionOCR5`): no COMMAREA layout: no LINKAGE DFHCOMMAREA, and no resolved caller passes this program a COMMAREA
   - fact: `etc/install/base/installjcl/BANK.csd:385`, entry transactions (open (4 public / 0 private estates))
@@ -283,69 +285,71 @@ _Resolution:_ Replace the utility with its Spring Batch equivalent (SORT -> a so
 
 **`etc/install/base/installjcl/BANKDATA.jcl`**
 
-- [ ] **WL-0044** `src/main/java/com/gitgalaxy/modernized/batch/BankdataJobConfig.java` (`BankdataJobConfig#BANKDAT0`): BANKDAT0 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port
+- [ ] **WL-0044** `src/main/java/com/gitgalaxy/modernized/batch/BankdataJobConfig.java` (`BankdataJobConfig#BANKDAT0`): BANKDAT0 runs IDCAMS, which uses more than one IDCAMS command, which the IDCAMS model refuses -- not run as a record copy: a utility step to port
   - fact: `etc/install/base/installjcl/BANKDATA.jcl:36`, JCL job flow (open (5 public / 0 private estates))
-- [ ] **WL-0045** `src/main/java/com/gitgalaxy/modernized/batch/BankdataJobConfig.java` (`BankdataJobConfig#BANKDAT1`): BANKDAT1 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port
+- [ ] **WL-0045** `src/main/java/com/gitgalaxy/modernized/batch/BankdataJobConfig.java` (`BankdataJobConfig#BANKDAT1`): BANKDAT1 runs IDCAMS, which uses more than one IDCAMS command, which the IDCAMS model refuses -- not run as a record copy: a utility step to port
   - fact: `etc/install/base/installjcl/BANKDATA.jcl:56`, JCL job flow (open (5 public / 0 private estates))
+- [ ] **WL-0046** `src/main/java/com/gitgalaxy/modernized/batch/BankdataJobConfig.java` (`BankdataJobConfig#BANKDAT5`): BANKDAT5 runs BANKDATA through IKJEFT01, which uses the DSN operand 'SYSTEM(@DB2_SUBSYSTE' (a TSO / DSN subcommand the oracle has no model of), which the IKJEFT01 model refuses -- not run: a utility step to port
+  - fact: `etc/install/base/installjcl/BANKDATA.jcl:94`, JCL job flow (open (5 public / 0 private estates))
 
 <a id="unchecked-resp"></a>
 ## CICS responses the COBOL never tests (review)
 
 _Resolution:_ Decide what a failed call does: the COBOL ignores it, so the Java throws; catch it where the old behaviour (carry on) is really wanted.
 
-**`src/base/cobol_src/BNK1CAC.cbl`**
+**`src/base/cobol_src/BNK1CAC.cbl`** -- porting ticket [`ai_agent_jobs/BNK1CAC_port_ticket.md`](ai_agent_jobs/BNK1CAC_port_ticket.md)
 
-- [ ] **WL-0046** `src/main/java/com/gitgalaxy/modernized/service/Bnk1cacService.java:32` (`Bnk1cacService`): the RESP of RETURN at line 186 (paragraph A010) is never tested
+- [ ] **WL-0047** `src/main/java/com/gitgalaxy/modernized/service/Bnk1cacService.java:31` (`Bnk1cacService`): the RESP of RETURN at line 186 (paragraph A010) is never tested
   - fact: `src/base/cobol_src/BNK1CAC.cbl:186`, units of work and handlers (field-tested (6 public / 0 private estates))
 
-**`src/base/cobol_src/BNK1CCA.cbl`**
+**`src/base/cobol_src/BNK1CCA.cbl`** -- porting ticket [`ai_agent_jobs/BNK1CCA_port_ticket.md`](ai_agent_jobs/BNK1CCA_port_ticket.md)
 
-- [ ] **WL-0047** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java:32` (`Bnk1ccaService`): the RESP of RETURN at line 178 (paragraph A010) is never tested
+- [ ] **WL-0048** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java:29` (`Bnk1ccaService`): the RESP of RETURN at line 178 (paragraph A010) is never tested
   - fact: `src/base/cobol_src/BNK1CCA.cbl:178`, units of work and handlers (field-tested (6 public / 0 private estates))
 
-**`src/base/cobol_src/BNK1CCS.cbl`**
+**`src/base/cobol_src/BNK1CCS.cbl`** -- porting ticket [`ai_agent_jobs/BNK1CCS_port_ticket.md`](ai_agent_jobs/BNK1CCS_port_ticket.md)
 
-- [ ] **WL-0048** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:35` (`Bnk1ccsService`): the RESP of RETURN at line 208 (paragraph A010) is never tested
+- [ ] **WL-0049** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:34` (`Bnk1ccsService`): the RESP of RETURN at line 208 (paragraph A010) is never tested
   - fact: `src/base/cobol_src/BNK1CCS.cbl:208`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0049** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:36` (`Bnk1ccsService`): the RESP of INQUIRE at line 392 (paragraph RM010) is never tested
+- [ ] **WL-0050** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:35` (`Bnk1ccsService`): the RESP of INQUIRE at line 392 (paragraph RM010) is never tested
   - fact: `src/base/cobol_src/BNK1CCS.cbl:392`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0050** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:37` (`Bnk1ccsService`): the RESP of INQUIRE at line 1105 (paragraph STD010) is never tested
+- [ ] **WL-0051** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:36` (`Bnk1ccsService`): the RESP of INQUIRE at line 1105 (paragraph STD010) is never tested
   - fact: `src/base/cobol_src/BNK1CCS.cbl:1105`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0051** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:38` (`Bnk1ccsService`): the RESP of SET at line 1605 (paragraph ATT010) is never tested
+- [ ] **WL-0052** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:37` (`Bnk1ccsService`): the RESP of SET at line 1605 (paragraph ATT010) is never tested
   - fact: `src/base/cobol_src/BNK1CCS.cbl:1605`, units of work and handlers (field-tested (6 public / 0 private estates))
 
-**`src/base/cobol_src/BNK1CRA.cbl`**
+**`src/base/cobol_src/BNK1CRA.cbl`** -- porting ticket [`ai_agent_jobs/BNK1CRA_port_ticket.md`](ai_agent_jobs/BNK1CRA_port_ticket.md)
 
-- [ ] **WL-0052** `src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java:32` (`Bnk1craService`): the RESP of RETURN at line 201 (paragraph A010) is never tested
+- [ ] **WL-0053** `src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java:31` (`Bnk1craService`): the RESP of RETURN at line 201 (paragraph A010) is never tested
   - fact: `src/base/cobol_src/BNK1CRA.cbl:201`, units of work and handlers (field-tested (6 public / 0 private estates))
 
-**`src/base/cobol_src/BNK1DAC.cbl`**
+**`src/base/cobol_src/BNK1DAC.cbl`** -- porting ticket [`ai_agent_jobs/BNK1DAC_port_ticket.md`](ai_agent_jobs/BNK1DAC_port_ticket.md)
 
-- [ ] **WL-0053** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java:34` (`Bnk1dacService`): the RESP of RETURN at line 213 (paragraph A010) is never tested
+- [ ] **WL-0054** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java:33` (`Bnk1dacService`): the RESP of RETURN at line 213 (paragraph A010) is never tested
   - fact: `src/base/cobol_src/BNK1DAC.cbl:213`, units of work and handlers (field-tested (6 public / 0 private estates))
 
-**`src/base/cobol_src/BNK1DCS.cbl`**
+**`src/base/cobol_src/BNK1DCS.cbl`** -- porting ticket [`ai_agent_jobs/BNK1DCS_port_ticket.md`](ai_agent_jobs/BNK1DCS_port_ticket.md)
 
-- [ ] **WL-0054** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java:39` (`Bnk1dcsService`): the RESP of RETURN at line 233 (paragraph A010) is never tested
+- [ ] **WL-0055** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java:38` (`Bnk1dcsService`): the RESP of RETURN at line 233 (paragraph A010) is never tested
   - fact: `src/base/cobol_src/BNK1DCS.cbl:233`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0055** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java:40` (`Bnk1dcsService`): the RESP of INQUIRE at line 509 (paragraph RM010) is never tested
+- [ ] **WL-0056** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java:39` (`Bnk1dcsService`): the RESP of INQUIRE at line 509 (paragraph RM010) is never tested
   - fact: `src/base/cobol_src/BNK1DCS.cbl:509`, units of work and handlers (field-tested (6 public / 0 private estates))
-- [ ] **WL-0056** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java:41` (`Bnk1dcsService`): the RESP of INQUIRE at line 1648 (paragraph STD010) is never tested
+- [ ] **WL-0057** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java:40` (`Bnk1dcsService`): the RESP of INQUIRE at line 1648 (paragraph STD010) is never tested
   - fact: `src/base/cobol_src/BNK1DCS.cbl:1648`, units of work and handlers (field-tested (6 public / 0 private estates))
 
-**`src/base/cobol_src/BNK1TFN.cbl`**
+**`src/base/cobol_src/BNK1TFN.cbl`** -- porting ticket [`ai_agent_jobs/BNK1TFN_port_ticket.md`](ai_agent_jobs/BNK1TFN_port_ticket.md)
 
-- [ ] **WL-0057** `src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java:32` (`Bnk1tfnService`): the RESP of RETURN at line 198 (paragraph A010) is never tested
+- [ ] **WL-0058** `src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java:31` (`Bnk1tfnService`): the RESP of RETURN at line 198 (paragraph A010) is never tested
   - fact: `src/base/cobol_src/BNK1TFN.cbl:198`, units of work and handlers (field-tested (6 public / 0 private estates))
 
-**`src/base/cobol_src/BNK1UAC.cbl`**
+**`src/base/cobol_src/BNK1UAC.cbl`** -- porting ticket [`ai_agent_jobs/BNK1UAC_port_ticket.md`](ai_agent_jobs/BNK1UAC_port_ticket.md)
 
-- [ ] **WL-0058** `src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java:34` (`Bnk1uacService`): the RESP of RETURN at line 222 (paragraph A010) is never tested
+- [ ] **WL-0059** `src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java:33` (`Bnk1uacService`): the RESP of RETURN at line 222 (paragraph A010) is never tested
   - fact: `src/base/cobol_src/BNK1UAC.cbl:222`, units of work and handlers (field-tested (6 public / 0 private estates))
 
-**`src/base/cobol_src/CREACC.cbl`**
+**`src/base/cobol_src/CREACC.cbl`** -- porting ticket [`ai_agent_jobs/CREACC_port_ticket.md`](ai_agent_jobs/CREACC_port_ticket.md)
 
-- [ ] **WL-0059** `src/main/java/com/gitgalaxy/modernized/service/CreaccService.java:30` (`CreaccService`): the RESP of LINK at line 1088 (paragraph CAC010) is never tested
+- [ ] **WL-0060** `src/main/java/com/gitgalaxy/modernized/service/CreaccService.java:30` (`CreaccService`): the RESP of LINK at line 1088 (paragraph CAC010) is never tested
   - fact: `src/base/cobol_src/CREACC.cbl:1088`, units of work and handlers (field-tested (6 public / 0 private estates))
 
 <a id="db2-dialect"></a>
@@ -353,99 +357,99 @@ _Resolution:_ Decide what a failed call does: the COBOL ignores it, so the Java 
 
 _Resolution:_ Run each statement on the target database; DB2-only syntax (FETCH FIRST, WITH UR, special registers) needs its equivalent.
 
-**`src/base/cobol_src/ACCTCTRL.cbl`**
+**`src/base/cobol_src/ACCTCTRL.cbl`** -- porting ticket [`ai_agent_jobs/ACCTCTRL_port_ticket.md`](ai_agent_jobs/ACCTCTRL_port_ticket.md)
 
-- [ ] **WL-0060** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#selectL165Acctctrl`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0061** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#selectL165Acctctrl`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/ACCTCTRL.cbl:165`, DB2 table access (open (3 public / 0 private estates))
 
-**`src/base/cobol_src/BANKDATA.cbl`**
+**`src/base/cobol_src/BANKDATA.cbl`** -- porting ticket [`ai_agent_jobs/BANKDATA_port_ticket.md`](ai_agent_jobs/BANKDATA_port_ticket.md)
 
-- [ ] **WL-0061** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#deleteL1192Bankdata`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0062** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#deleteL1192Bankdata`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/BANKDATA.cbl:1192`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0062** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#insertL808Bankdata`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0063** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#insertL808Bankdata`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/BANKDATA.cbl:808`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0063** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#deleteL1256Bankdata`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0064** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#deleteL1256Bankdata`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/BANKDATA.cbl:1256`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0064** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#deleteL1322Bankdata`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0065** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#deleteL1322Bankdata`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/BANKDATA.cbl:1322`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0065** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#insertL613Bankdata`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0066** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#insertL613Bankdata`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/BANKDATA.cbl:613`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0066** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#insertL642Bankdata`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0067** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#insertL642Bankdata`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/BANKDATA.cbl:642`, DB2 table access (open (3 public / 0 private estates))
 
-**`src/base/cobol_src/CREACC.cbl`**
+**`src/base/cobol_src/CREACC.cbl`** -- porting ticket [`ai_agent_jobs/CREACC_port_ticket.md`](ai_agent_jobs/CREACC_port_ticket.md)
 
-- [ ] **WL-0067** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#insertL826Creacc`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0068** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#insertL826Creacc`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/CREACC.cbl:826`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0068** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#selectL444Creacc`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0069** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#selectL444Creacc`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/CREACC.cbl:444`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0069** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#selectL611Creacc`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0070** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#selectL611Creacc`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/CREACC.cbl:611`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0070** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#updateL529Creacc`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0071** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#updateL529Creacc`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/CREACC.cbl:529`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0071** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#updateL694Creacc`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0072** `src/main/java/com/gitgalaxy/modernized/repository/db2/ControlRepository.java` (`ControlRepository#updateL694Creacc`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/CREACC.cbl:694`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0072** `src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java` (`ProctranRepository#insertL969Creacc`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0073** `src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java` (`ProctranRepository#insertL969Creacc`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/CREACC.cbl:969`, DB2 table access (open (3 public / 0 private estates))
 
-**`src/base/cobol_src/CRECUST.cbl`**
+**`src/base/cobol_src/CRECUST.cbl`** -- porting ticket [`ai_agent_jobs/CRECUST_port_ticket.md`](ai_agent_jobs/CRECUST_port_ticket.md)
 
-- [ ] **WL-0073** `src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java` (`ProctranRepository#insertL1168Crecust`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0074** `src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java` (`ProctranRepository#insertL1168Crecust`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/CRECUST.cbl:1168`, DB2 table access (open (3 public / 0 private estates))
 
-**`src/base/cobol_src/DBCRFUN.cbl`**
+**`src/base/cobol_src/DBCRFUN.cbl`** -- porting ticket [`ai_agent_jobs/DBCRFUN_port_ticket.md`](ai_agent_jobs/DBCRFUN_port_ticket.md)
 
-- [ ] **WL-0074** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#selectL245Dbcrfun`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0075** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#selectL245Dbcrfun`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/DBCRFUN.cbl:245`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0075** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#updateL392Dbcrfun`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0076** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#updateL392Dbcrfun`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/DBCRFUN.cbl:392`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0076** `src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java` (`ProctranRepository#insertL524Dbcrfun`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0077** `src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java` (`ProctranRepository#insertL524Dbcrfun`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/DBCRFUN.cbl:524`, DB2 table access (open (3 public / 0 private estates))
 
-**`src/base/cobol_src/DELACC.cbl`**
+**`src/base/cobol_src/DELACC.cbl`** -- porting ticket [`ai_agent_jobs/DELACC_port_ticket.md`](ai_agent_jobs/DELACC_port_ticket.md)
 
-- [ ] **WL-0077** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#deleteL438Delacc`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0078** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#deleteL438Delacc`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/DELACC.cbl:438`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0078** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#selectL248Delacc`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0079** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#selectL248Delacc`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/DELACC.cbl:248`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0079** `src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java` (`ProctranRepository#insertL521Delacc`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0080** `src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java` (`ProctranRepository#insertL521Delacc`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/DELACC.cbl:521`, DB2 table access (open (3 public / 0 private estates))
 
-**`src/base/cobol_src/DELCUS.cbl`**
+**`src/base/cobol_src/DELCUS.cbl`** -- porting ticket [`ai_agent_jobs/DELCUS_port_ticket.md`](ai_agent_jobs/DELCUS_port_ticket.md)
 
-- [ ] **WL-0080** `src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java` (`ProctranRepository#insertL636Delcus`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0081** `src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java` (`ProctranRepository#insertL636Delcus`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/DELCUS.cbl:636`, DB2 table access (open (3 public / 0 private estates))
 
-**`src/base/cobol_src/INQACC.cbl`**
+**`src/base/cobol_src/INQACC.cbl`** -- porting ticket [`ai_agent_jobs/INQACC_port_ticket.md`](ai_agent_jobs/INQACC_port_ticket.md)
 
-- [ ] **WL-0081** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#cursorAccCursorL66Inqacc`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0082** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#cursorAccCursorL66Inqacc`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/INQACC.cbl:66`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0082** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#selectL843Inqacc`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0083** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#selectL843Inqacc`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/INQACC.cbl:843`, DB2 table access (open (3 public / 0 private estates))
 
-**`src/base/cobol_src/INQACCCU.cbl`**
+**`src/base/cobol_src/INQACCCU.cbl`** -- porting ticket [`ai_agent_jobs/INQACCCU_port_ticket.md`](ai_agent_jobs/INQACCCU_port_ticket.md)
 
-- [ ] **WL-0083** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#cursorAccCursorL74Inqacccu`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0084** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#cursorAccCursorL74Inqacccu`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/INQACCCU.cbl:74`, DB2 table access (open (3 public / 0 private estates))
 
-**`src/base/cobol_src/UPDACC.cbl`**
+**`src/base/cobol_src/UPDACC.cbl`** -- porting ticket [`ai_agent_jobs/UPDACC_port_ticket.md`](ai_agent_jobs/UPDACC_port_ticket.md)
 
-- [ ] **WL-0084** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#selectL191Updacc`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0085** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#selectL191Updacc`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/UPDACC.cbl:191`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0085** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#updateL278Updacc`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0086** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#updateL278Updacc`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/UPDACC.cbl:278`, DB2 table access (open (3 public / 0 private estates))
 
-**`src/base/cobol_src/XFRFUN.cbl`**
+**`src/base/cobol_src/XFRFUN.cbl`** -- porting ticket [`ai_agent_jobs/XFRFUN_port_ticket.md`](ai_agent_jobs/XFRFUN_port_ticket.md)
 
-- [ ] **WL-0086** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#selectL1057Xfrfun`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0087** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#selectL1057Xfrfun`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/XFRFUN.cbl:1057`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0087** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#selectL930Xfrfun`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0088** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#selectL930Xfrfun`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/XFRFUN.cbl:930`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0088** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#updateL1362Xfrfun`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0089** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#updateL1362Xfrfun`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/XFRFUN.cbl:1362`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0089** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#updateL992Xfrfun`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0090** `src/main/java/com/gitgalaxy/modernized/repository/db2/AccountRepository.java` (`AccountRepository#updateL992Xfrfun`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/XFRFUN.cbl:992`, DB2 table access (open (3 public / 0 private estates))
-- [ ] **WL-0090** `src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java` (`ProctranRepository#insertL1616Xfrfun`): DB2 SQL on postgresql -- review the statement
+- [ ] **WL-0091** `src/main/java/com/gitgalaxy/modernized/repository/db2/ProctranRepository.java` (`ProctranRepository#insertL1616Xfrfun`): DB2 SQL on postgresql -- review the statement
   - fact: `src/base/cobol_src/XFRFUN.cbl:1616`, DB2 table access (open (3 public / 0 private estates))
 
 <a id="transaction-split"></a>
@@ -453,239 +457,188 @@ _Resolution:_ Run each statement on the target database; DB2-only syntax (FETCH 
 
 _Resolution:_ End the transaction at the SYNCPOINT the comment cites: a nested REQUIRES_NEW call, or two service methods.
 
-**`src/base/cobol_src/BANKDATA.cbl`**
+**`src/base/cobol_src/BANKDATA.cbl`** -- porting ticket [`ai_agent_jobs/BANKDATA_port_ticket.md`](ai_agent_jobs/BANKDATA_port_ticket.md)
 
-- [ ] **WL-0091** `src/main/java/com/gitgalaxy/modernized/service/BankdataService.java:42`: split the transaction here
-- [ ] **WL-0092** `src/main/java/com/gitgalaxy/modernized/service/BankdataService.java:52`: split the transaction here
-- [ ] **WL-0093** `src/main/java/com/gitgalaxy/modernized/service/BankdataService.java:62`: split the transaction here
+- [ ] **WL-0092** `src/main/java/com/gitgalaxy/modernized/service/BankdataService.java:48`: split the transaction here
+- [ ] **WL-0093** `src/main/java/com/gitgalaxy/modernized/service/BankdataService.java:58`: split the transaction here
+- [ ] **WL-0094** `src/main/java/com/gitgalaxy/modernized/service/BankdataService.java:68`: split the transaction here
 
 <a id="business-logic"></a>
 ## Business logic to port (port)
 
 _Resolution:_ Port the cited paragraphs; the skeleton names the COBOL lines and the facts they touch.
 
-**`src/base/cobol_src/ABNDPROC.cbl`**
+**`src/base/cobol_src/ABNDPROC.cbl`** -- porting ticket [`ai_agent_jobs/ABNDPROC_port_ticket.md`](ai_agent_jobs/ABNDPROC_port_ticket.md)
 
-- [ ] **WL-0094** `src/main/java/com/gitgalaxy/modernized/service/AbndprocService.java:38`: Implement extracted business rules here
-- [ ] **WL-0095** `src/main/java/com/gitgalaxy/modernized/service/AbndprocService.java:41`: implement from the program's business rules
+- [ ] **WL-0095** `src/main/java/com/gitgalaxy/modernized/service/AbndprocService.java:37`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0096** `src/main/java/com/gitgalaxy/modernized/service/AbndprocService.java:43`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/ACCTCTRL.cbl`**
+**`src/base/cobol_src/ACCTCTRL.cbl`** -- porting ticket [`ai_agent_jobs/ACCTCTRL_port_ticket.md`](ai_agent_jobs/ACCTCTRL_port_ticket.md)
 
-- [ ] **WL-0096** `src/main/java/com/gitgalaxy/modernized/service/AcctctrlService.java:26`: Implement extracted business rules here
+- [ ] **WL-0097** `src/main/java/com/gitgalaxy/modernized/service/AcctctrlService.java:26`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0098** `src/main/java/com/gitgalaxy/modernized/service/AcctctrlService.java:32`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/BANKDATA.cbl`**
+**`src/base/cobol_src/BANKDATA.cbl`** -- porting ticket [`ai_agent_jobs/BANKDATA_port_ticket.md`](ai_agent_jobs/BANKDATA_port_ticket.md)
 
-- [ ] **WL-0097** `src/main/java/com/gitgalaxy/modernized/service/BankdataService.java:32`: Implement extracted business rules here
-- [ ] **WL-0098** `src/main/java/com/gitgalaxy/modernized/service/BankdataService.java:69` (`BankdataService#runBatch`): port the PROCEDURE DIVISION main line; return its RETURN-CODE
+- [ ] **WL-0099** `src/main/java/com/gitgalaxy/modernized/service/BankdataService.java:75` (`BankdataService#runBatch`): port the PROCEDURE DIVISION main line; return its RETURN-CODE
   - fact: `etc/install/base/installjcl/BANKDATA.jcl:94`, JCL job flow (open (5 public / 0 private estates))
 
-**`src/base/cobol_src/BNK1CAC.cbl`**
+**`src/base/cobol_src/BNK1CAC.cbl`** -- porting ticket [`ai_agent_jobs/BNK1CAC_port_ticket.md`](ai_agent_jobs/BNK1CAC_port_ticket.md)
 
-- [ ] **WL-0099** `src/main/java/com/gitgalaxy/modernized/service/Bnk1cacService.java:47`: Implement extracted business rules here
-- [ ] **WL-0100** `src/main/java/com/gitgalaxy/modernized/service/Bnk1cacService.java:50`: implement from the program's business rules
-- [ ] **WL-0101** `src/main/java/com/gitgalaxy/modernized/service/Bnk1cacService.java:149` (`Bnk1cacService#renderBnk1ca`): port the logic that fills BNK1CAO before the SEND
-  - fact: `src/base/cobol_src/BNK1CAC.cbl:966`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1CAC.cbl:1040`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1CAC.cbl:1117`, BMS screen fields (open (3 public / 0 private estates))
-- [ ] **WL-0102** `src/main/java/com/gitgalaxy/modernized/service/Bnk1cacService.java:157` (`Bnk1cacService#submitBnk1ca`): port the logic that reads BNK1CAI after the RECEIVE
-  - fact: `src/base/cobol_src/BNK1CAC.cbl:356`, BMS screen fields (open (3 public / 0 private estates))
+- [ ] **WL-0100** `src/main/java/com/gitgalaxy/modernized/service/Bnk1cacService.java:73`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0101** `src/main/java/com/gitgalaxy/modernized/service/Bnk1cacService.java:79`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/BNK1CCA.cbl`**
+**`src/base/cobol_src/BNK1CCA.cbl`** -- porting ticket [`ai_agent_jobs/BNK1CCA_port_ticket.md`](ai_agent_jobs/BNK1CCA_port_ticket.md)
 
-- [ ] **WL-0103** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java:47`: Implement extracted business rules here
-- [ ] **WL-0104** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java:50`: implement from the program's business rules
-- [ ] **WL-0105** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java:154` (`Bnk1ccaService#renderBnk1acc`): port the logic that fills BNK1ACCO before the SEND
-  - fact: `src/base/cobol_src/BNK1CCA.cbl:622`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1CCA.cbl:696`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1CCA.cbl:772`, BMS screen fields (open (3 public / 0 private estates))
-- [ ] **WL-0106** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java:162` (`Bnk1ccaService#submitBnk1acc`): port the logic that reads BNK1ACCI after the RECEIVE
-  - fact: `src/base/cobol_src/BNK1CCA.cbl:333`, BMS screen fields (open (3 public / 0 private estates))
+- [ ] **WL-0102** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java:69`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0103** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccaService.java:75`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/BNK1CCS.cbl`**
+**`src/base/cobol_src/BNK1CCS.cbl`** -- porting ticket [`ai_agent_jobs/BNK1CCS_port_ticket.md`](ai_agent_jobs/BNK1CCS_port_ticket.md)
 
-- [ ] **WL-0107** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:54`: Implement extracted business rules here
-- [ ] **WL-0108** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:57`: implement from the program's business rules
-- [ ] **WL-0109** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:185`: port paragraph HANDLE-ABEND's logic
-- [ ] **WL-0110** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:203`: port paragraph None's logic
-- [ ] **WL-0111** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:216` (`Bnk1ccsService#renderBnk1cc`): port the logic that fills BNK1CCO before the SEND
-  - fact: `src/base/cobol_src/BNK1CCS.cbl:1286`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1CCS.cbl:1364`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1CCS.cbl:1441`, BMS screen fields (open (3 public / 0 private estates))
-- [ ] **WL-0112** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:224` (`Bnk1ccsService#submitBnk1cc`): port the logic that reads BNK1CCI after the RECEIVE
-  - fact: `src/base/cobol_src/BNK1CCS.cbl:500`, BMS screen fields (open (3 public / 0 private estates))
+- [ ] **WL-0104** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:80`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0105** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:86`: port the PROCEDURE DIVISION into this task
+- [ ] **WL-0106** `src/main/java/com/gitgalaxy/modernized/service/Bnk1ccsService.java:191`: port paragraph HANDLE-ABEND's logic
 
-**`src/base/cobol_src/BNK1CRA.cbl`**
+**`src/base/cobol_src/BNK1CRA.cbl`** -- porting ticket [`ai_agent_jobs/BNK1CRA_port_ticket.md`](ai_agent_jobs/BNK1CRA_port_ticket.md)
 
-- [ ] **WL-0113** `src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java:47`: Implement extracted business rules here
-- [ ] **WL-0114** `src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java:50`: implement from the program's business rules
-- [ ] **WL-0115** `src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java:149` (`Bnk1craService#renderBnk1cd`): port the logic that fills BNK1CDO before the SEND
-  - fact: `src/base/cobol_src/BNK1CRA.cbl:649`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1CRA.cbl:723`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1CRA.cbl:797`, BMS screen fields (open (3 public / 0 private estates))
-- [ ] **WL-0116** `src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java:157` (`Bnk1craService#submitBnk1cd`): port the logic that reads BNK1CDI after the RECEIVE
-  - fact: `src/base/cobol_src/BNK1CRA.cbl:370`, BMS screen fields (open (3 public / 0 private estates))
+- [ ] **WL-0107** `src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java:73`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0108** `src/main/java/com/gitgalaxy/modernized/service/Bnk1craService.java:79`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/BNK1DAC.cbl`**
+**`src/base/cobol_src/BNK1DAC.cbl`** -- porting ticket [`ai_agent_jobs/BNK1DAC_port_ticket.md`](ai_agent_jobs/BNK1DAC_port_ticket.md)
 
-- [ ] **WL-0117** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java:50`: Implement extracted business rules here
-- [ ] **WL-0118** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java:53`: implement from the program's business rules
-- [ ] **WL-0119** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java:158` (`Bnk1dacService#renderBnk1da`): port the logic that fills BNK1DAO before the SEND
-  - fact: `src/base/cobol_src/BNK1DAC.cbl:827`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1DAC.cbl:906`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1DAC.cbl:980`, BMS screen fields (open (3 public / 0 private estates))
-- [ ] **WL-0120** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java:166` (`Bnk1dacService#submitBnk1da`): port the logic that reads BNK1DAI after the RECEIVE
-  - fact: `src/base/cobol_src/BNK1DAC.cbl:426`, BMS screen fields (open (3 public / 0 private estates))
+- [ ] **WL-0109** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java:76`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0110** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dacService.java:82`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/BNK1DCS.cbl`**
+**`src/base/cobol_src/BNK1DCS.cbl`** -- porting ticket [`ai_agent_jobs/BNK1DCS_port_ticket.md`](ai_agent_jobs/BNK1DCS_port_ticket.md)
 
-- [ ] **WL-0121** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java:58`: Implement extracted business rules here
-- [ ] **WL-0122** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java:61`: implement from the program's business rules
-- [ ] **WL-0123** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java:223`: port paragraph ABEND-HANDLING's logic
-- [ ] **WL-0124** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java:241`: port paragraph None's logic
-- [ ] **WL-0125** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java:245` (`Bnk1dcsService#renderBnk1dc`): port the logic that fills BNK1DCO before the SEND
-  - fact: `src/base/cobol_src/BNK1DCS.cbl:1410`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1DCS.cbl:1487`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1DCS.cbl:1564`, BMS screen fields (open (3 public / 0 private estates))
-- [ ] **WL-0126** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java:253` (`Bnk1dcsService#submitBnk1dc`): port the logic that reads BNK1DCI after the RECEIVE
-  - fact: `src/base/cobol_src/BNK1DCS.cbl:597`, BMS screen fields (open (3 public / 0 private estates))
+- [ ] **WL-0111** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java:84`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0112** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java:90`: port the PROCEDURE DIVISION into this task
+- [ ] **WL-0113** `src/main/java/com/gitgalaxy/modernized/service/Bnk1dcsService.java:225`: port paragraph ABEND-HANDLING's logic
 
-**`src/base/cobol_src/BNK1TFN.cbl`**
+**`src/base/cobol_src/BNK1TFN.cbl`** -- porting ticket [`ai_agent_jobs/BNK1TFN_port_ticket.md`](ai_agent_jobs/BNK1TFN_port_ticket.md)
 
-- [ ] **WL-0127** `src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java:47`: Implement extracted business rules here
-- [ ] **WL-0128** `src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java:50`: implement from the program's business rules
-- [ ] **WL-0129** `src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java:149` (`Bnk1tfnService#renderBnk1tf`): port the logic that fills BNK1TFO before the SEND
-  - fact: `src/base/cobol_src/BNK1TFN.cbl:672`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1TFN.cbl:746`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1TFN.cbl:820`, BMS screen fields (open (3 public / 0 private estates))
-- [ ] **WL-0130** `src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java:157` (`Bnk1tfnService#submitBnk1tf`): port the logic that reads BNK1TFI after the RECEIVE
-  - fact: `src/base/cobol_src/BNK1TFN.cbl:356`, BMS screen fields (open (3 public / 0 private estates))
+- [ ] **WL-0114** `src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java:73`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0115** `src/main/java/com/gitgalaxy/modernized/service/Bnk1tfnService.java:79`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/BNK1UAC.cbl`**
+**`src/base/cobol_src/BNK1UAC.cbl`** -- porting ticket [`ai_agent_jobs/BNK1UAC_port_ticket.md`](ai_agent_jobs/BNK1UAC_port_ticket.md)
 
-- [ ] **WL-0131** `src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java:50`: Implement extracted business rules here
-- [ ] **WL-0132** `src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java:53`: implement from the program's business rules
-- [ ] **WL-0133** `src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java:171` (`Bnk1uacService#renderBnk1ua`): port the logic that fills BNK1UAO before the SEND
-  - fact: `src/base/cobol_src/BNK1UAC.cbl:1074`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1UAC.cbl:1150`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNK1UAC.cbl:1225`, BMS screen fields (open (3 public / 0 private estates))
-- [ ] **WL-0134** `src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java:179` (`Bnk1uacService#submitBnk1ua`): port the logic that reads BNK1UAI after the RECEIVE
-  - fact: `src/base/cobol_src/BNK1UAC.cbl:419`, BMS screen fields (open (3 public / 0 private estates))
+- [ ] **WL-0116** `src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java:76`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0117** `src/main/java/com/gitgalaxy/modernized/service/Bnk1uacService.java:82`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/BNKMENU.cbl`**
+**`src/base/cobol_src/BNKMENU.cbl`** -- porting ticket [`ai_agent_jobs/BNKMENU_port_ticket.md`](ai_agent_jobs/BNKMENU_port_ticket.md)
 
-- [ ] **WL-0135** `src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java:51`: Implement extracted business rules here
-- [ ] **WL-0136** `src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java:54`: implement from the program's business rules
-- [ ] **WL-0137** `src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java:224` (`BnkmenuService#renderBnk1me`): port the logic that fills BNK1MEO before the SEND
-  - fact: `src/base/cobol_src/BNKMENU.cbl:979`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNKMENU.cbl:1053`, BMS screen fields (open (3 public / 0 private estates))
-  - fact: `src/base/cobol_src/BNKMENU.cbl:1129`, BMS screen fields (open (3 public / 0 private estates))
-- [ ] **WL-0138** `src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java:232` (`BnkmenuService#submitBnk1me`): port the logic that reads BNK1MEI after the RECEIVE
-  - fact: `src/base/cobol_src/BNKMENU.cbl:274`, BMS screen fields (open (3 public / 0 private estates))
+- [ ] **WL-0118** `src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java:75`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0119** `src/main/java/com/gitgalaxy/modernized/service/BnkmenuService.java:81`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/CRDTAGY1.cbl`**
+**`src/base/cobol_src/CRDTAGY1.cbl`** -- porting ticket [`ai_agent_jobs/CRDTAGY1_port_ticket.md`](ai_agent_jobs/CRDTAGY1_port_ticket.md)
 
-- [ ] **WL-0139** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java:38`: Implement extracted business rules here
-- [ ] **WL-0140** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java:41`: implement from the program's business rules
-- [ ] **WL-0141** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java:44`: build the response
+- [ ] **WL-0120** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java:33`: implement from the program's business rules
+- [ ] **WL-0121** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java:36`: build the response
+- [ ] **WL-0122** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java:39`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0123** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy1Service.java:45`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/CRDTAGY2.cbl`**
+**`src/base/cobol_src/CRDTAGY2.cbl`** -- porting ticket [`ai_agent_jobs/CRDTAGY2_port_ticket.md`](ai_agent_jobs/CRDTAGY2_port_ticket.md)
 
-- [ ] **WL-0142** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java:38`: Implement extracted business rules here
-- [ ] **WL-0143** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java:41`: implement from the program's business rules
-- [ ] **WL-0144** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java:44`: build the response
+- [ ] **WL-0124** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java:33`: implement from the program's business rules
+- [ ] **WL-0125** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java:36`: build the response
+- [ ] **WL-0126** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java:39`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0127** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy2Service.java:45`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/CRDTAGY3.cbl`**
+**`src/base/cobol_src/CRDTAGY3.cbl`** -- porting ticket [`ai_agent_jobs/CRDTAGY3_port_ticket.md`](ai_agent_jobs/CRDTAGY3_port_ticket.md)
 
-- [ ] **WL-0145** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java:38`: Implement extracted business rules here
-- [ ] **WL-0146** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java:41`: implement from the program's business rules
-- [ ] **WL-0147** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java:44`: build the response
+- [ ] **WL-0128** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java:33`: implement from the program's business rules
+- [ ] **WL-0129** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java:36`: build the response
+- [ ] **WL-0130** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java:39`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0131** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy3Service.java:45`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/CRDTAGY4.cbl`**
+**`src/base/cobol_src/CRDTAGY4.cbl`** -- porting ticket [`ai_agent_jobs/CRDTAGY4_port_ticket.md`](ai_agent_jobs/CRDTAGY4_port_ticket.md)
 
-- [ ] **WL-0148** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java:38`: Implement extracted business rules here
-- [ ] **WL-0149** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java:41`: implement from the program's business rules
-- [ ] **WL-0150** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java:44`: build the response
+- [ ] **WL-0132** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java:33`: implement from the program's business rules
+- [ ] **WL-0133** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java:36`: build the response
+- [ ] **WL-0134** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java:39`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0135** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy4Service.java:45`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/CRDTAGY5.cbl`**
+**`src/base/cobol_src/CRDTAGY5.cbl`** -- porting ticket [`ai_agent_jobs/CRDTAGY5_port_ticket.md`](ai_agent_jobs/CRDTAGY5_port_ticket.md)
 
-- [ ] **WL-0151** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java:38`: Implement extracted business rules here
-- [ ] **WL-0152** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java:41`: implement from the program's business rules
-- [ ] **WL-0153** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java:44`: build the response
+- [ ] **WL-0136** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java:33`: implement from the program's business rules
+- [ ] **WL-0137** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java:36`: build the response
+- [ ] **WL-0138** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java:39`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0139** `src/main/java/com/gitgalaxy/modernized/service/Crdtagy5Service.java:45`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/CREACC.cbl`**
+**`src/base/cobol_src/CREACC.cbl`** -- porting ticket [`ai_agent_jobs/CREACC_port_ticket.md`](ai_agent_jobs/CREACC_port_ticket.md)
 
-- [ ] **WL-0154** `src/main/java/com/gitgalaxy/modernized/service/CreaccService.java:48`: Implement extracted business rules here
-- [ ] **WL-0155** `src/main/java/com/gitgalaxy/modernized/service/CreaccService.java:51`: implement from the program's business rules
+- [ ] **WL-0140** `src/main/java/com/gitgalaxy/modernized/service/CreaccService.java:45`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0141** `src/main/java/com/gitgalaxy/modernized/service/CreaccService.java:51`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/CRECUST.cbl`**
+**`src/base/cobol_src/CRECUST.cbl`** -- porting ticket [`ai_agent_jobs/CRECUST_port_ticket.md`](ai_agent_jobs/CRECUST_port_ticket.md)
 
-- [ ] **WL-0156** `src/main/java/com/gitgalaxy/modernized/service/CrecustService.java:55`: Implement extracted business rules here
-- [ ] **WL-0157** `src/main/java/com/gitgalaxy/modernized/service/CrecustService.java:58`: implement from the program's business rules
+- [ ] **WL-0142** `src/main/java/com/gitgalaxy/modernized/service/CrecustService.java:51`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0143** `src/main/java/com/gitgalaxy/modernized/service/CrecustService.java:57`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/CUSTCTRL.cbl`**
+**`src/base/cobol_src/CUSTCTRL.cbl`** -- porting ticket [`ai_agent_jobs/CUSTCTRL_port_ticket.md`](ai_agent_jobs/CUSTCTRL_port_ticket.md)
 
-- [ ] **WL-0158** `src/main/java/com/gitgalaxy/modernized/service/CustctrlService.java:39`: Implement extracted business rules here
-- [ ] **WL-0159** `src/main/java/com/gitgalaxy/modernized/service/CustctrlService.java:42`: implement from the program's business rules
+- [ ] **WL-0144** `src/main/java/com/gitgalaxy/modernized/service/CustctrlService.java:38`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0145** `src/main/java/com/gitgalaxy/modernized/service/CustctrlService.java:44`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/DBCRFUN.cbl`**
+**`src/base/cobol_src/DBCRFUN.cbl`** -- porting ticket [`ai_agent_jobs/DBCRFUN_port_ticket.md`](ai_agent_jobs/DBCRFUN_port_ticket.md)
 
-- [ ] **WL-0160** `src/main/java/com/gitgalaxy/modernized/service/DbcrfunService.java:40`: Implement extracted business rules here
-- [ ] **WL-0161** `src/main/java/com/gitgalaxy/modernized/service/DbcrfunService.java:43`: implement from the program's business rules
-- [ ] **WL-0162** `src/main/java/com/gitgalaxy/modernized/service/DbcrfunService.java:93`: port paragraph ABEND-HANDLING's logic
+- [ ] **WL-0146** `src/main/java/com/gitgalaxy/modernized/service/DbcrfunService.java:36`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0147** `src/main/java/com/gitgalaxy/modernized/service/DbcrfunService.java:42`: port the PROCEDURE DIVISION into this task
+- [ ] **WL-0148** `src/main/java/com/gitgalaxy/modernized/service/DbcrfunService.java:116`: port paragraph ABEND-HANDLING's logic
 
-**`src/base/cobol_src/DELACC.cbl`**
+**`src/base/cobol_src/DELACC.cbl`** -- porting ticket [`ai_agent_jobs/DELACC_port_ticket.md`](ai_agent_jobs/DELACC_port_ticket.md)
 
-- [ ] **WL-0163** `src/main/java/com/gitgalaxy/modernized/service/DelaccService.java:35`: Implement extracted business rules here
-- [ ] **WL-0164** `src/main/java/com/gitgalaxy/modernized/service/DelaccService.java:38`: implement from the program's business rules
+- [ ] **WL-0149** `src/main/java/com/gitgalaxy/modernized/service/DelaccService.java:31`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0150** `src/main/java/com/gitgalaxy/modernized/service/DelaccService.java:37`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/DELCUS.cbl`**
+**`src/base/cobol_src/DELCUS.cbl`** -- porting ticket [`ai_agent_jobs/DELCUS_port_ticket.md`](ai_agent_jobs/DELCUS_port_ticket.md)
 
-- [ ] **WL-0165** `src/main/java/com/gitgalaxy/modernized/service/DelcusService.java:53`: Implement extracted business rules here
-- [ ] **WL-0166** `src/main/java/com/gitgalaxy/modernized/service/DelcusService.java:56`: implement from the program's business rules
+- [ ] **WL-0151** `src/main/java/com/gitgalaxy/modernized/service/DelcusService.java:48`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0152** `src/main/java/com/gitgalaxy/modernized/service/DelcusService.java:54`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/GETCOMPY.cbl`**
+**`src/base/cobol_src/GETCOMPY.cbl`** -- porting ticket [`ai_agent_jobs/GETCOMPY_port_ticket.md`](ai_agent_jobs/GETCOMPY_port_ticket.md)
 
-- [ ] **WL-0167** `src/main/java/com/gitgalaxy/modernized/service/GetcompyService.java:24`: Implement extracted business rules here
-- [ ] **WL-0168** `src/main/java/com/gitgalaxy/modernized/service/GetcompyService.java:27`: implement from the program's business rules
+- [ ] **WL-0153** `src/main/java/com/gitgalaxy/modernized/service/GetcompyService.java:23`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0154** `src/main/java/com/gitgalaxy/modernized/service/GetcompyService.java:29`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/GETSCODE.cbl`**
+**`src/base/cobol_src/GETSCODE.cbl`** -- porting ticket [`ai_agent_jobs/GETSCODE_port_ticket.md`](ai_agent_jobs/GETSCODE_port_ticket.md)
 
-- [ ] **WL-0169** `src/main/java/com/gitgalaxy/modernized/service/GetscodeService.java:24`: Implement extracted business rules here
-- [ ] **WL-0170** `src/main/java/com/gitgalaxy/modernized/service/GetscodeService.java:27`: implement from the program's business rules
+- [ ] **WL-0155** `src/main/java/com/gitgalaxy/modernized/service/GetscodeService.java:23`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0156** `src/main/java/com/gitgalaxy/modernized/service/GetscodeService.java:29`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/INQACC.cbl`**
+**`src/base/cobol_src/INQACC.cbl`** -- porting ticket [`ai_agent_jobs/INQACC_port_ticket.md`](ai_agent_jobs/INQACC_port_ticket.md)
 
-- [ ] **WL-0171** `src/main/java/com/gitgalaxy/modernized/service/InqaccService.java:37`: Implement extracted business rules here
-- [ ] **WL-0172** `src/main/java/com/gitgalaxy/modernized/service/InqaccService.java:40`: implement from the program's business rules
-- [ ] **WL-0173** `src/main/java/com/gitgalaxy/modernized/service/InqaccService.java:126`: port paragraph ABEND-HANDLING's logic
+- [ ] **WL-0157** `src/main/java/com/gitgalaxy/modernized/service/InqaccService.java:33`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0158** `src/main/java/com/gitgalaxy/modernized/service/InqaccService.java:39`: port the PROCEDURE DIVISION into this task
+- [ ] **WL-0159** `src/main/java/com/gitgalaxy/modernized/service/InqaccService.java:141`: port paragraph ABEND-HANDLING's logic
 
-**`src/base/cobol_src/INQACCCU.cbl`**
+**`src/base/cobol_src/INQACCCU.cbl`** -- porting ticket [`ai_agent_jobs/INQACCCU_port_ticket.md`](ai_agent_jobs/INQACCCU_port_ticket.md)
 
-- [ ] **WL-0174** `src/main/java/com/gitgalaxy/modernized/service/InqacccuService.java:42`: Implement extracted business rules here
-- [ ] **WL-0175** `src/main/java/com/gitgalaxy/modernized/service/InqacccuService.java:45`: implement from the program's business rules
-- [ ] **WL-0176** `src/main/java/com/gitgalaxy/modernized/service/InqacccuService.java:139`: port paragraph ABEND-HANDLING's logic
+- [ ] **WL-0160** `src/main/java/com/gitgalaxy/modernized/service/InqacccuService.java:39`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0161** `src/main/java/com/gitgalaxy/modernized/service/InqacccuService.java:45`: port the PROCEDURE DIVISION into this task
+- [ ] **WL-0162** `src/main/java/com/gitgalaxy/modernized/service/InqacccuService.java:159`: port paragraph ABEND-HANDLING's logic
 
-**`src/base/cobol_src/INQCUST.cbl`**
+**`src/base/cobol_src/INQCUST.cbl`** -- porting ticket [`ai_agent_jobs/INQCUST_port_ticket.md`](ai_agent_jobs/INQCUST_port_ticket.md)
 
-- [ ] **WL-0177** `src/main/java/com/gitgalaxy/modernized/service/InqcustService.java:50`: Implement extracted business rules here
-- [ ] **WL-0178** `src/main/java/com/gitgalaxy/modernized/service/InqcustService.java:53`: implement from the program's business rules
-- [ ] **WL-0179** `src/main/java/com/gitgalaxy/modernized/service/InqcustService.java:100`: port paragraph ABEND-HANDLING's logic
+- [ ] **WL-0163** `src/main/java/com/gitgalaxy/modernized/service/InqcustService.java:46`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0164** `src/main/java/com/gitgalaxy/modernized/service/InqcustService.java:52`: port the PROCEDURE DIVISION into this task
+- [ ] **WL-0165** `src/main/java/com/gitgalaxy/modernized/service/InqcustService.java:123`: port paragraph ABEND-HANDLING's logic
 
-**`src/base/cobol_src/UPDACC.cbl`**
+**`src/base/cobol_src/UPDACC.cbl`** -- porting ticket [`ai_agent_jobs/UPDACC_port_ticket.md`](ai_agent_jobs/UPDACC_port_ticket.md)
 
-- [ ] **WL-0180** `src/main/java/com/gitgalaxy/modernized/service/UpdaccService.java:29`: Implement extracted business rules here
-- [ ] **WL-0181** `src/main/java/com/gitgalaxy/modernized/service/UpdaccService.java:32`: implement from the program's business rules
+- [ ] **WL-0166** `src/main/java/com/gitgalaxy/modernized/service/UpdaccService.java:28`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0167** `src/main/java/com/gitgalaxy/modernized/service/UpdaccService.java:34`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/UPDCUST.cbl`**
+**`src/base/cobol_src/UPDCUST.cbl`** -- porting ticket [`ai_agent_jobs/UPDCUST_port_ticket.md`](ai_agent_jobs/UPDCUST_port_ticket.md)
 
-- [ ] **WL-0182** `src/main/java/com/gitgalaxy/modernized/service/UpdcustService.java:39`: Implement extracted business rules here
-- [ ] **WL-0183** `src/main/java/com/gitgalaxy/modernized/service/UpdcustService.java:42`: implement from the program's business rules
+- [ ] **WL-0168** `src/main/java/com/gitgalaxy/modernized/service/UpdcustService.java:38`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0169** `src/main/java/com/gitgalaxy/modernized/service/UpdcustService.java:44`: port the PROCEDURE DIVISION into this task
 
-**`src/base/cobol_src/XFRFUN.cbl`**
+**`src/base/cobol_src/XFRFUN.cbl`** -- porting ticket [`ai_agent_jobs/XFRFUN_port_ticket.md`](ai_agent_jobs/XFRFUN_port_ticket.md)
 
-- [ ] **WL-0184** `src/main/java/com/gitgalaxy/modernized/service/XfrfunService.java:46`: Implement extracted business rules here
-- [ ] **WL-0185** `src/main/java/com/gitgalaxy/modernized/service/XfrfunService.java:49`: implement from the program's business rules
-- [ ] **WL-0186** `src/main/java/com/gitgalaxy/modernized/service/XfrfunService.java:279`: port paragraph ABEND-HANDLING's logic
+- [ ] **WL-0170** `src/main/java/com/gitgalaxy/modernized/service/XfrfunService.java:42`: port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it
+- [ ] **WL-0171** `src/main/java/com/gitgalaxy/modernized/service/XfrfunService.java:48`: port the PROCEDURE DIVISION into this task
+- [ ] **WL-0172** `src/main/java/com/gitgalaxy/modernized/service/XfrfunService.java:278`: port paragraph ABEND-HANDLING's logic
 
 <a id="configuration"></a>
 ## Target configuration (review)
@@ -694,4 +647,4 @@ _Resolution:_ Point the datasource at the target database; the password comes fr
 
 **`(project configuration)`**
 
-- [ ] **WL-0187** `src/main/resources/application.yml:9`: Update these credentials for your target environment
+- [ ] **WL-0173** `src/main/resources/application.yml:9`: Update these credentials for your target environment

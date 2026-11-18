@@ -10,15 +10,15 @@ package com.gitgalaxy.modernized.controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import lombok.RequiredArgsConstructor;
-import com.gitgalaxy.modernized.dto.contract.Lgacdb01Cdb2area;
+import com.gitgalaxy.modernized.dto.contract.Lgacdb02Dfhcommarea;
 import com.gitgalaxy.modernized.service.Lgacdb02Service;
 
 /**
  * CICS program LGACDB02 (base/src/lgacdb02.cbl), generated from GitGalaxy's
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
- * COMMAREA: CDB2AREA (base/src/lgacdb01.cbl, 32500 bytes) -> Lgacdb01Cdb2area.
+ * COMMAREA: CDB2AREA (base/src/lgacdb01.cbl, 32500 bytes) -> Lgacdb02Dfhcommarea.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/lgacdb02")
@@ -27,15 +27,9 @@ public class Lgacdb02Controller {
 
     private final Lgacdb02Service lgacdb02Service;
 
-    /** CICS transaction DSCA -> Lgacdb02 (CSD base/cntl/cdef123.jcl:141 group GENAAORP). */
-    @PostMapping("/transactions/DSCA")
-    public ResponseEntity<Lgacdb01Cdb2area> transactionDSCA(@RequestBody Lgacdb01Cdb2area request) {
-        return ResponseEntity.ok(lgacdb02Service.handleTransaction("DSCA", request));
-    }
-
     /** Program-to-program entry: LINK at base/src/lgacdb01.cbl:186. */
     @PostMapping("/link")
-    public ResponseEntity<Lgacdb01Cdb2area> link(@RequestBody Lgacdb01Cdb2area request) {
+    public ResponseEntity<Lgacdb02Dfhcommarea> link(@RequestBody Lgacdb02Dfhcommarea request) {
         return ResponseEntity.ok(lgacdb02Service.handleLink(request));
     }
 

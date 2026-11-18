@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.Bnk1ccsSubpgmParms;
-import com.gitgalaxy.modernized.dto.contract.BnkmenuAbndinfoRec;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.CrecustDfhcommarea;
 import com.gitgalaxy.modernized.entity.vsam.OutputData;
 import com.gitgalaxy.modernized.entity.vsam.OutputDataKey;
 import com.gitgalaxy.modernized.exception.*;
@@ -21,7 +21,6 @@ import com.gitgalaxy.modernized.repository.vsam.OutputDataRepository;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
-import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -46,30 +45,56 @@ public class CrecustService {
 
     private static final Logger log = LoggerFactory.getLogger(CrecustService.class);
 
-    private final ObjectProvider<AbndprocService> abndprocService;
     private final OutputDataRepository outputDataRepository;
     private final ProctranRepository proctranRepository;
 
-    public void executeCrecust(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for CRECUST");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("Crecust: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
-    public Bnk1ccsSubpgmParms handleLink(Bnk1ccsSubpgmParms request) {
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on `request`, passed by reference -- what it changes, the caller sees. */
+    public CrecustDfhcommarea handleLink(CrecustDfhcommarea request) {
         log.info("Crecust: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("CRECUST", request);
+        region.run(task, "CRECUST", this::runTask);
         return request;
     }
 
-    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/CRECUST.cbl:1250: the target is data-driven. Candidates: ABNDPROC (value).
+    /** #5053: handleLink with the raw bytes of the LINK's COMMAREA (passed by address: what the program
+     *  leaves there the caller sees); lastLinkBytes() then answers the bytes it left. */
+    public CrecustDfhcommarea handleLink(CrecustDfhcommarea request, byte[] area) {
+        log.info("Crecust: handleLink (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("CRECUST", request, area);
+        region.run(task, "CRECUST", this::runTask);
+        byte[] left = task.linkAreaView();
+        lastLinkBytes = task.linkAreaTaken() && left != null ? java.util.Arrays.copyOf(left, left.length) : null;
+        return request;
+    }
+
+    // @facade-helper: the bytes the last byte-carrying handleLink's program left in the COMMAREA
+    private byte[] lastLinkBytes;
+
+    /** The bytes the last byte-carrying handleLink's program left in the LINK COMMAREA (a copy; null: it took
+     *  none -- its DTO is the COMMAREA). @facade-helper */
+    public byte[] lastLinkBytes() {
+        return lastLinkBytes == null ? null : java.util.Arrays.copyOf(lastLinkBytes, lastLinkBytes.length);
+    }
+
+    /** EXEC CICS LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/CRECUST.cbl:1250, COMMAREA(ABNDINFO-REC): the target is data-driven (candidates the engine found: ABNDPROC (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchWsAbendPgmL1250(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ABNDPROC":
-                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/CRECUST.cbl:1250: no known target " + program);
-        }
+    public String dispatchWsAbendPgmL1250(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
     }
 
     /** CBSA.CICSBSA.CUSTOMER as CICS file CUSTOMER at src/base/cobol_src/CRECUST.cbl:1029, 1048, 1075, 1086, 1290, 1306, 1326, 1340; VSAM defines field testing: open (3 public / 0 private estates). */
@@ -78,6 +103,12 @@ public class CrecustService {
     }
 
     public OutputData writeCustomer(OutputData record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<OutputData> onFile = outputDataRepository.findById(record.getId());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file CUSTOMER already holds the key of this record");
+        }
         return outputDataRepository.save(record);
     }
 

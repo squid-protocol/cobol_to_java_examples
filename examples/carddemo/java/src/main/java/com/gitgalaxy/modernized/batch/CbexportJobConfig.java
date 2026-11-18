@@ -30,7 +30,7 @@ public class CbexportJobConfig {
     public Job cbexportJob(JobRepository jobRepository, PlatformTransactionManager tx, JclSteps steps, CbexportService cbexportService) {
         return new JobBuilder("CBEXPORT", jobRepository)
                 .start(new StepBuilder("STEP01", jobRepository)
-                        .tasklet(steps.utility("STEP01", "STEP01", null, null, null, "IDCAMS", "STEP01 runs the utility IDCAMS (its control statements are in SYSIN) -- a utility step to port"), tx).build())
+                        .tasklet(steps.utility("STEP01", "STEP01", null, null, null, "IDCAMS", "STEP01 runs IDCAMS, which uses more than one IDCAMS command, which the IDCAMS model refuses -- not run as a record copy: a utility step to port"), tx).build())
                 .next(new StepBuilder("STEP02", jobRepository)
                         .tasklet(steps.program("STEP02", "STEP02", null, null, null, () -> cbexportService.runBatch(DDS_STEP02, null)), tx).build())
                 .build();

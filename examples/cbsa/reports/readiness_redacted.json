@@ -1,0 +1,3514 @@
+{
+  "copybook_gaps": [],
+  "eras": {
+    "by_era": {
+      "0": 0,
+      "1": 0,
+      "2": 22,
+      "3": 1,
+      "4": 6,
+      "none": 2
+    },
+    "mixed": 7,
+    "programs": 31,
+    "tells": {
+      "address-of": 2,
+      "async": 1,
+      "channel-container": 6,
+      "exec-sql": 12,
+      "handle-condition": 7,
+      "le-callable": 2,
+      "resp": 25
+    }
+  },
+  "features": {
+    "cics_commands": {
+      "ABEND": {
+        "count": 60,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "ASKTIME": {
+        "count": 35,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "ASSIGN": {
+        "count": 252,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "BIF DEEDIT": {
+        "count": 7,
+        "programs": [
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "DELAY FOR": {
+        "count": 18,
+        "programs": [
+          "P-3477105c53c9",
+          "P-47015551c45f",
+          "P-61348b7e3035",
+          "P-7d624297a2ab",
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "DELETE": {
+        "count": 2,
+        "programs": [
+          "P-61348b7e3035"
+        ]
+      },
+      "DEQ": {
+        "count": 2,
+        "programs": [
+          "P-55d5896a9570",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "ENDBR": {
+        "count": 2,
+        "programs": [
+          "P-3477105c53c9"
+        ]
+      },
+      "ENQ": {
+        "count": 2,
+        "programs": [
+          "P-55d5896a9570",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "FETCH": {
+        "count": 1,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "FORMATTIME": {
+        "count": 35,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "GET": {
+        "count": 6,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "HANDLE ABEND": {
+        "count": 9,
+        "programs": [
+          "P-3477105c53c9",
+          "P-542fdec2122c",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-a70ec51bb082"
+        ]
+      },
+      "INQUIRE": {
+        "count": 5,
+        "programs": [
+          "P-542fdec2122c",
+          "P-870c6190b85d",
+          "P-fb105c118c9e"
+        ]
+      },
+      "LINK": {
+        "count": 140,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "PUT": {
+        "count": 6,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "READ": {
+        "count": 10,
+        "programs": [
+          "P-3477105c53c9",
+          "P-47015551c45f",
+          "P-61348b7e3035",
+          "P-abfceaadbcaf",
+          "P-b9aa323803db"
+        ]
+      },
+      "READPREV": {
+        "count": 2,
+        "programs": [
+          "P-3477105c53c9"
+        ]
+      },
+      "RECEIVE": {
+        "count": 9,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "RETURN": {
+        "count": 69,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-0c3aee2146e5",
+          "P-20d017751319",
+          "P-2a55819bda34",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-88c57a6fbb9f",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "REWRITE": {
+        "count": 4,
+        "programs": [
+          "P-abfceaadbcaf",
+          "P-b9aa323803db"
+        ]
+      },
+      "RUN": {
+        "count": 1,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "SEND": {
+        "count": 28,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND CONTROL": {
+        "count": 8,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND TEXT": {
+        "count": 9,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SET": {
+        "count": 7,
+        "programs": [
+          "P-542fdec2122c",
+          "P-870c6190b85d"
+        ]
+      },
+      "STARTBR": {
+        "count": 2,
+        "programs": [
+          "P-3477105c53c9"
+        ]
+      },
+      "SYNCPOINT ROLLBACK": {
+        "count": 16,
+        "programs": [
+          "P-3477105c53c9",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7d624297a2ab",
+          "P-a70ec51bb082"
+        ]
+      },
+      "WRITE": {
+        "count": 3,
+        "programs": [
+          "P-0c3aee2146e5",
+          "P-abfceaadbcaf"
+        ]
+      }
+    },
+    "cics_options": {
+      "ABEND: ABCODE": {
+        "count": 60,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "ABEND: CANCEL": {
+        "count": 28,
+        "programs": [
+          "P-3477105c53c9",
+          "P-542fdec2122c",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-a70ec51bb082"
+        ]
+      },
+      "ABEND: NODUMP": {
+        "count": 38,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "ASKTIME: ABSTIME": {
+        "count": 35,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "ASSIGN: ABCODE": {
+        "count": 6,
+        "programs": [
+          "P-3477105c53c9",
+          "P-542fdec2122c",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7d624297a2ab",
+          "P-a70ec51bb082"
+        ]
+      },
+      "ASSIGN: APPLID": {
+        "count": 123,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "ASSIGN: PROGRAM": {
+        "count": 123,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "BIF DEEDIT: FIELD": {
+        "count": 7,
+        "programs": [
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "DELAY FOR: RESP": {
+        "count": 5,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "DELAY FOR: RESP2": {
+        "count": 5,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "DELAY FOR: SECONDS": {
+        "count": 18,
+        "programs": [
+          "P-3477105c53c9",
+          "P-47015551c45f",
+          "P-61348b7e3035",
+          "P-7d624297a2ab",
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "DELETE: FILE": {
+        "count": 2,
+        "programs": [
+          "P-61348b7e3035"
+        ]
+      },
+      "DELETE: RESP": {
+        "count": 2,
+        "programs": [
+          "P-61348b7e3035"
+        ]
+      },
+      "DELETE: RESP2": {
+        "count": 2,
+        "programs": [
+          "P-61348b7e3035"
+        ]
+      },
+      "DELETE: TOKEN": {
+        "count": 2,
+        "programs": [
+          "P-61348b7e3035"
+        ]
+      },
+      "DEQ: LENGTH": {
+        "count": 2,
+        "programs": [
+          "P-55d5896a9570",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "DEQ: RESOURCE": {
+        "count": 2,
+        "programs": [
+          "P-55d5896a9570",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "DEQ: RESP": {
+        "count": 2,
+        "programs": [
+          "P-55d5896a9570",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "DEQ: RESP2": {
+        "count": 2,
+        "programs": [
+          "P-55d5896a9570",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "ENDBR: FILE": {
+        "count": 2,
+        "programs": [
+          "P-3477105c53c9"
+        ]
+      },
+      "ENDBR: RESP": {
+        "count": 2,
+        "programs": [
+          "P-3477105c53c9"
+        ]
+      },
+      "ENDBR: RESP2": {
+        "count": 2,
+        "programs": [
+          "P-3477105c53c9"
+        ]
+      },
+      "ENQ: LENGTH": {
+        "count": 2,
+        "programs": [
+          "P-55d5896a9570",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "ENQ: RESOURCE": {
+        "count": 2,
+        "programs": [
+          "P-55d5896a9570",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "ENQ: RESP": {
+        "count": 2,
+        "programs": [
+          "P-55d5896a9570",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "ENQ: RESP2": {
+        "count": 2,
+        "programs": [
+          "P-55d5896a9570",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "FETCH: ABCODE": {
+        "count": 1,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "FETCH: ANY": {
+        "count": 1,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "FETCH: CHANNEL": {
+        "count": 1,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "FETCH: COMPSTATUS": {
+        "count": 1,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "FETCH: NOSUSPEND": {
+        "count": 1,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "FETCH: RESP": {
+        "count": 1,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "FETCH: RESP2": {
+        "count": 1,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "FORMATTIME: ABSTIME": {
+        "count": 35,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "FORMATTIME: DATESEP": {
+        "count": 35,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "FORMATTIME: DDMMYYYY": {
+        "count": 35,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "FORMATTIME: TIME": {
+        "count": 35,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "GET: CHANNEL": {
+        "count": 6,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "GET: CONTAINER": {
+        "count": 6,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "GET: FLENGTH": {
+        "count": 6,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "GET: INTO": {
+        "count": 6,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "GET: RESP": {
+        "count": 6,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "GET: RESP2": {
+        "count": 6,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "HANDLE ABEND: CANCEL": {
+        "count": 2,
+        "programs": [
+          "P-542fdec2122c",
+          "P-870c6190b85d"
+        ]
+      },
+      "HANDLE ABEND: LABEL": {
+        "count": 7,
+        "programs": [
+          "P-3477105c53c9",
+          "P-542fdec2122c",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-a70ec51bb082"
+        ]
+      },
+      "INQUIRE: ASSOCIATION": {
+        "count": 1,
+        "programs": [
+          "P-fb105c118c9e"
+        ]
+      },
+      "INQUIRE: ODAPPLID": {
+        "count": 1,
+        "programs": [
+          "P-fb105c118c9e"
+        ]
+      },
+      "INQUIRE: ODFACILNAME": {
+        "count": 1,
+        "programs": [
+          "P-fb105c118c9e"
+        ]
+      },
+      "INQUIRE: ODFACILTYPE": {
+        "count": 1,
+        "programs": [
+          "P-fb105c118c9e"
+        ]
+      },
+      "INQUIRE: ODNETWORKID": {
+        "count": 1,
+        "programs": [
+          "P-fb105c118c9e"
+        ]
+      },
+      "INQUIRE: ODUSERID": {
+        "count": 1,
+        "programs": [
+          "P-fb105c118c9e"
+        ]
+      },
+      "INQUIRE: RESP": {
+        "count": 4,
+        "programs": [
+          "P-542fdec2122c",
+          "P-870c6190b85d"
+        ]
+      },
+      "INQUIRE: RESP2": {
+        "count": 4,
+        "programs": [
+          "P-542fdec2122c",
+          "P-870c6190b85d"
+        ]
+      },
+      "INQUIRE: TERMINAL": {
+        "count": 4,
+        "programs": [
+          "P-542fdec2122c",
+          "P-870c6190b85d"
+        ]
+      },
+      "INQUIRE: UCTRANST": {
+        "count": 4,
+        "programs": [
+          "P-542fdec2122c",
+          "P-870c6190b85d"
+        ]
+      },
+      "LINK: COMMAREA": {
+        "count": 140,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "LINK: PROGRAM": {
+        "count": 140,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "LINK: RESP": {
+        "count": 14,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "LINK: RESP2": {
+        "count": 12,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "LINK: SYNCONRETURN": {
+        "count": 14,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-61348b7e3035",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "PUT: CHANNEL": {
+        "count": 6,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "PUT: CONTAINER": {
+        "count": 6,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "PUT: FLENGTH": {
+        "count": 6,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "PUT: FROM": {
+        "count": 6,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "PUT: RESP": {
+        "count": 6,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "PUT: RESP2": {
+        "count": 6,
+        "programs": [
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "READ: FILE": {
+        "count": 10,
+        "programs": [
+          "P-3477105c53c9",
+          "P-47015551c45f",
+          "P-61348b7e3035",
+          "P-abfceaadbcaf",
+          "P-b9aa323803db"
+        ]
+      },
+      "READ: INTO": {
+        "count": 10,
+        "programs": [
+          "P-3477105c53c9",
+          "P-47015551c45f",
+          "P-61348b7e3035",
+          "P-abfceaadbcaf",
+          "P-b9aa323803db"
+        ]
+      },
+      "READ: KEYLENGTH": {
+        "count": 2,
+        "programs": [
+          "P-47015551c45f"
+        ]
+      },
+      "READ: RESP": {
+        "count": 9,
+        "programs": [
+          "P-3477105c53c9",
+          "P-47015551c45f",
+          "P-61348b7e3035",
+          "P-abfceaadbcaf",
+          "P-b9aa323803db"
+        ]
+      },
+      "READ: RESP2": {
+        "count": 9,
+        "programs": [
+          "P-3477105c53c9",
+          "P-47015551c45f",
+          "P-61348b7e3035",
+          "P-abfceaadbcaf",
+          "P-b9aa323803db"
+        ]
+      },
+      "READ: RIDFLD": {
+        "count": 10,
+        "programs": [
+          "P-3477105c53c9",
+          "P-47015551c45f",
+          "P-61348b7e3035",
+          "P-abfceaadbcaf",
+          "P-b9aa323803db"
+        ]
+      },
+      "READ: TOKEN": {
+        "count": 2,
+        "programs": [
+          "P-61348b7e3035"
+        ]
+      },
+      "READ: UPDATE": {
+        "count": 6,
+        "programs": [
+          "P-61348b7e3035",
+          "P-abfceaadbcaf",
+          "P-b9aa323803db"
+        ]
+      },
+      "READPREV: FILE": {
+        "count": 2,
+        "programs": [
+          "P-3477105c53c9"
+        ]
+      },
+      "READPREV: INTO": {
+        "count": 2,
+        "programs": [
+          "P-3477105c53c9"
+        ]
+      },
+      "READPREV: RESP": {
+        "count": 2,
+        "programs": [
+          "P-3477105c53c9"
+        ]
+      },
+      "READPREV: RESP2": {
+        "count": 2,
+        "programs": [
+          "P-3477105c53c9"
+        ]
+      },
+      "READPREV: RIDFLD": {
+        "count": 2,
+        "programs": [
+          "P-3477105c53c9"
+        ]
+      },
+      "RECEIVE: ASIS": {
+        "count": 2,
+        "programs": [
+          "P-542fdec2122c",
+          "P-870c6190b85d"
+        ]
+      },
+      "RECEIVE: INTO": {
+        "count": 9,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "RECEIVE: MAP": {
+        "count": 9,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "RECEIVE: MAPSET": {
+        "count": 9,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "RECEIVE: RESP": {
+        "count": 9,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "RECEIVE: RESP2": {
+        "count": 9,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "RECEIVE: TERMINAL": {
+        "count": 2,
+        "programs": [
+          "P-542fdec2122c",
+          "P-870c6190b85d"
+        ]
+      },
+      "RETURN: COMMAREA": {
+        "count": 10,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "RETURN: IMMEDIATE": {
+        "count": 16,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "RETURN: LENGTH": {
+        "count": 9,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "RETURN: RESP": {
+        "count": 25,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "RETURN: RESP2": {
+        "count": 25,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "RETURN: TRANSID": {
+        "count": 26,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "REWRITE: FILE": {
+        "count": 4,
+        "programs": [
+          "P-abfceaadbcaf",
+          "P-b9aa323803db"
+        ]
+      },
+      "REWRITE: FROM": {
+        "count": 4,
+        "programs": [
+          "P-abfceaadbcaf",
+          "P-b9aa323803db"
+        ]
+      },
+      "REWRITE: LENGTH": {
+        "count": 1,
+        "programs": [
+          "P-b9aa323803db"
+        ]
+      },
+      "REWRITE: RESP": {
+        "count": 3,
+        "programs": [
+          "P-abfceaadbcaf",
+          "P-b9aa323803db"
+        ]
+      },
+      "REWRITE: RESP2": {
+        "count": 3,
+        "programs": [
+          "P-abfceaadbcaf",
+          "P-b9aa323803db"
+        ]
+      },
+      "RUN: CHANNEL": {
+        "count": 1,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "RUN: CHILD": {
+        "count": 1,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "RUN: RESP": {
+        "count": 1,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "RUN: RESP2": {
+        "count": 1,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "RUN: TRANSID": {
+        "count": 1,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "SEND CONTROL: ERASE": {
+        "count": 8,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND CONTROL: FREEKB": {
+        "count": 8,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND TEXT: ERASE": {
+        "count": 9,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND TEXT: FREEKB": {
+        "count": 9,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND TEXT: FROM": {
+        "count": 9,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND TEXT: RESP": {
+        "count": 9,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND TEXT: RESP2": {
+        "count": 9,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND: ALARM": {
+        "count": 9,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND: CURSOR": {
+        "count": 12,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-870c6190b85d",
+          "P-cdb2fd380b2c"
+        ]
+      },
+      "SEND: DATAONLY": {
+        "count": 18,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND: ERASE": {
+        "count": 10,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND: FREEKB": {
+        "count": 1,
+        "programs": [
+          "P-542fdec2122c"
+        ]
+      },
+      "SEND: FROM": {
+        "count": 27,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND: MAP": {
+        "count": 28,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND: MAPONLY": {
+        "count": 1,
+        "programs": [
+          "P-542fdec2122c"
+        ]
+      },
+      "SEND: MAPSET": {
+        "count": 27,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND: RESP": {
+        "count": 27,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SEND: RESP2": {
+        "count": 27,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-7984d84f6970",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SET: RESP": {
+        "count": 7,
+        "programs": [
+          "P-542fdec2122c",
+          "P-870c6190b85d"
+        ]
+      },
+      "SET: RESP2": {
+        "count": 7,
+        "programs": [
+          "P-542fdec2122c",
+          "P-870c6190b85d"
+        ]
+      },
+      "SET: TERMINAL": {
+        "count": 7,
+        "programs": [
+          "P-542fdec2122c",
+          "P-870c6190b85d"
+        ]
+      },
+      "SET: UCTRANST": {
+        "count": 7,
+        "programs": [
+          "P-542fdec2122c",
+          "P-870c6190b85d"
+        ]
+      },
+      "STARTBR: FILE": {
+        "count": 2,
+        "programs": [
+          "P-3477105c53c9"
+        ]
+      },
+      "STARTBR: RESP": {
+        "count": 2,
+        "programs": [
+          "P-3477105c53c9"
+        ]
+      },
+      "STARTBR: RESP2": {
+        "count": 2,
+        "programs": [
+          "P-3477105c53c9"
+        ]
+      },
+      "STARTBR: RIDFLD": {
+        "count": 2,
+        "programs": [
+          "P-3477105c53c9"
+        ]
+      },
+      "SYNCPOINT ROLLBACK: RESP": {
+        "count": 16,
+        "programs": [
+          "P-3477105c53c9",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7d624297a2ab",
+          "P-a70ec51bb082"
+        ]
+      },
+      "SYNCPOINT ROLLBACK: RESP2": {
+        "count": 16,
+        "programs": [
+          "P-3477105c53c9",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7d624297a2ab",
+          "P-a70ec51bb082"
+        ]
+      },
+      "WRITE: FILE": {
+        "count": 3,
+        "programs": [
+          "P-0c3aee2146e5",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "WRITE: FROM": {
+        "count": 3,
+        "programs": [
+          "P-0c3aee2146e5",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "WRITE: KEYLENGTH": {
+        "count": 2,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "WRITE: LENGTH": {
+        "count": 2,
+        "programs": [
+          "P-abfceaadbcaf"
+        ]
+      },
+      "WRITE: RESP": {
+        "count": 3,
+        "programs": [
+          "P-0c3aee2146e5",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "WRITE: RESP2": {
+        "count": 3,
+        "programs": [
+          "P-0c3aee2146e5",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "WRITE: RIDFLD": {
+        "count": 3,
+        "programs": [
+          "P-0c3aee2146e5",
+          "P-abfceaadbcaf"
+        ]
+      }
+    },
+    "compile_options": {
+      "ARITH: COMPAT": {
+        "count": 31,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-0c3aee2146e5",
+          "P-20d017751319",
+          "P-2a55819bda34",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-88c57a6fbb9f",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "INTDATE: ANSI": {
+        "count": 31,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-0c3aee2146e5",
+          "P-20d017751319",
+          "P-2a55819bda34",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-88c57a6fbb9f",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "NUMPROC: NOPFD": {
+        "count": 31,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-0c3aee2146e5",
+          "P-20d017751319",
+          "P-2a55819bda34",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-88c57a6fbb9f",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "TRUNC: STD": {
+        "count": 31,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-0c3aee2146e5",
+          "P-20d017751319",
+          "P-2a55819bda34",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-88c57a6fbb9f",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      }
+    },
+    "data_types": {
+      "BINARY": {
+        "count": 350,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-0c3aee2146e5",
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "COMP-1": {
+        "count": 2,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-cdb2fd380b2c"
+        ]
+      },
+      "COMP-2": {
+        "count": 5,
+        "programs": [
+          "P-59d66d59ea9c",
+          "P-974b124e0935",
+          "P-abfceaadbcaf",
+          "P-fb105c118c9e"
+        ]
+      },
+      "COMP-5": {
+        "count": 54,
+        "programs": [
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7d624297a2ab",
+          "P-a70ec51bb082",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "EDITED": {
+        "count": 20,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-6a0ad769e0d8",
+          "P-7d624297a2ab",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "PACKED": {
+        "count": 87,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-0c3aee2146e5",
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      }
+    },
+    "intrinsic_functions": {
+      "CURRENT-DATE": {
+        "count": 3,
+        "programs": [
+          "P-59d66d59ea9c",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "DATE-OF-INTEGER": {
+        "count": 5,
+        "programs": [
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "INTEGER-OF-DATE": {
+        "count": 5,
+        "programs": [
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "NUMVAL": {
+        "count": 10,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-974b124e0935",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "RANDOM": {
+        "count": 39,
+        "programs": [
+          "P-3477105c53c9",
+          "P-59d66d59ea9c",
+          "P-936ff6e1be77",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-e086812686e1"
+        ]
+      },
+      "REVERSE": {
+        "count": 3,
+        "programs": [
+          "P-974b124e0935",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      }
+    },
+    "sql_forms": {
+      "CLOSE": {
+        "count": 2,
+        "programs": [
+          "P-6dbf99d4c719",
+          "P-a70ec51bb082"
+        ]
+      },
+      "COMMIT": {
+        "count": 3,
+        "programs": [
+          "P-59d66d59ea9c"
+        ]
+      },
+      "DELETE": {
+        "count": 4,
+        "programs": [
+          "P-30f5421eec04",
+          "P-59d66d59ea9c"
+        ]
+      },
+      "FETCH": {
+        "count": 2,
+        "programs": [
+          "P-6dbf99d4c719",
+          "P-a70ec51bb082"
+        ]
+      },
+      "INSERT": {
+        "count": 10,
+        "programs": [
+          "P-30f5421eec04",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-7d624297a2ab",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "OPEN": {
+        "count": 2,
+        "programs": [
+          "P-6dbf99d4c719",
+          "P-a70ec51bb082"
+        ]
+      },
+      "SELECT": {
+        "count": 9,
+        "programs": [
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3a40023b9885",
+          "P-55d5896a9570",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7d624297a2ab"
+        ]
+      },
+      "STATIC": {
+        "count": 38,
+        "programs": [
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3a40023b9885",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7d624297a2ab",
+          "P-a70ec51bb082",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "UPDATE": {
+        "count": 6,
+        "programs": [
+          "P-3a40023b9885",
+          "P-55d5896a9570",
+          "P-6a0ad769e0d8",
+          "P-7d624297a2ab"
+        ]
+      }
+    },
+    "statements": {
+      "ARITH": {
+        "count": 30,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-3477105c53c9",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-7d624297a2ab",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-abfceaadbcaf",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "CALL": {
+        "count": 4,
+        "programs": [
+          "P-59d66d59ea9c",
+          "P-abfceaadbcaf"
+        ]
+      },
+      "CLOSE": {
+        "count": 1,
+        "programs": [
+          "P-59d66d59ea9c"
+        ]
+      },
+      "COMPUTE": {
+        "count": 106,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-3477105c53c9",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-6a0ad769e0d8",
+          "P-7d624297a2ab",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "CONTINUE": {
+        "count": 86,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "DISPLAY": {
+        "count": 145,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-0c3aee2146e5",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "EVALUATE": {
+        "count": 36,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-3477105c53c9",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b9aa323803db",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "EXIT": {
+        "count": 226,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-0c3aee2146e5",
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "GOBACK": {
+        "count": 13,
+        "programs": [
+          "P-0c3aee2146e5",
+          "P-2a55819bda34",
+          "P-30f5421eec04",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7d624297a2ab",
+          "P-88c57a6fbb9f",
+          "P-a70ec51bb082",
+          "P-b9aa323803db"
+        ]
+      },
+      "GOTO": {
+        "count": 150,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-542fdec2122c",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b9aa323803db",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "IF": {
+        "count": 478,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-0c3aee2146e5",
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "INITIALIZE": {
+        "count": 257,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "INSPECT": {
+        "count": 33,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-542fdec2122c",
+          "P-974b124e0935",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "MOVE": {
+        "count": 3309,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-0c3aee2146e5",
+          "P-20d017751319",
+          "P-2a55819bda34",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-88c57a6fbb9f",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "OPEN": {
+        "count": 1,
+        "programs": [
+          "P-59d66d59ea9c"
+        ]
+      },
+      "PERFORM": {
+        "count": 496,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-0c3aee2146e5",
+          "P-20d017751319",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-3a40023b9885",
+          "P-47015551c45f",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-b9aa323803db",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "SET-NULL": {
+        "count": 9,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-55d5896a9570",
+          "P-870c6190b85d",
+          "P-a851fa03f745",
+          "P-c451c6d317cc"
+        ]
+      },
+      "SET-TO": {
+        "count": 1,
+        "programs": [
+          "P-61348b7e3035"
+        ]
+      },
+      "SET-TRUE": {
+        "count": 34,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-30f5421eec04",
+          "P-542fdec2122c",
+          "P-59d66d59ea9c",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-a851fa03f745",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-fb105c118c9e"
+        ]
+      },
+      "STRING": {
+        "count": 350,
+        "programs": [
+          "P-0a86a50c4353",
+          "P-30f5421eec04",
+          "P-3477105c53c9",
+          "P-542fdec2122c",
+          "P-55d5896a9570",
+          "P-59d66d59ea9c",
+          "P-61348b7e3035",
+          "P-6a0ad769e0d8",
+          "P-6dbf99d4c719",
+          "P-7984d84f6970",
+          "P-7d624297a2ab",
+          "P-870c6190b85d",
+          "P-936ff6e1be77",
+          "P-974b124e0935",
+          "P-a70ec51bb082",
+          "P-a851fa03f745",
+          "P-abfceaadbcaf",
+          "P-b4d99e1a0423",
+          "P-b60293193ea2",
+          "P-bae40c0dffaa",
+          "P-c451c6d317cc",
+          "P-cdb2fd380b2c",
+          "P-e086812686e1",
+          "P-fb105c118c9e"
+        ]
+      },
+      "UNSTRING": {
+        "count": 7,
+        "programs": [
+          "P-59d66d59ea9c",
+          "P-870c6190b85d",
+          "P-974b124e0935",
+          "P-b9aa323803db",
+          "P-fb105c118c9e"
+        ]
+      },
+      "WRITE": {
+        "count": 2,
+        "programs": [
+          "P-59d66d59ea9c"
+        ]
+      }
+    }
+  },
+  "other": {},
+  "programs": [
+    {
+      "earliest": 2,
+      "era": 2,
+      "holes": 5,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-0a86a50c4353",
+      "statements": 441,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 18,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translated_statements": 436,
+      "translation": "holes"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "holes": 0,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-0c3aee2146e5",
+      "statements": 13,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 2,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translated_statements": 13,
+      "translation": "whole"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "holes": 1,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-20d017751319",
+      "statements": 18,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 2,
+          "era": 2,
+          "tell": "exec-sql"
+        }
+      ],
+      "translated_statements": 17,
+      "translation": "holes"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "holes": 0,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-2a55819bda34",
+      "statements": 3,
+      "status": "parsed",
+      "tells": [],
+      "translated_statements": 3,
+      "translation": "whole"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "holes": 3,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-30f5421eec04",
+      "statements": 134,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 6,
+          "era": 2,
+          "tell": "exec-sql"
+        }
+      ],
+      "translated_statements": 131,
+      "translation": "holes"
+    },
+    {
+      "earliest": 1,
+      "era": 2,
+      "holes": 0,
+      "kind": "cobol",
+      "mixed": true,
+      "name": "P-3477105c53c9",
+      "statements": 162,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 1,
+          "tell": "handle-condition"
+        },
+        {
+          "count": 1,
+          "era": 2,
+          "tell": "address-of"
+        },
+        {
+          "count": 18,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translated_statements": 162,
+      "translation": "whole"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "holes": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-3a40023b9885",
+      "statements": 58,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 4,
+          "era": 2,
+          "tell": "exec-sql"
+        }
+      ],
+      "translated_statements": 56,
+      "translation": "holes"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "holes": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-47015551c45f",
+      "statements": 21,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 4,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 1,
+          "era": 2,
+          "tell": "exec-sql"
+        }
+      ],
+      "translated_statements": 19,
+      "translation": "holes"
+    },
+    {
+      "earliest": 1,
+      "era": 2,
+      "holes": 7,
+      "kind": "cobol",
+      "mixed": true,
+      "name": "P-542fdec2122c",
+      "statements": 573,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 2,
+          "era": 1,
+          "tell": "handle-condition"
+        },
+        {
+          "count": 28,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translated_statements": 566,
+      "translation": "holes"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "holes": 6,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-55d5896a9570",
+      "statements": 292,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 6,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 9,
+          "era": 2,
+          "tell": "exec-sql"
+        }
+      ],
+      "translated_statements": 286,
+      "translation": "holes"
+    },
+    {
+      "earliest": 3,
+      "era": 3,
+      "holes": 10,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-59d66d59ea9c",
+      "statements": 464,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 12,
+          "era": 2,
+          "tell": "exec-sql"
+        },
+        {
+          "count": 2,
+          "era": 3,
+          "tell": "le-callable"
+        }
+      ],
+      "translated_statements": 454,
+      "translation": "holes"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "holes": 1,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-61348b7e3035",
+      "statements": 140,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 8,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 3,
+          "era": 2,
+          "tell": "exec-sql"
+        }
+      ],
+      "translated_statements": 139,
+      "translation": "holes"
+    },
+    {
+      "earliest": 1,
+      "era": 2,
+      "holes": 3,
+      "kind": "cobol",
+      "mixed": true,
+      "name": "P-6a0ad769e0d8",
+      "statements": 148,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 1,
+          "tell": "handle-condition"
+        },
+        {
+          "count": 4,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 6,
+          "era": 2,
+          "tell": "exec-sql"
+        }
+      ],
+      "translated_statements": 145,
+      "translation": "holes"
+    },
+    {
+      "earliest": 1,
+      "era": 2,
+      "holes": 4,
+      "kind": "cobol",
+      "mixed": true,
+      "name": "P-6dbf99d4c719",
+      "statements": 227,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 1,
+          "tell": "handle-condition"
+        },
+        {
+          "count": 2,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 7,
+          "era": 2,
+          "tell": "exec-sql"
+        }
+      ],
+      "translated_statements": 223,
+      "translation": "holes"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "holes": 5,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-7984d84f6970",
+      "statements": 366,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 28,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translated_statements": 361,
+      "translation": "holes"
+    },
+    {
+      "earliest": 1,
+      "era": 2,
+      "holes": 5,
+      "kind": "cobol",
+      "mixed": true,
+      "name": "P-7d624297a2ab",
+      "statements": 426,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 1,
+          "tell": "handle-condition"
+        },
+        {
+          "count": 16,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 9,
+          "era": 2,
+          "tell": "exec-sql"
+        }
+      ],
+      "translated_statements": 421,
+      "translation": "holes"
+    },
+    {
+      "earliest": 1,
+      "era": 2,
+      "holes": 5,
+      "kind": "cobol",
+      "mixed": true,
+      "name": "P-870c6190b85d",
+      "statements": 648,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 2,
+          "era": 1,
+          "tell": "handle-condition"
+        },
+        {
+          "count": 30,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translated_statements": 643,
+      "translation": "holes"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "holes": 0,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-88c57a6fbb9f",
+      "statements": 3,
+      "status": "parsed",
+      "tells": [],
+      "translated_statements": 3,
+      "translation": "whole"
+    },
+    {
+      "earliest": 4,
+      "era": 4,
+      "holes": 0,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-936ff6e1be77",
+      "statements": 44,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 6,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 4,
+          "era": 4,
+          "tell": "channel-container"
+        }
+      ],
+      "translated_statements": 44,
+      "translation": "whole"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "holes": 5,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-974b124e0935",
+      "statements": 349,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 16,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translated_statements": 344,
+      "translation": "holes"
+    },
+    {
+      "earliest": 1,
+      "era": 2,
+      "holes": 3,
+      "kind": "cobol",
+      "mixed": true,
+      "name": "P-a70ec51bb082",
+      "statements": 186,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 1,
+          "tell": "handle-condition"
+        },
+        {
+          "count": 8,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 6,
+          "era": 2,
+          "tell": "exec-sql"
+        }
+      ],
+      "translated_statements": 183,
+      "translation": "holes"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "holes": 5,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-a851fa03f745",
+      "statements": 234,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 16,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translated_statements": 229,
+      "translation": "holes"
+    },
+    {
+      "earliest": 4,
+      "era": 4,
+      "holes": 3,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-abfceaadbcaf",
+      "statements": 321,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 24,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 3,
+          "era": 2,
+          "tell": "exec-sql"
+        },
+        {
+          "count": 2,
+          "era": 3,
+          "tell": "le-callable"
+        },
+        {
+          "count": 6,
+          "era": 4,
+          "tell": "channel-container"
+        },
+        {
+          "count": 2,
+          "era": 4,
+          "tell": "async"
+        }
+      ],
+      "translated_statements": 318,
+      "translation": "holes"
+    },
+    {
+      "earliest": 4,
+      "era": 4,
+      "holes": 0,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-b4d99e1a0423",
+      "statements": 44,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 6,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 4,
+          "era": 4,
+          "tell": "channel-container"
+        }
+      ],
+      "translated_statements": 44,
+      "translation": "whole"
+    },
+    {
+      "earliest": 4,
+      "era": 4,
+      "holes": 0,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-b60293193ea2",
+      "statements": 44,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 6,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 4,
+          "era": 4,
+          "tell": "channel-container"
+        }
+      ],
+      "translated_statements": 44,
+      "translation": "whole"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "holes": 0,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-b9aa323803db",
+      "statements": 64,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 3,
+          "era": 2,
+          "tell": "address-of"
+        },
+        {
+          "count": 4,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translated_statements": 64,
+      "translation": "whole"
+    },
+    {
+      "earliest": 4,
+      "era": 4,
+      "holes": 0,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-bae40c0dffaa",
+      "statements": 44,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 6,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 4,
+          "era": 4,
+          "tell": "channel-container"
+        }
+      ],
+      "translated_statements": 44,
+      "translation": "whole"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "holes": 5,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-c451c6d317cc",
+      "statements": 345,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 18,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translated_statements": 340,
+      "translation": "holes"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "holes": 5,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-cdb2fd380b2c",
+      "statements": 389,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 16,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translated_statements": 384,
+      "translation": "holes"
+    },
+    {
+      "earliest": 4,
+      "era": 4,
+      "holes": 0,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-e086812686e1",
+      "statements": 44,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 6,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 4,
+          "era": 4,
+          "tell": "channel-container"
+        }
+      ],
+      "translated_statements": 44,
+      "translation": "whole"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "holes": 5,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "P-fb105c118c9e",
+      "statements": 317,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 16,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translated_statements": 312,
+      "translation": "holes"
+    }
+  ],
+  "redacted": true,
+  "rules": {
+    "classes": 8,
+    "ranked": [
+      {
+        "one_away": 1,
+        "only": 9,
+        "only_by_era": {
+          "2": 9
+        },
+        "rule": "EXEC SQL: no generated Db2 repository method",
+        "touched": 11
+      },
+      {
+        "one_away": 0,
+        "only": 1,
+        "only_by_era": {
+          "2": 1
+        },
+        "rule": "EXEC CICS READ: key length not known",
+        "touched": 1
+      },
+      {
+        "one_away": 9,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "EXEC CICS: no generated DTO for COMMAREA",
+        "touched": 9
+      },
+      {
+        "one_away": 9,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "EXEC CICS: no generated screen for map",
+        "touched": 9
+      },
+      {
+        "one_away": 1,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "EXEC CICS WRITE: key length not known",
+        "touched": 1
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "CLOSE: no batch package",
+        "touched": 1
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "OPEN: no batch package",
+        "touched": 1
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "WRITE: no batch package",
+        "touched": 1
+      }
+    ]
+  },
+  "schema": "gitgalaxy-assess/1",
+  "tool_version": "2.4.9.dev334+gacd547e89.d20260901",
+  "totals": {
+    "assembler_members": 0,
+    "parsed": 31,
+    "programs": 31,
+    "refused_by_family": 0,
+    "translation": {
+      "holes": 21,
+      "refused": 0,
+      "whole": 10
+    },
+    "unparsed": 0
+  }
+}

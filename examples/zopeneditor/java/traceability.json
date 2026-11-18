@@ -212,51 +212,499 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
-          "source": "USING parameter 5 of MultirootSamSam2."
+          "source": "USING parameter 1 of CobolSam2."
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Sam2Parms.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CobolSam2CustRec.java",
       "kind": "commarea-dto",
-      "symbol": "Sam2Parms",
+      "symbol": "CobolSam2CustRec",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-ACCT-BALANCE @23+9",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COBOL/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CobolSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "CobolSam2CustRec#custAcctBalance",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-ADDR @37+20",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COBOL/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CobolSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "CobolSam2CustRec#custAddr",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-CITY @57+14",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COBOL/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CobolSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "CobolSam2CustRec#custCity",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-COUNTRY @73+11",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COBOL/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CobolSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "CobolSam2CustRec#custCountry",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-DATA-1 @342+5",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COBOL/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CobolSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "CobolSam2CustRec#custData1",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-DATA-2 @347+40",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COBOL/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CobolSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "CobolSam2CustRec#custData2",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-ID @0+5",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COBOL/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CobolSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "CobolSam2CustRec#custId",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-MONTH @84+108",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COBOL/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CobolSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "CobolSam2CustRec#custMonth",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-NAME @6+17",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COBOL/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CobolSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "CobolSam2CustRec#custName",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-NOTES @222+120",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COBOL/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CobolSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "CobolSam2CustRec#custNotes",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-OCCUPATION @192+30",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COBOL/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CobolSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "CobolSam2CustRec#custOccupation",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-ORDERS-YTD @32+5",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COBOL/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CobolSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "CobolSam2CustRec#custOrdersYtd",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-REC-TYPE @5+1",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COBOL/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CobolSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "CobolSam2CustRec#custRecType",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-STATE @71+2",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "COBOL/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/CobolSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "CobolSam2CustRec#custState",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "USING parameter 1 of MultirootSamSam2."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2CustRec.java",
+      "kind": "commarea-dto",
+      "symbol": "MultirootSamSam2CustRec",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-ACCT-BALANCE @23+9",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/sam/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "MultirootSamSam2CustRec#custAcctBalance",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-ADDR @37+20",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/sam/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "MultirootSamSam2CustRec#custAddr",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-CITY @57+14",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/sam/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "MultirootSamSam2CustRec#custCity",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-COUNTRY @73+11",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/sam/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "MultirootSamSam2CustRec#custCountry",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-DATA-1 @342+5",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/sam/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "MultirootSamSam2CustRec#custData1",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-DATA-2 @347+40",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/sam/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "MultirootSamSam2CustRec#custData2",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-ID @0+5",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/sam/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "MultirootSamSam2CustRec#custId",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-MONTH @84+108",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/sam/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "MultirootSamSam2CustRec#custMonth",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-NAME @6+17",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/sam/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "MultirootSamSam2CustRec#custName",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-NOTES @222+120",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/sam/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "MultirootSamSam2CustRec#custNotes",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-OCCUPATION @192+30",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/sam/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "MultirootSamSam2CustRec#custOccupation",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-ORDERS-YTD @32+5",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/sam/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "MultirootSamSam2CustRec#custOrdersYtd",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-REC-TYPE @5+1",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/sam/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "MultirootSamSam2CustRec#custRecType",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "item": "CUST-STATE @71+2",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "multiroot/sam/SAM2.cbl"
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2CustRec.java",
+      "kind": "dto-field",
+      "symbol": "MultirootSamSam2CustRec#custState",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
+          "ledger_field": "record fields",
+          "section": "interface",
+          "source": "USING parameter 5 of MultirootSamSam2."
+        }
+      ],
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2Sam2Parms.java",
+      "kind": "commarea-dto",
+      "symbol": "MultirootSamSam2Sam2Parms",
+      "todos": []
+    },
+    {
+      "facts": [
+        {
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CRUNCH-AVG @17+16",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "multiroot/copybooks/trans/SAM2PAR5.cpy"
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Sam2Parms.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2Sam2Parms.java",
       "kind": "dto-field",
-      "symbol": "Sam2Parms#crunchAvg",
+      "symbol": "MultirootSamSam2Sam2Parms#crunchAvg",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "CRUNCH-TOTAL @0+16",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "multiroot/copybooks/trans/SAM2PARM.cpy"
         }
       ],
-      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Sam2Parms.java",
+      "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/MultirootSamSam2Sam2Parms.java",
       "kind": "dto-field",
-      "symbol": "Sam2Parms#crunchTotal",
+      "symbol": "MultirootSamSam2Sam2Parms#crunchTotal",
       "todos": []
     },
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "USING parameter 2 of CobolSam2."
@@ -270,7 +718,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "TRAN-ACTION @21+8",
           "ledger_field": "record fields",
           "section": "interface",
@@ -285,7 +733,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "TRAN-CODE @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -300,7 +748,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "TRAN-FIELD-NAME @30+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -315,7 +763,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "TRAN-FIELD-SS @41+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -330,7 +778,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "TRAN-KEY @7+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -345,7 +793,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "TRAN-UPDATE-DATA @44+36",
           "ledger_field": "record fields",
           "section": "interface",
@@ -360,7 +808,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "ledger_field": "record fields",
           "section": "interface",
           "source": "USING parameter 2 of MultirootSamSam2."
@@ -374,7 +822,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "TRAN-ACTION @21+8",
           "ledger_field": "record fields",
           "section": "interface",
@@ -389,7 +837,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "TRAN-CODE @0+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -404,7 +852,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "TRAN-FIELD-NAME @30+10",
           "ledger_field": "record fields",
           "section": "interface",
@@ -419,7 +867,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "TRAN-FIELD-SS @41+2",
           "ledger_field": "record fields",
           "section": "interface",
@@ -434,7 +882,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "TRAN-KEY @7+6",
           "ledger_field": "record fields",
           "section": "interface",
@@ -449,7 +897,7 @@
     {
       "facts": [
         {
-          "field_testing": "field-tested (6 public / 0 private estates)",
+          "field_testing": "open (6 public / 0 private estates)",
           "item": "TRAN-UPDATE-DATA @44+36",
           "ledger_field": "record fields",
           "section": "interface",
@@ -507,6 +955,15 @@
       "todos": []
     },
     {
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/MultirootSamSam1Service.java",
+      "kind": "batch-entry",
+      "symbol": "MultirootSamSam1Service#runBatch",
+      "todos": [
+        "TODO: port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+      ]
+    },
+    {
       "facts": [
         {
           "field_testing": "open (5 public / 0 private estates)",
@@ -536,6 +993,15 @@
       "kind": "dispatch",
       "symbol": "Sam1libService#dispatchSam2L287",
       "todos": []
+    },
+    {
+      "facts": [],
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Sam1libService.java",
+      "kind": "batch-entry",
+      "symbol": "Sam1libService#runBatch",
+      "todos": [
+        "TODO: port the PROCEDURE DIVISION main line; return its RETURN-CODE"
+      ]
     }
   ],
   "generated_from": {
@@ -543,17 +1009,17 @@
     "skeleton_version": 1
   },
   "summary": {
-    "artifacts": 35,
+    "artifacts": 67,
     "by_kind": {
-      "batch-entry": 2,
+      "batch-entry": 4,
       "batch-job": 2,
       "batch-step": 11,
-      "commarea-dto": 3,
+      "commarea-dto": 5,
       "dispatch": 3,
-      "dto-field": 14
+      "dto-field": 42
     },
-    "facts": 35,
-    "todos": 9
+    "facts": 65,
+    "todos": 11
   },
   "version": 1
 }

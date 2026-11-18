@@ -11,10 +11,12 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.CarddemoCommarea;
+import com.gitgalaxy.modernized.call.CobolRef;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.Cotrn02cCarddemoCommarea;
 import com.gitgalaxy.modernized.dto.screen.Cotrn2aScreen;
-import com.gitgalaxy.modernized.dto.screen.ScreenModel;
 import com.gitgalaxy.modernized.entity.vsam.CardXrefRecord;
+import com.gitgalaxy.modernized.entity.vsam.CobolRecords;
 import com.gitgalaxy.modernized.entity.vsam.TranRecord;
 import com.gitgalaxy.modernized.repository.vsam.CardXrefRecordRepository;
 import com.gitgalaxy.modernized.repository.vsam.TranRecordRepository;
@@ -42,47 +44,119 @@ public class Cotrn02cService {
     private static final Logger log = LoggerFactory.getLogger(Cotrn02cService.class);
 
     private final ObjectProvider<CsutldtcService> csutldtcService;
-    private final ObjectProvider<Comen01cService> comen01cService;
-    private final ObjectProvider<Cosgn00cService> cosgn00cService;
     private final CardXrefRecordRepository cardXrefRecordRepository;
     private final TranRecordRepository tranRecordRepository;
 
-    public void executeCotrn02c(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for COTRN02C");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
-    /** A CICS transaction entered the program. TODO: [AI AGENT] implement from the program's business rules. */
-    public CarddemoCommarea handleTransaction(String transid, CarddemoCommarea request) {
+    /** A CICS transaction entered the program (#4343): one task of it in the region (CicsTask.region()),
+     *  ENTER pressed -- `request` its COMMAREA, null when started from a cleared screen -- run through runTask. Returns the COMMAREA its RETURN passes on (null: none).
+     *  The COMMAREA crosses programs (#4427): COBOL passes bytes, and each program reads them through its
+     *  own record, so a port may pass either record -- the facade carries it as Object where a flow
+     *  presents another class, and runTask reads it (task.commarea(..)). The flows:
+     *  out: RETURN TRANSID(CPVS) COMMAREA(CARDDEMO-COMMAREA) at app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:254 -> app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl, after an XCTL from app/cbl/COTRN02C.cbl (Copaus0cCarddemoCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CPVD) COMMAREA(CARDDEMO-COMMAREA) at app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl:202 -> app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl, after an XCTL from app/cbl/COTRN02C.cbl (Copaus1cCarddemoCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CTLI) COMMAREA(WS-COMMAREA) at app/app-transaction-type-db2/cbl/COTRTLIC.cbl:910 -> app/app-transaction-type-db2/cbl/COTRTLIC.cbl, after an XCTL from app/cbl/COTRN02C.cbl (CotrtlicCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CTTU) COMMAREA(WS-COMMAREA) at app/app-transaction-type-db2/cbl/COTRTUPC.cbl:567 -> app/app-transaction-type-db2/cbl/COTRTUPC.cbl, after an XCTL from app/cbl/COTRN02C.cbl (CotrtupcCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CAUP) COMMAREA(WS-COMMAREA) at app/cbl/COACTUPC.cbl:1015 -> app/cbl/COACTUPC.cbl, after an XCTL from app/cbl/COTRN02C.cbl (CoactupcCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CAVW) COMMAREA(WS-COMMAREA) at app/cbl/COACTVWC.cbl:402 -> app/cbl/COACTVWC.cbl, after an XCTL from app/cbl/COTRN02C.cbl (CoactvwcCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CA00) COMMAREA(CARDDEMO-COMMAREA) at app/cbl/COADM01C.cbl:111 -> app/cbl/COADM01C.cbl, after an XCTL from app/cbl/COTRN02C.cbl (CarddemoCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CA00) COMMAREA(CARDDEMO-COMMAREA) at app/cbl/COADM01C.cbl:280 -> app/cbl/COADM01C.cbl, after an XCTL from app/cbl/COTRN02C.cbl (CarddemoCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CB00) COMMAREA(CARDDEMO-COMMAREA) at app/cbl/COBIL00C.cbl:146 -> app/cbl/COBIL00C.cbl, after an XCTL from app/cbl/COTRN02C.cbl (Cobil00cCarddemoCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CCLI) COMMAREA(WS-COMMAREA) at app/cbl/COCRDLIC.cbl:615 -> app/cbl/COCRDLIC.cbl, after an XCTL from app/cbl/COTRN02C.cbl (CocrdlicCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CCDL) COMMAREA(WS-COMMAREA) at app/cbl/COCRDSLC.cbl:402 -> app/cbl/COCRDSLC.cbl, after an XCTL from app/cbl/COTRN02C.cbl (CocrdslcCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CCUP) COMMAREA(WS-COMMAREA) at app/cbl/COCRDUPC.cbl:554 -> app/cbl/COCRDUPC.cbl, after an XCTL from app/cbl/COTRN02C.cbl (CocrdupcCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CM00) COMMAREA(CARDDEMO-COMMAREA) at app/cbl/COMEN01C.cbl:107 -> app/cbl/COMEN01C.cbl, after an XCTL from app/cbl/COTRN02C.cbl (CarddemoCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CR00) COMMAREA(CARDDEMO-COMMAREA) at app/cbl/CORPT00C.cbl:199 -> app/cbl/CORPT00C.cbl, after an XCTL from app/cbl/COTRN02C.cbl (CarddemoCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CR00) COMMAREA(CARDDEMO-COMMAREA) at app/cbl/CORPT00C.cbl:587 -> app/cbl/CORPT00C.cbl, after an XCTL from app/cbl/COTRN02C.cbl (CarddemoCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CC00) COMMAREA(CARDDEMO-COMMAREA) at app/cbl/COSGN00C.cbl:98 -> app/cbl/COSGN00C.cbl, after an XCTL from app/cbl/COTRN02C.cbl (CarddemoCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CT00) COMMAREA(CARDDEMO-COMMAREA) at app/cbl/COTRN00C.cbl:138 -> app/cbl/COTRN00C.cbl, after an XCTL from app/cbl/COTRN02C.cbl (Cotrn00cCarddemoCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CT01) COMMAREA(CARDDEMO-COMMAREA) at app/cbl/COTRN01C.cbl:136 -> app/cbl/COTRN01C.cbl, after an XCTL from app/cbl/COTRN02C.cbl (Cotrn01cCarddemoCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CU00) COMMAREA(CARDDEMO-COMMAREA) at app/cbl/COUSR00C.cbl:141 -> app/cbl/COUSR00C.cbl, after an XCTL from app/cbl/COTRN02C.cbl (Cousr00cCarddemoCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CU01) COMMAREA(CARDDEMO-COMMAREA) at app/cbl/COUSR01C.cbl:107 -> app/cbl/COUSR01C.cbl, after an XCTL from app/cbl/COTRN02C.cbl (CarddemoCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CU02) COMMAREA(CARDDEMO-COMMAREA) at app/cbl/COUSR02C.cbl:135 -> app/cbl/COUSR02C.cbl, after an XCTL from app/cbl/COTRN02C.cbl (Cousr02cCarddemoCommarea besides Cotrn02cCarddemoCommarea).
+     *  out: RETURN TRANSID(CU03) COMMAREA(CARDDEMO-COMMAREA) at app/cbl/COUSR03C.cbl:134 -> app/cbl/COUSR03C.cbl, after an XCTL from app/cbl/COTRN02C.cbl (Cousr03cCarddemoCommarea besides Cotrn02cCarddemoCommarea).
+     */
+    public Object handleTransaction(String transid, Cotrn02cCarddemoCommarea request) {
         log.info("Cotrn02c: handleTransaction");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.transaction(transid, request);
+        region.run(task, "COTRN02C", this::runTask);
+        return task.returned(Object.class);
+    }
+
+    /** #4870: handleTransaction with the raw bytes of the previous task's COMMAREA (null: none); the
+     *  bytes this task's RETURN passes on are then answered by lastAnswerBytes(). */
+    public Object handleTransaction(String transid, Cotrn02cCarddemoCommarea request, byte[] area) {
+        log.info("Cotrn02c: handleTransaction (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.transaction(transid, request, area);
+        region.run(task, "COTRN02C", this::runTask);
+        lastAnswerBytes = task.returnedBytes();
+        return task.returned(Object.class);
+    }
+
+    // @facade-helper: the bytes the last byte-carrying handleTransaction answered
+    private byte[] lastAnswerBytes;
+
+    /** The bytes the last byte-carrying handleTransaction's RETURN passed on (a copy; null: none).
+     *  @facade-helper */
+    public byte[] lastAnswerBytes() {
+        return lastAnswerBytes == null ? null : java.util.Arrays.copyOf(lastAnswerBytes, lastAnswerBytes.length);
+    }
+
+    /** One pseudo-conversational task of this program (#3754). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("Cotrn02c: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
+    }
+
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on `request`, passed by reference -- what it changes, the caller sees. */
+    public Cotrn02cCarddemoCommarea handleLink(Cotrn02cCarddemoCommarea request) {
+        log.info("Cotrn02c: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("COTRN02C", request);
+        region.run(task, "COTRN02C", this::runTask);
         return request;
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
-    public CarddemoCommarea handleLink(CarddemoCommarea request) {
-        log.info("Cotrn02c: handleLink");
+    /** #5053: handleLink with the raw bytes of the LINK's COMMAREA (passed by address: what the program
+     *  leaves there the caller sees); lastLinkBytes() then answers the bytes it left. */
+    public Cotrn02cCarddemoCommarea handleLink(Cotrn02cCarddemoCommarea request, byte[] area) {
+        log.info("Cotrn02c: handleLink (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("COTRN02C", request, area);
+        region.run(task, "COTRN02C", this::runTask);
+        byte[] left = task.linkAreaView();
+        lastLinkBytes = task.linkAreaTaken() && left != null ? java.util.Arrays.copyOf(left, left.length) : null;
         return request;
+    }
+
+    // @facade-helper: the bytes the last byte-carrying handleLink's program left in the COMMAREA
+    private byte[] lastLinkBytes;
+
+    /** The bytes the last byte-carrying handleLink's program left in the LINK COMMAREA (a copy; null: it took
+     *  none -- its DTO is the COMMAREA). @facade-helper */
+    public byte[] lastLinkBytes() {
+        return lastLinkBytes == null ? null : java.util.Arrays.copyOf(lastLinkBytes, lastLinkBytes.length);
     }
 
     /** CALL 'CSUTLDTC' at app/cbl/COTRN02C.cbl:393, app/cbl/COTRN02C.cbl:413; the parameters are Csutldtc's USING items.
-     *  Call targets open (6 public / 0 private estates); CALL USING open (5 public / 0 private estates). */
-    public void callCsutldtc(String lsDate, String lsDateFormat, String lsResult) {
-        csutldtcService.getObject().handleCall(lsDate, lsDateFormat, lsResult);
+     *  Call targets open (9 public / 0 private estates); CALL USING open (5 public / 0 private estates). */
+    public int callCsutldtc(CobolRef<String> lsDate, CobolRef<String> lsDateFormat, CobolRef<String> lsResult) {
+        return csutldtcService.getObject().handleCall(lsDate, lsDateFormat, lsResult);
     }
 
-    /** XCTL PROGRAM(CDEMO-TO-PROGRAM) at app/cbl/COTRN02C.cbl:508: the target is data-driven. Candidates: COMEN01C (moves), COSGN00C (moves).
-     *  Also MOVEd from CDEMO-FROM-PROGRAM, whose content is not known statically: those names reach the default branch.
+    /** EXEC CICS XCTL PROGRAM(CDEMO-TO-PROGRAM) at app/cbl/COTRN02C.cbl:508, COMMAREA(CARDDEMO-COMMAREA): the target is data-driven (candidates the engine found: COMEN01C (moves), COSGN00C (moves)).
+     *  Also MOVEd from CDEMO-FROM-PROGRAM, whose content is not known statically.
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchCdemoToProgramL508(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "COMEN01C":
-                return comen01cService.getObject().handleLink((CarddemoCommarea) request);
-            case "COSGN00C":
-                cosgn00cService.getObject().handleLink();
-                return null;
-            default:
-                throw new IllegalArgumentException("XCTL PROGRAM(CDEMO-TO-PROGRAM) at app/cbl/COTRN02C.cbl:508: no known target " + program);
-        }
+    public String dispatchCdemoToProgramL508(CicsTask task, String program, Object commarea) {
+        return task.xctl(program.stripTrailing(), commarea);
     }
 
     /** AWS.M2.CARDDEMO.CARDXREF.VSAM.KSDS as CICS file CCXREF at app/cbl/COTRN02C.cbl:611; VSAM defines field testing: open (3 public / 0 private estates). */
@@ -97,30 +171,21 @@ public class Cotrn02cService {
 
     /** AWS.M2.CARDDEMO.TRANSACT.VSAM.KSDS as CICS file TRANSACT at app/cbl/COTRN02C.cbl:644, 675, 704, 713; VSAM defines field testing: open (3 public / 0 private estates). */
     public TranRecord writeTransact(TranRecord record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<TranRecord> onFile = tranRecordRepository.findById(record.getTranId());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file TRANSACT already holds the key of this record");
+        }
         return tranRecordRepository.save(record);
     }
 
     public List<TranRecord> browseTransact(String from, int count) {
-        return tranRecordRepository.findByTranIdGreaterThanEqualOrderByTranIdAsc(from, org.springframework.data.domain.PageRequest.of(0, count));
+        return tranRecordRepository.findByTranIdSortGreaterThanEqualOrderByTranIdSortAsc(CobolRecords.sortKey(from, "cp037"), org.springframework.data.domain.PageRequest.of(0, count));
     }
 
     public List<TranRecord> browseBackTransact(String from, int count) {
-        return tranRecordRepository.findByTranIdLessThanEqualOrderByTranIdDesc(from, org.springframework.data.domain.PageRequest.of(0, count));
-    }
-
-    /** SEND MAP(COTRN2A) MAPSET(COTRN02) FROM(COTRN2AO) at app/cbl/COTRN02C.cbl:522 (#3619).
-     *  TODO: port the logic that fills COTRN2AO before the SEND.
-     *  BMS screen fields field testing: open (3 public / 0 private estates). */
-    public Cotrn2aScreen renderCotrn2a(Cotrn2aScreen screen) {
-        return screen;
-    }
-
-    /** RECEIVE MAP(COTRN2A) MAPSET(COTRN02) INTO(COTRN2AI) at app/cbl/COTRN02C.cbl:541 (#3619).
-     *  `aid` is the key the user pressed (EIBAID): ENTER, PF1-PF24, CLEAR, PA1-PA3.
-     *  TODO: port the logic that reads COTRN2AI after the RECEIVE, and return the screen to show next.
-     *  BMS screen fields field testing: open (3 public / 0 private estates). */
-    public ScreenModel submitCotrn2a(Cotrn2aScreen input, String aid) {
-        return renderCotrn2a(input);
+        return tranRecordRepository.findByTranIdSortLessThanEqualOrderByTranIdSortDesc(CobolRecords.sortKey(from, "cp037"), org.springframework.data.domain.PageRequest.of(0, count));
     }
 
 }

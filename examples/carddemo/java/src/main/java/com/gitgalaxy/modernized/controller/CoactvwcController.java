@@ -19,7 +19,7 @@ import com.gitgalaxy.modernized.service.CoactvwcService;
  * COMMAREA: DFHCOMMAREA (app/cbl/COACTVWC.cbl, 172 bytes) -> CoactvwcCommarea.
  * TODO: callers also pass WS-COMMAREA (app/cbl/COACTVWC.cbl, 2000 bytes) at app/cbl/COACTVWC.cbl:402.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/coactvwc")
@@ -28,9 +28,9 @@ public class CoactvwcController {
 
     private final CoactvwcService coactvwcService;
 
-    /** CICS transaction CAVW -> Coactvwc (CSD app/csd/CARDDEMO.CSD:181 group CARDDEMO; app/csd/CARDDEMO.CSD:317 group CARDDEMO). */
+    /** CICS transaction CAVW -> Coactvwc (CSD app/csd/CARDDEMO.CSD:317 group CARDDEMO). */
     @PostMapping("/transactions/CAVW")
-    public ResponseEntity<CoactvwcCommarea> transactionCAVW(@RequestBody CoactvwcCommarea request) {
+    public ResponseEntity<Object> transactionCAVW(@RequestBody CoactvwcCommarea request) {
         return ResponseEntity.ok(coactvwcService.handleTransaction("CAVW", request));
     }
 

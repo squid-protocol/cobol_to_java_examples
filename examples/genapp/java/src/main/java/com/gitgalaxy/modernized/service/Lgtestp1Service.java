@@ -11,9 +11,13 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.client.Aor1RemoteClient;
+import com.gitgalaxy.modernized.dto.contract.Lgapol01Dfhcommarea;
+import com.gitgalaxy.modernized.dto.contract.Lgdpol01Dfhcommarea;
+import com.gitgalaxy.modernized.dto.contract.Lgipol01Dfhcommarea;
 import com.gitgalaxy.modernized.dto.contract.Lgtestp1CommArea;
-import com.gitgalaxy.modernized.dto.screen.ScreenModel;
+import com.gitgalaxy.modernized.dto.contract.Lgupol01Dfhcommarea;
 import com.gitgalaxy.modernized.dto.screen.Ssmapp1Screen;
 import com.gitgalaxy.modernized.exception.*;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,44 +38,72 @@ public class Lgtestp1Service {
 
     private final Aor1RemoteClient aor1RemoteClient;
 
-    public void executeLgtestp1(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for lgtestp1");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
-    /** A CICS transaction entered the program. TODO: [AI AGENT] implement from the program's business rules. */
+    /** A CICS transaction entered the program (#4343): one task of it in the region (CicsTask.region()),
+     *  ENTER pressed -- `request` its COMMAREA, null when started from a cleared screen -- run through runTask. Returns the COMMAREA its RETURN passes on (null: none). */
     public Lgtestp1CommArea handleTransaction(String transid, Lgtestp1CommArea request) {
         log.info("Lgtestp1: handleTransaction");
-        return request;
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.transaction(transid, request);
+        region.run(task, "LGTESTP1", this::runTask);
+        return task.returned(Lgtestp1CommArea.class);
+    }
+
+    /** #4870: handleTransaction with the raw bytes of the previous task's COMMAREA (null: none); the
+     *  bytes this task's RETURN passes on are then answered by lastAnswerBytes(). */
+    public Lgtestp1CommArea handleTransaction(String transid, Lgtestp1CommArea request, byte[] area) {
+        log.info("Lgtestp1: handleTransaction (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.transaction(transid, request, area);
+        region.run(task, "LGTESTP1", this::runTask);
+        lastAnswerBytes = task.returnedBytes();
+        return task.returned(Lgtestp1CommArea.class);
+    }
+
+    // @facade-helper: the bytes the last byte-carrying handleTransaction answered
+    private byte[] lastAnswerBytes;
+
+    /** The bytes the last byte-carrying handleTransaction's RETURN passed on (a copy; null: none).
+     *  @facade-helper */
+    public byte[] lastAnswerBytes() {
+        return lastAnswerBytes == null ? null : java.util.Arrays.copyOf(lastAnswerBytes, lastAnswerBytes.length);
+    }
+
+    /** One pseudo-conversational task of this program (#3754). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("Lgtestp1: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
     /** EXEC CICS LINK PROGRAM(LGIPOL01) at 72: the CSD routes it to region AOR1 (distributed program link).
      *  Remote calls field testing: open (5 public / 0 private estates). */
-    public Lgtestp1CommArea remoteLgipol01L72(Lgtestp1CommArea request) {
+    public Lgipol01Dfhcommarea remoteLgipol01L72(Lgipol01Dfhcommarea request) {
         return aor1RemoteClient.linkLgipol01(request);
     }
 
     /** EXEC CICS LINK PROGRAM(LGAPOL01) at 115: the CSD routes it to region AOR1 (distributed program link).
      *  Remote calls field testing: open (5 public / 0 private estates). */
-    public Lgtestp1CommArea remoteLgapol01L115(Lgtestp1CommArea request) {
+    public Lgapol01Dfhcommarea remoteLgapol01L115(Lgapol01Dfhcommarea request) {
         return aor1RemoteClient.linkLgapol01(request);
     }
 
     /** EXEC CICS LINK PROGRAM(LGDPOL01) at 139: the CSD routes it to region AOR1 (distributed program link).
      *  Remote calls field testing: open (5 public / 0 private estates). */
-    public Lgtestp1CommArea remoteLgdpol01L139(Lgtestp1CommArea request) {
+    public Lgdpol01Dfhcommarea remoteLgdpol01L139(Lgdpol01Dfhcommarea request) {
         return aor1RemoteClient.linkLgdpol01(request);
     }
 
     /** EXEC CICS LINK PROGRAM(LGIPOL01) at 173: the CSD routes it to region AOR1 (distributed program link).
      *  Remote calls field testing: open (5 public / 0 private estates). */
-    public Lgtestp1CommArea remoteLgipol01L173(Lgtestp1CommArea request) {
+    public Lgipol01Dfhcommarea remoteLgipol01L173(Lgipol01Dfhcommarea request) {
         return aor1RemoteClient.linkLgipol01(request);
     }
 
     /** EXEC CICS LINK PROGRAM(LGUPOL01) at 216: the CSD routes it to region AOR1 (distributed program link).
      *  Remote calls field testing: open (5 public / 0 private estates). */
-    public Lgtestp1CommArea remoteLgupol01L216(Lgtestp1CommArea request) {
+    public Lgupol01Dfhcommarea remoteLgupol01L216(Lgupol01Dfhcommarea request) {
         return aor1RemoteClient.linkLgupol01(request);
     }
 
@@ -98,21 +130,6 @@ public class Lgtestp1Service {
     public void onConditionMapfailL57(CicsConditionException e) {
         log.info("HANDLE CONDITION MAPFAIL LABEL ENDIT at line 57", e);
         // TODO: port paragraph ENDIT's logic
-    }
-
-    /** SEND MAP(SSMAPP1) MAPSET(SSMAP) FROM(SSMAPP1O) at base/src/lgtestp1.cbl:47, base/src/lgtestp1.cbl:91, base/src/lgtestp1.cbl:129, base/src/lgtestp1.cbl:159, base/src/lgtestp1.cbl:163, base/src/lgtestp1.cbl:192, base/src/lgtestp1.cbl:229, base/src/lgtestp1.cbl:242, base/src/lgtestp1.cbl:276, base/src/lgtestp1.cbl:309 (#3619).
-     *  TODO: port the logic that fills SSMAPP1O before the SEND.
-     *  BMS screen fields field testing: open (3 public / 0 private estates). */
-    public Ssmapp1Screen renderSsmapp1(Ssmapp1Screen screen) {
-        return screen;
-    }
-
-    /** RECEIVE MAP(SSMAPP1) MAPSET(SSMAP) INTO(SSMAPP1I) at base/src/lgtestp1.cbl:61, base/src/lgtestp1.cbl:196 (#3619).
-     *  `aid` is the key the user pressed (EIBAID): ENTER, PF1-PF24, CLEAR, PA1-PA3.
-     *  TODO: port the logic that reads SSMAPP1I after the RECEIVE, and return the screen to show next.
-     *  BMS screen fields field testing: open (3 public / 0 private estates). */
-    public ScreenModel submitSsmapp1(Ssmapp1Screen input, String aid) {
-        return renderSsmapp1(input);
     }
 
 }

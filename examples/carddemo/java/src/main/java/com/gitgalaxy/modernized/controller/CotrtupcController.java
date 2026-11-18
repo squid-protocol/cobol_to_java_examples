@@ -20,7 +20,7 @@ import com.gitgalaxy.modernized.service.CotrtupcService;
  * TODO: callers also pass WS-COMMAREA (app/app-transaction-type-db2/cbl/COTRTUPC.cbl, 2000 bytes) at app/app-transaction-type-db2/cbl/COTRTUPC.cbl:567.
  * TODO: callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/app-transaction-type-db2/cbl/COTRTLIC.cbl:648.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/cotrtupc")
@@ -29,9 +29,9 @@ public class CotrtupcController {
 
     private final CotrtupcService cotrtupcService;
 
-    /** CICS transaction CTTU -> Cotrtupc (CSD app/app-transaction-type-db2/csd/CRDDEMOD.csd:18 group CARDDEMO; app/app-transaction-type-db2/csd/CRDDEMOD.csd:35 group CARDDEMO). */
+    /** CICS transaction CTTU -> Cotrtupc (CSD app/app-transaction-type-db2/csd/CRDDEMOD.csd:35 group CARDDEMO). */
     @PostMapping("/transactions/CTTU")
-    public ResponseEntity<CotrtupcCommarea> transactionCTTU(@RequestBody CotrtupcCommarea request) {
+    public ResponseEntity<Object> transactionCTTU(@RequestBody CotrtupcCommarea request) {
         return ResponseEntity.ok(cotrtupcService.handleTransaction("CTTU", request));
     }
 

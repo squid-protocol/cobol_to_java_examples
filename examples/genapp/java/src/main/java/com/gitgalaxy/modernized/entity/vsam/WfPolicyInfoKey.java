@@ -15,7 +15,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * The key of WfPolicyInfo: WF-REQUEST-ID, WF-CUSTOMER-NUM, WF-POLICY-NUM together (offset 0, 21 bytes, from the programs' RIDFLD / RECORD KEY): the @EmbeddedId WfPolicyInfoKey.
+ * The key of WfPolicyInfo: WF-REQUEST-ID, WF-CUSTOMER-NUM, WF-POLICY-NUM together (offset 0, 21 bytes, from IDCAMS KEYS): the @EmbeddedId WfPolicyInfoKey.
  */
 @Embeddable
 @Data
@@ -23,15 +23,15 @@ import lombok.NoArgsConstructor;
 public class WfPolicyInfoKey implements Serializable {
 
     // WF-REQUEST-ID: PIC X, offset 0, 1 bytes
-    @Column(name = "WF_REQUEST_ID", length = 1)
+    @Column(name = "WF_REQUEST_ID", columnDefinition = "varchar(1) COLLATE \"C\"")
     private String wfRequestId;
 
     // WF-CUSTOMER-NUM: PIC X(10), offset 1, 10 bytes
-    @Column(name = "WF_CUSTOMER_NUM", length = 10)
+    @Column(name = "WF_CUSTOMER_NUM", columnDefinition = "varchar(10) COLLATE \"C\"")
     private String wfCustomerNum;
 
     // WF-POLICY-NUM: PIC X(10), offset 11, 10 bytes
-    @Column(name = "WF_POLICY_NUM", length = 10)
+    @Column(name = "WF_POLICY_NUM", columnDefinition = "varchar(10) COLLATE \"C\"")
     private String wfPolicyNum;
 
 }

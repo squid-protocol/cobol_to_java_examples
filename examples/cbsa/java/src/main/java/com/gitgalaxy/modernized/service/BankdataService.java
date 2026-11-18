@@ -12,9 +12,14 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.gitgalaxy.modernized.batch.Dd;
+import com.gitgalaxy.modernized.entity.vsam.OutputData;
+import com.gitgalaxy.modernized.entity.vsam.OutputDataKey;
 import com.gitgalaxy.modernized.repository.db2.AccountRepository;
 import com.gitgalaxy.modernized.repository.db2.ControlRepository;
+import com.gitgalaxy.modernized.repository.vsam.OutputDataRepository;
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
@@ -24,12 +29,13 @@ public class BankdataService {
 
     private static final Logger log = LoggerFactory.getLogger(BankdataService.class);
 
+    private final OutputDataRepository outputDataRepository;
     private final AccountRepository accountRepository;
     private final ControlRepository controlRepository;
 
-    public void executeBankdata(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for BANKDATA");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** CBSA.CICSBSA.CUSTOMER as BATCH SELECT CUSTOMER-FILE at src/base/cobol_src/BANKDATA.cbl (SELECT CUSTOMER-FILE); VSAM defines field testing: open (3 public / 0 private estates). */
+    public OutputData writeCustomerFile(OutputData record) {
+        return outputDataRepository.save(record);
     }
 
     /**

@@ -1,0 +1,3505 @@
+{
+  "copybook_gaps": [],
+  "eras": {
+    "by_era": {
+      "0": 0,
+      "1": 5,
+      "2": 22,
+      "3": 15,
+      "4": 0,
+      "none": 2
+    },
+    "mixed": 8,
+    "programs": 44,
+    "tells": {
+      "address-of": 1,
+      "dli": 7,
+      "exec-sql": 4,
+      "handle-condition": 6,
+      "le-callable": 12,
+      "mq-call": 3,
+      "resp": 23,
+      "set-address": 1
+    }
+  },
+  "features": {
+    "cics_commands": {
+      "ABEND": {
+        "count": 5,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl"
+        ]
+      },
+      "ASKTIME": {
+        "count": 5,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/COBIL00C.cbl"
+        ]
+      },
+      "ASSIGN": {
+        "count": 2,
+        "programs": [
+          "app/cbl/COSGN00C.cbl"
+        ]
+      },
+      "DELETE": {
+        "count": 1,
+        "programs": [
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "ENDBR": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "FORMATTIME": {
+        "count": 5,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/COBIL00C.cbl"
+        ]
+      },
+      "HANDLE ABEND": {
+        "count": 10,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl"
+        ]
+      },
+      "HANDLE CONDITION": {
+        "count": 1,
+        "programs": [
+          "app/cbl/COADM01C.cbl"
+        ]
+      },
+      "INQUIRE": {
+        "count": 1,
+        "programs": [
+          "app/cbl/COMEN01C.cbl"
+        ]
+      },
+      "LINK": {
+        "count": 1,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl"
+        ]
+      },
+      "READ": {
+        "count": 27,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "READNEXT": {
+        "count": 4,
+        "programs": [
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "READPREV": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "RECEIVE": {
+        "count": 21,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "RETRIEVE": {
+        "count": 3,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl"
+        ]
+      },
+      "RETURN": {
+        "count": 38,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "REWRITE": {
+        "count": 5,
+        "programs": [
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COUSR02C.cbl"
+        ]
+      },
+      "SEND": {
+        "count": 31,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "SEND TEXT": {
+        "count": 9,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COSGN00C.cbl"
+        ]
+      },
+      "STARTBR": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "SYNCPOINT": {
+        "count": 14,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COCRDUPC.cbl"
+        ]
+      },
+      "SYNCPOINT ROLLBACK": {
+        "count": 2,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/cbl/COACTUPC.cbl"
+        ]
+      },
+      "WRITE": {
+        "count": 3,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR01C.cbl"
+        ]
+      },
+      "WRITEQ TD": {
+        "count": 2,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/cbl/CORPT00C.cbl"
+        ]
+      },
+      "XCTL": {
+        "count": 32,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      }
+    },
+    "cics_options": {
+      "ABEND: ABCODE": {
+        "count": 5,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl"
+        ]
+      },
+      "ASKTIME: ABSTIME": {
+        "count": 5,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/COBIL00C.cbl"
+        ]
+      },
+      "ASKTIME: NOHANDLE": {
+        "count": 3,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl"
+        ]
+      },
+      "ASSIGN: APPLID": {
+        "count": 1,
+        "programs": [
+          "app/cbl/COSGN00C.cbl"
+        ]
+      },
+      "ASSIGN: SYSID": {
+        "count": 1,
+        "programs": [
+          "app/cbl/COSGN00C.cbl"
+        ]
+      },
+      "DELETE: DATASET": {
+        "count": 1,
+        "programs": [
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "DELETE: RESP": {
+        "count": 1,
+        "programs": [
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "DELETE: RESP2": {
+        "count": 1,
+        "programs": [
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "ENDBR: DATASET": {
+        "count": 4,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "ENDBR: FILE": {
+        "count": 2,
+        "programs": [
+          "app/cbl/COCRDLIC.cbl"
+        ]
+      },
+      "FORMATTIME: ABSTIME": {
+        "count": 5,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/COBIL00C.cbl"
+        ]
+      },
+      "FORMATTIME: DATESEP": {
+        "count": 3,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/COBIL00C.cbl"
+        ]
+      },
+      "FORMATTIME: MILLISECONDS": {
+        "count": 1,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl"
+        ]
+      },
+      "FORMATTIME: MMDDYY": {
+        "count": 1,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl"
+        ]
+      },
+      "FORMATTIME: MMDDYYYY": {
+        "count": 1,
+        "programs": [
+          "app/app-vsam-mq/cbl/CODATE01.cbl"
+        ]
+      },
+      "FORMATTIME: NOHANDLE": {
+        "count": 1,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl"
+        ]
+      },
+      "FORMATTIME: TIME": {
+        "count": 4,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/COBIL00C.cbl"
+        ]
+      },
+      "FORMATTIME: TIMESEP": {
+        "count": 2,
+        "programs": [
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/COBIL00C.cbl"
+        ]
+      },
+      "FORMATTIME: YYDDD": {
+        "count": 1,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl"
+        ]
+      },
+      "FORMATTIME: YYMMDD": {
+        "count": 1,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl"
+        ]
+      },
+      "FORMATTIME: YYYYMMDD": {
+        "count": 1,
+        "programs": [
+          "app/cbl/COBIL00C.cbl"
+        ]
+      },
+      "HANDLE ABEND: CANCEL": {
+        "count": 5,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl"
+        ]
+      },
+      "HANDLE ABEND: LABEL": {
+        "count": 5,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl"
+        ]
+      },
+      "HANDLE CONDITION: PGMIDERR": {
+        "count": 1,
+        "programs": [
+          "app/cbl/COADM01C.cbl"
+        ]
+      },
+      "INQUIRE: NOHANDLE": {
+        "count": 1,
+        "programs": [
+          "app/cbl/COMEN01C.cbl"
+        ]
+      },
+      "INQUIRE: PROGRAM": {
+        "count": 1,
+        "programs": [
+          "app/cbl/COMEN01C.cbl"
+        ]
+      },
+      "LINK: COMMAREA": {
+        "count": 1,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl"
+        ]
+      },
+      "LINK: NOHANDLE": {
+        "count": 1,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl"
+        ]
+      },
+      "LINK: PROGRAM": {
+        "count": 1,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl"
+        ]
+      },
+      "READ: DATASET": {
+        "count": 21,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "READ: FILE": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl"
+        ]
+      },
+      "READ: INTO": {
+        "count": 27,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "READ: KEYLENGTH": {
+        "count": 27,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "READ: LENGTH": {
+        "count": 27,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "READ: RESP": {
+        "count": 27,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "READ: RESP2": {
+        "count": 27,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "READ: RIDFLD": {
+        "count": 27,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "READ: UPDATE": {
+        "count": 7,
+        "programs": [
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "READNEXT: DATASET": {
+        "count": 4,
+        "programs": [
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "READNEXT: INTO": {
+        "count": 4,
+        "programs": [
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "READNEXT: KEYLENGTH": {
+        "count": 4,
+        "programs": [
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "READNEXT: LENGTH": {
+        "count": 4,
+        "programs": [
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "READNEXT: RESP": {
+        "count": 4,
+        "programs": [
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "READNEXT: RESP2": {
+        "count": 4,
+        "programs": [
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "READNEXT: RIDFLD": {
+        "count": 4,
+        "programs": [
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "READPREV: DATASET": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "READPREV: INTO": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "READPREV: KEYLENGTH": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "READPREV: LENGTH": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "READPREV: RESP": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "READPREV: RESP2": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "READPREV: RIDFLD": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "RECEIVE: INTO": {
+        "count": 20,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "RECEIVE: MAP": {
+        "count": 21,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "RECEIVE: MAPSET": {
+        "count": 21,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "RECEIVE: NOHANDLE": {
+        "count": 1,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl"
+        ]
+      },
+      "RECEIVE: RESP": {
+        "count": 20,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "RECEIVE: RESP2": {
+        "count": 18,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "RETRIEVE: INTO": {
+        "count": 3,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl"
+        ]
+      },
+      "RETRIEVE: NOHANDLE": {
+        "count": 1,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl"
+        ]
+      },
+      "RETRIEVE: RESP": {
+        "count": 2,
+        "programs": [
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl"
+        ]
+      },
+      "RETRIEVE: RESP2": {
+        "count": 2,
+        "programs": [
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl"
+        ]
+      },
+      "RETURN: COMMAREA": {
+        "count": 24,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "RETURN: LENGTH": {
+        "count": 8,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COSGN00C.cbl"
+        ]
+      },
+      "RETURN: TRANSID": {
+        "count": 24,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "REWRITE: DATASET": {
+        "count": 2,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COUSR02C.cbl"
+        ]
+      },
+      "REWRITE: FILE": {
+        "count": 3,
+        "programs": [
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COCRDUPC.cbl"
+        ]
+      },
+      "REWRITE: FROM": {
+        "count": 5,
+        "programs": [
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COUSR02C.cbl"
+        ]
+      },
+      "REWRITE: LENGTH": {
+        "count": 5,
+        "programs": [
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COUSR02C.cbl"
+        ]
+      },
+      "REWRITE: RESP": {
+        "count": 5,
+        "programs": [
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COUSR02C.cbl"
+        ]
+      },
+      "REWRITE: RESP2": {
+        "count": 5,
+        "programs": [
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COUSR02C.cbl"
+        ]
+      },
+      "SEND TEXT: ERASE": {
+        "count": 9,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COSGN00C.cbl"
+        ]
+      },
+      "SEND TEXT: FREEKB": {
+        "count": 9,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COSGN00C.cbl"
+        ]
+      },
+      "SEND TEXT: FROM": {
+        "count": 9,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COSGN00C.cbl"
+        ]
+      },
+      "SEND TEXT: LENGTH": {
+        "count": 9,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COSGN00C.cbl"
+        ]
+      },
+      "SEND: CURSOR": {
+        "count": 24,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "SEND: ERASE": {
+        "count": 24,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "SEND: FREEKB": {
+        "count": 7,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl"
+        ]
+      },
+      "SEND: FROM": {
+        "count": 31,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "SEND: LENGTH": {
+        "count": 5,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl"
+        ]
+      },
+      "SEND: MAP": {
+        "count": 26,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "SEND: MAPSET": {
+        "count": 26,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "SEND: NOHANDLE": {
+        "count": 5,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl"
+        ]
+      },
+      "SEND: RESP": {
+        "count": 7,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl"
+        ]
+      },
+      "STARTBR: DATASET": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "STARTBR: GTEQ": {
+        "count": 2,
+        "programs": [
+          "app/cbl/COCRDLIC.cbl"
+        ]
+      },
+      "STARTBR: KEYLENGTH": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "STARTBR: RESP": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "STARTBR: RESP2": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "STARTBR: RIDFLD": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "WRITE: DATASET": {
+        "count": 3,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR01C.cbl"
+        ]
+      },
+      "WRITE: FROM": {
+        "count": 3,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR01C.cbl"
+        ]
+      },
+      "WRITE: KEYLENGTH": {
+        "count": 3,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR01C.cbl"
+        ]
+      },
+      "WRITE: LENGTH": {
+        "count": 3,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR01C.cbl"
+        ]
+      },
+      "WRITE: RESP": {
+        "count": 3,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR01C.cbl"
+        ]
+      },
+      "WRITE: RESP2": {
+        "count": 3,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR01C.cbl"
+        ]
+      },
+      "WRITE: RIDFLD": {
+        "count": 3,
+        "programs": [
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR01C.cbl"
+        ]
+      },
+      "WRITEQ TD: FROM": {
+        "count": 2,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/cbl/CORPT00C.cbl"
+        ]
+      },
+      "WRITEQ TD: LENGTH": {
+        "count": 2,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/cbl/CORPT00C.cbl"
+        ]
+      },
+      "WRITEQ TD: NOHANDLE": {
+        "count": 1,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl"
+        ]
+      },
+      "WRITEQ TD: QUEUE": {
+        "count": 2,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/cbl/CORPT00C.cbl"
+        ]
+      },
+      "WRITEQ TD: RESP": {
+        "count": 1,
+        "programs": [
+          "app/cbl/CORPT00C.cbl"
+        ]
+      },
+      "WRITEQ TD: RESP2": {
+        "count": 1,
+        "programs": [
+          "app/cbl/CORPT00C.cbl"
+        ]
+      },
+      "XCTL: COMMAREA": {
+        "count": 30,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "XCTL: PROGRAM": {
+        "count": 32,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      }
+    },
+    "compile_options": {
+      "ARITH: COMPAT": {
+        "count": 44,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBSTM03B.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COBSWAIT.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl",
+          "app/cbl/CSUTLDTC.cbl"
+        ]
+      },
+      "INTDATE: ANSI": {
+        "count": 44,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBSTM03B.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COBSWAIT.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl",
+          "app/cbl/CSUTLDTC.cbl"
+        ]
+      },
+      "NUMPROC: NOPFD": {
+        "count": 44,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBSTM03B.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COBSWAIT.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl",
+          "app/cbl/CSUTLDTC.cbl"
+        ]
+      },
+      "TRUNC: STD": {
+        "count": 44,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBSTM03B.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COBSWAIT.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl",
+          "app/cbl/CSUTLDTC.cbl"
+        ]
+      }
+    },
+    "data_types": {
+      "BINARY": {
+        "count": 1062,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COBSWAIT.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl",
+          "app/cbl/CSUTLDTC.cbl"
+        ]
+      },
+      "COMP-5": {
+        "count": 19,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl"
+        ]
+      },
+      "EDITED": {
+        "count": 33,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl"
+        ]
+      },
+      "PACKED": {
+        "count": 125,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl"
+        ]
+      }
+    },
+    "intrinsic_functions": {
+      "CURRENT-DATE": {
+        "count": 40,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "DATE-OF-INTEGER": {
+        "count": 1,
+        "programs": [
+          "app/cbl/CORPT00C.cbl"
+        ]
+      },
+      "INTEGER-OF-DATE": {
+        "count": 3,
+        "programs": [
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/CORPT00C.cbl"
+        ]
+      },
+      "LENGTH": {
+        "count": 26,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COCRDUPC.cbl"
+        ]
+      },
+      "LOWER-CASE": {
+        "count": 2,
+        "programs": [
+          "app/cbl/COACTUPC.cbl"
+        ]
+      },
+      "MOD": {
+        "count": 1,
+        "programs": [
+          "app/cbl/CBTRN03C.cbl"
+        ]
+      },
+      "NUMVAL": {
+        "count": 8,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COTRN02C.cbl"
+        ]
+      },
+      "NUMVAL-C": {
+        "count": 13,
+        "programs": [
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COTRN02C.cbl"
+        ]
+      },
+      "TEST-NUMVAL": {
+        "count": 3,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl"
+        ]
+      },
+      "TEST-NUMVAL-C": {
+        "count": 6,
+        "programs": [
+          "app/cbl/COACTUPC.cbl"
+        ]
+      },
+      "TRIM": {
+        "count": 110,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COCRDUPC.cbl"
+        ]
+      },
+      "UPPER-CASE": {
+        "count": 56,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COSGN00C.cbl"
+        ]
+      }
+    },
+    "sql_forms": {
+      "CLOSE": {
+        "count": 2,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl"
+        ]
+      },
+      "DELETE": {
+        "count": 3,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl"
+        ]
+      },
+      "FETCH": {
+        "count": 3,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl"
+        ]
+      },
+      "INSERT": {
+        "count": 3,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl"
+        ]
+      },
+      "OPEN": {
+        "count": 2,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl"
+        ]
+      },
+      "SELECT": {
+        "count": 3,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl"
+        ]
+      },
+      "STATIC": {
+        "count": 20,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl"
+        ]
+      },
+      "UPDATE": {
+        "count": 4,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl"
+        ]
+      }
+    },
+    "statements": {
+      "ACCEPT": {
+        "count": 12,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/COBSWAIT.cbl"
+        ]
+      },
+      "ALTER": {
+        "count": 4,
+        "programs": [
+          "app/cbl/CBSTM03A.CBL"
+        ]
+      },
+      "ARITH": {
+        "count": 117,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "CALL": {
+        "count": 64,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COBSWAIT.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/CSUTLDTC.cbl"
+        ]
+      },
+      "CLOSE": {
+        "count": 50,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBSTM03B.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl"
+        ]
+      },
+      "COMPUTE": {
+        "count": 84,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl"
+        ]
+      },
+      "CONTINUE": {
+        "count": 284,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "DISPLAY": {
+        "count": 391,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "ENTRY": {
+        "count": 3,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL"
+        ]
+      },
+      "EVALUATE": {
+        "count": 194,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBSTM03B.CBL",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl",
+          "app/cbl/CSUTLDTC.cbl"
+        ]
+      },
+      "EXIT": {
+        "count": 383,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBSTM03B.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/CSUTLDTC.cbl"
+        ]
+      },
+      "GOBACK": {
+        "count": 22,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBSTM03B.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl"
+        ]
+      },
+      "GOTO": {
+        "count": 200,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBSTM03B.CBL",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/CORPT00C.cbl"
+        ]
+      },
+      "IF": {
+        "count": 1162,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBSTM03B.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "INITIALIZE": {
+        "count": 86,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/CSUTLDTC.cbl"
+        ]
+      },
+      "INSPECT": {
+        "count": 15,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl"
+        ]
+      },
+      "MOVE": {
+        "count": 4135,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBSTM03B.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COBSWAIT.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl",
+          "app/cbl/CSUTLDTC.cbl"
+        ]
+      },
+      "NEXT-SENTENCE": {
+        "count": 1,
+        "programs": [
+          "app/cbl/CBTRN03C.cbl"
+        ]
+      },
+      "OPEN": {
+        "count": 53,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBSTM03B.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl"
+        ]
+      },
+      "PERFORM": {
+        "count": 1248,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBSTM03B.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl",
+          "app/cbl/CSUTLDTC.cbl"
+        ]
+      },
+      "READ": {
+        "count": 34,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT02C.cbl",
+          "app/cbl/CBACT03C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBCUS01C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03B.CBL",
+          "app/cbl/CBTRN01C.cbl",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl"
+        ]
+      },
+      "REWRITE": {
+        "count": 3,
+        "programs": [
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBTRN02C.cbl"
+        ]
+      },
+      "SEARCH": {
+        "count": 1,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl"
+        ]
+      },
+      "SET-ADDRESS": {
+        "count": 5,
+        "programs": [
+          "app/cbl/CBSTM03A.CBL"
+        ]
+      },
+      "SET-TO": {
+        "count": 1,
+        "programs": [
+          "app/cbl/CBSTM03A.CBL"
+        ]
+      },
+      "SET-TRUE": {
+        "count": 1100,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDLIC.cbl",
+          "app/cbl/COCRDSLC.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COSGN00C.cbl",
+          "app/cbl/COTRN00C.cbl",
+          "app/cbl/COTRN01C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR00C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "STOP": {
+        "count": 2,
+        "programs": [
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/cbl/COBSWAIT.cbl"
+        ]
+      },
+      "STRING": {
+        "count": 135,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+          "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+          "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+          "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+          "app/app-vsam-mq/cbl/COACCT01.cbl",
+          "app/app-vsam-mq/cbl/CODATE01.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/COACTUPC.cbl",
+          "app/cbl/COACTVWC.cbl",
+          "app/cbl/COADM01C.cbl",
+          "app/cbl/COBIL00C.cbl",
+          "app/cbl/COCRDUPC.cbl",
+          "app/cbl/COMEN01C.cbl",
+          "app/cbl/CORPT00C.cbl",
+          "app/cbl/COTRN02C.cbl",
+          "app/cbl/COUSR01C.cbl",
+          "app/cbl/COUSR02C.cbl",
+          "app/cbl/COUSR03C.cbl"
+        ]
+      },
+      "UNSTRING": {
+        "count": 1,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl"
+        ]
+      },
+      "WRITE": {
+        "count": 117,
+        "programs": [
+          "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+          "app/cbl/CBACT01C.cbl",
+          "app/cbl/CBACT04C.cbl",
+          "app/cbl/CBEXPORT.cbl",
+          "app/cbl/CBIMPORT.cbl",
+          "app/cbl/CBSTM03A.CBL",
+          "app/cbl/CBTRN02C.cbl",
+          "app/cbl/CBTRN03C.cbl"
+        ]
+      }
+    }
+  },
+  "other": {},
+  "programs": [
+    {
+      "earliest": 1,
+      "era": 1,
+      "holes": 0,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+      "statements": 110,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 5,
+          "era": 1,
+          "tell": "dli"
+        }
+      ],
+      "translated_statements": 110,
+      "translation": "whole"
+    },
+    {
+      "earliest": 1,
+      "era": 3,
+      "kind": "cobol",
+      "mixed": true,
+      "name": "app/app-authorization-ims-db2-mq/cbl/COPAUA0C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 8,
+          "era": 1,
+          "tell": "dli"
+        },
+        {
+          "count": 6,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 4,
+          "era": 3,
+          "tell": "mq-call"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 1,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": true,
+      "name": "app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 6,
+          "era": 1,
+          "tell": "dli"
+        },
+        {
+          "count": 8,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 1,
+      "era": 1,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/app-authorization-ims-db2-mq/cbl/COPAUS1C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 7,
+          "era": 1,
+          "tell": "dli"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/app-authorization-ims-db2-mq/cbl/COPAUS2C.cbl",
+      "refusal": "CopyNotFound",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 4,
+          "era": 2,
+          "tell": "exec-sql"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 1,
+      "era": 1,
+      "holes": 0,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/app-authorization-ims-db2-mq/cbl/DBUNLDGS.CBL",
+      "statements": 67,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 4,
+          "era": 1,
+          "tell": "dli"
+        }
+      ],
+      "translated_statements": 67,
+      "translation": "whole"
+    },
+    {
+      "earliest": 1,
+      "era": 1,
+      "holes": 6,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/app-authorization-ims-db2-mq/cbl/PAUDBLOD.CBL",
+      "statements": 88,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 3,
+          "era": 1,
+          "tell": "dli"
+        }
+      ],
+      "translated_statements": 82,
+      "translation": "holes"
+    },
+    {
+      "earliest": 1,
+      "era": 1,
+      "holes": 6,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/app-authorization-ims-db2-mq/cbl/PAUDBUNL.CBL",
+      "statements": 73,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 2,
+          "era": 1,
+          "tell": "dli"
+        }
+      ],
+      "translated_statements": 67,
+      "translation": "holes"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/app-transaction-type-db2/cbl/COBTUPDT.cbl",
+      "refusal": "CopyNotFound",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 5,
+          "era": 2,
+          "tell": "exec-sql"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/app-transaction-type-db2/cbl/COTRTLIC.cbl",
+      "refusal": "CopyNotFound",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 2,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 16,
+          "era": 2,
+          "tell": "exec-sql"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 1,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": true,
+      "name": "app/app-transaction-type-db2/cbl/COTRTUPC.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 2,
+          "era": 1,
+          "tell": "handle-condition"
+        },
+        {
+          "count": 3,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 7,
+          "era": 2,
+          "tell": "exec-sql"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 3,
+      "era": 3,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/app-vsam-mq/cbl/COACCT01.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 4,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 9,
+          "era": 3,
+          "tell": "mq-call"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 3,
+      "era": 3,
+      "holes": 0,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/app-vsam-mq/cbl/CODATE01.cbl",
+      "statements": 182,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 2,
+          "era": 2,
+          "tell": "resp"
+        },
+        {
+          "count": 9,
+          "era": 3,
+          "tell": "mq-call"
+        }
+      ],
+      "translated_statements": 182,
+      "translation": "whole"
+    },
+    {
+      "earliest": 3,
+      "era": 3,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/CBACT01C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 3,
+          "tell": "le-callable"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 3,
+      "era": 3,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/CBACT02C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 3,
+          "tell": "le-callable"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 3,
+      "era": 3,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/CBACT03C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 3,
+          "tell": "le-callable"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 3,
+      "era": 3,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/CBACT04C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 3,
+          "tell": "le-callable"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 3,
+      "era": 3,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/CBCUS01C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 3,
+          "tell": "le-callable"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 3,
+      "era": 3,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/CBEXPORT.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 3,
+          "tell": "le-callable"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 3,
+      "era": 3,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/CBIMPORT.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 3,
+          "tell": "le-callable"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 3,
+      "era": 3,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/CBSTM03A.CBL",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 5,
+          "era": 2,
+          "tell": "address-of"
+        },
+        {
+          "count": 5,
+          "era": 2,
+          "tell": "set-address"
+        },
+        {
+          "count": 1,
+          "era": 3,
+          "tell": "le-callable"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "holes": 12,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/CBSTM03B.CBL",
+      "statements": 53,
+      "status": "parsed",
+      "tells": [],
+      "translated_statements": 41,
+      "translation": "holes"
+    },
+    {
+      "earliest": 3,
+      "era": 3,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/CBTRN01C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 3,
+          "tell": "le-callable"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 3,
+      "era": 3,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/CBTRN02C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 3,
+          "tell": "le-callable"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 3,
+      "era": 3,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/CBTRN03C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 3,
+          "tell": "le-callable"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 1,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": true,
+      "name": "app/cbl/COACTUPC.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 2,
+          "era": 1,
+          "tell": "handle-condition"
+        },
+        {
+          "count": 17,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 1,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": true,
+      "name": "app/cbl/COACTVWC.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 2,
+          "era": 1,
+          "tell": "handle-condition"
+        },
+        {
+          "count": 9,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 1,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": true,
+      "name": "app/cbl/COADM01C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 1,
+          "tell": "handle-condition"
+        },
+        {
+          "count": 2,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/COBIL00C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 14,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": null,
+      "era": null,
+      "holes": 0,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/COBSWAIT.cbl",
+      "statements": 4,
+      "status": "parsed",
+      "tells": [],
+      "translated_statements": 4,
+      "translation": "whole"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/COCRDLIC.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 14,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 1,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": true,
+      "name": "app/cbl/COCRDSLC.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 2,
+          "era": 1,
+          "tell": "handle-condition"
+        },
+        {
+          "count": 7,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 1,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": true,
+      "name": "app/cbl/COCRDUPC.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 2,
+          "era": 1,
+          "tell": "handle-condition"
+        },
+        {
+          "count": 9,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/COMEN01C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 2,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/CORPT00C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 4,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/COSGN00C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 4,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/COTRN00C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 8,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/COTRN01C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 4,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/COTRN02C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 12,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/COUSR00C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 8,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/COUSR01C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 4,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/COUSR02C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 6,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 2,
+      "era": 2,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/COUSR03C.cbl",
+      "refusal": "CopyAmbiguous",
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 6,
+          "era": 2,
+          "tell": "resp"
+        }
+      ],
+      "translation": "refused"
+    },
+    {
+      "earliest": 3,
+      "era": 3,
+      "holes": 0,
+      "kind": "cobol",
+      "mixed": false,
+      "name": "app/cbl/CSUTLDTC.cbl",
+      "statements": 27,
+      "status": "parsed",
+      "tells": [
+        {
+          "count": 1,
+          "era": 3,
+          "tell": "le-callable"
+        }
+      ],
+      "translated_statements": 27,
+      "translation": "whole"
+    }
+  ],
+  "redacted": false,
+  "rules": {
+    "classes": 6,
+    "ranked": [
+      {
+        "one_away": 0,
+        "only": 33,
+        "only_by_era": {
+          "1": 1,
+          "2": 19,
+          "3": 13
+        },
+        "rule": "refused: CopyAmbiguous",
+        "touched": 33
+      },
+      {
+        "one_away": 0,
+        "only": 3,
+        "only_by_era": {
+          "2": 3
+        },
+        "rule": "refused: CopyNotFound",
+        "touched": 3
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "CLOSE: no batch package",
+        "touched": 3
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "OPEN: no batch package",
+        "touched": 3
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "READ: no batch package",
+        "touched": 2
+      },
+      {
+        "one_away": 0,
+        "only": 0,
+        "only_by_era": {},
+        "rule": "WRITE: no batch package",
+        "touched": 1
+      }
+    ]
+  },
+  "schema": "gitgalaxy-assess/1",
+  "tool_version": "2.4.9.dev334+gacd547e89.d20260901",
+  "totals": {
+    "assembler_members": 0,
+    "parsed": 44,
+    "programs": 44,
+    "refused_by_family": 0,
+    "translation": {
+      "holes": 3,
+      "refused": 36,
+      "whole": 5
+    },
+    "unparsed": 0
+  }
+}

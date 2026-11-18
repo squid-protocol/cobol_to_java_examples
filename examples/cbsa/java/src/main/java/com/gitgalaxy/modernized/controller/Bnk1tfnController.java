@@ -18,7 +18,7 @@ import com.gitgalaxy.modernized.service.Bnk1tfnService;
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
  * COMMAREA: WS-COMMAREA (src/base/cobol_src/BNK1TFN.cbl, 28 bytes) -> Bnk1tfnWsCommarea.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/bnk1tfn")

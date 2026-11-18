@@ -1,0 +1,2441 @@
+{
+  "compiler_options": [],
+  "deliverable": {
+    "proof": "The port is laid over the generated project as an overlay and proven by the equivalence harness (tests/tools/equivalence.py in GitGalaxy): the original runs under GnuCOBOL, the port on the same inputs, and every output record is compared field by field; a person approves the port with that report in hand.",
+    "return": "One complete Java file for src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java: the same package, class name and public method signatures, with runTask ported -- what the proof runs -- and helper methods it calls added; every other generated method left as generated (#4255)."
+  },
+  "facts": {
+    "full_skeleton": "dsf_gitgalaxy_clean_TIMESTAMP/06_skeleton/R0019E01_skeleton.json",
+    "program": {
+      "copy_collisions": [],
+      "copy_edges": {
+        "src/R0019912.pli": {},
+        "src/R0019944.pli": {},
+        "src/R0019954.pli": {},
+        "src/R0019956.pli": {},
+        "src/R0019961.pli": {
+          "src/R0019954.pli": []
+        },
+        "src/R0019993.pli": {},
+        "src/R0019995.pli": {},
+        "src/R0019E01.pli": {
+          "src/R0019912.pli": [],
+          "src/R0019944.pli": [],
+          "src/R0019956.pli": [],
+          "src/R0019961.pli": [],
+          "src/R0019993.pli": [],
+          "src/R0019995.pli": []
+        }
+      },
+      "copy_gaps": [],
+      "copybooks": [
+        "src/R0019912.pli",
+        "src/R0019944.pli",
+        "src/R0019956.pli",
+        "src/R0019961.pli",
+        "src/R0019993.pli",
+        "src/R0019995.pli"
+      ],
+      "file": "src/R0019E01.pli",
+      "language": "pli",
+      "program_id_field_testing": "open",
+      "program_ids": [
+        "R0019E01"
+      ],
+      "total_loc": 4493
+    },
+    "sections": {
+      "call_contracts": {
+        "facts": [
+          {
+            "args": [
+              {
+                "argument": null,
+                "callee_bytes": 8,
+                "caller_bytes": null,
+                "length_match": null,
+                "parameter": "W9956_PIDENT",
+                "position": 1
+              },
+              {
+                "argument": null,
+                "callee_bytes": 1440,
+                "caller_bytes": null,
+                "length_match": null,
+                "parameter": "W9956_OMR",
+                "position": 2
+              }
+            ],
+            "callee": "src/R0019956.pli",
+            "caller": "src/R0019E01.pli",
+            "entry": "P9956_BER_G_CICS",
+            "line": 649,
+            "status": "caller_no_using",
+            "target": "P9956_BER_G_CICS"
+          },
+          {
+            "args": [
+              {
+                "argument": null,
+                "callee_bytes": 8,
+                "caller_bytes": null,
+                "length_match": null,
+                "parameter": "W9956_PIDENT",
+                "position": 1
+              },
+              {
+                "argument": null,
+                "callee_bytes": 1440,
+                "caller_bytes": null,
+                "length_match": null,
+                "parameter": "W9956_OMR",
+                "position": 2
+              }
+            ],
+            "callee": "src/R0019956.pli",
+            "caller": "src/R0019E01.pli",
+            "entry": "P9956_BER_G_CICS",
+            "line": 663,
+            "status": "caller_no_using",
+            "target": "P9956_BER_G_CICS"
+          },
+          {
+            "args": [],
+            "callee": "src/R0019961.pli",
+            "caller": "src/R0019E01.pli",
+            "entry": "OMREGNING_PGA_FNRENDRING",
+            "line": 1783,
+            "status": "paired",
+            "target": "OMREGNING_PGA_FNRENDRING"
+          },
+          {
+            "args": [],
+            "callee": "src/R0019961.pli",
+            "caller": "src/R0019E01.pli",
+            "entry": "OMREGNING_PGA_FNRENDRING",
+            "line": 1940,
+            "status": "paired",
+            "target": "OMREGNING_PGA_FNRENDRING"
+          },
+          {
+            "args": [],
+            "callee": "src/R0019961.pli",
+            "caller": "src/R0019E01.pli",
+            "entry": "OMREGNING_PGA_FNRENDRING",
+            "line": 2261,
+            "status": "paired",
+            "target": "OMREGNING_PGA_FNRENDRING"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "calls": {
+        "facts": [
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 649,
+            "operand": "P9956_BER_G_CICS",
+            "resolves_to": "src/R0019956.pli",
+            "sysid": null,
+            "target": "P9956_BER_G_CICS",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 663,
+            "operand": "P9956_BER_G_CICS",
+            "resolves_to": "src/R0019956.pli",
+            "sysid": null,
+            "target": "P9956_BER_G_CICS",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 711,
+            "operand": "R0010301",
+            "resolves_to": "src/R0010301.pli",
+            "sysid": null,
+            "target": "R0010301",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 828,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 834,
+            "operand": "R0019E01",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "R0019E01",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1345,
+            "operand": "R0013101",
+            "resolves_to": "src/R0013101.pli",
+            "sysid": null,
+            "target": "R0013101",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1744,
+            "operand": "R0014901",
+            "resolves_to": "src/R0014901.pli",
+            "sysid": null,
+            "target": "R0014901",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1783,
+            "operand": "OMREGNING_PGA_FNRENDRING",
+            "resolves_to": "src/R0019961.pli",
+            "sysid": null,
+            "target": "OMREGNING_PGA_FNRENDRING",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1816,
+            "operand": "R0016001",
+            "resolves_to": "src/R0016001.pli",
+            "sysid": null,
+            "target": "R0016001",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1840,
+            "operand": "R0015401",
+            "resolves_to": "src/R0015401.pli",
+            "sysid": null,
+            "target": "R0015401",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1867,
+            "operand": "R0015401",
+            "resolves_to": "src/R0015401.pli",
+            "sysid": null,
+            "target": "R0015401",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1903,
+            "operand": "R0014901",
+            "resolves_to": "src/R0014901.pli",
+            "sysid": null,
+            "target": "R0014901",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1940,
+            "operand": "OMREGNING_PGA_FNRENDRING",
+            "resolves_to": "src/R0019961.pli",
+            "sysid": null,
+            "target": "OMREGNING_PGA_FNRENDRING",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1973,
+            "operand": "R0016001",
+            "resolves_to": "src/R0016001.pli",
+            "sysid": null,
+            "target": "R0016001",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1996,
+            "operand": "R0015401",
+            "resolves_to": "src/R0015401.pli",
+            "sysid": null,
+            "target": "R0015401",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 2084,
+            "operand": "R0013101",
+            "resolves_to": "src/R0013101.pli",
+            "sysid": null,
+            "target": "R0013101",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 2204,
+            "operand": "R0013101",
+            "resolves_to": "src/R0013101.pli",
+            "sysid": null,
+            "target": "R0013101",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 2261,
+            "operand": "OMREGNING_PGA_FNRENDRING",
+            "resolves_to": "src/R0019961.pli",
+            "sysid": null,
+            "target": "OMREGNING_PGA_FNRENDRING",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 2298,
+            "operand": "R0016001",
+            "resolves_to": "src/R0016001.pli",
+            "sysid": null,
+            "target": "R0016001",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 2320,
+            "operand": "R0015401",
+            "resolves_to": "src/R0015401.pli",
+            "sysid": null,
+            "target": "R0015401",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 3212,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 3259,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 3311,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 3364,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 3415,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 3466,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 3517,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 3574,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 3627,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 3684,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 3739,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 3793,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 3847,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 3900,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 3960,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 4011,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 4064,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 4115,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 4163,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 4212,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 4264,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 4316,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 9
+      },
+      "cics_file_lineage": {
+        "facts": [
+          {
+            "accesses": [
+              "write"
+            ],
+            "definitions": [],
+            "lines": [
+              1119
+            ],
+            "name": "ENDRDSR",
+            "program": "src/R0019E01.pli",
+            "verbs": [
+              "WRITE"
+            ]
+          },
+          {
+            "accesses": [
+              "write"
+            ],
+            "definitions": [],
+            "lines": [
+              4479
+            ],
+            "name": "FNRFEIL",
+            "program": "src/R0019E01.pli",
+            "verbs": [
+              "WRITE"
+            ]
+          },
+          {
+            "accesses": [
+              "browse",
+              "read"
+            ],
+            "definitions": [],
+            "lines": [
+              749,
+              752,
+              756,
+              806
+            ],
+            "name": "FNRTILG",
+            "program": "src/R0019E01.pli",
+            "verbs": [
+              "ENDBR",
+              "READ",
+              "READNEXT",
+              "STARTBR"
+            ]
+          },
+          {
+            "accesses": [
+              "write"
+            ],
+            "definitions": [],
+            "lines": [
+              3189
+            ],
+            "name": "MELDREC",
+            "program": "src/R0019E01.pli",
+            "verbs": [
+              "WRITE"
+            ]
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "cics_resources": {
+        "facts": [
+          {
+            "access": "write",
+            "attributes": "MAPONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 698,
+            "name": "S0019E1",
+            "operand": "'S0019E1'",
+            "qualifier": "S0019E3",
+            "qualifier_operand": "'S0019E3'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 706,
+            "name": "S0019E1",
+            "operand": "'S0019E1'",
+            "qualifier": "S0019E3",
+            "qualifier_operand": "'S0019E3'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "browse",
+            "attributes": "RIDFLD(KEY_BIT) GTEQ",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 749,
+            "name": "FNRTILG",
+            "operand": "'FNRTILG'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "STARTBR"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(KEY_BIT)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 752,
+            "name": "FNRTILG",
+            "operand": "'FNRTILG'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "FNRREC",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "literal",
+            "verb": "READNEXT"
+          },
+          {
+            "access": "browse",
+            "attributes": null,
+            "candidates": null,
+            "kind": "FILE",
+            "line": 756,
+            "name": "FNRTILG",
+            "operand": "'FNRTILG'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "ENDBR"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(KEY_BIT) GTEQ",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 806,
+            "name": "FNRTILG",
+            "operand": "'FNRTILG'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "FNRREC",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "literal",
+            "verb": "READ"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 823,
+            "name": "S0019E1",
+            "operand": "'S0019E1'",
+            "qualifier": "S0019E3",
+            "qualifier_operand": "'S0019E3'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 890,
+            "name": "S0019E1",
+            "operand": "'S0019E1'",
+            "qualifier": "S0019E3",
+            "qualifier_operand": "'S0019E3'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 893,
+            "name": "S0019E1",
+            "operand": "'S0019E1'",
+            "qualifier": "S0019E3",
+            "qualifier_operand": "'S0019E3'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "write",
+            "attributes": "ERASE",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 930,
+            "name": "S0019E1",
+            "operand": "'S0019E1'",
+            "qualifier": "S0019E3",
+            "qualifier_operand": "'S0019E3'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "RIDFLD(ENDR_PEKER) RBA",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1119,
+            "name": "ENDRDSR",
+            "operand": "'ENDRDSR'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "ENDR_DSR",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "WRITE"
+          },
+          {
+            "access": "write",
+            "attributes": "RIDFLD(MELD_PEKER) RBA",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 3189,
+            "name": "MELDREC",
+            "operand": "'MELDREC'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "MELD_IO",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "WRITE"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 3228,
+            "name": "S0019E1",
+            "operand": "'S0019E1'",
+            "qualifier": "S0019E3",
+            "qualifier_operand": "'S0019E3'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "RIDFLD(FEIL_RBA) RBA",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 4479,
+            "name": "FNRFEIL",
+            "operand": "'FNRFEIL'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "FEIL_MELD",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "WRITE"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "commarea_contracts": {
+        "facts": [
+          {
+            "callee": "src/R0019E01.pli",
+            "callee_record": null,
+            "caller": "src/R0010426.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 101,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0019E01",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0010301.pli",
+            "callee_record": null,
+            "caller": "src/R0019E01.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 711,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0010301",
+            "verb": "XCTL"
+          },
+          {
+            "callee": null,
+            "callee_record": null,
+            "caller": "src/R0019E01.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 834,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "callee_unresolved",
+            "target": "R0019E01",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0013101.pli",
+            "callee_record": null,
+            "caller": "src/R0019E01.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1345,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0013101",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0014901.pli",
+            "callee_record": null,
+            "caller": "src/R0019E01.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1744,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0014901",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0016001.pli",
+            "callee_record": null,
+            "caller": "src/R0019E01.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1816,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0016001",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0015401.pli",
+            "callee_record": null,
+            "caller": "src/R0019E01.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1840,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0015401",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0015401.pli",
+            "callee_record": null,
+            "caller": "src/R0019E01.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1867,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0015401",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0014901.pli",
+            "callee_record": null,
+            "caller": "src/R0019E01.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1903,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0014901",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0016001.pli",
+            "callee_record": null,
+            "caller": "src/R0019E01.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1973,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0016001",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0015401.pli",
+            "callee_record": null,
+            "caller": "src/R0019E01.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1996,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0015401",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0013101.pli",
+            "callee_record": null,
+            "caller": "src/R0019E01.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 2084,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0013101",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0013101.pli",
+            "callee_record": null,
+            "caller": "src/R0019E01.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 2204,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0013101",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0016001.pli",
+            "callee_record": null,
+            "caller": "src/R0019E01.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 2298,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0016001",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0015401.pli",
+            "callee_record": null,
+            "caller": "src/R0019E01.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 2320,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0015401",
+            "verb": "LINK"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "entry_points": {
+        "facts": [
+          {
+            "entry_name": "R0019E",
+            "kind": "PROCEDURE",
+            "line": 94,
+            "params": "COMMAREA_PEKER"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "error_handlers": {
+        "facts": [
+          {
+            "condition": "ERROR",
+            "file": "src/R0019E01.pli",
+            "handler_found": null,
+            "kind": "HANDLE_CONDITION",
+            "line": 597,
+            "target": "FEILBEH",
+            "target_kind": "LABEL",
+            "unit": "R0019E"
+          },
+          {
+            "condition": "ERROR",
+            "file": "src/R0019E01.pli",
+            "handler_found": null,
+            "kind": "HANDLE_CONDITION",
+            "line": 855,
+            "target": "ABEND",
+            "target_kind": "LABEL",
+            "unit": "UTGANG"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "interface": {
+        "facts": {
+          "commarea": null,
+          "commarea_gap": "no structure parameter, or structure BASED on the main procedure's parameter COMMAREA_PEKER, is declared in the program or its %INCLUDE members; %INCLUDE members not in the repository: P0012002, P0012003, P0014009, P0019014, P0019906, P0019908, P0019910, P0019911, P0019912, P0019921, P0019924, P0019925, P0019940, P0019941, P0019942, P0019943, P0019944, P0019945, P0019946, P0019947, P0019948, P0019949, P0019950, P0019951, P0019952, P0019960, P0019967, P0019968, P0019E01, P0019N41, P0019N42, P0019N44, P0019N45, P0019N46, P0019N47, P0019N48, P0019U42, P0019U45, P0019U49, P0019U67, S0019E; no resolved caller passes a COMMAREA",
+          "commarea_unpack": null,
+          "containers": [],
+          "inbound": [
+            {
+              "bytes": null,
+              "caller": "src/R0010426.pli",
+              "line": 101,
+              "passes": null,
+              "verb": "XCTL",
+              "via": "static"
+            }
+          ],
+          "parameters": [
+            {
+              "file": "src/R0019E01.pli",
+              "layout": {
+                "bytes": 4,
+                "copybooks": [],
+                "dialect": "pli",
+                "extended": false,
+                "fields": [
+                  {
+                    "bytes": 4,
+                    "class": "A",
+                    "dialect": "pli",
+                    "file": "src/R0019E01.pli",
+                    "level": 1,
+                    "name": "COMMAREA_PEKER",
+                    "occurs": null,
+                    "offset": 0,
+                    "pic": null,
+                    "usage": "POINTER"
+                  }
+                ],
+                "unexpanded": [],
+                "variable": false
+              },
+              "mode": "REFERENCE",
+              "name": "COMMAREA_PEKER",
+              "position": 1,
+              "record": "COMMAREA_PEKER"
+            }
+          ]
+        },
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "navigation": {
+        "facts": [
+          {
+            "from": "src/R0010426.pli",
+            "line": 101,
+            "program": "R0019E01",
+            "remote_systems": [],
+            "to": "src/R0019E01.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0019E01.pli",
+            "line": 711,
+            "program": "R0010301",
+            "remote_systems": [],
+            "to": "src/R0010301.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0019E01.pli",
+            "line": 834,
+            "program": "R0019E01",
+            "remote_systems": [],
+            "to": null,
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R0019E01.pli",
+            "line": 1345,
+            "program": "R0013101",
+            "remote_systems": [],
+            "to": "src/R0013101.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0019E01.pli",
+            "line": 1744,
+            "program": "R0014901",
+            "remote_systems": [],
+            "to": "src/R0014901.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0019E01.pli",
+            "line": 1816,
+            "program": "R0016001",
+            "remote_systems": [],
+            "to": "src/R0016001.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0019E01.pli",
+            "line": 1840,
+            "program": "R0015401",
+            "remote_systems": [],
+            "to": "src/R0015401.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0019E01.pli",
+            "line": 1867,
+            "program": "R0015401",
+            "remote_systems": [],
+            "to": "src/R0015401.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0019E01.pli",
+            "line": 1903,
+            "program": "R0014901",
+            "remote_systems": [],
+            "to": "src/R0014901.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0019E01.pli",
+            "line": 1973,
+            "program": "R0016001",
+            "remote_systems": [],
+            "to": "src/R0016001.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0019E01.pli",
+            "line": 1996,
+            "program": "R0015401",
+            "remote_systems": [],
+            "to": "src/R0015401.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0019E01.pli",
+            "line": 2084,
+            "program": "R0013101",
+            "remote_systems": [],
+            "to": "src/R0013101.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0019E01.pli",
+            "line": 2204,
+            "program": "R0013101",
+            "remote_systems": [],
+            "to": "src/R0013101.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0019E01.pli",
+            "line": 2298,
+            "program": "R0016001",
+            "remote_systems": [],
+            "to": "src/R0016001.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R0019E01.pli",
+            "line": 2320,
+            "program": "R0015401",
+            "remote_systems": [],
+            "to": "src/R0015401.pli",
+            "verb": "LINK",
+            "via": "static"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 4
+      },
+      "screen_bindings": {
+        "facts": [
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 698,
+            "map": "S0019E1",
+            "mapset": "S0019E3",
+            "program": "src/R0019E01.pli",
+            "record": "BMSMAPBR",
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 706,
+            "map": "S0019E1",
+            "mapset": "S0019E3",
+            "program": "src/R0019E01.pli",
+            "record": "BMSMAPBR",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 823,
+            "map": "S0019E1",
+            "mapset": "S0019E3",
+            "program": "src/R0019E01.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 890,
+            "map": "S0019E1",
+            "mapset": "S0019E3",
+            "program": "src/R0019E01.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 893,
+            "map": "S0019E1",
+            "mapset": "S0019E3",
+            "program": "src/R0019E01.pli",
+            "record": "BMSMAPBR",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 930,
+            "map": "S0019E1",
+            "mapset": "S0019E3",
+            "program": "src/R0019E01.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 3228,
+            "map": "S0019E1",
+            "mapset": "S0019E3",
+            "program": "src/R0019E01.pli",
+            "record": null,
+            "verb": "SEND"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 3
+      },
+      "units_of_work": {
+        "facts": [
+          {
+            "file": "src/R0019E01.pli",
+            "kind": "COMMIT",
+            "line": 790,
+            "source": "CICS",
+            "unit": "R0019E",
+            "verb": "SYNCPOINT"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "kind": "ROLLBACK",
+            "line": 897,
+            "source": "CICS",
+            "unit": "UTGANG",
+            "verb": "SYNCPOINT ROLLBACK"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "unresolved_calls": {
+        "facts": [
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 828,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 834,
+            "operand": "R0019E01",
+            "target": "R0019E01",
+            "verb": "XCTL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 3212,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 3259,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 3311,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 3364,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 3415,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 3466,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 3517,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 3574,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 3627,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 3684,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 3739,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 3793,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 3847,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 3900,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 3960,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 4011,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 4064,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 4115,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 4163,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 4212,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 4264,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R0019E01.pli",
+            "form": "literal",
+            "line": 4316,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 9
+      },
+      "uow_handlers": {
+        "facts": [
+          {
+            "attributes": null,
+            "condition": "ERROR",
+            "kind": "HANDLE_CONDITION",
+            "line": 597,
+            "resp_var": null,
+            "source": "CICS",
+            "target": "FEILBEH",
+            "target_kind": "LABEL",
+            "verb": "HANDLE CONDITION"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "COMMIT",
+            "line": 790,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SYNCPOINT"
+          },
+          {
+            "attributes": null,
+            "condition": "ERROR",
+            "kind": "HANDLE_CONDITION",
+            "line": 855,
+            "resp_var": null,
+            "source": "CICS",
+            "target": "ABEND",
+            "target_kind": "LABEL",
+            "verb": "HANDLE CONDITION"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "ROLLBACK",
+            "line": 897,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SYNCPOINT ROLLBACK"
+          },
+          {
+            "attributes": null,
+            "condition": "FEIL",
+            "kind": "ABEND",
+            "line": 907,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "ABEND"
+          },
+          {
+            "attributes": null,
+            "condition": "STOP",
+            "kind": "ABEND",
+            "line": 4422,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "ABEND"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      }
+    }
+  },
+  "generated": {
+    "imports": [
+      {
+        "class": "com.gitgalaxy.modernized.cics.CicsTask",
+        "file": "src/main/java/com/gitgalaxy/modernized/cics/CicsTask.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.entity.vsam.EndrDsr",
+        "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/EndrDsr.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.entity.vsam.FeilMeld",
+        "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/FeilMeld.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.entity.vsam.FnrtilgFnrrec",
+        "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/FnrtilgFnrrec.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.entity.vsam.MeldIo",
+        "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/MeldIo.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.repository.vsam.EndrDsrRepository",
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/EndrDsrRepository.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.repository.vsam.FeilMeldRepository",
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/FeilMeldRepository.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.repository.vsam.FnrtilgFnrrecRepository",
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/FnrtilgFnrrecRepository.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.repository.vsam.MeldIoRepository",
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/MeldIoRepository.java"
+      }
+    ],
+    "traced_to_this_program": [
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0010301Controller.java",
+        "symbol": "SrcR0010301Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0013101Controller.java",
+        "symbol": "SrcR0013101Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0014901Controller.java",
+        "symbol": "SrcR0014901Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0015401Controller.java",
+        "symbol": "SrcR0015401Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0016001Controller.java",
+        "symbol": "SrcR0016001Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service#abendFeilL907"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service#abendStopL4422"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service#commitPointL790"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service#linkSrcR0013101"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service#linkSrcR0014901"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service#linkSrcR0015401"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service#linkSrcR0016001"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service#onConditionErrorL597"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service#onConditionErrorL855"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service#readFnrtilg"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service#rollbackL897"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service#writeEndrdsr"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service#writeFnrfeil"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service#writeMeldrec"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+        "symbol": "R0019e01Service#xctlSrcR0010301"
+      }
+    ]
+  },
+  "paragraphs": [
+    {
+      "lines": 737,
+      "name": "R0019E",
+      "start_line": 94
+    },
+    {
+      "lines": 6,
+      "name": "UTGANG",
+      "start_line": 832
+    },
+    {
+      "lines": 17,
+      "name": "INITIERING_AV_BILDE",
+      "start_line": 917
+    },
+    {
+      "lines": 190,
+      "name": "TEST_MOT_BASEN",
+      "start_line": 936
+    },
+    {
+      "lines": 465,
+      "name": "FNR_SKAL_ENDRES",
+      "start_line": 1127
+    },
+    {
+      "lines": 71,
+      "name": "TESTVTP",
+      "start_line": 1594
+    },
+    {
+      "lines": 349,
+      "name": "OMREGN",
+      "start_line": 1668
+    },
+    {
+      "lines": 11,
+      "name": "MANUELL",
+      "start_line": 2018
+    },
+    {
+      "lines": 258,
+      "name": "D\u00d8D",
+      "start_line": 2030
+    },
+    {
+      "lines": 49,
+      "name": "SKRIV_6001_5401",
+      "start_line": 2289
+    },
+    {
+      "lines": 48,
+      "name": "ENDRE_UF\u00d8RH_ALDER",
+      "start_line": 2340
+    },
+    {
+      "lines": 41,
+      "name": "ENDRE_UF\u00d8RH_D\u00d8D",
+      "start_line": 2390
+    },
+    {
+      "lines": 66,
+      "name": "ENDRE_TILKN",
+      "start_line": 2433
+    },
+    {
+      "lines": 70,
+      "name": "STATUS",
+      "start_line": 2501
+    },
+    {
+      "lines": 57,
+      "name": "TRANHIST",
+      "start_line": 2572
+    },
+    {
+      "lines": 475,
+      "name": "TRANHIST_TILKN",
+      "start_line": 2630
+    },
+    {
+      "lines": 87,
+      "name": "MELDINGSREC",
+      "start_line": 3106
+    },
+    {
+      "lines": 35,
+      "name": "INIT_PCB",
+      "start_line": 3210
+    },
+    {
+      "lines": 44,
+      "name": "LESER_RESTEN_GNP",
+      "start_line": 3256
+    },
+    {
+      "lines": 43,
+      "name": "DANNE_SEGM_ISRT",
+      "start_line": 3308
+    },
+    {
+      "lines": 42,
+      "name": "LESER_ROT_SEGM_GU",
+      "start_line": 3361
+    },
+    {
+      "lines": 42,
+      "name": "LESER_ROT_SEGM_GHU",
+      "start_line": 3412
+    },
+    {
+      "lines": 41,
+      "name": "FJERNER_ALLE_SEGM_DLET",
+      "start_line": 3463
+    },
+    {
+      "lines": 46,
+      "name": "LESER_TILKN_GHU",
+      "start_line": 3514
+    },
+    {
+      "lines": 43,
+      "name": "FJERNER_SEGM_DLET",
+      "start_line": 3571
+    },
+    {
+      "lines": 46,
+      "name": "DANNER_TILKN_ISRT",
+      "start_line": 3624
+    },
+    {
+      "lines": 45,
+      "name": "LESER_STATUS_GU",
+      "start_line": 3681
+    },
+    {
+      "lines": 44,
+      "name": "LESER_TILKN_GNP",
+      "start_line": 3736
+    },
+    {
+      "lines": 44,
+      "name": "LESER_NEST_SISTE_STATUS_GNP",
+      "start_line": 3790
+    },
+    {
+      "lines": 44,
+      "name": "LESER_SISTE_STATUS_GNP",
+      "start_line": 3844
+    },
+    {
+      "lines": 52,
+      "name": "LESER_UNDER_STATUS_GNP",
+      "start_line": 3897
+    },
+    {
+      "lines": 44,
+      "name": "DANNE_UNDER_STATUS_ISRT",
+      "start_line": 3957
+    },
+    {
+      "lines": 44,
+      "name": "LESER_TRANHIST_GNP",
+      "start_line": 4008
+    },
+    {
+      "lines": 42,
+      "name": "DANNE_ROT_SEGM_ISRT",
+      "start_line": 4061
+    },
+    {
+      "lines": 40,
+      "name": "LESER_TRANH_TILKN_GHNP",
+      "start_line": 4112
+    },
+    {
+      "lines": 39,
+      "name": "DANNER_TRANH_TILKN_REPL",
+      "start_line": 4160
+    },
+    {
+      "lines": 42,
+      "name": "LESER_ROT_SEGM_TRANH_GU",
+      "start_line": 4209
+    },
+    {
+      "lines": 44,
+      "name": "DANNER_TRANH_BARN_ISRT",
+      "start_line": 4261
+    },
+    {
+      "lines": 44,
+      "name": "LESER_TRANHIST_F_GHNP",
+      "start_line": 4313
+    },
+    {
+      "lines": 67,
+      "name": "SKRIV_FEILMELDING",
+      "start_line": 4359
+    },
+    {
+      "lines": 41,
+      "name": "SKRIV_UT_TELLERE",
+      "start_line": 4435
+    },
+    {
+      "lines": 6,
+      "name": "SKRIV_FNRFEIL",
+      "start_line": 4477
+    }
+  ],
+  "priority": {
+    "blast_radius": 0.506,
+    "callers": 1,
+    "calls": 11,
+    "of": 438,
+    "rank": 153
+  },
+  "program": {
+    "file": "src/R0019E01.pli",
+    "key": "R0019E01",
+    "language": "pli",
+    "lines": 4493,
+    "program_ids": [
+      "R0019E01"
+    ]
+  },
+  "rounding": [],
+  "rules": [
+    "Deliver the whole port: every paragraph the ported method reaches, every screen field it sets, every file it reads. A partial port or a sketch is not proven: the equivalence harness compares every output.",
+    "Port the PROCEDURE DIVISION into the service's methods, paragraph by paragraph; name the paragraph each block ports in a comment, so the port can be reviewed against the source.",
+    "Keep COBOL's storage semantics: COMPUTE / ADD / SUBTRACT / MULTIPLY / DIVIDE without ROUNDED truncate decimals; a result too long for its PICTURE loses its high-order digits (ON SIZE ERROR aside); MOVE to a numeric field aligns on the decimal point and truncates both ends; MOVE to alphanumeric pads with spaces or truncates on the right. Use BigDecimal with RoundingMode.DOWN, never double, for PIC 9 / COMP-3 data.",
+    "ROUNDED (#3825) rounds half AWAY from zero: setScale(scale, RoundingMode.HALF_UP) -- 2.5 -> 3, -2.5 -> -3. Never HALF_EVEN (banker's rounding) and never Math.round (-2.5 -> -2). ROUNDED MODE maps one to one: NEAREST-EVEN HALF_EVEN, AWAY-FROM-ZERO UP, NEAREST-TOWARD-ZERO HALF_DOWN, TOWARD-GREATER CEILING, TOWARD-LESSER FLOOR, TRUNCATION DOWN. The ticket's `rounding` list names every rounding or SIZE ERROR statement with the RoundingMode of each target. Round the final result only: compute intermediates exactly (IBM's ARITH intermediates carry 18 or 31 digits; the equivalence harness is the oracle when a result differs).",
+    "Keep the program's behaviour, including what looks like a defect (an unreachable branch, a field never reset): the port is proven by comparing its outputs with the original's. Document each such spot with a comment naming the defect and the one-line fix; fixing it is a business decision, not a translation.",
+    "Use the generated code as it is: entities and their fromRecord / toRecord codecs, repositories, DTOs, the batch runtime (DatasetResolver, Dd), the other services. Do not edit generated files other than this service; do not invent calls, files, queues or tables the facts do not name.",
+    "An abend is `throw CobolAbend.user(abcode, why)` (the generated batch runtime; CALL 'CEE3ABD' USING ABCODE: the step ends ABEND Unnnn) -- never another exception; the step's RETURN-CODE is runBatch's return value.",
+    "A DISPLAY is `Sysout.display(...)` (DISPLAY ... WITH NO ADVANCING: `Sysout.displayNoAdvancing`), never a log line: SYSOUT is compared line by line with the COBOL's. Its text is exactly what IBM COBOL writes, the operands concatenated: a literal as written; an alphanumeric or group item as all its bytes, trailing spaces included (a group's numeric fields as stored: zoned digits, the sign overpunched); a numeric item -- DISPLAY, COMP or COMP-3, not edited, no SIGN SEPARATE -- as `Sysout.number(value, digits, scale, signed)`: its PICTURE digits zero-padded, no decimal point, the sign overpunched in the last digit when signed (PIC S9(3) holding -12 is `01K`); an edited item as its edited text.",
+    "Every file I/O statement of a batch program (OPEN, CLOSE, READ, READ NEXT, WRITE, REWRITE, DELETE, START) is ONE call to the generated CobolFiles, per file (its DD name), in the order the program runs them. open(dd) / open(dd, path, input) / close(dd[, action]) / write / rewrite / delete(dd, action) / start(dd, found) return the status String; read(dd, supplier) (\"00\" or \"23\") and readNext(dd, iterator) (\"00\" or \"10\") return a CobolFiles.Read<T> -- status() and record(), null unless found. Take the program's FILE STATUS logic -- IF <status> = '00', AT END, INVALID KEY, its error paragraphs -- from the status returned, exactly as the program does; never skip a statement the program runs (a read-ahead, a CLOSE) or add one it does not. The equivalence harness injects file faults through CobolFiles and through GnuCOBOL at the same statement, and proves the error paths too. A keyed (VSAM KSDS) file keeps its mainframe semantics: WRITE is writeKeyed(dd, () -> repo.existsById(key), () -> repo.save(r)) -- \"22\" when the key is on file, never save() over it -- and REWRITE is rewriteKeyed(dd, exists, save) (\"23\" when it is not). A record the program READs INTO its working storage is the program's own copy: keep Entity.fromRecord(read.toRecord(cs), cs), never the repository's managed entity, so a change that is not REWRITten is never saved; and a READ that fails without INVALID KEY / AT END leaves the previous record in place, as the program's storage does.",
+    "A sequential dataset is fixed-length records (RECFM=FB): write each record's toRecord(...) bytes back to back, with no line separators, to the file DatasetResolver.path(dd) names; read it the same way.",
+    "Decode and encode a numeric field held in record bytes or a text column (zoned with an overpunched sign, COMP-3, COMP) only through the generated CobolRecords (zoned / packed / binary and their put methods) or the entity codecs, never a hand-written decoder.",
+    "Record bytes -- every dataset, file and COMMAREA the program reads or writes -- are in the code page CobolRecords.charset() returns: the migration's declared data.record_charset, a deployment fact. Pass it wherever a record codec, CobolRecords method or String takes a Charset; never Charset.forName, StandardCharsets or a guessed EBCDIC page for record data (#4060).",
+    "Read a number from text (a screen field, FUNCTION NUMVAL, a PARM) only through CobolRecords.numval(text, decimalPoint), with ',' when the program codes DECIMAL-POINT IS COMMA; never Integer.parseInt or new BigDecimal(String), which accept Arabic-Indic, Devanagari and full-width digits that COBOL rejects (#3831).",
+    "Format a numeric-edited field (a display string mapped from a number, often for a screen or print line) only through CobolEdit.format(pic, value, decimalComma, currency), which honours the COBOL picture (Z, 9, ., ,, -, +, CR/DB, $/currency, B, 0, /, and floating $ / + / - strings) as the mainframe does; pass the CURRENCY SIGN string (e.g. 'INR ') as currency, and it replaces the PICTURE SYMBOL (#3933).",
+    "Format and case-map with Locale.ROOT (String.format(Locale.ROOT, ...), toUpperCase(Locale.ROOT)): the default locale prints other digits (Arabic, Devanagari) and maps case differently (Turkish).",
+    "Order and compare VSAM / DB2 keys by the source code page's bytes, as the mainframe does (lower case before upper, letters before digits): browse through the generated sort-key finders, and sort in Java with CobolRecords.sortKey(key, codePage), never by String.compareTo or the database's default collation (#3822).",
+    "Compare alphanumeric operands (PIC X / A items, group items, alphanumeric literals and figurative constants) in IF, EVALUATE, PERFORM UNTIL and SEARCH WHEN only through the generated CobolCompare (compare, eq, gt, ge, lt, le), never String.compareTo or equals: it compares the code page's bytes as the mainframe does -- lower case before upper, letters before digits, so IF CUST-ID > 'A' is true for '1001' -- and pads the shorter operand with spaces ('AB' = 'AB  '). HIGH-VALUES / LOW-VALUES are CobolCompare.highValues(n) / lowValues(n). A numeric comparison stays BigDecimal.compareTo. A program that declares PROGRAM COLLATING SEQUENCE compares by that alphabet instead: flag it in a TODO (#3986).",
+    "A CICS program is ported into runTask(CicsTask task), one task per call (#3754): EIBCALEN = 0 is !task.hasCommarea(), EIBCALEN is task.eibcalen() (#4009: null = the whole record), DFHCOMMAREA is task.commarea(<its DTO>.class), EIBAID is task.aid() (ENTER, CLEAR, PF1-PF24, PA1-PA3), EIBTRMID is task.termid(), EIBTIME / EIBDATE / ASKTIME are task.now() (the task's dispatch time on the region's virtual clock, #3989), RECEIVE MAP is task.receive(map, mapset, <its screen>.class) (empty = MAPFAIL), SEND MAP is task.sendMap(map, mapset, screen, subfields, options...) (#4001: the screen holds each <f>O; CicsTask.MapSubfields each <f>A / <f>C / <f>H as its EBCDIC byte and <f>L = -1 for the cursor), SEND TEXT / SEND is task.sendText(from, length, options...), RETURN TRANSID COMMAREA LENGTH is task.returnTransid(transid, commarea, length), XCTL is task.xctl, LINK is task.link, ABEND is task.abend -- in the order the program does them, and the task ends at RETURN / XCTL / ABEND. A file READ is task.read(file, () -> <the service's generated read method>): its resp() is NORMAL (0), NOTFND (13) when the read finds nothing, or a condition the equivalence harness injects (NOTOPEN, IOERR, DISABLED, ...), and its resp2(); port every arm of the program's RESP handling (EVALUATE WS-RESP-CD ... WHEN OTHER) from it (#4023 follow-up). READ ... UPDATE is task.readForUpdate(file, lookup) (it holds the record for a REWRITE); WRITE FILE RIDFLD FROM is task.write(file, <whether the key is already in the file>, () -> <save the new record>): DUPREC (14) when it is; REWRITE FILE FROM is task.rewrite(file, () -> <save the changed record>): INVREQ (16) without a held record; each returns the RESP, and the injected conditions apply as for a READ. SYNCPOINT is task.syncpoint() and SYNCPOINT ROLLBACK task.rollback(), which undoes the task's file changes: save every change through these calls only -- what each file holds after the task is compared with the COBOL's. DELETE FILE RIDFLD is task.delete(file, <whether the key is there>, () -> <delete it>) (NOTFND 13 when not); DELETE FILE without RIDFLD is task.deleteHeld(file, () -> <delete the held record>). A browse: STARTBR is task.startbr(file, <RIDFLD as text>, <EQUAL given>, () -> <the file's keys, in key order, as a NavigableSet<String>>) (NOTFND 13 when no key qualifies); READNEXT / READPREV are task.readnext(file, <RIDFLD as text>) / task.readprev(file, ...), whose Browsed holds the RESP (ENDFILE 20 past either end) and the key read -- set RIDFLD to it and look the record up by it; ENDBR is task.endbr(file). The task keeps the browse's position and CICS's repositioning rules (a READPREV right after a READNEXT reads the same record again): pass RIDFLD exactly as the program holds it. ASKTIME ABSTIME is task.asktime(); FORMATTIME is CicsTask.formatDate(abstime, \"YYYYMMDD\" (or the form given), <DATESEP>) and CicsTask.formatTime(abstime, <TIMESEP>). ASSIGN APPLID / SYSID are task.assignApplid() / task.assignSysid() (the region's identity: never a literal). WRITEQ TD QUEUE FROM is task.writeqTd(queue, <the record as text, its full LENGTH>), which returns the RESP (QIDERR 44 for a queue the CSD does not define). INQUIRE PROGRAM(p) is task.inquireProgram(p): its RESP (NORMAL 0, PGMIDERR 27). A screen field shows what the symbolic map's O field would hold: text as moved, an edited PICTURE formatted as COBOL formats it. A COMMAREA is the generated DTO of its record; an area no generated DTO describes (a plain PIC X(n) item) is passed as a String of its n characters, or a byte[] of its EBCDIC bytes (#3989).",
+    "CICS condition and abend handling (#3989): HANDLE CONDITION, IGNORE CONDITION, HANDLE AID and RESP are the program's own control flow -- port each transfer to its label as Java control flow. HANDLE ABEND LABEL is task.handleAbend(label) (CANCEL, RESET: handleAbendCancel / handleAbendReset), and PUSH / POP HANDLE are task.pushHandle() / popHandle() besides saving and restoring the program's own handler state. EXEC CICS ABEND is task.abend(abcode) and a condition that takes CICS's default action is task.abendOnCondition(condition): CicsTask searches the active abend exits from this program's level upward, as CICS does, records the ABEND, and returns the label to continue at when this program's own exit took it -- or null, and the program must then return from runTask at once. After task.link(...) returns, task.abendExit() is the label of this program's exit when an abend in a program below reached it (continue there), and task.ended() is true when the task was terminated (stop). Never throw an exception to model a CICS transfer: the services are @Transactional, so an exception out of one marks the whole task rollback-only.",
+    "Dates and times only through java.time -- LocalDate, LocalDateTime, LocalTime and DateTimeFormatter with Locale.ROOT, in the ISO chronology -- never Calendar.getInstance(), new GregorianCalendar(), SimpleDateFormat or WeekFields.of(Locale.getDefault()): a th_TH default locale gives Buddhist-era years (2569), ja_JP_JP the Japanese imperial calendar, and US week fields start on Sunday. FUNCTION DAY-OF-WEEK and ACCEPT ... FROM DAY-OF-WEEK are Monday = 1 ... Sunday = 7, which is DayOfWeek.getValue() (#3833).",
+    "Read the time only from the generated batch runtime's MainframeClock (now() for local, currentDate() for FUNCTION CURRENT-DATE) -- in a CICS task, from task.now() -- never from the system clock directly or ZoneId.systemDefault(): it is how a run is pinned to be compared with the original.",
+    "A DB2 DATE / TIME / TIMESTAMP fetched into, or bound from, a character host variable (a DCLGEN DATE is PIC X(10)) is in the DB2 subsystem's format, the target config's culture.db2_date_format -- eur 26.09.2026 and 14.30.05, usa 09/26/2026 and 02:30 PM, iso 2026-09-26 and 14.30.05, jis 2026-09-26 and 14:30:05 -- and a TIMESTAMP is 2026-09-26-14.30.05.000000: convert only through the generated Db2Dates (date / time / timestamp, parseDate / parseTime / parseTimestamp), never LocalDate.toString() or LocalDate.parse (#3828).",
+    "FUNCTION INTEGER-OF-DATE / INTEGER-OF-DAY count days from day 1 = 1601-01-01 under INTDATE(ANSI), the default, but from day 1 = 1582-10-15 under INTDATE(LILIAN) (the same date is 6653 higher); DATE-OF-INTEGER / DAY-OF-INTEGER invert the same count. Port as ChronoUnit.DAYS.between(dayZero, date) with dayZero 1600-12-31 (ANSI) or 1582-10-14 (LILIAN). The ticket's compiler_options are the program's CBL / PROCESS cards; options given by the compile step's PARM or the installation defaults are not seen there (#3828).",
+    "A fact whose field testing is not 'field-tested' is verified on reference estates but still being field-tested: where the source contradicts it, follow the source and say so in the port's notes.",
+    "The proof calls one method per program: runTask(CicsTask) for a CICS program, handleCall(...) for a CALLed one, runBatch(dds, parm) for a batch one -- the ticket's methods to port. Port all of the program's behaviour into that method and the private helpers it calls. Port nothing into the other generated methods -- execute<Program>, handleTransaction, handleLink, handleChannel, onAbendL<n>, onCondition<C>L<n>, dispatch<X>L<n>, submit<Map> / render<Map>, xctl<P> / link<P>, the generated readqTs / writeqTs / read / browse helpers -- even where their TODO asks: leave each body as generated and keep no second entry point. Code the proof never runs is not proven, and the porting loop lists every method the proof cannot reach that the port changed (#4255)."
+  ],
+  "source": {
+    "copybooks": [
+      {
+        "file": "src/R0019912.pli",
+        "listing": "sources/src/R0019912.pli.lst"
+      },
+      {
+        "file": "src/R0019944.pli",
+        "listing": "sources/src/R0019944.pli.lst"
+      },
+      {
+        "file": "src/R0019956.pli",
+        "listing": "sources/src/R0019956.pli.lst"
+      },
+      {
+        "file": "src/R0019961.pli",
+        "listing": "sources/src/R0019961.pli.lst"
+      },
+      {
+        "file": "src/R0019993.pli",
+        "listing": "sources/src/R0019993.pli.lst"
+      },
+      {
+        "file": "src/R0019995.pli",
+        "listing": "sources/src/R0019995.pli.lst"
+      }
+    ],
+    "program": {
+      "file": "src/R0019E01.pli",
+      "listing": "sources/src/R0019E01.pli.lst"
+    }
+  },
+  "status": "open",
+  "target": {
+    "config": {
+      "culture": {
+        "currency": "auto",
+        "db2_date_format": "iso",
+        "decimal_point": "auto",
+        "display_locale": "ROOT",
+        "format_locale": "ROOT",
+        "key_collation": "ebcdic",
+        "overflow": "cobol",
+        "rounding": "cobol",
+        "zone": "UTC"
+      },
+      "data": {
+        "bidi_layout": "auto",
+        "code_page": "cp037",
+        "dbcs_code_page": null,
+        "record_charset": "latin-1"
+      },
+      "database": "postgresql",
+      "integration": {
+        "messaging": "in-memory",
+        "remote_calls": "http"
+      },
+      "java": {
+        "build_tool": "maven",
+        "data_classes": "lombok",
+        "dto_style": "class",
+        "version": 17
+      },
+      "package": "com.gitgalaxy.modernized",
+      "spring_boot": {
+        "version": "3.2.4"
+      },
+      "ui": {
+        "flavour": "none"
+      }
+    },
+    "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+    "left_as_generated": [
+      "public void commitPointL790()",
+      "public void onConditionErrorL597(CicsConditionException e)",
+      "public void onConditionErrorL855(CicsConditionException e)"
+    ],
+    "methods": [
+      {
+        "signature": "public void runTask(CicsTask task)",
+        "todo": true
+      },
+      {
+        "signature": "public void handleLink()",
+        "todo": false
+      },
+      {
+        "signature": "public void linkSrcR0013101()",
+        "todo": false
+      },
+      {
+        "signature": "public void linkSrcR0014901()",
+        "todo": false
+      },
+      {
+        "signature": "public void linkSrcR0015401()",
+        "todo": false
+      },
+      {
+        "signature": "public void linkSrcR0016001()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0010301()",
+        "todo": false
+      },
+      {
+        "signature": "public EndrDsr writeEndrdsr(EndrDsr record)",
+        "todo": false
+      },
+      {
+        "signature": "public FeilMeld writeFnrfeil(FeilMeld record)",
+        "todo": false
+      },
+      {
+        "signature": "public Optional<FnrtilgFnrrec> readFnrtilg(String key)",
+        "todo": false
+      },
+      {
+        "signature": "public MeldIo writeMeldrec(MeldIo record)",
+        "todo": false
+      },
+      {
+        "signature": "public void commitPointL790()",
+        "todo": true
+      },
+      {
+        "signature": "public void rollbackL897()",
+        "todo": false
+      },
+      {
+        "signature": "public void onConditionErrorL597(CicsConditionException e)",
+        "todo": true
+      },
+      {
+        "signature": "public void onConditionErrorL855(CicsConditionException e)",
+        "todo": true
+      },
+      {
+        "signature": "public void abendFeilL907()",
+        "todo": false
+      },
+      {
+        "signature": "public void abendStopL4422()",
+        "todo": false
+      }
+    ],
+    "methods_to_port": [
+      "public void runTask(CicsTask task)"
+    ],
+    "overlay": "port/service/R0019e01Service.java",
+    "proof_entry_points": [
+      "public void runTask(CicsTask task)"
+    ],
+    "service": "R0019e01Service"
+  },
+  "ticket": "PORT-R0019E01",
+  "version": 1,
+  "worklist": [
+    {
+      "category": "transaction-split",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+      "id": "WL-3140",
+      "line": 154,
+      "text": "split the transaction here"
+    },
+    {
+      "category": "interface-call",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+      "id": "WL-3275",
+      "line": 58,
+      "text": "Implement or mock interface call to: PlitdliService"
+    },
+    {
+      "category": "interface-call",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+      "id": "WL-3276",
+      "line": 59,
+      "text": "Implement or mock interface call to: R0019e01Service"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+      "id": "WL-4322",
+      "line": 61,
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+      "id": "WL-4323",
+      "line": 67,
+      "text": "port the PROCEDURE DIVISION into this task"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+      "id": "WL-4324",
+      "line": 171,
+      "text": "port paragraph FEILBEH's logic"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/R0019e01Service.java",
+      "id": "WL-4325",
+      "line": 180,
+      "text": "port paragraph ABEND's logic"
+    }
+  ]
+}

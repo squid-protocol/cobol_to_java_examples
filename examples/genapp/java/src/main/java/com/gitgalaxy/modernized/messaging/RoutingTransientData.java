@@ -14,9 +14,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,12 +29,31 @@ import org.springframework.stereotype.Component;
  * (CSSL, CSMT, ...) goes to the log `cics.td.<queue>`; an extrapartition destination the CSD binds
  * to a DD / dataset appends to `<gitgalaxy.td.directory>/<queue>.txt` (the internal reader's JCL
  * too, flagged: submitting it is #3622); an intrapartition queue.
- * A destination missing below is treated as intrapartition.
+ * A destination missing below is treated as intrapartition. The CSD's TYPEFILE / OPENTIME / INDIRECTNAME decide
+ * how it answers, as the CICS runtimes do (#5168, X61): an INDIRECT queue is its INDIRECTNAME's; an extrapartition
+ * queue that is closed (OPENTIME DEFERRED) answers NOTOPEN, an input one is read first in first out (nothing left:
+ * empty, QZERO) and written INVREQ, an output one is read INVREQ; DELETEQ TD of an extrapartition queue is INVREQ.
+ * A REMOTE queue, a broken INDIRECT chain and an extrapartition queue with no TYPEFILE read are refused by name.
  */
 @Component
 public class RoutingTransientData implements TransientData {
 
     static final Map<String, String> ROUTES = new HashMap<>();
+    static final Map<String, String> TARGETS = new HashMap<>();
+    static final Map<String, String> MODES = new HashMap<>();
+    static final Map<String, String> REFUSED = new HashMap<>();
+    static final Set<String> CLOSED = new HashSet<>();
+    private final Map<String, Integer> cursor = new HashMap<>();
+
+    /** A CICS condition the command would raise (NOTOPEN, INVREQ): RESP has no place in a port, so it is thrown. */
+    public static class TdCondition extends RuntimeException {
+        public final String condition;
+
+        public TdCondition(String condition, String message) {
+            super(message);
+            this.condition = condition;
+        }
+    }
 
     static {
         ROUTES.put("CSMT", "log");  // a CICS-supplied log destination
@@ -43,27 +64,80 @@ public class RoutingTransientData implements TransientData {
         this.directory = Path.of(directory);
     }
 
+    /** The queue that holds `queue`'s records, after the checks the CICS runtimes make for `verb` (X61). */
+    private static String resolve(String queue, String verb) {
+        String refused = REFUSED.get(queue);
+        if (refused != null) {
+            throw new UnsupportedOperationException(refused + ": not modelled");
+        }
+        String route = ROUTES.getOrDefault(queue, "queue");
+        if (route.equals("dataset") || route.equals("reader")) {
+            if (verb.equals("DELETEQ")) {
+                throw new TdCondition("INVREQ", "DELETEQ TD " + queue + ": an extrapartition queue");
+            }
+            if (CLOSED.contains(queue)) {
+                throw new TdCondition("NOTOPEN", verb + " TD " + queue + ": the data set is closed");
+            }
+            String mode = MODES.get(queue);
+            if (verb.equals("WRITEQ") && "INPUT".equals(mode)) {
+                throw new TdCondition("INVREQ", "WRITEQ TD " + queue + ": open for input");
+            }
+            if (verb.equals("READQ") && mode == null) {
+                throw new UnsupportedOperationException("READQ TD " + queue + " with no TYPEFILE INPUT / OUTPUT: not modelled");
+            }
+            if (verb.equals("READQ") && mode.equals("OUTPUT")) {
+                throw new TdCondition("INVREQ", "READQ TD " + queue + ": open for output");
+            }
+        }
+        return TARGETS.getOrDefault(queue, queue);
+    }
+
     @Override
     public void write(String queue, String record) {
+        String target = resolve(queue, "WRITEQ");
         switch (ROUTES.getOrDefault(queue, "queue")) {
-            case "log" -> LoggerFactory.getLogger("cics.td." + queue).info(record);
-            case "dataset", "reader" -> append(queue, record);
+            case "log" -> LoggerFactory.getLogger("cics.td." + target).info(record);
+            case "dataset", "reader" -> append(target, record);
             default -> LOG.warn("TD {} has no message port", queue);
         }
     }
 
     @Override
-    public Optional<String> read(String queue) {
+    public synchronized Optional<String> read(String queue) {
+        String target = resolve(queue, "READQ");
         String route = ROUTES.getOrDefault(queue, "queue");
         if (route.equals("queue") || route.equals("symbol")) {
             return Optional.empty();
+        }
+        if (MODES.containsKey(queue)) {
+            return nextRecord(target);
         }
         throw new UnsupportedOperationException("TD " + queue + " is a " + route + " destination: it is written, not read");
     }
 
     @Override
     public void delete(String queue) {
+        String target = resolve(queue, "DELETEQ");
         // no intrapartition queue in this application
+    }
+
+    /** READQ TD of an input data set: its records first in first out; none left (or no data set) is QZERO. */
+    private Optional<String> nextRecord(String queue) {
+        try {
+            Path file = directory.resolve(queue + ".txt");
+            if (!Files.exists(file)) {
+                return Optional.empty();
+            }
+            List<String> lines = Files.readAllLines(file, StandardCharsets.UTF_8);
+            int at = cursor.getOrDefault(queue, 0);
+            if (at >= lines.size()) {
+                return Optional.empty();
+            }
+            cursor.put(queue, at + 1);
+            return Optional.of(lines.get(at));
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
     }
 
     private void append(String queue, String record) {

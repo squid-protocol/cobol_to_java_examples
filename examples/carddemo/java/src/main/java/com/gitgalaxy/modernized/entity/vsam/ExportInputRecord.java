@@ -27,7 +27,7 @@ public class ExportInputRecord {
 
     // TODO: the key (offset 28, 4 bytes, from IDCAMS KEYS) is not one field of EXPORT-INPUT-RECORD: carried as the String vsamKey -- keep it in step with the record
     @Id
-    @Column(name = "VSAM_KEY")
+    @Column(name = "VSAM_KEY", columnDefinition = "varchar(255) COLLATE \"C\"")
     private String vsamKey;
 
     // EXPORT-INPUT-RECORD: PIC X(500), offset 0, 500 bytes
@@ -35,20 +35,40 @@ public class ExportInputRecord {
     private String exportInputRecord;
 
 
+    /** #4875: the record bytes this entity was read from, kept beside the typed columns: a field whose
+     *  value is unchanged is written back as these bytes, so a value no column type holds (spaces in a
+     *  PIC 9, a non-preferred sign) and FILLER survive the round trip, as the VSAM record keeps them. */
+    @Column(name = "VSAM_RECORD", length = 500)
+    @lombok.Getter(lombok.AccessLevel.NONE)
+    @lombok.Setter(lombok.AccessLevel.NONE)
+    @lombok.EqualsAndHashCode.Exclude
+    @lombok.ToString.Exclude
+    private byte[] vsamRecord;
+
     /** #3624: this record from its fixed-width VSAM form (500 bytes, as REPRO unloads it), each
      *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
-     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+     *  transfer, IBM037 on z/OS). The bytes themselves are kept in vsamRecord (#4875). */
     public static ExportInputRecord fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        if (rec.length < 500) {  // a WRITE ... LENGTH(n) short of the record: the rest is spaces
+            byte[] full = CobolRecords.blank(500, text);
+            System.arraycopy(rec, 0, full, 0, rec.length);
+            rec = full;
+        }
         ExportInputRecord r = new ExportInputRecord();
         r.vsamKey = CobolRecords.text(rec, 28, 4, text);
         r.exportInputRecord = CobolRecords.text(rec, 0, 500, text);
+        r.vsamRecord = java.util.Arrays.copyOf(rec, 500);
         return r;
     }
 
-    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    /** #3624: the fixed-width VSAM record of this entity: the bytes it was read from (vsamRecord), each field
+     *  whose value changed since re-encoded; a new entity's FILLER as spaces. */
     public byte[] toRecord(java.nio.charset.Charset text) {
-        byte[] rec = CobolRecords.blank(500, text);
-        CobolRecords.putText(rec, 0, 500, exportInputRecord, text);
+        byte[] read = vsamRecord != null && vsamRecord.length == 500 ? vsamRecord : null;
+        byte[] rec = read != null ? read.clone() : CobolRecords.blank(500, text);
+        if (read == null || !java.util.Objects.equals(exportInputRecord, CobolRecords.text(read, 0, 500, text))) {
+            CobolRecords.putText(rec, 0, 500, exportInputRecord, text);
+        }
         return rec;
     }
 }

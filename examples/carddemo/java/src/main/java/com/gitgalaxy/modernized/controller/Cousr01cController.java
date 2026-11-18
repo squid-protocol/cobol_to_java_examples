@@ -19,7 +19,7 @@ import com.gitgalaxy.modernized.service.Cousr01cService;
  * COMMAREA: DFHCOMMAREA (app/cbl/COUSR01C.cbl, 160 bytes) -> CarddemoCommarea.
  * TODO: callers also pass CARDDEMO-COMMAREA (app/cpy/COCOM01Y.cpy, 160 bytes) at app/cbl/COUSR01C.cbl:107.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/cousr01c")
@@ -30,7 +30,7 @@ public class Cousr01cController {
 
     /** CICS transaction CU01 -> Cousr01c (CSD app/csd/CARDDEMO.CSD:459 group CARDDEMO). */
     @PostMapping("/transactions/CU01")
-    public ResponseEntity<CarddemoCommarea> transactionCU01(@RequestBody CarddemoCommarea request) {
+    public ResponseEntity<Object> transactionCU01(@RequestBody CarddemoCommarea request) {
         return ResponseEntity.ok(cousr01cService.handleTransaction("CU01", request));
     }
 

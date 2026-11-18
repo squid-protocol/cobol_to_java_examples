@@ -1,0 +1,4150 @@
+{
+  "compiler_options": [
+    {
+      "line": 1,
+      "option": "CICS",
+      "value": "SP",
+      "written": "CICS(SP)"
+    }
+  ],
+  "deliverable": {
+    "proof": "The port is laid over the generated project as an overlay and proven by the equivalence harness (tests/tools/equivalence.py in GitGalaxy): the original runs under GnuCOBOL, the port on the same inputs, and every output record is compared field by field; a person approves the port with that report in hand.",
+    "return": "One complete Java file for src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java: the same package, class name and public method signatures, with runTask ported -- what the proof runs -- and helper methods it calls added; every other generated method left as generated (#4255)."
+  },
+  "facts": {
+    "full_skeleton": "zecs_gitgalaxy_clean_TIMESTAMP/06_skeleton/ZECS001_skeleton.json",
+    "program": {
+      "copy_collisions": [],
+      "copy_edges": {
+        "Source/ZECS001.cbl": {
+          "Source/ZECSZFC.cpy": [],
+          "Source/ZECSZKC.cpy": []
+        },
+        "Source/ZECSZFC.cpy": {},
+        "Source/ZECSZKC.cpy": {}
+      },
+      "copy_gaps": [],
+      "copybooks": [
+        "Source/ZECSZFC.cpy",
+        "Source/ZECSZKC.cpy"
+      ],
+      "file": "Source/ZECS001.cbl",
+      "language": "cobol",
+      "program_id_field_testing": "open",
+      "program_ids": [
+        "ZECS001"
+      ],
+      "total_loc": 2165
+    },
+    "sections": {
+      "call_contracts": {
+        "facts": [
+          {
+            "args": [
+              {
+                "argument": "THE-TOD",
+                "callee_bytes": null,
+                "caller_bytes": 16,
+                "length_match": null,
+                "parameter": null,
+                "position": 1
+              }
+            ],
+            "callee": null,
+            "caller": "Source/ZECS001.cbl",
+            "entry": null,
+            "line": 1244,
+            "status": "callee_unresolved",
+            "target": "ZUIDSTCK"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "calls": {
+        "facts": [
+          {
+            "commarea": "ZECS003-COMM-AREA",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 753,
+            "operand": "ZECS003",
+            "resolves_to": "Source/ZECS003.cbl",
+            "sysid": null,
+            "target": "ZECS003",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "ZECS002-COMM-AREA",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 795,
+            "operand": "ZECS002",
+            "resolves_to": "Source/ZECS002.asm",
+            "sysid": null,
+            "target": "ZECS002",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 1244,
+            "operand": "ZUIDSTCK",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "ZUIDSTCK",
+            "using_args": "THE-TOD",
+            "verb": "CALL"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 9
+      },
+      "cics_file_lineage": {
+        "facts": [
+          {
+            "accesses": [
+              "delete",
+              "read",
+              "update",
+              "write"
+            ],
+            "definitions": [
+              {
+                "batch_programs": [],
+                "bindings": [],
+                "defined_in": "Source/CSDZC##.rdo",
+                "dsname": "@ECS_HLQ@.ZC@ID@FILE.@ENVIRONMENT@",
+                "file": "ZC@ID@FILE",
+                "group": "ZC@ID@",
+                "key_length": null,
+                "line": 1,
+                "record_format": "V",
+                "record_size": null
+              }
+            ],
+            "lines": [
+              1011,
+              1023,
+              1030,
+              1137,
+              1499,
+              1572,
+              1631,
+              1712
+            ],
+            "name": "ZC@ID@FILE",
+            "program": "Source/ZECS001.cbl",
+            "verbs": [
+              "DELETE",
+              "READ",
+              "REWRITE",
+              "WRITE"
+            ]
+          },
+          {
+            "accesses": [
+              "delete",
+              "read",
+              "update",
+              "write"
+            ],
+            "definitions": [
+              {
+                "batch_programs": [],
+                "bindings": [],
+                "defined_in": "Source/CSDZC##.rdo",
+                "dsname": "@ECS_HLQ@.ZC@ID@KEY.@ENVIRONMENT@",
+                "file": "ZC@ID@KEY",
+                "group": "ZC@ID@",
+                "key_length": null,
+                "line": 12,
+                "record_format": "V",
+                "record_size": null
+              }
+            ],
+            "lines": [
+              927,
+              1265,
+              1329,
+              1365,
+              1529,
+              1589,
+              1614
+            ],
+            "name": "ZC@ID@KEY",
+            "program": "Source/ZECS001.cbl",
+            "verbs": [
+              "DELETE",
+              "READ",
+              "REWRITE",
+              "WRITE"
+            ]
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "cics_resources": {
+        "facts": [
+          {
+            "access": "read",
+            "attributes": "LENGTH(RECEIVE-LENGTH) MAXLENGTH(MAXIMUM-LENGTH) MEDIATYPE(WEB-MEDIA-TYPE)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 530,
+            "name": null,
+            "operand": null,
+            "qualifier": "SERVER",
+            "qualifier_operand": null,
+            "record": "CACHE-ADDRESS",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": null,
+            "verb": "WEB RECEIVE"
+          },
+          {
+            "access": "read",
+            "attributes": "LENGTH(RECEIVE-LENGTH) MAXLENGTH(MAXIMUM-LENGTH) MEDIATYPE(WEB-MEDIA-TYPE)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 542,
+            "name": null,
+            "operand": null,
+            "qualifier": "SERVER",
+            "qualifier_operand": null,
+            "record": "CACHE-ADDRESS",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": null,
+            "verb": "WEB RECEIVE"
+          },
+          {
+            "access": "read",
+            "attributes": "NAMELENGTH(HTTP-NAME-LENGTH) VALUE(HTTP-HEADER-VALUE) VALUELENGTH(HTTP-VALUE-LENGTH)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 782,
+            "name": "Authorization",
+            "operand": "HTTP-HEADER",
+            "qualifier": "SERVER",
+            "qualifier_operand": null,
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "value",
+            "verb": "WEB READ"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(ZK-KEY) LENGTH(ZK-LENGTH)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 927,
+            "name": null,
+            "operand": "ZK-FCT",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "ZK-RECORD",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "unresolved",
+            "verb": "READ"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(ZF-KEY-16) LENGTH(ZF-LENGTH) UPDATE",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1011,
+            "name": null,
+            "operand": "ZF-FCT",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "ZF-RECORD",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "unresolved",
+            "verb": "READ"
+          },
+          {
+            "access": "update",
+            "attributes": "LENGTH(ZF-LENGTH)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1023,
+            "name": null,
+            "operand": "ZF-FCT",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "ZF-RECORD",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "unresolved",
+            "verb": "REWRITE"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(ZF-KEY-16) LENGTH(ZF-LENGTH)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1030,
+            "name": null,
+            "operand": "ZF-FCT",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "ZF-RECORD",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "unresolved",
+            "verb": "READ"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(ZF-KEY-16) LENGTH(ZF-LENGTH)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1137,
+            "name": null,
+            "operand": "ZF-FCT",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "ZF-RECORD",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "unresolved",
+            "verb": "READ"
+          },
+          {
+            "access": "write",
+            "attributes": "FROMLENGTH(CACHE-LENGTH) MEDIATYPE(WEB-MEDIA-TYPE) STATUSCODE(HTTP-STATUS-200) STATUSTEXT(HTTP-OK) ACTION(SEND-ACTION)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 1214,
+            "name": null,
+            "operand": null,
+            "qualifier": "SERVER",
+            "qualifier_operand": null,
+            "record": "CACHE-MESSAGE",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": null,
+            "verb": "WEB SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "FROMLENGTH(CACHE-LENGTH) MEDIATYPE(WEB-MEDIA-TYPE) STATUSCODE(HTTP-STATUS-200) STATUSTEXT(HTTP-OK) ACTION(SEND-ACTION)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 1225,
+            "name": null,
+            "operand": null,
+            "qualifier": "SERVER",
+            "qualifier_operand": null,
+            "record": "CACHE-MESSAGE",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": null,
+            "verb": "WEB SEND"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(ZK-KEY) LENGTH(ZK-LENGTH) UPDATE",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1265,
+            "name": null,
+            "operand": "ZK-FCT",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "ZK-RECORD",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "unresolved",
+            "verb": "READ"
+          },
+          {
+            "access": "write",
+            "attributes": "RIDFLD(ZK-KEY) LENGTH(ZK-LENGTH)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1329,
+            "name": null,
+            "operand": "ZK-FCT",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "ZK-RECORD",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "unresolved",
+            "verb": "WRITE"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(ZK-KEY) LENGTH(ZK-LENGTH) UPDATE",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1365,
+            "name": null,
+            "operand": "ZK-FCT",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "ZK-RECORD",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "unresolved",
+            "verb": "READ"
+          },
+          {
+            "access": "write",
+            "attributes": "FROMLENGTH(TWO) MEDIATYPE(TEXT-PLAIN) ACTION(SEND-ACTION) STATUSCODE(HTTP-STATUS-200) STATUSTEXT(HTTP-OK)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 1457,
+            "name": null,
+            "operand": null,
+            "qualifier": "SERVER",
+            "qualifier_operand": null,
+            "record": "CRLF",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": null,
+            "verb": "WEB SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "RIDFLD(ZF-KEY-16) LENGTH(ZF-LENGTH)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1499,
+            "name": null,
+            "operand": "ZF-FCT",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "ZF-RECORD",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "unresolved",
+            "verb": "WRITE"
+          },
+          {
+            "access": "update",
+            "attributes": "LENGTH(ZK-LENGTH)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1529,
+            "name": null,
+            "operand": "ZK-FCT",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "ZK-RECORD",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "unresolved",
+            "verb": "REWRITE"
+          },
+          {
+            "access": "delete",
+            "attributes": "RIDFLD(DELETE-KEY-16)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1572,
+            "name": null,
+            "operand": "ZF-FCT",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "unresolved",
+            "verb": "DELETE"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(ZK-KEY) LENGTH(ZK-LENGTH)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1589,
+            "name": null,
+            "operand": "ZK-FCT",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "ZK-RECORD",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "unresolved",
+            "verb": "READ"
+          },
+          {
+            "access": "delete",
+            "attributes": "RIDFLD(ZK-KEY)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1614,
+            "name": null,
+            "operand": "ZK-FCT",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "unresolved",
+            "verb": "DELETE"
+          },
+          {
+            "access": "delete",
+            "attributes": "RIDFLD(ZF-KEY-16)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1631,
+            "name": null,
+            "operand": "ZF-FCT",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "unresolved",
+            "verb": "DELETE"
+          },
+          {
+            "access": "write",
+            "attributes": "FROMLENGTH(TWO) MEDIATYPE(TEXT-PLAIN) ACTION(SEND-ACTION) STATUSCODE(HTTP-STATUS-200) STATUSTEXT(HTTP-OK)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 1659,
+            "name": null,
+            "operand": null,
+            "qualifier": "SERVER",
+            "qualifier_operand": null,
+            "record": "CRLF",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": null,
+            "verb": "WEB SEND"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(ZF-KEY-16) LENGTH(ZF-LENGTH)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1712,
+            "name": null,
+            "operand": "ZF-FCT",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "ZF-RECORD",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "unresolved",
+            "verb": "READ"
+          },
+          {
+            "access": "write",
+            "attributes": "FROMLENGTH(HTTP-201-LENGTH) MEDIATYPE(TEXT-PLAIN) ACTION(SEND-ACTION) STATUSCODE(HTTP-STATUS-201) STATUSTEXT(HTTP-ABSTIME) STATUSLEN(HTTP-ABSTIME-LENGTH)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 1759,
+            "name": null,
+            "operand": null,
+            "qualifier": "SERVER",
+            "qualifier_operand": null,
+            "record": "HTTP-201-TEXT",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": null,
+            "verb": "WEB SEND"
+          },
+          {
+            "access": "open",
+            "attributes": "HOSTLENGTH(URL-HOST-NAME-LENGTH) PORTNUMBER(URL-PORT) SCHEME(URL-SCHEME) SESSTOKEN(SESSION-TOKEN)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 1830,
+            "name": null,
+            "operand": "URL-HOST-NAME",
+            "qualifier": "CLIENT",
+            "qualifier_operand": null,
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "unresolved",
+            "verb": "WEB OPEN"
+          },
+          {
+            "access": "converse",
+            "attributes": "SESSTOKEN(SESSION-TOKEN) PATHLENGTH(WEB-PATH-LENGTH) METHOD(WEB-METHOD) MEDIATYPE(ZF-MEDIA) FROM(CACHE-MESSAGE) FROMLENGTH(RECEIVE-LENGTH) TOLENGTH(CONVERSE-LENGTH) MAXLENGTH(CONVERSE-LENGTH) STATUSCODE(WEB-STATUS-CODE) STATUSLEN(WEB-STATUS-LENGTH) STATUSTEXT(WEB-STATUS-TEXT) CLIENTCONV(CLIENT-CONVERT)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 1861,
+            "name": null,
+            "operand": "WEB-PATH",
+            "qualifier": "CLIENT",
+            "qualifier_operand": null,
+            "record": "CONVERSE-RESPONSE",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "unresolved",
+            "verb": "WEB CONVERSE"
+          },
+          {
+            "access": "converse",
+            "attributes": "SESSTOKEN(SESSION-TOKEN) PATHLENGTH(WEB-PATH-LENGTH) METHOD(WEB-METHOD) MEDIATYPE(ZF-MEDIA) FROM(CACHE-MESSAGE) FROMLENGTH(RECEIVE-LENGTH) TOLENGTH(CONVERSE-LENGTH) MAXLENGTH(CONVERSE-LENGTH) STATUSCODE(WEB-STATUS-CODE) STATUSLEN(WEB-STATUS-LENGTH) STATUSTEXT(WEB-STATUS-TEXT) QUERYSTRING(WEB-QUERYSTRING) QUERYSTRLEN(WEB-QUERYSTRING-LENGTH) CLIENTCONV(CLIENT-CONVERT)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 1882,
+            "name": null,
+            "operand": "WEB-PATH",
+            "qualifier": "CLIENT",
+            "qualifier_operand": null,
+            "record": "CONVERSE-RESPONSE",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "unresolved",
+            "verb": "WEB CONVERSE"
+          },
+          {
+            "access": "converse",
+            "attributes": "SESSTOKEN(SESSION-TOKEN) PATHLENGTH(WEB-PATH-LENGTH) METHOD(WEB-METHOD) MEDIATYPE(ZF-MEDIA) TOLENGTH(CONVERSE-LENGTH) MAXLENGTH(CONVERSE-LENGTH) STATUSCODE(WEB-STATUS-CODE) STATUSLEN(WEB-STATUS-LENGTH) STATUSTEXT(WEB-STATUS-TEXT) CLIENTCONV(CLIENT-CONVERT)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 1903,
+            "name": null,
+            "operand": "WEB-PATH",
+            "qualifier": "CLIENT",
+            "qualifier_operand": null,
+            "record": "CONVERSE-RESPONSE",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "unresolved",
+            "verb": "WEB CONVERSE"
+          },
+          {
+            "access": "close",
+            "attributes": "SESSTOKEN(SESSION-TOKEN)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 1927,
+            "name": null,
+            "operand": null,
+            "qualifier": "CLIENT",
+            "qualifier_operand": null,
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": null,
+            "verb": "WEB CLOSE"
+          },
+          {
+            "access": "write",
+            "attributes": "NAMELENGTH(HEADER-ACAO-LENGTH) VALUE(VALUE-ACAO) VALUELENGTH(VALUE-ACAO-LENGTH)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 1951,
+            "name": null,
+            "operand": "HEADER-ACAO",
+            "qualifier": "SERVER",
+            "qualifier_operand": null,
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "unresolved",
+            "verb": "WEB WRITE"
+          },
+          {
+            "access": "write",
+            "attributes": "FROMLENGTH(TWO) MEDIATYPE(TEXT-PLAIN) ACTION(SEND-ACTION) STATUSCODE(HTTP-STATUS-400) STATUSTEXT(HTTP-400-TEXT) STATUSLEN(HTTP-400-LENGTH)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 2017,
+            "name": null,
+            "operand": null,
+            "qualifier": "SERVER",
+            "qualifier_operand": null,
+            "record": "CRLF",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": null,
+            "verb": "WEB SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "FROMLENGTH(TWO) MEDIATYPE(TEXT-PLAIN) ACTION(SEND-ACTION) STATUSCODE(HTTP-STATUS-409) STATUSTEXT(HTTP-409-TEXT) STATUSLEN(HTTP-409-LENGTH)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 2040,
+            "name": null,
+            "operand": null,
+            "qualifier": "SERVER",
+            "qualifier_operand": null,
+            "record": "CRLF",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": null,
+            "verb": "WEB SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "FROMLENGTH(TWO) MEDIATYPE(TEXT-PLAIN) STATUSCODE(HTTP-STATUS-401) STATUSTEXT(HTTP-AUTH-ERROR)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 2062,
+            "name": null,
+            "operand": null,
+            "qualifier": "SERVER",
+            "qualifier_operand": null,
+            "record": "CRLF",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": null,
+            "verb": "WEB SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "DOCTOKEN(DC-TOKEN) MEDIATYPE(TEXT-PLAIN) ACTION(SEND-ACTION) STATUSCODE(HTTP-STATUS-204) STATUSTEXT(HTTP-204-TEXT) STATUSLEN(HTTP-204-LENGTH)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 2087,
+            "name": null,
+            "operand": null,
+            "qualifier": "SERVER",
+            "qualifier_operand": null,
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": null,
+            "verb": "WEB SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "FROMLENGTH(TWO) MEDIATYPE(TEXT-PLAIN) STATUSCODE(HTTP-STATUS-507) STATUSTEXT(HTTP-507-TEXT) STATUSLEN(HTTP-507-LENGTH)",
+            "candidates": null,
+            "kind": "WEB",
+            "line": 2108,
+            "name": null,
+            "operand": null,
+            "qualifier": "SERVER",
+            "qualifier_operand": null,
+            "record": "CRLF",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": null,
+            "verb": "WEB SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "LENGTH(TD-LENGTH)",
+            "candidates": null,
+            "kind": "QUEUE",
+            "line": 2137,
+            "name": "@tdq@",
+            "operand": "CSSL",
+            "qualifier": "TD",
+            "qualifier_operand": null,
+            "record": "TD-RECORD",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "value",
+            "verb": "WRITEQ"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "commarea_contracts": {
+        "facts": [
+          {
+            "callee": "Source/ZECS003.cbl",
+            "callee_record": {
+              "bytes": 13,
+              "copybooks": [],
+              "fields": 2,
+              "file": "Source/ZECS003.cbl",
+              "name": "DFHCOMMAREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "Source/ZECS001.cbl",
+            "caller_record": {
+              "bytes": 13,
+              "copybooks": [],
+              "fields": 2,
+              "file": "Source/ZECS001.cbl",
+              "name": "ZECS003-COMM-AREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ZECS003-COMM-AREA",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 753,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "ZECS003",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "Source/ZECS002.asm",
+            "callee_record": null,
+            "caller": "Source/ZECS001.cbl",
+            "caller_record": {
+              "bytes": 66,
+              "copybooks": [],
+              "fields": 7,
+              "file": "Source/ZECS001.cbl",
+              "name": "ZECS002-COMM-AREA",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "ZECS002-COMM-AREA",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 795,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "callee_no_dfhcommarea",
+            "target": "ZECS002",
+            "verb": "LINK"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "dynamic_call_targets": {
+        "facts": [
+          {
+            "candidates": [
+              {
+                "program": "ZECS003",
+                "resolves_to": "Source/ZECS003.cbl",
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "Source/ZECS001.cbl",
+            "line": 753,
+            "operand": "ZECS003",
+            "other_sources": [],
+            "verb": "XCTL"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ZECS002",
+                "resolves_to": null,
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "Source/ZECS001.cbl",
+            "line": 795,
+            "operand": "ZECS002",
+            "other_sources": [],
+            "verb": "LINK"
+          },
+          {
+            "candidates": [
+              {
+                "program": "ZUIDSTCK",
+                "resolves_to": null,
+                "via": "value"
+              }
+            ],
+            "copybook": null,
+            "file": "Source/ZECS001.cbl",
+            "line": 1244,
+            "operand": "ZUIDSTCK",
+            "other_sources": [],
+            "verb": "CALL"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "entry_points": {
+        "facts": [
+          {
+            "entry_name": null,
+            "kind": "PROCEDURE",
+            "line": 453,
+            "params": null
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "entry_transactions": {
+        "facts": [
+          {
+            "defined_in": "Source/CSDZC##.rdo",
+            "group": "ZC@ID@",
+            "line": 31,
+            "profile": "DFHCICST",
+            "program": "ZECS001",
+            "resolves_to": "Source/ZECS001.cbl",
+            "transid": "ZC@ID@"
+          },
+          {
+            "defined_in": "Source/CSDZC##.rdo",
+            "group": "ZC@ID@",
+            "line": 39,
+            "profile": "DFHCICST",
+            "program": "ZECS001",
+            "resolves_to": "Source/ZECS001.cbl",
+            "transid": "ZD@ID@"
+          },
+          {
+            "defined_in": "Source/CSDZC##.rdo",
+            "group": "ZC@ID@",
+            "line": 47,
+            "profile": "DFHCICST",
+            "program": "ZECS001",
+            "resolves_to": "Source/ZECS001.cbl",
+            "transid": "ZR@ID@"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 4
+      },
+      "interface": {
+        "facts": {
+          "commarea": {
+            "alternatives": [],
+            "basis": "dfhcommarea",
+            "bytes": 1,
+            "copybooks": [],
+            "extended": false,
+            "fields": "Reference: Zecs001Dfhcommarea (1 fields: name, PIC, usage, offset, bytes, copybook) in src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs001Dfhcommarea.java; level numbers are in the copybook listings",
+            "file": "Source/ZECS001.cbl",
+            "record": "DFHCOMMAREA",
+            "sources": [],
+            "unexpanded": [],
+            "variable": false
+          },
+          "commarea_gap": null,
+          "commarea_unpack": null,
+          "containers": [],
+          "inbound": [],
+          "parameters": []
+        },
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "navigation": {
+        "facts": [
+          {
+            "from": "Source/ZECS001.cbl",
+            "line": 753,
+            "program": "ZECS003",
+            "remote_systems": [],
+            "to": "Source/ZECS003.cbl",
+            "verb": "XCTL",
+            "via": "value"
+          },
+          {
+            "from": "Source/ZECS001.cbl",
+            "line": 795,
+            "program": "ZECS002",
+            "remote_systems": [],
+            "to": null,
+            "verb": "LINK",
+            "via": "value"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 4
+      },
+      "tdqueue_lineage": {
+        "facts": [
+          {
+            "accesses": [
+              "write"
+            ],
+            "definitions": [],
+            "lines": [
+              2137
+            ],
+            "name": "@TDQ@",
+            "program": "Source/ZECS001.cbl",
+            "verbs": [
+              "WRITEQ"
+            ]
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "unchecked_responses": {
+        "facts": [
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 467,
+            "resp_var": "EIBRESP",
+            "unit": "1000-ACCESS-PARMS",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 530,
+            "resp_var": "WEBRESP",
+            "unit": "1000-ACCESS-PARMS",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 652,
+            "resp_var": "EIBRESP",
+            "unit": "1210-ZCXXSD",
+            "verb": "DOCUMENT"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 731,
+            "resp_var": "ETTL-RESP",
+            "unit": "1312-CHECK-ETTL",
+            "verb": "INQUIRE"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 753,
+            "resp_var": "EIBRESP",
+            "unit": "1320-CLEAR",
+            "verb": "XCTL"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 795,
+            "resp_var": "EIBRESP",
+            "unit": "1500-AUTHENTICATE",
+            "verb": "LINK"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1011,
+            "resp_var": "EIBRESP",
+            "unit": "3300-READ-FILE",
+            "verb": "READ"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1023,
+            "resp_var": "EIBRESP",
+            "unit": "3300-READ-FILE",
+            "verb": "REWRITE"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1104,
+            "resp_var": "EIBRESP",
+            "unit": "3400-STAGE",
+            "verb": "GETMAIN"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1180,
+            "resp_var": "EIBRESP",
+            "unit": "3510-FREEMAIN",
+            "verb": "FREEMAIN"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1214,
+            "resp_var": "EIBRESP",
+            "unit": "3600-SEND-RESPONSE",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1225,
+            "resp_var": "EIBRESP",
+            "unit": "3600-SEND-RESPONSE",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1246,
+            "resp_var": "EIBRESP",
+            "unit": "4000-GET-COUNTER",
+            "verb": "GET"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1444,
+            "resp_var": "EIBRESP",
+            "unit": "4300-SEND-RESPONSE",
+            "verb": "SYNCPOINT"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1572,
+            "resp_var": "EIBRESP",
+            "unit": "4700-DELETE",
+            "verb": "DELETE"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1614,
+            "resp_var": "EIBRESP",
+            "unit": "5100-DELETE-KEY",
+            "verb": "DELETE"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1631,
+            "resp_var": "EIBRESP",
+            "unit": "5200-DELETE-FILE",
+            "verb": "DELETE"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1659,
+            "resp_var": "EIBRESP",
+            "unit": "5300-SEND-RESPONSE",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1730,
+            "resp_var": "EIBRESP",
+            "unit": "5600-CHECK-TTL",
+            "verb": "ASKTIME"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1759,
+            "resp_var": "EIBRESP",
+            "unit": "5700-SEND-ABS",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1830,
+            "resp_var": "EIBRESP",
+            "unit": "8100-WEB-OPEN",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1861,
+            "resp_var": "EIBRESP",
+            "unit": "8200-WEB-CONVERSE",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1882,
+            "resp_var": "EIBRESP",
+            "unit": "8200-WEB-CONVERSE",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1903,
+            "resp_var": "EIBRESP",
+            "unit": "8200-WEB-CONVERSE",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1927,
+            "resp_var": "EIBRESP",
+            "unit": "8300-WEB-CLOSE",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 1951,
+            "resp_var": "EIBRESP",
+            "unit": "9001-ACAO",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 2017,
+            "resp_var": "EIBRESP",
+            "unit": "9400-STATUS-400",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 2040,
+            "resp_var": "EIBRESP",
+            "unit": "9500-STATUS-409",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 2062,
+            "resp_var": "EIBRESP",
+            "unit": "9600-AUTH-ERROR",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 2081,
+            "resp_var": "EIBRESP",
+            "unit": "9700-STATUS-204",
+            "verb": "DOCUMENT"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 2087,
+            "resp_var": "EIBRESP",
+            "unit": "9700-STATUS-204",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 2108,
+            "resp_var": "EIBRESP",
+            "unit": "9800-STATUS-507",
+            "verb": "WEB"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 2128,
+            "resp_var": "EIBRESP",
+            "unit": "9900-WRITE-CSSL",
+            "verb": "FORMATTIME"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 2137,
+            "resp_var": "EIBRESP",
+            "unit": "9900-WRITE-CSSL",
+            "verb": "WRITEQ"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 2150,
+            "resp_var": "EIBRESP",
+            "unit": "9950-ABS",
+            "verb": "ASKTIME"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "line": 2160,
+            "resp_var": "EIBRESP",
+            "unit": "9999-ROLLBACK",
+            "verb": "SYNCPOINT"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "units_of_work": {
+        "facts": [
+          {
+            "file": "Source/ZECS001.cbl",
+            "kind": "COMMIT",
+            "line": 1444,
+            "source": "CICS",
+            "unit": "4300-SEND-RESPONSE",
+            "verb": "SYNCPOINT"
+          },
+          {
+            "file": "Source/ZECS001.cbl",
+            "kind": "ROLLBACK",
+            "line": 2160,
+            "source": "CICS",
+            "unit": "9999-ROLLBACK",
+            "verb": "SYNCPOINT ROLLBACK"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "unresolved_calls": {
+        "facts": [
+          {
+            "file": "Source/ZECS001.cbl",
+            "form": "identifier",
+            "line": 1244,
+            "operand": "ZUIDSTCK",
+            "target": "ZUIDSTCK",
+            "verb": "CALL"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 9
+      },
+      "uow_handlers": {
+        "facts": [
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 467,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 530,
+            "resp_var": "WEBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 542,
+            "resp_var": "WEBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 643,
+            "resp_var": "SD-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "DOCUMENT"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 652,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "DOCUMENT"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 731,
+            "resp_var": "ETTL-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "INQUIRE"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 753,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "XCTL"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 782,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 795,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "LINK"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL,NOTFND",
+            "kind": "RESP_CHECK",
+            "line": 927,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "READ"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1004,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "INQUIRE"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1011,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "READ"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1023,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "REWRITE"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL,NOTFND",
+            "kind": "RESP_CHECK",
+            "line": 1030,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "READ"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1065,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "ASKTIME"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1104,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "GETMAIN"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL,NOTFND",
+            "kind": "RESP_CHECK",
+            "line": 1137,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "READ"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1180,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "FREEMAIN"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1214,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1225,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1246,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "GET"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL,NOTFND",
+            "kind": "RESP_CHECK",
+            "line": 1265,
+            "resp_var": "READ-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "READ"
+          },
+          {
+            "attributes": null,
+            "condition": "DUPREC,NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1329,
+            "resp_var": "WRITE-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WRITE"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL,NOTFND",
+            "kind": "RESP_CHECK",
+            "line": 1365,
+            "resp_var": "READ-RESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "READ"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "COMMIT",
+            "line": 1444,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SYNCPOINT"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1444,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SYNCPOINT"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1457,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1499,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WRITE"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1529,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "REWRITE"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1572,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "DELETE"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1589,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "READ"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1614,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "DELETE"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1631,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "DELETE"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1659,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1712,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "READ"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1730,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "ASKTIME"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1759,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1781,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "DOCUMENT"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1789,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "DOCUMENT"
+          },
+          {
+            "attributes": null,
+            "condition": "NORMAL",
+            "kind": "RESP_CHECK",
+            "line": 1802,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1830,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1861,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1882,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1903,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1927,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 1951,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 2017,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 2040,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 2062,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 2081,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "DOCUMENT"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 2087,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 2108,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WEB"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 2128,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "FORMATTIME"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 2137,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "WRITEQ"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 2150,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "ASKTIME"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "ROLLBACK",
+            "line": 2160,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SYNCPOINT ROLLBACK"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "RESP_CHECK",
+            "line": 2160,
+            "resp_var": "EIBRESP",
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SYNCPOINT"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      }
+    }
+  },
+  "generated": {
+    "imports": [
+      {
+        "class": "com.gitgalaxy.modernized.cics.CicsTask",
+        "file": "src/main/java/com/gitgalaxy/modernized/cics/CicsTask.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.dto.contract.Zecs001Dfhcommarea",
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs001Dfhcommarea.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.entity.vsam.ZfRecord",
+        "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/ZfRecord.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.entity.vsam.ZfRecordKey",
+        "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/ZfRecordKey.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.entity.vsam.ZkRecord",
+        "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/ZkRecord.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.messaging.TransientData",
+        "file": "src/main/java/com/gitgalaxy/modernized/messaging/TransientData.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.repository.vsam.ZfRecordRepository",
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/ZfRecordRepository.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.repository.vsam.ZkRecordRepository",
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/ZkRecordRepository.java"
+      }
+    ],
+    "traced_to_this_program": [
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/Zecs003Controller.java",
+        "symbol": "Zecs003Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs001Dfhcommarea.java",
+        "symbol": "Zecs001Dfhcommarea#dfhcommarea"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs003Dfhcommarea.java",
+        "symbol": "Zecs003Dfhcommarea#caType"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs003Dfhcommarea.java",
+        "symbol": "Zecs003Dfhcommarea#caUriField01"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+        "symbol": "Zecs001Service"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+        "symbol": "Zecs001Service#commitPointL1444"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+        "symbol": "Zecs001Service#deleteZcIdFile"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+        "symbol": "Zecs001Service#deleteZcIdKey"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+        "symbol": "Zecs001Service#dispatchZecs002L795"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+        "symbol": "Zecs001Service#dispatchZecs003L753"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+        "symbol": "Zecs001Service#dispatchZuidstckL1244"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+        "symbol": "Zecs001Service#readZcIdFile"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+        "symbol": "Zecs001Service#readZcIdKey"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+        "symbol": "Zecs001Service#rewriteZcIdFile"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+        "symbol": "Zecs001Service#rewriteZcIdKey"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+        "symbol": "Zecs001Service#rollbackL2160"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+        "symbol": "Zecs001Service#writeZcIdFile"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+        "symbol": "Zecs001Service#writeZcIdKey"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+        "symbol": "Zecs001Service#writeqTdL2137"
+      }
+    ]
+  },
+  "paragraphs": [
+    {
+      "lines": 98,
+      "name": "1000-ACCESS-PARMS",
+      "start_line": 465
+    },
+    {
+      "lines": 2,
+      "name": "1000-EXIT",
+      "start_line": 564
+    },
+    {
+      "lines": 4,
+      "name": "1100-PARSE-URI",
+      "start_line": 575
+    },
+    {
+      "lines": 2,
+      "name": "1100-EXIT",
+      "start_line": 580
+    },
+    {
+      "lines": 5,
+      "name": "1150-CHECK-URI",
+      "start_line": 588
+    },
+    {
+      "lines": 2,
+      "name": "1150-EXIT",
+      "start_line": 594
+    },
+    {
+      "lines": 13,
+      "name": "1160-MOVE-URI",
+      "start_line": 602
+    },
+    {
+      "lines": 2,
+      "name": "1160-EXIT",
+      "start_line": 616
+    },
+    {
+      "lines": 8,
+      "name": "1200-VALIDATION",
+      "start_line": 625
+    },
+    {
+      "lines": 2,
+      "name": "1200-EXIT",
+      "start_line": 634
+    },
+    {
+      "lines": 22,
+      "name": "1210-ZCXXSD",
+      "start_line": 640
+    },
+    {
+      "lines": 2,
+      "name": "1210-EXIT",
+      "start_line": 663
+    },
+    {
+      "lines": 12,
+      "name": "1300-QUERY-STRING",
+      "start_line": 677
+    },
+    {
+      "lines": 2,
+      "name": "1300-EXIT",
+      "start_line": 690
+    },
+    {
+      "lines": 25,
+      "name": "1310-TTL",
+      "start_line": 696
+    },
+    {
+      "lines": 2,
+      "name": "1310-EXIT",
+      "start_line": 722
+    },
+    {
+      "lines": 8,
+      "name": "1312-CHECK-ETTL",
+      "start_line": 729
+    },
+    {
+      "lines": 2,
+      "name": "1312-EXIT",
+      "start_line": 738
+    },
+    {
+      "lines": 12,
+      "name": "1320-CLEAR",
+      "start_line": 745
+    },
+    {
+      "lines": 2,
+      "name": "1320-EXIT",
+      "start_line": 758
+    },
+    {
+      "lines": 7,
+      "name": "1325-CLEAR-TYPE",
+      "start_line": 764
+    },
+    {
+      "lines": 2,
+      "name": "1325-EXIT",
+      "start_line": 772
+    },
+    {
+      "lines": 30,
+      "name": "1500-AUTHENTICATE",
+      "start_line": 778
+    },
+    {
+      "lines": 2,
+      "name": "1500-EXIT",
+      "start_line": 809
+    },
+    {
+      "lines": 13,
+      "name": "1600-USER-ACCESS",
+      "start_line": 816
+    },
+    {
+      "lines": 2,
+      "name": "1600-EXIT",
+      "start_line": 830
+    },
+    {
+      "lines": 22,
+      "name": "1610-SCAN-ZCXXSD",
+      "start_line": 836
+    },
+    {
+      "lines": 2,
+      "name": "1610-EXIT",
+      "start_line": 859
+    },
+    {
+      "lines": 20,
+      "name": "2000-PROCESS-REQUEST",
+      "start_line": 865
+    },
+    {
+      "lines": 2,
+      "name": "2000-EXIT",
+      "start_line": 886
+    },
+    {
+      "lines": 4,
+      "name": "3000-READ-CACHE",
+      "start_line": 893
+    },
+    {
+      "lines": 2,
+      "name": "3000-EXIT",
+      "start_line": 897
+    },
+    {
+      "lines": 6,
+      "name": "3100-READ-PROCESS",
+      "start_line": 909
+    },
+    {
+      "lines": 2,
+      "name": "3100-EXIT",
+      "start_line": 915
+    },
+    {
+      "lines": 55,
+      "name": "3200-READ-KEY",
+      "start_line": 922
+    },
+    {
+      "lines": 2,
+      "name": "3200-EXIT",
+      "start_line": 978
+    },
+    {
+      "lines": 70,
+      "name": "3300-READ-FILE",
+      "start_line": 987
+    },
+    {
+      "lines": 2,
+      "name": "3300-EXIT",
+      "start_line": 1058
+    },
+    {
+      "lines": 18,
+      "name": "3310-CHECK-TTL",
+      "start_line": 1064
+    },
+    {
+      "lines": 2,
+      "name": "3310-EXIT",
+      "start_line": 1083
+    },
+    {
+      "lines": 33,
+      "name": "3400-STAGE",
+      "start_line": 1092
+    },
+    {
+      "lines": 2,
+      "name": "3400-EXIT",
+      "start_line": 1126
+    },
+    {
+      "lines": 37,
+      "name": "3500-READ-SEGMENTS",
+      "start_line": 1133
+    },
+    {
+      "lines": 2,
+      "name": "3500-EXIT",
+      "start_line": 1171
+    },
+    {
+      "lines": 5,
+      "name": "3510-FREEMAIN",
+      "start_line": 1179
+    },
+    {
+      "lines": 2,
+      "name": "3510-EXIT",
+      "start_line": 1185
+    },
+    {
+      "lines": 43,
+      "name": "3600-SEND-RESPONSE",
+      "start_line": 1192
+    },
+    {
+      "lines": 2,
+      "name": "3600-EXIT",
+      "start_line": 1236
+    },
+    {
+      "lines": 9,
+      "name": "4000-GET-COUNTER",
+      "start_line": 1243
+    },
+    {
+      "lines": 2,
+      "name": "4000-EXIT",
+      "start_line": 1253
+    },
+    {
+      "lines": 30,
+      "name": "4100-READ-KEY",
+      "start_line": 1261
+    },
+    {
+      "lines": 2,
+      "name": "4100-EXIT",
+      "start_line": 1292
+    },
+    {
+      "lines": 9,
+      "name": "4110-PRIME-KEY",
+      "start_line": 1299
+    },
+    {
+      "lines": 2,
+      "name": "4110-EXIT",
+      "start_line": 1309
+    },
+    {
+      "lines": 31,
+      "name": "4120-WRITE-KEY",
+      "start_line": 1320
+    },
+    {
+      "lines": 2,
+      "name": "4120-EXIT",
+      "start_line": 1352
+    },
+    {
+      "lines": 30,
+      "name": "4130-READ-KEY",
+      "start_line": 1361
+    },
+    {
+      "lines": 2,
+      "name": "4130-EXIT",
+      "start_line": 1392
+    },
+    {
+      "lines": 28,
+      "name": "4200-PROCESS-FILE",
+      "start_line": 1399
+    },
+    {
+      "lines": 2,
+      "name": "4200-EXIT",
+      "start_line": 1428
+    },
+    {
+      "lines": 34,
+      "name": "4300-SEND-RESPONSE",
+      "start_line": 1443
+    },
+    {
+      "lines": 2,
+      "name": "4300-EXIT",
+      "start_line": 1478
+    },
+    {
+      "lines": 34,
+      "name": "4400-WRITE-FILE",
+      "start_line": 1486
+    },
+    {
+      "lines": 2,
+      "name": "4400-EXIT",
+      "start_line": 1521
+    },
+    {
+      "lines": 18,
+      "name": "4500-UPDATE-KEY",
+      "start_line": 1528
+    },
+    {
+      "lines": 2,
+      "name": "4500-EXIT",
+      "start_line": 1547
+    },
+    {
+      "lines": 8,
+      "name": "4600-REPLICATE",
+      "start_line": 1554
+    },
+    {
+      "lines": 2,
+      "name": "4600-EXIT",
+      "start_line": 1563
+    },
+    {
+      "lines": 6,
+      "name": "4700-DELETE",
+      "start_line": 1570
+    },
+    {
+      "lines": 2,
+      "name": "4700-EXIT",
+      "start_line": 1577
+    },
+    {
+      "lines": 20,
+      "name": "5000-READ-KEY",
+      "start_line": 1584
+    },
+    {
+      "lines": 2,
+      "name": "5000-EXIT",
+      "start_line": 1605
+    },
+    {
+      "lines": 6,
+      "name": "5100-DELETE-KEY",
+      "start_line": 1612
+    },
+    {
+      "lines": 2,
+      "name": "5100-EXIT",
+      "start_line": 1619
+    },
+    {
+      "lines": 9,
+      "name": "5200-DELETE-FILE",
+      "start_line": 1626
+    },
+    {
+      "lines": 2,
+      "name": "5200-EXIT",
+      "start_line": 1636
+    },
+    {
+      "lines": 25,
+      "name": "5300-SEND-RESPONSE",
+      "start_line": 1648
+    },
+    {
+      "lines": 2,
+      "name": "5300-EXIT",
+      "start_line": 1674
+    },
+    {
+      "lines": 8,
+      "name": "5400-REPLICATE",
+      "start_line": 1681
+    },
+    {
+      "lines": 2,
+      "name": "5400-EXIT",
+      "start_line": 1691
+    },
+    {
+      "lines": 17,
+      "name": "5500-DEPLICATE-DELETE",
+      "start_line": 1704
+    },
+    {
+      "lines": 2,
+      "name": "5500-EXIT",
+      "start_line": 1722
+    },
+    {
+      "lines": 12,
+      "name": "5600-CHECK-TTL",
+      "start_line": 1729
+    },
+    {
+      "lines": 2,
+      "name": "5600-EXIT",
+      "start_line": 1742
+    },
+    {
+      "lines": 18,
+      "name": "5700-SEND-ABS",
+      "start_line": 1752
+    },
+    {
+      "lines": 2,
+      "name": "5700-EXIT",
+      "start_line": 1771
+    },
+    {
+      "lines": 37,
+      "name": "8000-GET-URL",
+      "start_line": 1779
+    },
+    {
+      "lines": 2,
+      "name": "8000-EXIT",
+      "start_line": 1817
+    },
+    {
+      "lines": 14,
+      "name": "8100-WEB-OPEN",
+      "start_line": 1824
+    },
+    {
+      "lines": 2,
+      "name": "8100-EXIT",
+      "start_line": 1839
+    },
+    {
+      "lines": 71,
+      "name": "8200-WEB-CONVERSE",
+      "start_line": 1847
+    },
+    {
+      "lines": 2,
+      "name": "8200-EXIT",
+      "start_line": 1919
+    },
+    {
+      "lines": 6,
+      "name": "8300-WEB-CLOSE",
+      "start_line": 1925
+    },
+    {
+      "lines": 2,
+      "name": "8300-EXIT",
+      "start_line": 1932
+    },
+    {
+      "lines": 4,
+      "name": "9000-RETURN",
+      "start_line": 1938
+    },
+    {
+      "lines": 2,
+      "name": "9000-EXIT",
+      "start_line": 1943
+    },
+    {
+      "lines": 8,
+      "name": "9001-ACAO",
+      "start_line": 1950
+    },
+    {
+      "lines": 2,
+      "name": "9001-EXIT",
+      "start_line": 1959
+    },
+    {
+      "lines": 11,
+      "name": "9100-FILE-ERROR",
+      "start_line": 1965
+    },
+    {
+      "lines": 2,
+      "name": "9100-EXIT",
+      "start_line": 1977
+    },
+    {
+      "lines": 9,
+      "name": "9200-KEY-ERROR",
+      "start_line": 1983
+    },
+    {
+      "lines": 2,
+      "name": "9200-EXIT",
+      "start_line": 1993
+    },
+    {
+      "lines": 5,
+      "name": "9300-WEB-ERROR",
+      "start_line": 1999
+    },
+    {
+      "lines": 2,
+      "name": "9300-EXIT",
+      "start_line": 2005
+    },
+    {
+      "lines": 17,
+      "name": "9400-STATUS-400",
+      "start_line": 2011
+    },
+    {
+      "lines": 2,
+      "name": "9400-EXIT",
+      "start_line": 2028
+    },
+    {
+      "lines": 17,
+      "name": "9500-STATUS-409",
+      "start_line": 2034
+    },
+    {
+      "lines": 2,
+      "name": "9500-EXIT",
+      "start_line": 2052
+    },
+    {
+      "lines": 13,
+      "name": "9600-AUTH-ERROR",
+      "start_line": 2058
+    },
+    {
+      "lines": 2,
+      "name": "9600-EXIT",
+      "start_line": 2072
+    },
+    {
+      "lines": 19,
+      "name": "9700-STATUS-204",
+      "start_line": 2078
+    },
+    {
+      "lines": 2,
+      "name": "9700-EXIT",
+      "start_line": 2099
+    },
+    {
+      "lines": 13,
+      "name": "9800-STATUS-507",
+      "start_line": 2105
+    },
+    {
+      "lines": 2,
+      "name": "9800-EXIT",
+      "start_line": 2119
+    },
+    {
+      "lines": 17,
+      "name": "9900-WRITE-CSSL",
+      "start_line": 2125
+    },
+    {
+      "lines": 2,
+      "name": "9900-EXIT",
+      "start_line": 2143
+    },
+    {
+      "lines": 3,
+      "name": "9950-ABS",
+      "start_line": 2149
+    },
+    {
+      "lines": 2,
+      "name": "9950-EXIT",
+      "start_line": 2153
+    },
+    {
+      "lines": 3,
+      "name": "9999-ROLLBACK",
+      "start_line": 2159
+    },
+    {
+      "lines": 2,
+      "name": "9999-EXIT",
+      "start_line": 2163
+    }
+  ],
+  "priority": {
+    "blast_radius": 31.965,
+    "callers": 1,
+    "calls": 4,
+    "of": 5,
+    "rank": 3
+  },
+  "program": {
+    "file": "Source/ZECS001.cbl",
+    "key": "ZECS001",
+    "language": "cobol",
+    "lines": 2165,
+    "program_ids": [
+      "ZECS001"
+    ]
+  },
+  "referenced": [
+    {
+      "bytes_after": 208,
+      "bytes_before": 197,
+      "class": "src/main/java/com/gitgalaxy/modernized/dto/contract/Zecs001Dfhcommarea.java",
+      "fields": 1,
+      "item": "commarea",
+      "section": "facts.interface"
+    }
+  ],
+  "relations": [
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-PATH(1:10), RESOURCES)",
+      "kind": "alphanumeric",
+      "left": "WEB-PATH(1:10)",
+      "left_class": "alphanumeric",
+      "line": 484,
+      "op": "=",
+      "ordering": false,
+      "right": "RESOURCES",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(AUTHENTICATE, 'Y')",
+      "kind": "alphanumeric",
+      "left": "AUTHENTICATE",
+      "left_class": "alphanumeric",
+      "line": 486,
+      "op": "=",
+      "ordering": false,
+      "right": "'Y'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-HTTPMETHOD, WEB-HTTP-POST)",
+      "kind": "alphanumeric",
+      "left": "WEB-HTTPMETHOD",
+      "left_class": "alphanumeric",
+      "line": 518,
+      "op": "=",
+      "ordering": false,
+      "right": "WEB-HTTP-POST",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-HTTPMETHOD, WEB-HTTP-PUT)",
+      "kind": "alphanumeric",
+      "left": "WEB-HTTPMETHOD",
+      "left_class": "alphanumeric",
+      "line": 519,
+      "op": "=",
+      "ordering": false,
+      "right": "WEB-HTTP-PUT",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-MEDIA-TYPE(1:04), TEXT-ANYTHING)",
+      "kind": "alphanumeric",
+      "left": "WEB-MEDIA-TYPE(1:04)",
+      "left_class": "alphanumeric",
+      "line": 540,
+      "op": "=",
+      "ordering": false,
+      "right": "TEXT-ANYTHING",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-MEDIA-TYPE(1:15), APPLICATION-XML)",
+      "kind": "alphanumeric",
+      "left": "WEB-MEDIA-TYPE(1:15)",
+      "left_class": "alphanumeric",
+      "line": 541,
+      "op": "=",
+      "ordering": false,
+      "right": "APPLICATION-XML",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WEBRESP",
+      "left_class": "numeric",
+      "line": 552,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-PATH(URI-PATH-POINTER:1), SLASH)",
+      "kind": "alphanumeric",
+      "left": "WEB-PATH(URI-PATH-POINTER:1)",
+      "left_class": "alphanumeric",
+      "line": 577,
+      "op": "=",
+      "ordering": false,
+      "right": "SLASH",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WEB-SCHEME",
+      "left_class": "numeric",
+      "line": 628,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHVALUE(HTTP)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WEB-SCHEME",
+      "left_class": "numeric",
+      "line": 631,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHVALUE(HTTPS)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "SD-RESP",
+      "left_class": "numeric",
+      "line": 651,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "SD-RESP",
+      "left_class": "numeric",
+      "line": 660,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-HTTPMETHOD, WEB-HTTP-POST)",
+      "kind": "alphanumeric",
+      "left": "WEB-HTTPMETHOD",
+      "left_class": "alphanumeric",
+      "line": 678,
+      "op": "=",
+      "ordering": false,
+      "right": "WEB-HTTP-POST",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-HTTPMETHOD, WEB-HTTP-PUT)",
+      "kind": "alphanumeric",
+      "left": "WEB-HTTPMETHOD",
+      "left_class": "alphanumeric",
+      "line": 679,
+      "op": "=",
+      "ordering": false,
+      "right": "WEB-HTTP-PUT",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-HTTPMETHOD, WEB-HTTP-DELETE)",
+      "kind": "alphanumeric",
+      "left": "WEB-HTTPMETHOD",
+      "left_class": "alphanumeric",
+      "line": 682,
+      "op": "=",
+      "ordering": false,
+      "right": "WEB-HTTP-DELETE",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ETTL-RESP",
+      "left_class": "numeric",
+      "line": 713,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ETTL-STATUS",
+      "left_class": "numeric",
+      "line": 714,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHVALUE(DISABLED)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ETTL-RESP",
+      "left_class": "numeric",
+      "line": 718,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "ETTL-STATUS",
+      "left_class": "numeric",
+      "line": 719,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHVALUE(ENABLED)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(CLEAR-TEXT, '*')",
+      "kind": "alphanumeric",
+      "left": "CLEAR-TEXT",
+      "left_class": "alphanumeric",
+      "line": 752,
+      "op": "=",
+      "ordering": false,
+      "right": "'*'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 789,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "!CobolCompare.eq(CA-RETURN-CODE, '00')",
+      "kind": "alphanumeric",
+      "left": "CA-RETURN-CODE",
+      "left_class": "alphanumeric",
+      "line": 800,
+      "op": "<>",
+      "ordering": false,
+      "right": "'00'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "PERFORM UNTIL",
+      "java": "CobolCompare.eq(USER-ACCESS, 'Y')",
+      "kind": "alphanumeric",
+      "left": "USER-ACCESS",
+      "left_class": "alphanumeric",
+      "line": 823,
+      "op": "=",
+      "ordering": false,
+      "right": "'Y'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(USER-ACCESS, 'N')",
+      "kind": "alphanumeric",
+      "left": "USER-ACCESS",
+      "left_class": "alphanumeric",
+      "line": 826,
+      "op": "=",
+      "ordering": false,
+      "right": "'N'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(SD-USER-ID(SD-INDEX), CA-USERID)",
+      "kind": "alphanumeric",
+      "left": "SD-USER-ID(SD-INDEX)",
+      "left_class": "alphanumeric",
+      "line": 837,
+      "op": "=",
+      "ordering": false,
+      "right": "CA-USERID",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(SD-ACCESS(SD-INDEX), SD-SELECT)",
+      "kind": "alphanumeric",
+      "left": "SD-ACCESS(SD-INDEX)",
+      "left_class": "alphanumeric",
+      "line": 838,
+      "op": "=",
+      "ordering": false,
+      "right": "SD-SELECT",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-HTTPMETHOD, WEB-HTTP-GET)",
+      "kind": "alphanumeric",
+      "left": "WEB-HTTPMETHOD",
+      "left_class": "alphanumeric",
+      "line": 839,
+      "op": "=",
+      "ordering": false,
+      "right": "WEB-HTTP-GET",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(SD-USER-ID(SD-INDEX), CA-USERID)",
+      "kind": "alphanumeric",
+      "left": "SD-USER-ID(SD-INDEX)",
+      "left_class": "alphanumeric",
+      "line": 842,
+      "op": "=",
+      "ordering": false,
+      "right": "CA-USERID",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(SD-ACCESS(SD-INDEX), SD-UPDATE)",
+      "kind": "alphanumeric",
+      "left": "SD-ACCESS(SD-INDEX)",
+      "left_class": "alphanumeric",
+      "line": 843,
+      "op": "=",
+      "ordering": false,
+      "right": "SD-UPDATE",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-HTTPMETHOD, WEB-HTTP-PUT)",
+      "kind": "alphanumeric",
+      "left": "WEB-HTTPMETHOD",
+      "left_class": "alphanumeric",
+      "line": 844,
+      "op": "=",
+      "ordering": false,
+      "right": "WEB-HTTP-PUT",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(SD-USER-ID(SD-INDEX), CA-USERID)",
+      "kind": "alphanumeric",
+      "left": "SD-USER-ID(SD-INDEX)",
+      "left_class": "alphanumeric",
+      "line": 847,
+      "op": "=",
+      "ordering": false,
+      "right": "CA-USERID",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(SD-ACCESS(SD-INDEX), SD-UPDATE)",
+      "kind": "alphanumeric",
+      "left": "SD-ACCESS(SD-INDEX)",
+      "left_class": "alphanumeric",
+      "line": 848,
+      "op": "=",
+      "ordering": false,
+      "right": "SD-UPDATE",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-HTTPMETHOD, WEB-HTTP-POST)",
+      "kind": "alphanumeric",
+      "left": "WEB-HTTPMETHOD",
+      "left_class": "alphanumeric",
+      "line": 849,
+      "op": "=",
+      "ordering": false,
+      "right": "WEB-HTTP-POST",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(SD-USER-ID(SD-INDEX), CA-USERID)",
+      "kind": "alphanumeric",
+      "left": "SD-USER-ID(SD-INDEX)",
+      "left_class": "alphanumeric",
+      "line": 852,
+      "op": "=",
+      "ordering": false,
+      "right": "CA-USERID",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(SD-ACCESS(SD-INDEX), SD-DELETE)",
+      "kind": "alphanumeric",
+      "left": "SD-ACCESS(SD-INDEX)",
+      "left_class": "alphanumeric",
+      "line": 853,
+      "op": "=",
+      "ordering": false,
+      "right": "SD-DELETE",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-HTTPMETHOD, WEB-HTTP-DELETE)",
+      "kind": "alphanumeric",
+      "left": "WEB-HTTPMETHOD",
+      "left_class": "alphanumeric",
+      "line": 854,
+      "op": "=",
+      "ordering": false,
+      "right": "WEB-HTTP-DELETE",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-HTTPMETHOD, WEB-HTTP-GET)",
+      "kind": "alphanumeric",
+      "left": "WEB-HTTPMETHOD",
+      "left_class": "alphanumeric",
+      "line": 866,
+      "op": "=",
+      "ordering": false,
+      "right": "WEB-HTTP-GET",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-HTTPMETHOD, WEB-HTTP-POST)",
+      "kind": "alphanumeric",
+      "left": "WEB-HTTPMETHOD",
+      "left_class": "alphanumeric",
+      "line": 870,
+      "op": "=",
+      "ordering": false,
+      "right": "WEB-HTTP-POST",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-HTTPMETHOD, WEB-HTTP-PUT)",
+      "kind": "alphanumeric",
+      "left": "WEB-HTTPMETHOD",
+      "left_class": "alphanumeric",
+      "line": 871,
+      "op": "=",
+      "ordering": false,
+      "right": "WEB-HTTP-PUT",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-HTTPMETHOD, WEB-HTTP-DELETE)",
+      "kind": "alphanumeric",
+      "left": "WEB-HTTPMETHOD",
+      "left_class": "alphanumeric",
+      "line": 877,
+      "op": "=",
+      "ordering": false,
+      "right": "WEB-HTTP-DELETE",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "PERFORM UNTIL",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 883,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "PERFORM UNTIL",
+      "java": "CobolCompare.eq(PROCESS-COMPLETE, 'Y')",
+      "kind": "alphanumeric",
+      "left": "PROCESS-COMPLETE",
+      "left_class": "alphanumeric",
+      "line": 896,
+      "op": "=",
+      "ordering": false,
+      "right": "'Y'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(ZF-SUCCESSFUL, 'Y')",
+      "kind": "alphanumeric",
+      "left": "ZF-SUCCESSFUL",
+      "left_class": "alphanumeric",
+      "line": 913,
+      "op": "=",
+      "ordering": false,
+      "right": "'Y'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 934,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NOTFND)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 940,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(ZK-ZF-KEY, INTERNAL-KEY)",
+      "kind": "alphanumeric",
+      "left": "ZK-ZF-KEY",
+      "left_class": "group",
+      "line": 972,
+      "op": "=",
+      "ordering": false,
+      "right": "INTERNAL-KEY",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(ZK-SEGMENTS, 'Y')",
+      "kind": "alphanumeric",
+      "left": "ZK-SEGMENTS",
+      "left_class": "alphanumeric",
+      "line": 999,
+      "op": "=",
+      "ordering": false,
+      "right": "'Y'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(TTL-TYPE, LAST-ACCESS-TIME)",
+      "kind": "alphanumeric",
+      "left": "TTL-TYPE",
+      "left_class": "alphanumeric",
+      "line": 1002,
+      "op": "=",
+      "ordering": false,
+      "right": "LAST-ACCESS-TIME",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1007,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(TTL-TYPE, LAST-ACCESS-TIME)",
+      "kind": "alphanumeric",
+      "left": "TTL-TYPE",
+      "left_class": "alphanumeric",
+      "line": 1010,
+      "op": "=",
+      "ordering": false,
+      "right": "LAST-ACCESS-TIME",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1037,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NOTFND)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1042,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NOTFND)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1043,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1055,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "PERFORM UNTIL",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1080,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "PERFORM UNTIL",
+      "java": "CobolCompare.eq(ZF-SUCCESSFUL, 'N')",
+      "kind": "alphanumeric",
+      "left": "ZF-SUCCESSFUL",
+      "left_class": "alphanumeric",
+      "line": 1124,
+      "op": "=",
+      "ordering": false,
+      "right": "'N'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1144,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1151,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NOTFND)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1158,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NOTFND)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1159,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-MEDIA-TYPE, SPACES)",
+      "kind": "alphanumeric",
+      "left": "WEB-MEDIA-TYPE",
+      "left_class": "alphanumeric",
+      "line": 1202,
+      "op": "=",
+      "ordering": false,
+      "right": "SPACES",
+      "right_class": "figurative"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-MEDIA-TYPE(1:04), TEXT-ANYTHING)",
+      "kind": "alphanumeric",
+      "left": "WEB-MEDIA-TYPE(1:04)",
+      "left_class": "alphanumeric",
+      "line": 1212,
+      "op": "=",
+      "ordering": false,
+      "right": "TEXT-ANYTHING",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-MEDIA-TYPE(1:15), APPLICATION-XML)",
+      "kind": "alphanumeric",
+      "left": "WEB-MEDIA-TYPE(1:15)",
+      "left_class": "alphanumeric",
+      "line": 1213,
+      "op": "=",
+      "ordering": false,
+      "right": "APPLICATION-XML",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "READ-RESP",
+      "left_class": "numeric",
+      "line": 1275,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "READ-RESP",
+      "left_class": "numeric",
+      "line": 1278,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NOTFND)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "READ-RESP",
+      "left_class": "numeric",
+      "line": 1281,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "READ-RESP",
+      "left_class": "numeric",
+      "line": 1282,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NOTFND)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WRITE-RESP",
+      "left_class": "numeric",
+      "line": 1338,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(DUPREC)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WRITE-RESP",
+      "left_class": "numeric",
+      "line": 1341,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WRITE-RESP",
+      "left_class": "numeric",
+      "line": 1342,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(DUPREC)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "READ-RESP",
+      "left_class": "numeric",
+      "line": 1375,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NOTFND)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "READ-RESP",
+      "left_class": "numeric",
+      "line": 1380,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "READ-RESP",
+      "left_class": "numeric",
+      "line": 1425,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(DC-TYPE, ACTIVE-ACTIVE)",
+      "kind": "alphanumeric",
+      "left": "DC-TYPE",
+      "left_class": "alphanumeric",
+      "line": 1449,
+      "op": "=",
+      "ordering": false,
+      "right": "ACTIVE-ACTIVE",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-PATH(1:10), RESOURCES)",
+      "kind": "alphanumeric",
+      "left": "WEB-PATH(1:10)",
+      "left_class": "alphanumeric",
+      "line": 1450,
+      "op": "=",
+      "ordering": false,
+      "right": "RESOURCES",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(DC-TYPE, ACTIVE-STANDBY)",
+      "kind": "alphanumeric",
+      "left": "DC-TYPE",
+      "left_class": "alphanumeric",
+      "line": 1468,
+      "op": "=",
+      "ordering": false,
+      "right": "ACTIVE-STANDBY",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-PATH(1:10), RESOURCES)",
+      "kind": "alphanumeric",
+      "left": "WEB-PATH(1:10)",
+      "left_class": "alphanumeric",
+      "line": 1469,
+      "op": "=",
+      "ordering": false,
+      "right": "RESOURCES",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(DUPLICATE-POST, 'Y')",
+      "kind": "alphanumeric",
+      "left": "DUPLICATE-POST",
+      "left_class": "alphanumeric",
+      "line": 1472,
+      "op": "=",
+      "ordering": false,
+      "right": "'Y'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "PERFORM UNTIL",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1476,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1506,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1535,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1596,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-PATH(1:10), DEPLICATE)",
+      "kind": "alphanumeric",
+      "left": "WEB-PATH(1:10)",
+      "left_class": "alphanumeric",
+      "line": 1602,
+      "op": "=",
+      "ordering": false,
+      "right": "DEPLICATE",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(DC-TYPE, ACTIVE-ACTIVE)",
+      "kind": "alphanumeric",
+      "left": "DC-TYPE",
+      "left_class": "alphanumeric",
+      "line": 1651,
+      "op": "=",
+      "ordering": false,
+      "right": "ACTIVE-ACTIVE",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-PATH(1:10), RESOURCES)",
+      "kind": "alphanumeric",
+      "left": "WEB-PATH(1:10)",
+      "left_class": "alphanumeric",
+      "line": 1652,
+      "op": "=",
+      "ordering": false,
+      "right": "RESOURCES",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(DC-TYPE, ACTIVE-STANDBY)",
+      "kind": "alphanumeric",
+      "left": "DC-TYPE",
+      "left_class": "alphanumeric",
+      "line": 1670,
+      "op": "=",
+      "ordering": false,
+      "right": "ACTIVE-STANDBY",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-PATH(1:10), RESOURCES)",
+      "kind": "alphanumeric",
+      "left": "WEB-PATH(1:10)",
+      "left_class": "alphanumeric",
+      "line": 1671,
+      "op": "=",
+      "ordering": false,
+      "right": "RESOURCES",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(ZK-SEGMENTS, 'Y')",
+      "kind": "alphanumeric",
+      "left": "ZK-SEGMENTS",
+      "left_class": "alphanumeric",
+      "line": 1709,
+      "op": "=",
+      "ordering": false,
+      "right": "'Y'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1719,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1788,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1797,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1812,
+      "op": "<>",
+      "ordering": false,
+      "right": "DFHRESP(NORMAL)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(URL-SCHEME-NAME, 'HTTPS')",
+      "kind": "alphanumeric",
+      "left": "URL-SCHEME-NAME",
+      "left_class": "alphanumeric",
+      "line": 1825,
+      "op": "=",
+      "ordering": false,
+      "right": "'HTTPS'",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-MEDIA-TYPE(1:04), TEXT-ANYTHING)",
+      "kind": "alphanumeric",
+      "left": "WEB-MEDIA-TYPE(1:04)",
+      "left_class": "alphanumeric",
+      "line": 1852,
+      "op": "=",
+      "ordering": false,
+      "right": "TEXT-ANYTHING",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "java": "CobolCompare.eq(WEB-MEDIA-TYPE(1:15), APPLICATION-XML)",
+      "kind": "alphanumeric",
+      "left": "WEB-MEDIA-TYPE(1:15)",
+      "left_class": "alphanumeric",
+      "line": 1853,
+      "op": "=",
+      "ordering": false,
+      "right": "APPLICATION-XML",
+      "right_class": "alphanumeric"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WEB-METHOD",
+      "left_class": "numeric",
+      "line": 1858,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHVALUE(POST)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WEB-METHOD",
+      "left_class": "numeric",
+      "line": 1859,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHVALUE(PUT)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WEB-METHOD",
+      "left_class": "numeric",
+      "line": 1879,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHVALUE(POST)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WEB-METHOD",
+      "left_class": "numeric",
+      "line": 1880,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHVALUE(PUT)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "WEB-METHOD",
+      "left_class": "numeric",
+      "line": 1902,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHVALUE(",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1968,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NOSPACE)",
+      "right_class": "unknown"
+    },
+    {
+      "abbreviated": false,
+      "context": "IF",
+      "kind": "unknown",
+      "left": "EIBRESP",
+      "left_class": "unknown",
+      "line": 1984,
+      "op": "=",
+      "ordering": false,
+      "right": "DFHRESP(NOSPACE)",
+      "right_class": "unknown"
+    }
+  ],
+  "rounding": [],
+  "rules": [
+    "Deliver the whole port: every paragraph the ported method reaches, every screen field it sets, every file it reads. A partial port or a sketch is not proven: the equivalence harness compares every output.",
+    "Port the PROCEDURE DIVISION into the service's methods, paragraph by paragraph; name the paragraph each block ports in a comment, so the port can be reviewed against the source.",
+    "Keep COBOL's storage semantics: COMPUTE / ADD / SUBTRACT / MULTIPLY / DIVIDE without ROUNDED truncate decimals; a result too long for its PICTURE loses its high-order digits (ON SIZE ERROR aside); MOVE to a numeric field aligns on the decimal point and truncates both ends; MOVE to alphanumeric pads with spaces or truncates on the right. Use BigDecimal with RoundingMode.DOWN, never double, for PIC 9 / COMP-3 data.",
+    "ROUNDED (#3825) rounds half AWAY from zero: setScale(scale, RoundingMode.HALF_UP) -- 2.5 -> 3, -2.5 -> -3. Never HALF_EVEN (banker's rounding) and never Math.round (-2.5 -> -2). ROUNDED MODE maps one to one: NEAREST-EVEN HALF_EVEN, AWAY-FROM-ZERO UP, NEAREST-TOWARD-ZERO HALF_DOWN, TOWARD-GREATER CEILING, TOWARD-LESSER FLOOR, TRUNCATION DOWN. The ticket's `rounding` list names every rounding or SIZE ERROR statement with the RoundingMode of each target. Round the final result only: compute intermediates exactly (IBM's ARITH intermediates carry 18 or 31 digits; the equivalence harness is the oracle when a result differs).",
+    "Keep the program's behaviour, including what looks like a defect (an unreachable branch, a field never reset): the port is proven by comparing its outputs with the original's. Document each such spot with a comment naming the defect and the one-line fix; fixing it is a business decision, not a translation.",
+    "Use the generated code as it is: entities and their fromRecord / toRecord codecs, repositories, DTOs, the batch runtime (DatasetResolver, Dd), the other services. Do not edit generated files other than this service; do not invent calls, files, queues or tables the facts do not name.",
+    "An abend is `throw CobolAbend.user(abcode, why)` (the generated batch runtime; CALL 'CEE3ABD' USING ABCODE: the step ends ABEND Unnnn) -- never another exception; the step's RETURN-CODE is runBatch's return value.",
+    "A DISPLAY is `Sysout.display(...)` (DISPLAY ... WITH NO ADVANCING: `Sysout.displayNoAdvancing`), never a log line: SYSOUT is compared line by line with the COBOL's. Its text is exactly what IBM COBOL writes, the operands concatenated: a literal as written; an alphanumeric or group item as all its bytes, trailing spaces included (a group's numeric fields as stored: zoned digits, the sign overpunched); a numeric item -- DISPLAY, COMP or COMP-3, not edited, no SIGN SEPARATE -- as `Sysout.number(value, digits, scale, signed)`: its PICTURE digits zero-padded, no decimal point, the sign overpunched in the last digit when signed (PIC S9(3) holding -12 is `01K`); an edited item as its edited text.",
+    "Every file I/O statement of a batch program (OPEN, CLOSE, READ, READ NEXT, WRITE, REWRITE, DELETE, START) is ONE call to the generated CobolFiles, per file (its DD name), in the order the program runs them. open(dd) / open(dd, path, input) / close(dd[, action]) / write / rewrite / delete(dd, action) / start(dd, found) return the status String; read(dd, supplier) (\"00\" or \"23\") and readNext(dd, iterator) (\"00\" or \"10\") return a CobolFiles.Read<T> -- status() and record(), null unless found. Take the program's FILE STATUS logic -- IF <status> = '00', AT END, INVALID KEY, its error paragraphs -- from the status returned, exactly as the program does; never skip a statement the program runs (a read-ahead, a CLOSE) or add one it does not. The equivalence harness injects file faults through CobolFiles and through GnuCOBOL at the same statement, and proves the error paths too. A keyed (VSAM KSDS) file keeps its mainframe semantics: WRITE is writeKeyed(dd, () -> repo.existsById(key), () -> repo.save(r)) -- \"22\" when the key is on file, never save() over it -- and REWRITE is rewriteKeyed(dd, exists, save) (\"23\" when it is not). A record the program READs INTO its working storage is the program's own copy: keep Entity.fromRecord(read.toRecord(cs), cs), never the repository's managed entity, so a change that is not REWRITten is never saved; and a READ that fails without INVALID KEY / AT END leaves the previous record in place, as the program's storage does.",
+    "A sequential dataset is fixed-length records (RECFM=FB): write each record's toRecord(...) bytes back to back, with no line separators, to the file DatasetResolver.path(dd) names; read it the same way.",
+    "Decode and encode a numeric field held in record bytes or a text column (zoned with an overpunched sign, COMP-3, COMP) only through the generated CobolRecords (zoned / packed / binary and their put methods) or the entity codecs, never a hand-written decoder.",
+    "Record bytes -- every dataset, file and COMMAREA the program reads or writes -- are in the code page CobolRecords.charset() returns: the migration's declared data.record_charset, a deployment fact. Pass it wherever a record codec, CobolRecords method or String takes a Charset; never Charset.forName, StandardCharsets or a guessed EBCDIC page for record data (#4060).",
+    "Read a number from text (a screen field, FUNCTION NUMVAL, a PARM) only through CobolRecords.numval(text, decimalPoint), with ',' when the program codes DECIMAL-POINT IS COMMA; never Integer.parseInt or new BigDecimal(String), which accept Arabic-Indic, Devanagari and full-width digits that COBOL rejects (#3831).",
+    "Format a numeric-edited field (a display string mapped from a number, often for a screen or print line) only through CobolEdit.format(pic, value, decimalComma, currency), which honours the COBOL picture (Z, 9, ., ,, -, +, CR/DB, $/currency, B, 0, /, and floating $ / + / - strings) as the mainframe does; pass the CURRENCY SIGN string (e.g. 'INR ') as currency, and it replaces the PICTURE SYMBOL (#3933).",
+    "Format and case-map with Locale.ROOT (String.format(Locale.ROOT, ...), toUpperCase(Locale.ROOT)): the default locale prints other digits (Arabic, Devanagari) and maps case differently (Turkish).",
+    "Order and compare VSAM / DB2 keys by the source code page's bytes, as the mainframe does (lower case before upper, letters before digits): browse through the generated sort-key finders, and sort in Java with CobolRecords.sortKey(key, codePage), never by String.compareTo or the database's default collation (#3822).",
+    "Compare alphanumeric operands (PIC X / A items, group items, alphanumeric literals and figurative constants) in IF, EVALUATE, PERFORM UNTIL and SEARCH WHEN only through the generated CobolCompare (compare, eq, gt, ge, lt, le), never String.compareTo or equals: it compares the code page's bytes as the mainframe does -- lower case before upper, letters before digits, so IF CUST-ID > 'A' is true for '1001' -- and pads the shorter operand with spaces ('AB' = 'AB  '). HIGH-VALUES / LOW-VALUES are CobolCompare.highValues(n) / lowValues(n). A numeric comparison stays BigDecimal.compareTo. A program that declares PROGRAM COLLATING SEQUENCE compares by that alphabet instead: flag it in a TODO (#3986).",
+    "A CICS program is ported into runTask(CicsTask task), one task per call (#3754): EIBCALEN = 0 is !task.hasCommarea(), EIBCALEN is task.eibcalen() (#4009: null = the whole record), DFHCOMMAREA is task.commarea(<its DTO>.class), EIBAID is task.aid() (ENTER, CLEAR, PF1-PF24, PA1-PA3), EIBTRMID is task.termid(), EIBTIME / EIBDATE / ASKTIME are task.now() (the task's dispatch time on the region's virtual clock, #3989), RECEIVE MAP is task.receive(map, mapset, <its screen>.class) (empty = MAPFAIL), SEND MAP is task.sendMap(map, mapset, screen, subfields, options...) (#4001: the screen holds each <f>O; CicsTask.MapSubfields each <f>A / <f>C / <f>H as its EBCDIC byte and <f>L = -1 for the cursor), SEND TEXT / SEND is task.sendText(from, length, options...), RETURN TRANSID COMMAREA LENGTH is task.returnTransid(transid, commarea, length), XCTL is task.xctl, LINK is task.link, ABEND is task.abend -- in the order the program does them, and the task ends at RETURN / XCTL / ABEND. A file READ is task.read(file, () -> <the service's generated read method>): its resp() is NORMAL (0), NOTFND (13) when the read finds nothing, or a condition the equivalence harness injects (NOTOPEN, IOERR, DISABLED, ...), and its resp2(); port every arm of the program's RESP handling (EVALUATE WS-RESP-CD ... WHEN OTHER) from it (#4023 follow-up). READ ... UPDATE is task.readForUpdate(file, lookup) (it holds the record for a REWRITE); WRITE FILE RIDFLD FROM is task.write(file, <whether the key is already in the file>, () -> <save the new record>): DUPREC (14) when it is; REWRITE FILE FROM is task.rewrite(file, () -> <save the changed record>): INVREQ (16) without a held record; each returns the RESP, and the injected conditions apply as for a READ. SYNCPOINT is task.syncpoint() and SYNCPOINT ROLLBACK task.rollback(), which undoes the task's file changes: save every change through these calls only -- what each file holds after the task is compared with the COBOL's. DELETE FILE RIDFLD is task.delete(file, <whether the key is there>, () -> <delete it>) (NOTFND 13 when not); DELETE FILE without RIDFLD is task.deleteHeld(file, () -> <delete the held record>). A browse: STARTBR is task.startbr(file, <RIDFLD as text>, <EQUAL given>, () -> <the file's keys, in key order, as a NavigableSet<String>>) (NOTFND 13 when no key qualifies); READNEXT / READPREV are task.readnext(file, <RIDFLD as text>) / task.readprev(file, ...), whose Browsed holds the RESP (ENDFILE 20 past either end) and the key read -- set RIDFLD to it and look the record up by it; ENDBR is task.endbr(file). The task keeps the browse's position and CICS's repositioning rules (a READPREV right after a READNEXT reads the same record again): pass RIDFLD exactly as the program holds it. ASKTIME ABSTIME is task.asktime(); FORMATTIME is CicsTask.formatDate(abstime, \"YYYYMMDD\" (or the form given), <DATESEP>) and CicsTask.formatTime(abstime, <TIMESEP>). ASSIGN APPLID / SYSID are task.assignApplid() / task.assignSysid() (the region's identity: never a literal). WRITEQ TD QUEUE FROM is task.writeqTd(queue, <the record as text, its full LENGTH>), which returns the RESP (QIDERR 44 for a queue the CSD does not define). INQUIRE PROGRAM(p) is task.inquireProgram(p): its RESP (NORMAL 0, PGMIDERR 27). A screen field shows what the symbolic map's O field would hold: text as moved, an edited PICTURE formatted as COBOL formats it. A COMMAREA is the generated DTO of its record; an area no generated DTO describes (a plain PIC X(n) item) is passed as a String of its n characters, or a byte[] of its EBCDIC bytes (#3989).",
+    "CICS condition and abend handling (#3989): HANDLE CONDITION, IGNORE CONDITION, HANDLE AID and RESP are the program's own control flow -- port each transfer to its label as Java control flow. HANDLE ABEND LABEL is task.handleAbend(label) (CANCEL, RESET: handleAbendCancel / handleAbendReset), and PUSH / POP HANDLE are task.pushHandle() / popHandle() besides saving and restoring the program's own handler state. EXEC CICS ABEND is task.abend(abcode) and a condition that takes CICS's default action is task.abendOnCondition(condition): CicsTask searches the active abend exits from this program's level upward, as CICS does, records the ABEND, and returns the label to continue at when this program's own exit took it -- or null, and the program must then return from runTask at once. After task.link(...) returns, task.abendExit() is the label of this program's exit when an abend in a program below reached it (continue there), and task.ended() is true when the task was terminated (stop). Never throw an exception to model a CICS transfer: the services are @Transactional, so an exception out of one marks the whole task rollback-only.",
+    "Dates and times only through java.time -- LocalDate, LocalDateTime, LocalTime and DateTimeFormatter with Locale.ROOT, in the ISO chronology -- never Calendar.getInstance(), new GregorianCalendar(), SimpleDateFormat or WeekFields.of(Locale.getDefault()): a th_TH default locale gives Buddhist-era years (2569), ja_JP_JP the Japanese imperial calendar, and US week fields start on Sunday. FUNCTION DAY-OF-WEEK and ACCEPT ... FROM DAY-OF-WEEK are Monday = 1 ... Sunday = 7, which is DayOfWeek.getValue() (#3833).",
+    "Read the time only from the generated batch runtime's MainframeClock (now() for local, currentDate() for FUNCTION CURRENT-DATE) -- in a CICS task, from task.now() -- never from the system clock directly or ZoneId.systemDefault(): it is how a run is pinned to be compared with the original.",
+    "A DB2 DATE / TIME / TIMESTAMP fetched into, or bound from, a character host variable (a DCLGEN DATE is PIC X(10)) is in the DB2 subsystem's format, the target config's culture.db2_date_format -- eur 26.09.2026 and 14.30.05, usa 09/26/2026 and 02:30 PM, iso 2026-09-26 and 14.30.05, jis 2026-09-26 and 14:30:05 -- and a TIMESTAMP is 2026-09-26-14.30.05.000000: convert only through the generated Db2Dates (date / time / timestamp, parseDate / parseTime / parseTimestamp), never LocalDate.toString() or LocalDate.parse (#3828).",
+    "FUNCTION INTEGER-OF-DATE / INTEGER-OF-DAY count days from day 1 = 1601-01-01 under INTDATE(ANSI), the default, but from day 1 = 1582-10-15 under INTDATE(LILIAN) (the same date is 6653 higher); DATE-OF-INTEGER / DAY-OF-INTEGER invert the same count. Port as ChronoUnit.DAYS.between(dayZero, date) with dayZero 1600-12-31 (ANSI) or 1582-10-14 (LILIAN). The ticket's compiler_options are the program's CBL / PROCESS cards; options given by the compile step's PARM or the installation defaults are not seen there (#3828).",
+    "A fact whose field testing is not 'field-tested' is verified on reference estates but still being field-tested: where the source contradicts it, follow the source and say so in the port's notes.",
+    "The proof calls one method per program: runTask(CicsTask) for a CICS program, handleCall(...) for a CALLed one, runBatch(dds, parm) for a batch one -- the ticket's methods to port. Port all of the program's behaviour into that method and the private helpers it calls. Port nothing into the other generated methods -- execute<Program>, handleTransaction, handleLink, handleChannel, onAbendL<n>, onCondition<C>L<n>, dispatch<X>L<n>, submit<Map> / render<Map>, xctl<P> / link<P>, the generated readqTs / writeqTs / read / browse helpers -- even where their TODO asks: leave each body as generated and keep no second entry point. Code the proof never runs is not proven, and the porting loop lists every method the proof cannot reach that the port changed (#4255)."
+  ],
+  "source": {
+    "copybooks": [
+      {
+        "file": "Source/ZECSZFC.cpy",
+        "listing": "sources/Source/ZECSZFC.cpy.lst"
+      },
+      {
+        "file": "Source/ZECSZKC.cpy",
+        "listing": "sources/Source/ZECSZKC.cpy.lst"
+      }
+    ],
+    "program": {
+      "file": "Source/ZECS001.cbl",
+      "listing": "sources/Source/ZECS001.cbl.lst"
+    }
+  },
+  "status": "open",
+  "target": {
+    "config": {
+      "culture": {
+        "currency": "auto",
+        "db2_date_format": "iso",
+        "decimal_point": "auto",
+        "display_locale": "ROOT",
+        "format_locale": "ROOT",
+        "key_collation": "ebcdic",
+        "overflow": "cobol",
+        "rounding": "cobol",
+        "zone": "UTC"
+      },
+      "data": {
+        "bidi_layout": "auto",
+        "code_page": "cp037",
+        "dbcs_code_page": null,
+        "record_charset": "latin-1"
+      },
+      "database": "postgresql",
+      "integration": {
+        "messaging": "in-memory",
+        "remote_calls": "http"
+      },
+      "java": {
+        "build_tool": "maven",
+        "data_classes": "lombok",
+        "dto_style": "class",
+        "version": 17
+      },
+      "package": "com.gitgalaxy.modernized",
+      "spring_boot": {
+        "version": "3.2.4"
+      },
+      "ui": {
+        "flavour": "none"
+      }
+    },
+    "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+    "left_as_generated": [
+      "public void commitPointL1444()"
+    ],
+    "methods": [
+      {
+        "signature": "public Zecs001Dfhcommarea handleTransaction(String transid, Zecs001Dfhcommarea request)",
+        "todo": false
+      },
+      {
+        "signature": "public Zecs001Dfhcommarea handleTransaction(String transid, Zecs001Dfhcommarea request, byte[] area)",
+        "todo": false
+      },
+      {
+        "signature": "public byte[] lastAnswerBytes()",
+        "todo": false
+      },
+      {
+        "signature": "public void runTask(CicsTask task)",
+        "todo": true
+      },
+      {
+        "signature": "public String dispatchZecs003L753(CicsTask task, String program, Object commarea)",
+        "todo": false
+      },
+      {
+        "signature": "public String dispatchZecs002L795(CicsTask task, String program, Object commarea, int length)",
+        "todo": false
+      },
+      {
+        "signature": "public Object dispatchZuidstckL1244(String program, Object... args)",
+        "todo": false
+      },
+      {
+        "signature": "public Optional<ZfRecord> readZcIdFile(String vsamInstance, ZfRecordKey key)",
+        "todo": false
+      },
+      {
+        "signature": "public ZfRecord writeZcIdFile(String vsamInstance, ZfRecord record)",
+        "todo": false
+      },
+      {
+        "signature": "public ZfRecord rewriteZcIdFile(String vsamInstance, ZfRecord record)",
+        "todo": false
+      },
+      {
+        "signature": "public void deleteZcIdFile(String vsamInstance, ZfRecordKey key)",
+        "todo": false
+      },
+      {
+        "signature": "public Optional<ZkRecord> readZcIdKey(String vsamInstance, String key)",
+        "todo": false
+      },
+      {
+        "signature": "public ZkRecord writeZcIdKey(String vsamInstance, ZkRecord record)",
+        "todo": false
+      },
+      {
+        "signature": "public ZkRecord rewriteZcIdKey(String vsamInstance, ZkRecord record)",
+        "todo": false
+      },
+      {
+        "signature": "public void deleteZcIdKey(String vsamInstance, String key)",
+        "todo": false
+      },
+      {
+        "signature": "public void commitPointL1444()",
+        "todo": true
+      },
+      {
+        "signature": "public void rollbackL2160()",
+        "todo": false
+      }
+    ],
+    "methods_to_port": [
+      "public void runTask(CicsTask task)"
+    ],
+    "overlay": "port/service/Zecs001Service.java",
+    "proof_entry_points": [
+      "public void runTask(CicsTask task)"
+    ],
+    "service": "Zecs001Service"
+  },
+  "ticket": "PORT-ZECS001",
+  "version": 1,
+  "worklist": [
+    {
+      "category": "transaction-split",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "id": "WL-0080",
+      "line": 204,
+      "text": "split the transaction here"
+    },
+    {
+      "category": "interface-call",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "id": "WL-0081",
+      "line": 75,
+      "text": "Implement or mock interface call to: ZuidstckService"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "id": "WL-0087",
+      "line": 107,
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/Zecs001Service.java",
+      "id": "WL-0088",
+      "line": 113,
+      "text": "port the PROCEDURE DIVISION into this task"
+    }
+  ]
+}

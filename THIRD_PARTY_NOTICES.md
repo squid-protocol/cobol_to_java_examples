@@ -15,7 +15,14 @@ exactly how it was produced.
 | `examples/zecs/` | [zecs](https://github.com/walmartlabs/zECS) at `6d6bcbbc89c9` | Apache-2.0 | LICENSE |
 | `examples/zopeneditor/` | [zopeneditor-sample](https://github.com/IBM/zopeneditor-sample) at `8f9835308de6` | Apache-2.0 | LICENSE |
 | `examples/dsf-pli/` | [dsf](https://github.com/navikt/DSF) at `faade4961e31` | MIT | LICENSE.md |
-| `equivalence/carddemo-intcalc/` | [aws-mainframe-modernization-carddemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) at `59cc6c2fd7eb` | Apache-2.0 | LICENSE, NOTICE |
+| `equivalence/carddemo-acctview/` | [aws-mainframe-modernization-carddemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) at `59cc6c2fd7eb` | Apache-2.0 | - |
+| `equivalence/carddemo-adminmenu/` | [aws-mainframe-modernization-carddemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) at `59cc6c2fd7eb` | Apache-2.0 | - |
+| `equivalence/carddemo-billpay/` | [aws-mainframe-modernization-carddemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) at `59cc6c2fd7eb` | Apache-2.0 | - |
+| `equivalence/carddemo-cardlist/` | [aws-mainframe-modernization-carddemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) at `59cc6c2fd7eb` | Apache-2.0 | - |
+| `equivalence/carddemo-cardview/` | [aws-mainframe-modernization-carddemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) at `59cc6c2fd7eb` | Apache-2.0 | - |
+| `equivalence/carddemo-cbpaup0c/` | [aws-mainframe-modernization-carddemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) at `59cc6c2fd7eb` | Apache-2.0 | - |
+| `equivalence/carddemo-cbstm03a/` | [aws-mainframe-modernization-carddemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) at `59cc6c2fd7eb` | Apache-2.0 | - |
+| `equivalence/carddemo-intcalc/` | [aws-mainframe-modernization-carddemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) at `59cc6c2fd7eb` | Apache-2.0 | - |
 
 The equivalence case's `port/` is a hand translation of the source program and its data file is the
 source's data with changed balances: both are derived from that source too.

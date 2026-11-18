@@ -1,0 +1,164 @@
+{
+ "corpus": "aws-mainframe-modernization-carddemo",
+ "program": "CBPAUP0C",
+ "program_source": "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+ "copy_dirs": [
+  "app/app-authorization-ims-db2-mq/cpy"
+ ],
+ "job": "CBPAUP0J",
+ "step": "STEP01",
+ "parm": null,
+ "clock": "2023/11/01 10:30:15.00",
+ "datasets": {},
+ "ims": {
+  "dbd": [
+   "app/app-authorization-ims-db2-mq/ims/DBPAUTP0.dbd"
+  ],
+  "psb": "app/app-authorization-ims-db2-mq/ims/PSBPAUTB.psb",
+  "seed": {
+   "DBPAUTP0": {
+    "unload": "app/app-authorization-ims-db2-mq/data/EBCDIC/AWS.M2.CARDDEMO.IMSDATA.DBPAUTP0.dat"
+   }
+  },
+  "segments": {
+   "PAUTSUM0": {
+    "copybook": "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+    "record": "PENDING-AUTH-SUMMARY"
+   },
+   "PAUTDTL1": {
+    "copybook": "app/app-authorization-ims-db2-mq/cbl/CBPAUP0C.cbl",
+    "record": "PENDING-AUTH-DETAILS"
+   }
+  },
+  "compare": [
+   "DBPAUTP0"
+  ]
+ },
+ "notes": "Job CBPAUP0J step STEP01 (DFSRRC00 PARM='BMP,CBPAUP0C,PSBPAUTB'): IMS enters CBPAUP0C as a BMP, PROCEDURE DIVISION USING the I/O PCB and the one DB PCB of PSB PSBPAUTB (CMPAT=YES, PROCOPT=AP). It reads the PRM-INFO card from SYSIN (expiry 13 days, checkpoint frequency 00002 so CHKP fires, debug N; with 05 expiry days the first summary's DLET answers DJ and the step abends, RC 16, on both sides), walks the pending-authorization database DBPAUTP0 (HIDAM: PAUTSUM0 root, PAUTDTL1 child) with GN / GNP, deletes (DLET) each expired detail and each emptied summary, and takes basic checkpoints (CHKP ID). The database is the corpus's own HD unload (data/EBCDIC/AWS.M2.CARDDEMO.IMSDATA.DBPAUTP0.dat: 22 roots, 202 children), laid out by CIPAUSMY / CIPAUDTY; the step's DISPLAY output, RETURN-CODE and the database as the step leaves it are compared. The DL/I model is register family I (tests/equivalence/ims/ggdli.c, cobolrt/dli/DetDli.java), #5857. Derived from CardDemo (Apache-2.0; Copyright Amazon.com, Inc. or its affiliates): LICENSE and NOTICE here are the source's own.",
+ "sysin": "13 00002 00005 N",
+ "faults": [
+  {
+   "name": "debug-on",
+   "sysin": "13 00002 00005 Y",
+   "plan": [],
+   "why": "#5857: the debug flag Y: every DL/I call DISPLAYs its segment (the DEBUG-ON branches)"
+  },
+  {
+   "name": "card-defaults",
+   "sysin": "13",
+   "plan": [],
+   "why": "#5857: a card with only the expiry: the checkpoint frequency and display frequency default to 5 and 10"
+  },
+  {
+   "name": "nothing-expires",
+   "sysin": "99 00002 00005 N",
+   "plan": [],
+   "why": "#5857: an expiry no authorization reaches: no DLET, no emptied summary (the NOT-QUALIFIED-FOR-DELETE branch)"
+  },
+  {
+   "name": "expiry-abend",
+   "sysin": "05 00002 00005 N",
+   "plan": [],
+   "why": "#5857: with 5 expiry days the first summary's DLET answers DJ and the step abends (RC 16) on both sides"
+  },
+  {
+   "name": "gn-error",
+   "plan": [
+    {
+     "dd": "DLI",
+     "op": "GN",
+     "nth": 2,
+     "status": "AM"
+    }
+   ],
+   "why": "#5857: the summary GN answers AM: AUTH SUMMARY READ FAILED and the step abends"
+  },
+  {
+   "name": "gnp-error",
+   "plan": [
+    {
+     "dd": "DLI",
+     "op": "GNP",
+     "nth": 3,
+     "status": "AM"
+    }
+   ],
+   "why": "#5857: the detail GNP answers AM: AUTH DETAIL READ FAILED and the step abends"
+  },
+  {
+   "name": "dlet-detail-error",
+   "plan": [
+    {
+     "dd": "DLI",
+     "op": "DLET",
+     "nth": 1,
+     "status": "AM"
+    }
+   ],
+   "why": "#5857: the first detail DLET answers AM: AUTH DETAIL DELETE FAILED and the step abends"
+  },
+  {
+   "name": "chkp-error",
+   "plan": [
+    {
+     "dd": "DLI",
+     "op": "CHKP",
+     "nth": 1,
+     "status": "AM"
+    }
+   ],
+   "why": "#5857: the first CHKP answers AM: CHKP FAILED and the step abends"
+  },
+  {
+   "name": "debug-expiry-abend",
+   "sysin": "05 00002 00005 Y",
+   "plan": [],
+   "why": "#5857: with the debug flag the summary DLET DISPLAYs first, then answers DJ and the step abends"
+  },
+  {
+   "name": "checkpoint-display-compare",
+   "sysin": "13 00002 0000  N",
+   "plan": [],
+   "why": "#5857: a display frequency of 0000 and a blank: the count (8 digits) sorts above that alphanumeric field, so the final CHKP DISPLAYs its count (the WS-NO-CHKP >= branch)"
+  },
+  {
+   "name": "checkpoint-freq-compare",
+   "sysin": "13     1 00005 N",
+   "plan": [
+    {
+     "dd": "DLI",
+     "op": "GN",
+     "nth": 3,
+     "status": "AM"
+    }
+   ],
+   "why": "#6072: a checkpoint frequency of four blanks and a 1: not SPACES and not 0, so it is kept, and the summary count (8 digits) sorts above that alphanumeric field (a blank sorts below '0'), so WS-AUTH-SMRY-PROC-CNT > P-CHKP-FREQ is true after every summary and the CHKP fires each time (the checkpoint-frequency true branch). A basic CHKP drops the database position, so the next GN reads the first summary again and the step would never end: the third GN answers AM and the step abends (RC 16) on both sides"
+  },
+  {
+   "name": "expiry-not-numeric",
+   "sysin": "XX 00002 00005 N",
+   "plan": [],
+   "why": "#5857: a non-numeric expiry falls back to 5 days (the IS NUMERIC false branch)"
+  },
+  {
+   "name": "declined-expired",
+   "sysin": "13 00002 00005 N",
+   "plan": [],
+   "ims_seed": {
+    "DBPAUTP0": {
+     "insert": [
+      {
+       "after": 59,
+       "segment": "PAUTDTL1",
+       "fields": {
+        "PA-AUTH-TIME-9C": 996579985,
+        "PA-AUTH-RESP-CODE": "05"
+       }
+      }
+     ]
+    }
+   },
+   "why": "#6072: the shipped unload holds only approved ('00') details, so an expired detail never took the declined arm of 4000-CHECK-IF-EXPIRED (PA-AUTH-RESP-CODE = '00' false: the declined count and amount are subtracted). A declined detail copied from unload record 59 (an expired one, 0-based as skip counts) and inserted after it, with the next sequence time, reaches it on both sides (#6995 per-fault ims_seed)"
+  }
+ ]
+}

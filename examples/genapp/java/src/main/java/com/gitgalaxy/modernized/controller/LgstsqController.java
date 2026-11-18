@@ -10,13 +10,13 @@ package com.gitgalaxy.modernized.controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import lombok.RequiredArgsConstructor;
-import com.gitgalaxy.modernized.dto.contract.Lgacdb01CaErrorMsg;
+import com.gitgalaxy.modernized.dto.contract.LgstsqDfhcommarea;
 import com.gitgalaxy.modernized.service.LgstsqService;
 
 /**
  * CICS program LGSTSQ (base/src/lgstsq.cbl), generated from GitGalaxy's
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
- * COMMAREA: CA-ERROR-MSG (base/src/lgacdb01.cbl, 99 bytes) -> Lgacdb01CaErrorMsg.
+ * COMMAREA: CA-ERROR-MSG (base/src/lgacdb01.cbl, 99 bytes) -> LgstsqDfhcommarea.
  * TODO: callers also pass CA-ERROR-MSG (base/src/lgacdb02.cbl, 99 bytes) at base/src/lgacdb02.cbl:213, base/src/lgacdb02.cbl:219.
  * TODO: callers also pass CA-ERROR-MSG (base/src/lgacus01.cbl, 99 bytes) at base/src/lgacus01.cbl:167, base/src/lgacus01.cbl:173.
  * TODO: callers also pass CA-ERROR-MSG (base/src/lgacvs01.cbl, 99 bytes) at base/src/lgacvs01.cbl:109, base/src/lgacvs01.cbl:115.
@@ -57,7 +57,7 @@ import com.gitgalaxy.modernized.service.LgstsqService;
  * TODO: callers also pass ERROR-MSG (base/src/lgupol01.cbl, 45 bytes) at base/src/lgupol01.cbl:181.
  * TODO: callers also pass ERROR-MSG (base/src/lgupvs01.cbl, 101 bytes) at base/src/lgupvs01.cbl:187.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/lgstsq")
@@ -68,7 +68,7 @@ public class LgstsqController {
 
     /** Program-to-program entry: LINK at base/src/lgacdb01.cbl:308, LINK at base/src/lgacdb01.cbl:316, LINK at base/src/lgacdb01.cbl:322, LINK at base/src/lgacdb02.cbl:205, LINK at base/src/lgacdb02.cbl:213, LINK at base/src/lgacdb02.cbl:219, LINK at base/src/lgacus01.cbl:159, LINK at base/src/lgacus01.cbl:167, LINK at base/src/lgacus01.cbl:173, LINK at base/src/lgacvs01.cbl:102, LINK at base/src/lgacvs01.cbl:109, LINK at base/src/lgacvs01.cbl:115, LINK at base/src/lgapdb01.cbl:575, LINK at base/src/lgapdb01.cbl:583, LINK at base/src/lgapdb01.cbl:589, LINK at base/src/lgapol01.cbl:149, LINK at base/src/lgapol01.cbl:157, LINK at base/src/lgapol01.cbl:163, LINK at base/src/lgapvs01.cbl:169, LINK at base/src/lgapvs01.cbl:176, LINK at base/src/lgapvs01.cbl:182, LINK at base/src/lgdpdb01.cbl:225, LINK at base/src/lgdpdb01.cbl:233, LINK at base/src/lgdpdb01.cbl:239, LINK at base/src/lgdpol01.cbl:166, LINK at base/src/lgdpol01.cbl:174, LINK at base/src/lgdpol01.cbl:180, LINK at base/src/lgdpvs01.cbl:113, LINK at base/src/lgdpvs01.cbl:120, LINK at base/src/lgdpvs01.cbl:126, LINK at base/src/lgicdb01.cbl:225, LINK at base/src/lgicdb01.cbl:233, LINK at base/src/lgicdb01.cbl:239, LINK at base/src/lgicus01.cbl:146, LINK at base/src/lgicus01.cbl:154, LINK at base/src/lgicus01.cbl:160, LINK at base/src/lgipdb01.cbl:1010, LINK at base/src/lgipdb01.cbl:1018, LINK at base/src/lgipdb01.cbl:1024, LINK at base/src/lgipol01.cbl:119, LINK at base/src/lgipol01.cbl:127, LINK at base/src/lgipol01.cbl:133, LINK at base/src/lgucdb01.cbl:202, LINK at base/src/lgucdb01.cbl:210, LINK at base/src/lgucdb01.cbl:216, LINK at base/src/lgucus01.cbl:152, LINK at base/src/lgucus01.cbl:160, LINK at base/src/lgucus01.cbl:166, LINK at base/src/lgucvs01.cbl:117, LINK at base/src/lgucvs01.cbl:124, LINK at base/src/lgucvs01.cbl:130, LINK at base/src/lgupdb01.cbl:515, LINK at base/src/lgupdb01.cbl:523, LINK at base/src/lgupdb01.cbl:529, LINK at base/src/lgupol01.cbl:181, LINK at base/src/lgupol01.cbl:189, LINK at base/src/lgupol01.cbl:195, LINK at base/src/lgupvs01.cbl:187, LINK at base/src/lgupvs01.cbl:194, LINK at base/src/lgupvs01.cbl:200. */
     @PostMapping("/link")
-    public ResponseEntity<Lgacdb01CaErrorMsg> link(@RequestBody Lgacdb01CaErrorMsg request) {
+    public ResponseEntity<LgstsqDfhcommarea> link(@RequestBody LgstsqDfhcommarea request) {
         return ResponseEntity.ok(lgstsqService.handleLink(request));
     }
 

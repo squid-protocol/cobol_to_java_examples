@@ -34,24 +34,48 @@ public class FdTranCatRecord {
     private String fdTranCatData;
 
 
+    /** #4875: the record bytes this entity was read from, kept beside the typed columns: a field whose
+     *  value is unchanged is written back as these bytes, so a value no column type holds (spaces in a
+     *  PIC 9, a non-preferred sign) and FILLER survive the round trip, as the VSAM record keeps them. */
+    @Column(name = "VSAM_RECORD", length = 60)
+    @lombok.Getter(lombok.AccessLevel.NONE)
+    @lombok.Setter(lombok.AccessLevel.NONE)
+    @lombok.EqualsAndHashCode.Exclude
+    @lombok.ToString.Exclude
+    private byte[] vsamRecord;
+
     /** #3624: this record from its fixed-width VSAM form (60 bytes, as REPRO unloads it), each
      *  field at its COBOL offset; `text` is the record's character set (ISO-8859-1 for an ASCII
-     *  transfer, IBM037 on z/OS). FILLER bytes are not kept. */
+     *  transfer, IBM037 on z/OS). The bytes themselves are kept in vsamRecord (#4875). */
     public static FdTranCatRecord fromRecord(byte[] rec, java.nio.charset.Charset text) {
+        if (rec.length < 60) {  // a WRITE ... LENGTH(n) short of the record: the rest is spaces
+            byte[] full = CobolRecords.blank(60, text);
+            System.arraycopy(rec, 0, full, 0, rec.length);
+            rec = full;
+        }
         FdTranCatRecord r = new FdTranCatRecord();
         r.id = new FdTranCatRecordKey();
         r.id.setFdTranTypeCd(CobolRecords.text(rec, 0, 2, text));
         r.id.setFdTranCatCd(CobolRecords.toInteger(CobolRecords.zoned(rec, 2, 4, 0, text)));
         r.fdTranCatData = CobolRecords.text(rec, 6, 54, text);
+        r.vsamRecord = java.util.Arrays.copyOf(rec, 60);
         return r;
     }
 
-    /** #3624: the fixed-width VSAM record of this entity (FILLER as spaces). */
+    /** #3624: the fixed-width VSAM record of this entity: the bytes it was read from (vsamRecord), each field
+     *  whose value changed since re-encoded; a new entity's FILLER as spaces. */
     public byte[] toRecord(java.nio.charset.Charset text) {
-        byte[] rec = CobolRecords.blank(60, text);
-        CobolRecords.putText(rec, 0, 2, id.getFdTranTypeCd(), text);
-        CobolRecords.putZoned(rec, 2, 4, 0, false, CobolRecords.decimal(id.getFdTranCatCd()), text);
-        CobolRecords.putText(rec, 6, 54, fdTranCatData, text);
+        byte[] read = vsamRecord != null && vsamRecord.length == 60 ? vsamRecord : null;
+        byte[] rec = read != null ? read.clone() : CobolRecords.blank(60, text);
+        if (read == null || !java.util.Objects.equals(id.getFdTranTypeCd(), CobolRecords.text(read, 0, 2, text))) {
+            CobolRecords.putText(rec, 0, 2, id.getFdTranTypeCd(), text);
+        }
+        if (read == null || !java.util.Objects.equals(id.getFdTranCatCd(), CobolRecords.toInteger(CobolRecords.zoned(read, 2, 4, 0, text)))) {
+            CobolRecords.putZoned(rec, 2, 4, 0, false, CobolRecords.decimal(id.getFdTranCatCd()), text);
+        }
+        if (read == null || !java.util.Objects.equals(fdTranCatData, CobolRecords.text(read, 6, 54, text))) {
+            CobolRecords.putText(rec, 6, 54, fdTranCatData, text);
+        }
         return rec;
     }
 }

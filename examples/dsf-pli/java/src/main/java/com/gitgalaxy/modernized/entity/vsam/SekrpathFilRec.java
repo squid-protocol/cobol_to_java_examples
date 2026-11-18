@@ -27,7 +27,7 @@ public class SekrpathFilRec {
 
     // TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey
     @Id
-    @Column(name = "VSAM_KEY")
+    @Column(name = "VSAM_KEY", columnDefinition = "varchar(255) COLLATE \"C\"")
     private String vsamKey;
 
     // NAVN_ADR: CHAR(50), offset 0, 50 bytes
@@ -67,7 +67,7 @@ public class SekrpathFilRec {
     private String kj;
 
     // IN: CHAR(2), offset 72, 2 bytes
-    @Column(name = "IN", length = 2)
+    @Column(name = "\"IN\"", length = 2)
     private String in;
 
     // SS: CHAR(2), offset 74, 2 bytes

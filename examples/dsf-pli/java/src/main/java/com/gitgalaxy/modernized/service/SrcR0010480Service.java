@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.FnrReg2;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.SrcR0019906FnrEndrReg;
 import com.gitgalaxy.modernized.dto.contract.SrcR001i501KomOmr;
 import com.gitgalaxy.modernized.exception.*;
 import org.springframework.beans.factory.ObjectProvider;
@@ -72,42 +73,50 @@ public class SrcR0010480Service {
     // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
     // TODO: AI AGENT - Implement or mock interface call to: R0010480Service
 
-    public void executeSrcR0010480(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__R0010480");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcR0010480: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcR0010480: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R0010480", null);
+        region.run(task, "R0010480", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R0010470) at src/R0010480.pli:3148, src/R0010480.pli:3248.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void linkSrcR0010470() {
         srcR0010470Service.getObject().handleLink();
     }
 
     /** EXEC CICS LINK PROGRAM(R0013301) at src/R0010480.pli:3189.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public SrcR001i501KomOmr linkSrcR0013301(SrcR001i501KomOmr request) {
         return srcR0013301Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS LINK PROGRAM(R0019906) at src/R0010480.pli:643.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public FnrReg2 linkSrcR0019906(FnrReg2 request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcR0019906FnrEndrReg linkSrcR0019906(SrcR0019906FnrEndrReg request) {
         return srcR0019906Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010301) at src/R0010480.pli:2892. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0010301() {
         srcR0010301Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0012001) at src/R0010480.pli:3222. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcR0012001() {
         srcR0012001Service.getObject().handleLink();
     }

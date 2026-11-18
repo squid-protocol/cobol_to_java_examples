@@ -10,18 +10,18 @@ package com.gitgalaxy.modernized.client;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-import com.gitgalaxy.modernized.dto.contract.Lgacdb01Cdb2area;
-import com.gitgalaxy.modernized.dto.contract.Lgacus01Dfhcommarea;
+import com.gitgalaxy.modernized.dto.contract.Lgacdb01Dfhcommarea;
+import com.gitgalaxy.modernized.dto.contract.Lgacdb02Dfhcommarea;
 import com.gitgalaxy.modernized.dto.contract.Lgacvs01Dfhcommarea;
-import com.gitgalaxy.modernized.dto.contract.Lgapol01Dfhcommarea;
+import com.gitgalaxy.modernized.dto.contract.Lgapdb01Dfhcommarea;
 import com.gitgalaxy.modernized.dto.contract.Lgapvs01Dfhcommarea;
-import com.gitgalaxy.modernized.dto.contract.Lgdpol01Dfhcommarea;
+import com.gitgalaxy.modernized.dto.contract.Lgdpdb01Dfhcommarea;
 import com.gitgalaxy.modernized.dto.contract.Lgdpvs01Dfhcommarea;
-import com.gitgalaxy.modernized.dto.contract.Lgicus01Dfhcommarea;
-import com.gitgalaxy.modernized.dto.contract.Lgipol01Dfhcommarea;
-import com.gitgalaxy.modernized.dto.contract.Lgucus01Dfhcommarea;
+import com.gitgalaxy.modernized.dto.contract.Lgicdb01Dfhcommarea;
+import com.gitgalaxy.modernized.dto.contract.Lgipdb01Dfhcommarea;
+import com.gitgalaxy.modernized.dto.contract.Lgucdb01Dfhcommarea;
 import com.gitgalaxy.modernized.dto.contract.Lgucvs01Dfhcommarea;
-import com.gitgalaxy.modernized.dto.contract.Lgupol01Dfhcommarea;
+import com.gitgalaxy.modernized.dto.contract.Lgupdb01Dfhcommarea;
 import com.gitgalaxy.modernized.dto.contract.Lgupvs01Dfhcommarea;
 
 /**
@@ -39,13 +39,13 @@ public class Dor1RemoteClient {
     }
 
     /** LINK to LGACDB01 on DOR1 (CSD base/cntl/cdef122.jcl:137 group GENAAORP). */
-    public Lgacus01Dfhcommarea linkLgacdb01(Lgacus01Dfhcommarea request) {
-        return rest.postForObject(baseUrl + "/api/v1/lgacdb01/link", request, Lgacus01Dfhcommarea.class);
+    public Lgacdb01Dfhcommarea linkLgacdb01(Lgacdb01Dfhcommarea request) {
+        return rest.postForObject(baseUrl + "/api/v1/lgacdb01/link", request, Lgacdb01Dfhcommarea.class);
     }
 
     /** LINK to LGACDB02 on DOR1 (CSD base/cntl/cdef122.jcl:140 group GENAAORP). */
-    public Lgacdb01Cdb2area linkLgacdb02(Lgacdb01Cdb2area request) {
-        return rest.postForObject(baseUrl + "/api/v1/lgacdb02/link", request, Lgacdb01Cdb2area.class);
+    public Lgacdb02Dfhcommarea linkLgacdb02(Lgacdb02Dfhcommarea request) {
+        return rest.postForObject(baseUrl + "/api/v1/lgacdb02/link", request, Lgacdb02Dfhcommarea.class);
     }
 
     /** LINK to LGACVS01 on DOR1 (CSD base/cntl/cdef122.jcl:161 group GENAAORP). */
@@ -54,8 +54,8 @@ public class Dor1RemoteClient {
     }
 
     /** LINK to LGAPDB01 on DOR1 (CSD base/cntl/cdef122.jcl:143 group GENAAORP). */
-    public Lgapol01Dfhcommarea linkLgapdb01(Lgapol01Dfhcommarea request) {
-        return rest.postForObject(baseUrl + "/api/v1/lgapdb01/link", request, Lgapol01Dfhcommarea.class);
+    public Lgapdb01Dfhcommarea linkLgapdb01(Lgapdb01Dfhcommarea request) {
+        return rest.postForObject(baseUrl + "/api/v1/lgapdb01/link", request, Lgapdb01Dfhcommarea.class);
     }
 
     /** LINK to LGAPVS01 on DOR1 (CSD base/cntl/cdef122.jcl:164 group GENAAORP). */
@@ -64,8 +64,8 @@ public class Dor1RemoteClient {
     }
 
     /** LINK to LGDPDB01 on DOR1 (CSD base/cntl/cdef122.jcl:146 group GENAAORP). */
-    public Lgdpol01Dfhcommarea linkLgdpdb01(Lgdpol01Dfhcommarea request) {
-        return rest.postForObject(baseUrl + "/api/v1/lgdpdb01/link", request, Lgdpol01Dfhcommarea.class);
+    public Lgdpdb01Dfhcommarea linkLgdpdb01(Lgdpdb01Dfhcommarea request) {
+        return rest.postForObject(baseUrl + "/api/v1/lgdpdb01/link", request, Lgdpdb01Dfhcommarea.class);
     }
 
     /** LINK to LGDPVS01 on DOR1 (CSD base/cntl/cdef122.jcl:167 group GENAAORP). */
@@ -74,18 +74,18 @@ public class Dor1RemoteClient {
     }
 
     /** LINK to LGICDB01 on DOR1 (CSD base/cntl/cdef122.jcl:149 group GENAAORP). */
-    public Lgicus01Dfhcommarea linkLgicdb01(Lgicus01Dfhcommarea request) {
-        return rest.postForObject(baseUrl + "/api/v1/lgicdb01/link", request, Lgicus01Dfhcommarea.class);
+    public Lgicdb01Dfhcommarea linkLgicdb01(Lgicdb01Dfhcommarea request) {
+        return rest.postForObject(baseUrl + "/api/v1/lgicdb01/link", request, Lgicdb01Dfhcommarea.class);
     }
 
     /** LINK to LGIPDB01 on DOR1 (CSD base/cntl/cdef122.jcl:152 group GENAAORP). */
-    public Lgipol01Dfhcommarea linkLgipdb01(Lgipol01Dfhcommarea request) {
-        return rest.postForObject(baseUrl + "/api/v1/lgipdb01/link", request, Lgipol01Dfhcommarea.class);
+    public Lgipdb01Dfhcommarea linkLgipdb01(Lgipdb01Dfhcommarea request) {
+        return rest.postForObject(baseUrl + "/api/v1/lgipdb01/link", request, Lgipdb01Dfhcommarea.class);
     }
 
     /** LINK to LGUCDB01 on DOR1 (CSD base/cntl/cdef122.jcl:155 group GENAAORP). */
-    public Lgucus01Dfhcommarea linkLgucdb01(Lgucus01Dfhcommarea request) {
-        return rest.postForObject(baseUrl + "/api/v1/lgucdb01/link", request, Lgucus01Dfhcommarea.class);
+    public Lgucdb01Dfhcommarea linkLgucdb01(Lgucdb01Dfhcommarea request) {
+        return rest.postForObject(baseUrl + "/api/v1/lgucdb01/link", request, Lgucdb01Dfhcommarea.class);
     }
 
     /** LINK to LGUCVS01 on DOR1 (CSD base/cntl/cdef122.jcl:176 group GENAAORP). */
@@ -94,8 +94,8 @@ public class Dor1RemoteClient {
     }
 
     /** LINK to LGUPDB01 on DOR1 (CSD base/cntl/cdef122.jcl:158 group GENAAORP). */
-    public Lgupol01Dfhcommarea linkLgupdb01(Lgupol01Dfhcommarea request) {
-        return rest.postForObject(baseUrl + "/api/v1/lgupdb01/link", request, Lgupol01Dfhcommarea.class);
+    public Lgupdb01Dfhcommarea linkLgupdb01(Lgupdb01Dfhcommarea request) {
+        return rest.postForObject(baseUrl + "/api/v1/lgupdb01/link", request, Lgupdb01Dfhcommarea.class);
     }
 
     /** LINK to LGUPVS01 on DOR1 (CSD base/cntl/cdef122.jcl:179 group GENAAORP). */

@@ -1,0 +1,47 @@
+[
+  {
+    "blast_radius": 35.778,
+    "callers": 2,
+    "calls": 2,
+    "file": "Source/ZECS000.cbl",
+    "key": "ZECS000",
+    "rank": 1,
+    "ticket": "ZECS000_port_ticket.md"
+  },
+  {
+    "blast_radius": 33.037,
+    "callers": 2,
+    "calls": 2,
+    "file": "Source/ZECS003.cbl",
+    "key": "ZECS003",
+    "rank": 2,
+    "ticket": "ZECS003_port_ticket.md"
+  },
+  {
+    "blast_radius": 31.965,
+    "callers": 1,
+    "calls": 4,
+    "file": "Source/ZECS001.cbl",
+    "key": "ZECS001",
+    "rank": 3,
+    "ticket": "ZECS001_port_ticket.md"
+  },
+  {
+    "blast_radius": 26.245,
+    "callers": 1,
+    "calls": 0,
+    "file": "Source/ZECSPLT.cbl",
+    "key": "ZECSPLT",
+    "rank": 4,
+    "ticket": "ZECSPLT_port_ticket.md"
+  },
+  {
+    "blast_radius": 22.432,
+    "callers": 0,
+    "calls": 0,
+    "file": "Source/ECS001.cbl",
+    "key": "ECS001",
+    "rank": 5,
+    "ticket": "ECS001_port_ticket.md"
+  }
+]

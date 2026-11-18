@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 /**
  * PL/I structure COMMAREA (src/GML/R001TE01.pli), 6 bytes, from GitGalaxy's verified skeleton.
  * The COMMAREA R001te01 receives as its main procedure's parameter (COMMAREA).
- * Record fields field testing: field-tested (6 public / 0 private estates).
+ * Record fields field testing: open (6 public / 0 private estates).
  */
 @Data
 @NoArgsConstructor

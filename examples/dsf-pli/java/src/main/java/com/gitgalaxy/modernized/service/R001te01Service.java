@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.gitgalaxy.modernized.cics.CicsTask;
 import com.gitgalaxy.modernized.dto.contract.R001te01Commarea;
 import com.gitgalaxy.modernized.entity.vsam.Char37;
 import com.gitgalaxy.modernized.entity.vsam.Inntrec;
@@ -38,19 +39,54 @@ public class R001te01Service {
     private final Char37Repository char37Repository;
     private final PtrRepository ptrRepository;
 
-    public void executeR001te01(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for R001TE01");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("R001te01: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on `request`, passed by reference -- what it changes, the caller sees. */
     public R001te01Commarea handleLink(R001te01Commarea request) {
         log.info("R001te01: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R001TE01", request);
+        region.run(task, "R001TE01", this::runTask);
         return request;
+    }
+
+    /** #5053: handleLink with the raw bytes of the LINK's COMMAREA (passed by address: what the program
+     *  leaves there the caller sees); lastLinkBytes() then answers the bytes it left. */
+    public R001te01Commarea handleLink(R001te01Commarea request, byte[] area) {
+        log.info("R001te01: handleLink (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R001TE01", request, area);
+        region.run(task, "R001TE01", this::runTask);
+        byte[] left = task.linkAreaView();
+        lastLinkBytes = task.linkAreaTaken() && left != null ? java.util.Arrays.copyOf(left, left.length) : null;
+        return request;
+    }
+
+    // @facade-helper: the bytes the last byte-carrying handleLink's program left in the COMMAREA
+    private byte[] lastLinkBytes;
+
+    /** The bytes the last byte-carrying handleLink's program left in the LINK COMMAREA (a copy; null: it took
+     *  none -- its DTO is the COMMAREA). @facade-helper */
+    public byte[] lastLinkBytes() {
+        return lastLinkBytes == null ? null : java.util.Arrays.copyOf(lastLinkBytes, lastLinkBytes.length);
     }
 
     /** INTEJKR as CICS file INTEJKR at src/GML/R001TE01.pli:302, 304, 326, 335; VSAM defines field testing: open (3 public / 0 private estates). */
     public Inntrec writeIntejkr(Inntrec record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<Inntrec> onFile = inntrecRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file INTEJKR already holds the key of this record");
+        }
         return inntrecRepository.save(record);
     }
 

@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
  * DB2 table ACCOUNT: the embedded SQL of ACCTCTRL, BANKDATA, CREACC, DBCRFUN, DELACC, INQACC, INQACCCU, UPDACC, XFRFUN, one method per statement, as written.
  * Each returns what JDBC returns; mapping onto business types is the service's job.
  * Columns: com.gitgalaxy.modernized.dto.db2.AccountRow.
+ * ACCOUNT_OPENED, ACCOUNT_LAST_STATEMENT, ACCOUNT_NEXT_STATEMENT: into or from a character host variable, convert with Db2Dates (DB2 ISO format).
  * TODO: this SQL is DB2's; the configured database is postgresql -- review each statement.
  */
 @Repository

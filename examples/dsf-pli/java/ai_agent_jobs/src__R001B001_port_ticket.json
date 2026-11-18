@@ -1,0 +1,2673 @@
+{
+  "compiler_options": [],
+  "deliverable": {
+    "proof": "The port is laid over the generated project as an overlay and proven by the equivalence harness (tests/tools/equivalence.py in GitGalaxy): the original runs under GnuCOBOL, the port on the same inputs, and every output record is compared field by field; a person approves the port with that report in hand.",
+    "return": "One complete Java file for src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java: the same package, class name and public method signatures, with runTask ported -- what the proof runs -- and helper methods it calls added; every other generated method left as generated (#4255)."
+  },
+  "facts": {
+    "full_skeleton": "dsf_gitgalaxy_clean_TIMESTAMP/06_skeleton/src__R001B001_skeleton.json",
+    "program": {
+      "copy_collisions": [],
+      "copy_edges": {
+        "src/R0019904.pli": {},
+        "src/R0019910.pli": {},
+        "src/R0019960.pli": {},
+        "src/R001B001.pli": {
+          "src/R0019904.pli": [],
+          "src/R0019910.pli": [],
+          "src/R0019960.pli": []
+        }
+      },
+      "copy_gaps": [],
+      "copybooks": [
+        "src/R0019904.pli",
+        "src/R0019910.pli",
+        "src/R0019960.pli"
+      ],
+      "file": "src/R001B001.pli",
+      "language": "pli",
+      "program_id_field_testing": "open",
+      "program_ids": [
+        "R001B001"
+      ],
+      "total_loc": 1685
+    },
+    "sections": {
+      "calls": {
+        "facts": [
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 386,
+            "operand": "R001B001",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "R001B001",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 481,
+            "operand": "R0019906",
+            "resolves_to": "src/R0019906.pli",
+            "sysid": null,
+            "target": "R0019906",
+            "using_args": null,
+            "verb": "LINK"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 920,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 938,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 958,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1029,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1088,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1211,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1277,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1330,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": null,
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1401,
+            "operand": "PLITDLI",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "PLITDLI",
+            "using_args": null,
+            "verb": "CALL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1467,
+            "operand": "R0010301",
+            "resolves_to": "src/R0010301.pli",
+            "sysid": null,
+            "target": "R0010301",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1475,
+            "operand": "R0010401",
+            "resolves_to": "src/R0010401.pli",
+            "sysid": null,
+            "target": "R0010401",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "literal",
+            "line": 1632,
+            "operand": "R001B001",
+            "resolves_to": null,
+            "sysid": null,
+            "target": "R001B001",
+            "using_args": null,
+            "verb": "XCTL"
+          },
+          {
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "form": "identifier",
+            "line": 1676,
+            "operand": "TRANSKODE",
+            "resolves_to": null,
+            "sysid": null,
+            "target": null,
+            "using_args": null,
+            "verb": "RETURN TRANSID"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 9
+      },
+      "cics_file_lineage": {
+        "facts": [
+          {
+            "accesses": [
+              "read",
+              "update",
+              "write"
+            ],
+            "definitions": [],
+            "lines": [
+              1543,
+              1559,
+              1584,
+              1603
+            ],
+            "name": "DIAGKON",
+            "program": "src/R001B001.pli",
+            "verbs": [
+              "READ",
+              "REWRITE",
+              "WRITE"
+            ]
+          },
+          {
+            "accesses": [
+              "read"
+            ],
+            "definitions": [],
+            "lines": [
+              560,
+              681,
+              720
+            ],
+            "name": "DIAGNOS",
+            "program": "src/R001B001.pli",
+            "verbs": [
+              "READ"
+            ]
+          },
+          {
+            "accesses": [
+              "read"
+            ],
+            "definitions": [],
+            "lines": [
+              810
+            ],
+            "name": "YRKEKOD",
+            "program": "src/R001B001.pli",
+            "verbs": [
+              "READ"
+            ]
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "cics_resources": {
+        "facts": [
+          {
+            "access": "write",
+            "attributes": "MAPONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 290,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 296,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "write",
+            "attributes": "CURSOR ERASE",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 385,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 416,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "ERASE CURSOR ALARM",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 422,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 429,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 436,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "ERASE CURSOR ALARM",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 444,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 451,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 458,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "ERASE CURSOR ALARM",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 466,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 473,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "write",
+            "attributes": "ALARM",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 493,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 496,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 530,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "ERASE CURSOR ALARM",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 541,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 548,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(S001B01I.DIAG1I)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 560,
+            "name": "DIAGNOS",
+            "operand": "'DIAGNOS'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "W015_DIAG",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "literal",
+            "verb": "READ"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 581,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "ERASE CURSOR ALARM",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 590,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 597,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 654,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "ERASE CURSOR ALARM",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 663,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 670,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(W020_KEY) LENGTH(W020_DIAG_LENGTH) KEYLENGTH(W020_KEY_LENGTH) GENERIC EQUAL",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 681,
+            "name": "DIAGNOS",
+            "operand": "'DIAGNOS'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "W020_DIAG",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "literal",
+            "verb": "READ"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 694,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "ERASE CURSOR ALARM",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 706,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 713,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(S001B01I.DIAG2I)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 720,
+            "name": "DIAGNOS",
+            "operand": "'DIAGNOS'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "W020_DIAG",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "literal",
+            "verb": "READ"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 727,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "ERASE CURSOR ALARM",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 737,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 744,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 757,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "ERASE CURSOR ALARM",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 767,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 774,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(S001B01I.NORDISK_YKODEI)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 810,
+            "name": "YRKEKOD",
+            "operand": "'YRKEKOD'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "W021_YKODE",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "literal",
+            "verb": "READ"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 816,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "ERASE CURSOR ALARM",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 827,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 834,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 864,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "ERASE CURSOR ALARM",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 871,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "read",
+            "attributes": null,
+            "candidates": null,
+            "kind": "MAP",
+            "line": 879,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": "BMSMAPBR",
+            "record_cell": null,
+            "record_clause": "SET",
+            "resolution": "literal",
+            "verb": "RECEIVE"
+          },
+          {
+            "access": "read",
+            "attributes": "RIDFLD(W070_REC.KEY.FNR) LENGTH(W070_REC_LENGTH) KEYLENGTH(W070_KEY_LENGTH) GENERIC EQUAL UPDATE",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1543,
+            "name": "DIAGKON",
+            "operand": "'DIAGKON'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "W070_REC",
+            "record_cell": null,
+            "record_clause": "INTO",
+            "resolution": "literal",
+            "verb": "READ"
+          },
+          {
+            "access": "update",
+            "attributes": null,
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1559,
+            "name": "DIAGKON",
+            "operand": "'DIAGKON'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "W070_REC",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "REWRITE"
+          },
+          {
+            "access": "write",
+            "attributes": "RIDFLD(W070_REC.KEY)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1584,
+            "name": "DIAGKON",
+            "operand": "'DIAGKON'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "W070_REC",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "WRITE"
+          },
+          {
+            "access": "write",
+            "attributes": "RIDFLD(W070_REC.KEY)",
+            "candidates": null,
+            "kind": "FILE",
+            "line": 1603,
+            "name": "DIAGKON",
+            "operand": "'DIAGKON'",
+            "qualifier": null,
+            "qualifier_operand": null,
+            "record": "W070_REC",
+            "record_cell": null,
+            "record_clause": "FROM",
+            "resolution": "literal",
+            "verb": "WRITE"
+          },
+          {
+            "access": "write",
+            "attributes": "CURSOR ERASE",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 1629,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "CURSOR ERASE",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 1651,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "DATAONLY",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 1662,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          },
+          {
+            "access": "write",
+            "attributes": "ERASE CURSOR ALARM",
+            "candidates": null,
+            "kind": "MAP",
+            "line": 1672,
+            "name": "S001B01",
+            "operand": "'S001B01'",
+            "qualifier": "S001B03",
+            "qualifier_operand": "'S001B03'",
+            "record": null,
+            "record_cell": null,
+            "record_clause": null,
+            "resolution": "literal",
+            "verb": "SEND"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "commarea_contracts": {
+        "facts": [
+          {
+            "callee": null,
+            "callee_record": null,
+            "caller": "src/R001B001.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 386,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "callee_unresolved",
+            "target": "R001B001",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0019906.pli",
+            "callee_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/R0019906.pli",
+              "name": "FNR_ENDR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "caller": "src/R001B001.pli",
+            "caller_record": {
+              "bytes": 16,
+              "copybooks": [],
+              "fields": 3,
+              "file": "src/R001B001.pli",
+              "name": "FNR_REG",
+              "unexpanded": [],
+              "variable": false
+            },
+            "commarea": "FNR_REG",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 481,
+            "mismatches": [],
+            "same_copybook": false,
+            "status": "paired",
+            "target": "R0019906",
+            "verb": "LINK"
+          },
+          {
+            "callee": "src/R0010301.pli",
+            "callee_record": null,
+            "caller": "src/R001B001.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1467,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0010301",
+            "verb": "XCTL"
+          },
+          {
+            "callee": "src/R0010401.pli",
+            "callee_record": null,
+            "caller": "src/R001B001.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1475,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "caller_record_unresolved",
+            "target": "R0010401",
+            "verb": "XCTL"
+          },
+          {
+            "callee": null,
+            "callee_record": null,
+            "caller": "src/R001B001.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1632,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "callee_unresolved",
+            "target": "R001B001",
+            "verb": "XCTL"
+          },
+          {
+            "callee": null,
+            "callee_record": null,
+            "caller": "src/R001B001.pli",
+            "caller_record": null,
+            "commarea": "KOM_OMR",
+            "commarea_datalength": null,
+            "commarea_length": null,
+            "declared_length": null,
+            "line": 1676,
+            "mismatches": [],
+            "same_copybook": null,
+            "status": "callee_unresolved",
+            "target": null,
+            "verb": "RETURN TRANSID"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "entry_points": {
+        "facts": [
+          {
+            "entry_name": "R001B00",
+            "kind": "PROCEDURE",
+            "line": 1,
+            "params": "COMMAREA_PEKER"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 5
+      },
+      "error_handlers": {
+        "facts": [
+          {
+            "condition": "ERROR",
+            "file": "src/R001B001.pli",
+            "handler_found": null,
+            "kind": "ON_UNIT",
+            "line": 253,
+            "target": null,
+            "target_kind": "BLOCK",
+            "unit": "R001B00"
+          },
+          {
+            "condition": "ERROR",
+            "file": "src/R001B001.pli",
+            "handler_found": null,
+            "kind": "ON_UNIT",
+            "line": 255,
+            "target": null,
+            "target_kind": "SYSTEM",
+            "unit": "R001B00"
+          },
+          {
+            "condition": "ERROR",
+            "file": "src/R001B001.pli",
+            "handler_found": null,
+            "kind": "HANDLE_CONDITION",
+            "line": 266,
+            "target": "ERRBEH",
+            "target_kind": "LABEL",
+            "unit": "R001B00"
+          },
+          {
+            "condition": "PF1",
+            "file": "src/R001B001.pli",
+            "handler_found": null,
+            "kind": "HANDLE_AID",
+            "line": 267,
+            "target": "PF2",
+            "target_kind": "LABEL",
+            "unit": "R001B00"
+          },
+          {
+            "condition": "PF2",
+            "file": "src/R001B001.pli",
+            "handler_found": null,
+            "kind": "HANDLE_AID",
+            "line": 268,
+            "target": "PF2",
+            "target_kind": "LABEL",
+            "unit": "R001B00"
+          },
+          {
+            "condition": "NOTFND",
+            "file": "src/R001B001.pli",
+            "handler_found": null,
+            "kind": "HANDLE_CONDITION",
+            "line": 559,
+            "target": "L015NOTF",
+            "target_kind": "LABEL",
+            "unit": "P015_SJEKK_DIAG1"
+          },
+          {
+            "condition": "NOTFND",
+            "file": "src/R001B001.pli",
+            "handler_found": null,
+            "kind": "HANDLE_CONDITION",
+            "line": 680,
+            "target": "L020NOT1",
+            "target_kind": "LABEL",
+            "unit": "P020_SJEKK_DIAG2"
+          },
+          {
+            "condition": "NOTFND",
+            "file": "src/R001B001.pli",
+            "handler_found": null,
+            "kind": "HANDLE_CONDITION",
+            "line": 719,
+            "target": "L020NOT1",
+            "target_kind": "LABEL",
+            "unit": "P020_SJEKK_DIAG2"
+          },
+          {
+            "condition": "NOTFND",
+            "file": "src/R001B001.pli",
+            "handler_found": null,
+            "kind": "HANDLE_CONDITION",
+            "line": 809,
+            "target": "L020NOTF",
+            "target_kind": "LABEL",
+            "unit": "P021_SJEKK_YRKESKODE"
+          },
+          {
+            "condition": "NOTFND",
+            "file": "src/R001B001.pli",
+            "handler_found": null,
+            "kind": "HANDLE_CONDITION",
+            "line": 1542,
+            "target": "L070NOTF",
+            "target_kind": "LABEL",
+            "unit": "P070_OPPDAT_DIAG"
+          },
+          {
+            "condition": "ERROR",
+            "file": "src/R001B001.pli",
+            "handler_found": null,
+            "kind": "HANDLE_CONDITION",
+            "line": 1638,
+            "target": null,
+            "target_kind": "DEFAULT",
+            "unit": "P070_OPPDAT_DIAG"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "interface": {
+        "facts": {
+          "commarea": null,
+          "commarea_gap": "no structure parameter, or structure BASED on the main procedure's parameter COMMAREA_PEKER, is declared in the program or its %INCLUDE members; %INCLUDE members not in the repository: P0012003, P0016201, P0016202, P0016216, P0019906, P0019908, P0019910, P0019912, P0019927, S001B0; no resolved caller passes a COMMAREA",
+          "commarea_unpack": null,
+          "containers": [],
+          "inbound": [],
+          "parameters": [
+            {
+              "file": "src/R001B001.pli",
+              "layout": {
+                "bytes": 4,
+                "copybooks": [],
+                "dialect": "pli",
+                "extended": false,
+                "fields": [
+                  {
+                    "bytes": 4,
+                    "class": "A",
+                    "dialect": "pli",
+                    "file": "src/R001B001.pli",
+                    "level": 1,
+                    "name": "COMMAREA_PEKER",
+                    "occurs": null,
+                    "offset": 0,
+                    "pic": null,
+                    "usage": "POINTER"
+                  }
+                ],
+                "unexpanded": [],
+                "variable": false
+              },
+              "mode": "REFERENCE",
+              "name": "COMMAREA_PEKER",
+              "position": 1,
+              "record": "COMMAREA_PEKER"
+            }
+          ]
+        },
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "navigation": {
+        "facts": [
+          {
+            "from": "src/R001B001.pli",
+            "line": 386,
+            "program": "R001B001",
+            "remote_systems": [],
+            "to": null,
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R001B001.pli",
+            "line": 481,
+            "program": "R0019906",
+            "remote_systems": [],
+            "to": "src/R0019906.pli",
+            "verb": "LINK",
+            "via": "static"
+          },
+          {
+            "from": "src/R001B001.pli",
+            "line": 1467,
+            "program": "R0010301",
+            "remote_systems": [],
+            "to": "src/R0010301.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R001B001.pli",
+            "line": 1475,
+            "program": "R0010401",
+            "remote_systems": [],
+            "to": "src/R0010401.pli",
+            "verb": "XCTL",
+            "via": "static"
+          },
+          {
+            "from": "src/R001B001.pli",
+            "line": 1632,
+            "program": "R001B001",
+            "remote_systems": [],
+            "to": null,
+            "verb": "XCTL",
+            "via": "static"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 4
+      },
+      "screen_bindings": {
+        "facts": [
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 290,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": "BMSMAPBR",
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 296,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": "BMSMAPBR",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 385,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 416,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 422,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 429,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": "BMSMAPBR",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 436,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 444,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 451,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": "BMSMAPBR",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 458,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 466,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 473,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": "BMSMAPBR",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 493,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 496,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": "BMSMAPBR",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 530,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 541,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 548,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": "BMSMAPBR",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 581,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 590,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 597,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": "BMSMAPBR",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 654,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 663,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 670,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": "BMSMAPBR",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 694,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 706,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 713,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": "BMSMAPBR",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 727,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 737,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 744,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": "BMSMAPBR",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 757,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 767,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 774,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": "BMSMAPBR",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 816,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 827,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 834,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": "BMSMAPBR",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 864,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 871,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 879,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": "BMSMAPBR",
+            "verb": "RECEIVE"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 1629,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 1651,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 1662,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          },
+          {
+            "bms_candidates": [],
+            "bms_file": null,
+            "fields": [],
+            "line": 1672,
+            "map": "S001B01",
+            "mapset": "S001B03",
+            "program": "src/R001B001.pli",
+            "record": null,
+            "verb": "SEND"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 3
+      },
+      "units_of_work": {
+        "facts": [
+          {
+            "file": "src/R001B001.pli",
+            "kind": "ROLLBACK",
+            "line": 1637,
+            "source": "CICS",
+            "unit": "P070_OPPDAT_DIAG",
+            "verb": "SYNCPOINT ROLLBACK"
+          },
+          {
+            "file": "src/R001B001.pli",
+            "kind": "ROLLBACK",
+            "line": 1657,
+            "source": "CICS",
+            "unit": "P070_OPPDAT_DIAG",
+            "verb": "SYNCPOINT ROLLBACK"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      },
+      "unresolved_calls": {
+        "facts": [
+          {
+            "file": "src/R001B001.pli",
+            "form": "literal",
+            "line": 386,
+            "operand": "R001B001",
+            "target": "R001B001",
+            "verb": "XCTL"
+          },
+          {
+            "file": "src/R001B001.pli",
+            "form": "literal",
+            "line": 920,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R001B001.pli",
+            "form": "literal",
+            "line": 938,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R001B001.pli",
+            "form": "literal",
+            "line": 958,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R001B001.pli",
+            "form": "literal",
+            "line": 1029,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R001B001.pli",
+            "form": "literal",
+            "line": 1088,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R001B001.pli",
+            "form": "literal",
+            "line": 1211,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R001B001.pli",
+            "form": "literal",
+            "line": 1277,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R001B001.pli",
+            "form": "literal",
+            "line": 1330,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R001B001.pli",
+            "form": "literal",
+            "line": 1401,
+            "operand": "PLITDLI",
+            "target": "PLITDLI",
+            "verb": "CALL"
+          },
+          {
+            "file": "src/R001B001.pli",
+            "form": "literal",
+            "line": 1632,
+            "operand": "R001B001",
+            "target": "R001B001",
+            "verb": "XCTL"
+          }
+        ],
+        "field_testing": "open",
+        "tested_on_private": 0,
+        "tested_on_public": 9
+      },
+      "uow_handlers": {
+        "facts": [
+          {
+            "attributes": "SNAP",
+            "condition": "ERROR",
+            "kind": "ON_UNIT",
+            "line": 253,
+            "resp_var": null,
+            "source": "PLI",
+            "target": null,
+            "target_kind": "BLOCK",
+            "verb": "ON"
+          },
+          {
+            "attributes": null,
+            "condition": "ERROR",
+            "kind": "ON_UNIT",
+            "line": 255,
+            "resp_var": null,
+            "source": "PLI",
+            "target": null,
+            "target_kind": "SYSTEM",
+            "verb": "ON"
+          },
+          {
+            "attributes": null,
+            "condition": "ONK",
+            "kind": "ABEND",
+            "line": 260,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "ABEND"
+          },
+          {
+            "attributes": null,
+            "condition": "ERROR",
+            "kind": "HANDLE_CONDITION",
+            "line": 266,
+            "resp_var": null,
+            "source": "CICS",
+            "target": "ERRBEH",
+            "target_kind": "LABEL",
+            "verb": "HANDLE CONDITION"
+          },
+          {
+            "attributes": null,
+            "condition": "PF1",
+            "kind": "HANDLE_AID",
+            "line": 267,
+            "resp_var": null,
+            "source": "CICS",
+            "target": "PF2",
+            "target_kind": "LABEL",
+            "verb": "HANDLE AID"
+          },
+          {
+            "attributes": null,
+            "condition": "PF2",
+            "kind": "HANDLE_AID",
+            "line": 268,
+            "resp_var": null,
+            "source": "CICS",
+            "target": "PF2",
+            "target_kind": "LABEL",
+            "verb": "HANDLE AID"
+          },
+          {
+            "attributes": null,
+            "condition": "NOTFND",
+            "kind": "HANDLE_CONDITION",
+            "line": 559,
+            "resp_var": null,
+            "source": "CICS",
+            "target": "L015NOTF",
+            "target_kind": "LABEL",
+            "verb": "HANDLE CONDITION"
+          },
+          {
+            "attributes": null,
+            "condition": "NOTFND",
+            "kind": "HANDLE_CONDITION",
+            "line": 680,
+            "resp_var": null,
+            "source": "CICS",
+            "target": "L020NOT1",
+            "target_kind": "LABEL",
+            "verb": "HANDLE CONDITION"
+          },
+          {
+            "attributes": null,
+            "condition": "NOTFND",
+            "kind": "HANDLE_CONDITION",
+            "line": 719,
+            "resp_var": null,
+            "source": "CICS",
+            "target": "L020NOT1",
+            "target_kind": "LABEL",
+            "verb": "HANDLE CONDITION"
+          },
+          {
+            "attributes": null,
+            "condition": "NOTFND",
+            "kind": "HANDLE_CONDITION",
+            "line": 809,
+            "resp_var": null,
+            "source": "CICS",
+            "target": "L020NOTF",
+            "target_kind": "LABEL",
+            "verb": "HANDLE CONDITION"
+          },
+          {
+            "attributes": null,
+            "condition": "NOTFND",
+            "kind": "HANDLE_CONDITION",
+            "line": 1542,
+            "resp_var": null,
+            "source": "CICS",
+            "target": "L070NOTF",
+            "target_kind": "LABEL",
+            "verb": "HANDLE CONDITION"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "ROLLBACK",
+            "line": 1637,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SYNCPOINT ROLLBACK"
+          },
+          {
+            "attributes": null,
+            "condition": "ERROR",
+            "kind": "HANDLE_CONDITION",
+            "line": 1638,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": "DEFAULT",
+            "verb": "HANDLE CONDITION"
+          },
+          {
+            "attributes": null,
+            "condition": "FEIL",
+            "kind": "ABEND",
+            "line": 1640,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "ABEND"
+          },
+          {
+            "attributes": null,
+            "condition": null,
+            "kind": "ROLLBACK",
+            "line": 1657,
+            "resp_var": null,
+            "source": "CICS",
+            "target": null,
+            "target_kind": null,
+            "verb": "SYNCPOINT ROLLBACK"
+          }
+        ],
+        "field_testing": "field-tested",
+        "tested_on_private": 0,
+        "tested_on_public": 6
+      }
+    }
+  },
+  "generated": {
+    "imports": [
+      {
+        "class": "com.gitgalaxy.modernized.cics.CicsTask",
+        "file": "src/main/java/com/gitgalaxy/modernized/cics/CicsTask.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.dto.contract.SrcR0019906FnrEndrReg",
+        "file": "src/main/java/com/gitgalaxy/modernized/dto/contract/SrcR0019906FnrEndrReg.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.entity.vsam.W01DiaRecl",
+        "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/W01DiaRecl.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.entity.vsam.W021Ykode",
+        "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/W021Ykode.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.entity.vsam.W070Rec",
+        "file": "src/main/java/com/gitgalaxy/modernized/entity/vsam/W070Rec.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.repository.vsam.W01DiaReclRepository",
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/W01DiaReclRepository.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.repository.vsam.W021YkodeRepository",
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/W021YkodeRepository.java"
+      },
+      {
+        "class": "com.gitgalaxy.modernized.repository.vsam.W070RecRepository",
+        "file": "src/main/java/com/gitgalaxy/modernized/repository/vsam/W070RecRepository.java"
+      }
+    ],
+    "traced_to_this_program": [
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0010301Controller.java",
+        "symbol": "SrcR0010301Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0010401Controller.java",
+        "symbol": "SrcR0010401Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/controller/SrcR0019906Controller.java",
+        "symbol": "SrcR0019906Controller#link"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#abendFeilL1640"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#abendOnkL260"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#linkSrcR0019906"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#onConditionErrorL266"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#onConditionNotfndL1542"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#onConditionNotfndL559"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#onConditionNotfndL680"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#onConditionNotfndL719"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#onConditionNotfndL809"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#readDiagkon"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#readDiagnos"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#readYrkekod"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#rewriteDiagkon"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#rollbackL1637"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#rollbackL1657"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#writeDiagkon"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#xctlSrcR0010301"
+      },
+      {
+        "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+        "symbol": "SrcR001b001Service#xctlSrcR0010401"
+      }
+    ]
+  },
+  "paragraphs": [
+    {
+      "lines": 405,
+      "name": "R001B00",
+      "start_line": 1
+    },
+    {
+      "lines": 99,
+      "name": "P010_SJEKK_FNR",
+      "start_line": 406
+    },
+    {
+      "lines": 88,
+      "name": "P015_SJEKK_DIAG1",
+      "start_line": 517
+    },
+    {
+      "lines": 164,
+      "name": "P020_SJEKK_DIAG2",
+      "start_line": 617
+    },
+    {
+      "lines": 49,
+      "name": "P021_SJEKK_YRKESKODE",
+      "start_line": 793
+    },
+    {
+      "lines": 32,
+      "name": "P023_SJEKK_ALLE",
+      "start_line": 854
+    },
+    {
+      "lines": 54,
+      "name": "P025_DATABASE",
+      "start_line": 890
+    },
+    {
+      "lines": 59,
+      "name": "P030_LES_RF_ROT",
+      "start_line": 951
+    },
+    {
+      "lines": 241,
+      "name": "P040_LES_OPPDATER_UPTRANS",
+      "start_line": 1017
+    },
+    {
+      "lines": 178,
+      "name": "P050_OPPDATER_TR",
+      "start_line": 1265
+    },
+    {
+      "lines": 27,
+      "name": "P060_SJEKK_FUNK_STYR",
+      "start_line": 1452
+    },
+    {
+      "lines": 123,
+      "name": "P070_OPPDAT_DIAG",
+      "start_line": 1486
+    }
+  ],
+  "priority": {
+    "blast_radius": 0.424,
+    "callers": 0,
+    "calls": 6,
+    "of": 438,
+    "rank": 417
+  },
+  "program": {
+    "file": "src/R001B001.pli",
+    "key": "src__R001B001",
+    "language": "pli",
+    "lines": 1685,
+    "program_ids": [
+      "R001B001"
+    ]
+  },
+  "rounding": [],
+  "rules": [
+    "Deliver the whole port: every paragraph the ported method reaches, every screen field it sets, every file it reads. A partial port or a sketch is not proven: the equivalence harness compares every output.",
+    "Port the PROCEDURE DIVISION into the service's methods, paragraph by paragraph; name the paragraph each block ports in a comment, so the port can be reviewed against the source.",
+    "Keep COBOL's storage semantics: COMPUTE / ADD / SUBTRACT / MULTIPLY / DIVIDE without ROUNDED truncate decimals; a result too long for its PICTURE loses its high-order digits (ON SIZE ERROR aside); MOVE to a numeric field aligns on the decimal point and truncates both ends; MOVE to alphanumeric pads with spaces or truncates on the right. Use BigDecimal with RoundingMode.DOWN, never double, for PIC 9 / COMP-3 data.",
+    "ROUNDED (#3825) rounds half AWAY from zero: setScale(scale, RoundingMode.HALF_UP) -- 2.5 -> 3, -2.5 -> -3. Never HALF_EVEN (banker's rounding) and never Math.round (-2.5 -> -2). ROUNDED MODE maps one to one: NEAREST-EVEN HALF_EVEN, AWAY-FROM-ZERO UP, NEAREST-TOWARD-ZERO HALF_DOWN, TOWARD-GREATER CEILING, TOWARD-LESSER FLOOR, TRUNCATION DOWN. The ticket's `rounding` list names every rounding or SIZE ERROR statement with the RoundingMode of each target. Round the final result only: compute intermediates exactly (IBM's ARITH intermediates carry 18 or 31 digits; the equivalence harness is the oracle when a result differs).",
+    "Keep the program's behaviour, including what looks like a defect (an unreachable branch, a field never reset): the port is proven by comparing its outputs with the original's. Document each such spot with a comment naming the defect and the one-line fix; fixing it is a business decision, not a translation.",
+    "Use the generated code as it is: entities and their fromRecord / toRecord codecs, repositories, DTOs, the batch runtime (DatasetResolver, Dd), the other services. Do not edit generated files other than this service; do not invent calls, files, queues or tables the facts do not name.",
+    "An abend is `throw CobolAbend.user(abcode, why)` (the generated batch runtime; CALL 'CEE3ABD' USING ABCODE: the step ends ABEND Unnnn) -- never another exception; the step's RETURN-CODE is runBatch's return value.",
+    "A DISPLAY is `Sysout.display(...)` (DISPLAY ... WITH NO ADVANCING: `Sysout.displayNoAdvancing`), never a log line: SYSOUT is compared line by line with the COBOL's. Its text is exactly what IBM COBOL writes, the operands concatenated: a literal as written; an alphanumeric or group item as all its bytes, trailing spaces included (a group's numeric fields as stored: zoned digits, the sign overpunched); a numeric item -- DISPLAY, COMP or COMP-3, not edited, no SIGN SEPARATE -- as `Sysout.number(value, digits, scale, signed)`: its PICTURE digits zero-padded, no decimal point, the sign overpunched in the last digit when signed (PIC S9(3) holding -12 is `01K`); an edited item as its edited text.",
+    "Every file I/O statement of a batch program (OPEN, CLOSE, READ, READ NEXT, WRITE, REWRITE, DELETE, START) is ONE call to the generated CobolFiles, per file (its DD name), in the order the program runs them. open(dd) / open(dd, path, input) / close(dd[, action]) / write / rewrite / delete(dd, action) / start(dd, found) return the status String; read(dd, supplier) (\"00\" or \"23\") and readNext(dd, iterator) (\"00\" or \"10\") return a CobolFiles.Read<T> -- status() and record(), null unless found. Take the program's FILE STATUS logic -- IF <status> = '00', AT END, INVALID KEY, its error paragraphs -- from the status returned, exactly as the program does; never skip a statement the program runs (a read-ahead, a CLOSE) or add one it does not. The equivalence harness injects file faults through CobolFiles and through GnuCOBOL at the same statement, and proves the error paths too. A keyed (VSAM KSDS) file keeps its mainframe semantics: WRITE is writeKeyed(dd, () -> repo.existsById(key), () -> repo.save(r)) -- \"22\" when the key is on file, never save() over it -- and REWRITE is rewriteKeyed(dd, exists, save) (\"23\" when it is not). A record the program READs INTO its working storage is the program's own copy: keep Entity.fromRecord(read.toRecord(cs), cs), never the repository's managed entity, so a change that is not REWRITten is never saved; and a READ that fails without INVALID KEY / AT END leaves the previous record in place, as the program's storage does.",
+    "A sequential dataset is fixed-length records (RECFM=FB): write each record's toRecord(...) bytes back to back, with no line separators, to the file DatasetResolver.path(dd) names; read it the same way.",
+    "Decode and encode a numeric field held in record bytes or a text column (zoned with an overpunched sign, COMP-3, COMP) only through the generated CobolRecords (zoned / packed / binary and their put methods) or the entity codecs, never a hand-written decoder.",
+    "Record bytes -- every dataset, file and COMMAREA the program reads or writes -- are in the code page CobolRecords.charset() returns: the migration's declared data.record_charset, a deployment fact. Pass it wherever a record codec, CobolRecords method or String takes a Charset; never Charset.forName, StandardCharsets or a guessed EBCDIC page for record data (#4060).",
+    "Read a number from text (a screen field, FUNCTION NUMVAL, a PARM) only through CobolRecords.numval(text, decimalPoint), with ',' when the program codes DECIMAL-POINT IS COMMA; never Integer.parseInt or new BigDecimal(String), which accept Arabic-Indic, Devanagari and full-width digits that COBOL rejects (#3831).",
+    "Format a numeric-edited field (a display string mapped from a number, often for a screen or print line) only through CobolEdit.format(pic, value, decimalComma, currency), which honours the COBOL picture (Z, 9, ., ,, -, +, CR/DB, $/currency, B, 0, /, and floating $ / + / - strings) as the mainframe does; pass the CURRENCY SIGN string (e.g. 'INR ') as currency, and it replaces the PICTURE SYMBOL (#3933).",
+    "Format and case-map with Locale.ROOT (String.format(Locale.ROOT, ...), toUpperCase(Locale.ROOT)): the default locale prints other digits (Arabic, Devanagari) and maps case differently (Turkish).",
+    "Order and compare VSAM / DB2 keys by the source code page's bytes, as the mainframe does (lower case before upper, letters before digits): browse through the generated sort-key finders, and sort in Java with CobolRecords.sortKey(key, codePage), never by String.compareTo or the database's default collation (#3822).",
+    "Compare alphanumeric operands (PIC X / A items, group items, alphanumeric literals and figurative constants) in IF, EVALUATE, PERFORM UNTIL and SEARCH WHEN only through the generated CobolCompare (compare, eq, gt, ge, lt, le), never String.compareTo or equals: it compares the code page's bytes as the mainframe does -- lower case before upper, letters before digits, so IF CUST-ID > 'A' is true for '1001' -- and pads the shorter operand with spaces ('AB' = 'AB  '). HIGH-VALUES / LOW-VALUES are CobolCompare.highValues(n) / lowValues(n). A numeric comparison stays BigDecimal.compareTo. A program that declares PROGRAM COLLATING SEQUENCE compares by that alphabet instead: flag it in a TODO (#3986).",
+    "A CICS program is ported into runTask(CicsTask task), one task per call (#3754): EIBCALEN = 0 is !task.hasCommarea(), EIBCALEN is task.eibcalen() (#4009: null = the whole record), DFHCOMMAREA is task.commarea(<its DTO>.class), EIBAID is task.aid() (ENTER, CLEAR, PF1-PF24, PA1-PA3), EIBTRMID is task.termid(), EIBTIME / EIBDATE / ASKTIME are task.now() (the task's dispatch time on the region's virtual clock, #3989), RECEIVE MAP is task.receive(map, mapset, <its screen>.class) (empty = MAPFAIL), SEND MAP is task.sendMap(map, mapset, screen, subfields, options...) (#4001: the screen holds each <f>O; CicsTask.MapSubfields each <f>A / <f>C / <f>H as its EBCDIC byte and <f>L = -1 for the cursor), SEND TEXT / SEND is task.sendText(from, length, options...), RETURN TRANSID COMMAREA LENGTH is task.returnTransid(transid, commarea, length), XCTL is task.xctl, LINK is task.link, ABEND is task.abend -- in the order the program does them, and the task ends at RETURN / XCTL / ABEND. A file READ is task.read(file, () -> <the service's generated read method>): its resp() is NORMAL (0), NOTFND (13) when the read finds nothing, or a condition the equivalence harness injects (NOTOPEN, IOERR, DISABLED, ...), and its resp2(); port every arm of the program's RESP handling (EVALUATE WS-RESP-CD ... WHEN OTHER) from it (#4023 follow-up). READ ... UPDATE is task.readForUpdate(file, lookup) (it holds the record for a REWRITE); WRITE FILE RIDFLD FROM is task.write(file, <whether the key is already in the file>, () -> <save the new record>): DUPREC (14) when it is; REWRITE FILE FROM is task.rewrite(file, () -> <save the changed record>): INVREQ (16) without a held record; each returns the RESP, and the injected conditions apply as for a READ. SYNCPOINT is task.syncpoint() and SYNCPOINT ROLLBACK task.rollback(), which undoes the task's file changes: save every change through these calls only -- what each file holds after the task is compared with the COBOL's. DELETE FILE RIDFLD is task.delete(file, <whether the key is there>, () -> <delete it>) (NOTFND 13 when not); DELETE FILE without RIDFLD is task.deleteHeld(file, () -> <delete the held record>). A browse: STARTBR is task.startbr(file, <RIDFLD as text>, <EQUAL given>, () -> <the file's keys, in key order, as a NavigableSet<String>>) (NOTFND 13 when no key qualifies); READNEXT / READPREV are task.readnext(file, <RIDFLD as text>) / task.readprev(file, ...), whose Browsed holds the RESP (ENDFILE 20 past either end) and the key read -- set RIDFLD to it and look the record up by it; ENDBR is task.endbr(file). The task keeps the browse's position and CICS's repositioning rules (a READPREV right after a READNEXT reads the same record again): pass RIDFLD exactly as the program holds it. ASKTIME ABSTIME is task.asktime(); FORMATTIME is CicsTask.formatDate(abstime, \"YYYYMMDD\" (or the form given), <DATESEP>) and CicsTask.formatTime(abstime, <TIMESEP>). ASSIGN APPLID / SYSID are task.assignApplid() / task.assignSysid() (the region's identity: never a literal). WRITEQ TD QUEUE FROM is task.writeqTd(queue, <the record as text, its full LENGTH>), which returns the RESP (QIDERR 44 for a queue the CSD does not define). INQUIRE PROGRAM(p) is task.inquireProgram(p): its RESP (NORMAL 0, PGMIDERR 27). A screen field shows what the symbolic map's O field would hold: text as moved, an edited PICTURE formatted as COBOL formats it. A COMMAREA is the generated DTO of its record; an area no generated DTO describes (a plain PIC X(n) item) is passed as a String of its n characters, or a byte[] of its EBCDIC bytes (#3989).",
+    "CICS condition and abend handling (#3989): HANDLE CONDITION, IGNORE CONDITION, HANDLE AID and RESP are the program's own control flow -- port each transfer to its label as Java control flow. HANDLE ABEND LABEL is task.handleAbend(label) (CANCEL, RESET: handleAbendCancel / handleAbendReset), and PUSH / POP HANDLE are task.pushHandle() / popHandle() besides saving and restoring the program's own handler state. EXEC CICS ABEND is task.abend(abcode) and a condition that takes CICS's default action is task.abendOnCondition(condition): CicsTask searches the active abend exits from this program's level upward, as CICS does, records the ABEND, and returns the label to continue at when this program's own exit took it -- or null, and the program must then return from runTask at once. After task.link(...) returns, task.abendExit() is the label of this program's exit when an abend in a program below reached it (continue there), and task.ended() is true when the task was terminated (stop). Never throw an exception to model a CICS transfer: the services are @Transactional, so an exception out of one marks the whole task rollback-only.",
+    "Dates and times only through java.time -- LocalDate, LocalDateTime, LocalTime and DateTimeFormatter with Locale.ROOT, in the ISO chronology -- never Calendar.getInstance(), new GregorianCalendar(), SimpleDateFormat or WeekFields.of(Locale.getDefault()): a th_TH default locale gives Buddhist-era years (2569), ja_JP_JP the Japanese imperial calendar, and US week fields start on Sunday. FUNCTION DAY-OF-WEEK and ACCEPT ... FROM DAY-OF-WEEK are Monday = 1 ... Sunday = 7, which is DayOfWeek.getValue() (#3833).",
+    "Read the time only from the generated batch runtime's MainframeClock (now() for local, currentDate() for FUNCTION CURRENT-DATE) -- in a CICS task, from task.now() -- never from the system clock directly or ZoneId.systemDefault(): it is how a run is pinned to be compared with the original.",
+    "A DB2 DATE / TIME / TIMESTAMP fetched into, or bound from, a character host variable (a DCLGEN DATE is PIC X(10)) is in the DB2 subsystem's format, the target config's culture.db2_date_format -- eur 26.09.2026 and 14.30.05, usa 09/26/2026 and 02:30 PM, iso 2026-09-26 and 14.30.05, jis 2026-09-26 and 14:30:05 -- and a TIMESTAMP is 2026-09-26-14.30.05.000000: convert only through the generated Db2Dates (date / time / timestamp, parseDate / parseTime / parseTimestamp), never LocalDate.toString() or LocalDate.parse (#3828).",
+    "FUNCTION INTEGER-OF-DATE / INTEGER-OF-DAY count days from day 1 = 1601-01-01 under INTDATE(ANSI), the default, but from day 1 = 1582-10-15 under INTDATE(LILIAN) (the same date is 6653 higher); DATE-OF-INTEGER / DAY-OF-INTEGER invert the same count. Port as ChronoUnit.DAYS.between(dayZero, date) with dayZero 1600-12-31 (ANSI) or 1582-10-14 (LILIAN). The ticket's compiler_options are the program's CBL / PROCESS cards; options given by the compile step's PARM or the installation defaults are not seen there (#3828).",
+    "A fact whose field testing is not 'field-tested' is verified on reference estates but still being field-tested: where the source contradicts it, follow the source and say so in the port's notes.",
+    "The proof calls one method per program: runTask(CicsTask) for a CICS program, handleCall(...) for a CALLed one, runBatch(dds, parm) for a batch one -- the ticket's methods to port. Port all of the program's behaviour into that method and the private helpers it calls. Port nothing into the other generated methods -- execute<Program>, handleTransaction, handleLink, handleChannel, onAbendL<n>, onCondition<C>L<n>, dispatch<X>L<n>, submit<Map> / render<Map>, xctl<P> / link<P>, the generated readqTs / writeqTs / read / browse helpers -- even where their TODO asks: leave each body as generated and keep no second entry point. Code the proof never runs is not proven, and the porting loop lists every method the proof cannot reach that the port changed (#4255)."
+  ],
+  "source": {
+    "copybooks": [
+      {
+        "file": "src/R0019904.pli",
+        "listing": "sources/src/R0019904.pli.lst"
+      },
+      {
+        "file": "src/R0019910.pli",
+        "listing": "sources/src/R0019910.pli.lst"
+      },
+      {
+        "file": "src/R0019960.pli",
+        "listing": "sources/src/R0019960.pli.lst"
+      }
+    ],
+    "program": {
+      "file": "src/R001B001.pli",
+      "listing": "sources/src/R001B001.pli.lst"
+    }
+  },
+  "status": "open",
+  "target": {
+    "config": {
+      "culture": {
+        "currency": "auto",
+        "db2_date_format": "iso",
+        "decimal_point": "auto",
+        "display_locale": "ROOT",
+        "format_locale": "ROOT",
+        "key_collation": "ebcdic",
+        "overflow": "cobol",
+        "rounding": "cobol",
+        "zone": "UTC"
+      },
+      "data": {
+        "bidi_layout": "auto",
+        "code_page": "cp037",
+        "dbcs_code_page": null,
+        "record_charset": "latin-1"
+      },
+      "database": "postgresql",
+      "integration": {
+        "messaging": "in-memory",
+        "remote_calls": "http"
+      },
+      "java": {
+        "build_tool": "maven",
+        "data_classes": "lombok",
+        "dto_style": "class",
+        "version": 17
+      },
+      "package": "com.gitgalaxy.modernized",
+      "spring_boot": {
+        "version": "3.2.4"
+      },
+      "ui": {
+        "flavour": "none"
+      }
+    },
+    "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+    "left_as_generated": [
+      "public void onConditionErrorL266(CicsConditionException e)",
+      "public void onConditionNotfndL559(CicsConditionException e)",
+      "public void onConditionNotfndL680(CicsConditionException e)",
+      "public void onConditionNotfndL719(CicsConditionException e)",
+      "public void onConditionNotfndL809(CicsConditionException e)",
+      "public void onConditionNotfndL1542(CicsConditionException e)"
+    ],
+    "methods": [
+      {
+        "signature": "public void runTask(CicsTask task)",
+        "todo": true
+      },
+      {
+        "signature": "public void handleLink()",
+        "todo": false
+      },
+      {
+        "signature": "public SrcR0019906FnrEndrReg linkSrcR0019906(SrcR0019906FnrEndrReg request)",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0010301()",
+        "todo": false
+      },
+      {
+        "signature": "public void xctlSrcR0010401()",
+        "todo": false
+      },
+      {
+        "signature": "public Optional<W070Rec> readDiagkon(String key)",
+        "todo": false
+      },
+      {
+        "signature": "public W070Rec writeDiagkon(W070Rec record)",
+        "todo": false
+      },
+      {
+        "signature": "public W070Rec rewriteDiagkon(W070Rec record)",
+        "todo": false
+      },
+      {
+        "signature": "public Optional<W01DiaRecl> readDiagnos(String key)",
+        "todo": false
+      },
+      {
+        "signature": "public Optional<W021Ykode> readYrkekod(String key)",
+        "todo": false
+      },
+      {
+        "signature": "public void rollbackL1637()",
+        "todo": false
+      },
+      {
+        "signature": "public void rollbackL1657()",
+        "todo": false
+      },
+      {
+        "signature": "public void abendOnkL260()",
+        "todo": false
+      },
+      {
+        "signature": "public void onConditionErrorL266(CicsConditionException e)",
+        "todo": true
+      },
+      {
+        "signature": "public void onConditionNotfndL559(CicsConditionException e)",
+        "todo": true
+      },
+      {
+        "signature": "public void onConditionNotfndL680(CicsConditionException e)",
+        "todo": true
+      },
+      {
+        "signature": "public void onConditionNotfndL719(CicsConditionException e)",
+        "todo": true
+      },
+      {
+        "signature": "public void onConditionNotfndL809(CicsConditionException e)",
+        "todo": true
+      },
+      {
+        "signature": "public void onConditionNotfndL1542(CicsConditionException e)",
+        "todo": true
+      },
+      {
+        "signature": "public void abendFeilL1640()",
+        "todo": false
+      }
+    ],
+    "methods_to_port": [
+      "public void runTask(CicsTask task)"
+    ],
+    "overlay": "port/service/SrcR001b001Service.java",
+    "proof_entry_points": [
+      "public void runTask(CicsTask task)"
+    ],
+    "service": "SrcR001b001Service"
+  },
+  "ticket": "PORT-src__R001B001",
+  "version": 1,
+  "worklist": [
+    {
+      "category": "interface-call",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+      "id": "WL-3286",
+      "line": 93,
+      "text": "Implement or mock interface call to: PlitdliService"
+    },
+    {
+      "category": "interface-call",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+      "id": "WL-3287",
+      "line": 94,
+      "text": "Implement or mock interface call to: R001b001Service"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+      "id": "WL-4394",
+      "line": 96,
+      "text": "port the PROCEDURE DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..), and record what the program does through the task -- sendMap, sendText, returnTransid, link, xctl, abend -- in the order it does it"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+      "id": "WL-4395",
+      "line": 102,
+      "text": "port the PROCEDURE DIVISION into this task"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+      "id": "WL-4396",
+      "line": 193,
+      "text": "port paragraph ERRBEH's logic"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+      "id": "WL-4397",
+      "line": 202,
+      "text": "port paragraph L015NOTF's logic"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+      "id": "WL-4398",
+      "line": 211,
+      "text": "port paragraph L020NOT1's logic"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+      "id": "WL-4399",
+      "line": 220,
+      "text": "port paragraph L020NOT1's logic"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+      "id": "WL-4400",
+      "line": 229,
+      "text": "port paragraph L020NOTF's logic"
+    },
+    {
+      "category": "business-logic",
+      "file": "src/main/java/com/gitgalaxy/modernized/service/SrcR001b001Service.java",
+      "id": "WL-4401",
+      "line": 238,
+      "text": "port paragraph L070NOTF's logic"
+    }
+  ]
+}

@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.FnrReg;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.SrcGmlR0019906FnrEndrReg;
 import com.gitgalaxy.modernized.entity.vsam.W01DiaRecl;
 import com.gitgalaxy.modernized.entity.vsam.W021Ykode;
 import com.gitgalaxy.modernized.entity.vsam.W070Rec;
@@ -92,30 +93,38 @@ public class SrcGmlR001b001Service {
     // TODO: AI AGENT - Implement or mock interface call to: PlitdliService
     // TODO: AI AGENT - Implement or mock interface call to: R001b001Service
 
-    public void executeSrcGmlR001b001(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__GML__R001B001");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcGmlR001b001: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on no COMMAREA. */
     public void handleLink() {
         log.info("SrcGmlR001b001: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R001B001", null);
+        region.run(task, "R001B001", this::runTask);
     }
 
     /** EXEC CICS LINK PROGRAM(R0019906) at src/GML/R001B001.pli:490.
-     *  Call targets field testing: open (6 public / 0 private estates). */
-    public FnrReg linkSrcGmlR0019906(FnrReg request) {
+     *  Call targets field testing: open (9 public / 0 private estates). */
+    public SrcGmlR0019906FnrEndrReg linkSrcGmlR0019906(SrcGmlR0019906FnrEndrReg request) {
         return srcGmlR0019906Service.getObject().handleLink(request);
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010301) at src/GML/R001B001.pli:1476. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcGmlR0010301() {
         srcGmlR0010301Service.getObject().handleLink();
     }
 
     /** EXEC CICS XCTL PROGRAM(R0010401) at src/GML/R001B001.pli:1484. XCTL transfers control: nothing after it runs in the caller.
-     *  Call targets field testing: open (6 public / 0 private estates). */
+     *  Call targets field testing: open (9 public / 0 private estates). */
     public void xctlSrcGmlR0010401() {
         srcGmlR0010401Service.getObject().handleLink();
     }
@@ -126,6 +135,12 @@ public class SrcGmlR001b001Service {
     }
 
     public W070Rec writeDiagkon(W070Rec record) {
+        // CICS WRITE adds a record: DUPREC when its key is already on file
+        Optional<W070Rec> onFile = w070RecRepository.findById(record.getVsamKey());
+        if (onFile.isPresent()) {
+            throw new org.springframework.dao.DuplicateKeyException(
+                "DUPREC: CICS file DIAGKON already holds the key of this record");
+        }
         return w070RecRepository.save(record);
     }
 
@@ -221,15 +236,6 @@ public class SrcGmlR001b001Service {
     public void onConditionNotfndL1551(CicsConditionException e) {
         log.info("HANDLE CONDITION NOTFND LABEL L070NOTF at line 1551", e);
         // TODO: port paragraph L070NOTF's logic
-    }
-
-    /**
-     * EXEC CICS HANDLE CONDITION at src/GML/R001B001.pli:1647 (paragraph P070_OPPDAT_DIAG) routes ERROR to None.
-     * Units of work and handlers field testing: field-tested (6 public / 0 private estates).
-     */
-    public void onConditionErrorL1647(CicsConditionException e) {
-        log.info("HANDLE CONDITION ERROR LABEL None at line 1647", e);
-        // TODO: port paragraph None's logic
     }
 
     /**

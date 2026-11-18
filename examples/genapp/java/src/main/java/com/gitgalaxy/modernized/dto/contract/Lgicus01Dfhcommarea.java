@@ -12,9 +12,9 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 
 /**
- * COBOL record DFHCOMMAREA (base/src/lgicus01.cbl), 32500 bytes, from GitGalaxy's verified skeleton.
- * The COMMAREA Lgicdb01 receives, as passed by LINK at base/src/lgicus01.cbl:122.
- * Record fields field testing: field-tested (6 public / 0 private estates).
+ * COBOL record COMM-AREA (base/src/lgtestc1.cbl), 32500 bytes, from GitGalaxy's verified skeleton.
+ * The COMMAREA Lgicus01 receives, as passed by LINK at base/src/lgtestc1.cbl:89, LINK at base/src/lgtestc1.cbl:151.
+ * Record fields field testing: open (6 public / 0 private estates).
  */
 @Data
 @NoArgsConstructor
@@ -32,4 +32,43 @@ public class Lgicus01Dfhcommarea {
     // CA-REQUEST-SPECIFIC: PIC X(32482), offset 18, 32482 bytes (base/src/lgcmarea.cpy)
     private String caRequestSpecific;
 
+
+    /** #4449: this COMMAREA as the 32500 bytes of its layout -- each field at its COBOL offset, FILLER and
+     *  an unset field as spaces -- in the record charset (CobolRecords.charset()). */
+    public byte[] toCommarea() {
+        java.nio.charset.Charset text = com.gitgalaxy.modernized.entity.vsam.CobolRecords.charset();
+        byte[] rec = com.gitgalaxy.modernized.entity.vsam.CobolRecords.blank(32500, text);
+        com.gitgalaxy.modernized.entity.vsam.CobolRecords.putText(rec, 0, 6, caRequestId, text);
+        if (caReturnCode != null) { com.gitgalaxy.modernized.entity.vsam.CobolRecords.putZoned(rec, 6, 2, 0, false, com.gitgalaxy.modernized.entity.vsam.CobolRecords.decimal(caReturnCode), text); }
+        if (caCustomerNum != null) { com.gitgalaxy.modernized.entity.vsam.CobolRecords.putZoned(rec, 8, 10, 0, false, com.gitgalaxy.modernized.entity.vsam.CobolRecords.decimal(caCustomerNum), text); }
+        com.gitgalaxy.modernized.entity.vsam.CobolRecords.putText(rec, 18, 32482, caRequestSpecific, text);
+        return rec;
+    }
+
+    /** #4449: the COMMAREA these bytes are, read through this layout: the first 32500 of `rec` -- what a
+     *  program reading another program's record through its own sees (a number of spaces is unset: null).
+     *  Fewer were never passed: refused. */
+    public static Lgicus01Dfhcommarea fromCommarea(byte[] rec) {
+        if (rec.length < 32500) {
+            throw new IllegalArgumentException(rec.length + " bytes do not fill Lgicus01Dfhcommarea's 32500-byte record");
+        }
+        java.nio.charset.Charset text = com.gitgalaxy.modernized.entity.vsam.CobolRecords.charset();
+        Lgicus01Dfhcommarea r = new Lgicus01Dfhcommarea();
+        r.caRequestId = com.gitgalaxy.modernized.entity.vsam.CobolRecords.text(rec, 0, 6, text);
+        r.caReturnCode = unset(rec, 6, 2, text) ? null : com.gitgalaxy.modernized.entity.vsam.CobolRecords.toInteger(com.gitgalaxy.modernized.entity.vsam.CobolRecords.zoned(rec, 6, 2, 0, text));
+        r.caCustomerNum = unset(rec, 8, 10, text) ? null : com.gitgalaxy.modernized.entity.vsam.CobolRecords.toLong(com.gitgalaxy.modernized.entity.vsam.CobolRecords.zoned(rec, 8, 10, 0, text));
+        r.caRequestSpecific = com.gitgalaxy.modernized.entity.vsam.CobolRecords.text(rec, 18, 32482, text);
+        return r;
+    }
+
+    /** Whether `length` bytes at `offset` are all spaces: a number toCommarea left unset. */
+    private static boolean unset(byte[] rec, int offset, int length, java.nio.charset.Charset text) {
+        byte space = " ".getBytes(text)[0];
+        for (int i = offset; i < offset + length; i++) {
+            if (rec[i] != space) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

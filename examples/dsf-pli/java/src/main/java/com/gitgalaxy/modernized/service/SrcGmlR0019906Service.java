@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.FnrReg;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.SrcGmlR0019906FnrEndrReg;
 import com.gitgalaxy.modernized.entity.vsam.Reg;
 import com.gitgalaxy.modernized.exception.*;
 import com.gitgalaxy.modernized.repository.vsam.RegRepository;
@@ -29,15 +30,44 @@ public class SrcGmlR0019906Service {
 
     private final RegRepository regRepository;
 
-    public void executeSrcGmlR0019906(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for src__GML__R0019906");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("SrcGmlR0019906: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
-    public FnrReg handleLink(FnrReg request) {
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on `request`, passed by reference -- what it changes, the caller sees. */
+    public SrcGmlR0019906FnrEndrReg handleLink(SrcGmlR0019906FnrEndrReg request) {
         log.info("SrcGmlR0019906: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R0019906", request);
+        region.run(task, "R0019906", this::runTask);
         return request;
+    }
+
+    /** #5053: handleLink with the raw bytes of the LINK's COMMAREA (passed by address: what the program
+     *  leaves there the caller sees); lastLinkBytes() then answers the bytes it left. */
+    public SrcGmlR0019906FnrEndrReg handleLink(SrcGmlR0019906FnrEndrReg request, byte[] area) {
+        log.info("SrcGmlR0019906: handleLink (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("R0019906", request, area);
+        region.run(task, "R0019906", this::runTask);
+        byte[] left = task.linkAreaView();
+        lastLinkBytes = task.linkAreaTaken() && left != null ? java.util.Arrays.copyOf(left, left.length) : null;
+        return request;
+    }
+
+    // @facade-helper: the bytes the last byte-carrying handleLink's program left in the COMMAREA
+    private byte[] lastLinkBytes;
+
+    /** The bytes the last byte-carrying handleLink's program left in the LINK COMMAREA (a copy; null: it took
+     *  none -- its DTO is the COMMAREA). @facade-helper */
+    public byte[] lastLinkBytes() {
+        return lastLinkBytes == null ? null : java.util.Arrays.copyOf(lastLinkBytes, lastLinkBytes.length);
     }
 
     /** VSKJEDE as CICS file VSKJEDE at src/GML/R0019906.pli:74; VSAM defines field testing: open (3 public / 0 private estates). */

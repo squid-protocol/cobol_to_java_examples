@@ -24,15 +24,10 @@ public class Cbstm03aService {
 
     private final ObjectProvider<Cbstm03bService> cbstm03bService;
 
-    public void executeCbstm03a(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for CBSTM03A");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
     /** CALL 'CBSTM03B' at app/cbl/CBSTM03A.CBL:351, app/cbl/CBSTM03A.CBL:377, app/cbl/CBSTM03A.CBL:401, app/cbl/CBSTM03A.CBL:734, app/cbl/CBSTM03A.CBL:746, app/cbl/CBSTM03A.CBL:769, app/cbl/CBSTM03A.CBL:787, app/cbl/CBSTM03A.CBL:805, app/cbl/CBSTM03A.CBL:835, app/cbl/CBSTM03A.CBL:860, app/cbl/CBSTM03A.CBL:877, app/cbl/CBSTM03A.CBL:893, app/cbl/CBSTM03A.CBL:909; the parameters are Cbstm03b's USING items.
-     *  Call targets open (6 public / 0 private estates); CALL USING open (5 public / 0 private estates). */
-    public void callCbstm03b(Cbstm03bLkM03bArea lkM03bArea) {
-        cbstm03bService.getObject().handleCall(lkM03bArea);
+     *  Call targets open (9 public / 0 private estates); CALL USING open (5 public / 0 private estates). */
+    public int callCbstm03b(Cbstm03bLkM03bArea lkM03bArea) {
+        return cbstm03bService.getObject().handleCall(lkM03bArea);
     }
 
     /** The batch entry (#3622): run by job CREASTMT step STEP040 (app/jcl/CREASTMT.JCL:79).

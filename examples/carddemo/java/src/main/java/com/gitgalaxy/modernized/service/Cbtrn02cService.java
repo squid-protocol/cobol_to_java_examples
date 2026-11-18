@@ -36,11 +36,6 @@ public class Cbtrn02cService {
     private final FdTranCatBalRecordRepository fdTranCatBalRecordRepository;
     private final TranRecordRepository tranRecordRepository;
 
-    public void executeCbtrn02c(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for CBTRN02C");
-        // TODO: [AI AGENT] Implement extracted business rules here.
-    }
-
     /** AWS.M2.CARDDEMO.ACCTDATA.VSAM.KSDS as BATCH SELECT ACCOUNT-FILE at app/cbl/CBTRN02C.cbl (SELECT ACCOUNT-FILE); VSAM defines field testing: open (3 public / 0 private estates). */
     // TODO: this program uses FD-ACCTFILE-REC (300 bytes); the entity follows ACCOUNT-RECORD (300 bytes) -- map one onto the other
     public Optional<AccountRecord> readAccountFile(Long key) {

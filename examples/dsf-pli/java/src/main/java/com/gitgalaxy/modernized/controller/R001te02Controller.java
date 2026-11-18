@@ -18,7 +18,7 @@ import com.gitgalaxy.modernized.service.R001te02Service;
  * verified skeleton (06_skeleton). Each endpoint names the fact it came from.
  * COMMAREA: COMMAREA (src/GML/R001TE02.pli, 6 bytes) -> R001te02Commarea.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/r001te02")

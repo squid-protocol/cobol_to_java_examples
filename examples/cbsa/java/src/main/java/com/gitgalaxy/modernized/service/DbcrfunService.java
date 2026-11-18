@@ -11,12 +11,11 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.gitgalaxy.modernized.dto.contract.Bnk1craSubpgmParms;
-import com.gitgalaxy.modernized.dto.contract.BnkmenuAbndinfoRec;
+import com.gitgalaxy.modernized.cics.CicsTask;
+import com.gitgalaxy.modernized.dto.contract.DbcrfunDfhcommarea;
 import com.gitgalaxy.modernized.exception.*;
 import com.gitgalaxy.modernized.repository.db2.AccountRepository;
 import com.gitgalaxy.modernized.repository.db2.ProctranRepository;
-import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -31,41 +30,65 @@ public class DbcrfunService {
 
     private static final Logger log = LoggerFactory.getLogger(DbcrfunService.class);
 
-    private final ObjectProvider<AbndprocService> abndprocService;
     private final AccountRepository accountRepository;
     private final ProctranRepository proctranRepository;
 
-    public void executeDbcrfun(/* Parameters mapped from Controller */) {
-        log.info("Executing modernized business logic for DBCRFUN");
-        // TODO: [AI AGENT] Implement extracted business rules here.
+    /** This program's run at a LINK / XCTL level (#4004): task.level(), task.eibcalen(). TODO: [AI AGENT] port the PROCEDURE
+     *  DIVISION: read task.hasCommarea() / task.commarea(..) / task.aid() / task.receive(map, ..),
+     *  and record what the program does through the task -- sendMap, sendText, returnTransid,
+     *  link, xctl, abend -- in the order it does it. */
+    public void runTask(CicsTask task) {
+        log.info("Dbcrfun: runTask");
+        // TODO: [AI AGENT] port the PROCEDURE DIVISION into this task
     }
 
-    /** Another program LINKed / XCTLed to this one. TODO: [AI AGENT] implement from the program's business rules. */
-    public Bnk1craSubpgmParms handleLink(Bnk1craSubpgmParms request) {
+    /** Another program LINKed / XCTLed to this one (#4343): the program at that level in the region
+     *  (CicsTask.region()), run through runTask on `request`, passed by reference -- what it changes, the caller sees. */
+    public DbcrfunDfhcommarea handleLink(DbcrfunDfhcommarea request) {
         log.info("Dbcrfun: handleLink");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("DBCRFUN", request);
+        region.run(task, "DBCRFUN", this::runTask);
         return request;
     }
 
-    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DBCRFUN.cbl:620: the target is data-driven. Candidates: ABNDPROC (value).
-     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchWsAbendPgmL620(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ABNDPROC":
-                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DBCRFUN.cbl:620: no known target " + program);
-        }
+    /** #5053: handleLink with the raw bytes of the LINK's COMMAREA (passed by address: what the program
+     *  leaves there the caller sees); lastLinkBytes() then answers the bytes it left. */
+    public DbcrfunDfhcommarea handleLink(DbcrfunDfhcommarea request, byte[] area) {
+        log.info("Dbcrfun: handleLink (bytes)");
+        CicsTask.Region region = CicsTask.region();
+        CicsTask task = region.linked("DBCRFUN", request, area);
+        region.run(task, "DBCRFUN", this::runTask);
+        byte[] left = task.linkAreaView();
+        lastLinkBytes = task.linkAreaTaken() && left != null ? java.util.Arrays.copyOf(left, left.length) : null;
+        return request;
     }
 
-    /** LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DBCRFUN.cbl:807: the target is data-driven. Candidates: ABNDPROC (value).
+    // @facade-helper: the bytes the last byte-carrying handleLink's program left in the COMMAREA
+    private byte[] lastLinkBytes;
+
+    /** The bytes the last byte-carrying handleLink's program left in the LINK COMMAREA (a copy; null: it took
+     *  none -- its DTO is the COMMAREA). @facade-helper */
+    public byte[] lastLinkBytes() {
+        return lastLinkBytes == null ? null : java.util.Arrays.copyOf(lastLinkBytes, lastLinkBytes.length);
+    }
+
+    /** EXEC CICS LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DBCRFUN.cbl:620, COMMAREA(ABNDINFO-REC): the target is data-driven (candidates the engine found: ABNDPROC (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
      *  Dynamic call targets field testing: open (5 public / 0 private estates). */
-    public Object dispatchWsAbendPgmL807(String program, Object request) {
-        switch (program.trim().toUpperCase()) {
-            case "ABNDPROC":
-                return abndprocService.getObject().handleLink((BnkmenuAbndinfoRec) request);
-            default:
-                throw new IllegalArgumentException("LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DBCRFUN.cbl:807: no known target " + program);
-        }
+    public String dispatchWsAbendPgmL620(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
+    }
+
+    /** EXEC CICS LINK PROGRAM(WS-ABEND-PGM) at src/base/cobol_src/DBCRFUN.cbl:807, COMMAREA(ABNDINFO-REC): the target is data-driven (candidates the engine found: ABNDPROC (value)).
+     *  CICS resolves the name when the command runs (#4342): `program` is the PROGRAM field as the
+     *  COBOL holds it, its trailing blanks the name's padding. Returns the command's condition
+     *  (NORMAL, PGMIDERR, ...).
+     *  Dynamic call targets field testing: open (5 public / 0 private estates). */
+    public String dispatchWsAbendPgmL807(CicsTask task, String program, Object commarea, int length) {
+        return task.link(program.stripTrailing(), commarea, length);
     }
 
     /**

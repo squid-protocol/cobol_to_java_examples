@@ -19,7 +19,7 @@ import com.gitgalaxy.modernized.service.CocrdlicService;
  * COMMAREA: DFHCOMMAREA (app/cbl/COCRDLIC.cbl, 414 bytes) -> CocrdlicCommarea.
  * TODO: callers also pass WS-COMMAREA (app/cbl/COCRDLIC.cbl, 2000 bytes) at app/cbl/COCRDLIC.cbl:615.
  * Field testing: entry transactions open (4 public / 0 private estates);
- * record fields field-tested (6 public / 0 private estates).
+ * record fields open (6 public / 0 private estates).
  */
 @RestController
 @RequestMapping("/api/v1/cocrdlic")
@@ -28,15 +28,9 @@ public class CocrdlicController {
 
     private final CocrdlicService cocrdlicService;
 
-    /** CICS transaction CC00 -> Cocrdlic (CSD app/csd/CARDDEMO.CSD:203 group CARDDEMO). */
-    @PostMapping("/transactions/CC00")
-    public ResponseEntity<CocrdlicCommarea> transactionCC00(@RequestBody CocrdlicCommarea request) {
-        return ResponseEntity.ok(cocrdlicService.handleTransaction("CC00", request));
-    }
-
     /** CICS transaction CCLI -> Cocrdlic (CSD app/csd/CARDDEMO.CSD:357 group CARDDEMO). */
     @PostMapping("/transactions/CCLI")
-    public ResponseEntity<CocrdlicCommarea> transactionCCLI(@RequestBody CocrdlicCommarea request) {
+    public ResponseEntity<Object> transactionCCLI(@RequestBody CocrdlicCommarea request) {
         return ResponseEntity.ok(cocrdlicService.handleTransaction("CCLI", request));
     }
 

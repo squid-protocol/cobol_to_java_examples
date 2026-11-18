@@ -27,7 +27,7 @@ public class Fnrrec {
 
     // TODO: no key is known (no IDCAMS DEFINE, RIDFLD or RECORD KEY): carried as the String vsamKey
     @Id
-    @Column(name = "VSAM_KEY")
+    @Column(name = "VSAM_KEY", columnDefinition = "varchar(255) COLLATE \"C\"")
     private String vsamKey;
 
     // FNR: FIXED DEC(11), offset 0, 6 bytes
@@ -51,11 +51,11 @@ public class Fnrrec {
     private Integer tp;
 
     // SPT: FIXED DEC(3,2), offset 16, 2 bytes
-    @Column(name = "SPT")
+    @Column(name = "SPT", precision = 3, scale = 2)
     private BigDecimal spt;
 
     // OPT: FIXED DEC(3,2), offset 18, 2 bytes
-    @Column(name = "OPT")
+    @Column(name = "OPT", precision = 3, scale = 2)
     private BigDecimal opt;
 
     // PÅ: FIXED DEC(3), offset 20, 2 bytes
@@ -67,11 +67,11 @@ public class Fnrrec {
     private Integer tt;
 
     // SPT_AVD: FIXED DEC(3,2), offset 24, 2 bytes
-    @Column(name = "SPT_AVD")
+    @Column(name = "SPT_AVD", precision = 3, scale = 2)
     private BigDecimal sptAvd;
 
     // OPT_AVD: FIXED DEC(3,2), offset 26, 2 bytes
-    @Column(name = "OPT_AVD")
+    @Column(name = "OPT_AVD", precision = 3, scale = 2)
     private BigDecimal optAvd;
 
     // PÅ_AVD: FIXED DEC(3), offset 28, 2 bytes

@@ -20,15 +20,12 @@ import java.math.BigDecimal;
  * Bytes 0-159 of the COMMAREA Cocrdslc reads: MOVE DFHCOMMAREA(1:LENGTH OF CARDDEMO-COMMAREA) at app/cbl/COCRDSLC.cbl:274.
  * Bytes 0-159 of the COMMAREA Cocrdupc reads: MOVE DFHCOMMAREA(1:LENGTH OF CARDDEMO-COMMAREA) at app/cbl/COCRDUPC.cbl:396.
  * Bytes 0-159 of the COMMAREA Comen01c reads: MOVE DFHCOMMAREA(1:EIBCALEN) at app/cbl/COMEN01C.cbl:86.
- * Bytes 0-159 of the COMMAREA Copaus0c reads: MOVE DFHCOMMAREA(1:EIBCALEN) at app/app-authorization-ims-db2-mq/cbl/COPAUS0C.cbl:200.
  * Bytes 0-159 of the COMMAREA Corpt00c reads: MOVE DFHCOMMAREA(1:EIBCALEN) at app/cbl/CORPT00C.cbl:176.
- * Bytes 0-159 of the COMMAREA Cotrn02c reads: MOVE DFHCOMMAREA(1:EIBCALEN) at app/cbl/COTRN02C.cbl:119.
+ * The COMMAREA Cosgn00c receives, as passed by RETURN TRANSID at app/cbl/COSGN00C.cbl:98.
  * Bytes 0-159 of the COMMAREA Cotrtlic reads: MOVE DFHCOMMAREA(1:LENGTH OF CARDDEMO-COMMAREA) at app/app-transaction-type-db2/cbl/COTRTLIC.cbl:527.
  * Bytes 0-159 of the COMMAREA Cotrtupc reads: MOVE DFHCOMMAREA(1:LENGTH OF CARDDEMO-COMMAREA) at app/app-transaction-type-db2/cbl/COTRTUPC.cbl:376.
  * Bytes 0-159 of the COMMAREA Cousr01c reads: MOVE DFHCOMMAREA(1:EIBCALEN) at app/cbl/COUSR01C.cbl:82.
- * Bytes 0-159 of the COMMAREA Cousr02c reads: MOVE DFHCOMMAREA(1:EIBCALEN) at app/cbl/COUSR02C.cbl:94.
- * Bytes 0-159 of the COMMAREA Cousr03c reads: MOVE DFHCOMMAREA(1:EIBCALEN) at app/cbl/COUSR03C.cbl:94.
- * Record fields field testing: field-tested (6 public / 0 private estates).
+ * Record fields field testing: open (6 public / 0 private estates).
  */
 @Data
 @NoArgsConstructor

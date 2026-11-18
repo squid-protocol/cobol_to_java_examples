@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 
 /**
  * COBOL record WS-DATA-RC (base/src/lgastat1.cbl), 2 bytes, from GitGalaxy's verified skeleton.
- * Record fields field testing: field-tested (6 public / 0 private estates).
+ * Record fields field testing: open (6 public / 0 private estates).
  */
 @Data
 @NoArgsConstructor
